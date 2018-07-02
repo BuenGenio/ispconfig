@@ -1,0 +1,448 @@
+<application packaged="2014-06-09T22:37:55" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>http://basekit.com</id>
+    <name>BaseKit</name>
+    <version>1.2</version>
+    <release>7</release>
+    <homepage>http://www.basekit.com</homepage>
+    <vendor>
+        <name>BaseKit</name>
+        <homepage>http://www.basekit.com/partners</homepage>
+        <icon path="images/icon.png"/>
+    </vendor>
+    <packager>
+        <name>BaseKit</name>
+        <homepage>http://www.basekit.com/partners</homepage>
+        <icon path="images/icon.png"/>
+    </packager>
+    <presentation>
+        <summary>BaseKit is an all-in-one website building solution</summary>
+        <summary xml:lang="de-DE">BaseKit ist ein Alles-in-einem Website-Gestaltungstool</summary>
+        <summary xml:lang="es-ES">BaseKit es una solución de creación de sitios web todo en uno</summary>
+        <summary xml:lang="nl-NL">BaseKit is een alles-in-een uitkomst voor het creëren van uw website</summary>
+        <summary xml:lang="pt-BR">BaseKit é um construtor de sites do tipo tudo-em-um</summary>
+        <description>
+            BaseKit is the world’s most flexible website builder. It allows you to create professional websites from within your browser in just a
+            few clicks. You don’t need any technical skills and there are loads of templates and widgets to get you started. Simply choose how you want your site to look, enter your content and click ‘publish’!
+            You can purchase your own domain through BaseKit or use your existing one. Website builders are nothing new, but in the past these tools relied on clunky old Flash.
+            BaseKit changes all that. BaseKit websites are fully HTML which means they work on all devices - even mobile phones. Not only does BaseKit make it easy to create beautiful websites, it also ensures that the whole world can see your work. BaseKit keeps it simple letting you drag and drop content to your site and if you wish, dig deeper into its powerful settings.
+        </description>
+        <description xml:lang="de-DE">
+            BaseKit ist das flexibelste Website-Gestaltungstool der Welt. Es erlaubt Ihnen die Erstellung von professionellen Websites in Ihrem Browser mit wenigen klicks.
+            Technische Fähigkeiten sind hierzu nicht nötig: wir haben jede Menge Vorlagen und Widgets um Ihnen Starthilfe zu geben. Wählen Sie einfach den Look Ihrer Website aus, geben Sie Ihre Daten und Informationen ein, und klicken Sie auf „Veröffentlichen”.
+            BaseKit macht es Ihnen nicht nur einfach, wunderschöne Websites zu erstellen, wir stellen auch sicher, dass die ganze Welt Ihre Website sehen kann. Ziehen Sie per drag&amp;amp;amp;amp;amp;amp;drop Ihre Inhalte auf Ihre Website, oder steigen Sie auf Wunsch weiter in die mächtige Einstellungsebene ein. Mit uns bekommen Sie die Website die Sie schon immer wollten.
+            Websites von BaseKit werden in HTML5 und CSS3 erstellt, Flash wird nicht benötigt. Fertige Websites funktionieren also auf allen Browsern und Mobiltelefonen.
+        </description>
+        <description xml:lang="es-ES">
+            BaseKit es el editor de páginas web más flexible del mundo. Con é les possible crear sitios web profesionales desde tu navegador con tan solo unos cuantos clicks.
+            No necesitas tener ninguna clase de habilidades técnicas pues hay muchas plantillas y widgets que te ayudarán a estar listo antes de que te des cuenta.
+            Simplemente tienes que elegir cómo quieres que se vea tu página, introducir tus contenidos y ¡dar click a “Publicar!
+            BaseKit no solamente hace que crear los mejores websites sea muy fácil; también te ayuda a que el mundo entero pueda ver tu creación. Por medio de BaseKit funciona mediante un sistema en el que únicamente hace falta arrastrar y solatr contenido a tu página, pero también puedes sumergirte un poco más y aprovechar sus características más poderosas, si es que así lo deseas.
+            Esto significa que son perfectamente visualizables en todos los navegadores y dispositivos móviles.
+        </description>
+        <description xml:lang="nl-NL">
+            BaseKit is ‘s werelds meest flexibele manier voor het creëren van websites. Het laat u professionele websites creëren vanuit uw browser in een paar klikken met de muis.
+            U hoeft niet over technische vaardigheden te beschikken en er zijn sjablonen en widgets ten overvloede om u te helpen een begin te maken. U kunt simpelweg bekijken hoe u wilt dat uw site eruit ziet, vul uw inhoud in en klik op ‘publiceer’!
+            BaseKit maakt het niet alleen makkelijk om prachtige websites te creëren, maar het zorgt er ook voor dat de hele wereld uw werk kan zien. BaseKit houdt het simpel door u uw inhoud te laten slepen en plaatsen waar u wilt op uw website en als u wilt zelfs dieper in te gaan om de veelvermogende instellingen. Eindelijk kunt u de website creeren, die u altijd al gewild heeft.
+            BaseKit websites worden gebouwd in HTML5 en CSS3, geen flash vereist, dus ze werken op alle browsers en mobiele telefoons.
+        </description>
+        <description xml:lang="pt-BR">
+            BaseKit é o construtor de sites mais flexível do mundo. Permite que você crie sites profissionais no navegador em apenas alguns cliques.
+            Não é necessário nenhuma habilidade técnica e há diversos modelos e widgets disponíveis para você usar. Apenas escolha como você quer que o seu site pareça, insira o seu conteúdo e clique em ‘publicar’!
+            BaseKit não apenas permite a criação de belos sites, como também garante que o mundo todo veja o seu trabalho. Pensando em simplicidade, o editor BaseKit permite que você arraste e solte o conteúdo para dentro da sua página como desejar. Mas se preferir, você também realizar configurações mais avançadas. Finalmente você terá o site que sempre quis.
+            Os sites BaseKit são construídos em HTML5 e CSS3, sem uso de Flash, o que significa que os sites serão visualizados em qualquer navegador e dispositivo móvel.
+        </description>
+        <icon path="images/icon.png"/>
+        <screenshot path="images/indice.jpg">
+            <description>index</description>
+        </screenshot>
+        <changelog>
+            <version release="1" version="1.0">
+                <entry>Initial version</entry>
+                <entry xml:lang="de-DE">Initial version</entry>
+                <entry xml:lang="es-ES">Versión Inicial</entry>
+                <entry xml:lang="nl-NL">Eerste Versie</entry>
+                <entry xml:lang="pt-BR">Versão Inicial</entry>
+            </version>
+            <version release="2" version="1.0">
+                <entry>Billing Frequency and  packageID Verify</entry>
+            </version>
+            <version release="3" version="1.0">
+                <entry>Added description to domain suffix and documentation of the package</entry>
+            </version>
+            <version release="4" version="1.0">
+                <entry>Metadata and error logging fix</entry>
+            </version>
+            <version release="34" version="1.0">
+                <entry>New version of our package coming soon...</entry>
+            </version>
+            <version release="2" version="1.1">
+                <entry>Remove regex on domain_suffix</entry>
+                <entry>Add deployment guide link</entry>
+            </version>
+            <version release="3" version="1.1">
+                <entry>Add timestamp to username/email on remove account holder to allow a user to recreate an instance with same email/username</entry>
+                <entry>Make sure the create site creates a desktop site</entry>
+            </version>
+            <version release="4" version="1.1">
+                <entry>Minor fixes</entry>
+                <entry>When creating a site make sure no site exists with the exact same domain</entry>
+            </version>
+            <version release="5" version="1.1">
+                <entry>Minor fixes</entry>
+                <entry>Lower case check domain</entry>
+            </version>
+            <version release="6" version="1.1">
+                <entry>Add Dutch language</entry>
+                <entry>Use pt_BR instead of pt</entry>
+                <entry>Add default value for every setting</entry>
+            </version>
+            <version release="0" version="1.2">
+                <entry>Add Guzzle to handle API request with Service Description</entry>
+                <entry>Use Symfony Autoloader</entry>
+                <entry>Use 2 Applications Service for creating a User and add a Subscription to a User</entry>
+                <entry>Reorder codebase and use namespaces</entry>
+                <entry>Hierarchy based in scripts folder</entry>
+                <entry>Move entry point to account service</entry>
+                <entry>remove exit(1) preventing errors to be displayed</entry>
+                <entry>Handle exception in parent class</entry>
+                <entry>Rename site domain name when user is deleted</entry>
+            </version>
+            <version release="1" version="1.2">
+                <entry>Revert accountHolder to brand default package when removing a subscription</entry>
+            </version>
+            <version release="2" version="1.2">
+                <entry>Remove isOutdated package check</entry>
+            </version>
+            <version release="3" version="1.2">
+                <entry>Remove unique value on billing_frequency and package_id</entry>
+            </version>
+            <version release="4" version="1.2">
+                <entry>Do some code cleanup</entry>
+                <entry>Add Finnish language for user</entry>
+            </version>
+            <version release="5" version="1.2">
+                <entry>Use composer autoloader</entry>
+            </version>
+            <version release="6" version="1.2">
+                <entry>Do not force the siteType when creating site.</entry>
+            </version>
+            <version release="7" version="1.2">
+                <entry>Allow to default language code in the application</entry>
+            </version>
+        </changelog>
+        <categories>
+            <category>Web/Site editing</category>
+        </categories>
+        <languages>
+            <language>en</language>
+            <language>es</language>
+            <language>de</language>
+            <language>nl</language>
+            <language>pt</language>
+            <language>fi</language>
+        </languages>
+    </presentation>
+    <global-settings>
+        <group>
+        	<name>Environment</name>
+        	<setting default-value="http://apiurl.com" id="api_url" regex="^https?://[a-zA-Z0-9\.-]*" type="string">
+        		<name>API url:</name>
+        		<description>Url to be provided by BaseKit (e.g. http://subdomain.domain.tld)</description>
+        		<error-message>Url provided is invalid</error-message>
+        	</setting>
+        	<setting default-value="changeMe" id="consumer_key" type="string">
+        		<name>Consumer key:</name>
+        		<name xml:lang="de-DE">Consumer key:</name>
+        		<name xml:lang="es-ES">Consumer key:</name>
+        		<name xml:lang="nl-NL">Gebruikerstoets:</name>
+        		<name xml:lang="pt-BR">Chave do consumidor:</name>
+        	</setting>
+        	<setting default-value="changeMe" id="consumer_secret" type="string">
+        		<name>Consumer Secret:</name>
+        		<name xml:lang="de-DE">Consumer Secret:</name>
+        		<name xml:lang="es-ES">Consumer Secret:</name>
+        		<name xml:lang="nl-NL">Gebruiker verborgen:</name>
+        		<name xml:lang="pt-BR">Segredo do consumidor:</name>
+        	</setting>
+        	<setting default-value="changeMe" id="access_token" type="string">
+        		<name>Access token:</name>
+        		<name xml:lang="de-DE">Access token:</name>
+        		<name xml:lang="es-ES">Access token:</name>
+        		<name xml:lang="nl-NL">Toegangsbewijs:</name>
+        		<name xml:lang="pt-BR">Token de Acesso:</name>
+        	</setting>
+        	<setting default-value="changeMe" id="access_secret" type="string">
+        		<name>Access Secret:</name>
+        		<name xml:lang="de-DE">Access Secret:</name>
+        		<name xml:lang="es-ES">Access Secret:</name>
+        		<name xml:lang="nl-NL">Toegang verborgen:</name>
+        		<name xml:lang="pt-BR">Acesso Secreto:</name>
+        	</setting>
+        	<setting default-value="1" id="brand_id" type="integer">
+        		<name>Brand Id:</name>
+        		<name xml:lang="de-DE">Brand Id:</name>
+        		<name xml:lang="es-ES">Brand Id:</name>
+        		<name xml:lang="nl-NL">Merk ID:</name>
+        		<name xml:lang="pt-BR">ID da Marca:</name>
+        	</setting>
+        	<setting default-value=".basekit.com" id="domain_suffix" min-length="1" type="string">
+        		<name>Domain suffix:</name>
+        		<name xml:lang="de-DE">Domain suffix:</name>
+        		<name xml:lang="es-ES">Sufijo de dominio:</name>
+        		<name xml:lang="nl-NL">Domein achtervoegsel:</name>
+        		<name xml:lang="pt-BR">Sufixo do domínio:</name>
+        		<description>Domain suffix to be provided by BaseKit (e.g.   .domain.tld)</description>
+        	</setting>
+</group>
+<group>
+        	<name>Debug</name>
+        	<setting default-value="0" id="debug_option" type="integer">
+        		<name>Debug</name>
+        		<description>0 = inactive, 1 = active</description>
+        	</setting>
+        	<setting default-value="serviceaps@basekit.com" id="debug_email" type="email">
+        		<name>Email</name>
+        		<description>Email used to send the debug informations to</description>
+        	</setting>
+</group>
+    </global-settings>
+    <service class="service" id="BaseKit">
+        <license must-accept="true">
+            <commercial/>
+            <text>
+            	<url>http://tempuri.org</url>
+            </text>
+        </license>
+        <presentation>
+            <summary>BaseKit</summary>
+            <infolinks>
+                <link class="official" href="http://www.basekit.com">About</link>
+                <link class="support" href="http://basekit.zendesk.com">Support</link>
+                <link class="deployment-guide" href="file:///doc/BaseKit APS Deployment Guide.pdf">Deployment Guide</link>
+            </infolinks>
+        </presentation>
+        <settings>
+            <setting default-value="My environment" id="Environment" type="string" visibility="hidden">
+            	<description>Name of the environment you are configuring</description>
+            </setting>
+        </settings>
+        <requirements>
+            <php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+            <php:extension xmlns:php="http://apstandard.com/ns/1/php">ctype</php:extension>
+            <php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+            <php:version min="5.3" xmlns:php="http://apstandard.com/ns/1/php"/>
+        </requirements>
+        <service class="service" id="Account">
+            <presentation>
+                <name>Account</name>
+                <summary>Create a BaseKit account</summary>
+                <entry-points>
+                    <entry class="login" dst="{api_url}/aps-login" method="POST">
+                        <label>Basekit URL login</label>
+                        <label xml:lang="de-DE">Basekit URL login</label>
+                        <label xml:lang="es-ES">URL de acceso BaseKit</label>
+                        <label xml:lang="nl-NL">Basekit URL login</label>
+                        <label xml:lang="pt-BR">Basekit URL login</label>
+                        <variable name="api_url" value-of-setting="api_url"/>
+                        <variable name="consumerKey" value-of-setting="consumer_key"/>
+                        <variable name="accountHolderRef" value-of-setting="account_holder_ref"/>
+                        <variable name="siteRef" value-of-setting="site_ref"/>
+                        <variable name="hash" value-of-setting="hash_login"/>
+                    </entry>
+                </entry-points>
+            </presentation>
+            <settings>
+                <group class="vcard">
+                    <name>Account Holder details</name>
+                    <name xml:lang="de-DE">Kontoinhaber</name>
+                    <name xml:lang="es-ES">accountHolder</name>
+                    <name xml:lang="nl-NL">accountHolder</name>
+                    <name xml:lang="pt-BR">accountHolder</name>
+                    <setting default-value="0" id="account_holder_ref" installation-only="true" type="integer" visibility="hidden">
+                    	<name>account_holder_ref</name>
+                    </setting>
+                    <group class="email">
+                        <setting class="value" default-value="your@email.com" id="user_name" installation-only="true" type="email">
+                            <name>User Name:</name>
+                            <name xml:lang="de-DE">Benutzername:</name>
+                            <name xml:lang="es-ES">Nombre de usuario:</name>
+                            <name xml:lang="nl-NL">Gebruikersnaam:</name>
+                            <name xml:lang="pt-BR">Nome do usuário:</name>
+                        </setting>
+                    </group>
+                    <group class="authn">
+                        <setting class="password" default-value="password" id="user_password" max-length="19" min-length="7" type="string">
+                            <name>User Password:</name>
+                            <name xml:lang="de-DE">Benutzerpasswort:</name>
+                            <name xml:lang="es-ES">Password de usuario:</name>
+                            <name xml:lang="nl-NL">Gebruikerswachtwoord:</name>
+                            <name xml:lang="pt-BR">Senha do Usuário:</name>
+                        </setting>
+                    </group>
+                    <group class="email">
+                        <setting class="value" default-value="your@email.com" id="email" installation-only="true" track-old-value="true" type="email">
+                            <name>Email:</name>
+                            <name xml:lang="de-DE">E-Mail:</name>
+                            <name xml:lang="es-ES">Email:</name>
+                            <name xml:lang="nl-NL">Email:</name>
+                            <name xml:lang="pt-BR">Email:</name>
+                        </setting>
+                    </group>
+                    <group class="fn n">
+                        <setting class="given-name" default-value="Firstname" id="first_name" max-length="20" min-length="2" type="string">
+                            <name>First Name:</name>
+                            <name xml:lang="de-DE">Vorname:</name>
+                            <name xml:lang="es-ES">Nombre:</name>
+                            <name xml:lang="nl-NL">Voornaam:</name>
+                            <name xml:lang="pt-BR">Nome:</name>
+                        </setting>
+                        <setting class="family-name" default-value="Lastname" id="last_name" max-length="20" min-length="2" type="string">
+                            <name>Last Name:</name>
+                            <name xml:lang="de-DE">Nachname:</name>
+                            <name xml:lang="es-ES">Apellido:</name>
+                            <name xml:lang="nl-NL">Achternaam:</name>
+                            <name xml:lang="pt-BR">Sobrenome:</name>
+                        </setting>
+                    </group>
+                </group>
+                <group>
+                    <name>Language</name>
+                        <name xml:lang="de-DE">Language:</name>
+                        <name xml:lang="es-ES">Lenguaje:</name>
+                        <name xml:lang="nl-NL">Taal:</name>
+                        <name xml:lang="pt-BR">Linguagem:</name>
+                    <setting default-value="en" id="language_code" type="enum">
+                        <choice id="en">
+                            <name>English</name>
+                            <name xml:lang="de-DE">English</name>
+                            <name xml:lang="es-ES">Inglés</name>
+                            <name xml:lang="nl-NL">Engels</name>
+                            <name xml:lang="pt-BR">Inglês</name>
+                        </choice>
+                        <choice id="es">
+                            <name>Spanish</name>
+                            <name xml:lang="de-DE">Spanish</name>
+                            <name xml:lang="es-ES">Español</name>
+                            <name xml:lang="nl-NL">Spaans</name>
+                            <name xml:lang="pt-BR">Espanhol</name>
+                        </choice>
+                        <choice id="pt_BR">
+                            <name>Portuguese</name>
+                            <name xml:lang="de-DE">Portuguese</name>
+                            <name xml:lang="es-ES">Portugués</name>
+                            <name xml:lang="nl-NL">Portugees</name>
+                            <name xml:lang="pt-BR">Português</name>
+                        </choice>
+                        <choice id="tr">
+                            <name>Turkish</name>
+                            <name xml:lang="de-DE">Turkish</name>
+                            <name xml:lang="es-ES">Turco</name>
+                            <name xml:lang="nl-NL">Turks</name>
+                            <name xml:lang="pt-BR">Turco</name>
+                        </choice>
+                        <choice id="nl">
+                            <name>Dutch</name>
+                            <name xml:lang="de-DE">Dutch</name>
+                            <name xml:lang="es-ES">Holandés</name>
+                            <name xml:lang="nl-NL">Nederlands</name>
+                            <name xml:lang="pt-BR">Holandês</name>
+                        </choice>
+                        <choice id="fi">
+                            <name>Finnish</name>
+                            <name xml:lang="de-DE">Finnisch</name>
+                            <name xml:lang="es-ES">Finlandés</name>
+                            <name xml:lang="nl-NL">Fins</name>
+                            <name xml:lang="pt-BR">Finlandês</name>
+                        </choice>
+                    </setting>
+                </group>
+                <group>
+                    <name>Site details</name>
+                    <name xml:lang="de-DE">Website</name>
+                    <name xml:lang="es-ES">Site</name>
+                    <name xml:lang="nl-NL">Site</name>
+                    <name xml:lang="pt-BR">Site</name>
+                    <setting default-value="0" id="site_ref" installation-only="true" type="integer" visibility="hidden">
+<name>Site ref</name>
+</setting>
+                    <setting default-value="0" id="hash_login" installation-only="true" type="string" visibility="hidden">
+<name>Hash</name>
+</setting>
+                    <setting default-value="domainName" id="domain_name" installation-only="true" regex="[A-Za-z0-9\.-]*" type="string">
+                        <name>Domain:</name>
+                        <name xml:lang="de-DE">Domain:</name>
+                        <name xml:lang="es-ES">Dominio:</name>
+                        <name xml:lang="nl-NL">Domein:</name>
+                        <name xml:lang="pt-BR">Domínio:</name>
+                        <description>Subdomain prefix (e.g. mySite)</description>
+                    </setting>
+                </group>
+            </settings>
+            <requirements>
+            </requirements>
+            <provision>
+                <configuration-script name="account-configure.php">
+                    <script-language>php</script-language>
+                    <structured-output/>
+                </configuration-script>
+                <verify-script name="account-verify.php">
+                    <script-language>php</script-language>
+                    <structured-output/>
+                </verify-script>
+            </provision>
+            <service class="service" id="Subscription">
+            	<presentation>
+            		<name>Subscription</name>
+            		<summary>Define what package and billing it will be applied to the user</summary>
+            		<summary xml:lang="de-DE">Zeichnung:</summary>
+            		<summary xml:lang="es-ES">Suscripción:</summary>
+            		<summary xml:lang="nl-NL">Abonnement:</summary>
+            		<summary xml:lang="pt-BR">Assinatura:</summary>
+            	</presentation>
+            	<settings>
+            		<group>
+            			<name>details</name>
+            			<setting default-value="0" id="package_id" track-old-value="true" type="integer" visibility="hidden">
+            				<name>Package Id</name>
+            				<name xml:lang="de-DE">Package Id:</name>
+            				<name xml:lang="es-ES">ID de paquete:</name>
+            				<name xml:lang="nl-NL">Pakket ID:</name>
+            				<name xml:lang="pt-BR">ID do Pacote:</name>
+            			</setting>
+            			<setting default-value="1" id="billing_frequency" track-old-value="true" type="integer" visibility="hidden">
+            				<name>Billing Frecuency</name>
+            				<name xml:lang="de-DE">
+            					Rechnungshäufigkeit:
+            				</name>
+            				<name xml:lang="es-ES">
+            					Frecuencia de cobro:
+            				</name>
+            				<name xml:lang="nl-NL">
+            					Factureringsfrequentie:
+            				</name>
+            				<name xml:lang="pt-BR">
+            					Frequência do Pagamento:
+            				</name>
+            			</setting>
+            		</group>
+            		<group>
+            			<name>Account</name>
+            			<setting id="account_holder_ref" type="integer" value-of-setting="account_holder_ref" visibility="hidden"/>
+            		</group>
+            	</settings>
+            	<requirements>
+            	</requirements>
+            	<provision>
+            		<configuration-script name="subscription-configure.php">
+            			<script-language>php</script-language>
+            			<structured-output/>
+            		</configuration-script>
+            		<verify-script name="subscription-verify.php">
+            			<script-language>php</script-language>
+            			<structured-output/>
+            		</verify-script>
+            	</provision>
+            </service>
+</service>
+    </service>
+</application>

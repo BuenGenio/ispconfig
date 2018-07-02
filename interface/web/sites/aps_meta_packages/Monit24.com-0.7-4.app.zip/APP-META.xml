@@ -1,0 +1,162 @@
+
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-07-12T09:22:37">
+	<id>com.monit24.pl.free.aps</id>
+	<name>Monit24.com</name>
+	<version>0.7</version>
+	<release>4</release>
+	<homepage>http://monit24.com</homepage>
+	<vendor>
+		<name>Monit24.com</name>
+		<homepage>http://monit24.com</homepage>
+		<icon path="images/icon.png" />
+	</vendor>
+	<packager>
+		<name>Monit24</name>
+		<homepage>http://monit24.pl</homepage>
+		<icon path="images/icon.png" />
+	</packager>
+	<presentation>
+		<summary>Websites performance and uptime monitoring by Monit24.com</summary>
+		<description>Even with an internal monitoring system you can't be sure whether your clients are able to view your website. We provide an external monitoring system that tests your site from the user perspective (user experience). This is the only way for reliable Internet services checking.</description>
+		<icon path="images/icon.png" />
+		<screenshot path="images/screen02.png">
+			<description>Notifications and reports</description>
+		</screenshot>
+		<screenshot path="images/screen01.png">
+			<description>Services list</description>
+		</screenshot>
+		<changelog>
+			<version release="1" version="0.1">
+				<entry>Initial release.</entry>
+			</version>
+			<version release="1" version="0.2">
+				<entry>Fixed APS package.</entry>
+			</version>
+			<version release="1" version="0.3">
+				<entry>Improved load times.</entry>
+			</version>
+			<version release="1" version="0.4">
+				<entry>Fixed compatibility with Monit API.</entry>
+				<entry>Fixed administrative panel entry-point URL.</entry>
+				<entry>Added "lang" and "services" POST fields to login request.</entry>
+			</version>
+			<version release="1" version="0.5">
+				<entry>Added proper uninstall support.</entry>
+				<entry>Minor code refactoring.</entry>
+				<entry>Minor app metadata fixes.</entry>
+			</version>
+			<version release="2" version="0.5">
+				<entry>Disabled UUID edit option in application settings.</entry>
+			</version>
+			<version release="1" version="0.6">
+				<entry>Added default language choice to installation and app settings.</entry>
+				<entry>Minor app metadata fixes.</entry>
+			</version>
+			<version release="1" version="0.7">
+				<entry>Added support for application user data update.</entry>
+			</version>
+			<version release="2" version="0.7">
+				<entry>Fixed password update script.</entry>
+			</version>
+			<version release="3" version="0.7">
+				<entry>Minor user data handling fixes.</entry>
+			</version>
+			<version release="4" version="0.7">
+				<entry>Fixed application entry point address.</entry>
+				<entry>Updated application screenshots.</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Infrastructure/Security</category>
+			<category>Web/Tools</category>
+		</categories>
+		<languages>
+			<language>pl</language>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<service id="Monitoring">
+		<license must-accept="true">
+			<commercial />
+			<text>
+				<name>Terms of Use</name>
+				<url>http://aps.monit24.com/license</url>
+			</text>
+		</license>
+		<presentation>
+			<summary>Monitoring service</summary>
+			<infolinks>
+				<link href="http://monit24.com/contact,us" class="support">Support</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="https://aps.monit24.com/login/" class="login" method="POST">
+					<label>Login</label>
+					<variable name="uuid" class="login" value-of-setting="uid" />
+					<variable name="hash" class="password" value-of-setting="api_password" />
+					<variable name="lang" value-of-setting="user_language" />
+					<variable name="services">all</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<setting id="admin_password" type="password" class="password" installation-only="true">
+					<name>Administrator's Password</name>
+				</setting>
+				<setting id="domain" type="domain-name" class="domain-name" installation-only="true">
+					<name>Domain</name>
+				</setting>
+			</group>
+			<group class="auth_hidden">
+				<setting type="string" id="uid" protected="true" visibility="hidden" generate="uuid">
+					<name>User ID (do not change)</name>
+				</setting>
+				<setting type="string" id="api_password" protected="true" visibility="hidden" generate="password">
+					<name>Monit API password (do not change)</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<group class="fn n">
+					<setting id="user_first_name"  type="string"  class="given-name">
+						<name>First Name</name>
+					</setting>
+					<setting id="user_last_name" type="string"  class="family-name" >
+						<name>Last Name</name>
+					</setting>
+				</group>
+				<group class="email">
+					<setting id="admin_email" type="email" class="value">
+						<name>E-Mail Address</name>
+					</setting>
+				</group>
+				<group class="tel">
+					<setting id="work_phone" type="string" class="value">
+						<name>Contact phone</name>
+					</setting>
+				</group>
+			</group>
+			<group class="presentation">
+				<setting id="user_language" type="enum" default-value="en" class="language">
+					<name>Default application language</name>
+					<choice id="en">
+						<name>English</name>
+					</choice>
+					<choice id="pl">
+						<name>Polish</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:l="http://apstandard.com/ns/1/licensing" xmlns:svc="http://apstandard.com/ns/1/service" xmlns:env="http://apstandard.com/ns/1/environment">
+			<php:extension>curl</php:extension>
+			<php:extension>openssl</php:extension>
+			<php:version min="5.0"/>
+		</requirements>
+		<provision>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+				<structured-output />
+			</configuration-script>
+		</provision>
+	</service>
+</application>

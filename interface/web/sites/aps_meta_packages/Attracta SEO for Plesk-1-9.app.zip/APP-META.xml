@@ -1,0 +1,177 @@
+<application xmlns="http://apstandard.com/ns/1"
+				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 version="1.2" 
+				 packaged="2011-06-28T13:00:00+01:00">
+  <id>http://www.attracta.com</id>
+  <name>Attracta SEO for Plesk</name>  
+  <version>1</version>
+  <release>9</release>
+  <homepage>http://www.attracta.com/</homepage>
+  <vendor>
+  	<name>Attracta</name>
+  	<homepage>http://www.attracta.com</homepage>
+  	<icon path="images/ico-logo.jpg" /></vendor>
+  <packager>
+  	<name>Softec Internet</name>
+  	<homepage>http://www.softec-internet.com/</homepage>
+  	<icon path="images/ico-logo.jpg" />
+  	<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+  </packager>
+  <presentation>
+  	<summary>SEO Tools from Attracta.com</summary>
+  	<description>Automatic XML Sitemaps and other easy-to-use SEO tools that help websites meet Google's Webmaster Guidelines.
+1) We crawl your website finding all of its pages, including pages that can't be found by search engines' crawlers, to create an XML Sitemap and SEO dashboard report.
+2) We submit your XML Sitemap directly to the XML interface of major search engines such as Google, Yahoo!, Bing and Ask— plus help you find and fix SEO errors.
+3) The search engines use your XML Sitemap to drive more qualified traffic to your site by indexing more pages in search results with improved page ranking.</description>
+  	<icon path="images/ico-logo.jpg" />
+  	<screenshot path="images/attracta.png">
+  		<description>Home Page</description>
+  	</screenshot>
+  	<changelog>
+  		<version version="1" release="9">
+  			<entry>Added Global-setting</entry>
+  		</version>
+  		<version version="1" release="8">
+  			<entry>Hardcoded settings</entry>
+  		</version>
+  		<version version="1" release="7">
+  			<entry>Included verify script</entry>
+  		</version>
+  		<version version="1" release="6">
+  			<entry>Included resellerId</entry>
+  		</version>
+  		<version version="1" release="5">
+  			<entry>First version</entry>
+  		</version>
+  	</changelog>
+  	<categories>
+  		<category>Web/Analytics</category>
+  	</categories>
+  	<languages>
+  		<language>en</language>
+  	</languages>
+  </presentation>
+  <global-settings>
+    <setting type="string" id="reseller_id" default-value="PLESK.000.EnterServiceProviderNameHere">
+    	<name>Reseller ID</name>
+     </setting>
+  </global-settings>
+  <service id="attractaseo">
+  	<license must-accept="true">
+  		<commercial />
+  		<text>
+  			<name>License File</name>
+  			<url>http://www-test.attracta.com/terms.jsp</url>
+  		</text>
+  	</license>
+  	
+  	<presentation>
+		<name>SEO Tools from Attracta.com</name>
+        <summary>SEO Tools from Attracta.com</summary>
+            
+		<infolinks>
+        	<link class="official" href="http://www.attracta.com/">Official site</link>
+            <link class="support" href="http://www.attracta.com/partner.jsp">Support</link>
+		</infolinks>
+	</presentation>	
+  	
+  	<settings>
+		<setting type="string" id="customer_username" installation-only="true" default-value="">
+  				<name>Username</name>
+  				<description>Required field</description>
+  				<error-message>Your name must have less than 255 characters</error-message>
+		</setting>
+		<setting type="password" id="customer_password" installation-only="true" default-value="">
+  				<name>Password</name>
+  				<description>Required field</description>
+  				<error-message>Your name must have less than 255 characters</error-message>
+		</setting>
+		<group class="vcard">
+			<group class="email">
+  				<setting type="email" id="customer_email" class="value" installation-only="true">
+  					<name>Email</name>
+  					<description>Required field</description>
+  					<error-message>Please provide a valid email</error-message>
+  				</setting>
+			</group>
+			<group class="fn n">
+  				<setting type="string" id="customer_first_name" class="given-name" >
+  					<name>First Name</name>
+  					<description>Required field</description>
+  					<error-message>Your name must have less than 255 characters</error-message>
+  				</setting>
+  				<setting type="string" id="customer_last_name" class="family-name" >
+  					<name>Last Name</name>
+  					<description>Required field</description>
+  					<error-message>Your last name must have less than 255 characters</error-message>
+  				</setting>
+			</group>
+			<group class="tel">
+  				<setting type="string" id="customer_phone" class="value" >
+  					<name>Phone Number</name>
+  					<error-message>Wrong phone format!</error-message>
+  				</setting>
+			</group>
+		</group>
+  		<setting id="customer_emailCrawlComplete" type="enum" default-value="1">
+        	<name>Crawl Complete</name>
+       		<choice id="0">
+         			<name>No</name>
+       		</choice>
+       		<choice id="1">
+        			<name>Yes</name>
+       		</choice>
+      	</setting>
+      	<setting id="customer_emailOverview" type="enum" default-value="3">
+        	<name>Email Overview</name>
+	        <choice id="0">
+	        	<name>None</name>
+	        </choice>
+	        <choice id="1">
+	        	<name>Daily</name>
+	        </choice>
+	        <choice id="2">
+				<name>Weekly</name>
+	        </choice>
+	        <choice id="3">
+	        	<name>Monthly</name>
+	    	</choice>
+		</setting>
+		<setting id="customer_sendWelcomeEmail" type="enum" default-value="1">
+        	<name>Send Welcome Email</name>
+        	<choice id="0">
+          		<name>No</name>
+        	</choice>
+        	<choice id="1">
+          		<name>Yes</name>
+        	</choice>
+      	</setting>
+      	<setting type="integer" id="user_uniq_suffix" generate="random" visibility="hidden" min="100000000" max="999999999"></setting>
+  	</settings>
+  	
+  	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+  		<php:version min="5"/>
+  	</requirements>
+  	<provision>
+  		<configuration-script name="configure.php">
+  			<script-language>php</script-language>
+  			<structured-output />
+  		</configuration-script>
+  		<url-mapping>
+  			<default-prefix>attr</default-prefix>
+  			<installed-size>3511</installed-size>
+  			<mapping url="/" path="htdocs" xmlns:php="http://apstandard.com/ns/1/php">
+				<php:permissions writable="true"/>
+				<php:handler>
+					<php:extension>php</php:extension>
+				</php:handler>
+				
+				<mapping url="data">
+					<php:permissions writable="true"/>
+					<mapping url="data.inf"><php:permissions writable="true"/></mapping>
+				</mapping>
+			</mapping>
+		</url-mapping>
+  	</provision>  
+  </service>  
+</application>

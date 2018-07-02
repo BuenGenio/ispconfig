@@ -1,0 +1,327 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-08-29T14:09:30">
+	<id>http://megaplan.ru</id>
+	<name>Megaplan</name>
+	<version>1.0.0.29</version>
+	<release>1</release>
+	<homepage>http://megaplan.ru</homepage>
+
+	<!-- application and package vendors -->
+	<vendor>
+		<name>Megaplan Inc.</name>
+		<icon path="images/megaplan64.png"/>
+	</vendor>
+
+	<packager>
+		<name>Megaplan Inc.</name>
+		<icon path="images/megaplan64.png"/>
+		<uri>uuid:06af98b9-0c10-3bbb-b295-c1f9c61deec9</uri>
+	</packager>
+
+	<!-- application description -->	
+	<presentation>
+		<summary xml:lang='en'>Megaplan is a set of products for business administration.</summary>
+		<summary>Мегаплан - это набор продуктов для управления бизнесом.</summary>
+		<description xml:lang='en'>Megaplan is a set of products for business administration. 
+
+		It helps to know exactly what an employee is busy with, who is responsible for this or that task, 
+		when a project will be completed etc. The main module of Megaplan is joint task management. Moreover, 
+		Megaplan may save customer base, general documents, list of employees, financial operations. 
+		Megaplan gives you an opportunity to plan and control sales, work of department, make reports on labour inputs, 
+		calculate salaries, bonuses, control vacations.</description>
+		<description>Мегаплан - это набор продуктов для управления бизнесом. 
+
+		С его помощью всегда точно известно, чем занят сотрудник, кто отвечает за ту или иную задачу,
+		когда будет завершен проект и т.д. Главный модуль Мегаплана – совместное ведение задач. Кроме того,
+		Мегаплан может хранить клиентскую базу, общие документы, список сотрудников, финансовые операции. 
+		В Мегаплане можно планировать и контролировать продажи,  планировать работу отдела, 
+		создавать отчеты по трудозатратам, рассчитывать зарплаты, бонусы, учитывать отпуска и т.д.</description>
+
+		<icon path="images/megaplan64.png" />
+		<screenshot path="images/tasks.jpg">
+			<description xml:lang='en'>Tasks - “Tasks” module allows you to establish good relations with your personnel, 
+			to allocate duties and appoint responsible persons. With the help of this module you can plan projects, 
+			in which several employees or departments take part.</description>
+			<description>Задачи - Модуль «Задачи» позволяет наладить деловые отношения внутри коллектива, 
+			распределить обязанности и назначить ответственных. С помощью этого модуля можно планировать проекты, 
+			в которых принимают участие несколько сотрудников или отделов.</description>
+		</screenshot>
+		<screenshot path="images/clients.jpg">
+			<description xml:lang='en'>Clients – In “Clients” module you can store all the information about your partners, 
+			contacts and planned meetings. The level of accessibility to this information is optional, 
+			that’s why every employee will be able to see only those contacts which he is allowed to see in
+			accordance with security policy of your company. </description>
+			<description>Клиенты - В модуле «Клиенты» можно хранить всю информацию о контрагентах, контактах, 
+			а также о запланированных встречах. Уровень доступа к информации настраивается, поэтому каждый сотрудник будет 
+			видеть только те контакты, которые ему разрешено просматривать политикой безопасности вашей компании.</description>
+		</screenshot>
+		<screenshot path="images/sales.jpg">
+			<description xml:lang='en'>Sales – “Sales” module allows you to settle, control and manage all bargains in your company.</description>
+			<description>Продажи - Модуль «Продажи» позволяет создавать, контролировать и управлять всеми 
+			сделками в компании.</description>
+		</screenshot>
+		<screenshot path="images/employees.jpg">
+			<description xml:lang='en'>Employees – “Employees” module represents a card file of all the employees of the company, 
+			including non-staff workers. You may look through the list of employees, check profile of every employee, 
+			the structure of organization, relationships and forthcoming vacations. Moreover, this module allows managers 
+			to calculate salary, bonuses and time spent by the employees. </description>
+			<description>Сотрудники - Модуль «Сотрудники» - это картотека всех сотрудников компании, 
+			включая внештатных. Можно просматривать список сотрудников, карточку каждого сотрудника, структуру организации, 
+			отношения и грядущие отпуска. Кроме того, этот модуль позволяет руководителям учитывать заработную плату, 
+			бонусы и затраченное сотрудниками время.</description>
+		</screenshot>
+		<screenshot path="images/finances.jpg">
+			<description xml:lang='en'>Finances – “Finances” module allows to keep a close watch on income and expenses of a company. 
+			Operations maybe linked with partners and devided according to their types. This module gives you the information 
+			about financial flows, balance, it helps you to control arrears and work with payment schedule, here you can 
+			estimate the effectiveness of your sales and look through other rates of a company. This module is divided into 
+			three sections: work with operations, reports and settings. </description>
+			<description>Финансы - Модуль «Финансы» позволяет отслеживать все доходы и расходы компании. 
+			Операции могут быть привязаны к контрагентам и разделены по типам. Модуль предоставляет информацию о финансовых 
+			потоках, остатках на счетах, помогает контролировать задолженность и работать с платёжным календарём, вы сможете 
+			оценить эффективность своих продаж и получить другие показатели работы компании. Модуль состоит из трех частей: 
+			работа с операциями, отчёты и настройки.</description>
+		</screenshot>		
+
+
+		<changelog>
+			<version version="1.0.0.29" release="1">
+				<entry>Change list of products</entry>
+			</version>
+			<version version="1.0.0.28" release="1">
+				<entry>Set MaxDiskSpace resourse class to 'mb'</entry>
+			</version>
+			<version version="1.0.0.27" release="1">
+				<entry>Add MaxDiskSpace option. Add patch entry.</entry>
+			</version>
+			<version version="1.0.0.26" release="1">
+				<entry>Add license end date to params</entry>
+			</version>
+			<version version="1.0.0.25" release="1">
+				<entry>Version bump</entry>
+			</version>
+			<version version="1.0.0.24" release="1">
+				<entry>Bugfixes release</entry>
+			</version>
+			<version version="1.0.0.23" release="1">
+				<entry>Change Test flag to class subscription_trial, remove Date parameter</entry>
+			</version>
+			<version version="1.0.0.22" release="1">
+				<entry>Add Test flag and License end date parameters</entry>
+			</version>
+			<version version="1.0.0.21" release="1">
+				<entry>Remove regexp for password, remove min-length requirement for First and Last Names, unlock license quantity parameter</entry>
+			</version>
+			<version version="1.0.0.20" release="1">
+				<entry>Remove requirement for first letter in login</entry>
+			</version>
+			<version version="1.0.0.19" release="1">
+				<entry>Remove requirement of uniqueness of e-mails</entry>
+			</version>
+			<version version="1.0.0.18" release="1">
+				<entry>Fixed verification script, it should not return errors</entry>
+			</version>
+			<version version="1.0.0.17" release="1">
+				<entry>Added One Time Key login schema</entry>
+			</version>
+			<version version="1.0.0.16" release="1">
+				<entry>Remove regexp for fname and lname</entry>
+			</version>
+			<version version="1.0.0.15" release="1">
+				<entry>Allow to use Russian names</entry>
+			</version>
+			<version version="1.0.0.14" release="1">
+				<entry>Resource can get only numeric value</entry>
+			</version>
+			<version version="1.0.0.13" release="1">
+				<entry>Product should have enum type</entry>
+			</version>
+			<version version="1.0.0.12" release="1">
+				<entry>Replace account variable with subscription_id</entry>
+			</version>
+			<version version="1.0.0.11" release="1">
+				<entry>Initial version</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Back office/Customer Relationship Management</category>
+			<category>Collaboration/Project management</category>
+		</categories>
+		<languages>
+			<language>ru</language>
+			<language>en</language>
+		</languages>
+	</presentation>
+
+	<global-settings>
+		<setting id="aid" type="password" default-value="295ca41d64b4aeb93c4b">
+			<name xml:lang='en'>Access id for tenant host</name>
+			<name>ID для доступа к тенант-хосту</name>
+		</setting>
+		<setting id="key" type="password" default-value="74cbbea13ac663867512">
+			<name xml:lang='en'>Key for tenant host</name>
+			<name>Ключ для доступа к тенант-хосту</name>
+		</setting>		
+		<setting id="mainhost" type="host-name" default-value="aps.asoft.megaplan.ru">
+			<name xml:lang='en'>host for APS</name>
+			<name>Адрес сервера создания площадок</name>
+		</setting>
+		<setting id="domain" type="host-name" default-value="asoft.megaplan.ru">
+			<name xml:lang='en'>User domain</name>
+			<name>Домен пользователя</name>
+		</setting>
+	
+	</global-settings>
+
+	<patch match="/application/version >= '1.0.0.11'" recommended="true"/>
+
+	<service id="Megaplan" class="service">
+		<license must-accept="true">
+			<commercial/>
+			<text xml:lang='en'>
+				<name>Megaplan license</name>
+				<file>licenses/license_eng.txt</file>
+			</text>
+			<text>
+				<name>Лицензия Mегаплан</name>
+				<file>licenses/license.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Megaplan</name>
+			<summary xml:lang='en'>Megaplan is a set of products for business administration.</summary>
+			<summary>Мегаплан - это набор продуктов для управления бизнесом.</summary>
+			<icon path="images/megaplan64.png"/>
+			<infolinks>
+				<link xml:lang='en' class="official" href="http://megaplan.ru/">
+					Official site
+				</link>
+				<link class="official" href="http://megaplan.ru/">
+					Официальный сайт
+				</link>
+				<link xml:lang='en' class="support" href="mailto:info@megaplan.ru">
+					Megaplan Inc. support
+				</link>
+				<link class="support" href="mailto:info@megaplan.ru">
+					Техническая поддержка сервиса Мегаплан
+				</link>
+			</infolinks>
+
+			<entry-points>
+				<entry class="multi-step-login" dst="http://m{account}.{domain}/login/?{one_time_key}" method="GET">
+					<label xml:lang='en'>Service entry</label>
+					<label>Страница сервиса</label>
+					<variable name="domain" value-of-setting="domain"/>
+					<variable name="account" value-of-setting="account"/>
+					<variable name="one_time_key" value-of-setting="one_time_key"/>
+				</entry>
+			</entry-points>
+		</presentation>
+		
+		<settings>
+			<group class="instance">
+				<setting id="account" class="subscription_id" visibility="hidden" protected="true" type="string">
+					<name xml:lang='en'>Domain Name</name>
+					<name>Доменное имя</name>
+				</setting>
+				<setting id="login" type="string" class="login" installation-only="true" regex="^[0-9a-zA-Z_\-]*">
+					<name xml:lang='en'>User's login</name>
+					<name>Логин пользователя</name>
+				</setting>
+				<setting id="pass" type="string" class="password" installation-only="true">
+					<name xml:lang='en'>User's password</name>
+					<name>Пароль пользователя</name>
+				</setting>
+				<setting id="email" class="email" type="email" installation-only="true">
+					<name xml:lang='en'>User's email</name>
+					<name>Почта пользователя</name>
+				</setting>
+				<setting id="fname" type="string" class="given-name" optional="true">
+					<name xml:lang='en'>First name</name>
+					<name>Имя пользователя</name>
+				</setting>
+				<setting id="lname" type="string" class="family-name" optional="true">
+					<name xml:lang='en'>Last name</name>
+					<name>Фамилия пользователя</name>
+				</setting>
+				<setting id="prod" type="enum" protected="true" default-value="1">
+					<name xml:lang='en'>Configuration variants</name>
+					<name>Варианты конфигурации</name>
+					<description xml:lang='en'>1-collaborationfree,2-collaboration,3-crmfree,4-crm,5-business</description>
+					<description>1-collaborationfree,2-collaboration,3-crmfree,4-crm,5-business</description>
+					<choice id="1">
+						<name xml:lang='en'>Collaboration Free</name>
+						<name>Совместная работа Free</name>
+					</choice>
+					<choice id="2">
+						<name xml:lang='en'>Collaboration</name>
+						<name>Совместная работа</name>
+					</choice>
+					<choice id="3">
+						<name xml:lang='en'>CRM — Clients and Sales Free</name>
+						<name>CRM — клиенты и продажи Free</name>
+					</choice>
+					<choice id="4">
+						<name xml:lang='en'>CRM — Clients and Sales</name>
+						<name>CRM — клиенты и продажи</name>
+					</choice>
+					<choice id="5">
+						<name xml:lang='en'>Business Manager</name>
+						<name>Бизнес-менеджер</name>
+					</choice>
+				</setting>
+				<setting id="licq" type="integer" protected="true" default-value="1" min="1">
+					<name xml:lang='en'>One time user quantity</name>
+					<name>Количество пользователей, одновременно работающих в системе</name>
+				</setting>
+				<setting id="maxdiscspace" type="integer" protected="true" default-value="100">
+					<name xml:lang='en'>Max disc space of Megaplan instance (in MB)</name>
+					<name>Дисковое пространство для одной подписки (в Мб)</name>
+				</setting>
+				<setting id="trial_flag" type="boolean" class="subscription_trial" visibility="hidden">
+					<name xml:lang='en'>Trial version of Megaplan</name>
+					<name>Тестовая версия Мегаплана</name>
+				</setting>
+				<setting id="one_time_key" visibility="hidden" protected="true" type="string" default-value="">
+					<name xml:lang='en'>One Time Key for Megaplan autologin returned by Megaplan API</name>
+					<name>One Time Key для автологина в Megaplan</name>
+				</setting>
+			</group>
+		</settings>
+
+		<resources>
+			<resource id="prod" class="item" limiting-setting="prod">
+				<name xml:lang='en'>Configuration variants</name>
+				<name>Варианты конфигурации</name>
+				<description>Configuration variants 1-collaborationfree,2-collaboration,3-crmfree,4-crm,5-business</description>
+				<description xml:lang='ru'>Варианты конфигурации 1-collaborationfree,2-collaboration,3-crmfree,4-crm,5-business</description>
+			</resource>
+			<resource id="licq" class="item" limiting-setting="licq">
+				<name xml:lang='en'>User quantity</name>
+				<name>Количество пользователей</name>
+				<description xml:lang='en'>User quantity</description>
+				<description>Количество пользователей</description>
+			</resource>
+			<resource id="maxdiscspace" class="mb" limiting-setting="maxdiscspace">
+				<name xml:lang='en'>Max disc space (in MB)</name>
+				<name>Дисковое пространство (в Мб)</name>
+				<description xml:lang='en'>Max disc space of Megaplan instance (in MB)</description>
+				<description>Дисковое пространство для одной подписки (в Мб)</description>
+			</resource>
+		</resources>
+		
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="5.0" />
+			<php:extension>curl</php:extension>
+		</requirements>
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<status-control/>
+			</configuration-script>
+			<verify-script name="verify.php">
+				<script-language>php</script-language>
+			</verify-script>
+		</provision>
+	</service>
+</application>

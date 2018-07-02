@@ -1,0 +1,275 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2011-02-08T13:06:35">
+	<id>http://www.moysklad.ru/2</id>
+    <name>MoySklad</name>
+    <version>2</version>
+    <release>12</release>
+    <homepage>http://www.moysklad.ru</homepage>
+	<vendor>
+		<name>LogneX</name>
+		<name xml:lang="ru">Логнекс</name>
+		<homepage>http://www.moysklad.ru</homepage>
+		<homepage xml:lang="ru">http://www.moysklad.ru</homepage>
+		<icon path="images/ms_logo.gif"/>
+	</vendor>
+	<packager>
+		<name>LogneX</name>
+		<name xml:lang="ru">LogneX</name>
+		<homepage>http://www.moysklad.ru</homepage>
+		<homepage xml:lang="ru">http://www.moysklad.ru</homepage>
+		<uri>http://www.moysklad.ru</uri>
+	</packager>
+	<presentation>
+		<summary>Cloud Logistics &amp; Financials for SMB</summary>
+		<summary xml:lang="ru">Управление торговлей и складской учет онлайн</summary>
+		<description>SaaS-service MoySklad offers the following opportunities for small to medium enterprises: 
+			- to process sales, purchase and manufacturing orders, control stock positions and
+			goods movement, keep A/R and A/P administration from any PC with Internet access;
+			- to integrate operations of geographically remote divisions, warehouses, sales offices in one informational system;
+			- to tune up user rights based on roles;
+			- to implement real-time accounting of operations with minimal costs and time investments.
+		</description>
+		<description xml:lang="ru">МойСклад позволяет:
+			- вести учет торговых операций (включая закупки, продажи, взаиморасчеты,
+			движение ТМЦ внутри организации), производственных операций, обрабатывать
+			заказы клиентов, поставщиков, дистрибьюторов с любого компьютера, к Интернет;
+			- объединить в одной системе несколько удаленных складов, офисов или точек продаж;
+			- произвести тонкую настройку прав пользователей;
+			- автоматизировать управленческий учёт в кратчайшие сроки и с минимумом затрат.
+		</description>
+		<icon path="images/ms_logo.gif" />
+		<screenshot path="images/ms_portal.jpg">
+			<description>Main page</description>
+			<description xml:lang="ru">Главная страница</description>
+		</screenshot>
+		<categories >
+			<category>Back office/Enterprise Resource Planning</category>
+		</categories>
+		<languages>
+			<language>ru</language>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting id="ms_billing_host" type="string" class="title" installation-only="true" regex="^https?://.*$">
+			<name>MoySklad management console address</name>
+			<name xml:lang="ru">Адрес консоли управления</name>
+			<description>MoySklad management console address</description>
+			<description xml:lang="ru">Адрес консоли управления сервисом МойСклад</description>
+            <error-message>Address format 'http://domain.name' or https://domain.name</error-message>
+            <error-message xml:lang="ru">Формат адреса: 'http://domain.name' or https://domain.name</error-message>
+		</setting>
+		<setting id="ms_host" type="string" class="title" installation-only="true" regex="^https?://.*$">
+			<name>MoySklad service address</name>
+			<name xml:lang="ru">Адрес сервиса</name>
+			<description>MoySklad service address</description>
+			<description xml:lang="ru">Адрес сервиса МойСклад</description>
+            <error-message>Address format 'http://domain.name' or https://domain.name</error-message>
+            <error-message xml:lang="ru">Формат адреса: 'http://domain.name' or https://domain.name</error-message>
+		</setting>
+        <setting id="ms_billing_admin" type="string" installation-only="true">
+            <name>Username</name>
+            <name xml:lang="ru">Имя пользователя</name>
+            <description>Partner login for MoySkald management console</description>
+            <description xml:lang="ru">Имя пользователя консоли управления</description>
+        </setting>
+        <setting id="ms_billing_password" type="password">
+            <name>Password</name>
+            <name xml:lang="ru">Пароль</name>
+            <description>Partner password for MoySkald management console</description>
+            <description xml:lang="ru">Пароль пользователя консоли управления</description>
+        </setting>
+	</global-settings>
+	<service id="context" class="service">
+		<presentation>
+			<name>MoySklad</name>
+			<name xml:lang="ru">МойСклад</name>
+			<summary>Cloud Logistics &amp; Financials for SMB</summary>
+			<summary xml:lang="ru">Управление торговлей и складской учет онлайн</summary>
+            <infolinks>
+                <link class="official" href="http://www.moysklad.ru/">Official site</link>
+                <link class="official" href="http://www.moysklad.ru/" xml:lang="ru">Официальный сайта</link>
+                <link class="support" href="http://support.moysklad.ru">Support</link>
+                <link class="support" href="http://support.moysklad.ru" xml:lang="ru">Поддержка пользователей</link>
+                <link class="community" href="http://forum.moysklad.ru">Community</link>
+                <link class="community" href="http://forum.moysklad.ru" xml:lang="ru">Сообщество</link>
+            </infolinks>
+			<entry-points>
+				<entry dst="{ms_host}/autologon" method="POST" class="frontpage">
+					<label>Application entrance</label>
+					<label xml:lang="ru">Вход в приложение</label>
+					<variable name="ms_host" value-of-setting="ms_host" />
+					<variable name="password" value-of-setting="admin_password" class="password"/>
+					<variable name="username" value-of-setting="admin_username" class="value"/>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="instance">
+				<group class="vcard">
+					<group class="email">
+						<setting id="admin_email" class="value" type="email" installation-only="true">
+							<name>Email</name>
+							<name xml:lang="ru">Email</name>
+							<description>Administrator email</description>
+							<description xml:lang="ru">Почтовый адрес администратора</description>
+						</setting>
+					</group>
+					<group class="auth">
+						<setting id="admin_password" class="password" type="password" installation-only="true">
+							<name>Password</name>
+							<name xml:lang="ru">Пароль</name>
+							<description>Administrator password</description>
+							<description>Пароль администратора</description>
+						</setting>
+					</group>
+					<group class="fn n">
+						<setting id="admin_given_name" class="given-name" type="string" min-length="1" max-length="50"
+								installation-only="true" optional="true">
+							<name>Name</name>
+							<name xml:lang="ru">Имя</name>
+							<description>Administrators name</description>
+							<description xml:lang="ru">Имя администратора компании</description>
+						</setting>
+						<setting id="admin_surname" class="family-name" type="string" min-length="1"  max-length="50"
+								installation-only="true" optional="true">
+							<name>Surname</name>
+							<name xml:lang="ru">Фамилия</name>
+							<description>Administrator surname</description>
+							<description xml:lang="ru">Фамилия администратора</description>
+						</setting>
+					</group>
+					<setting id="admin_username" class="value" type="string" installation-only="true" 
+								visibility="hidden" optional="true" protected="true">
+						<name>Login</name>
+						<name xml:lang="ru">Логин</name>
+						<description>Administrators login</description>
+						<description xml:lang="ru">Логин администратора</description>
+					</setting>
+				</group>
+				<group class="company">
+					<setting id="company_proposal" class="organization-name" type="string" 
+						installation-only="true" min-length="1" max-length="20">
+						<name>Company name</name>
+						<name xml:lang="ru">Имя компании</name>
+						<description>Company name to register in MoySklad service.</description>
+						<description xml:lang="ru">Имя, под которым компания будет зарегистрирована на сервисе МойСклад</description>
+					</setting>
+					<setting id="company" type="string"	class="company" visibility="hidden" protected="true" optional="true">
+						<name>Company name registered</name>
+						<name xml:lang="ru">Зарегистрированное имя компании</name>
+						<description>Company name registered in MoySklad service</description>
+						<description xml:lang="ru">Имя, под которым компания была зарегистрирована на сервисе МойСклад</description>
+					</setting>
+					<setting id="users" class="users" type="integer" visibility="hidden" default-value="1">
+						<name>Users count</name>
+						<name xml:lang="ru">Количество пользователей</name>
+						<description>Total active user count for company in MoySklad service</description>
+						<description xml:lang="ru">Общее количество активных пользователей компании, созданных в МойСклад</description>
+					</setting>
+					<setting id="units" class="units" type="integer" visibility="hidden" default-value="0">
+						<name>Units count</name>
+						<name xml:lang="ru">Количество филиалов</name>
+						<description>Total active units count for company in MoySklad service</description>
+						<description xml:lang="ru">Общее количество активных филиалов компании, созданных в МойСклад</description>
+					</setting>
+					<setting id="dbsize" class="dbsize" type="integer" visibility="hidden" default-value="0">
+						<name>Storage size</name>
+						<name xml:lang="ru">Размер хранилища</name>
+						<description>Total storage size, including database and files</description>
+						<description xml:lang="ru">Размер хранилища данных, включая базу данных и файловую систему</description>
+					</setting>
+					<setting id="operations" class="operations" type="integer" visibility="hidden" default-value="0">
+						<name>Operations count</name>
+						<name xml:lang="ru">Количество документов</name>
+						<description>Total operations count</description>
+						<description xml:lang="ru">Количество документов, хранимых в сервисе МойСклад</description>
+					</setting>
+					<setting id="attributes" class="attributes" type="integer" visibility="hidden" default-value="0">
+						<name>Attributes count</name>
+						<name xml:lang="ru">Количество дополнительных атрибутов</name>
+						<description>Total additional attributes count</description>
+						<description xml:lang="ru">Общее количество дополнительных атрибутов</description>
+					</setting>
+					<setting id="tarif" type="enum" default-value="0" visibility="hidden">
+					    <name>Access Level</name>
+		                <name xml:lang="ru">Уровень доступа</name>
+		                <description>Access level of MoySklad company account.</description>
+		                <description xml:lang="ru">Пакет услуг, предоставляемый при работе с МойСклад</description>
+					    <choice id="0">
+							<name>Free</name>
+							<name xml:lang="ru">Бесплатный</name>
+					    </choice>
+					    <choice id="1">
+					    	<name>Basic</name>
+					    	<name xml:lang="ru">Базовый</name>
+					    </choice>
+					    <choice id="4">
+					    	<name>Professional</name>
+					    	<name xml:lang="ru">Профессиональный</name>
+					    </choice>
+					    <choice id="6">
+					     	<name>Individual</name>
+					     	<name xml:lang="ru">Индивидуальный</name>
+					     </choice>
+					</setting>
+				</group>
+			</group>
+		</settings>
+		<resources>
+			<resource class="item" id="users" limiting-setting="users">
+				<name>Users count</name>
+				<name xml:lang="ru">Количество пользователей</name>
+				<description>Total active user count for company in MoySklad service</description>
+				<description xml:lang="ru">Общее количество активных пользователей компании, созданных в МойСклад</description>
+			</resource>
+			<resource class="item" id="units" limiting-setting="units">
+				<name>Units count</name>
+				<name xml:lang="ru">Количество филиалов</name>
+				<description>Total active units count for company in MoySklad service</description>
+				<description xml:lang="ru">Общее количество активных филиалов компании, созданных в МойСклад</description>
+			</resource>
+			<resource class="mb" id="dbsize" limiting-setting="dbsize">
+				<name>Storage size</name>
+				<name xml:lang="ru">Размер хранилища</name>
+				<description>Total storage size, including database and files</description>
+				<description xml:lang="ru">Размер хранилища данных, включая базу данных и файловую систему</description>
+			</resource>
+			<resource class="item" id="operations" limiting-setting="operations">
+				<name>Operations count</name>
+				<name xml:lang="ru">Количество документов</name>
+				<description>Total operations count</description>
+				<description xml:lang="ru">Количество документов, хранимых в сервисе МойСклад</description>
+			</resource>
+			<resource class="item" id="attributes" limiting-setting="attributes">
+				<name>Attributes count</name>
+				<name xml:lang="ru">Количество дополнительных атрибутов</name>
+				<description>Total additional attributes count</description>
+				<description xml:lang="ru">Общее количество дополнительных атрибутов</description>
+			</resource>
+			<resource class="item" id="tarif" limiting-setting="tarif">
+                <name>Access level</name>
+                <name xml:lang="ru">Уровень доступа</name>
+                <description>Access level of MoySklad company account.</description>
+                <description xml:lang="ru">Пакет услуг, предоставляемый при работе с МойСклад</description>
+			</resource>
+		</resources>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="5.0" />
+			<php:extension>curl</php:extension>
+		</requirements>
+		<provision>
+			<configuration-script name="configure-tenant.php">
+				<script-language>php</script-language>
+				<status-control/>
+				<structured-output/>
+			</configuration-script>
+			<resource-script name="report-resources.php" poll-interval="30m">
+				<script-language>php</script-language>
+			</resource-script>
+			<verify-script name="verify-tenant.php">
+				<script-language>php</script-language>
+				<structured-output/>
+			</verify-script>
+		</provision>
+	</service>
+</application>

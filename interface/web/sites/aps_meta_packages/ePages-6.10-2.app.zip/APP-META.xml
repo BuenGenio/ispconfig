@@ -1,0 +1,328 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2">
+  <id>http://www.epages.com/</id>
+  <name>ePages</name>
+  <version>6.10</version>
+  <release>2</release>
+	<homepage>http://epages.com/en/products/hostingprovider/index.html</homepage>
+	<vendor>
+		<name>ePages Software GmbH</name>
+		<homepage>http://www.epages.com</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	
+	<packager>
+		<name>Parallels</name>
+		<homepage>http://parallels.com</homepage>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	
+	<presentation>
+		<summary>The professional and effective online commerce.</summary>
+		<description>
+			ePages is a standard software product you can use to create and operate an online shop. 
+			The ePages Merchant line offers you the right product for each phase of your e-business involvement. 
+			For B2B or B2C business models, for small companies or larger medium-sized enterprises – with the Merchant
+			line we have developed software that can make your entry into e-business successful and grow with you step by step. 
+			At the same time ePages lives up to international requirements. 
+			Our top priority is security – for both you and your customers. 
+			All products in the Merchant line are ready for “Trusted Shops” certification. 
+			ePages supports Secure Socket Layer, guaranteeing the security of business and customer data.
+		</description>
+		
+		<icon path="images/icon.png"/>
+
+		<screenshot path="images/shop-front-page.png"><description>Web Shop Front Page</description></screenshot>
+		
+		<changelog>
+			<version version="6.10" release="2">
+				<entry>using markForDeletion instead of delete call</entry>
+			</version>
+			<version version="6.10" release="1">
+				<entry>ePages 6.10 support</entry>
+			</version>
+			<version version="6.0" release="50">
+				<entry>Shop Wizard initiation on first login</entry>
+				<entry>Replasing umlaut characters with latin equivalent</entry>
+				<entry>Shop admin login name always set to 'admin'</entry>
+			</version>
+			<version version="6.0" release="46">
+				<entry>Fixed several issues that prevented utf-8 chars to be transliterated ok, fixed entry points and added support for nat installations</entry>
+			</version>
+			<version version="6.0" release="40">
+				<entry>Fixed regexp to avoid provisioning issues with spaces</entry>
+			</version>
+			<version version="6.0" release="39">
+				<entry>'fixed soap endpoint depending on database name for corporate licenses</entry>
+			</version>
+			<version version="6.0" release="38">
+				<entry>'Name for short URL' is set via API call</entry>
+			</version> 
+			<version version="6.0" release="37">
+				<entry>Web Store url is fixed</entry>
+			</version> 
+			<version version="6.0" release="36">
+				<entry>Packaged in APS 1.2. E-shop domain provisioning is added.</entry>
+			</version>
+			<version version="6.0" release="26">
+				<entry>Upgrade from previous releases is implemented</entry>
+			</version>
+			<version version="6.0" release="25">
+				<entry>Action 'disable' corrected</entry>
+			</version>
+			<version version="6.0" release="24">
+				<entry>Support for ePages license of type 'Hosting' is added</entry>
+			</version>
+			<version version="6.0" release="11">
+				<entry>Metadata corrected</entry>
+			</version>
+			<version version="6.0" release="6">
+				<entry>Initial package version</entry>
+			</version>
+		</changelog>
+		
+		<categories>
+			<category>Web/E-Commerce</category>
+			<category>Web/Site editing</category>
+		</categories>
+		
+		<languages>
+			<language>en</language>
+			<language>de</language>
+		</languages>
+	</presentation>
+	
+	<global-settings>
+			<group class="web">
+				<setting id="epages_site" type="host-name" default-value="" min-length="1">
+					<name>ePages installation site</name>
+					<description>DNS name or IP address of ePages service.</description>
+				</setting>
+				<setting id="access_protocol" type="enum" default-value="http">
+					<name>ePages site access protocol</name>
+					<choice id="http"><name>http</name></choice>
+					<choice id="https"><name>https</name></choice>
+				</setting>
+				<setting id="epages_host" type="string" default-value="" min-length="1" regex="^[0-9\.]+$">
+					<name>ePages installation host</name>
+					<description>IP address of ePages service. It's used for domain provisioning of e-shop, in other words, where the A record will point to.</description>
+					<error-message>Invalid IP address</error-message>
+				</setting>
+				<setting id="epages_api_host" type="host-name" default-value="" min-length="1">
+					<name>ePages API installation host</name>
+					<description>IP address or hostname of ePages API service. It's used to connect to ePages and perform the provision, this can be a private IP.</description>
+				</setting>
+				<setting id="epages_admin" type="string" default-value="admin" min-length="1" max-length="32" regex="^[a-zA-Z][0-9a-zA-Z_\-]*">
+					<name>Distributors's Login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting id="epages_password" type="password">
+					<name>Distributors's Password</name>
+				</setting>
+			</group>
+			<group class="web">
+				<setting id="epages_license" type="enum" default-value="Corporate">
+					<name>ePages License type</name>
+					<description>Type of ePages license. It defines API calls for e-shop provisioning.</description>
+					<choice id="Corporate"><name>Corporate License</name></choice>
+					<choice id="Hosting"><name>Hosting License</name></choice>
+				</setting>
+				<setting id="epages_database" type="string" default-value="Store" min-length="1">
+					<name>ePages Database identifier</name>
+					<description>Name of ePages database where to place shop.</description>
+				</setting>
+				<setting id="epages_distributor" type="string" default-value="Distributor" min-length="1">
+					<name>ePages Distributer identifier</name>
+					<description>Name of ePages distributor who will supervise the shop.</description>
+				</setting>
+				<setting id="shop_type" type="string" default-value="ECom100" min-length="1">
+					<name>Shop Type</name>
+					<description>Shop type which must be defined at ePages service. See ePages documentation for more details.</description>
+				</setting>
+			</group>
+	</global-settings>
+	
+	<patch match="/application/version = '6.10'"/>
+	<upgrade match="/application/version = '6.0' and /application/release &lt;= '26'"/>
+
+	<service id="instance" class="service">
+		<license must-accept="true">
+			<text>
+				<name>End User License Agreement</name>
+				<url>http://epages.com/_data/downloads/en_ePages_EULA.pdf</url>
+			</text>
+		</license>
+		
+		<presentation>
+			<name>ePages WebShop</name>
+			<summary>The professional and effective online commerce</summary>
+			
+			<infolinks>
+				<link class="official" href="http://www.epages.com/">Official site</link>
+				<link class="support" href="http://support.epages.de/epages/knowledgebase.storefront">Knowledge base</link>
+				<link class="demo" href="http://www.hostedshops.de/epages/Site.sf/en_GB/?ObjectPath=/Providers/TrialEpages&amp;ViewAction=ViewProviderRegistrationForm&amp;etrack=DemoshopEN">Demo Shop</link>
+			</infolinks>
+						
+			<entry-points>
+				<entry class="control-panel" dst="{access_protocol}://{ePagesServer}/epages/{ePagesDatabase}.admin?ObjectPath=/Shops/{accesspoint}" method="POST">
+					<label>Web Store Admin Panel</label>
+					<variable name="access_protocol" value-of-setting="access_protocol"/>
+					<variable name="ePagesServer" value-of-setting="epages_site"/>
+					<variable name="ePagesDatabase" value-of-setting="epages_database"/>
+					<variable name="ViewAction">MBO-ViewGeneral</variable>
+					<variable name="ChangeAction">SaveLoginForm</variable>
+					<!-- variable name="ChangeAction">MBO-StartShopWizard</variable-->
+					<variable name="Login" class="login" value-of-setting="admin_login"/>
+					<variable name="Password" class="password" value-of-setting="admin_password"/>
+					<variable name="accesspoint" value-of-setting="accesspoint"/>
+					<variable name="shop_domain" value-of-setting="shop_domain"/>
+				</entry>
+				<entry class="control-panel" dst="{access_protocol}://{shop_domain}" method="GET">
+					<label>Web Store</label>
+					<variable name="access_protocol" value-of-setting="access_protocol"/>
+					<variable name="shop_domain" value-of-setting="shop_domain"/>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+				<group class="authn">
+				<setting id="admin_login" class="value" type="string" protected="true" installation-only="true" default-value="admin">
+					<name>Administrator's login</name>
+				</setting>
+					<setting id="admin_password" class="password" type="password" track-old-value="true" min-length="1">
+					<name>Administrator's password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<group class="email">
+					<setting id="admin_email" class="value" type="email">
+						<name>Administrator's primary email address</name>
+					</setting>
+				</group>
+				<group class="fn n">
+					<setting id="admin_given_name" class="given-name" type="string" min-length="1">
+						<name>Administrator's given name</name>
+					</setting>
+					<setting id="admin_surname" class="family-name" type="string" min-length="1">
+						<name>Administrator's surname</name>
+					</setting>
+				</group>
+				<setting id="organization_name" class="organization-name" default-value="" type="hidden">
+					<name>Organization</name>
+				</setting>
+				<group class="web">
+					<setting id="shop_name" class="organization-name" type="string" default-value="" visibility="hidden" installation-only="true">
+						<name>Shop URL suffix</name>
+						<description>This name will be used to refer that WebShop. You may use your organization name or another unique identifier. Shop name may contain only alphabetic characters, digits and underscore.</description>
+						<error-message>Please make sure Shop Name is unique on the server, and starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+					</setting>
+					<setting id="uniq_id" type="integer" generate="random" min="100000" max="9999999" uniq="global" visibility="hidden" protected="true" installation-only="true" optional="true">
+						<name>Unique number for shop url suffix</name>
+					</setting>
+				<setting id="shop_domain" class="domain-name" visibility="hidden" protected="true" type="domain-name">
+					<name>Shop domain</name>
+				</setting>
+				</group>
+			</group>
+		<setting type="string" id="accesspoint" visibility="hidden" protected="true"/>
+		</settings>
+
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="5.0.0"/>
+			<php:extension>soap</php:extension>
+
+			<dns:record xmlns:dns="http://apstandard.com/ns/1/dns">
+				<dns:a>
+					<dns:src>
+						<dns:current />
+					</dns:src>
+					<dns:ip value-of-setting="epages_host" />
+				</dns:a>
+			</dns:record>
+		</requirements>
+		
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<structured-output/>
+				<status-control/>
+			</configuration-script>
+		</provision>
+<!--
+		<service id="user" class="account">			
+			<presentation>
+				<name>ePages WebShop Administrator</name>
+				<summary>The professional and effective online commerce. Administrator's account.</summary>
+				
+				<entry-points>
+					<entry class="control-panel" dst="http://{ePagesServer}/epages/Store.admin?ObjectPath=/Shops/{accesspoint}" method="POST">
+						<label>Web Store Admin Panel</label>
+						<variable name="ePagesServer" value-of-setting="epages_site"/>
+						<variable name="shop_name" value-of-setting="accesspoint"/>
+						<variable name="ViewAction">MBO-ViewMBO</variable>
+						<variable name="ChangeAction">SaveLoginForm</variable>
+						<variable name="Login" class="login" value-of-setting="user_login"/>
+						<variable name="Password" class="password" value-of-setting="user_password"/>
+						<variable name="accesspoint" value-of-setting="accesspoint"/>
+					</entry>
+					<entry class="control-panel" dst="http://{ePagesServer}/epages/Store.sf?ObjectPath=/Shops/{accesspoint}" method="GET">
+						<label>Web Store</label>
+						<variable name="ePagesServer" value-of-setting="epages_site"/>
+						<variable name="shop_name" value-of-setting="accesspoint"/>
+						<variable name="accesspoint" value-of-setting="accesspoint"/>
+					</entry>
+
+				</entry-points>
+			</presentation>
+			<settings>
+				<group class="authn">
+					<setting id="user_login" class="login" type="string" installation-only="true">
+						<name>Administrator login</name>
+					</setting>
+					<setting id="user_password" class="password" type="password" min-length="1">
+						<name>Administrator password</name>
+					</setting>
+				</group>
+				<group class="vcard">
+					<group class="email">
+						<setting id="user_email" class="value" type="email">
+							<name>Administrator primary email address</name>
+						</setting>
+					</group>
+					<group class="fn n">
+						<setting id="user_given_name" class="given-name" type="string" min-length="1">
+							<name>Administrator given name</name>
+						</setting>
+						<setting id="user_surname" class="family-name" type="string" min-length="1">
+							<name>Administrator surname</name>
+						</setting>
+					</group>
+					<setting id="organization_name" class="organization-name" default-value="" type="hidden">
+						<name>Organization</name>
+					</setting>
+					<group class="web">
+						<setting id="shop_name" class="organization-name" type="hidden" value-of-setting="shop_name">
+							<name>Shop Name</name>
+							<description>This name will be used to refer that WebShop.</description>
+						</setting>
+					</group>
+				</group>
+				<setting id="admin_login" type="hidden" value-of-setting="admin_login"/>
+				<setting id="admin_password" type="hidden" value-of-setting="admin_password"/>
+			</settings>
+			
+			<requirements xmlns:php="http://apstandard.com/ns/1/php">
+				<php:version min="5.0.0"/>
+				<php:extension>soap</php:extension>
+			</requirements>
+			
+			<provision>
+				<configuration-script name="configure-user.php">
+					<configuration-script-language>php</configuration-script-language>
+				</configuration-script>
+			</provision>
+			
+		</service>
+-->		
+	</service>
+
+</application>

@@ -1,0 +1,111 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2014-02-11T16:58:39">
+    <id>http://www.listeq.com/cloud_desktop/</id>
+    <name>LISTEQ Cloud Desktop</name>
+    <version>1.2.1</version>
+    <release>3</release>
+    <homepage>http://www.listeq.com/</homepage>
+    <vendor>
+    	<name>LISTEQ</name>
+    	<homepage>http://www.listeq.com/</homepage>
+    	<icon path="images/listeq.png" />
+    </vendor>
+    <packager>
+    	<name>LISTEQ</name>
+    	<homepage>http://www.listeq.com/</homepage>
+    	<icon path="images/listeq.png" />
+    	<uri>http://www.listeq.com/</uri>
+    </packager>
+    <presentation>
+    	<summary>LISTEQ Cloud Desktop APS Package</summary>
+    	<description>LISTEQ Cloud Desktop is a software product for Service Providers to provide their own Virtual Desktop Service or DaaS (Desktop-as-a-Service). It is a Turnkey software solution as it includes Virtualization, Brokerage, Management and Access Clients. The product can support all operating systems and is accessible anywhere (remote and local), as it is delivered with BYOD-Clients for all platforms (Windows, Android, iOS, Linux, HTML5).</description>
+    	<icon path="images/listeq.png" />
+    	<screenshot
+    		path="images/iOS-simulatorschermafbeelding 7 jul. 2013 23.25.06.png">
+    		<description>LISTEQ Cloud Desktop in use on an iPad</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="3" version="1.2.1">
+    			<entry>Using improved API</entry>
+    		</version>
+    		<version release="5" version="1.1.9">
+    			<entry>Initial release</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Infrastructure/Management</category>
+    		<category>Web/E-commerce</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<group>
+    		<name>LISTEQ Cloud Desktop Server</name>
+    		<setting type="host-name" id="bvdi_host" default-value="">
+    			<name>Cloud Desktop Server Hostname</name>
+    		</setting>
+    		<setting type="string" id="admin_name"
+    			default-value="__admin">
+    			<name>Cloud Desktop Server Administrator Account</name>
+    		</setting>
+    		<setting type="password" id="admin_password"
+    			default-value="">
+    			<name>Cloud Desktop Administrator Password</name>
+    		</setting>
+    	</group>
+    </global-settings>
+    <patch match="/application/version &lt;= '1.2.0'" />
+    <service id="LISTEQ_CloudDesktop_User">
+    	<license must-accept="true">
+    		<commercial />
+    		<text>
+    			<url>http://www.hostedvirtualbox.com/wp-content/uploads/2013/04/EULA.txt</url>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>Cloud Desktop User</name>
+    		<summary>LISTEQ Cloud Desktop provides a Virtual Desktop Service.</summary>
+    		<infolinks>
+    			<link href="http://www.listeq.com/contact/" class="support">LISTEQ Contact</link>
+    			<link href="file:///doc/LISTEQ Deployment Guide APS Package.pdf" class="deployment-guide">Deployment guide</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry class="login" dst="http://{bvdi_host}/directlogin.php" method="POST">
+    				<label>Login</label>
+    				<variable name="bvdi_host" value-of-setting="bvdi_host" />
+    				<variable name="username" value-of-setting="user_name"></variable>
+    				<variable name="password" value-of-setting="user_password"></variable>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+    		<group>
+    			<name>User account</name>
+    			<setting type="string" id="user_name"
+    				default-value="" uniq="service" installation-only="true" min-length="1" regex="^[0-9a-zA-Z_\.\-]+$">
+    				<name>User Account Name</name>
+    			</setting>
+    			<setting type="password" id="user_password"
+    				generate="password">
+    				<name>User Account Password</name>
+    			</setting>
+    		</group>
+    		<group>
+    			<name>Virtual Machine</name>
+    			<setting type="string" id="vm_applianceurl"
+    				installation-only="true" default-value="">
+    				<name>Appliance URL</name>
+    			</setting>
+    		</group>
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:version min="5"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    		</configuration-script>
+    	</provision>
+    </service>
+</application>

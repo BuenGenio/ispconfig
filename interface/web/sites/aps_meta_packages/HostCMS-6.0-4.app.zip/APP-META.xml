@@ -1,0 +1,110 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2">
+	<id>hostcms</id>
+	<name>HostCMS</name>
+	<version>6.0</version>
+	<release>4</release>
+	<homepage>http://www.hostcms.ru/</homepage>
+	<vendor>
+	  <name>Hostmake LLC</name>
+	  <homepage>http://www.hostcms.ru/</homepage>
+	  <icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Hostmake LLC</name>
+		<homepage>http://www.hostcms.ru/</homepage>
+		<uri>uuid:1a56226c-b54c-46ec-9a47-da4bb2f28728</uri>
+    </packager>
+	<presentation>
+		<summary>Content management system HostCMS is one of the popular CMF systems with an open source code.</summary>
+		<description>
+			HostCMS is an open source software which helps user in managing content of websites. Getting started with HostCMS is easy. User can create, edit, delete and manage the content. HostCMS also includes quick start site templates. HostCMS provides a powerful ORM implements the Active Record pattern, Query Builder and MVC.
+		</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/screenshot.jpg">
+            <description>Main screenshot</description>
+        </screenshot>
+		<changelog>
+            <version version="6.0" release="4">
+                <entry>Added OpenID.</entry>
+                <entry>Added caches APC, XCache.</entry>
+                <entry>Added method Core_Xml_Entity->addAttribute($name, $value).</entry>
+                <entry>Improved CSV and CML import.</entry>
+            </version>
+        </changelog>
+		<categories>
+            <category>Web/Content management</category>
+        </categories>
+		<languages>
+		  <language>en</language>
+		  <language>ru</language>
+		</languages>
+	</presentation>
+	<upgrade mode="managed"  match="/application/version > '5.9'" />
+	<service id="hostcms">
+		<license must-accept="true">
+			<text>
+				<name>HostCMS EULA</name>
+				<file>scripts/licence.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<summary>HostCMS</summary>
+			<infolinks>
+				<link class="support" href="http://hostcms.ru/support/">
+					HostCMS support service
+				</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/" class='frontpage'>
+					<label>Site</label>
+				</entry>
+				<entry dst="/admin/" class="control-panel">
+					<label>Administration center</label>
+					<variable name="login" value-of-setting="admin_login"/>
+					<variable name="password" value-of-setting="admin_password"/>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Authentication of administrator</name>
+				<setting id="admin_login" type="string" class="login" default-value="admin">
+					<name>Administrator's login</name>
+				</setting>
+				<setting id="admin_password" type="password" class="password"  default-value="admin">
+					<name>Password</name>
+				</setting>
+			</group>
+		</settings>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:db="http://apstandard.com/ns/1/db">
+			<php:version min="5.2.2" max-not-including="6.5.5"/>
+			<php:safe-mode>false</php:safe-mode>
+			<php:magic-quotes-gpc>false</php:magic-quotes-gpc>
+			<php:memory-limit>33554432</php:memory-limit>
+			<db:db>
+				<db:id>mysql</db:id>
+				<db:default-name>hostcms</db:default-name>
+				<db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>4.1.0</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+			<url-mapping>
+				<default-prefix>hostcms</default-prefix>
+				<installed-size>40000000</installed-size>
+				<site-root />
+				<mapping url="/" path="htdocs" 
+						 xmlns:php="http://apstandard.com/ns/1/php">
+				 <php:permissions writable="true"/>
+				 <php:handler>
+				  <php:extension>php</php:extension>
+				 </php:handler>
+				</mapping>
+			</url-mapping>
+		</provision>
+	</service>
+</application>

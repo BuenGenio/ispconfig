@@ -1,0 +1,515 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-12-17T10:31:03">
+    <id>http://apsstandard.org/app/mailprotector</id>
+    <name>Mailprotector</name>
+    <version>2.0</version>
+    <release>9</release>
+    <homepage>http://mailprotector.com/aps</homepage>
+    <vendor>
+        <name>Mailprotector</name>
+        <homepage>http://mailprotector.com</homepage>
+        <icon path="images/mailprotector-logo-64.png" />
+    </vendor>
+    <packager>
+        <name>Mailprotector</name>
+        <homepage>http://mailprotector.com</homepage>
+        <icon path="images/mailprotector-logo-64.png" />
+    </packager>
+    <presentation>
+        <summary>Mix-n-match from our full suite of business-class hosted email, email security and email management tools. Start with email filtering, then add any combination of email continuity, email archiving, enhanced email security, or business-class hosted email.</summary>
+        <description>Start with Mailprotector CloudFilter™ premium hosted email security service, then optionally add one or more of our cloud-based services:XtraMail™ -– Email Continuity . Whenever the primary email server is down, end-users can continue to send and receive email through XtraMail which stores a rolling 30-day copy of all incoming and outgoing email.SecureStore™ -- Unalterable Email Archive. Cloud-based email archiving for up to 1, 5, or 10 years with online search and restoration capabilities.SafeSend™ -- Outbound Security Upgrade. Enhance CloudFilter's outbound security with quarantines, policy controls, DLP, legal disclaimers, rule-based TLS encryption enforcement, and more.CloudMail™ -- Business-Class Hosted Email. Move up from basic “generic” email to CloudMail, and get fast, reliable business-class email with collaboration and 25GB mailboxes.</description>
+        <icon path="images/mailprotector-logo-64.png" />
+        <screenshot path="images/Screen Shot 2012-10-09 at 11.05.42 AM.png">
+            <description>Dashboard</description>
+        </screenshot>
+        <changelog>
+            <version release="1" version="1.0">
+                <entry>Initial APS package.</entry>
+            </version>
+            <version release="2" version="1.0">
+            	<entry>Changed visibility of inherited settings.</entry>
+            </version>
+            <version release="3" version="1.0">
+            	<entry>Test a third level service.</entry>
+            </version>
+            <version release="4" version="1.0">
+            	<entry>Add XtraMail service at third level.</entry>
+            </version>
+            <version release="5" version="1.0">
+            	<entry>Try add-on again.</entry>
+            </version>
+            <version release="6" version="1.0">
+            	<entry>Add all add-ons as third level services.</entry>
+            </version>
+            <version release="7" version="1.0">
+            	<entry>Add service specific settings and resources.</entry>
+            </version>
+            <version release="8" version="1.0">
+            	<entry>Changed Account service to "singular" mode </entry>
+            </version>
+            <version release="9" version="1.0">
+            	<entry>Enforce no CloudMail/XtraMail in same domain</entry>
+            </version>
+            <version release="10" version="1.0">
+            	<entry>Forgot upgrade entry in release 9</entry>
+            </version>
+            <version release="13" version="1.0">
+            	<entry>Add new description and summary</entry>
+            </version>
+            <version release="14" version="1.0">
+            	<entry>New summary and description</entry>
+            </version>
+            <version release="15" version="1.0">
+            	<entry>Change app name</entry>
+            </version>
+            <version release="16" version="1.0">
+            	<entry>Change app name</entry>
+            </version>
+            <version release="1" version="2.0">
+            	<entry>Changed descriptions, summary, labels, etc</entry>
+            </version>
+            <version release="2" version="2.0">
+            	<entry>More changes to descriptions</entry>
+            </version>
+            <version release="3" version="2.0">
+            	<entry>Add support for account managers.</entry>
+            </version>
+            <version release="4" version="2.0">
+            	<entry>More changes to support manager logins.</entry>
+            </version>
+            <version release="5" version="2.0">
+            	<entry>Hide account level settings.</entry>
+            </version>
+            <version release="6" version="2.0">
+            	<entry>Add deployment guide information link.</entry>
+            </version>
+            <version release="7" version="2.0">
+            	<entry>Change error reporting for verification script to use stderr.</entry>
+            </version>
+            <version release="8" version="2.0">
+            	<entry>Fix bug in resource script.</entry>
+            </version>
+            <version release="9" version="2.0">
+            	<entry>Fix bug in resource script. </entry>
+            </version>
+        </changelog>
+        <categories>
+        	<category>Collaboration/Email</category>
+        	<category>Collaboration/Calendaring</category>
+        	<category>Infrastructure/Security</category>
+        	<category>Infrastructure/Backup</category>
+        	<category>Infrastructure/Mail</category>
+        </categories>
+        <languages>
+            <language>en</language>
+            <language>pt</language>
+        </languages>
+    </presentation>
+    <global-settings>
+        <setting type="string" id="api_token"
+            default-value="">
+            <name>API Token</name>
+        </setting>
+        <setting type="integer" id="reseller_id"
+            default-value="0">
+            <name>Account ID</name>
+        </setting>
+    </global-settings>
+    <patch match="(/application/version = '1.0' and /application/release='25') or (/application/version = '2.0' and /application/release='1') or (/application/version = '2.0' and /application/release='2') or (/application/version = '2.0' and /application/release='3') or (/application/version = '2.0' and /application/release='4') or (/application/version = '2.0' and /application/release='5') or (/application/version = '2.0' and /application/release='6') or (/application/version = '2.0' and /application/release='7') or (/application/version = '2.0' and /application/release='8')" />
+    <service id="account" singular="true">
+        <license must-accept="true">
+            <commercial />
+            <text>
+                <name>Terms of Use</name>
+                <url>http://www.mailprotector.com/terms.html</url>
+            </text>
+            <text>
+                <name>Privacy Policy</name>
+                <url>http://www.mailprotector.com/privacy.html</url>
+            </text>
+        </license>
+        <presentation>
+            <name>My Account</name>
+            <summary>Your Mailprotector account settings.</summary>
+            <infolinks>
+                <link href="http://www.mailprotector.com" class="public">Mailprotector</link>
+                <link href="http://support.mailprotector.com/" class="support">Support</link>
+                <link href="http://www.mailprotector.com/downloads/aps_deployment_guide.pdf" class="deployment-guide">Deployment Guide</link>
+            </infolinks>
+            <entry-points>
+                <entry dst="https://console.mailprotector.com/aps/dashboard" method="POST">
+                    <label>Mailprotector Console</label>
+                    <description>Mailprotector console</description>
+                    <variable name="token" value-of-setting="customer_manager_api_token" />
+                </entry>
+            </entry-points>
+        </presentation>
+        <settings>
+           <setting type="string" id="customer_name" class="organization-name" default-value="" installation-only="true" visibility="hidden">
+               <name>Customer Name</name>
+           </setting>
+           <setting type="integer" id="customer_id" default-value="0" protected="true" visibility="hidden">
+           		<name>Customer ID</name>
+           </setting>
+           <setting type="string" id="subscription_id"
+           	class="subscription_id" protected="true" visibility="hidden">
+           	<name>Subscription ID</name>
+           </setting>
+           <group class="authn">
+           	<name>Administrator Information</name>
+           	<setting type="string" id="customer_manager_login"
+           		class="login" protected="true">
+           		<name>Administrator Login</name>
+           	</setting>
+           	<setting type="password"
+           		id="customer_manager_password" class="password" protected="true">
+           		<name>Administrator Password</name>
+           	</setting>
+           	<setting type="email" id="customer_manager_email" class="email" protected="true">
+           		<name>Administrator Email</name>
+           	</setting>
+           	<setting type="string" id="customer_manager_api_token"
+           		protected="true" default-value="" visibility="hidden">
+           		<name>Administrator API Token</name>
+           	</setting></group>
+        </settings>
+        <resources>
+        	<resource class="item" id="clouldfilter_users">
+        		<name>CloudFilter Users</name>
+        	</resource>
+        	<resource class="item" id="clouldmail_users">
+        		<name>CloudMail Users</name>
+        	</resource>
+        	<resource class="item" id="xtramail_users">
+        		<name>XtraMail Users</name>
+        	</resource>
+        	<resource class="item" id="safesend_users">
+        		<name>SafeSend Users</name>
+        	</resource>
+        	<resource class="item" id="securestore1_users">
+        		<name>SecureStore (1 year) Users</name>
+        	</resource>
+        	<resource class="item" id="securestore5_users">
+        		<name>SecureStore (5 year) Users</name>
+        	</resource>
+        	<resource class="item" id="securestore10_users">
+        		<name>SecureStore (10 year) Users</name>
+        	</resource>
+        	<resource class="item" id="domain_aliases">
+        		<name>Domain Aliases</name>
+        	</resource>
+        </resources>
+        <requirements xmlns:dns="http://apstandard.com/ns/1/dns">
+        </requirements>
+        <provision>
+            <configuration-script name="configure.php">
+                <script-language>php</script-language>
+                <structured-output />
+            </configuration-script>
+            <verify-script name="verify.php">
+            	<script-language>php</script-language>
+            	<structured-output />
+            </verify-script>
+            <resource-script name="resources.php">
+            	<script-language>php</script-language>
+            </resource-script>
+        </provision>
+        <service id="domain">
+            <presentation>
+            	<name>Domain</name>
+            	<summary>A domain with Mailprotector services.</summary>
+            	<entry-points>
+            		<entry dst="https://console.mailprotector.com/aps/domains/{domain_id}" method="POST">
+                    	<label>Manage Domain</label>
+                    	<description>Settings, services, and stats for this domain.</description>
+                    	<variable name="token" value-of-setting="customer_manager_api_token" />
+                    	<variable name="domain_id" value-of-setting="domain_id" />
+            		</entry>
+            	</entry-points>
+            </presentation>
+            <settings>
+	           	<setting type="integer" id="domain_id" default-value="0" visibility="hidden" protected="true">
+    	         	<name>Domain ID</name>
+        	   	</setting>
+           		<setting id="domain_name" track-old-value="true" type="string" default-value="" uuid="ada044a6-7665-4aad-8f9d-2eeb697c189b" uniq="global">
+                	<name>Domain Name</name>
+           		</setting>
+				<setting type="list" id="domain_aliases" element-type="domain-name" optional="true" uuid="ada044a6-7665-4aad-8f9d-2eeb697c189b" uniq="global">
+					<name>Domain Aliases</name>
+				</setting>
+				<setting type="string" id="customer_name"
+					value-of-setting="customer_name" protected="true" visibility="hidden">
+					<name>Customer Name</name>
+				</setting>
+				<setting type="integer" id="customer_id" value-of-setting="customer_id" protected="true" visibility="hidden">
+					<name>Customer ID</name>
+				</setting>
+				<setting type="integer" id="subscription_id" value-of-setting="subscription_id" protected="true" visibility="hidden">
+					<name>Subscription ID</name>
+				</setting>
+				<setting type="string" id="customer_manager_api_token"
+					visibility="hidden" protected="true"
+					value-of-setting="customer_manager_api_token">
+					<name>Customer manager API token</name>
+				</setting>
+				<setting type="string" id="customer_manager_login"
+					visibility="hidden" protected="true"
+					value-of-setting="customer_manager_login">
+					<name>Customer manager login</name>
+				</setting>
+				<setting type="string" id="customer_manager_password"
+					visibility="hidden" protected="true"
+					value-of-setting="customer_manager_password">
+					<name>Customer manager password</name>
+				</setting>
+				<setting type="string" id="customer_manager_email"
+					visibility="hidden" protected="true"
+					value-of-setting="customer_manager_email">
+					<name>Customer manager email</name>
+				</setting></settings>
+            <requirements xmlns:svc="http://apstandard.com/ns/1/service">
+            </requirements>
+            <provision>
+	            <configuration-script name="configure.php">
+	                <script-language>php</script-language>
+	                <structured-output />
+	            </configuration-script>
+	            <verify-script name="verify.php">
+	            	<script-language>php</script-language>
+	            	<structured-output />
+	            </verify-script>
+	        </provision>
+            <service id="xtramail" singular="true">
+            	<presentation>
+            		<name>XtraMail</name>
+            		<summary>Email continuity - Stores a rolling 30-day copy of all incoming and outgoing email for access when your server is down.</summary>
+            		<icon path="images/xtramail-64.png" />
+            		<infolinks>
+            			<link href="http://www.mailprotector.com/xtramail/" class="official">About Mailprotector XtraMail</link>
+            		</infolinks>
+            	</presentation>
+            	<settings>
+	   				<setting type="integer" id="customer_id" value-of-setting="customer_id" protected="true" visibility="hidden">
+	   					<name>Customer ID</name>
+	   				</setting>
+	   				<setting type="integer" id="domain_id" protected="true" value-of-setting="domain_id" visibility="hidden">
+	    	         	<name>Domain ID</name>
+	        	   	</setting>
+	   				<setting type="string" id="domain_name" protected="true" value-of-setting="domain_name">
+	    	         	<name>Domain Name</name>
+	        	   	</setting>
+					<setting type="integer" id="subscription_id" value-of-setting="subscription_id" protected="true" visibility="hidden">
+						<name>Subscription ID</name>
+					</setting>
+					<setting type="string"
+						id="customer_manager_api_token" visibility="hidden"
+						protected="true" value-of-setting="customer_manager_api_token">
+						<name>Customer manager API token</name>
+					</setting>
+					<setting type="string" id="customer_manager_login"
+						visibility="hidden" protected="true"
+						value-of-setting="customer_manager_login">
+						<name>Customer manager login</name>
+					</setting>
+					<setting type="string"
+						id="customer_manager_password" visibility="hidden"
+						protected="true" value-of-setting="customer_manager_password">
+						<name>Customer manager password</name>
+					</setting>
+					<setting type="string" id="customer_manager_email"
+						visibility="hidden" protected="true"
+						value-of-setting="customer_manager_email">
+						<name>Customer manager email</name>
+					</setting></settings>
+            	<requirements xmlns:svc="http://apstandard.com/ns/1/service">
+            	</requirements>
+            	<provision>
+		            <configuration-script name="configure.php">
+		                <script-language>php</script-language>
+		                <structured-output />
+		            </configuration-script>
+		            <verify-script name="verify.php">
+		            	<script-language>php</script-language>
+		            	<structured-output />
+		            </verify-script>
+		        </provision>
+            </service>
+            <service id="cloudmail" singular="true">
+            	<presentation>
+            		<name>CloudMail</name>
+            		<summary>Affordable Exchange alternative - Fast, reliable business-class email with collaboration and 25GB mailboxes</summary>
+            		<icon path="images/cloudmail-64.png" />
+            		<infolinks>
+            			<link href="http://www.mailprotector.com/cloudmail/" class="official">About Mailprotector CloudMail</link>
+            		</infolinks>
+            	</presentation>
+            	<settings>
+	   				<setting type="integer" id="customer_id" value-of-setting="customer_id" protected="true" visibility="hidden">
+	   					<name>Customer ID</name>
+	   				</setting>
+	   				<setting type="integer" id="domain_id" protected="true" value-of-setting="domain_id" visibility="hidden">
+	    	         	<name>Domain ID</name>
+	        	   	</setting>
+	   				<setting type="string" id="domain_name" protected="true" value-of-setting="domain_name">
+	    	         	<name>Domain Name</name>
+	        	   	</setting>
+					<setting type="integer" id="subscription_id" value-of-setting="subscription_id" protected="true" visibility="hidden">
+						<name>Subscription ID</name>
+					</setting>
+					<setting type="string" id="customer_manager_login"
+						visibility="hidden" protected="true"
+						value-of-setting="customer_manager_login">
+						<name>Customer manager login</name>
+					</setting>
+					<setting type="string"
+						id="customer_manager_api_token" visibility="hidden"
+						protected="true" value-of-setting="customer_manager_api_token">
+						<name>Customer manager API token</name>
+					</setting>
+					<setting type="string"
+						id="customer_manager_password" visibility="hidden"
+						protected="true" value-of-setting="customer_manager_password">
+						<name>Customer manager password</name>
+					</setting>
+					<setting type="string" id="customer_manager_email"
+						visibility="hidden" protected="true"
+						value-of-setting="customer_manager_email">
+						<name>Customer manager email</name>
+					</setting></settings>
+            	<requirements xmlns:svc="http://apstandard.com/ns/1/service">
+            	</requirements>
+            	<provision>
+		            <configuration-script name="configure.php">
+		                <script-language>php</script-language>
+		                <structured-output />
+		            </configuration-script>
+		            <verify-script name="verify.php">
+		            	<script-language>php</script-language>
+		            	<structured-output />
+		            </verify-script>
+		        </provision>
+            </service>
+            <service id="securestore" singular="true">
+            	<presentation>
+            		<name>SecureStore</name>
+            		<summary>Email archiving - Impregnable cloud-based email archiving with online search and restoration capabilities.</summary>
+            		<icon path="images/securestore-64.png" />
+            		<infolinks>
+            			<link href="http://www.mailprotector.com/securestore/" class="official">About Mailprotector SecureStore</link>
+            		</infolinks>
+            	</presentation>
+            	<settings>
+	   				<setting type="integer" id="customer_id" value-of-setting="customer_id" protected="true" visibility="hidden">
+	   					<name>Customer ID</name>
+	   				</setting>
+	   				<setting type="integer" id="domain_id" protected="true" value-of-setting="domain_id" visibility="hidden">
+	    	         	<name>Domain ID</name>
+	        	   	</setting>
+	   				<setting type="string" id="domain_name" protected="true" value-of-setting="domain_name">
+	    	         	<name>Domain Name</name>
+	        	   	</setting>
+					<setting type="integer" id="subscription_id" value-of-setting="subscription_id" protected="true" visibility="hidden">
+						<name>Subscription ID</name>
+					</setting>
+					<setting type="enum"
+						id="archive_period" default-value="1">
+						<name>Archive Retention Period</name>
+						<choice id="1">
+							<name>1 year</name>
+						</choice>
+						<choice id="5">
+							<name>5 year</name>
+						</choice>
+						<choice id="10">
+							<name>10 year</name>
+						</choice>
+					</setting>
+					<setting type="string" id="customer_manager_login"
+						visibility="hidden" protected="true"
+						value-of-setting="customer_manager_login">
+						<name>Customer manager login</name>
+					</setting>
+					<setting type="string"
+						id="customer_manager_api_token" visibility="hidden"
+						protected="true" value-of-setting="customer_manager_api_token">
+						<name>Customer manager API token</name>
+					</setting>
+					<setting type="string"
+						id="customer_manager_password" visibility="hidden"
+						protected="true" value-of-setting="customer_manager_password">
+						<name>Customer manager password</name>
+					</setting>
+					<setting type="string" id="customer_manager_email"
+						visibility="hidden" protected="true"
+						value-of-setting="customer_manager_email">
+						<name>Customer manager email</name>
+					</setting></settings>
+            	<provision>
+		            <configuration-script name="configure.php">
+		                <script-language>php</script-language>
+		                <structured-output />
+		            </configuration-script>
+		            <verify-script name="verify.php">
+		            	<script-language>php</script-language>
+		            	<structured-output />
+		            </verify-script>
+		        </provision>
+            </service>
+            <service id="safesend" singular="true">
+            	<presentation>
+            		<name>SafeSend</name>
+            		<summary>Outbound security enhancement - Enhance CloudFilter's outbound security with quarantines, policy controls, DLP, legal disclaimers, and rule-based TLS encryption enforcement.</summary>
+            		<icon path="images/safesend-64.png" />
+            		<infolinks>
+            			<link href="http://www.mailprotector.com/safesend/" class="official">About Mailprotector SafeSend</link>
+            		</infolinks>
+            	</presentation>
+            	<settings>
+	   				<setting type="integer" id="customer_id" value-of-setting="customer_id" protected="true" visibility="hidden">
+	   					<name>Customer ID</name>
+	   				</setting>
+	   				<setting type="integer" id="domain_id" protected="true" value-of-setting="domain_id" visibility="hidden">
+	    	         	<name>Domain ID</name>
+	        	   	</setting>
+	   				<setting type="string" id="domain_name" protected="true" value-of-setting="domain_name">
+	    	         	<name>Domain Name</name>
+	        	   	</setting>
+					<setting type="integer" id="subscription_id" value-of-setting="subscription_id" protected="true" visibility="hidden">
+						<name>Subscription ID</name>
+					</setting>
+					<setting type="string" id="outbound_smtp_host" default-value="">
+						<name>Outbound SMTP Host</name>
+					</setting>
+					<setting type="string" id="customer_manager_login"
+						visibility="hidden" protected="true"
+						value-of-setting="customer_manager_login">
+						<name>Customer manager login</name>
+					</setting>
+					<setting type="string"
+						id="customer_manager_api_token" visibility="hidden"
+						protected="true" value-of-setting="customer_manager_api_token">
+						<name>Customer manager API token</name>
+					</setting>
+					<setting type="string"
+						id="customer_manager_password" visibility="hidden"
+						protected="true" value-of-setting="customer_manager_password">
+						<name>Customer manager password</name>
+					</setting>
+					<setting type="string" id="customer_manager_email"
+						visibility="hidden" protected="true"
+						value-of-setting="customer_manager_email">
+						<name>Customer manager email</name>
+					</setting></settings>
+            	<provision>
+		            <configuration-script name="configure.php">
+		                <script-language>php</script-language>
+		                <structured-output />
+		            </configuration-script>
+		            <verify-script name="verify.php">
+		            	<script-language>php</script-language>
+		            	<structured-output />
+		            </verify-script>
+		        </provision>
+            </service>
+        </service>
+    </service>
+</application>

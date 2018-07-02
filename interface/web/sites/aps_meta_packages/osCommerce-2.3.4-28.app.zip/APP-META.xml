@@ -1,0 +1,382 @@
+<application packaged="2014-06-30T15:42:27" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>osCommerce</id>
+	<name>osCommerce</name>
+	<version>2.3.4</version>
+	<release>28</release>
+	<homepage>http://www.oscommerce.com/</homepage>
+	<vendor>
+		<name>Oscommerce</name>
+		<homepage>http:/www.oscommerce.com/</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Glowtouch Technologies</name>
+		<homepage>http://www.glowtouch.com/</homepage>
+		<icon path="images/GlowTouch.png"/>
+		<uri>uuid:0b687dfb-ed23-49ec-99d3-d0a011fb1029</uri>
+	</packager>
+	<presentation>
+		<summary>osCommerce is an online shop e-commerce solution.</summary>
+		<description>
+			osCommerce is an online shop solution that offers a wide
+			range of out-of-the-box features that allows online stores
+			to be setup fairly quickly with ease, and is available for
+			free as an open source based solution released under the GNU
+			General Public License.
+		</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/screenshot.png">
+			<description>Screenshot</description>
+		</screenshot>
+		<changelog>
+			<version release="1" version="2.3.3.1">
+				<entry>
+					Who's Online Parse REQUEST_URI with
+					tep_db_prepare_input() before storing the value in
+					the database. Replace REMOTE_ADDR with
+					tep_get_ip_address(). Administration Tool -&gt;
+					Catalog -&gt; Categories/Products Fix product price
+					gross tax calculations when adding or editing
+					products. Session Register a shutdown function to
+					close and write the session data. Also check for and
+					allow , (comma) and - (minus) characters in the
+					session ID. tep_redirect() When redirecting from
+					HTTPS -&gt; HTTP and replacing the url with a HTTPS
+					version, also take DIR_WS_HTTPS_CATALOG into
+					consideration which may differ from
+					DIR_WS_HTTP_CATALOG.
+				</entry>
+			</version>
+			<version release="8" version="2.3.3">
+				<entry>
+					sesskey db field length is extended due to increased
+					session key length in newer php versions
+				</entry>
+			</version>
+			<version release="5" version="2.3.3">
+				<entry>Fixed the user login error.</entry>
+			</version>
+			<version release="4" version="2.3.3">
+				<entry>packager-uri fixed</entry>
+			</version>
+			<version release="2" version="2.3.3">
+				<entry>Upgradable from 2.2rc2a</entry>
+			</version>
+			<version release="1" version="2.3.3">
+				<entry>New version.</entry>
+			</version>
+			<version release="7" version="2.3.2">
+				<entry>Updated automation scripts</entry>
+			</version>
+			<version release="4" version="2.3.2">
+				<entry>Changes in the scripts in testing</entry>
+			</version>
+			<version release="3" version="2.3.2">
+				<entry>Changes in the test scripts</entry>
+			</version>
+			<version release="2" version="2.3.2">
+				<entry>Updated automated test scripts</entry>
+			</version>
+			<version release="1" version="2.3.2">
+				<entry>
+					Changed customer password forgotten feature to
+					e-mail a personal link to the customer where they
+					can change their password up to 24 hours, instead of
+					directly changing the password to a random string
+					and e-mailing it to the customer. Added new
+					password_reset.php page to manage personal password
+					reset links. Added new ar_password_reset.php Action
+					Recorder module to log and limit the request of
+					personal password reset links to once every 5
+					minutes. Improve logic of tep_create_random_value()
+					by using Phpass' random number generator. If
+					function parameter $type is not 'mixed', 'chars', or
+					'digits', return a 'mixed' string instead of false.
+					Add openssl_random_pseudo_bytes() and
+					mcrypt_create_iv() to Phpass' get_random_bytes()
+					class method. These are used if /dev/urandom is not
+					available. Only seed the random number generator if
+					PHP &lt; 4.2 is used.
+				</entry>
+			</version>
+			<version release="3" version="2.3.1">
+				<entry>Upgrade package version</entry>
+			</version>
+			<version release="6" version="2.2rc2a">
+				<entry>Initial package version</entry>
+			</version>
+			<version release="2" version="2.3.3.1">
+				<entry>updated</entry>
+			</version>
+			<version release="3" version="2.3.3.1">
+				<entry>update</entry>
+			</version>
+			<version release="4" version="2.3.3.1">
+				<entry>Updated settings class</entry>
+			</version>
+			<version release="5" version="2.3.3.1">
+				<entry>Updated settings class</entry>
+			</version>
+			<version release="5" version="2.3.3.1">
+				<entry>update</entry>
+			</version>
+			<version release="1" version="2.3.3.2">
+				<entry>•PHP 5.5 Compatibility
+Replace mysql_* database function calls with mysqli_*. (Harald)
+•Administration Tool -&gt; Dashboard -&gt; Partner News
+Add new Administration Tool Dashboard module. (Harald)
+•Administrator Account Initialization
+Prevent empty administrator account from being initialized. (Harald)
+•tep_catalog_href_link()
+Take the catalog HTTPS path into consideration for HTTPS links. (Harald)
+•Administration Tool Navigation Menu
+Collapse navigation menu on the Dashboard page. (Gergely)
+•Google+ +1 and Google+ Share Social Bookmark Modules
+Show the button images in the chosen language. (Gergely)
+•Template Modules
+Only include template module class files and language definitions if their files exist. (Harald)
+•Canonical Header Tag Module
+Link to the main product information page and ignore product attribute combinations. (Gary)
+•New Twitter Product Card Header Tag Module
+Add Twitter Product Card meta tags to the product information page. (Gary)
+•New Google AdWords Conversion Tracking Header Tag Module
+Add Google AdWords Conversion Tracking code to the checkout success page. (Gary)
+</entry>
+			</version>
+			<version release="2" version="2.3.3.2">
+				<entry>updated</entry>
+			</version>
+			<version release="3" version="2.3.3.2">
+				<entry>updated</entry>
+			</version>
+			<version release="15" version="2.3.3.2">
+				<entry>Added group and class</entry>
+			</version>
+			<version release="18" version="2.3.3.3">
+				<entry>Database Query Logging (Harald)
+Improve database query error logging.
+Administration Tool Navigation Menu (Harald)
+Dynamically load navigation boxes.
+HTTPS -&gt; HTTP Browser Alert (Harald)
+Have forms posting from a HTTPS to HTTP page post to a HTTPS version to prevent the browser (Firefox) from alerting the user of being directed to an insecure page.
+Currencies (Harald)
+Force decimal places value to an integer value.
+Action Recorder (Harald)
+When expiring logged entries, don't pass the database connection link to tep_db_affected_rows().
+UTF-8 (Harald)
+Set the MySQL character set to UTF-8 after a connection is made.
+Create the database tables in utf8_unicode_ci for new installations.
+Set the English locale to en_US.UTF-8, en_US.UTF8, enu_usa.
+Date of Birth (Harald)
+Take the Configuration -&gt; Minimum Values -&gt; Date of Birth value into consideration to make the date of birth field optional.
+Administration Tool Automatic HTTP Authentication Login (Harald)
+Don't use the HTTP Authentication values when the login form is being submitted.
+Don't show an invalid administrator notice when an automatic HTTP Authentication fails.
+Don't record failed automatic HTTP Authentication log ins.
+Canonical Manufacturer ID (Gary)
+Force the Manufacturer ID to an integer value.
+Administration Tool -&gt; Who's Online (Harald)
+Remove the session_decode() functionality and show shopping cart contents only for logged in customers.
+When regenerating a session ID, update the session ID in the who's online database table to prevent duplicate entries.
+MailChimp 360 (Foxp2)
+Fix module title.
+Administration Tool Extended Security Check Modules (Harald)
+Introduce new extended security check modules that are called in the new Administration Tool -&gt; Tools -&gt; Security Checks page. These modules are not called on the Administration Tool Dashboard page as normal security check modules as these modules are more resource intensive. New modules include:?admin/backups directory public accessibility check
+admin/backups file public accessibility check
+admin http authentication check
+ext/ directory public accessibility check
+mysql utf8 database tables check
+version update performed check (30 days)
+A normal extended_last_run security check module is also added to check if the extended checks have run in the last 30 days.
+Administration Tool - Tools - Database Tables (Harald)
+Introduce a new Database Tables page to check, analyze, optimize, and repair database tables. A Convert to UTF8 action is also available to convert existing database tables to utf8_unicode_ci.
+</entry>
+			</version>
+			<version release="20" version="2.3.3.4">
+				<entry>MySQL Error Functions (Harald)
+Don't pass a null parameter to the MySQL error functions otherwise PHP will display a warning message.
+UTF-8 Conversion (Harald)
+Also manually convert existing data records to UTF-8 and detect encodings to prevent double encodings. Allow a dry-run to show which queries would be performed.
+LC_NUMERIC Locale (Harald)
+As LC_ALL is now being used to set the locale, some languages other than English were using commas in float/decimal values which conflicted with MySQL. LC_NUMERIC is now set and forced to the system locale after the main language file has loaded.
+</entry>
+			</version>
+			<version release="1" version="2.3.4">
+				<entry>New release</entry>
+			</version>
+			<version release="2" version="2.3.4">
+				<entry>Added localization</entry>
+			</version>
+			<version release="28" version="2.3.4">
+				<entry>Added auto login</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/E-commerce</category>
+		</categories>
+		<languages>
+			<language>en</language>
+			<language>de</language>
+			<language>fr</language>
+			<language>es</language>
+			<language>pl</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '2.3.2' "/>
+	<upgrade match="/application/version &gt;= '2.3.1' "/>
+	<upgrade match="/application/version &gt;= '2.3.3' "/>
+	<service id="oscommerce">
+		<license must-accept="true">
+			<text>
+				<name>GPL</name>
+				<file>htdocs/LICENSE</file>
+			</text>
+		</license>
+		<presentation>
+			<summary>Root Service</summary>
+			<infolinks>
+				<link class="support" href="http://www.oscommerce.com/Support">Suppot</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/admin/adminlogin.php" method="POST">
+					<label>Administrative interface</label>
+					<variable class="login" name="username" value-of-setting="admin_name"/>
+					<variable class="password" name="password" value-of-setting="admin_password"/>
+					<variable name="APS">ON</variable>
+				</entry>
+				<entry dst="/">
+					<label>Catalog</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>
+						Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				<setting class="password" id="admin_password" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+   				<group class="email">
+       				<setting class="value" id="admin_email" type="email">
+       					<name>Administrator's email</name>
+      				</setting>
+    			</group>
+    			<group class="org">
+       				<name>Site Preference</name>
+      					<setting class="organization-name" default-value="Site Title" id="title" min-length="1" type="string">
+          					<name>Site name</name>
+      					</setting>
+    			</group>
+     			<group class="fn n">
+             		<setting class="given-name" default-value="Admin" id="name" min-length="1" type="string">
+                		<name>Site owner name</name>
+           			</setting>
+     			</group>
+			</group>
+			<group class="web">
+			<setting class="locale" default-value="en-US" id="locale" type="enum">
+				<name>Interface language</name>
+				 <choice id="zh-CN">
+                  <name>Chinese Simplified</name>
+                </choice>
+                <choice id="zh-TW">
+                  <name>Chinese Traditional</name>
+                </choice>
+                <choice id="da-DK">
+                  <name>Danish</name>
+                </choice>
+				<choice id="nl-NL">
+					<name>Dutch</name>
+				</choice>
+				<choice id="de-DE">
+					<name>German</name>
+				</choice>
+				<choice id="en-US">
+					<name>English</name>
+				</choice>
+				<choice id="fr-FR">
+					<name>French</name>
+				</choice>
+				<choice id="it-IT">
+					<name>Italian</name>
+				</choice>
+				<choice id="ja-JP">
+				    <name>Japanese</name>
+				</choice>
+				<choice id="ru-RU">
+					<name>Russian</name>
+				</choice>
+                <choice id="pl-PL">
+                  <name>Polish</name>
+                </choice>
+				<choice id="es-ES">
+					<name>Spanish</name>
+				</choice>
+				<choice id="tr-TR">
+					<name>Turkish</name>
+				</choice>
+			</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="4.0.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:register-globals xmlns:php="http://apstandard.com/ns/1/php">false</php:register-globals>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>oscommerce</db:default-name>
+				<db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>3.2.3</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>oscommerce</default-prefix>
+				<installed-size>17673398</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="includes/work">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="pub">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="images">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="admin">
+						<mapping url="backups">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="images/graphs">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url=".htaccess">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url=".htpasswd_oscommerce">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

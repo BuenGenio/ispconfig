@@ -1,0 +1,277 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2">
+	<id>http://apsstandard.org/app/SugarCRM-pvc</id>
+    <name>SugarCRM-pvc</name>
+    <version>5.5.1</version>
+    <release>4</release>
+	<homepage>http://www.sugarcrm.com</homepage>
+    <vendor>
+        <name>SugarCRM Inc.</name>
+        <homepage>http://www.sugarcrm.com/crm/about/about-sugarcrm.html</homepage>
+        <icon path="images/icon.png"/>
+    </vendor>
+    <packager>
+        <name>Parallels</name>
+        <homepage>http://parallels.com</homepage>
+        <uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+    </packager>
+    <presentation>
+        <summary>Sugar CRM Community Edition</summary>
+        <description>
+Sugar CRM Community Edition enables organizations to efficiently organize, populate, and maintain information on all aspects of their customer relationships. It provides integrated management of corporate information on customer accounts and contacts, sales leads and opportunities, plus activities such as calls, meetings, and assigned tasks. The system seamlessly blends all of the functionality required to manage information on many aspects of your business into an intuitive and user-friendly graphical interface.
+        </description>
+        <icon path="images/icon.png"/>
+        <screenshot path="images/screen_home.png"><description>Home Screen</description></screenshot>
+        <screenshot path="images/screen_admin.png"><description>Admin Screen</description></screenshot>
+        <screenshot path="images/screen_dashboard.png"><description>Dashboard View</description></screenshot>
+        <screenshot path="images/screen_accounts.png"><description>Account Details</description></screenshot>
+        <screenshot path="images/screen_campaigns.png"><description>Marketing Campaigns</description></screenshot>
+        <screenshot path="images/screen_bug_tracker.png"><description>Bug Tracker</description></screenshot>
+        <screenshot path="images/screen_calendar.png"><description>Calendar</description></screenshot>
+        <screenshot path="images/screen_documents.png"><description>Documents</description></screenshot>
+    	<changelog>
+    		<version version="5.5.1" release="4">
+				<entry>The Password Management feature enables system administrators to create and manage system-generated passwords</entry>
+				<entry>Emails module has been redesigned</entry>
+    			<entry>Packaged as APS 1.2</entry>
+    		</version>
+    		<version version="5.2.0j" release="4">
+    			<entry>Packaged as APS 1.1</entry>
+    		</version>
+    	</changelog>    	
+        <categories>
+            <category>Back office/Customer Relationship Management</category>
+        </categories>
+        <languages>
+            <language>en</language>
+        </languages>
+    </presentation>
+	
+	<content xmlns:pvc="http://apstandard.com/ns/1/pvc">
+		<pvc:templates class="lin">
+			<pvc:archive-root path="/var/www/html/SugarCE-Full"/>
+			
+			<pvc:template path="templates/vzpem-sugarcrm-as4-template-20100330-1.0-1.i386.rpm"/>
+			<pvc:template filename="vzpem-php5-cgi-as4-template-20090221-1.0-1.i386.rpm"/>
+			<pvc:template filename="vzpem-php-as4-template-20090212-1.0-1.i386.rpm"/>
+			<pvc:template filename="vzpem-mysql5-client-as4-template-20081210-1.0-1.i386.rpm"/>
+			<pvc:template filename="vzpem-mysql5-server-as4-template-20081210-1.0-1.i386.rpm"/>
+			<pvc:template filename="vzpem-pgsql-client-as4-template-20080408-1.0-1.i386.rpm"/>
+		</pvc:templates>
+	</content>
+        <service id="vhost">
+			<license must-accept="true">
+				<free/>
+				<text>
+					<name>GPLv3</name>
+					<file>LICENSE.txt</file>
+				</text>
+			</license>
+            <presentation>
+                <name>SugarCRM Instance</name>
+                <infolinks>
+                    <link class="official" href="http://www.sugarcrm.com/">Official site</link>
+                    <link class="support" href="http://www.sugarcrm.com/crm/support">Support and training</link>
+                    <link class="demo" href="http://www.sugarcrm.com/crm/demo/daily-demo.html">Demo</link>
+                </infolinks>
+                <entry-points>
+                    <entry class="control-panel" dst="/index.php" method="post">
+                        <label>Application entry</label>
+                        <variable name="module">Users</variable>
+                        <variable name="action">Authenticate</variable>
+                        <variable name="return_module">Users</variable>
+                        <variable name="return_action">Login</variable>
+                        <variable name="cant_login"></variable>
+                        <variable name="login_module"></variable>
+                        <variable name="login_action"></variable>
+                        <variable name="login_record"></variable>
+                        <variable name="user_name" class="login" value-of-setting="admin_name"/>
+                        <variable name="user_password" class="password" value-of-setting="admin_password"/>
+                        <variable name="login_theme">Sugar</variable>
+                        <variable name="login_language">en_us</variable>
+                        <variable name="Login">++Login++</variable>
+                    </entry>
+                </entry-points>
+            </presentation>
+
+            <settings>
+                <group class="authn">
+                    <name>Administrator's preferences</name>
+                    <setting id="admin_name" class="login" type="string" default-value="admin" min-length="1" max-length="32" regex="^[a-zA-Z][0-9a-zA-Z_\-]*">
+                        <name>Administrator's Login</name>
+                        <error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+                    </setting>
+                    <setting id="admin_password" class="password" type="password">
+                        <name>Administrator's Password</name>
+                    </setting>
+                </group>
+                <group class="web">
+                    <setting id="title" class="title" type="string" default-value="SugarCRM" min-length="1">
+                        <name>System Name</name>
+                        <description>This name will be displayed in the browser title bar when users visit the Sugar application.</description>
+                    </setting>
+                </group>
+				<setting id="send_usage_statistics" type="enum" default-value="true" installation-only="true">
+                    <name>Send Anonymous Usage Statistics</name>
+                    <description>If selected 'Yes', Sugar will send anonymous statistics about your installation to SugarCRM Inc. every time your system checks for new versions.</description>
+                    <choice id="true">
+                        <name>Yes</name>
+                    </choice>
+                    <choice id="false">
+                        <name>No</name>
+                    </choice>
+                </setting>
+                <!-- setting id="check_for_updates" type="hidden" default-value="manual">
+                    <name>Check For Updates</name>
+                    <description>How the system will check for updated versions of the application.</description>
+                   <choice id="manual">
+                        <name>Manual</name>
+                    </choice>
+                    <choice id="automatic">
+                        <name>Automatic</name>
+                    </choice>
+                </setting -->
+            </settings>
+
+            <requirements xmlns:env="http://apstandard.com/ns/1/environment" xmlns:php="http://apstandard.com/ns/1/php" xmlns:db="http://apstandard.com/ns/1/db">
+				<env:environment xmlns:env="http://apstandard.com/ns/1/environment">
+					<env:linux>redhat-as4</env:linux>
+				</env:environment>
+                <db:db>
+                    <db:id>main</db:id>
+                    <db:default-name>sugarce</db:default-name>
+                    <db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+                    <db:server-type>mysql</db:server-type>
+                    <db:server-min-version>5.0</db:server-min-version>
+                </db:db>
+            </requirements>
+
+            <provision>
+                <url-mapping>
+                    <default-prefix>/</default-prefix>
+                    <mapping url="/" path="." xmlns:php="http://apstandard.com/ns/1/php">
+						<php:permissions writable="true"/>
+                        <php:handler>
+                            <php:extension>php</php:extension>
+                        </php:handler>
+
+                        <php:permissions writable="true"/>
+                        <mapping url="tmp"><php:permissions writable="true"/></mapping>
+                        <mapping url="cache"><php:permissions writable="true"/></mapping>
+                        <mapping url="custom"><php:permissions writable="true"/></mapping>
+                        <mapping url="data"><php:permissions writable="true"/></mapping>
+                        <mapping url="modules"><php:permissions writable="true"/></mapping>
+                    </mapping>
+                </url-mapping>
+
+                <configuration-script name="configure">
+                    <script-language>php</script-language>
+                </configuration-script>
+            </provision>
+
+            <service id="account" class="account">
+                <presentation>
+                    <name>SugarCRM Account</name>
+                    <entry-points>
+                        <entry class="control-panel" dst="/index.php" method="post">
+                            <label>Application entry</label>
+                            <variable name="module">Users</variable>
+                            <variable name="action">Authenticate</variable>
+                            <variable name="return_module">Users</variable>
+                            <variable name="return_action">Login</variable>
+                            <variable name="cant_login"></variable>
+                            <variable name="login_module"></variable>
+                            <variable name="login_action"></variable>
+                            <variable name="login_record"></variable>
+                            <variable name="user_name" class="login" value-of-setting="user_login"/>
+                            <variable name="user_password" class="password" value-of-setting="user_password"/>
+                            <variable name="login_theme">Sugar</variable>
+                            <variable name="login_language">en_us</variable>
+                            <variable name="Login">++Login++</variable>
+                        </entry>
+                    </entry-points>
+                </presentation>
+
+                <settings>
+                    <group class="authn">
+                        <name>Account preferences</name>
+                        <setting id="user_login" class="login" track-old-value="true" type="string" min-length="3" max-length="60" regex="^[a-zA-Z][0-9a-zA-Z_@\-\.]*">
+                            <name>Account's Login</name>
+                        </setting>
+                        <setting id="user_password" class="password" type="password" min-length="4">
+                            <name>Account's Password</name>
+                        </setting>
+                    </group>
+                    <group class="vcard">
+                        <group class="fn n">
+                            <setting id="first_name" class="given-name" type="string" max-length="30">
+                                <name>First Name</name>
+                            </setting>
+                            <setting id="last_name" class="family-name" type="string" max-length="30">
+                                <name>Last Name</name>
+                            </setting>
+                        </group>
+                        <group class="email">
+                            <setting id="user_email" class="value" type="email" optional="true">
+                                <name>Email</name>
+                            </setting>
+                        </group>
+                        <setting id="title" class="title" type="string">
+                            <name>Title</name>
+                        </setting>
+                        <setting id="department" class="organization-unit" type="string">
+                            <name>Department</name>
+                        </setting>
+                        <group class="tel">
+                            <name>work</name>
+                            <setting id="phone_work" class="value" type="string">
+                                <name>Work Phone Number</name>
+                            </setting>
+                        </group>
+                        <group class="tel">
+                            <name>cell</name>
+                            <setting id="phone_mobile" class="value" type="string">
+                                <name>Mobile Phone Number</name>
+                            </setting>
+                        </group>
+                        <group class="tel">
+                            <name>fax</name>
+                            <setting id="phone_fax" class="value" type="string">
+                                <name>Fax Number</name>
+                            </setting>
+                        </group>
+                        <group class="tel">
+                            <name>home</name>
+                            <setting id="phone_home" class="value" type="string">
+                                <name>Home Phone Number</name>
+                            </setting>
+                        </group>
+                        <setting id="address_street" class="street-address" type="string">
+                            <name>Street</name>
+                        </setting>
+                        <setting id="address_city" class="locality" type="string">
+                            <name>City</name>
+                        </setting>
+                        <setting id="address_state" class="region" type="string">
+                            <name>Region</name>
+                        </setting>
+                        <setting id="address_country" class="country-name" type="string">
+                            <name>Country</name>
+                        </setting>
+                        <setting id="address_postalcode" class="postal-code" type="string">
+                            <name>Postal Code</name>
+                        </setting>
+                        <setting id="description" class="note" type="string">
+                            <name>Description</name>
+                        </setting>
+                    </group>
+                </settings>
+
+                <provision>
+                    <configuration-script name="usermanager">
+                        <script-language>php</script-language>
+                        <status-control/>
+                    </configuration-script>
+                </provision>
+            </service>
+        </service>
+</application>

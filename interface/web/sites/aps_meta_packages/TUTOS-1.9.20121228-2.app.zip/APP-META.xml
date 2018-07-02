@@ -1,0 +1,118 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-06-14T10:15:06">
+	<id>TUTOS</id>
+	<name>TUTOS</name>
+	<version>1.9.20121228</version>
+	<release>2</release>
+	<homepage>http://www.tutos.org/homepage/index.html</homepage>
+	<vendor>
+		<name>www.tutos.org</name>
+		<homepage>http://www.tutos.org/homepage/index.html</homepage>
+		<icon path="images/icon.png" />
+	</vendor>
+	<packager>
+		<name>Glowtouch Technologies</name>
+		<homepage>http://www.glowtouch.com/</homepage>
+		<icon path="images/parrallels-GT6.png" />
+		<uri>uuid:b2602e36-7171-4b4d-9f93-eda904f0280a</uri>
+	</packager>
+	<presentation>
+		<summary>TUTOS is the short name for "the ultimate team organization
+ software".
+</summary>
+		<description>TUTOS is the short name for "the ultimate team organization software".</description>
+		<icon path="images/icon.png" />
+		<screenshot path="images/app_screenshot_1.png">
+			<description>Screenshot 1.</description>
+		</screenshot>
+		<changelog>
+			<version release="2" version="1.9.20121228">
+				<entry>Changes in App-Meta.xml.</entry>
+			</version>
+			<version release="1" version="1.9.20121228">
+				<entry>Creating initial Package.</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Collaboration/Portal</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings></global-settings>
+	<upgrade
+		match="/application/version = '1.7.20101228'" />
+	<service id="tutos">
+		<license must-accept="true">
+			<text>
+				<name>GPLv2</name>
+				<url>http://www.tutos.org/html/copyright.html</url>
+			</text>
+		</license>
+		<presentation>
+			<name>Tutos</name>
+			<summary>Tutos Collaboration/Portal blog</summary>
+			<infolinks>
+				<link href="http://www.tutos.org/homepage/feedback.html" class="support">Tutos Support</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/php/mytutos.php" method="POST" class="control-panel">
+					<label>Administrative interface</label>
+					<variable name="uname" value-of-setting="admin_name"></variable>
+					<variable name="pw" value-of-setting="admin_password"></variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting id="admin_name" type="string"
+					default-value="admin" class="login">
+					<name>Administrator's login</name>
+				</setting>
+				<setting id="admin_password" type="password" class="password">
+					<name>Password</name>
+				</setting>
+			</group>
+		</settings>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php"
+			xmlns:db="http://apstandard.com/ns/1/db">
+			<php:version min="5.1" />
+			<php:extension>mysql</php:extension>
+			<php:magic-quotes-gpc>false</php:magic-quotes-gpc>
+			<db:db>
+				<db:id>main</db:id>
+				<db:default-name>tutos</db:default-name>
+				<db:can-use-tables-prefix>
+					true
+				</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision xmlns:php="http://apstandard.com/ns/1/php">
+			<url-mapping>
+				<default-prefix>tutos</default-prefix>
+				<installed-size>11181080</installed-size>
+				<mapping url="/" path="htdocs"
+					xmlns:php="http://apstandard.com/ns/1/php">
+					<php:handler>
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="tmp">
+						<php:permissions writable="true" />
+					</mapping>
+					<mapping url="temp">
+						<php:permissions writable="true" />
+					</mapping>
+					<mapping url="repository">
+						<php:permissions writable="true" />
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

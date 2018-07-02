@@ -1,0 +1,314 @@
+<application packaged="2014-07-28T21:04:39" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>http://apsstandard.org/app/CTERA</id>
+    <name>CTERA Networks Ltd</name>
+    <version>1.2</version>
+    <release>20</release>
+    <homepage>http://www.ctera.com</homepage>
+    <vendor>
+    	<name>CTERA Networks Ltd</name>
+    	<homepage>http://www.ctera.com</homepage>
+    	<icon path="images/CTERA-Logo-64x64.png"/>
+    </vendor>
+    <packager>
+    	<name>CTERA Netowrks</name>
+    	<homepage>http://www.ctera.com</homepage>
+    	<icon path="images/CTERA-Logo-64x64.png"/>
+    </packager>
+    <presentation>
+    	<summary>CTERA</summary>
+    	<description>CTERA provides a cloud storage platform for service providers, enterprises and resellers, enabling the delivery of a suite of storage applications over the infrastructure of their choice.
+
+We combine cloud storage with on-premises appliances, managed end-point software agents, and mobile apps in a unified, hybrid architecture that delivers storage, data protection and collaboration capabilities in a single, cost-effective solution.</description>
+    	<icon path="images/CTERA-Logo-64x64.png"/>
+    	<screenshot path="images/CTERA-Portal.png">
+    		<description>The CTERA Portal</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="01" version="1.1">
+<entry>PHP v5.3</entry>
+</version>
+    		<version release="02" version="1.1">
+    			<entry>PHP v5.3</entry>
+    		</version>
+    		<version release="03" version="1.1">
+    			<entry>Bug fixes</entry>
+    		</version>
+    		<version release="04" version="1.1">
+    			<entry>Bug fixes</entry>
+    		</version>
+    		<version release="05" version="1.1">
+    			<entry>Bug fix</entry>
+    		</version>
+    		<version release="06" version="1.1">
+    			<entry>Bug fix</entry>
+    		</version>
+    		<version release="07" version="1.1">
+    			<entry>Bug fix</entry>
+    		</version>
+    		<version release="08" version="1.1">
+    			<entry>Bug fix</entry>
+    		</version>
+    		<version release="09" version="1.1">
+    			<entry>Bug fix</entry>
+    		</version>
+    		<version release="10" version="1.1">
+    			<entry>Bug fixes</entry>
+    		</version>
+    		<version release="11" version="11">
+    			<entry>Bug Fixes</entry>
+    		</version>
+    		<version release="12" version="12">
+    			<entry>Bug fix</entry>
+    		</version>
+    		<version release="13" version="13">
+    			<entry>Bug fix</entry>
+    		</version>
+    		<version release="14" version="14">
+    			<entry>Adjusted to v4.0</entry>
+    		</version>
+    		<version release="15" version="15">
+    			<entry>v4.0 Adjustments</entry>
+    		</version>
+    		<version release="16" version="16">
+    			<entry>v4.0 Fix</entry>
+    		</version>
+    		<version release="17" version="17">
+    			<entry>v4.0 Fix</entry>
+    		</version>
+    		<version release="18" version="18">
+    			<entry>Certification fixes</entry>
+    		</version>
+    		<version release="19" version="19">
+    			<entry>19 Fixes</entry>
+    		</version>
+    		<version release="20" version="1.2">
+    			<entry>Documentation</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Infrastructure/Backup</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<setting default-value="portal.ctera.com" id="base_uri" type="domain-name">
+    		<name>CTERA Portal URL</name>
+    		<description>Please input the CTERA Portal endpoint. This Package will invoke the endpoint to provision CTERA Cloud Services.</description>
+    	</setting>
+    	<setting default-value="Administrator" id="admin_username" type="string">
+    		<name>CTERA Portal Global Administrator Username</name>
+    		<description>Please input the CTERA Portal Administrator username.
+The Administrator account will be used for provisioning CTERA Cloud Services.</description>
+    	</setting>
+    	<setting default-value="changeme" id="admin_password" type="string">
+    		<name>CTERA Portal Global Administrator Password</name>
+    		<description>Please input the CTERA Portal Administrator password.
+The Administrator account will be used for provisioning CTERA Cloud Services.</description>
+    	</setting>
+    	<setting default-value="CTERA-Cloud-Store" id="team_portal_plan" type="string">
+    		<name>Portal Plan</name>
+    	</setting>
+    	<setting default-value="ctera" id="team_portal_prefix" type="string">
+    		<name>Portal Prefix Name</name>
+    	</setting>
+    </global-settings>
+    <upgrade match="/application/version &gt;= '0.1'"/>
+    <upgrade match=""/>
+    <service class="service" id="CTERA Cloud Storage">
+    	<presentation>
+    		<name>CTERA Cloud Storage</name>
+    		<summary>Purchase the CTERA Cloud Drive services to start syncing and collaborate data in your company</summary>
+    		<infolinks>
+    			<link class="support" href="https://www.ctera.com/support">CTERA Support Center</link>
+    			<link class="howto" href="https://www.ctera.com/kb">CTERA Knowledge Base</link>
+    			<link class="deployment-guide" href="file:///Docs/Deploying the CTERA Portal APS Package via Parallels Panel-16July14.pdf">Installation Guide</link>
+    		</infolinks>
+    		<entry-points>
+    				<entry class="login" dst="https://{portal_name}.{base_uri}/ServicesPortal/j_security_check" method="POST">
+    					<label>Single Sign On</label>
+    					<description>Single Sign On to CTERA Portal Admin interface</description>
+    					<icon path="images/CTERA-Logo-64x64.png"/>
+    					<variable name="j_username" value-of-setting="team_admin_username"/>
+    					<variable name="j_password" value-of-setting="team_admin_password"/>
+    					<variable name="portal_name" value-of-setting="team_portal_name"/>
+    					<variable name="base_uri" value-of-setting="base_uri"/>
+    					<variable name="portal_prefix" value-of-setting="team_portal_prefix"/>
+    				</entry>
+    			</entry-points>
+    	</presentation>
+    	<settings>
+    		<setting default-value="" id="team_portal_name" protected="true" type="string">
+    			<name>Team Portal name</name>
+    			<description>Team Portal name.</description>
+    		</setting>
+    		<setting class="login" id="team_admin_username" type="string">
+    			<name>Login</name>
+    			<description>Team Portal Administrator username.</description>
+    		</setting>
+<setting class="email" id="team_admin_email" type="string">
+    			<name>Email</name>
+    			<description>Team Portal Administrator email.</description>
+    		</setting>
+    		<setting class="given-name" id="team_admin_first_name" type="string">
+    			<name>First name</name>
+    			<description>Team Portal Administrator first name.</description>
+    		</setting>
+    		<setting class="family-name" id="team_admin_last_name" type="string">
+    			<name>Name</name>
+    			<description>Team Portal Administrator last name.</description>
+    		</setting>
+    		<setting class="organization-name" id="team_admin_company" type="string">
+    			<name>Company</name>
+    			<description>Team Portal Administrator company.</description>
+    		</setting>
+<setting class="password" id="team_admin_password" min-length="8" type="password">
+    			<name>Password</name>
+    			<description>Team Portal Administrator password.</description>
+    		</setting>
+    		<setting class="subscription_id" id="team_subscription_id" protected="true" type="string" visibility="hidden">
+    			<name>Subscription Id</name>
+    		</setting>
+    		<group>
+    			<name>Subscription</name>
+    			<setting default-value="0" id="Storage_500GB" type="integer">
+    				<name>Storage_500GB</name>
+    			</setting>
+    			<setting default-value="0" id="Storage_100GB" type="integer">
+    				<name>Storage_100GB</name>
+    			</setting>
+    			<setting default-value="0" id="Storage_50GB" type="integer">
+    				<name>Storage_50GB</name>
+    			</setting>
+    			<setting default-value="0" id="WS_Cloud_Drive" type="integer">
+    				<name>WS_Cloud_Drive</name>
+    			</setting>
+    			<setting default-value="0" id="SRV_Backup" type="integer">
+    				<name>SRV_Backup</name>
+    			</setting>
+    			<setting default-value="0" id="WS_Backup" type="integer">
+    				<name>WS_Backup</name>
+    			</setting>
+    		</group>
+    	</settings>
+    	<resources>
+    		<resource class="item" id="Storage_500GB" limiting-setting="Storage_500GB">
+    			<name>Storage_500GB</name>
+    		</resource>
+    		<resource class="item" id="Storage_100GB" limiting-setting="Storage_100GB">
+    			<name>Storage_100GB</name>
+    		</resource>
+    		<resource class="item" id="Storage_50GB" limiting-setting="Storage_50GB">
+    			<name>Storage_50GB</name>
+    		</resource>
+    		<resource class="item" id="WS-Cloud-Drive" limiting-setting="WS_Cloud_Drive">
+    			<name>WS-Cloud-Drive</name>
+    		</resource>
+    		<resource class="item" id="SRV-Backup" limiting-setting="SRV_Backup">
+    			<name>SRV-Backup</name>
+    		</resource>
+    		<resource class="item" id="WS-Backup" limiting-setting="WS_Backup">
+    			<name>WS-Backup</name>
+    		</resource>
+    	</resources>
+    	<requirements>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output/>
+    		</configuration-script>
+    		<verify-script name="verify.php">
+    			<script-language>php</script-language>
+    			<structured-output/>
+    		</verify-script>
+    	</provision>
+    	<service class="account" id="Cloud Storage Account">
+    		<presentation>
+    			<name>Cloud Storage Account</name>
+    			<summary>You can use the following service to create user accounts on your Portal</summary>
+    			<infolinks>
+    				<link class="support" href="https://www.ctera.com/support">CTERA Support Center</link>
+    				<link class="howto" href="https://www.ctera.com/kb">CTERA Knowledge Base</link>    				
+    			</infolinks>
+    			<entry-points>
+    				<entry class="login" dst="https://{portal_name}.{base_uri}/ServicesPortal/j_security_check" method="POST">
+    					<label>Single Sign On</label>
+    					<description>Single Sign On to CTERA Portal End User interface</description>
+    					<icon path="images/CTERA-Logo-64x64.png"/>
+    					<variable name="j_username" value-of-setting="eu_username"/>
+    					<variable name="j_password" value-of-setting="eu_password"/>
+    					<variable name="portal_name" value-of-setting="eu_team_portal_name"/>
+    					<variable name="base_uri" value-of-setting="base_uri"/>
+    					<variable name="portal_prefix" value-of-setting="team_portal_prefix"/>
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+    			<setting class="login" id="eu_username" type="string">
+    				<name>End User , username.</name>
+    				<description>Please enter the end user username.</description>
+    			</setting>
+    			<setting class="login" id="eu_email" type="email">
+    				<name>End User email address.</name>
+    				<description>Please enter the end user email address.</description>
+    			</setting>
+    			<setting class="given-name" id="eu_first_name" type="string">
+    				<name>End User first name</name>
+    				<description>Please enter the end user first name</description>
+    			</setting>
+    			<setting class="family-name" id="eu_last_name" type="string">
+    				<name>End User last name</name>
+    				<description>Please enter the end user last name</description>
+    			</setting>
+    			<setting class="organization-name" id="eu_company" type="string">
+    				<name>End User company name</name>
+    				<description>Please enter the company name.</description>
+    			</setting>
+    			<setting class="password" id="eu_password" type="password">
+    				<name>End User password</name>
+    				<description>Please enter the end user password</description>
+    			</setting>
+    			<setting id="eu_team_portal_name" protected="true" type="string" value-of-setting="team_portal_name" visibility="hidden"/>
+    		</settings>
+    		<requirements>
+    		</requirements>
+    		<provision>
+    			<configuration-script name="configure.php">
+    				<script-language>php</script-language>
+    				<structured-output/>
+    			</configuration-script>
+    			<verify-script name="verify.php">
+    				<script-language>php</script-language>
+    				<structured-output/>
+    			</verify-script>
+    		</provision>
+    	</service>
+    	<service class="service" id="Cloud Storage Administration" singular="true">
+    		<presentation>
+    			<name>Service configuration</name>
+    			<entry-points>
+    				<entry class="login" dst="https://{portal_name}.{base_uri}/ServicesPortal/j_security_check" method="POST">
+    					<label>Administration</label>
+    					<variable name="j_username" value-of-setting="team_username"/>
+    					<variable class="" name="j_password" value-of-setting="team_password"/>
+    					<variable name="base_uri" value-of-setting="base_uri"/>
+    					<variable name="portal_name" value-of-setting="team_name"/>
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+    			<setting class="login" id="team_username" protected="true" type="string" value-of-setting="team_admin_username">
+    				<name>login</name>
+    			</setting>
+    			<setting class="password" id="team_password" protected="true" type="password" value-of-setting="team_admin_password">
+    				<name>Password</name>
+    			</setting>
+    			<setting id="team_name" protected="true" type="string" value-of-setting="team_portal_name">
+    				<name>Portal ID</name>
+    			</setting>
+    		</settings>
+    	</service>
+    </service>
+</application>

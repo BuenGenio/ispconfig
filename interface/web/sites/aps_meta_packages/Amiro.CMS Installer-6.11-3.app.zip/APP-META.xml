@@ -1,0 +1,173 @@
+<!-- Application namespaces and APS version (step 9) -->
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2011-12-02T06:00:00+06:00">
+<!-- Application common properties (step 9) -->
+ <id>http://www.amiro.ru/</id>
+ <name>Amiro.CMS Installer</name>
+ <version>6.11</version>
+ <release>3</release>  
+ <homepage>http://www.amiro.ru/</homepage>
+ <vendor>
+  <name>Amiro</name>
+  <homepage>http://www.amiro.ru/</homepage>
+  <icon path="images/icon.png"/>
+ </vendor>
+ <packager>
+  <name>Amiro</name>
+  <homepage>http://www.amiro.ru</homepage>
+  <icon path="images/icon.png"/>
+ </packager>
+ <presentation>
+  <summary>Amiro.CMS - система управления сайтом, позволяющая легко создавать и поддерживать сайты, интернет магазины практически любого уровня.</summary>
+  <description>
+	Amiro.CMS включает весь инструментарий,
+	необходимый для эффективной работы современного коммерческого или личного
+	интернет-ресурса, интернет-магазина и обладает функционалом, достаточным для
+	реализации потребностей 95-98% владельцев сайтов. 
+	Особенности создания и управления сайтом на Amiro.CMS: возможность старта
+	проекта в максимально короткий срок, разумная себестоимость внедрения сайта без
+	привлечения программистов, простота создания и управления сайтом, поддержка
+	пошагового развития проекта с наращиванием его функционала, отличная
+	производительность, полное соответствие современным требованиям поисковой
+	оптимизации в Рунете. 
+	На Amiro.CMS работает более 15.000 сайтов и свыше 4.000
+	интернет-магазинов.
+  </description>
+  <icon path="images/icon.png"/>
+ <screenshot path="images/amiro_site_front.jpg">
+  <description>Фронт-офис интернет-магазина на Amiro.CMS</description>
+ </screenshot>
+ <screenshot path="images/amiro_manag_site.jpg">
+  <description>Менеждер сайта Панели управления</description>
+ </screenshot>
+ <screenshot path="images/amiro_layot_read.jpg">
+  <description>Режим редактирования любого блока страницы сайта</description>
+ </screenshot>
+ <screenshot path="images/amiro_group_opp.jpg">
+  <description>Групповые операции над страницами сайта</description>
+ </screenshot>
+ <screenshot path="images/amiro_seo_prop.jpg">
+  <description>SEO-инструменты Amiro.CMS</description>
+ </screenshot>
+ <screenshot path="images/amiro_eshop_edit.jpg">
+  <description>Управление содержимым интернет-магазина </description>
+ </screenshot>
+ <screenshot path="images/amiro_eshop_seo.jpg">
+  <description>Раздел "Параметры и SEO" страницы товара </description>
+ </screenshot>
+ <screenshot path="images/amiro_eshop_prop.jpg">
+  <description>Конструктор свойств товаров</description>
+ </screenshot>
+ <screenshot path="images/amiro_eshop_import.jpg">
+  <description>Мастер настройки импорта данных</description>
+ </screenshot>
+ <screenshot path="images/amiro_eshop_deliv.jpg">
+  <description>Панель управления способами доставки</description>
+ </screenshot>
+ <screenshot path="images/amiro_article_mod.jpg">
+  <description>Один из модуль управления - «Статьи»</description>
+ </screenshot>
+ <screenshot path="images/amiro_start_icon.jpg">
+  <description>Заглавная страница Панели управления</description>
+ </screenshot> 
+  <changelog>
+   <version version="6.11" release="3">
+    <entry>Обновлена версия инсталлятора</entry>
+   </version>
+   <version version="6.00" release="1">
+    <entry>Обновлена версия инсталлятора</entry>
+   </version>
+   <version version="5.40" release="1">
+    <entry>Первоначальная версия</entry>
+   </version>
+  </changelog>
+  <categories>
+   <category>Web/Content management</category>
+   <category>Web/E-commerce</category>
+  </categories>
+  <languages>
+   <language>ru</language>
+  </languages>
+ </presentation>
+ <!-- Application service (step 4) -->
+ <service id="cms">
+ <!-- Service presentation properties (step 7) -->
+<!--  <license must-accept="true">
+   <free/>
+   <text>
+    <name>License</name>
+    <file>htdocs/license.txt</file>
+   </text>
+  </license> -->
+  <presentation>
+   <name>Amiro CMS</name>
+   <summary>Система управления контентом Amiro</summary>
+   <icon path="images/icon.png"/>
+   <infolinks>
+    <link class="official" href="http://www.amiro.ru/">
+      Официальный сайт
+    </link>
+    <link class="support" href="http://support.amiro.ru/">
+      Служба поддержки
+    </link>
+    <link class="howto" href="http://manual.amiro.ru/">
+      Документация
+    </link>
+   </infolinks>
+   <entry-points>
+    <entry dst="/amiro-install.php">
+     <label>Установить Amiro.CMS</label>
+     <icon path="images/icon.png"/>
+	</entry>
+    <entry class="frontpage" dst="/">
+     <label>Установленный сайт</label>
+     <icon path="images/icon.png"/>
+	</entry>
+    <entry class="control-panel" dst="/_admin/">
+     <label>Панель управления сайтом</label>
+     <icon path="images/icon.png"/>
+	</entry>
+   </entry-points>
+  </presentation>
+  <!-- Service used technologies (step 6) -->
+  <requirements xmlns:php="http://apstandard.com/ns/1/php" 
+                xmlns:db="http://apstandard.com/ns/1/db">
+   <apache:htaccess xmlns:apache="http://apstandard.com/ns/1/apache"/>
+   <php:version min="5.2.1"/>
+   <php:memory-limit>33554432</php:memory-limit>
+   <php:extension>mysql</php:extension>
+   <php:extension>mbstring</php:extension>
+   <php:extension>curl</php:extension>
+   <php:safe-mode>false</php:safe-mode>
+   <db:db>
+    <db:id>main</db:id>
+    <db:default-name>amiro</db:default-name>
+    <db:can-use-tables-prefix>false
+    </db:can-use-tables-prefix>
+    <db:server-type>mysql</db:server-type>
+    <db:server-min-version>4.0.0</db:server-min-version>
+	<db:features xmlns:mysql="http://apstandard.com/ns/1/db/mysql">
+	 <mysql:privilege>Create_tmp_table_priv</mysql:privilege>
+	 <mysql:privilege>Lock_tables_priv</mysql:privilege>
+	</db:features>
+   </db:db>
+  </requirements>
+  <!-- Content delivery settings (step 8) -->
+  <provision>
+   <url-mapping>
+    <default-prefix>amiro</default-prefix>
+    <installed-size>40000000</installed-size>
+    <mapping url="/" path="htdocs" 
+             xmlns:php="http://apstandard.com/ns/1/php">
+	 <php:permissions writable="true"/>
+     <php:handler>
+      <php:extension>php</php:extension>
+     </php:handler>
+    </mapping>
+   </url-mapping>
+   <!-- Service configuration script declaration (step 10) -->
+   <configuration-script name="configure">
+    <script-language>php</script-language>
+   </configuration-script>
+  </provision>
+ </service>
+</application>

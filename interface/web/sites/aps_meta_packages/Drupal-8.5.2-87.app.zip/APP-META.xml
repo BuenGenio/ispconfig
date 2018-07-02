@@ -1,0 +1,357 @@
+<application packaged="2018-04-19T06:53:27" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>Drupal</id>
+	<name>Drupal</name>
+	<version>8.5.2</version>
+	<release>87</release>
+	<homepage>http://drupal.org/</homepage>
+	<vendor>
+		<name>Drupal.org</name>
+		<homepage>http://drupal.org/</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Plesk</name>
+		<homepage>http://plesk.com/</homepage>
+		<icon path="images/packager.png"/>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>Open source content management system and blogging engine</summary>
+		<summary xml:lang="de-DE">Open source content manager system und blogging software</summary>
+		<summary xml:lang="fr-FR">Ouvrez système de gestion de contenu source et moteur de blogs</summary>
+		<summary xml:lang="es-ES">Abrir el sistema de gestión de contenido de código y el motor de blogging</summary>
+		<summary xml:lang="pl-PL">Open Source Content System zarzadzania i silnik blogów</summary>
+		<description>Drupal is an open source content management system which supports pluggable modules which enable additional behaviors. The modules available for Drupal provide a wide assortment of features, including e-commerce systems, photo galleries, mailing list management, and CVS integration.</description>
+		<description xml:lang="de-DE">Drupal ist ein CMS auf Open-Source-Basis, welches mit Modulen zur Aktivierung zusätzlicher Eigenschaften erweiterbar ist. Die für Drupal erhältlichen Module bieten ein breitgefächertes Sortiment an Features, einschließlich E-Commerce-Systeme, Fotogallerien, Mailinglistenverwaltung, und CVS-Integration.</description>
+		<description xml:lang="fr-FR">Drupal est un CMS basé sur Open-Source, qui peut être enrichi de modules permettant d'activer des fonctionnalités supplémentaires. Les modules disponibles pour Drupal offrent un large éventail de fonctionnalités, y compris des systèmes e-commerce, des galeries photos, la gestion de listes de diffusion par email et l'intégration CVS.</description>
+		<description xml:lang="es-ES">Drupal es un sistema de gestión de contenidos de código abierto ampliable con módulos para permitir funciones adicionales. Los módulos disponibles para Drupal proporcionan una amplia gama de funciones, como sistemas de comercio electrónico, galerías de fotografías, gestión de listas de correo electrónico e integración CVS.</description>
+		<description xml:lang="pl-PL">Drupal to system open source do zarzadzania trescia, który obsluguje dodawalne moduly, dzieki którym mozna uzyskac wiecej rodzajów zachowan. Moduly dostepne dla Drupala dostarczaja wiele funkcji, w tym systemy e-commerce, galerie zdjec, zarzadzanie listami mailingowymi i integracje CVS.</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/screenshot.png">
+			<description>This is the screen where you adjust the global settings for the appearance of your site: logo image, color scheme, appearance of hyperlinks.</description>
+			<description xml:lang="de-DE">Dies ist der Bildschirm, wo Sie passen Sie die globalen Einstellungen für das Aussehen Ihrer Website: logo Bild, Farbschema, Aussehen von Hyperlinks.</description>
+			<description xml:lang="fr-FR">C'est l'écran où vous réglez les paramètres globaux pour l'apparence de votre site: image du logo, les couleurs, l'apparence des liens hypertexte.</description>
+			<description xml:lang="es-ES">Esta es la pantalla que permite ajustar la configuración global de la apariencia de su sitio: Imagen del logotipo, combinación de colores, la apariencia de los hipervínculos.</description>
+			<description xml:lang="pl-PL">Jest to ekran, na którym mozna dostosowac ustawienia globalne dla wygladu witryny: image logo, kolorystyka, wyglad hiperlaczy.</description>
+		</screenshot>
+		<changelog>
+			<version release="87" version="8.5.2">
+				<entry>Drupal 8.5.2 Release notes: https://www.drupal.org/project/drupal/releases/8.5.2</entry>
+			</version>
+			<version release="1" version="8.5.1">
+				<entry>Drupal 8.5.1 Release notes: https://www.drupal.org/project/drupal/releases/8.5.1</entry>
+			</version>
+			<version release="1" version="8.5.0">
+				<entry>Drupal 8.5.0 Release notes: https://www.drupal.org/project/drupal/releases/8.5.0</entry>
+			</version>
+			<version release="1" version="8.4.5">
+				<entry>Drupal 8.4.5 Release notes: https://www.drupal.org/project/drupal/releases/8.4.5</entry>
+			</version>
+			<version release="1" version="8.4.4">
+				<entry>Drupal 8.4.4 Release notes: https://www.drupal.org/project/drupal/releases/8.4.4</entry>
+			</version>
+			<version release="1" version="8.4.3">
+				<entry>Drupal 8.4.3 Release notes: https://www.drupal.org/project/drupal/releases/8.4.3</entry>
+			</version>
+			<version release="1" version="8.4.2">
+				<entry>Drupal 8.4.2 Release notes: https://www.drupal.org/project/drupal/releases/8.4.2</entry>
+			</version>
+			<version release="1" version="8.4.0">
+				<entry>Drupal 8.4.0 Release notes: https://www.drupal.org/project/drupal/releases/8.4.0</entry>
+			</version>
+			<version release="1" version="8.3.7">
+				<entry>Drupal 8.3.7 Release notes: https://www.drupal.org/project/drupal/releases/8.3.7</entry>
+			</version>
+			<version release="1" version="8.3.6">
+				<entry>Drupal 8.3.6 Release notes: https://www.drupal.org/project/drupal/releases/8.3.6</entry>
+			</version>
+			<version release="1" version="8.3.5">
+				<entry>Drupal 8.3.5 Release notes: https://www.drupal.org/project/drupal/releases/8.3.5</entry>
+			</version>
+			<version release="1" version="8.3.4">
+				<entry>Drupal 8.3.4 Release notes: https://www.drupal.org/project/drupal/releases/8.3.4</entry>
+			</version>
+			<version release="1" version="8.3.3">
+				<entry>Drupal 8.3.3 Release notes: https://www.drupal.org/project/drupal/releases/8.3.3</entry>
+			</version>
+			<version release="1" version="8.3.2">
+				<entry>Drupal 8.3.2 Release notes: https://www.drupal.org/project/drupal/releases/8.3.2</entry>
+			</version>
+			<version release="1" version="8.3.1">
+				<entry>Drupal 8.3.1 Release notes: https://www.drupal.org/project/drupal/releases/8.3.1</entry>
+			</version>
+			<version release="1" version="8.3.0">
+				<entry>Drupal 8.3.0 Release notes: https://www.drupal.org/project/drupal/releases/8.3.0</entry>
+			</version>
+			<version release="1" version="8.2.7">
+				<entry>Drupal 8.2.7 Release notes: https://www.drupal.org/project/drupal/releases/8.2.7</entry>
+			</version>
+			<version release="1" version="8.2.6">
+				<entry>Drupal 8.2.6 Release notes: https://www.drupal.org/project/drupal/releases/8.2.6</entry>
+			</version>
+			<version release="1" version="8.2.5">
+				<entry>Drupal 8.2.5 Release notes: https://www.drupal.org/project/drupal/releases/8.2.5</entry>
+			</version>
+			<version release="1" version="8.2.4">
+				<entry>Drupal 8.2.4 Release notes: https://www.drupal.org/project/drupal/releases/8.2.4</entry>
+			</version>
+			<version release="1" version="8.2.3">
+				<entry>Drupal 8.2.3 Release notes: https://www.drupal.org/project/drupal/releases/8.2.3</entry>
+			</version>
+			<version release="1" version="8.2.2">
+				<entry>Drupal 8.2.2 Release notes: https://www.drupal.org/project/drupal/releases/8.2.2</entry>
+			</version>
+			<version release="1" version="8.2.1">
+				<entry>Drupal 8.2.1 Release notes: https://www.drupal.org/project/drupal/releases/8.2.1</entry>
+			</version>
+			<version release="1" version="8.2.0">
+				<entry>Drupal 8.2.0 Release notes: https://www.drupal.org/project/drupal/releases/8.2.0</entry>
+			</version>
+			<version release="1" version="8.1.10">
+				<entry>Drupal 8.1.10 Release notes: https://www.drupal.org/project/drupal/releases/8.1.10</entry>
+			</version>
+			<version release="1" version="8.1.9">
+				<entry>Drupal 8.1.9 Release notes: https://www.drupal.org/project/drupal/releases/8.1.9</entry>
+			</version>
+			<version release="43" version="8.1.8">
+				<entry>CSS/JS files are now properly rendered on Plesk 12.0 for Windows</entry>
+			</version>
+			<version release="1" version="8.1.8">
+				<entry>Drupal 8.1.8 Release notes: https://www.drupal.org/project/drupal/releases/8.1.8</entry>
+			</version>
+			<version release="1" version="8.1.7">
+				<entry>Drupal 8.1.7 Release notes: https://www.drupal.org/project/drupal/releases/8.1.7</entry>
+			</version>
+			<version release="1" version="8.1.6">
+				<entry>Drupal 8.1.6 Release notes: https://www.drupal.org/project/drupal/releases/8.1.6</entry>
+			</version>
+			<version release="1000" version="8.1.3">
+				<entry>Drupal 8.1.3 Release notes: https://www.drupal.org/project/drupal/releases/8.1.3</entry>
+			</version>
+			<version release="1" version="8.1.2">
+				<entry>Drupal 8.1.2 Release notes: https://www.drupal.org/project/drupal/releases/8.1.2</entry>
+			</version>
+			<version release="1" version="8.1.1">
+				<entry>Drupal 8.1.1 Release notes: https://www.drupal.org/project/drupal/releases/8-1-1</entry>
+			</version>
+			<version release="1" version="8.1.0">
+				<entry>Drupal 8.1.0 Release notes: https://www.drupal.org/drupal-8.1.0-release-notes</entry>
+			</version>
+			<version release="1" version="8.0.6">
+				<entry>Drupal 8.0.6 Release notes: https://www.drupal.org/drupal-8.0.6-release-notes</entry>
+			</version>
+			<version release="1" version="8.0.5">
+				<entry>Drupal 8.0.5 Release notes: https://www.drupal.org/drupal-8.0.5-release-notes</entry>
+			</version>
+			<version release="1" version="8.0.4">
+				<entry>Drupal 8.0.4 Release notes: https://www.drupal.org/drupal-8.0.4-release-notes</entry>
+			</version>
+			<version release="1" version="8.0.3">
+				<entry>Drupal 8.0.3 Release notes: https://www.drupal.org/drupal-8.0.3-release-notes</entry>
+			</version>
+			<version release="1" version="8.0.2">
+				<entry>Drupal 8.0.2 Release notes: https://www.drupal.org/drupal-8.0.2-release-notes</entry>
+			</version>
+			<version release="3" version="7.41">
+				<entry>Functions to be deprecated in php7 have been replaced in configuration scripts with allowed functions.</entry>
+			</version>
+			<version release="1" version="7.41">
+				<entry>Drupal 7.41 Release notes: https://www.drupal.org/drupal-7.41-release-notes</entry>
+			</version>
+			<version release="1" version="7.40">
+				<entry>Drupal 7.40 Release notes: https://www.drupal.org/drupal-7.40-release-notes</entry>
+			</version>
+			<version release="1" version="7.39">
+				<entry>Drupal 7.39 Release notes: https://www.drupal.org/drupal-7.39-release-notes</entry>
+			</version>
+			<version release="1" version="7.38">
+				<entry>Drupal Core - Critical - Multiple Vulnerabilities - SA-CORE-2015-002i</entry>
+				<entry>Drupal 7.38 Release notes: https://www.drupal.org/drupal-7.38-release-notes</entry>
+			</version>
+			<version release="1" version="7.37">
+				<entry>Drupal 7.37 Release notes: https://www.drupal.org/drupal-7.37-release-notes</entry>
+			</version>
+			<version release="1" version="7.36">
+				<entry>Drupal 7.36 Release notes: https://www.drupal.org/drupal-7.36-release-notes</entry>
+			</version>
+			<version release="1" version="7.35">
+				<entry>Drupal 7.35 Release notes: https://www.drupal.org/drupal-7.35-release-notes</entry>
+			</version>
+			<version release="44" version="7.34">
+				<entry>Drupal Core - Moderately Critical - Multiple Vulnerabilities - SA-CORE-2014-006</entry>
+			</version>
+			<version release="5" version="7.18">
+				<entry>Release Notes: http://drupal.org/drupal-7.18-release-notes</entry>
+			</version>
+			<version release="3" version="7.16">
+				<entry>Release Notes: http://drupal.org/node/1815904</entry>
+			</version>
+			<version release="14" version="7.15">
+				<entry>Release Notes: http://drupal.org/node/1815904</entry>
+			</version>
+			<version release="2" version="7.14">
+				<entry>Security and bugfixing patch. http://drupal.org/drupal-7.14</entry>
+			</version>
+			<version release="3" version="7.12">
+				<entry>Security and bugfixing patch. Release notes: http://drupal.org/node/1425104</entry>
+			</version>
+			<version release="2" version="7.10">
+				<entry>Version 7.10. Release notes: http://drupal.org/node/1361968</entry>
+				<entry>Locale module is enabled by default</entry>
+			</version>
+			<version release="4" version="7.9">
+				<entry>Release notes: http://drupal.org/node/1322736</entry>
+			</version>
+			<version release="2" version="7.7">
+				<entry>Release notes: http://drupal.org/node/1231586, http://drupal.org/node/1231826</entry>
+			</version>
+			<version release="5" version="7.4">
+				<entry>Release notes: http://drupal.org/node/1204634</entry>
+			</version>
+			<version release="2" version="7.2">
+				<entry>Release notes: http://drupal.org/node/1168946</entry>
+			</version>
+			<version release="17" version="7.0">
+				<entry>Drupal 7.0 release</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+		<languages>
+			<language>en</language>
+			<language>de</language>
+			<language>fr</language>
+			<language>es</language>
+			<language>pl</language>
+			<language>nl</language>
+			<language>ru</language>
+			<language>lt</language>
+			<language>ja</language>
+			<language>pt</language>
+			<language>da</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '8.0' and /application/release &gt;= '1'"/>
+	<service id="drupal">
+		<license must-accept="true">
+			<text>
+				<name>GNU GENERAL PUBLIC LICENSE</name>
+				<file>htdocs/LICENSE.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Drupal</name>
+			<summary>Use Drupal to build everything from personal blogs to enterprise applications. Thousands of add-on modules and designs let you build any site you can imagine.</summary>
+			<infolinks>
+				<link class="support" href="https://www.drupal.org/support">Support
+				</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/">
+					<label>Site</label>
+				</entry>
+				<entry class="control-panel" dst="/user/login" method="POST">
+					<label>Administrative interface</label>
+					<variable class="login" name="name" value-of-setting="admin_name"/>
+					<variable class="password" name="pass" value-of-setting="admin_password"/>
+					<variable name="APS">ON</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<name xml:lang="de-DE">Login administratora</name>
+					<name xml:lang="fr-FR">La connexion de l'administrateur</name>
+					<name xml:lang="es-ES">Inicio de sesión de administrador</name>
+					<name xml:lang="pl-PL">Login administratora</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+					<error-message xml:lang="de-DE">Bitte stellen Sie sicher, dass der von Ihnen eingegebene Text beginnt mit einem Buchstaben und fährt entweder mit Zahlen, Buchstaben, Unterstriche oder Bindestriche.</error-message>
+					<error-message xml:lang="fr-FR">S'il vous plaît assurez-vous que le texte que vous avez entré commence par une lettre et se poursuit avec des nombres, des lettres, des caractères de soulignement ou des tirets.</error-message>
+					<error-message xml:lang="es-ES">Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+					<error-message xml:lang="pl-PL">Upewnij sie, ze wpisany tekst zaczyna sie od litery i nadal zarówno z cyfr, liter, podkreslen i myslników.</error-message>
+				</setting>
+				<setting class="password" id="admin_password" type="password">
+					<name>Password</name>
+					<name xml:lang="de-DE">Kennwort</name>
+					<name xml:lang="fr-FR">mot de passe</name>
+					<name xml:lang="es-ES">contraseña</name>
+					<name xml:lang="pl-PL">haslo</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Main configuration</name>
+				<group class="email">
+					<setting class="value" default-value="test@test.com" id="admin_email" type="email">
+						<name>Administrator's email</name>
+						<name xml:lang="de-DE">Administrator E-Mail</name>
+						<name xml:lang="fr-FR">L'e-mail de l'administrateur</name>
+						<name xml:lang="es-ES">Correo electrónico del administrador</name>
+						<name xml:lang="pl-PL">E-mail administratora</name>
+					</setting>
+				</group>
+				<group class="fn n">
+					<setting class="title" default-value="Drupal" id="title" min-length="1" type="string">
+						<name>Site name</name>
+						<name xml:lang="de-DE">Site name</name>
+						<name xml:lang="fr-FR">Nom du site</name>
+						<name xml:lang="es-ES">nombre del sitio</name>
+						<name xml:lang="pl-PL">Nazwa strony</name>
+					</setting>
+				</group>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.5.9" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">dom</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">filter</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">hash</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqlnd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">pcre</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">PDO</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">session</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">SimpleXML</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">SPL</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">tokenizer</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">openssl</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">xml</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mbstring</php:extension>
+			<php:memory-limit xmlns:php="http://apstandard.com/ns/1/php">134217728</php:memory-limit>
+			<php:max-execution-time xmlns:php="http://apstandard.com/ns/1/php">30</php:max-execution-time>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>drupal</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.5.3</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>drupal</default-prefix>
+				<installed-size>88783917</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="tmp">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="sites/default/files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

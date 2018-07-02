@@ -1,0 +1,258 @@
+<application packaged="2017-06-27T05:23:40" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>PhpList</id>
+	<name>PhpList</name>
+	<version>3.3.1</version>
+	<release>11</release>
+	<homepage>http://www.phplist.com/</homepage>
+	<vendor>
+		<name>www.phplist.com</name>
+		<homepage>http://www.phplist.com/</homepage>
+		<icon path="images/phplist-logo.png"/>
+	</vendor>
+	<packager>
+		<name>Plesk</name>
+		<homepage>http://plesk.com</homepage>
+		<icon path="images/packager.png"/>
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+	<presentation>
+		<summary>phplist is the world's most popular open source email campaign manager.</summary>
+		<description>phpList is software for sending email newsletters, marketing campaigns and announcements: you can send to millions or just to a few hundred. phpList is used via a web browser and installed on your server. phpList is free to download and has the capacity to be excellent value for money</description>
+		<icon path="images/phplist-logo.png"/>
+		<screenshot path="images/Screenshot.PNG">
+			<description>Main page.</description>
+		</screenshot>
+		<changelog>
+			<version release="11" version="3.3.1">
+				<entry>Release notes: </entry>
+			</version>
+			<version release="6" version="3.2.5">
+				<entry>Release notes: https://www.phplist.org/newslist/phplist-3-2-5-whats-new/</entry>
+			</version>
+			<version release="1" version="3.2.4">
+				<entry>https://www.phplist.org/newslist/phplist-3-2-4-domain-throttling-map-and-some-fixes/</entry>
+			</version>
+			<version release="2" version="3.2.1">
+				<entry>Package updated to avoid crashing if PHP7 is selected</entry>
+			</version>
+			<version release="1" version="3.2.1">
+				<entry>phpList 3.2.1: https://www.phplist.org/newslist/phplist-3-2-1-a-few-little-fixes/</entry>
+			</version>
+			<version release="1" version="3.2.0">
+				<entry>phpList 3.2.0: https://www.phplist.org/newslist/phplist-3-2-0-is-here/</entry>
+			</version>
+			<version release="1" version="3.0.12">
+				<entry>Bugfix and security release</entry>
+			</version>
+			<version release="1" version="3.0.6">
+				<entry>Bugfix and security release</entry>
+			</version>
+		 	<version release="5" version="3.0.5">
+				<entry>Upgrade bug fixed</entry>
+			</version>
+			<version release="1" version="3.0.5">
+				<entry>New 3.0.5 PhpList version</entry>
+			</version>
+			<version release="3" version="3.0.2">
+				<entry>New 3.0.2 PhpList version</entry>
+			</version>
+			<version release="4" version="2.10.19">
+				<entry>Bugfix and security update</entry>
+			</version>
+			<version release="2" version="2.10.19">
+				<entry>Installation bugs fixed and new validation and languages added</entry>
+			</version>
+			<version release="1" version="2.10.19">
+				<entry>New 2.10.19 PhpList version</entry>
+			</version>
+			<version release="2" version="2.10.17">
+				<entry>File for licence included</entry>
+			</version>
+			<version release="1" version="2.10.17">
+				<entry>PHP version changed</entry>
+			</version>
+			<version release="0" version="2.10.17">
+				<entry>Init Package</entry>
+			</version>
+			<version release="4" version="2.10.17">
+				<entry>Icon resized.</entry>
+			</version>
+			<version release="5" version="2.10.17">
+				<entry>schema.sql bug fixed.</entry>
+			</version>
+			<version release="6" version="2.10.17">
+				<entry>Selenium tests updated</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Front office/On-line Marketing</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '3.0.6'"/>
+	<service id="instance">
+		<license must-accept="true">
+			<text>
+				<name>GNU AFFERO GENERAL PUBLIC LICENSE Version 3</name>
+				<file>htdocs/LICENSE.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>PhpList</name>
+			<summary>PhpList Campaign Management System</summary>
+			<infolinks>
+				<link class="support" href="http://www.phplist.com/support">PhpList Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="admin/index.php" method="POST">
+					<label>Administrative interface</label>
+					<variable class="" name="page">home</variable>
+					<variable class="" name="login" value-of-setting="ADMIN_NAME">admin</variable>
+					<variable name="password" value-of-setting="ADMIN_PASSWORD">password</variable>
+					<variable class="" name="process">Continue</variable>
+				</entry>
+				<entry dst="/" method="GET">
+					<label>Site</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="ADMIN_NAME" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting class="password" id="ADMIN_PASSWORD" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group>
+				<name>Installation preferences</name>
+				<setting class="value" default-value="PHPList" id="TITLE" type="string">
+					<name>Installation name</name>
+				</setting>
+				<setting class="locale" default-value="en-US" id="LOCALE" type="enum">
+					<name>Interface language</name>
+					<choice id="af-ZA">
+						<name>Afrikaans</name>
+					</choice>
+					<choice id="hr-HR">
+						<name>Hrvatski</name>
+					</choice>
+					<choice id="cs-CZ">
+						<name>čeština</name>
+					</choice>
+					<choice id="da-DK">
+						<name>Dansk</name>
+					</choice>
+					<choice id="nl-NL">
+						<name>Nederlands</name>
+					</choice>
+					<choice id="en-US">
+						<name>English USA</name>
+					</choice>
+					<choice id="en-GB">
+						<name>English</name>
+					</choice>
+					<choice id="et-EE">
+						<name>Eesti</name>
+					</choice>
+					<choice id="fr-FR">
+						<name>français</name>
+					</choice>
+					<choice id="de-DE">
+						<name>Deutsch</name>
+					</choice>
+					<choice id="el-GR">
+						<name>Ελληνικά</name>
+					</choice>
+					<choice id="he-IL">
+						<name>עברית</name>
+					</choice>
+					<choice id="it-IT">
+						<name>italiano</name>
+					</choice>
+					<choice id="ja-JP">
+						<name>日本語</name>
+					</choice>
+					<choice id="la-VA">
+						<name>Latin</name>
+					</choice>
+					<choice id="no-NO">
+						<name>Norsk</name>
+					</choice>
+					<choice id="pl-PL">
+						<name>polski</name>
+					</choice>
+					<choice id="pt-BR">
+						<name>português brasileiro</name>
+					</choice>
+					<choice id="pt-PT">
+						<name>português</name>
+					</choice>
+					<choice id="ro-RO">
+						<name>Română</name>
+					</choice>
+					<choice id="ru-RU">
+						<name>Pyccĸий</name>
+					</choice>
+					<choice id="sl-SL">
+						<name>Slovenščina</name>
+					</choice>
+					<choice id="es-ES">
+						<name>Español</name>
+					</choice>
+					<choice id="sv-SE">
+						<name>svenska</name>
+					</choice>
+					<choice id="de-CH">
+						<name>Swissgerman</name>
+					</choice>
+					<choice id="zh-CN">
+						<name>中文</name>
+					</choice>
+					<choice id="tr-TR">
+						<name>Tϋrkçe</name>
+					</choice>
+					<choice id="uk-UA">
+						<name>Українська</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version max-not-including="7.0" min="5.4" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">imap</php:extension>
+
+                        <php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+
+                        <php:extension xmlns:php="http://apstandard.com/ns/1/php">mcrypt</php:extension>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>phplist</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.1</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+			<url-mapping>
+				<default-prefix>phplist</default-prefix>
+				<installed-size>35944622</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+				</mapping>
+			</url-mapping>
+		</provision>
+	</service>
+</application>

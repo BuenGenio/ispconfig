@@ -1,0 +1,613 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-04-04T21:42:02">
+	<id>InstantServers</id>
+	<name>Instant Servers</name>
+	<version>1.0</version>
+	<release>11</release>
+
+	<homepage>http://cloud.telefonica.com/instantservers/</homepage>
+
+	<vendor>
+		<name>Application Name</name>
+		<homepage>http://cloud.telefonica.com/instantservers/</homepage>
+		<icon path="images/instantservers64x64.png" />
+	</vendor>
+
+	<packager>
+		<name>Mamasu Development Team</name>
+		<homepage>http://www.mamasu.es</homepage>
+		<icon path="images/mamasu64x64.png" />
+		<uri>uuid:packager_uri</uri>
+	</packager>
+
+	<presentation>
+		<summary>Instant Servers is a Syndicated IaaS solution that creates and manages Virtual Machines which supportmultiple operating systems thanks to the SmartDataCenter infrastructure.</summary>
+		<description>Instant Server APS package will allow any Parallels Automation platform to connect with the SmartDatacenter infrastructure for automated provisioning and management of SmartMachines and
+Virtual Machines.</description>
+
+		<icon path="images/instantservers64x64.png"/>
+	
+		<changelog>
+			<version release="1" version="1.0">
+				<entry>RC1</entry>
+			</version>
+			<version release="2" version="1.0">
+				<entry>Text corrected</entry>
+			</version>
+			<version release="3" version="1.0">
+				<entry>poa connection and verification script</entry>
+			</version>
+			<version release="4" version="1.0">
+				<entry>Login Random</entry>
+			</version>
+			<version release="5" version="1.0">
+				<entry>Verification Variables</entry>
+			</version>
+			<version release="6" version="1.0">
+				<entry>getAccountInfo</entry>
+			</version>
+			<version release="7" version="1.0">
+				<entry>Correct POA Setting Position</entry>
+			</version>
+			<version release="8" version="1.0">
+				<entry>Windows user/admin added</entry>
+			</version>
+			<version release="9" version="1.0">
+				<entry>Fields Hidden
+Mail with headers</entry>
+			</version>
+			<version release="10" version="1.0">
+				<entry>Mail editable</entry>
+			</version>
+			<version release="11" version="1.0">
+				<entry>Customer creation formatted to API regex</entry>
+			</version>
+
+		</changelog>
+		<categories>
+			<category>Infrastructure/Application Management</category>
+			<category>Infrastructure/Management</category>
+		</categories>
+
+
+
+		<languages>
+			<language>en</language>
+			<language>es</language>
+		</languages>
+	</presentation>
+
+	<patch match="/application/version &gt;= '1.0'"/>
+	<service id="context">
+		<presentation>
+			<name>Configuration</name>
+			<summary>Configuracion basica</summary>
+		</presentation>
+		<settings>
+			<setting type="integer" id="subscription_id"
+				class="subscription_id" visibility="hidden">
+				<name>SubscriptionID</name>
+			</setting>
+			<setting type="string" id="customer_id" visibility="hidden">
+				<name>customer_id</name>
+			</setting>
+			<setting type="string" id="login" protected="true" uniq="global" visibility="hidden" generate="random">
+				<name>login</name>
+			</setting>
+		<setting type="string" id="password" protected="true" visibility="hidden">
+				<name>password</name>
+			</setting>
+		<setting type="string" id="url_customer_api"
+			default-value="https://billyapi.fasttrack.tid.es"
+			installation-only="true" visibility="hidden">
+			<name>URL Customer API</name>
+		</setting>
+		<setting type="string" id="user_customer_api"
+			default-value="parallels" installation-only="true" visibility="hidden">
+			<name>User Customer API</name>
+		</setting>
+		<setting type="string" id="pasword_customer_api"
+			default-value="p4r4113s" visibility="hidden">
+			<name>Password Customer Api</name>
+		</setting><setting type="email" id="email2" class="email">
+				<name>Email</name>
+			</setting>
+			<setting type="email" id="from_email" installation-only="true" visibility="hidden" default-value="jonathan.huet@gmail.com">
+				<name>From Email</name>
+			</setting><setting type="string" id="from_name" installation-only="true" visibility="hidden" default-value="Instant Servers">
+				<name>From Name</name>
+			</setting>
+			<setting type="string" id="poa_connection" installation-only="true" visibility="hidden">
+				<name>Poa Connection</name>
+			</setting>
+
+		</settings>
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</configuration-script>
+		</provision>
+		<service id="vm" class="service">
+			<presentation>
+				<name>-- VM --</name>
+				<summary>-- VM Summary --</summary>
+				<entry-points>
+					<entry class="action" dst="">
+						<label>Start</label>
+						<description>Start VM</description>
+						<icon path="images/start.gif" />
+						<variable name="vm_status" class="action">Start</variable>
+						<variable name="var1" class="status">Starting</variable>
+						<variable name="var2" class="status_condition">PowerOff</variable>
+					</entry>
+					<entry class="action" dst="">
+						<label>Stop</label>
+						<description>Stop VM</description>
+						<icon path="images/stop.gif" />
+						<variable name="vm_status" class="action">Stop</variable>
+						<variable name="var1" class="status">PowerOff</variable>
+						<variable name="var2" class="status_condition">Running</variable>
+
+					</entry>
+					<entry class="action" dst="">
+						<label>Restart</label>
+						<description>Restart VM</description>
+						<icon path="images/refresh.png" />
+						<variable name="vm_status" class="action">Shutdown</variable>
+						<variable name="var1" class="status">Running</variable>
+						<variable name="var2" class="status_condition">Running</variable>
+					</entry>
+						<entry class="action" dst="">
+						<label>Send the public key to my email</label>
+						<description>Send the public key to my email</description>
+						<icon path="images/certificates_16x16.gif" />
+						<variable name="send_key2" class="action">public</variable>
+						<variable name="var1" class="status">text</variable>
+						<variable name="var2" class="status_condition">text</variable>
+						</entry>
+						<entry class="action" dst="">
+						<label>Send the private key to my email</label>
+						<description>Send the private key to my email</description>
+						<icon path="images/certificates_2_16x16.gif" />
+						<variable name="send_key2" class="action">private</variable>
+						<variable name="var1" class="status">text</variable>
+						<variable name="var2" class="status_condition">text</variable>
+						</entry>
+				</entry-points>
+			</presentation>
+			<settings>
+				<setting type="string" id="private_key" default-value="" protected="true" visibility="hidden">
+					<name>Private Key</name>
+				</setting>
+				<setting type="string" id="public_key" default-value="                                                                                                                                                                                                                                       " protected="true" visibility="hidden">
+					<name>Public Key</name>
+				</setting>
+				<setting type="string" id="dataset" default-value="sdc:admin:win2008r2standard:1.0.0" visibility="hidden" installation-only="true" track-old-value="true">
+					<name>Data set</name>
+				</setting>
+				<setting type="string" id="package" default-value="XS-eXtraSmall" visibility="hidden" track-old-value="true">
+					<name>Package</name>
+				</setting>
+				<setting type="string" id="category" default-value="Windows Server" protected="true">
+					<name> VM OS</name>
+				</setting>
+				<setting type="string" id="login" value-of-setting="login" visibility="hidden">
+					<name>login</name>
+				</setting>
+				<setting type="string" id="password" value-of-setting="password" visibility="hidden">
+					<name>password</name>
+				</setting>
+				<setting type="enum" id="vm_status" class="status" protected="true" default-value="Running">
+					<name>Status of VM</name>
+					<choice id="Running">
+						<name>Running{color:green}</name>
+					</choice>
+					<choice id="PowerOff">
+						<name>PowerOff{color:red}</name>
+					</choice>
+					<choice id="Creating">
+						<name>Creating{color:yellow}</name>
+					</choice>
+					<choice id="PoweringOff">
+						<name>PoweringOff{color:yellow}</name>
+					</choice>
+					<choice id="Starting">
+						<name>Starting{color:yellow}</name>
+					</choice>
+				</setting>
+				<setting type="string" id="id" visibility="hidden">
+					<name>ID</name>
+				</setting>
+				<setting type="string" id="ip" protected="true">
+					<name>Main IP</name>
+				</setting>
+				<setting type="string" id="name" default-value="foo" installation-only="true" regex="[a-z0-9][a-z0-9]{1,49}">
+					<name>Name</name>
+					<error-message>The machine name must be at least 2 characters long and 50 max. Only lower characters and digits.</error-message>
+				</setting>
+	
+		
+	
+					<setting type="string" id="url_cloud_api" default-value="https://cloudapi.fasttrack.tid.es" installation-only="true" visibility="hidden">
+						<name>URL Cloud API</name>
+					</setting>
+					<setting type="string" id="user_cloud_api" default-value="parallels" installation-only="true" visibility="hidden">
+						<name>User Cloud API</name>
+					</setting>
+					<setting type="string" id="pasword_cloud_api" default-value="p4r4113s" visibility="hidden">
+						<name>Password Cloud Api</name>
+					</setting>
+			<setting type="enum" id="send_key2" default-value="text" class="status" protected="true">
+						<name>Keys management</name>
+						<choice id="text">
+							<name>Click on the link above to receive your keys</name>
+						</choice>
+</setting>
+				<setting type="string" id="email2" visibility="hidden" value-of-setting="email2"></setting>
+				<setting type="email" id="from_email"
+					installation-only="true" visibility="hidden" value-of-setting="from_email">
+					<name>From Email</name>
+				</setting>
+				<setting type="string" id="from_name"
+					installation-only="true" visibility="hidden" value-of-setting="from_name">
+					<name>From Name</name>
+				</setting>
+				<setting type="enum" id="purpose">
+					<name>VM purpose ( not mandatory )</name>
+					<choice id="other">
+						<name>Other</name>
+					</choice>
+					<choice id="web">
+						<name>Web server</name>
+					</choice>
+					<choice id="database">
+						<name>Database Server</name>
+					</choice>
+					<choice id="streaming">
+						<name>Streaming server</name>
+					</choice>
+					<choice id="backup">
+						<name>Backup server</name>
+					</choice>
+				</setting>
+				<setting type="string" id="vm_user" protected="true">
+					<name>VM admin user</name>
+				</setting>
+				<setting type="string" id="vm_pass" protected="true">
+					<name>VM admin password</name>
+				</setting></settings>
+			<provision>
+				<configuration-script name="configurevm.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</configuration-script>
+				<verify-script name="verificationvm.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</verify-script>
+			</provision>
+
+
+			</service><service id="vm2" class="service">
+			<presentation>
+				<name>-- VM2 --</name>
+				<summary>-- VM2 Summary --</summary>
+				<entry-points>
+					<entry class="action" dst="">
+						<label>Start</label>
+						<description>Start VM</description>
+						<icon path="images/start.gif" />
+						<variable name="vm_status" class="action">Start</variable>
+						<variable name="var1" class="status">Starting</variable>
+						<variable name="var2" class="status_condition">PowerOff</variable>
+					</entry>
+					<entry class="action" dst="">
+						<label>Stop</label>
+						<description>Stop VM</description>
+						<icon path="images/stop.gif" />
+						<variable name="vm_status" class="action">Stop</variable>
+						<variable name="var1" class="status">PowerOff</variable>
+						<variable name="var2" class="status_condition">Running</variable>
+
+					</entry>
+					<entry class="action" dst="">
+						<label>Restart</label>
+						<description>Restart VM</description>
+						<icon path="images/refresh.png" />
+						<variable name="vm_status" class="action">Shutdown</variable>
+						<variable name="var1" class="status">Running</variable>
+						<variable name="var2" class="status_condition">Running</variable>
+					</entry>
+						<entry class="action" dst="">
+						<label>Send the public key to my email</label>
+						<description>Send the public key to my email</description>
+						<icon path="images/certificates_16x16.gif" />
+						<variable name="send_key2" class="action">public</variable>
+						<variable name="var1" class="status">text</variable>
+						<variable name="var2" class="status_condition">text</variable>
+						</entry>
+						<entry class="action" dst="">
+						<label>Send the private key to my email</label>
+						<description>Send the private key to my email</description>
+						<icon path="images/certificates_2_16x16.gif" />
+						<variable name="send_key2" class="action">private</variable>
+						<variable name="var1" class="status">text</variable>
+						<variable name="var2" class="status_condition">text</variable>
+						</entry>
+				</entry-points>
+			</presentation>
+			<settings>
+				<setting type="string" id="private_key" default-value="" protected="true" visibility="hidden">
+					<name>Private Key</name>
+				</setting>
+				<setting type="string" id="public_key" default-value="                                                                                                                                                                                                                                       " protected="true" visibility="hidden">
+					<name>Public Key</name>
+				</setting>
+				<setting type="string" id="dataset" default-value="sdc:admin:win2008r2standard:1.0.0" visibility="hidden" installation-only="true" track-old-value="true">
+					<name>Data set</name>
+				</setting>
+				<setting type="string" id="package" default-value="XS-eXtraSmall" visibility="hidden" track-old-value="true">
+					<name>Package</name>
+				</setting>
+				<setting type="string" id="category" default-value="SmartOS" protected="true">
+					<name> VM OS</name>
+				</setting>
+				<setting type="string" id="login" value-of-setting="login" visibility="hidden">
+					<name>login</name>
+				</setting>
+				<setting type="string" id="password" value-of-setting="password" visibility="hidden">
+					<name>password</name>
+				</setting>
+				<setting type="enum" id="vm_status" class="status" protected="true" default-value="Running">
+					<name>Status of VM</name>
+					<choice id="Running">
+						<name>Running{color:green}</name>
+					</choice>
+					<choice id="PowerOff">
+						<name>PowerOff{color:red}</name>
+					</choice>
+					<choice id="Creating">
+						<name>Creating{color:yellow}</name>
+					</choice>
+					<choice id="PoweringOff">
+						<name>PoweringOff{color:yellow}</name>
+					</choice>
+					<choice id="Starting">
+						<name>Starting{color:yellow}</name>
+					</choice>
+				</setting>
+				<setting type="string" id="id" visibility="hidden">
+					<name>ID</name>
+				</setting>
+				<setting type="string" id="ip" protected="true">
+					<name>Main IP</name>
+				</setting>
+				<setting type="string" id="name" default-value="foo" installation-only="true" regex="[a-z0-9][a-z0-9]{1,49}">
+					<name>Name</name>
+					<error-message>The machine name must be at least 2 characters long and 50 max. Only lower characters and digits.</error-message>
+				</setting>
+	
+		
+	
+					<setting type="string" id="url_cloud_api" default-value="https://cloudapi.fasttrack.tid.es" installation-only="true" visibility="hidden">
+						<name>URL Cloud API</name>
+					</setting>
+					<setting type="string" id="user_cloud_api" default-value="parallels" installation-only="true" visibility="hidden">
+						<name>User Cloud API</name>
+					</setting>
+					<setting type="string" id="pasword_cloud_api" default-value="p4r4113s" visibility="hidden">
+						<name>Password Cloud Api</name>
+					</setting>
+			<setting type="enum" id="send_key2" default-value="text" class="status" protected="true">
+						<name>Keys management</name>
+						<choice id="text">
+							<name>Click on the link above to receive your keys</name>
+						</choice>
+</setting>
+				<setting type="string" id="email2" visibility="hidden" value-of-setting="email2"></setting>
+				<setting type="email" id="from_email" installation-only="true" visibility="hidden" value-of-setting="from_email">
+					<name>From Email</name>
+				</setting>
+				<setting type="string" id="from_name" installation-only="true" visibility="hidden" value-of-setting="from_name">
+					<name>From Name</name>
+				</setting>
+				<setting type="enum" id="purpose">
+					<name>VM purpose ( not mandatory )</name>
+					<choice id="other">
+						<name>Other</name>
+					</choice>
+					<choice id="web">
+						<name>Web server</name>
+					</choice>
+					<choice id="database">
+						<name>Database Server</name>
+					</choice>
+					<choice id="streaming">
+						<name>Streaming server</name>
+					</choice>
+					<choice id="backup">
+						<name>Backup server</name>
+					</choice>
+				</setting>
+				<setting type="string" id="vm_user" protected="true">
+					<name>VM admin user</name>
+				</setting>
+				<setting type="string" id="vm_pass" protected="true">
+					<name>VM admin password</name>
+				</setting>
+				</settings>
+			<provision>
+				<configuration-script name="configurevm.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</configuration-script>
+				<verify-script name="verificationvm.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</verify-script>
+			</provision>
+
+
+			</service><service id="vm3" class="service">
+			<presentation>
+				<name>-- VM3 --</name>
+				<summary>-- VM3 Summary --</summary>
+				<entry-points>
+					<entry class="action" dst="">
+						<label>Start</label>
+						<description>Start VM</description>
+						<icon path="images/start.gif" />
+						<variable name="vm_status" class="action">Start</variable>
+						<variable name="var1" class="status">Starting</variable>
+						<variable name="var2" class="status_condition">PowerOff</variable>
+					</entry>
+					<entry class="action" dst="">
+						<label>Stop</label>
+						<description>Stop VM</description>
+						<icon path="images/stop.gif" />
+						<variable name="vm_status" class="action">Stop</variable>
+						<variable name="var1" class="status">PowerOff</variable>
+						<variable name="var2" class="status_condition">Running</variable>
+
+					</entry>
+					<entry class="action" dst="">
+						<label>Restart</label>
+						<description>Restart VM</description>
+						<icon path="images/refresh.png" />
+						<variable name="vm_status" class="action">Shutdown</variable>
+						<variable name="var1" class="status">Running</variable>
+						<variable name="var2" class="status_condition">Running</variable>
+					</entry>
+						<entry class="action" dst="">
+						<label>Send the public key to my email</label>
+						<description>Send the public key to my email</description>
+						<icon path="images/certificates_16x16.gif" />
+						<variable name="send_key2" class="action">public</variable>
+						<variable name="var1" class="status">text</variable>
+						<variable name="var2" class="status_condition">text</variable>
+						</entry>
+						<entry class="action" dst="">
+						<label>Send the private key to my email</label>
+						<description>Send the private key to my email</description>
+						<icon path="images/certificates_2_16x16.gif" />
+						<variable name="send_key2" class="action">private</variable>
+						<variable name="var1" class="status">text</variable>
+						<variable name="var2" class="status_condition">text</variable>
+						</entry>
+				</entry-points>
+			</presentation>
+			<settings>
+				<setting type="string" id="private_key" default-value="" protected="true" visibility="hidden">
+					<name>Private Key</name>
+				</setting>
+				<setting type="string" id="public_key" default-value="                                                                                                                                                                                                                                       " protected="true" visibility="hidden">
+					<name>Public Key</name>
+				</setting>
+				<setting type="string" id="dataset" default-value="sdc:admin:win2008r2standard:1.0.0" visibility="hidden" installation-only="true" track-old-value="true">
+					<name>Data set</name>
+				</setting>
+				<setting type="string" id="package" default-value="XS-eXtraSmall" visibility="hidden" track-old-value="true">
+					<name>Package</name>
+				</setting>
+				<setting type="string" id="category" default-value="CentOS" protected="true">
+					<name> VM OS</name>
+				</setting>
+				<setting type="string" id="login" value-of-setting="login" visibility="hidden">
+					<name>login</name>
+				</setting>
+				<setting type="string" id="password" value-of-setting="password" visibility="hidden">
+					<name>password</name>
+				</setting>
+				<setting type="enum" id="vm_status" class="status" protected="true" default-value="Running">
+					<name>Status of VM</name>
+					<choice id="Running">
+						<name>Running{color:green}</name>
+					</choice>
+					<choice id="PowerOff">
+						<name>PowerOff{color:red}</name>
+					</choice>
+					<choice id="Creating">
+						<name>Creating{color:yellow}</name>
+					</choice>
+					<choice id="PoweringOff">
+						<name>PoweringOff{color:yellow}</name>
+					</choice>
+					<choice id="Starting">
+						<name>Starting{color:yellow}</name>
+					</choice>
+				</setting>
+				<setting type="string" id="id" visibility="hidden">
+					<name>ID</name>
+				</setting>
+				<setting type="string" id="ip" protected="true">
+					<name>Main IP</name>
+				</setting>
+				<setting type="string" id="name" default-value="foo" installation-only="true" regex="[a-z0-9][a-z0-9]{1,49}">
+					<name>Name</name>
+					<error-message>The machine name must be at least 2 characters long and 50 max. Only lower characters and digits.</error-message>
+				</setting>
+	
+		
+	
+					<setting type="string" id="url_cloud_api" default-value="https://cloudapi.fasttrack.tid.es" installation-only="true" visibility="hidden">
+						<name>URL Cloud API</name>
+					</setting>
+					<setting type="string" id="user_cloud_api" default-value="parallels" installation-only="true" visibility="hidden">
+						<name>User Cloud API</name>
+					</setting>
+					<setting type="string" id="pasword_cloud_api" default-value="p4r4113s" visibility="hidden">
+						<name>Password Cloud Api</name>
+					</setting>
+			<setting type="enum" id="send_key2" default-value="text" class="status" protected="true">
+						<name>Keys management</name>
+						<choice id="text">
+							<name>Click on the link above to receive your keys</name>
+						</choice>
+</setting>
+				<setting type="string" id="email2" visibility="hidden" value-of-setting="email2"></setting>
+				<setting type="email" id="from_email" installation-only="true" visibility="hidden" value-of-setting="from_email">
+					<name>From Email</name>
+				</setting>
+				<setting type="string" id="from_name" installation-only="true" visibility="hidden" value-of-setting="from_name">
+					<name>From Name</name>
+				</setting>
+				<setting type="enum" id="purpose">
+					<name>VM purpose ( not mandatory )</name>
+					<choice id="other">
+						<name>Other</name>
+					</choice>
+					<choice id="web">
+						<name>Web server</name>
+					</choice>
+					<choice id="database">
+						<name>Database Server</name>
+					</choice>
+					<choice id="streaming">
+						<name>Streaming server</name>
+					</choice>
+					<choice id="backup">
+						<name>Backup server</name>
+					</choice>
+				</setting>
+				<setting type="string" id="vm_user" protected="true">
+					<name>VM admin user</name>
+				</setting>
+				<setting type="string" id="vm_pass" protected="true">
+					<name>VM admin password</name>
+				</setting></settings>
+			<provision>
+				<configuration-script name="configurevm.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</configuration-script>
+				<verify-script name="verificationvm.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</verify-script>
+			</provision>
+
+
+			</service></service>
+
+
+</application>

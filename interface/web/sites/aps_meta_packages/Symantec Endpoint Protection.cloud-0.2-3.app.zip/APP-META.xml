@@ -1,0 +1,198 @@
+<application packaged="2013-08-29T16:40:07" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>SEP.cloud</id>
+	<name>Symantec Endpoint Protection.cloud</name>
+	<version>0.2</version>
+	<release>3</release>
+
+	<homepage>http://www.symanteccloud.com/index.aspx</homepage>
+
+	<vendor>
+<name>Symantec</name>
+<homepage>http://www.symanteccloud.com/index.aspx</homepage>
+</vendor>
+
+	<packager>
+<name>Parallels</name>
+<homepage>http://parallels.com</homepage>
+<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+</packager>
+
+	<presentation>
+		<summary>Symantec Endpoint Protection.cloud</summary>
+        <description>Symantec Endpoint Protection.cloud offers comprehensive security for your Windows-based laptops, 
+            desktops, and file servers as a hosted service, helping you to protect your business without installing 
+            additional hardware or management software. It is designed to safeguard your systems with advanced security 
+            technologies all managed from a single Web-based management console.</description>
+
+		<icon path="images/icon.png"/>
+
+		<screenshot path="images/main_screenshot.jpg">
+			<description>Main screenshot.</description>
+		</screenshot>
+
+		<changelog>
+
+			<version release="3" version="0.2"> <entry>Add uniqueness to e-mail address of administrator</entry> </version>
+			<version release="0" version="0.2"> <entry>Addressing certification issues: description and logo</entry> </version>
+			<version release="1" version="0.1"> <entry>Initial revision</entry> </version>
+			  
+		</changelog>
+
+		<categories>
+			<category>Collaboration/Email</category>
+		</categories>
+
+		<languages>
+<language>en</language>
+</languages>
+	</presentation>
+
+	<global-settings>
+		<group>
+<name>Connectivity</name>
+			<setting id="provisioning_api_url" type="string">
+				<name>URL for Provisioning API</name>
+  			</setting>
+			<setting id="clientconfig_api_url" min-length="1" type="string"> 
+				<name>URL for Client Config API</name>
+  			</setting>
+			<setting id="api_login" min-length="1" type="string">
+				<name>Login to use for API</name>
+  			</setting>
+			<setting id="api_password" min-length="1" type="string">
+				<name>Password to use for API</name>
+  			</setting>
+			<setting id="customer_template_name" min-length="1" type="string">
+				<name>Name of the customer template</name>
+  			</setting>
+            <setting id="ext_ref_prefix" min-length="1" type="string">
+                <name>External reference prefix</name>
+            </setting>
+            <setting id="clientnet_url" min-length="1" type="string">
+                <name>ClientNet URL</name>
+            </setting>
+            
+		</group>
+	</global-settings>
+
+	<patch match="/application/version &gt;= '0.1'"/>
+	<upgrade match="/application/version &gt;= '0.1'"/>
+
+	<service class="service" id="organization" singular="true">
+
+		<presentation>
+			<name>Organization Configuration</name>
+			<summary>Configuration</summary>
+
+			<infolinks>
+<link class="support" href="http://www.apsstandard.org/feedback/">Support</link>
+</infolinks>
+			<entry-points>
+                <entry dst="http://www.symanteccloud.com/products/hosted_endpoint/" method="GET">
+					<label>Symantec Endpoint Protection.cloud</label>
+				</entry>
+            </entry-points> 
+		</presentation>
+
+		<settings>
+            <setting id="g_clientnet_login" type="string" visibility="hidden">
+<name>Login</name>
+</setting>
+            <setting id="g_clientnet_password" type="string" visibility="hidden">
+<name>Password</name>
+</setting>
+            <setting id="g_email" type="string" visibility="hidden">
+<name>Email</name>
+</setting>
+
+			<setting class="subservice-limits" element-type="string" id="subservice_limits" protected="true" type="list" visibility="hidden">
+<name>Limits for subservices</name>
+</setting>
+			<setting class="subservice-ids" element-type="string" id="subservice_ids" protected="true" type="list" visibility="hidden">
+<name>IDs for subservices</name>
+</setting>
+			<setting class="subservice-setting-names" element-type="string" id="subservice_setting_names" protected="true" type="list" visibility="hidden">
+<name>Names of subservice settings</name>
+</setting>
+			<setting class="subservice-setting-values" element-type="string" id="subservice_setting_values" protected="true" type="list" visibility="hidden">
+<name>Default values of subservice settings</name>
+</setting>
+
+			<setting class="subscription_id" id="hosting_subscription_id" protected="true" type="string" visibility="hidden">
+<name>ID of subscription in provisioning system</name>
+</setting>
+            <setting id="licenses" protected="true" type="string">
+<name>Number of SEP.cloud licenses</name>
+</setting>
+            <group class="vcard">
+<name>Account properties</name>
+                <setting class="given-name" id="admin_fname" installation-only="true" min-length="1" type="string">
+<name>Administrator first name</name>
+</setting>
+                <setting class="family-name" id="admin_lname" installation-only="true" min-length="1" type="string">
+<name>Administrator last name</name>
+</setting>
+                <setting class="email" id="admin_email" installation-only="true" min-length="1" type="string" uniq="global">
+<name>Administrator e-mail</name>
+</setting>
+                <setting class="organization-name" id="company_name" installation-only="true" max-length="35" min-length="1" type="string">
+<name>Company name</name>
+</setting>
+                <setting class="street-address" id="address" installation-only="true" min-length="1" type="string">
+<name>Street address</name>
+</setting>
+                <setting class="locality" id="town" installation-only="true" min-length="1" type="string">
+<name>City/Town</name>
+</setting>
+                <setting class="region" id="state" installation-only="true" type="string">
+<name>State</name>
+</setting>
+                <setting class="postal-code" id="zipcode" installation-only="true" min-length="1" type="string">
+<name>Zip code</name>
+</setting>
+                <setting class="country-name" id="country" installation-only="true" min-length="1" type="string">
+<name>Country</name>
+</setting>
+            </group>
+
+		</settings>
+
+
+		<resources>
+			<resource class="item" id="sep_cloud_licenses" limiting-setting="licenses">
+				<name>SEP.cloud licenses</name>
+			</resource>
+		</resources>
+
+		<provision>
+			<configuration-script name="provision.sh">
+				<binary-executable/>
+                
+                <structured-output/>
+			</configuration-script>
+		</provision>
+
+		<service id="entry_point_protection" singular="true">
+			<presentation>
+				<name>ClientNet Access</name>
+				<summary>ClientNet Access</summary>
+			    <entry-points>
+                    <entry dst="{clientnet_url}" method="GET">
+				    	<label>Symantec Endpoint Protection.cloud</label>
+                        <variable name="clientnet_url" value-of-setting="clientnet_url"/>
+				    </entry>
+                </entry-points> 
+			</presentation>
+            <settings>
+                <setting id="clientnet_login" protected="true" type="string" value-of-setting="g_clientnet_login">
+<name>Login</name>
+</setting>
+                <setting id="clientnet_password" protected="true" type="string" value-of-setting="g_clientnet_password">
+<name>Password</name>
+</setting>
+            </settings>
+		</service>
+
+	</service>
+
+</application>

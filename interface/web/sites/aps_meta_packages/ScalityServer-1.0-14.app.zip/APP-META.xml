@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<application xmlns="http://apstandard.com/ns/1" xmlns:pvc="http://apstandard.com/ns/1/pvc" packaged="2011-05-17T18:31:04" version="1.2">
+	<id>http://apsstandard.org/app/ScalityServer</id>
+	<name>ScalityServer</name>
+	<version>1.0</version>
+	<release>14</release>
+	<homepage>http://www.scality.com/</homepage>
+	<vendor>
+		<name>Scality</name>
+		<homepage>http://www.scality.com/</homepage>
+		<icon path="images/scality_logo.png"/>
+	</vendor>
+	<packager>
+		<name>Scality</name>
+		<homepage>http://www.scality.com/</homepage>
+		<icon path="images/scality_logo.png"/>
+		<uri>uuid:414f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>ScalityServer</summary>
+		<description>The Scality Server application allows the integration of
+			a Scality Ring object storage system into Parallels Automation for Cloud Infrastructure.
+			It provides authentication and accounting services for the RS2
+			connector.</description>
+		<icon path="images/scality_logo.png"/>
+		<changelog>
+			<version release="10" version="1.0">
+				<entry>Fixed incorrect store usage for users with several buckets.</entry>
+			</version>
+			<version release="11" version="1.0">
+				<entry>Added server side logging and debug traces.</entry>
+			</version>
+			<version release="12" version="1.0">
+				<entry>Wrong RPM template.</entry>
+			</version>
+			<version release="13" version="1.0">
+				<entry>Added PHP Log module 1.9.16 to the package (not included in vzpem-php5-as4).</entry>
+			</version>
+			<version release="14" version="1.0">
+				<entry>Removed PHP requirements (redundant with the dependency on the php5 template).</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Tools</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<upgrade match="/application/version = '1.0'"/>
+
+	<content>
+		<pvc:templates class="lin">
+
+			<pvc:template filename="vzpem-php5-as4-template-20070904-1.0-1.i386.rpm"/>
+			<pvc:template filename="vzpem-mysql-client-as4-template-20090616-1.0-1.i386.rpm"/>
+			<pvc:template filename="vzpem-pgsql-client-as4-template-20081128-1.0-1.i386.rpm"/>
+			<pvc:template path="templates/scalityserver-template-20120604-1.0-1.i386.rpm">
+				<pvc:checksum algorithm="SHA256">1b655b54aa2a384bba91fcbeff171082210d23f8dd0301dd67073898b3a6428f</pvc:checksum>
+			</pvc:template>
+
+		</pvc:templates>
+	</content>
+	<service id="server">
+		<license must-accept="false">
+			<free/>
+			<text>
+				<name>Custom</name>
+				<url>http://apsstandard.org/license</url>
+			</text>
+		</license>
+		<presentation>
+			<name>ScalityServer</name>
+			<summary>TBD</summary>
+		</presentation>
+
+		<settings>
+			<group class="web">
+				<name>Ring details</name>
+				<setting default-value="" id="scality_rs2_host" type="host-name">
+					<name>Scality RS2 Host</name>
+					<description>IP address or hostname of Scality RS2 service.
+					</description>
+				</setting>
+				<setting default-value="8180" id="scality_rs2_provisioning_port" type="integer">
+					<name>Scality RS2 Provisioning Port</name>
+					<description>TCP port of the RS2 provisioning service.
+					</description>
+				</setting>
+			<setting default-value="80" id="scality_rs2_rest_port" type="integer">
+					<name>Scality RS2 REST Port</name>
+					<description>TCP port of the RS2 storage service.
+					</description>
+				</setting>
+</group>
+			<group class="authn">
+				<name>Administrator's credentials</name>
+				<setting default-value="admin" id="scality_admin" type="string">
+					<name>RS2 Administrator Login</name>
+				</setting>
+				<setting id="scality_password" type="password">
+					<name>RS2 Administrator Password</name>
+				</setting>
+			</group>
+
+		</settings>
+
+		<requirements xmlns:db="http://apstandard.com/ns/1/db" xmlns:env="http://apstandard.com/ns/1/environment" xmlns:php="http://apstandard.com/ns/1/php">
+			<!--
+			<php:extension>mysqli</php:extension>
+			<php:extension>curl</php:extension>
+			<php:extension>log</php:extension>
+			<php:version min="5.1"/>
+			-->
+			<env:environment>
+				<env:linux>redhat-as4</env:linux>
+			</env:environment>
+			<db:db>
+				<db:id>main</db:id>
+				<db:default-name>scalityserver</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0</db:server-min-version>
+			</db:db>
+		</requirements>
+
+		<provision>
+			<url-mapping>
+				<default-prefix>/</default-prefix>
+				<installed-size>14481</installed-size>
+				<mapping xmlns:php="http://apstandard.com/ns/1/php" path="." url="/">
+
+				</mapping>
+			</url-mapping>
+
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+		</provision>
+
+	</service>
+</application>

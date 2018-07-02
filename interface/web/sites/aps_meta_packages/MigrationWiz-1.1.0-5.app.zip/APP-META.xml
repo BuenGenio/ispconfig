@@ -1,0 +1,223 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-06-07T10:11:02">
+    <id>http://www.migrationwiz.com/</id>
+    <name>MigrationWiz</name>
+    <version>1.1.0</version>
+    <release>5</release>
+    <homepage>http://www.migrationwiz.com/Public/Default.aspx</homepage>
+    <vendor>
+    	<name>MigrationWiz</name>
+    	<homepage>http://www.migrationwiz.com/Public/Default.aspx</homepage>
+    	<icon path="images/internet-mail.png" />
+    </vendor>
+    <packager>
+    	<name>MigrationWiz</name>
+    	<homepage>http://www.migrationwiz.com/Public/Default.aspx</homepage>
+    	<icon path="images/internet-mail.png" />
+    	<uri>uuid:04c34310-b650-11e1-afa6-0800200c9a66</uri>
+    </packager>
+    <presentation>
+    	<summary>MigrationWiz is a cloud-based email migration solution that moves companies from existing to new messaging systems seamlessly and affordably.</summary>
+    	<description>MigrationWiz is a complete cloud-based migration solution that helps companies move from existing to new messaging systems seamlessly and affordably. With no hardware or software to install, the patent pending technology is a solution designed to meet the needs of individuals, IT administrators, consultants, system integrators and service providers interested in migrating mailboxes. MigrationWiz is a trusted brand in over 50 countries by global Fortune 500 organizations, governments, healthcare providers, and more. </description>
+    	<icon path="images/internet-mail.png" />
+    	<screenshot path="images/screenshot.png">
+    		<description>MigrationWiz HomePage</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="19" version="1.0.0">
+    			<entry>Initial release.</entry>
+    		</version>
+    		<version release="1" version="1.0.1">
+    			<entry>removed local hosting requirement	</entry>
+    		</version>
+    		<version release="2" version="1.0.1">
+    			<entry>added multi-step API call</entry>
+    		</version>
+    		<version release="3" version="1.0.1">
+    			<entry>added certification items</entry>
+    		</version>
+    		<version release="4" version="1.0.1">
+    			<entry>php fix akc</entry>
+    		</version>
+    		<version release="5" version="1.0.1">
+    			<entry>remove local config file</entry>
+    		</version>
+    		<version release="6" version="1.0.1">
+    			<entry>removed configure script vars no longer needed
+    			configure script changes
+    			correction in verify script
+    			Another verify change
+    			still testing verify.php
+    			Updating the API call
+    			Added validation return text
+    			update to package category
+    			Changed seat count setting to installation only, added URI, seat_count as structured output in configure script - akc
+    			fix error in configure script</entry>
+    		</version>
+    		<version release="1" version="1.0.2">
+    			<entry>remove multi-step-login and just use configure script on install</entry>
+    		</version>
+    		<version release="2" version="1.0.2">
+    			<entry>changed the entry point type</entry>
+    		</version>
+    		<version release="3" version="1.0.2">
+    			<entry>added customer_url setting to copy portal URL down to the customer</entry>
+    		</version>
+    		<version release="4" version="1.0.2">
+    			<entry>entry point did not have the correct url variable</entry>
+    		</version>
+    		<version release="5" version="1.0.2">
+    			<entry>seat count variable change</entry>
+    		</version>
+    		<version release="6" version="1.0.2">
+    			<entry>changed the application resource name</entry>
+    		</version>
+    		<version release="7" version="1.0.2">
+    			<entry>more changes to the resource and settings</entry>
+    		</version>
+    		<version release="8" version="1.0.2">
+    			<entry>added additional debug output</entry>
+    		</version>
+    		<version release="1" version="1.0.3">
+    			<entry>resource setting passed back for proper display to customer</entry>
+    		</version>
+    		<version release="2" version="1.0.3">
+    			<entry>set resource poll interval</entry>
+    		</version>
+    		<version release="3" version="1.0.3">
+    			<entry>trying to get entry point to pass token</entry>
+    		</version>
+    		<version release="4" version="1.0.3">
+    			<entry>trying to get entry point to pass token</entry>
+    		</version>
+    		<version release="5" version="1.0.3">
+    			<entry>trying to get entry point to pass token</entry>
+    		</version>
+    		<version release="6" version="1.0.3">
+    			<entry>added post entry point</entry>
+    		</version>
+    		<version release="7" version="1.0.3">
+    			<entry>more entry point changes</entry>
+    		</version>
+    		<version release="8" version="1.0.3">
+    			<entry>escape the double quotes on structured output</entry>
+    		</version>
+    		<version release="9" version="1.0.3">
+    			<entry>Code clean up</entry>
+    		</version>
+    		<version release="10" version="1.0.3">
+    			<entry>Adding a configure action action into the configure.php script
+Removing 'status-control' </entry>
+    		</version>
+    		<version release="11" version="1.0.3">
+    			<entry>Adding Enable and Disable functions</entry>
+    		</version>
+    		<version release="1" version="1.1.0">
+    			<entry>license key pulled out as list</entry>
+    		</version>
+    		<version release="2" version="1.1.0">
+    			<entry>changed seatcount display option</entry>
+    		</version>
+    		<version release="3" version="1.1.0">
+    			<entry>more changes to the seat count setting</entry>
+    		</version>
+    		<version release="4" version="1.1.0">
+    			<entry>more changes to the seat count setting</entry>
+    		</version>
+    		<version release="5" version="1.1.0">
+    			<entry>made seat count protected</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+			<category>Infrastructure/Mail</category>
+  		</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<setting type="string" id="portal_url" class="web">
+    		<name>Migration Portal URL</name>
+    		<description>PA instance-specific URL provided by MigrationWiz</description>
+    	</setting>
+    	<setting type="string" id="identification_token" default-value="">
+    		<name>Identification Token</name>
+    		<description>PA instance-specific token provided by MigrationWiz</description>
+    	</setting>
+    </global-settings>
+    <patch match="/application/version &gt;= '0.1'" />
+    <service id="migrationwiz" class="service" singular="true">
+    	<license must-accept="false">
+    		<commercial />
+    		<text>
+    			<name>EULA</name>
+    			<url>http://www.migrationwiz.com/Public/TermsOfService.aspx</url>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>MigrationWiz Portal Coupons</name>
+    		<summary>Cloud-based email migration solution</summary>
+    		<infolinks>
+    			<link
+    				href="http://www.migrationwiz.com/Public/Default.aspx"
+    				class="official">MigrationWiz HomePage
+    			</link>
+    			<link
+    				href="http://www.migrationwiz.com/Public/Support/Default.aspx"
+    				class="support">MigrationWiz Support Page
+    			</link>
+    		</infolinks>
+    	</presentation>
+    	<settings>
+    		<setting type="string" id="token" visibility="hidden" default-value="0">
+    			<description>Token returned from MigrationWizard for the Entry Point</description>
+    		</setting>
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    	</requirements>
+    	<service id="MigrationLicense" class="service">
+    		<presentation>
+    			<name>Migration License</name>
+    			<summary>Migration License</summary>
+
+	    		<infolinks>
+	    			<link
+	    				href="http://www.migrationwiz.com/Public/Default.aspx"
+	    				class="official">MigrationWiz HomePage
+	    			</link>
+	    			<link
+	    				href="http://www.migrationwiz.com/Public/Support/Default.aspx"
+	    				class="support">MigrationWiz Support Page
+	    			</link>
+	    		</infolinks>
+	    		<entry-points>
+	                <entry class="frontpage" dst="http://{portal_url}/Public/Default.aspx?c={token}" method="GET">
+	                    <label>MigrationWiz Administration Site</label>
+	                    <label xml:lang='en'>MigrationWiz Administration Site</label>
+	                    <variable name="portal_url" value-of-setting="portal_url"></variable>
+	                    <variable name="token" value-of-setting="keystring"></variable>
+	                </entry>
+	    		</entry-points>
+
+    		</presentation>
+    		<settings>
+    			<setting id="hosting_subscription_id" type="string" protected="true" class="subscription_id" visibility="hidden" default-value="0"/>
+    			<group class="presentation">
+    				<setting id="keystring" type="string" default-value="0" protected="true">
+							<name>Keystring for this license.</name>
+					</setting>
+    				<setting type="integer" id="seatcount" default-value="1" installation-only="true" protected="true">
+    					<name>Seat Count</name>
+    					<description>Number of migration seats purchased</description>
+    				</setting>
+    			</group>
+    		</settings>
+    		<provision>
+    			<configuration-script name="configure.php">
+    				<script-language>php</script-language>
+    				<status-control />
+    				<structured-output />
+    			</configuration-script>
+    		</provision>
+    	</service>
+    </service>
+</application>

@@ -1,0 +1,225 @@
+<application packaged="2014-12-18T06:17:17" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>BlogEngine.NET</id>
+	<name>BlogEngine.NET</name>
+	<version>3.1.1.0</version>
+	<release>12</release>
+	<homepage>http://www.dotnetblogengine.net</homepage>
+	<vendor>
+		<name>Blogengine.net</name>
+		<homepage>http://www.dotnetblogengine.net</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Glowtouch Technologies</name>
+		<homepage>http://www.glowtouch.com/</homepage>
+		<icon path="images/parrallels-GT6.png"/>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>BlogEngine.NET is an a blog platform with less
+			complexity,easy customization, and one that takes advantage of the
+			latest .NET features.</summary>
+		<description>BlogEngine.NET is an open source .NET blogging project
+			that was born out of desire for a better blog platform. It was
+			designed using the current .NET framework and focused on
+			simplicity,
+			ease of extendibility, and innovative features.With BlogEngine.NET,
+			we hope to create the natural blog of choice for all .NET developers
+			world wide.</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/Screenshot.png">
+			<description>Screenshot 1.</description>
+		</screenshot>
+		<changelog>
+			<version release="4" version="2.8">
+				<entry>
+					Commenting staticContent section in web.config
+				</entry>
+			</version>
+			<version release="2" version="2.8">
+				<entry>Added Screen shot.</entry>
+			</version>
+			<version release="1" version="2.8">
+				<entry>
+					http://www.dotnetblogengine.net/post/BlogEngineNET-28-Released.aspx
+				</entry>
+			</version>
+			<version release="8" version="2.5">
+				<entry>
+					added .cshtml handlers in web.config, to workaround
+					404 error
+					on Plesk hosting
+				</entry>
+			</version>
+			<version release="7" version="2.5">
+				<entry>BlogEngine.NET 2.5 Update.</entry>
+			</version>
+			<version release="9" version="1.6.1">
+				<entry>
+					Release notes:
+					http://www.dotnetblogengine.net/page/BlogEngineNET-16-Release-Notes.aspx
+				</entry>
+			</version>
+			<version release="3" version="1.4.5">
+				<entry>
+					Admin role for administrative account is set
+				</entry>
+			</version>
+			<version release="2" version="1.4.5">
+				<entry>
+					BlogEngine.NET 1.4.5 packed. Refer to release notes:
+					http://www.dotnetblogengine.net/post/BlogEngineNET-145-released-today.aspx
+				</entry>
+			</version>
+			<version release="17" version="1.1">
+				<entry>Initial package version</entry>
+			</version>
+			<version release="9" version="2.9">
+				<entry>
+					Admin UI redesigned using latest Bootstrap
+					framework. New
+					standard theme, also Bootstrap based,
+					standards compliant with clean
+					and beautiful design
+					that is easy to extend and pleasure to use.
+					Improvements to theme layouts (separate single post
+					and page
+					templates, navigation template and more)
+					New light-weight JavaScript
+					based post editor New
+					admin UI runs on AngularJS and SPA (single
+					page)
+					application model ASP.NET Web API and Repository
+					Pattern on the
+					back-end
+				</entry>
+			</version>
+			<version release="10" version="2.9">
+				<entry>updated</entry>
+			</version>
+			<version release="11" version="2.9">
+				<entry>updated</entry>
+			</version>
+			<version release="12" version="2.9">
+				<entry>updated</entry>
+			</version>
+			<version release="13" version="2.9">
+				<entry>updated</entry>
+			</version>
+			<version release="14" version="2.9">
+				<entry>updated</entry>
+			</version>
+			<version release="15" version="2.9">
+				<entry>updated</entry>
+			</version>
+			<version release="16" version="2.9">
+				<entry>updated</entry>
+			</version>
+			<version release="17" version="2.9">
+				<entry>updated</entry>
+			</version>
+			<version release="6" version="2.9">
+				<entry>updated</entry>
+			</version>
+			<version release="9" version="3.0">
+				<entry>List of New features and improvements
+					Auto Update
+					Multiple
+					Gallery Feeds
+					Multiple Post Editors
+					File Manager
+					Custom Front Page
+					Web
+					Application instead of Website
+					New Gallery</entry>
+			</version>
+			<version release="10" version="3.1">
+				<entry>Tis version contain,
+					Improvements to admin gallery (download
+					counts, ratings and reviews)
+					Custom fields added to author profiles
+					and posts
+					Small improvements and bug fixes, as always
+					3rd party
+					components updated to latest versions</entry>
+			</version>
+			<version release="12" version="3.1.1.0">
+				<entry>This release contain security patch against directory
+					traversal vulnerability along with few improvements and bug fixes.
+				</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Blog</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '1.1' and /application/release &gt;= '1'"/>
+	<service id="root">
+		<license must-accept="true">
+			<text>
+				<name>Microsoft Reciprocal License (Ms-RL)</name>
+				<url>http://www.codeplex.com/blogengine/license</url>
+			</text>
+		</license>
+		<presentation>
+			<summary>BlogEngine.NET is an a blog platform with less
+				complexity,easy customization, and one that takes advantage of the
+				latest .NET features.</summary>
+			<infolinks>
+				<link class="support" href="http://www.dotnetblogengine.net/">Support</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/">
+					<label>Blog</label>
+				</entry>
+				<entry dst="/Account/login.aspx">
+					<label>Administrative interface</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" min-length="1" regex="^[a-zA-Z]{1}[0-9a-zA-Z_\-]{0,32}" type="string">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting class="password" id="admin_password" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+				
+			</group>
+			<group class="vcard">
+				<name>Main configuration</name>
+				<group class="email">
+					<setting class="value" id="admin_email" type="email">
+						<name>Administrator's email</name>
+					</setting>
+				</group>
+			</group>
+		</settings>
+		<requirements>
+			<aspnet:version xmlns:aspnet="http://apstandard.com/ns/1/aspnet">4.0</aspnet:version>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>blogenginenet</default-prefix>
+				<installed-size>32487264</installed-size>
+				<mapping path="htdocs" url="/">
+					<aspnet:permissions writable="true" xmlns:aspnet="http://apstandard.com/ns/1/aspnet"/>
+					<aspnet:handler xmlns:aspnet="http://apstandard.com/ns/1/aspnet"/>
+					<mapping url="App_Data">
+						<aspnet:permissions writable="true" xmlns:aspnet="http://apstandard.com/ns/1/aspnet"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>vbscript</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

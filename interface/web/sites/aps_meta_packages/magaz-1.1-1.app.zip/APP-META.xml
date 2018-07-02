@@ -1,0 +1,114 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-06-25T11:42:28">
+    <id>http://ma-gaz.ru/1</id>
+    <name>magaz</name>
+    <version>1.1</version>
+    <release>1</release>
+    <homepage>http://ma-gaz.ru</homepage>
+    <vendor>
+    	<name>ma-gaz.ru</name>
+    	<homepage>http://ma-gaz.ru</homepage>
+    	<icon path="images/64x64.jpg" />
+    </vendor>
+    <packager>
+    	<name>Webdom</name>
+    	<homepage>http://webdom.net</homepage>
+    </packager>
+    <presentation>
+    	<summary>Ma-gaz - создание и аренда интернет магазинов</summary>
+    	<description>Специализированный сервис создания профессиональных интернет магазинов с полностью готовым функционалом:  удобный каталог, разнообразные виды карточек товара, многофункциональная корзина, история заказов, подключение и настройка систем оплаты и доставки, инструменты продвижения, большая библиотека готовых шаблонов, редактор  дизайна.</description>
+    	<icon path="images/64x64.jpg" />
+    	<screenshot path="images/screen640x640.jpg">
+    		<description>Магаз</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.0">
+    			<entry>Первая версия</entry>
+    		</version>
+    		<version release="1" version="1.1">
+    			<entry>Fix for APS</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Web/E-commerce</category>
+    	</categories>
+    	<languages>
+    		<language>ru</language>
+    	</languages>
+    </presentation>
+    <service id="magaz">
+    	<license must-accept="true">
+    		<commercial />
+    		<text>
+    			<name>EULA</name>
+    			<url>http://ma-gaz.ru/information/requirement</url>
+    		</text>
+    	</license>
+    	<presentation>
+    		<summary>Ma-gaz - создание и аренда интернет магазинов</summary>
+    		<infolinks>
+    			<link href="http://ma-gaz.ru/podderzhka" class="support">Поддержка</link>
+    			<link href="http://tempuri.org"></link>
+    		</infolinks>
+    		<entry-points>
+    			<entry dst="http://ma-gaz.ru/s/sites" method="POST" class="login">
+    				<label>Вход в магазин</label>
+    				<variable name="login" class="login"></variable>
+    				<variable name="password" class="password"></variable>
+    				<variable name="act" class="">login</variable>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+    		<group class="authn">
+    		<setting type="email" id="email" installation-only="true"
+    			class="email">
+    			<name>* E-mail адрес:</name>
+    			<description>На Ваш почтовый адрес мы вышлем Вам логин и пароль</description>
+    		</setting>
+    		<setting type="string" id="domain"
+    			installation-only="true" default-value="">
+    			<name>* Домен:</name>
+    			<description>Адрес магазина будет выглядеть как домен.ma-gaz.ru
+Позднее можно заказать собственное доменное имя вида www.shop.ru</description>
+    		</setting>
+    		<setting type="string" id="name" installation-only="true" default-value="">
+    			<name>* Ваше имя:</name>
+    			<description>Пожалуйста, укажите Ваше имя</description>
+    		</setting>
+    		<setting type="string" id="phone" installation-only="true"
+    			optional="true">
+    			<name>Контактный телефон:</name>
+    			<description>Не обязательно</description>
+    		</setting>
+    		<setting type="enum" id="tariff" installation-only="true" default-value="534">
+    			<name>* Тарифный план:</name>
+    			<choice id="534">
+    				<name>Мини-маркет</name>
+    			</choice>
+    			<choice id="543">
+    				<name>Супер-маркет</name>
+    			</choice>
+    			<choice id="552">
+    				<name>Гипер-маркет</name>
+    			</choice>
+    			<choice id="561">
+    				<name>Мега-маркет</name>
+    			</choice>
+    		</setting>
+    		</group>    		
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:version min="5.2"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    		<verify-script name="verify.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</verify-script>
+    	</provision>
+    </service>
+</application>

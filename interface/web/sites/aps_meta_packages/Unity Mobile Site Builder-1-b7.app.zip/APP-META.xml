@@ -1,0 +1,215 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2">
+  <id>unity-mobile-sitebuilder</id>
+  <name>Unity Mobile Site Builder</name>
+  <version>1</version>
+  <release>b7</release>
+  <homepage>http://www.unitymobile.com</homepage>
+  <vendor>
+    <name>UNITY Mobile</name>
+    <homepage>http://www.unitymobile.com/</homepage>
+  </vendor>
+  
+  <packager>
+    <name>Unity Mobile</name>
+    <homepage>http://www.unitymobile.com</homepage>
+    <uri>unitymobile-aps-packager:unity</uri>
+  </packager>
+
+  <presentation>
+    <summary>Mobile Web and Applications Service Platform.</summary>
+    <description>
+      UNITY Mobile is a site builder based on HTML5 and responsive design elements. It supports all smartphones and tablets. (7600 devices+)
+      1. Create and publish sites in minutes
+      2. Use embedded marketing tools to promote your site
+      3. Start generating leads and new revenues
+    </description>
+    <icon path="images/icon.png"/>
+
+		<screenshot path="images/simple-editor-screenshot.png">
+		  <description>Design and Manage the Mobile Site</description>
+    </screenshot>
+		
+    <changelog>
+      <version version="1" release="b7">
+			  	<entry>UNITY Mobile Site Builder</entry>
+      </version>
+    </changelog>
+		    
+    <categories>
+      <category>Web/Site Editing</category>
+      <!-- <category>Web/Content management</category> -->
+    </categories>
+		
+    <languages>
+      <language>en</language>
+    </languages>
+	 
+  </presentation>
+  
+  <global-settings>
+    <!-- UNITY Integration Settings -->
+    <setting  id="unity-integration-layer-url" 
+              type="string"
+              default-value="https://apsil.unitymobile.com"
+              visibility="hidden" 
+              protected="true"
+              regex="^https?://.+">
+      <name>UNITY-APS CONNECTOR URL</name>
+      <description>The URL where the UNITY connector is installed.</description>
+    </setting>
+    <setting  id="partner-key" 
+              type="string"
+              default-value="">
+      <name>PARTNER KEY</name>
+      <description>Key to the Unity-APS connector used to identify the partner.</description>
+    </setting>
+    <setting  id="package-name"
+              type="string"
+              default-value="unityone">
+      <name>PACKAGE NAME</name>
+      <description>Name of Unity package</description>
+    </setting>
+  </global-settings>
+ 
+  <!-- O V E R A L L - S E R V I C E -->
+  <service  id="unity-live-service" 
+            class="service">
+    <!-- L I C E N S E -->
+    <license must-accept="true">
+      <commercial />
+      <text>
+        <name>UNITY EULA</name>
+        <file>licenses/EULA.txt</file>
+      </text>
+    </license>
+    <!-- P R E S E N T A T I O N -->
+    <presentation>
+      <name>Unity Mobile Service</name>
+      <summary>UNITY Mobile is a service for publishers who need to create, manage and distribute mobile landing pages and mobile web sites.</summary>
+      <infolinks>
+      	<link class="official"  href="http://www.unitymobile.com/">Official site</link>
+        <link class="support"   href="http://aps.unitymobile.com/">Support link</link>
+        <link xml:lang="en"  href="http://live.unitymobile.com/static/aps-pa-unitymobile-deployment-guide.pdf" class="deployment-guide">Deployment guide</link>
+      </infolinks>
+      <!-- E N T R Y - P O I N T S -->
+      <entry-points>
+      	<entry dst="{unity-integration-layer-url}/SiteList.aspx" method="POST">
+	        <label>Mobile Site Editor</label>
+	        <variable name="unity-integration-layer-url"  value-of-setting="unity-integration-layer-url" />
+	        <variable name="partner-key"                  value-of-setting="partner-key" />
+	        <variable name="package-name"                 value-of-setting="package-name" />
+          <variable name="context-domains"              value-of-setting="context-domains" />
+          <variable name="mobile-domain-prefix"         value-of-setting="mobile-domain-prefix" />
+          <variable name="unity-service-instance-id"    value-of-setting="unity-service-instance-id" />
+          <variable name="user-first-name"              value-of-setting="user-first-name" />
+          <variable name="user-last-name"               value-of-setting="user-last-name" />
+          <variable name="user-email"                   value-of-setting="user-email" />
+        </entry>
+      </entry-points>
+    </presentation>
+    <!-- SETTINGS -->
+    <settings>
+      <group>
+        <name>Mobile Domain Settings</name>
+        <setting  id="mobile-domain-prefix"
+                  type="string"
+                  default-value="m"
+                  installation-only="true"
+                  regex="^[a-z,0-9]+[-,a-z,0-9]*$">
+          <name>MOBILE DOMAIN PREFIX</name>
+          <description>This name will be used as a subdomain for the mobile website address. A typical value is 'm', which results in a final domain name like 'm.mycompany.com'.</description>
+          <error-message>A string containg lower case characters, numbers and '-' required.</error-message>
+        </setting>
+      </group>
+      <!-- unique id generated for the user by the system - it is generated only once upon the application instalatinon -->
+      <setting  id="unity-service-instance-id" 
+                type="string" 
+                visibility="hidden" 
+                generate="uuid" 
+                installation-only="true" 
+                protected="true"/>
+                
+      <!-- this is a placeholder for the context domain name -->
+      <setting  id="context-domains"
+                class="domain-name"
+                visibility="hidden"
+                protected="true"
+                type="list"
+                element-type="string"
+                track-old-value="true"/>
+      <setting  type="list" 
+                element-type="string" 
+                visibility="hidden" 
+                protected="true" 
+                id="domains-source">
+        <default-value></default-value>
+      </setting> 
+      <setting  type="list" 
+                element-type="string" 
+                visibility="hidden" 
+                protected="true" 
+                id="domains-target">
+        <default-value></default-value>
+      </setting> 
+                 
+      <group class="vcard">
+        <!-- hidden settings that read the system real names and email --> 
+        <setting  id="user-first-name" 
+                  type="string"
+                  class="given-name" 
+                  visibility="hidden" 
+                  protected="true"/> 
+        <setting  id="user-last-name" 
+                  type="string"
+                  class="family-name" 
+                  visibility="hidden" 
+                  protected="true"/> 
+      
+        <group class="email">
+          <setting  id="user-email" 
+                    class="value" 
+                    type="email" 
+                    visibility="hidden" 
+                    protected="true"/>
+        </group>
+        
+      </group>
+    </settings>
+    
+    <resources>
+      <resource id="site-count" class="item">
+        <name>Number of sites</name>
+        <description>Number of mobile sites created within the application.</description>
+      </resource>
+    </resources>
+ 
+    <requirements xmlns:dns="http://apstandard.com/ns/1/dns" xmlns:php="http://apstandard.com/ns/1/php">
+      <php:version min="5.2.4"/>
+      <php:extension>curl</php:extension>
+      <!-- DNS -->
+      <dns:record>
+        <dns:cname> 
+          <dns:src>
+            <dns:external value-of-setting="domains-source" />
+          </dns:src>
+          <dns:dst>
+            <dns:external value-of-setting="domains-target" />
+          </dns:dst>
+        </dns:cname>
+      </dns:record>
+    </requirements>
+    
+    <!-- PROVISIONING -->
+    <provision>
+      <configuration-script name="script.php">
+        <script-language>php</script-language>
+        <structured-output />
+      </configuration-script>
+      <resource-script name="resources.php" poll-interval="5m">
+        <script-language>php</script-language>
+      </resource-script>
+    </provision>
+
+   </service>
+   
+</application>

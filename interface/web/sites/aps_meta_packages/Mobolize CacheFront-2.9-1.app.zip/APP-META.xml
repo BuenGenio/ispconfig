@@ -1,0 +1,140 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-02-04T19:37:58">
+    <id>http://www.mobolize.com/cachefront/</id>
+    <name>Mobolize CacheFront</name>
+    <version>2.9</version>
+    <release>1</release>
+    <homepage>http://www.mobolize.com/</homepage>
+    <vendor>
+        <name>Mobolize, Inc.</name>
+        <homepage>http://www.mobolize.com/</homepage>
+        <icon path="images/logo.png" />
+    </vendor>
+    <packager>
+        <name>Mobolize</name>
+        <homepage>http://www.mobolize.com/</homepage>
+        <icon path="images/logo.png" />
+        <uri>uuid:72c19b54-e77c-44d0-ba49-bcd1e6f959a2</uri>
+    </packager>
+    <presentation>
+        <summary>Mobolize CacheFront MMC Account</summary>
+        <description>Mobolize ensures a continuous end user experience, previously only available with expensive, highly complex, redundant hardware based solutions, regardless of network disruption/failure or server downtime. Mobolize's CacheFront provides the option of working with SharePoint anytime, anywhere regardless of connectivity, making the user experience offline synonymous with online.</description>
+        <icon path="images/logo.png" />
+        <screenshot path="images/mmc.png">
+            <description>Login page.</description>
+        </screenshot>
+        <changelog>
+            <version release="1" version="2.9">
+                <entry>Initial release of APS package for MMC 2.9.</entry>
+            </version>
+        </changelog>
+        <categories>
+            <category>Infrastructure/Management</category>
+        </categories>
+        <languages>
+            <language>en</language>
+        </languages>
+    </presentation>
+    <global-settings>
+        <setting type="string" id="mmcUrl" default-value="https://clientmgmt.mobolize.com/">
+            <name>Mobolize Management Console Address</name>
+            <description>The URL of the Mobolize Management Console (MMC) that is used to manage customers created through this service provider partner.</description>
+        </setting>
+        <setting type="string" id="partnerUserName" default-value="mobo.partner">
+            <name>Mobolize Partner Username</name>
+            <description>The username assigned to the service provider partner when a partnership agreement has been established with Mobolize.</description>
+        </setting>
+        <setting type="password" id="partnerPassword" default-value="MyPartnerPassword">
+            <name>Mobolize Partner Password</name>
+            <description>The password assigned to the service provider partner when a partnership agreement has been established with Mobolize.</description>
+        </setting>
+    </global-settings>
+    <service id="MobolizeCustomerAccount" class="service">
+        <license must-accept="true">
+            <commercial />
+            <text>
+                <name>MobolizeCustomerLicense</name>
+                <file>eula.txt</file>
+            </text>
+        </license>
+        <presentation>
+            <name>Mobolize Configuration</name>
+            <summary>A customer account on the Mobolize Management Console to allow the management of CacheFront clients.</summary>
+            <infolinks>
+                <link href="http://www.mobolize.com/" class="support">Coporate Homepage</link>
+                <link href="file:///Mobolize-APS-Deployment-Guide.docx" class="deployment-guide">Deployment Guide</link>
+            </infolinks>
+            <entry-points>
+                <entry dst="https://devmmc1.mobolize.com/autoLogin" class="login" method="POST">
+                    <label>Management Console</label>
+                    <icon path="images/logo.png" />
+                    <variable name="username" class="login" value-of-setting="adminUsername">defaultusername</variable>
+                    <variable name="password" class="password" value-of-setting="adminPassword">defaultpassword</variable>
+                </entry>
+            </entry-points>
+        </presentation>
+        <settings>
+            <setting type="integer" id="licenseSeatsRequested" min="1" default-value="50" installation-only="true">
+                <name>License Seats</name>
+                <description>At installation of the package, provision this many license seats for the account.</description>
+            </setting>
+            <setting type="string" id="mobolizedSiteUrl" default-value="http://www.sharepoint.com/" regex="^https?://.+$" installation-only="true">
+                <name>Mobolized Site</name>
+                <description>The site to be "Mobolized" where enhanced caching algorithms and techniques are applied to accelerate web performance.</description>
+            </setting>
+            <setting type="string" id="customerGuid" visibility="hidden" default-value="00000000-0000-0000-0000-000000000000">
+                <name>Customer ID</name>
+                <description>Unique customer id assigned by Mobolize when a customer account is created.</description>
+            </setting>
+            <group class="authn">
+                <name>Administrator</name>
+                <setting type="string" id="adminUsername" default-value="Sample Username" installation-only="true" min-length="1" class="login">
+                    <name>Username</name>
+                    <description>The username of the administrator. The username must be unique across the entire Mobolize system.</description>
+                </setting><setting type="password" id="adminPassword" default-value="Sample Password" min-length="6" class="password">
+                    <name>Password</name>
+                    <description>The administrator password. The minimum length must be 6 characters. Other strength requirements may be in effect at the time of account creation.</description>
+                </setting>
+            </group>
+            <group class="vcard">
+                <name></name>
+                <setting class="organization-name" type="string" id="organizationName" default-value="" min-length="4">
+                    <name>Organization Name</name>
+                    <description>The name used to identify the organization that is the owner of the account with Mobolize.</description>
+                </setting>
+                <group class="fn n">
+                    <name></name>
+                    <setting type="string" id="adminFirstName"
+                        default-value="John" min-length="1" class="given-name">
+                        <name>First Name</name>
+                        <description>The first name of the organization's primary administrator for this account.</description>
+                    </setting>
+                    <setting type="string" id="adminLastName"
+                        default-value="Smith" min-length="1" class="family-name">
+                        <name>Last Name</name>
+                        <description>The last name of the organization's primary administrator for this account.</description>
+                    </setting>
+                </group>
+                <group class="email">
+                    <name class="type">email</name>
+                    <setting type="email" id="adminEmail"
+                        default-value="john.smith@mycompany.com" class="value">
+                        <name>Email</name>
+                        <description>The email address of the organization's primary administrator for this account.</description>
+                    </setting></group>
+                </group>
+        </settings>
+        <requirements xmlns:l="http://apstandard.com/ns/1/licensing" xmlns:svc="http://apstandard.com/ns/1/service" xmlns:php="http://apstandard.com/ns/1/php">
+            <php:version min="5.2"/>
+        </requirements>
+        <provision xmlns:l="http://apstandard.com/ns/1/licensing">
+            <configuration-script name="configure.php">
+                <script-language>php</script-language>
+                <structured-output />
+            </configuration-script>
+            <verify-script name="validateSettings.php">
+                <script-language>php</script-language>
+                <structured-output />
+            </verify-script>
+        </provision>
+    </service>
+</application>

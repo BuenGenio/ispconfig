@@ -1,0 +1,242 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-08-19T12:54:18">
+	<id>RFaps</id>
+	<name>RushFiles</name>
+	<version>1</version>
+	<release>27</release>
+	<homepage>http://www.rushfiles.com</homepage>
+	<vendor>
+		<name>RushFiles</name>
+		<homepage>http://www.rushfiles.com</homepage>
+		<icon path="images/RFicon_grey.png" />
+	</vendor>
+	<packager>
+		<name>RushFiles</name>
+		<homepage>http://rushfiles.com</homepage>
+		<icon path="images/RFicon_grey.png" />
+	</packager>
+	<presentation>
+		<summary>RushFiles</summary>
+		<description>Get easy access to corporate files on any device -
+			iPhone, iPad, Android, Window Phone 8 and your computer.
+
+			You will retain full control of your files and who have access to them.
+			This access can easily be removed and the files will be removed from
+			the users devices.
+
+			Easily share files with internal user as well as external users and start
+			working in a collaborative way, without the overhead.
+
+			You decide how much storage you need and the solution will grow with
+			your needs.
+
+			RushFiles is your corporate share, where you can easily work, collaborate and
+			share with ease.
+
+			Please join us in boosting your productivity.</description>
+		<icon path="images/RFicon.png" />
+		<screenshot path="images/screenshot_parallels_640.png">
+			<description>This show the adminstrators view of the RushFiles
+				solution. Here the Administrator can add Users, Groups, Share and
+				easily access the webclient as well as links to client applications.
+
+				He can also see how many users he will be invoiced. </description>
+		</screenshot>
+		<changelog>
+			<version release="13" version="1">
+				<entry>Reporting changed</entry>
+			</version>
+			<version release="12" version="1">
+				<entry>Changed output synced users</entry>
+			</version>
+			<version release="11" version="1">
+				<entry>Deployment guide</entry>
+			</version>
+			<version release="9" version="1">
+				<entry>Packager information corrected</entry>
+			</version>
+			<version release="8" version="1">
+				<entry>Added screenshot for the certification</entry>
+			</version>
+			<version release="7" version="1">
+				<entry>Corrected entries to meet certification criterias</entry>
+			</version>
+			<version release="6" version="1">
+				<entry>Corrected licensing etc. in order to pass certification
+				</entry>
+			</version>
+			<version release="23" version="1">
+				<entry>remove PBA dependancy</entry>
+				<entry>migrate to new API</entry>
+				<entry>New resource system</entry>
+			</version>
+			<version release="24" version="1">
+				<entry>Quota and usage fix</entry>
+			</version>
+			<version release="25" version="1">
+				<entry>Resource reporting integer</entry>
+			</version>
+			<version release="26" version="1">
+				<entry>Debugging code</entry>
+			</version>
+			<version release="27" version="1">
+				<entry>Retested</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Front office/Productivity</category>
+		</categories>
+		<languages>
+			<language>en</language>
+			<language>da</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting type="boolean" id="DEBUG" default-value="false">
+			<name>Debug</name>
+		</setting>
+		<group>
+			<name>RushFiles Settings</name>
+			<setting type="string" id="WSDL" default-value="">
+				<name>URL to WSDL file</name>
+			</setting>
+			<setting type="string" id="resellerUsername" default-value="">
+				<name>RushFiles Reseller Username</name>
+			</setting>
+			<setting type="password" id="resellerPassword" default-value="">
+				<name>RushFiles Reseller Password</name>
+			</setting>
+			<setting type="string" id="relay_server" default-value="">
+				<name>RF Relay server</name>
+				<description>URL for the RushFiles controlpanel. Ex.
+					https://rushfilespanel.com ( without '/' at the end )</description>
+			</setting>
+			<setting type="string" id="userId" default-value="">
+				<name>userid</name>
+			</setting>
+		</group>
+	</global-settings>
+	<upgrade match="/application/version &gt;= '0'" />
+	<service id="Customer" class="account">
+		<license must-accept="false">
+			<free />
+			<text>
+				<name>Become RushFiles partner</name>
+				<url>http://rushfiles.com/partner/</url>
+			</text>
+			<text xml:lang="en-US">
+				<name>Become RushFiles partner</name>
+				<url>http://rushfiles.com/partner/</url>
+			</text>
+			<text xml:lang="da-DK">
+				<name>Bliv RushFiles Partner</name>
+				<url>http://rushfiles.com/partner/</url>
+			</text>
+		</license>
+		<presentation>
+			<name>Customer</name>
+			<name xml:lang="da-DK">Indstillinger</name>
+			<summary>RushFiles customer</summary>
+			<infolinks>
+				<link href="https://my.rushfiles.com/APS/" class="support">Support</link>
+				<link href="https://my.rushfiles.com/APS/download/RFAPSdoc.pdf"
+					class="deployment-guide">Deployment</link>
+			</infolinks>
+			<entry-points>
+				<entry method="GET" dst="{url}/LoginAps.aspx?APS=1&amp;resellerid={resellerid}&amp;id={id}&amp;token={sso_hash}">
+					<label>Control Panel</label>
+					<label xml:lang="da-DK">Kontrolpanel</label>
+					<description>Users can access files from {url}</description>
+					<variable name="sso_hash" value-of-setting="sso_string"
+						class=""></variable>
+					<variable name="url" value-of-setting="relay_server"
+						class=""></variable>
+					<variable name="resellerid" value-of-setting="resellerUsername"></variable>
+					<variable name="id" value-of-setting="externalID"></variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<setting type="string" id="externalID" class="subscription_id"
+				protected="true" visibility="hidden">
+				<name>Subscription ID</name>
+				<name xml:lang="da-DK">Abonnements ID</name>
+			</setting>
+			<setting type="string" id="name" class="organization-name"
+				protected="true">
+				<name>Company Name</name>
+				<name xml:lang="da-DK">Firmanavn</name>
+			</setting>
+			<setting type="string" id="firstName" visibility="hidden"
+				default-value="PA">
+				<name>First Name</name>
+				<name xml:lang="da-DK">Fornavn</name>
+			</setting>
+			<setting type="string" id="lastName" visibility="hidden"
+				default-value="APS">
+				<name>Last Name</name>
+				<name xml:lang="da-DK">Efternavn</name>
+			</setting>
+			<setting type="string" id="adminUserEmail" class="email">
+				<name>Administrator mail</name>
+			</setting>
+			<setting type="string" id="sso_string" visibility="hidden"
+				default-value="">
+				<name>SSO URL (visible for debug)</name>
+			</setting>
+			<setting type="password" id="adminUserPassword" generate="random"
+				min-length="8" max-length="30" visibility="hidden">
+				<name>Administrator Password</name>
+			</setting>
+			<setting type="integer" id="quota" protected="true"
+				default-value="0">
+				<name>Quota</name>
+				<name xml:lang="da-DK">Lagerplads</name>
+			</setting>
+			<setting type="integer" id="included_users" protected="true"
+				default-value="0">
+				<name>Included users</name>
+				<name xml:lang="da-DK">Inkluderet antal brugere</name>
+			</setting>
+			<setting type="string" id="companyId" visibility="hidden" default-value=""></setting>
+			<group class="vcard">
+				<name></name>
+				<group class="addr">
+					<name></name>
+					<setting type="string" id="address" class="company-street"
+						visibility="hidden"></setting>
+					<setting type="string" id="zip" class="postal-code"
+						visibility="hidden"></setting>
+					<setting type="string" id="city" class="locality"
+						visibility="hidden"></setting>
+				</group>
+				<group class="fn n">
+					<name></name>
+					<setting type="string" id="email" class="email">
+						<name>Email</name>
+					</setting>
+				</group>
+			</group>
+		</settings>
+		<resources>
+			<resource class="mb" id="storage" limiting-setting="quota">
+				<name>Storage</name>
+			</resource>
+			<resource class="item" id="user" limiting-setting="included_users">
+				<name>User</name>
+			</resource>
+		</resources>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="5.2" />
+		</requirements>
+		<provision>
+			<configuration-script name="provision.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</configuration-script>
+			<resource-script name="report.php" poll-interval="10m">
+				<script-language>php</script-language>
+			</resource-script>
+		</provision>
+	</service>
+</application>

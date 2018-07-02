@@ -1,0 +1,388 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-12-07T16:48:34">
+    <id>GUTS</id>
+    <name>Guts</name>
+    <version>1</version>
+    <release>11</release>
+    <homepage>http://www.ride.ne.jp</homepage>
+    <vendor>
+        <name>RIDE Co.,Ltd. </name>
+        <homepage>http://www.ride.ne.jp</homepage>
+        <icon path="images/logo_ride01-64x64.png" />
+    </vendor>
+    <packager>
+        <name>RIDE Co.,Ltd. </name>
+        <homepage>http://www.ride.ne.jp</homepage>
+        <icon path="images/logo_ride01-64x64.png" />
+        <uri></uri>
+    </packager>
+    <presentation>
+        <summary>「Guts」 SNS機能やファイル共有機能などが利用できるグループウェアです。</summary>
+        <description>
+「Guts（ガッツ）」はSNS機能やファイル共有機能などが利用できるグループウェアです。スマートフォンやタブレットに対応し、Googleカレンダー、iPhone標準のカレンダーとも連携できるので、スマートフォン上で仕事の予定と個人の予定を同時に確認したり、管理をすることが容易に行えます。
+また、会議のスケジュールを設定する際は、参加メンバーの空き時間を自動で検索して、候補の時間を提示する事もでき、
+スケジューラーとしても優れています。オンラインストレージ機能では、アクセス権の設定も可能ですので部署ごとやプロジェクトごとに設定することも可能です。さらに、10世代まで世代管理ができますので、間違えて上書きしても簡単に以前のバージョンに戻すことも可能です。
+オプションでWEB会議システム「SaaSBoard」とも連携ができ、これひとつでコミュニケーション＆コラボレーションが実現できます。
+
+
+</description>
+        <icon path="images/logo_gutsx2-64x64.png" />
+        <screenshot path="images/screen-640x465.png">
+            <description>GUTS - Groupware for Ubiquitous</description>
+        </screenshot>
+        <changelog>
+            <version release="0" version="1">
+            	<entry>First production release!</entry>
+            </version>
+            <version release="1" version="1">
+            	<entry>Fix
+ order of representativeName Uji Na
+ calcuration of disk spce from PA side
+ company name can use Any language
+ remove issue
+ </entry>
+            </version>
+            <version release="2" version="1">
+            	<entry>Add Password Check</entry>
+            </version>
+            <version release="3" version="1">
+            	<entry>fix minor problems </entry>
+            </version>
+            <version release="4" version="1">
+            	<entry>fix minor problems</entry>
+            </version>
+            <version release="8" version="1">
+                <entry>fix used capacity value is not displayed and remove unused files</entry>
+            </version>
+            <version release="9" version="1">
+            	<entry>fix user password default value
+fix application description</entry>
+            </version>
+            <version release="10" version="1">
+            	<entry>add KATAKANA verification script</entry>
+            </version>
+            <version release="11" version="1">
+            	<entry>add contractCapacity min and max</entry>
+            </version>
+        </changelog>
+        <categories>
+            <category>Infrastructure/Application Management</category>
+            <category>Collaboration/Portal</category>
+            <category>Collaboration/Email</category>
+            <category>Collaboration/Chat</category>
+            <category>Front office/Productivity</category>
+            <category>Web/Tools</category>
+        </categories>
+        <languages>
+            <language>ja</language><language>en</language>
+        </languages>
+    </presentation>
+    <global-settings>
+        <group class="vcard">
+            <name>GUTS API</name>
+            <setting id="api_protocol" type="enum" default-value="http">
+                <name>Management Console protocol</name>
+                <choice id="http">
+                    <name>HTTP protocol</name>
+                </choice>
+                <choice id="https">
+                    <name>HTTPS protocol</name>
+                </choice>
+            </setting>
+            <setting type="enum" id="api_svr" default-value="cw.speever.net">
+                <name>API server</name>
+                <description>Online Server to make API request</description>
+                <choice id="cw.speever.net">
+                    <name>cw.speever.net [Prod]</name>
+                </choice>
+                <choice id="gwtest3.bforth.com">
+                    <name>gwtest3.bforth.com [UAT]</name>
+                </choice>
+            </setting>
+            <setting type="string" id="api_URL" visibility="hidden" default-value="/gwneo/gutsif">
+                <name>API link</name>
+                <description>URI of the API</description>
+            </setting>
+            <setting type="string" id="api_manualLogin" visibility="hidden" default-value="/gwneo/view/login/login.html">
+                <name>Login page</name>
+                <description>Link to the login page</description>
+            </setting>
+            <setting id="debug" type="boolean" default-value="false">
+                <name>Debug mode</name>
+                <description>By enabling this option, all functions will output messages into the PA Task Manager. While enabled, all features will not complete as the messages will force PA to fail the function.
+
+CAUTION: Use this only to troubleshoot output from GUTS API.</description>
+            </setting>
+            </group>
+		<group class="authn">
+			<name>Reseller Login</name>
+			<setting id="administratorLoginId" class="login" type="string" installation-only="true" uniq="global">
+				<name>Username</name>
+				<description>Reseller's username</description>
+			</setting>
+			<setting id="administratorPassword" class="password" type="password" track-old-value="true" min-length="8" max-length="32">
+				<name>Password</name>
+				<description>Reseller's account password</description>
+			</setting>
+		</group>
+    	<group class="vcard">
+        	<name>Storage Options</name>
+        	<setting type="string" id="imageAbsolutePath" default-value="/mnt/gwneo/images/" optional="true">
+        		<name>imageAbsolutePath</name>
+        	</setting>
+        	<setting type="string" id="attachedFileAbsolutePath" default-value="/mnt/gwneo/mail/" optional="true">
+        		<name>attachedFileAbsolutePath</name>
+        	</setting>
+        	<setting type="string" id="fileAbsolutePath" default-value="/mnt/gwneo/files/" optional="true">
+        		<name>fileAbsolutePath</name>
+        	</setting>
+        </group>
+        <!-- group class="presentation">
+        	<name>Representative Information (company XML)</name>
+        	<setting type="string" id="administratorNameUji" default-value="管理者氏名(姓)" track-old-value="true">
+        		<name>Last Name</name>
+        	</setting>
+        	<setting type="string" id="administratorNameNa" default-value="管理者氏名(名)" track-old-value="true">
+        		<name>First Name</name>
+        	</setting>
+        	<setting type="string" id="companyName" default-value="英文字で書きください。" track-old-value="true">
+        		<name>Company Name (English)</name>
+        	</setting>
+        	<setting type="string" id="companyNameKana" default-value="カイシャメイ" track-old-value="true">
+        		<name>Company Name (Kana)</name>
+        	</setting>
+        	<setting type="string" id="representativeNameNa" default-value="代表者氏名(名)" track-old-value="true">
+        		<name>First Name</name>
+        	</setting>
+        	<setting type="string" id="representativeNameUji" default-value="代表者氏名(姓)" track-old-value="true">
+        		<name>Last Name</name>
+        	</setting>
+        	<setting type="email" id="mailAddress" default-value="user@company.com" track-old-value="true">
+        		<name>Email</name>
+        	</setting>
+        	<setting type="string" id="postNo" default-value="111-0000" track-old-value="true">
+        		<name>postNo</name>
+        	</setting>
+        	<setting type="string" id="address" default-value="住所" track-old-value="true">
+        		<name>address</name>
+        	</setting>
+        	<setting type="string" id="telNo" default-value="111-111-1111" track-old-value="true" regex="^[0-9]\d{2}-\d{3}-\d{4}$">
+        		<name>Telephone #</name>
+        		<error-message>telNoが半角数値又は\"-\"になっていない</error-message>
+        	</setting>
+        	<setting type="string" id="faxNo" default-value="222-222-2222" track-old-value="true" regex="^[0-9]\d{2}-\d{3}-\d{4}$">
+        		<name>Fax #</name>
+        		<error-message>
+        			faxNoが半角数値又は\&quot;-\&quot;になっていない
+        		</error-message>
+        	</setting>
+        	<setting type="string" id="URL" default-value="http://www.YourCompany.com" track-old-value="true">
+        		<name>URL to your company website</name>
+        	</setting>
+        	<setting type="string" id="companyRemarks" default-value="備考" track-old-value="true">
+        		<name>companyRemarks</name>
+        	</setting>
+        </group>
+		<group class="presentation">
+    		<name>Optional parameters</name>
+        	<setting type="string" id="companyLoginId" default-value="G000001" optional="true" min-length="3">
+        		<name>Company ID</name>
+        		<description>(optional)</description>
+        	</setting>
+        	<setting type="string" id="customerNo" default-value="" optional="true" visibility="hidden">
+        		<name>(Reseller's) Customer ID</name>
+        		<description>顧客NO
+(optional)</description>
+        	</setting>
+    	</group -->
+    </global-settings>
+    <upgrade match="/application/version &gt;= '0' and /application/release &gt;= '1'" />
+    <service id="group" class="service">
+        <license must-accept="false">
+            <free />
+            <text>
+                <name>About GUTS</name>
+                <url>http://ride.ne.jp/</url>
+            </text>
+        </license>
+        <presentation>
+            <name>Configuration</name>
+            <name xml:lang="ja-JP">設定</name>
+            <summary>Service users can monitor and upgrade subscribed services.</summary>
+            <summary xml:lang="ja-JP">　　　　</summary>
+            <icon path="images/logo_guts.png" />
+            <infolinks>
+                <link href="http://www.ride.ne.jp" class="support">Support</link>
+                <link xml:lang="en" class="official" href="http://www.ride.ne.jp">Official site</link>
+                <link href="https://cw.speever.net/gwneo/view/top/manualTop.html?newwindow=true" class="deployment-guide" xml:lang="ja-JP">Deployment Guide</link>
+            </infolinks>
+            <entry-points>
+                <entry dst="{api_protocol}://{api_svr}{api_manualLogin}" method="POST" class="frontpage">
+                    <label>GUTS Login (SSO)</label>
+                    <description>Login page for Guts</description>
+                    <icon path="images/logo_gutsx2-64x64.png" />
+                    <variable name="api_protocol" value-of-setting="api_protocol"></variable>
+                    <variable name="api_svr" value-of-setting="api_svr"></variable>
+                    <variable name="api_URL" value-of-setting="api_URL"></variable>
+                    <variable name="api_manualLogin" value-of-setting="api_manualLogin"></variable>
+                    <variable name="corpid" value-of-setting="_companyLoginId"></variable>
+                    <variable name="loginid" value-of-setting="_userLoginId"></variable>
+                    <variable name="password" value-of-setting="_userPassword"></variable>
+                </entry>
+            </entry-points>
+        </presentation>
+        <settings>
+            <group class="authn">
+                <name>Customer Login</name>
+                <name xml:lang="ja-JP">ログイン情報</name>
+                <setting type="string" id="_userLoginId" default-value="userID" min-length="3">
+                    <name>Username</name>
+                    <name xml:lang="ja-JP">ログイン名</name>
+                    <name xml:lang="en-US">Username</name>
+                    <description>Choose your username to login onto GUTS.</description>
+                    <description xml:lang="ja-JP">ユーザ名（英数）</description>
+                </setting>
+                <setting type="password" id="_userPassword" min-length="8" regex="([0-9].*[!-/:-~]|[a-zA-Z].*[!-@\[-`{-~]|[!-/:-@\[-`{-~].*[0-9a-zA-Z])[!-~]*" default-value="A2ioS6QCN3">
+                    <name>Password</name>
+                    <name xml:lang="ja-JP">パスワード</name>
+                    <description></description>
+                    <description xml:lang="ja-JP">パスワードは、英字・数字・記号から2種類を含める必要があります</description>
+                    <error-message>Passwordが記号、数字、英字のうち2種類以上を使用する文字列になっていないか8桁未満。</error-message>
+                </setting>
+            </group>
+            <group class="presentation">
+                <name>Representative Information (company XML)</name>
+                <name xml:lang="ja-JP">会社情報</name>
+                <setting type="string" id="_administratorNameUji" default-value="管理者氏名(姓)" track-old-value="true">
+            		<name>Last Name</name>
+            		<name xml:lang="ja-JP">管理者氏名(姓)</name>
+                </setting><setting type="string" id="_administratorNameNa" default-value="管理者氏名(名)" track-old-value="true">
+            		<name>First Name</name>
+            		<name xml:lang="ja-JP">管理者氏名(名)</name>
+</setting><setting type="string" id="_companyName" default-value="会社名" track-old-value="true">
+                    <name>Company Name</name>
+                    <name xml:lang="ja-JP">会社名</name>
+</setting>
+                <setting type="string" id="_companyNameKana" default-value="カイシャメイ" track-old-value="true" regex="^[ァ-タダ-ヶ]+$">
+                    <name>Company Name (Kana)</name>
+                    <name xml:lang="ja-JP">カイシャメイ</name>
+                    <error-message>The characters that can be used is only KATAKANA.
+Please enter KATAKANA.</error-message>
+                    <error-message xml:lang="ja-JP">使用できる文字は、全角カタカナのみです。
+再び全角カタカナを入力してください。</error-message>
+                </setting>
+                <setting type="string" id="_representativeNameUji" default-value="代表者氏名(姓)" track-old-value="true">
+                    <name>Last Name</name>
+                    <name xml:lang="ja-JP">代表者氏名(姓)</name>
+                </setting><setting type="string" id="_representativeNameNa" default-value="代表者氏名(名)" track-old-value="true">
+                    <name>First Name</name>
+                    <name xml:lang="ja-JP">代表者氏名(名)</name>
+</setting><setting type="email" id="_mailAddress" default-value="user@company.com" track-old-value="true">
+            		<name>Email</name>
+            		<name xml:lang="ja-JP">電子メールアドレス</name>
+</setting><setting type="string" id="_postNo" default-value="111-0000" track-old-value="true">
+                    <name>postNo</name>
+                    <name xml:lang="ja-JP">郵便番号</name>
+</setting>
+                <setting type="string" id="_address" default-value="住所" track-old-value="true">
+                    <name>address</name>
+                    <name xml:lang="ja-JP">住所</name>
+                </setting>
+                <setting type="string" id="_telNo" default-value="0120-111-1111" track-old-value="true" regex="^\d{2,4}-\d{2,4}-\d{3,4}$">
+                    <name>Telephone #</name>
+                    <name xml:lang="ja-JP">電話番号</name>
+                    <error-message>telNoが半角数値又は"-"になっていない</error-message>
+                </setting>
+                <setting type="string" id="_faxNo" default-value="0120-222-2222" track-old-value="true" regex="^\d{2,4}-\d{2,4}-\d{3,4}$">
+                    <name>Fax #</name>
+                    <name xml:lang="ja-JP">FAX番号</name>
+                    <error-message>faxNoが半角数値又は"-"になっていない</error-message>
+                </setting>
+                <setting type="string" id="_URL" default-value="http://www.YourCompany.com" track-old-value="true">
+                    <name>URL to your company website</name>
+                    <name xml:lang="ja-JP">ウェブサイトURL</name>
+                </setting>
+                <setting type="string" id="_companyRemarks" default-value="備考" track-old-value="true">
+                    <name>companyRemarks</name>
+                    <name xml:lang="ja-JP">備考</name>
+                </setting>
+			</group>
+            <group>
+            	<name>PA settings</name>
+            	<name xml:lang="ja-JP">設定情報</name>
+            	<setting type="integer" id="contractCapacity" optional="true" min="1" max="10000000" protected="true">
+            		<name>Storage Capacity (MB)</name>
+            		<name xml:lang="ja-JP">契約容量(MB)</name>
+            		<error-message>0MB cannot set on Storage Capacity. Please contact the Provider.</error-message>
+            		<error-message xml:lang="ja-JP">契約容量に0MBは設定できません。プロバイダにお問い合せください。</error-message>
+            	</setting><setting type="string" id="subscription_id" class="subscription_id" visibility="hidden" protected="true" />
+            	<setting type="string" id="account_id" class="account_id" visibility="hidden" protected="true" />
+            	<setting type="string" id="application_id" class="application_id" visibility="hidden" protected="true" />
+            	<setting type="string" id="_companyLoginId" default-value="G000001" protected="true">
+            		<name>Company ID</name>
+            		<name xml:lang="ja-JP">会社ID</name>
+            		<description>(auto-generated by GUTS)</description>
+            		<description xml:lang="ja-JP">会社ID（自動生成）</description>
+            	</setting><setting type="string" id="_customerNo" default-value="" protected="true" generate="sequence">
+            		<name>Customer ID</name>
+            		<name xml:lang="ja-JP">顧客NO</name>
+            		<description>Customer ID
+(auto-generated sequence #)</description>
+            		<description xml:lang="ja-JP">顧客NO（自動生成）</description>
+</setting>
+            	<setting type="string" id="_ordNo" default-value="" protected="true">
+            		<name>Order ID</name>
+            		<name xml:lang="ja-JP">契約ID</name>
+            		<description>(auto-generated from Subscription ID)</description>
+            		<description xml:lang="ja-JP">契約ID</description>
+            	</setting>
+            </group>
+            <group>
+            	<name>PA Services</name>
+            	<setting id="subservice_limits" protected="true" element-type="string" class="subservice-limits" visibility="hidden" type="list">
+					<name>Limits for subservices</name>
+				</setting>
+				<setting id="subservice_ids" protected="true" element-type="string" class="subservice-ids" visibility="hidden" type="list">
+					<name>IDs for subservices</name>
+				</setting>
+				<setting id="subservice_setting_names" element-type="string" class="subservice-setting-names" visibility="hidden" protected="true" type="list">
+					<name>Names of subservice settings</name>
+				</setting>
+				<setting id="subservice_setting_values" element-type="string" class="subservice-setting-values" visibility="hidden" protected="true" type="list">
+					<name>Default values of subservice settings</name>
+				</setting>
+            </group>
+            <setting type="string" id="companyXml" default-value="(ignore; used for debugging GUTS API)" visibility="hidden" optional="true">
+            	<name>companyXml</name>
+            </setting></settings>
+        <resources>
+        	<resource class="mb" id="contractCapacity" limiting-setting="contractCapacity">
+        		<name>User storage Capacity</name>
+        		<description>This reads the amount of storage capacity is available for customer's account.</description>
+        	</resource>
+        </resources>
+        <requirements xmlns:db="http://apstandard.com/ns/1/db" xmlns:mysql="http://apstandard.com/ns/1/db/mysql" xmlns:php="http://apstandard.com/ns/1/php" xmlns:svc="http://apstandard.com/ns/1/service" xmlns:perl="http://apstandard.com/ns/1/perl">
+            <php:register-globals>false</php:register-globals>
+            <php:extension>zlib</php:extension>
+            <php:extension>xml</php:extension>
+            <php:extension>pear</php:extension>
+            <php:extension>curl</php:extension>
+            <php:extension>soap</php:extension>
+            <php:file-uploads>false</php:file-uploads>
+            <php:allow-url-fopen>true</php:allow-url-fopen>
+            <php:version min="5.2" />
+        </requirements>
+        <provision xmlns:php="http://apstandard.com/ns/1/php">
+            <configuration-script name="config.php">
+                <script-language>php</script-language>
+                <status-control />
+                <structured-output />
+            </configuration-script>
+            <verify-script name="verify.php">
+            	<script-language>php</script-language>
+            </verify-script>
+            <resource-script name="resources.php">
+            	<script-language>php</script-language>
+            </resource-script>
+        </provision>
+    </service>
+</application>

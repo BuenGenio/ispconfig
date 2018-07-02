@@ -1,0 +1,263 @@
+<application packaged="2018-04-18T02:45:53" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>typo3</id>
+	<name>typo3</name>
+	<version>8.7.13</version>
+	<release>61</release>
+	<homepage>http://typo3.org/</homepage>
+	<vendor>
+		<name>www.typo3.org</name>
+		<homepage>http://www.typo3.org</homepage>
+		<icon path="images/typo3-icon.png"/>
+	</vendor>
+	<packager>
+		<name>Plesk</name>
+		<homepage>http://plesk.com</homepage>
+		<icon path="images/packager.png"/>
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+	<presentation>
+		<summary>TYPO3 is the most advanced GPL content management framework available.</summary>
+		<description>TYPO3 is developed by the Danish programmer Kasper Skaarhoej. It is the most advanced GPL content management framework available and successfully competes with commercial products sold at US$50,000. TYPO3 is distributed under the GPL license. However, Kasper has expressed certain aims for the system that we ask you to respect (see typo3.com for more information).</description>
+		<icon path="images/typo3-icon.png"/>
+		<screenshot path="images/typo3-admin-640x420.png">
+			<description>Application Screenshot</description>
+		</screenshot>
+		<changelog>
+			<version release="61" version="8.7.13">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_8.7.13</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="8.7.12">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_8.7.12</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="8.7.11">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_8.7.11</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="8.7.10">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_8.7.10</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="8.7.9">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_8.7.9</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="8.7.8">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_8.7.8</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="8.7.7">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_8.7.7</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="8.7.6">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_8.7.6</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="8.7.4">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_8.7.4</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="8.7.4">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_8.7.4</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="8.7.3">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_8.7.3</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.19">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.19</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.18">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.18</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.16">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.16</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.15">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.15</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.13">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.13</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.12">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.12</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.11">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.11</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.10">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.10</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.9">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.9</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.7">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.7</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.6">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.6</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.5">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.5</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.4">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.4</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.3">
+				<entry>Changelog: https://wiki.typo3.org/TYPO3_CMS_7.6.3</entry>
+				<entry>Please follow this instruction before upgrading: http://docs.typo3.org/typo3cms/InstallationGuide/UpgradeLTS/Preparation/Index.html#extensions</entry>
+				<entry>After the application is updated, some extensions might be switched off. Please make sure that all the required extensions are switched on and are updated to the latest version after upgrade.</entry>
+			</version>
+			<version release="1" version="7.6.2">
+				<entry>Initial Typo3 7.6 version</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '7.6.19'"/>
+	<service id="instance">
+		<license must-accept="true">
+			<free/>
+			<text>
+				<name>GNU GENERAL PUBLIC LICENSE</name>
+				<file>htdocs/LICENSE.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Typo3</name>
+			<summary>Typo3 is the most advanced GPL content management framework.</summary>
+			<infolinks>
+				
+				<link class="community" href="http://typo3.org/community/">Community</link>
+				<link class="support" href="http://typo3.org/support/">Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/typo3/index.php?loginProvider=1433416747" method="POST">
+					<label>Administrative interface</label>
+					<variable name="commandLI"/>
+					<variable name="interface">backend</variable>
+					<variable name="loginRefresh"/>
+					<variable name="login_status">login</variable>
+					<variable name="openid_url"/>
+					<variable name="p_field"/>
+					<variable name="redirect_url"/>
+					<variable name="userident" value-of-setting="admin_password"/>
+					<variable name="username" value-of-setting="admin_name">admin</variable>
+				</entry>
+				<entry dst="/">
+					<label>Site</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting class="password" id="admin_password" max-length="32" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<group class="org">
+					<name>Site Preference</name>
+					<setting class="title" default-value="Site Name" id="title" min-length="1" type="string">
+						<name>Site name</name>
+					</setting>
+				</group>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="7.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">filter</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">hash</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">openssl</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">session</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">SPL</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">standard</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">xml</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">zip</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">zlib</php:extension>
+			
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">PDO</php:extension>
+			
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">dom</php:extension>
+			<php:memory-limit xmlns:php="http://apstandard.com/ns/1/php">268435456</php:memory-limit>
+			<php:max-execution-time xmlns:php="http://apstandard.com/ns/1/php">300</php:max-execution-time>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>typo3</db:default-name>
+				<db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.5</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>typo3</default-prefix>
+				<installed-size>68033221</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

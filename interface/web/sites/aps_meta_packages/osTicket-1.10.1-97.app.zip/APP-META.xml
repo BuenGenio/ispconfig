@@ -1,0 +1,390 @@
+<application packaged="2017-10-04T10:45:11" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>osTicket</id>
+	<name>osTicket</name>
+	<version>1.10.1</version>
+	<release>97</release>
+	<homepage>http://www.osticket.com/</homepage>
+	<vendor>
+		<name>osTicket</name>
+		<homepage>http://www.osticket.com/</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Plesk</name>
+		<homepage>http://plesk.com</homepage>
+		<icon path="images/packager.png"/>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>Support Ticket System.</summary>
+		<description>Easily manage, organize, and streamline your customer service and drastically improve your customer's experience - all with one simple, easy-to-use (and free) system. osTicket is a widely-used and trusted open source support ticket system. It seamlessly routes inquiries created via email, web-forms and phone calls into a simple, easy-to-use, multi-user, web-based customer support platform.</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/app_screenshot_1.png">
+			<description>Screenshot 1.</description>
+		</screenshot>
+		<changelog>
+			<version release="97" version="1.10.1">
+				<entry>v1.10.1 Release notes: v1.10.1</entry>
+			</version>
+			<version release="1" version="1.10">
+				<entry>v1.10 Release notes: https://github.com/osTicket/osTicket/releases/tag/v1.10</entry>
+			</version>
+			<version release="1" version="1.9.14">
+				<entry>v1.9.14 Release notes: https://github.com/osTicket/osTicket/releases/tag/v1.9.14</entry>
+			</version>
+			<version release="2" version="1.9.12">
+				<entry>Package updated to avoid crashing if PHP7 is selected</entry>
+			</version>
+			<version release="1" version="1.9.12">
+				<entry>osTicket 1.9.12 release notes: https://github.com/osTicket/osTicket-1.8/releases/tag/v1.9.12</entry>
+			</version>
+			<version release="1" version="1.9.11">
+				<entry>osTicket 1.9.11 release notes: https://github.com/osTicket/osTicket-1.8/releases/tag/v1.9.11</entry>
+			</version>
+			<version release="1" version="1.9.9">
+				<entry>Changelog: https://github.com/osTicket/osTicket-1.8/releases/tag/v1.9.9</entry>
+			</version>
+			<version release="1" version="1.9.8.1">
+				<entry>Changelog: https://github.com/osTicket/osTicket-1.8/releases/tag/v1.9.8</entry>
+			</version>
+			<version release="6" version="1.9.6">
+				<entry>Changelog: https://github.com/osTicket/osTicket-1.8/releases/tag/v1.9.6</entry>
+			</version>
+			<version release="1" version="1.9.5.1">
+				<entry>Improvements
+    Fix file.php to serve files added to system before osTicket v1.9.1 (e02ab9a)
+    Fix file.php to serve files if client panel or system is offline (6bb7843)
+    Fix popover download of inline images (8d3a130)
+    Avoid de-duplicating zero-length files (98caa70)
+    Send new message alert to team members if not assigned to an agent (b7e75b1)
+    Fix import of users to organization not setting the organization (1220238)
+    Fix redactor toolbar showing over the date picker (#1450)
+Performance and Security
+    Fix XSS vulnerability in client language selection (b38b3ca)</entry>
+			</version>
+			<version release="49" version="1.9.5">
+				<entry>Enhancements
+    Add support for organization vars in templates (%{ticket.user.organization...}) (#1561)
+    Canned responses feature can now be disabled (#1562)
+    Drop link redirection through l.php (#1640)
+    Use unified file download script (#1641). Links can now be shared with external users and accessed without authenticating.
+    Ticket filters support matching and banning based on the Reply-To user information (#1645)
+Improvements
+    Remove custom data when users are deleted (#1492)
+    Fix matching of ticket number in subject (regression in v1.9.4) (#1486)
+    Several minor translatable strings (#1441, #1489, #1560), thanks @Chefkeks
+    Fix invalid UTF-8 chars PDF error for empty thread title (regression in v1.9.4) (#1512)
+    Consider auto response checkbox and department setting for new ticket by staff (#1509)
+    Fix PHP crash if finfo extension is missing (#1437)
+    Fix export of choice field items (#1436)
+    Properly handle alert and auto response flags from API (#1435), thanks @stevepacker
+    Fix current value of choice fields if set to boolean false (#1466)
+    Do not reopen tickets for automated responses (#1529)
+    Properly handle uppercase file extensions in file field configuration (#1549)
+    Fix release of ticket lock when navigating away from ticket view (#1552)
+    Display FAQ article consistently on client portal (#1553)
+    Avoid wrapping password reset URLs on text emails (#1558)
+    Fix field requirement for clients when only required for agents (#1559)
+    Fix language selection for new email template group (#1563)
+    Fix incorrect status of new ticket if opened as closed and assigning to an agent (#1565)
+    Forbid disabling the only active administrator (#1569)
+    Searching for tickets searches to midnight of the end date (#1572), thanks @grintor
+    Fix rejection of tickets by filter, even if a previous matching filter would stop on match (#1644)
+    Fix matching of User / Email Address in ticket filters (#1644)
+    Properly HTML escape thread bodies when quoting (#1637)
+    Use department email for agent alerts (#1555)
+    Skip team assignment alert on new ticket if assigned to an agent (fddb3c7)
+    Use custom form name as the page title when editing (#1646)
+Performance and Security
+    Fix possible XSS vulnerability in sortable table view pages (#1639)</entry>
+			</version>
+			<version release="48" version="1.9.4">
+				<entry>Major New Features in this release
+-New ticket states (resolved, archived, and deleted)
+-Custom ticket statuses
+-Custom ticket number formats
+-Full text search capabilities
+-Multiselect for choice fields and custom list selections
+-Phase II Multi-Lingual Support
+Improvements
+-Fix display of text thread entries with HTML characters.
+-Fix crash creating new ticket if organization custom data has a selection field.
+-Fix footer disappearance on PJAX navigation.
+-Fix User Directory not sortable by user status.
+-Fix loss of enduser or agent priority selection on new ticket.
+-Add validation error if setting EndUser username to an email address.
+-Fix skipped validation of some fields.
+-Fix detection of inline attachments from rich text inputs.
+-Fix dropping attachments when updating canned responses.
+-Fix PJAX navigation crash in some browsers.
+-Fix searching for tickets in the client portal.
+-Fix crash submitting new ticket as agent with validation errors.
+-Fix display of unanswered tickets in open queue.
+-Fix incorrect statistics on dashboard page.
+-Fix sorting by ticket number if using sequential numbers.
+-Fix threading if HTML is enabled and QR is disabled.
+-Export ticket created date.
+-Fix duplicate email where a collaborator would receive a confirmation for his own message.
+-Fix multi-line display of checkbox descriptions.
+-Fix API validation failure for custom list selections.
+-Fix crash adding a new user with a selection field custom data.
+-Fix failed user identification from email headers if References header is sorted differently be mail client.
+-Fix deletion of inline images on pages if draft was not saved.
+-Fix corruption of custom date time fields on client portal if using non US date format.
+-Fix corruption of email mailbox if improperly encoded as ISO-8859-1 without RFC 2047 charset hint.
+-Fix occasional MySQL Commands OOS error from ORM.</entry>
+			</version>
+			<version release="45" version="1.9.3">
+				<entry>Initial release</entry>
+			</version>
+			<version release="44" version="1.9.2">
+				<entry>Initial Release</entry>
+			</version>
+			<version release="43" version="1.9.1">
+				<entry>Your Information is now translatable
+Canceling new ticket also deletes drafts 
+A user's organization can be updated
+Users can be removed from an organization
+
+Fix confusing form view after adding a new form
+Fix whitespace munging in emails if HTML ticket thread is disabled
+Fix [loading] popup on form save
+Fix URLs in emails linking through l.php
+Fix crash on custom list view if there no properties defined 
+Fix handling of encoded email mailboxes with commas
+Fix display of link, external images in the ticket thread
+Fix crash submitting a new ticket with organization collaborators 
+Fix handling of custom date and time fields 
+Fix PJAX detection of new deployment
+Fix continual release of ticket locks after navigation 
+Fix logout if following link from client email
+Fix un-editable organization website 
+Fix incorrect constant usage in User object</entry>
+			</version>
+			<version release="42" version="1.9.0">
+				<entry>Support filtering based on help topic (#728)
+Embedded images (rfc2397) are correctly supported (#740)
+Allow regular staff members to show assigned open tickets on open queue (#751)
+Support rfc1892 style bounce notices (#871)
+Disable autocomplete on CAPTCHA fields (#821)
+Show closed date on the closed ticket queue (#865)
+Departments support assignment to members only (#862)
+Department email selection is optional (#862)
+
+Fix cross site scripting (XSS) vulnerability in thread entry widget (9916214)
+Mail parsing uses significantly less memory (#861)</entry>
+			</version>
+			<version release="40" version="1.8.1.2">
+				<entry>Initial release</entry>
+			</version>
+			<version release="39" version="1.8.1.1">
+				<entry>New release</entry>
+			</version>
+			<version release="33" version="1.8.1">
+				<entry>New release</entry>
+			</version>
+			<version release="1" version="1.8.0.2">
+				<entry>HTML editor has an underline button 
+New ticket form pre-selects default priority 
+Help topics do not require an associated priority
+Extra fields associated with help topics are shown above the ticket-details form
+Auto-complete is supported on email address fields 
+Choice fields allow specification of a prompt and default value
+Email template page makes templates easier to manage 
+New ticket user-lookup popup supports cancel 
+
+Ticket locks are correctly released
+Pages show inline images correctly 
+Internet Explorer compatibility view is disabled for the scp
+regression Staff no longer receive attachments on alerts 
+Emails correctly differentiate HTML and text versions
+Ticket queue counts are correct for limited users
+Phone number field might be a text box
+Fix incorrect ticket rejection for new ticket by staff 
+Fix crash of cron executions on some platforms 
+realpath may fail on some Windows® platforms
+Fix incorrect handling of typeahead list fields with leading numeric chars
+</entry>
+			</version>
+			<version release="27" version="1.8.0.1">
+				<entry>updated</entry>
+			</version>
+			<version release="21" version="1.8.0.1">
+				<entry>corrected upgrade from versions 1.7.1.4 and 1.7.2.</entry>
+			</version>
+			<version release="2" version="1.8.0.1">
+				<entry>changed upgradesql</entry>
+			</version>
+			<version release="1" version="1.8.0.1">
+				<entry>User creation and selection is easier on new ticket (#224)
+Changing user on ticket edit allows creating a new user
+Ticket view page allows changing user to a new user
+Ticket by staff page doesn't require user information for existing users
+%{response} placeholder is available for new ticket notice, which contains only the response (#213)
+Ticket queues now show time of last update with in date+time format (#217)
+Claim ticket on response (#238)
+Help tips added for custom fields page (more to come) (#216)
+</entry>
+			</version>
+			<version release="17" version="1.7.3">
+				<entry>Updated with autologin</entry>
+			</version>
+			<version release="4" version="1.7.3">
+				<entry>added hidden variables for autologin</entry>
+			</version>
+			<version release="3" version="1.7.3">
+				<entry>added auto login</entry>
+			</version>
+			<version release="2" version="1.7.3">
+				<entry>added forward slash for admin entry point</entry>
+			</version>
+			<version release="1" version="1.7.3">
+				<entry>Ticket thread items are now available for email templates (#790)
+Support MySQL servers on a non-standard port number, which is also not set in the php.ini file 
+
+Fix email handling where the character set advertised is us-ascii but iso-8859-1 was intended (#770)
+Ticket source is now editable (#772, #777)
+Email parsing would crash if Reply-To header was not found (#780)
+CSRF token creation would fail on some Windows installations (#771, #776)
+Tickets without an SLA set would never go overdue (#757, #767)
+FAQ search now hits category names (#781)
+FAQ search hits are sorted by article title now (#786)
+Email replies with nothing before the quoted response marker should remain as is (#787)
+CAPTCHA responses are now considered case-insensitive (#823)
+References email header how includes the parent email Message-Id (#825)
+Email attachment parsing would crash if the Content-Disposition header had no parameters (#828)
+Date format on the jQuery-UI datepicker is admin configurable now (#829)</entry>
+			</version>
+			<version release="12" version="1.7.2">
+				<entry>updated</entry>
+			</version>
+			<version release="2" version="1.7.2">
+				<entry>added blank upgrade condition </entry>
+			</version>
+			<version release="1" version="1.7.2">
+				<entry>The ticket number is no longer required in the subject line and staff can reply to emails and create an internal note (released in v1.7.1.2)
+Show customized site logo on PDF output (#763)
+Support deployment for initial install with cli deploy script (#750)
+Require complete regression test pass before packaging new release (#751)
+Die with HTTP/500 for misconfiguration or database connect failure (#762)
+
+Detect and import inline attachments without a Content-Disposition header (#737)
+    Show correct template description again (#742, #743)
+    Import attachments from emails continuing a ticket thread (regression introduced in v1.7.1.2) (#745)
+    Support UTF-8 encoded filenames for fetched emails (#738)
+    Disable Kerberos and NTLM authentication in mail fetching (#739)
+    Forbid empty reply-separator setting (#752)
+    Only email administrators for log messages that would be written to the database (#754)
+    Emails fetched and rejected by a ticket filter that are not deleted or moved to a folder will not be re-fetched and re-rejected (#755)
+    Workaround for some mail clients' inability to properly decode quoted-printable encoded emails (#760)
+    Inline text bodies are incorrectly detected as attachments without a filename (#761)
+    Properly decode and display some international chars in PDF printing (#765)
+</entry>
+			</version>
+			<version release="10" version="1.7.1.4">
+				<entry>Finally squelch all test fixture failures (yay!)
+Fix matching of ticket owner's email address on incoming mail 
+Fix coding mistake matching system email addresses
+Fix a bug upgrading from osTicket 1.6 </entry>
+			</version>
+			<version release="8" version="1.7.1.3">
+				<entry>Cookie domain cannot have a port number
+ROOT_PATH is detected on Windows 
+Do not double encode XML entities in ticket thread titles
+ Display correct template description on edit
+</entry>
+			</version>
+			<version release="2" version="1.7.0">
+				<entry>Change in upgrade.sql</entry>
+			</version>
+			<version release="1" version="1.7.0">
+				<entry>Initial Package</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Front office/Help Desk</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '1.7.0' "/>
+	<service id="osTicket">
+		<license must-accept="true">
+			<text>
+				<name>GPL</name>
+				<file>htdocs/LICENSE.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>osTicket</name>
+			<summary>Support ticket system</summary>
+			<infolinks>
+				<link class="support" href="http://osticket.com/support/">Support</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/">
+					<label>Helpdesk</label>
+				</entry>
+				<entry class="control-panel" dst="/scp/login.php" method="GET">
+					<label>Administrative interface</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" installation-only="true" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, 	letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				<setting class="password" id="admin_password" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<group class="org">
+					<name>Site Preference</name>
+					<setting class="organization-name" id="title" installation-only="true" type="string">
+						<name>Default website name. You can change later.</name>
+					</setting>
+				</group>
+				<group class="email">
+					<setting class="value" id="system_email" type="email">
+						<name>Default system email (e.g support@yourdomain.com) You can change or add more emails later.</name>
+					</setting>
+				</group>
+			</group>
+		</settings>
+		<requirements>
+			<php:version max-not-including="7.1" min="5.4" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mbstring</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">Phar</php:extension>
+			<php:register-globals xmlns:php="http://apstandard.com/ns/1/php">false</php:register-globals>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>osticket</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>osticket</default-prefix>
+				<installed-size>19736690</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

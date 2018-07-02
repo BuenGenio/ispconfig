@@ -1,0 +1,401 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2010-06-16T14:03:48">
+	<id>http://www.workspace365.net/</id>
+	<name>Workspace 365</name>
+	<version>2.0</version>
+	<release>47</release>
+
+	<homepage>http://www.workspace365.net/</homepage>
+
+	<vendor>
+		<name>New Day at Work</name>
+		<homepage>http://www.newdayatwork.com</homepage>
+		<icon path="images/ndawicon.png" />
+	</vendor>
+
+	<packager>
+		<name>New Day at Work</name>
+		<homepage>http://www.newdayatwork.com</homepage>
+		<icon path="images/ndawicon.png" />
+		<uri>uuid:packager_uri</uri>
+	</packager>
+
+	<presentation>
+		<summary>Workspace 365 is a complete online workspace powered by Office 365.</summary>
+		<summary xml:lang="nl-NL">Workspace 365 is een complete online werkplek met de kracht van Office 365.</summary>
+		<description>Workspace 365 is the complete online workspace powered by Office 365. This workspace offers small business a complete online desktop in the cloud. Through the integration with Office 365 employees can work on any office file in their browser on any device. In addition Workspace 365 creates structure and increases productivity for employees. Through an integrated vertical app store, Workspace 365 supports unlimited vertical market with their unique business processes like CRM and Project Management.</description>
+		<description xml:lang="nl-NL">Workspace 365 is de complete online werkplek met de kracht van Office 365. Hiermee biedt het organisaties een complete online desktop in de Cloud. Het beheren en creeëren van documenten en e-mail in de browser is nu via elk apparaat mogelijk. Dankzij de gebruikers-vriendelijke interface creëert Workspace 365 structuur en verhoogt het de productiviteit voor alle medewerkers. Daarnaast kan er in de app store eenvoudig extra applicaties worden bestelt die volledig geïntrigeerd zijn in Workspace 365. Apps zoals CRM, kilometer- en urenregistratie, offertes- en facturatie en project management zijn eenvoudig aan te schaffen. Op deze manier is het bijvoorbeeld mogelijk om e-mail en documenten direct  te linken aan een relatie of een project.</description>
+
+		<icon path="images/w365icon.png"/>
+	
+		<screenshot path="images/w365mains.jpg">
+			<description>Main screenshot
+			</description>
+		</screenshot>
+	
+		<changelog>
+			<version version="2.0" release="1">
+				<entry>Packaged in APS 1.2</entry>
+			</version>
+			<version release="2" version="2.0">
+				<entry>Added description and summary</entry>
+			</version>
+			<version release="3" version="2.0">
+				<entry>Removed htdocs and mapping</entry>
+			</version>
+			<version release="4" version="2.0">
+				<entry>Added provision and user endpoint as global</entry>
+			</version>
+			<version release="5" version="2.0">
+				<entry>Removed the account service
+Removed script related to the account service</entry>
+			</version>
+			<version release="6" version="2.0">
+				<entry>- Removed resource
+- Renamed the main service to environment_service</entry>
+			</version>
+			<version release="7" version="2.0">
+				<entry>-Refactored the settings for the environment service</entry>
+			</version>
+			<version release="8" version="2.0">
+				<entry>- Removed all remaining template scripts
+- Removed and updated requirements</entry>
+			</version>
+			<version release="9" version="2.0">
+				<entry>- Added all categories</entry>
+			</version>
+			<version release="10" version="2.0">
+				<entry>-Refactored the entry point for the admin</entry>
+			</version>
+			<version release="11" version="2.0">
+				<entry>- Added user service base
+- Removed last script from template
+- Added verification scripts</entry>
+			</version>
+			<version release="12" version="2.0">
+				<entry>- Added names to the environment service settings
+- Added phone field to the environment service settings</entry>
+			</version>
+			<version release="13" version="2.0">
+				<entry>- Added settings for the user service
+- Minor adjustments on the environment service settings</entry>
+			</version>
+			<version release="14" version="2.0">
+				<entry>- Refactored the entry point for the user</entry>
+			</version>
+			<version release="15" version="2.0">
+				<entry>- Added https:// for the entry points</entry>
+			</version>
+			<version release="16" version="2.0">
+				<entry>- Reviewed the validations for fields</entry>
+			</version>
+			<version release="17" version="2.0">
+				<entry>- added https:// for the provision url in the php scripts
+- fixed the relative urls to requires</entry>
+			</version>
+			<version release="18" version="2.0">
+				<entry>- Refactored the class hierachy for the email</entry>
+			</version>
+			<version release="19" version="2.0">
+				<entry>- Updated the package to work with the refactored backend
+- Added provisioning key to the global settings (used for authentication by the backend) 
+- Removed verification scripts</entry>
+			</version>
+			<version release="20" version="2.0">
+				<entry>- Converted the user endpoint from hostname to string type</entry>
+			</version>
+			<version release="21" version="2.0">
+				<entry> - exit(1) on exceptions</entry>
+			</version>
+			<version release="22" version="2.0">
+				<entry>- Updated the entry point urls to be without protocol and slash between url en environment name</entry>
+			</version>
+			<version release="23" version="2.0">
+				<entry>- Reduced the environment creation to just the environment information (not admin user)
+- Added is_admin setting to the user service
+- Removed the admin entry point</entry>
+			</version>
+			<version release="24" version="2.0">
+				<entry>- Fixed some naming bugs in the scripts</entry>
+			</version>
+			<version release="25" version="2.0">
+				<entry>- Some var name fixes</entry>
+			</version>
+			<version release="26" version="2.0">
+				<entry>- Added hidden environment_name setting to the user_service</entry>
+			</version>
+			<version release="27" version="2.0">
+				<entry>- Remove 'SETTINGS_' and 'OLDSETTINGS_' from the field ids in the structured output</entry>
+			</version>
+			<version release="28" version="2.0">
+				<entry>- Fixed typo in enable script</entry>
+			</version>
+			<version release="29" version="2.0">
+				<entry>- Added some debug information when handling code is unkown</entry>
+			</version>
+			<version release="30" version="2.0">
+				<entry>- Added upgrade command to enable auto upgrading the package within parallells</entry>
+			</version>
+			<version release="31" version="2.0">
+				<entry>- Fixed issue with debug information</entry>
+			</version>
+			<version release="32" version="2.0">
+				<entry>- Adding manual Content-Length:0 header to curl when not arguments are being post/put-ed</entry>
+			</version>
+			<version release="33" version="2.0">
+				<entry>- Try to get the put working</entry>
+			</version>
+			<version release="34" version="2.0">
+				<entry>- Updated the environment provisioning with creatino of an admin account
+- Exit with 1 when structured output has errors</entry>
+			</version>
+			<version release="35" version="2.0">
+				<entry>- Fixed issue with Exception constructor</entry>
+			</version>
+			<version release="36" version="2.0">
+				<entry> - Added &quot;subscription_trial&quot; to the environment settings</entry>
+			</version>
+			<version release="37" version="2.0">
+				<entry>- Removed exit(1); from the structured output
+- Removed subscription trial from the package since it should be handled in the service template</entry>
+			</version>
+			<version release="38" version="2.0">
+				<entry>- Implemented a safeguard boolean to prevent unsuccessfull provisioned environments from deleting other environments</entry>
+			</version>
+			<version release="39" version="2.0">
+				<entry>- Fixed boolean type value to string</entry>
+			</version>
+			<version release="40" version="2.0">
+				<entry>Added verify script for environment creation
+Added verify script for user creation/update</entry>
+			</version>
+			<version release="41" version="2.0">
+				<entry>Fixed Bug with creation of the wrong service
+Removed exit(1) from verify scripts</entry>
+			</version>
+			<version release="42" version="2.0">
+				<entry>- Fixed variable name for updating the environment (admin profile)</entry>
+			</version>
+			<version release="43" version="2.0">
+				<entry>Added dutch localization</entry>
+			</version>
+			<version release="44" version="2.0">
+				<entry>Refactored some localization
+Removed the license</entry>
+			</version>
+			<version release="45" version="2.0">
+				<entry>- Added Deployment Documentation link
+- Replaced the dummy Support link</entry>
+			</version>
+			<version release="46" version="2.0">
+				<entry>- Set the EULA to a working support articale
+- Added a url to the license</entry>
+			</version>
+			<version release="47" version="2.0">
+				<entry>- Replaced class for Email address for both enviroment and user</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Collaboration/Email</category>
+			<category>Collaboration/Calendaring</category>
+			<category>Collaboration/Project management</category>
+			<category>Collaboration/Portal</category>
+			<category>Back office/Customer Relationship Management</category>
+			<category>Back office/Sales Force Automation</category>
+			<category>Back office/Human Resource Management</category>
+			<category>Back office/Product planning</category>
+		</categories>
+
+		<languages>
+			<language>en</language><language>nl</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting type="string" id="provisioning_endpoint" default-value="">
+			<name>Provisioning endpoint</name>
+			<name xml:lang="nl-NL">Provisie eindpunt</name>
+		</setting>
+		<setting type="string" id="user_endpoint" default-value="">
+			<name>User endpoint</name>
+			<name xml:lang="nl-NL">Gebruiker eindpunt</name>
+		</setting>
+		<setting type="string" id="provisioning_key" default-value="">
+			<name>Provisioning key</name>
+			<name xml:lang="nl-NL">Provisie sleutel</name>
+		</setting>
+	</global-settings>
+
+	<patch match="/application/version &gt;= '1.0'"/>
+
+	<service id="environment_service">
+		<license must-accept="false">
+			<free />
+			<text>
+				<name>EULA</name>
+				<url>http://www.workspace365.net/voorwaarden</url>
+			</text>
+		</license>
+
+		<presentation>
+			<name>Environment</name>
+			<name xml:lang="nl-NL">Omgeving</name>
+			<summary>Service to create environments</summary>
+			<summary xml:lang="nl-NL">Service om omgevingen aan te maken</summary>
+
+			<infolinks>
+				<link class="support" href="http://support.newdayatwork.com/">Support Link</link>
+				<link href="http://support.newdayatwork.com/customer/portal/articles/1334191-aps-deployment-guide" class="deployment-guide">Deployment guide</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="{user_endpoint}{environment_name}/SignIn" method="POST">
+					<label>Administrator sign in</label>
+					<label xml:lang="nl-NL">Beheerder aanmelden</label>
+					<variable name="user_endpoint" value-of-setting="user_endpoint"></variable>
+					<variable name="environment_name" value-of-setting="environment_name"></variable>
+					<variable name="UserName" value-of-setting="admin_email_address"></variable>
+					<variable name="Password" value-of-setting="admin_password"></variable>
+				</entry>
+			</entry-points>
+
+		</presentation>
+		<settings>
+			<setting type="string" id="environment_name"
+				installation-only="true" default-value="" min-length="1"
+				max-length="250">
+				<name>Environment name</name>
+				<name xml:lang="nl-NL">Omgeving naam</name>
+			</setting>
+			<setting type="boolean" id="successfully_provisioned" visibility="hidden" default-value="false" installation-only="true"></setting>
+			<group>
+				<name>Credentials</name>
+				<name xml:lang="nl-NL">Login gegevens</name>
+				<group class="vcard">
+					<name></name>
+					<setting type="email" id="admin_email_address" track-old-value="true" class="email" default-value="">
+						<name>Email address</name>
+						<name xml:lang="nl-NL">E-mailadres</name>
+					</setting>
+				</group>
+				<group class="authn">
+					<name></name>
+					<setting type="password" id="admin_password"
+						track-old-value="true" class="password" min-length="1">
+						<name>Password</name>
+						<name xml:lang="nl-NL">Wachtwoord</name>
+					</setting>
+				</group>
+			</group>
+			<group>
+				<name>Profile information</name>
+				<name xml:lang="nl-NL">Profiel informatie</name>
+				<group class="vcard">
+					<name></name>
+					<group class="fn n">
+						<name></name>
+						<setting type="string" id="admin_first_name"
+							min-length="1" track-old-value="true" class="given-name" max-length="250">
+							<name>First name</name>
+							<name xml:lang="nl-NL">Voornaam</name>
+						</setting>
+						<setting type="string" id="admin_last_name"
+							min-length="1" max-length="250" track-old-value="true" class="family-name">
+							<name>Last name</name>
+							<name xml:lang="nl-NL">Achternaam</name>
+						</setting>
+					</group>
+				</group>
+			</group></settings>
+
+
+
+		<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:db="http://apstandard.com/ns/1/db" xmlns:l="http://apstandard.com/ns/1/licensing">
+			<php:version min="5.3.1"/>
+			<php:extension>curl</php:extension>
+			<php:register-globals>false</php:register-globals>
+			
+		</requirements>
+
+		<provision xmlns:l="http://apstandard.com/ns/1/licensing">
+			<configuration-script name="environment-configure.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</configuration-script>
+			<verify-script name="environment-verify.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</verify-script>
+
+		</provision>
+		<service id="user_service" class="account">
+			<presentation>
+				<name>User</name>
+				<name xml:lang="nl-NL">Gebruiker</name>
+				<summary>User information of Workspace 365</summary>
+				<summary xml:lang="nl-NL">Gebruikers information van Workspace 365</summary>
+				<entry-points>
+					<entry dst="{user_endpoint}{environment_name}/SignIn" method="POST">
+						<label>User sign in</label>
+						<label xml:lang="nl-NL">Gebruiker aanmelden</label>
+						<variable name="user_endpoint" value-of-setting="user_endpoint"></variable>
+						<variable name="environment_name" value-of-setting="environment_name"></variable>
+						<variable name="UserName" value-of-setting="user_email_address"></variable>
+						<variable name="Password" value-of-setting="user_password"></variable>
+					</entry>
+				</entry-points>
+			</presentation>
+			<settings>
+				<group>
+					<name>Credentials</name>
+					<name xml:lang="nl-NL">Inlog gegevens</name>
+					<group class="vcard">
+						<name></name>
+						<setting type="email" id="user_email_address" class="email" default-value="" track-old-value="true">
+							<name>Email address</name>
+							<name xml:lang="nl-NL">E-mailadres</name>
+						</setting></group>
+					<group class="authn">
+						<name></name>
+						<setting type="password" id="user_password" class="password" track-old-value="true" min-length="1">
+							<name>Password</name>
+							<name xml:lang="nl-NL">Wachtwoord</name>
+						</setting></group>
+				</group>
+				<group>
+					<name>Profile information</name>
+					<name xml:lang="nl-NL">Profiel informatie</name>
+					<group class="vcard">
+						<name></name>
+						<group class="fn n">
+							<name></name>
+							<setting type="string" id="user_first_name" class="given-name" min-length="1" max-length="250">
+								<name>First name</name>
+								<name xml:lang="nl-NL">Voornaam</name>
+							</setting>
+							<setting type="string" id="user_last_name" class="family-name" min-length="1" max-length="250">
+								<name>Last name</name>
+								<name xml:lang="nl-NL">Achternaam
+</name>
+							</setting>
+						</group>
+					</group></group>
+				<setting type="boolean" id="is_admin" default-value="false">
+					<name>Is administrator</name>
+					<name xml:lang="nl-NL">Is beheerder</name>
+				</setting>
+				<setting type="string" id="environment_name" visibility="hidden" value-of-setting="environment_name"></setting>
+				<setting type="boolean" id="environment_successfully_provisioned" visibility="hidden" value-of-setting="successfully_provisioned"></setting>
+			</settings>
+			<provision>
+				<configuration-script name="user-configure.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</configuration-script>
+				<verify-script name="user-verify.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</verify-script>
+			</provision>
+		</service>
+	</service>
+
+	</application>

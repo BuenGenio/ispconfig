@@ -1,0 +1,393 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-03-21T15:30:08">
+    <id>GlobalRelay_EmailArchive_IMAP</id>
+    <name>Global Relay Email Archive IMAP</name>
+    <version>1.1.1</version>
+    <release>5</release>
+    <homepage>http://www.globalrelay.com</homepage>
+    <vendor>
+    	<name>GlobalRelay</name>
+    	<homepage>http://www.globalrelay.com</homepage>
+    	<icon path="images/GR LOGO-01.png" />
+    </vendor>
+    <packager>
+    	<name>Glowtouch Technologies</name>
+    	<homepage>http://www.glowtouch.com/</homepage>
+    	<icon path="images/parrallels-GT6.png" />
+    	<uri> uuid:66928df1-8659-4ea1-9b41-fa83af20d216</uri>
+    </packager>
+    <presentation>
+    	<summary>Global Relay Archive</summary>
+    	<description>Global Relay enables hosting providers to offer a secure cloud-based message archiving service for email, IM, BlackBerry, LinkedIn, Twitter, Facebook, OCS/Lync and more. 
+
+Since it automatically creates a permanent online record of all business communications, Global Relay Archive is a perfect solution for compliance, employee supervision, message management, litigation readiness and business continuity. 
+
+Global Relay’s Personal Archive lets users instantly find and retrieve any type of message anywhere, anytime — via iPhone, iPad, BlackBerry, Android, Outlook and web.</description>
+    	<icon path="images/GR LOGO-01.png" />
+    	<screenshot path="images/message-search-3.jpg">
+    		<description>Global Relay enables hosting providers to offer a secure cloud-based message archiving service for email, IM, BlackBerry, LinkedIn, Twitter, Facebook, OCS/Lync and more. Since it automatically creates a permanent online record of all business communications, Global Relay Archive is a perfect solution for compliance, employee supervision, message management, litigation readiness and business continuity. Global Relay’s Personal Archive lets users instantly find and retrieve any type of message anywhere, anytime — via iPhone, iPad, BlackBerry, Android, Outlook and web.</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.1.1">
+    			<entry>Global Relay Archive Initial Release</entry>
+    		</version>
+    		<version release="2" version="1.1.1">
+    			<entry>Documents Modified</entry>
+    		</version>
+    		<version release="3" version="1.1.1">
+    			<entry>Added classes for settings
+Added powershell verification</entry>
+    		</version>
+    		<version release="4" version="1.1.1">
+    			<entry>Changed the verification script</entry>
+    		</version>
+    		<version release="5" version="1.1.1">
+    			<entry>Journal rule error reporting added</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Collaboration/Email</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<group>
+        	<name>POA Login Details</name>
+        	<setting type="host-name" id="poa_host" default-value="demo.apsstandard.org">
+        		<name>POA IP or Domain</name>
+        		<error-message>Please enter valid IP address or Domain name.</error-message>
+        	</setting>
+        	<setting type="string" id="support_mail" min-length="4" default-value="provisioning@globalrelay.net">
+        		<name>Support Email(s)</name>
+        		<description>Seperate mails by comma.</description>
+        		<error-message>Please enter valid email address.</error-message>
+        	</setting>
+        	<setting type="string" id="reseller_name" default-value="GR Reseller">
+        		<name>Reseller Name</name>
+        	</setting></group><group class="presentation">
+    		<name>GlobalRelay API Access</name>
+    		<setting type="string" id="apiurl" class="presentation" max-length="250" regex="^(?=.*[A-Za-z0-9])[\S]*$">
+    			<name>Global relay HX-API web service URL *</name>
+    			<description>Address of Global Relay archiving setup API</description>
+    			<error-message> Please enter a valid URL (250 maximum size,no empty space and must not be null).</error-message>
+    		</setting>
+    		<setting type="email" id="apilogin" class="authn">
+    			<name>Global Relay Reseller Email *</name>
+    			<error-message>Please enter a valid email address.</error-message>
+    		</setting>
+    		<setting type="password" id="apipassword"
+    			class="authn" max-length="50" regex="^(?=.*[A-Za-z0-9])[\S]*$">
+    			<name>Global Relay API Password *</name>
+    			<error-message>Please enter a valid password (50 characters maximum size, no space and must not be null).</error-message>
+    		</setting>
+    	</group>
+    	  <group>
+            <name>Hosted Exchange properties</name>
+            <setting id="exchange_type" type="enum" default-value="ex2007">
+                <name>Exchange server type</name>
+                <choice id="ex2007">
+                    <name>Exchange2007</name>
+                </choice>
+                <choice id="ex2010">
+                    <name>Exchange2010</name>
+                </choice>
+            </setting>
+            <setting type="enum" id="imap_port" default-value="993">
+            	<name>Imap Port</name>
+            	<choice id="993">
+            		<name>993</name>
+            	</choice>
+            </setting>
+    	  </group>
+        <group>
+            <name>Specific archiving settings</name>
+            <setting id="type" type="enum" default-value="true">
+                <name>Plan Name</name>
+                <description>There are three packages which can be purchased: Compliance (With compliance tools enabled), Business &amp; e-discovery (Basic archiving with no compliance), and Compliance Archiving with a Write Once Read Many (WORM) drive.</description>
+                <choice id="true">
+                	<name>Compliance</name>
+                </choice>
+                <choice id="false">
+                	<name>Business &amp; e-discovery</name>
+                </choice>
+                <choice id="3">
+                	<name>Compliance Archiving with WORM Drive</name>
+                </choice>
+            </setting>
+            <setting type="enum" id="retentionterm" default-value="12">
+            	<name>Retention Term</name>
+            	<choice id="12">
+            		<name>Up to 1 Year</name>
+            	</choice>
+            	<choice id="24">
+            		<name>Up to 2 Years</name>
+            	</choice>
+            	<choice id="36">
+            		<name>Up to 3 Years</name>
+            	</choice>
+            	<choice id="60">
+            		<name>Up to 5 Years</name>
+            	</choice>
+            	<choice id="84">
+            		<name>Up to 7 Years</name>
+            	</choice>
+            </setting>
+            </group>
+        <group>
+        	<name>Journal Info</name>
+        	<setting type="string" id="pattern" min-length="1" max-length="15" default-value="grjournptrn">
+        		<name>Journal Pattern *</name>
+        		<description>Base name for the automatcially created distribution groups</description>
+        		<error-message>Please enter pattern between 1 to 15 characters.</error-message>
+        	</setting>
+        	<setting type="integer" id="distribution_count" max="250" default-value="250" min="1">
+        		<name>Distribution Group Limit *</name>
+        		<description>Maximum number of users that can be added to a distribution group.</description>
+        		<error-message>Please enter a numeric value less than 250.</error-message>
+        	</setting>
+        	<setting type="integer" id="mailboxsizelimit" optional="true">
+        		<name>Mailbox Size Limit</name>
+        		<description>Please enter a value in Mb. If the value is blank or 0 , the system will take the default value as 5G. Make sure that the value should not be more than the total exchange database size limit (1024G common)</description>
+        	</setting>
+        </group>
+        </global-settings>
+    <service id="Contact">
+    	<license must-accept="false">
+    		<free />
+    		<text>
+    			<name>License</name>
+    			<file>scripts/license.txt</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>Company Details</name>
+    		<summary>Global Relay Company Information</summary>
+    		<infolinks>
+    			<link href="http://www.globalrelay.com/services/archive/email#archiving" class="support">Email Archiving Info</link>
+    			<link href="file:///docs/GlobalRelay-PA-Provider-Deployment-Guide-IMAP.doc" class="deployment-guide" xml:lang="en-US">GlobalRelay-PA-Provider-Deployment-Guide-IMAP</link>
+    			<link href="file:///docs/GlobalRelay-PA-Subscriber-Guide-IMAP.doc" class="user-guide" xml:lang="en-US">GlobalRelay-PA-Subscriber-Guide-IMAP</link>
+    		</infolinks>
+    	</presentation>
+    	<settings>
+    		<group class="presentation">
+    			<name>Company Info</name>
+    			<setting type="string" id="comp_name" installation-only="true" class="organization-name" max-length="125" min-length="1" uniq="global">
+    				<name>Company name *</name>
+    				<error-message>Company name should not be blank and a unique value , less than 125.</error-message>
+    			</setting><setting type="email" id="companyname" class="email-on-application-domain" default-value="admin@primary.domain">
+    				<name>Name and  Primary domain *</name>
+    				<description>Choose the company’s primary domain from the dropdown selection.  Note, the email address “admin” is not used.
+</description>
+</setting>
+    			<setting type="string" id="companydomain" default-value="" protected="true" optional="true" class="domain-name">
+    				<name>Primary Domain</name>
+    			</setting>
+    			<setting type="string" id="companyaddress" default-value="" max-length="100" class="street-address" min-length="1">
+    				<name>Address *</name>
+    				<error-message>Please enter a value less than 100 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="companycity" default-value="" max-length="50" min-length="1" class="locality">
+    				<name>City *</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="companystate" default-value="" max-length="50" min-length="1" class="region">
+    				<name>State *</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="companycountry" default-value="" max-length="50" min-length="1" class="country-name">
+    				<name>Country *</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="companyzipcode" default-value="" max-length="50" min-length="1" class="postal-code">
+    				<name>Zip Code *</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="companyphone" default-value="" max-length="50" min-length="1" class="work">
+    				<name>Phone *</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="companyfax" default-value="" max-length="50" class="fax">
+    				<name>Fax</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="companycustomerid" class="subscription_id" optional="true" protected="true">
+    				<name>Customer ID</name>
+    			</setting>
+    			<setting type="string" id="companyusercount" default-value="0" visibility="hidden" optional="true" class="user-count">
+    				<name>User Count</name>
+    				<description>The estimated number of users for a company.</description>
+    			</setting>
+    		</group>
+    		<group class="tel">
+    			<name>Primary Contact</name>
+    			<setting type="string" id="contactname" default-value="" max-length="128" min-length="1" class="name-contact">
+    				<name>Name *</name>
+    				<error-message>Please enter a value less than 128 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="contacttitle" default-value="" max-length="50" class="title-contact">
+    				<name>Title/Description</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+    			</setting>
+    			<setting type="email" id="contactemail" default-value="" class="email-contact">
+    				<name>Email *</name>
+    				<error-message>Enter valid email address.</error-message>
+    			</setting>
+    			<setting type="string" id="contactphone" default-value="" max-length="50" min-length="1" class="phone-contact">
+    				<name>Phone *</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="extension" max-length="10" default-value="" class="ext-contact">
+    				<name>Extension</name>
+    				<error-message>Please enter a value less than 10 characters in length.</error-message>
+    			</setting><setting type="string" id="contactcell" default-value="" max-length="50" class="cell-contact">
+    				<name>Cell</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+</setting>
+    			</group>
+    		<group class="presentation">
+    			<name>Global Relay Archive Administrator</name>
+    			<setting type="string" id="firstname" default-value="" max-length="100" class="firstname">
+    				<name>First Name</name>
+    				<error-message>Please enter a value less than 100 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="lastname" default-value="" max-length="50" class="lastname">
+    				<name>Last Name</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="email" default-value="" optional="true" max-length="255" class="email-archive">
+    				<name>Alternate Email</name>
+    				<error-message>Please enter a value less than 255 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="phone" default-value="" max-length="50" class="phone-archive">
+    				<name>Phone</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+    			</setting>
+    			<setting type="string" id="cell" default-value="" max-length="50" class="cell-archive">
+    				<name>Cell</name>
+    				<error-message>Please enter a value less than 50 characters in length.</error-message>
+    			</setting>
+    		</group>
+    		<group class="presentation">
+    			<name>Secondary Domain</name>
+    			<setting type="list" id="secondarydomain"
+    				   class="domain-name" element-type="domain-name" protected="true" visibility="hidden">
+    				<name>Secondary Domain</name>
+    			</setting>
+    			<setting type="string" id="secondcompdomain" protected="true" optional="true" class="sec-domain">
+    				<name>Sec Comp Domain</name>
+    			</setting>
+    		</group>
+    		<group class="authn">
+    			<setting type="string" id="api_login" class="login" optional="true" protected="true" visibility="hidden">
+    			</setting>
+    			<setting type="password" id="api_password" class="password" optional="true" protected="true" visibility="hidden"></setting>
+    		</group>
+
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:mail="http://apstandard.com/ns/1/mail" xmlns:ftp="http://apstandard.com/ns/1/ftp" xmlns:env="http://apstandard.com/ns/1/environment">
+    		<env:environment>
+    			<env:windows></env:windows>
+    		</env:environment>
+    		<php:version min="4.0"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    		<verify-script name="verify.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</verify-script>
+    	</provision>
+
+    	<service id="mailbox" class="account">
+    		<presentation>
+    			<name>Archived User</name>
+    			<summary>Global Relay Archived User Information</summary>
+    		</presentation>
+    		<settings>
+    			<group class="vcard">
+    				<group class="email">
+    					<setting id="user_email" class="email"
+    						type="list" element-type="email" track-old-value="true"
+    						protected="true" visibility="hidden">
+    						<name>Company Email</name>
+    					</setting>
+    				</group>
+    				<group class="fn n">
+    					<setting id="user_given_name" type="string" protected="true" class="given-name" min-length="1" max-length="100" visibility="hidden">
+    						<name>First Name</name>
+    						<error-message>Please enter a value not more than 100 characters in length.</error-message>
+    					</setting>
+    					<setting id="user_surname" type="string" protected="true" optional="true" visibility="hidden" class="surname">
+    						<name>Last Name</name>
+    					</setting>
+    				</group>
+    			</group>
+    			<setting id="user_login" class="login" type="string"
+    				protected="true" min-length="1" max-length="100">
+    				<name>Login</name>
+    				<error-message>Please enter a value not more than 100 characters in length.</error-message>
+    			</setting>
+    			<setting id="user_password" class="password"
+    				type="password" visibility="hidden" protected="true"
+    				track-old-value="true">
+    				<name>Password</name>
+    			</setting>
+    			<setting type="string" id="primarydomain"
+    				optional="true" value-of-setting="companydomain"
+    				visibility="hidden" class="pri-domain">
+    				<name>Primary Domain</name>
+    			</setting>
+    			<setting type="integer" id="companycustomerid"
+    				optional="true" visibility="hidden"
+    				value-of-setting="companycustomerid" class="customer-id">
+    			</setting>
+    			<setting type="string" id="mail_ids" optional="true" protected="true" visibility="hidden" class="mail-ids">
+    				<name>Mailbox ID</name>
+    			</setting>
+    			<setting type="string" id="mail_address" optional="true"
+    				protected="true" visibility="hidden" class="mail-addr">
+    				<name>Mail Address</name>
+    			</setting>
+    			<setting type="string" id="group_id" optional="true"
+    				protected="true" visibility="hidden" class="group-id">
+    				<name>Group ID</name>
+    			</setting>
+    			<setting type="string" id="comp_name" visibility="hidden" optional="true" value-of-setting="comp_name" class="comp-name"></setting>
+    			<setting type="string" id="companyaddress" optional="true" visibility="hidden" value-of-setting="companyaddress" class="street-address"></setting>
+    			<setting type="string" id="companycity" optional="true" visibility="hidden" value-of-setting="companycity" class="locality"></setting>
+    			<setting type="string" id="companystate" optional="true" visibility="hidden" value-of-setting="companystate" class="region"></setting>
+    			<setting type="string" id="companycountry" optional="true" visibility="hidden" value-of-setting="companycountry" class="country-name"></setting>
+    			<setting type="string" id="companyzipcode" optional="true" visibility="hidden" value-of-setting="companyzipcode" class="postal-code"></setting>
+    			<setting type="string" id="companyphone" optional="true" visibility="hidden" value-of-setting="companyphone" class="work"></setting>
+    			<setting type="string" id="companyfax" optional="true" visibility="hidden" value-of-setting="companyfax" class="fax"></setting>
+    			<setting type="string" id="journresult" optional="true" visibility="hidden" protected="true">
+    				<name>Journal Rule Status</name>
+    			</setting>
+    			<group class="authn">
+    				<setting type="string" id="api_login" class="login"
+    					optional="true" protected="true" value-of-setting="api_login" visibility="hidden">
+    				</setting>
+    				<setting type="password" id="api_password"
+    					class="password" optional="true" protected="true" value-of-setting="api_password" visibility="hidden">
+    				</setting>
+    			</group></settings>
+    		<requirements
+    			xmlns:mail="http://apstandard.com/ns/1/mail" xmlns:svc="http://apstandard.com/ns/1/service">
+    			<mail:mailbox>
+<mail:id>account</mail:id>
+<mail:access />
+</mail:mailbox>
+    		</requirements>
+    		<provision>
+    			<configuration-script name="mailbox_sync.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</configuration-script>
+    		</provision>
+    	</service>
+    	</service>
+</application>

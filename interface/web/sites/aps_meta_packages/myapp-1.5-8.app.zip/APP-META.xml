@@ -1,0 +1,199 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-03-14T21:36:11">
+    <id>http://myapp.net/ed2c19c8-996a-4d01-a25e-f665856736bf</id>
+    <name>myapp</name>
+    <version>1.5</version>
+    <release>8</release>
+    <homepage>http://www.myapp.net</homepage>
+    <vendor>
+    	<name>myapphone</name>
+    	<homepage>http://www.myapphone.com</homepage>
+    	<icon path="images/logomyapphone64.png" />
+    </vendor>
+    <packager>
+    	<name>myapphone</name>
+    	<homepage>http://www.myapphone.com</homepage>
+    	<icon path="images/logomyapp64.png" />
+    	<uri>http://www.myapphone.com/4b36e57b-83b2-4e67-8981-08eb892a9302</uri>
+    </packager>
+    <presentation>
+    	<summary>Myapp.net - Mobile application generator</summary>
+    	<summary xml:lang="fr-FR">Myapp.net - Générateur d'application mobile</summary>
+    	<description>Real tool of communication and promotion, the myapp application for your business will bring you visibility on the Internet and in the stores. App Store and Googles Play will not have secrets anymore for you!With myapp, you create yourself and very easily your iPhone or Android application. We can also create the design for you.In few clicks, you:- Define the look of your application.- Choose the themes, the font, the colors and the features of the application following your business.- Validate the design of the application and insert the contents you wish to broadcast to your customers and/or users,- Try it immediately on your smartphone- Validate its publication- Benefit from all the advantages of a smartphone application (direct contact with your customers, real time updates, notifications push, statistical reports)</description>    	<description xml:lang="fr-FR">Véritable outil de communication et de promotion, l'application myapp pour votre métier vous apportera de la visibilité sur Internet et dans les stores. L'App Store et Google Play n'auront bientôt plus de secrets pour vous !Grâce à myapp, vous créez vous-même et très facilement votre application iPhone ou Android. Nous pouvons également créer le design pour  vous.En quelques clics, vous :-	définissez l’apparence de votre application,-	choisissez les thèmes, les polices, les couleurs et les fonctionnalités de l’application suivant son métier de référence.-	validez le design de l’application et insérez le contenu que vous désirez diffuser auprès de vos clients et/ou utilisateurs,-	l’essayez sans attendre sur son smartphone-	valider sa publication-	bénéficiez de tous les avantages d’une application smartphone (contact direct avec vos clients, mises à jour en temps réel, notifications push, rapports statistiques…)</description>    	<icon path="images/logomyapp64.png" />
+    	<screenshot path="images/screenshot-accueil.png">
+    		<description>myapp.net</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="8" version="1.5">
+    			<entry>Initial APS</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Front office/On-line Marketing</category>
+    		<category>Web/E-commerce</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    		<language>fr</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<setting type="string" id="username_api" default-value="">
+    		<name>Acces login to the API</name>
+    		<name xml:lang="fr-FR">Login d'accès à l'API</name>
+    		<description>User (admin) login to acces the API</description>
+    		<description xml:lang="fr-FR">Login utilisateur (compte administrateur) d'accès à l'API</description>
+    	</setting>
+    	<setting type="password" id="password_api" default-value="">
+    		<name>Access password to the API</name>
+    		<name xml:lang="fr-FR">Mot de passe d'accés à l'API</name>
+    		<description>Access password (admin account) to the API.</description>
+    		<description xml:lang="fr-FR">Mot de passe (du compte administrateur) d'accès à l'API</description>
+    	</setting>
+    	<setting type="string" id="url_api" default-value="">
+    		<name>API URL</name>
+    		<name xml:lang="fr-FR">URL d'accès à l'API</name>
+    		<description>API's url.</description>
+    		<description xml:lang="fr-FR">URL d'accès à l'API</description>
+    	</setting>
+    	<setting type="string" id="reseller_id" default-value="" visibility="hidden">
+    		<name>Reseller ID</name>
+    		<description>Your ID.</description>
+    	</setting>
+    	<setting type="enum" id="business">
+    		<name>Business application selector</name>
+    		<name xml:lang="fr-FR">Selection des métiers</name>
+    		<choice id="Restaurant">
+    			<name>Restaurant</name>
+    			<name xml:lang="fr-FR">Restaurant</name>
+    		</choice>
+    		<choice id="Hotel">
+    			<name>Hotel</name>
+    			<name xml:lang="fr-FR">Hotel</name>
+    		</choice>
+    		<choice id="Event">
+    			<name>Event</name>
+    			<name xml:lang="fr-FR">Evénement</name>
+    		</choice>
+    		<choice id="shop_silver">
+    			<name>Shop (Silver)</name>
+    			<name xml:lang="fr-FR">Boutique (Silver)</name>
+    		</choice>
+    		<choice id="shop_gold">
+    			<name>Shop (Gold)</name>
+    			<name xml:lang="fr-FR">Boutique (Gold)</name>
+    		</choice>
+    	</setting>
+    	<setting type="string" id="sskey" default-value="00000000">
+    		<name>Secure key</name>
+    		<name xml:lang="fr-FR">Clef de sécurité</name>
+    		<description>Access key to the service (used during provisionning).</description>
+    		<description xml:lang="fr-FR">Clef d'accés au service (utilisée pendant la création d'un compte).</description>
+    	</setting>
+    <setting type="string" id="login_sskey" default-value="00000000">
+    		<name>Secure login key</name>
+    		<name xml:lang="fr-FR">Clef de sécurité</name>
+    		<description>Access key to the service (used during login to entry point).</description>
+    		<description xml:lang="fr-FR">Clef d'accés au service (utilisée pendant le login d'un compte via l'entry point).</description>
+    </setting></global-settings>
+    <upgrade match="/application/version &gt;= '0.1'" />
+    <service id="subscription" singular="true">
+    	<license must-accept="true">
+    		<free />
+    		<text>
+    			<name>default</name>
+    			<url>http://www.myapp.net/lic_en.html</url>
+    		</text><text xml:lang="en-US">
+    			<name>en licence</name>
+    			<url>http://www.myapp.net/lic_en.html</url>
+    		</text>
+    		<text xml:lang="fr-FR">
+    			<name>fr licence</name>
+    			<url>http://www.myapp.net/lic_fr.html</url>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>Myapp.net</name>
+    		<summary>Mobile application generator</summary>
+    		<summary xml:lang="fr-FR">Générateur d'application mobile.</summary>
+    		<icon path="images/logomyapp64.png" />
+    		<infolinks>
+    			<link href="http://www.myapp.net" class="official">maypp.net</link>
+    			<link xml:lang="en" href="http://www.myapp.net/?page_id=751" class="support">Support</link>
+    			<link xml:lang="fr" href="http://www.myapp.net/?page_id=751" class="support">Support</link>
+    			<link href="http://myftp.myapp.net/public/parallels/Installation_Guide.pdf" class="deployment-guide">Deployment guide</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry dst="{url_api}/gen/aps/apslog.php" method="POST">
+    				<label>maypp.net</label>
+    				<variable value-of-setting="url_api" name="url_api"/>    				
+    				<variable name="login" value-of-setting="user_mail" class="email"></variable>
+    				<variable name="password" value-of-setting="user_pass" class="password"></variable>
+    				<variable name="frm" value-of-setting="reseller_id"></variable>
+    				<variable name="ssklog" value-of-setting="login_sskey"></variable>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+			<group class="authn">    		
+	    		<setting type="string" id="user_mail" uniq="global" default-value="" class="email" visibility="hidden" track-old-value="true">
+	    			<name>User Email</name>
+	    			<name xml:lang="fr-FR">Email du compte utilisateur</name>
+	    			<description>User Email</description>
+	    			<description xml:lang="fr-FR">Login du compte utilisateur</description>
+	    		</setting><setting type="password" id="user_pass" default-value="" max-length="12" class="password" visibility="hidden" track-old-value="true" min-length="8">
+	    			<name>user password</name>
+	    			<name xml:lang="fr-FR">Mot de passe du compte utilisateur</name>
+	    			<description>User password.</description>
+	    			<description xml:lang="fr-FR">Mot de passe du compte utilisateur.</description>
+	    			<error-message>Bad password format.</error-message>
+	    		</setting>
+			</group>
+    		
+			<group class="vcard">
+	    		<setting type="string" id="street_address" default-value="" track-old-value="true" class="street-address">
+	    			<name>Street address.</name>
+	    			<name xml:lang="fr-FR">Adresse - Rue</name>
+	    			<description>Street address of the user.</description>
+	    			<description xml:lang="fr-FR">Rue (adresse) du compte utilisateur.</description>
+	    		</setting>
+	    		<setting type="string" id="street_address_2" track-old-value="true" default-value="" class="extended-address">
+	    			<name>Street address (ligne 2)</name>
+	    			<description>Street address of the user.</description>
+	    			<description xml:lang="fr-FR">Rue (adresse) du compte utilisateur - ligne 2</description>
+	    		</setting><setting type="string" id="city" default-value="" track-old-value="true" class="locality">
+	    			<name>City</name>
+	    			<name xml:lang="fr-FR">Ville</name>
+	    			<description>City of the user.</description>
+	    			<description xml:lang="fr-FR">Ville du compte utilisateur.</description>
+	    		</setting>
+	    		<setting type="string" id="zip_code" default-value="" track-old-value="true" class="postal-code">
+	    			<name>Zip</name>
+	    			<name xml:lang="fr-FR">Code postal</name>
+	    			<description>Zip code of the user.</description>
+	    			<description xml:lang="fr-FR">Code postal du compte utilisateur.</description>
+	    		</setting>
+	    		<setting type="string" id="country" default-value="France" track-old-value="true" class="country-name">
+	    			<name>Country</name>
+	    			<name xml:lang="fr-FR">Pays</name>
+	    			<description>Country of the user.</description>
+	    			<description xml:lang="fr-FR">Pays du compte utilisateur.</description>
+	    		</setting>
+	    		</group>
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:extension>curl</php:extension>
+    		<php:version min="5.2"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<status-control />
+    			<structured-output />
+    		</configuration-script>
+    		<verify-script name="verification.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</verify-script>
+    	</provision>
+    </service>
+</application>

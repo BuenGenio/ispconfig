@@ -1,0 +1,447 @@
+<application packaged="2015-01-20T23:47:42" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>http://cameramanager.com/2.0</id>
+    <name>Panasonic CameraManager</name>
+    <version>2.0</version>
+    <release>17</release>
+
+    <homepage>http://www.cameramanager.com</homepage>
+
+    <vendor>
+        <name>Panasonic CameraManager</name>
+        <homepage>http://www.cameramanager.com</homepage>
+        <icon path="images/logo64.png"/>
+    </vendor>
+
+    <packager>
+        <name>CloudCompanyon B.V.</name>
+        <homepage>http://www.cloudcompanyon.com</homepage>
+        <icon path="images/CloudCompanyon.png"/>
+        <uri>uuid:cloudcompanyon.com</uri>
+    </packager>
+
+    <presentation>
+        <summary>Panasonic Cameramanager go! is an all-in-one cloud-based camera surveillance solution. It allows you to keep your eyes on important things with your computer, smartphone and tablet.</summary>
+        <summary xml:lang="nl-NL">Panasonic Cameramanager go! is een alles-in-één oplossing voor camerabewaking in de cloud. Het geeft je de mogelijkheid om een oogje in het zeil te houden via je computer, smartphone en tablet.</summary>
+        <description>No matter where you are, with Cameramanager go! you
+can keep an eye on all things important: your business,
+store and other business assets. We do so by taking your
+surveillance to the cloud and making surveillance
+easy-to-use. Camermanager go! is an all-in-one solution for
+video surveillance in the cloud and consists of a Panasonic
+indoor camera, our state-of-the-art software you use on your 
+computer, smartphone or tablet and a cloud storage bundle.
+        </description>
+        <description xml:lang="nl-NL">Je bedrijf is iets waardevols. Iets om trots op te zijn. Cameramanager go! helpt je een oogje in het zeil te houden, met een alles-in-1 oplossing voor camerabeveiliging. We brengen je camerabeveiliging naar de cloud, zodat je overal en op elk moment de beelden kunt bekijken via een handige app. Cameramanager go! bestaat uit een Panasonic HD WiFi camera, een cloud opslag bundel en de Cameramanager applicatie waarmee je videobeelden bekijkt &amp; camera’s beheert.</description>
+
+        <icon path="images/logo64.png"/>
+
+        <screenshot path="images/screen.png">
+            <description>
+                Main screenshot.
+			</description>
+        </screenshot>
+
+        <changelog>
+            <version release="1" version="1.1">
+                <entry>Packaged in APS 1.2</entry>
+            </version>
+            <version release="2" version="1.1">
+                <entry>Initial functionality</entry>
+            </version>
+            <version release="13" version="1.2">
+                <entry>Mail Camera's</entry>
+                <entry>Update subscriptions</entry>
+            </version>
+            <version release="14" version="1.2">
+                <entry>Type camera</entry>
+            </version>
+            <version release="13" version="1.4">
+                <entry>Redo structure</entry>
+                <entry>Subusers</entry>
+                <entry>inherit settings</entry>
+            </version>
+            <version release="19" version="1.4">
+                <entry>Fixed unprovision</entry>
+            </version>
+            <version release="20" version="1.4">
+            	<entry>Additional error handling</entry>
+            </version>
+            <version release="21" version="1.4">
+            	<entry>Add unimplemented calls to provisioning.php and subscription.php</entry>
+            </version>
+            <version release="23" version="1.4">
+            	<entry>Resources</entry>
+            </version>
+            <version release="25" version="1.4">
+            	<entry>Better email formatting</entry>
+            </version>
+            <version release="26" version="1.4">
+            	<entry>CAM-1 better getAccountTypeID </entry>
+            </version>
+            <version release="27" version="1.4">
+            	<entry>CAM-2</entry>
+            </version>
+            <version release="28" version="1.4">
+            	<entry>CAM-3 Double notifications for upgrade</entry>
+            </version>
+            <version release="29" version="1.4">
+            	<entry>Deprovisioning error</entry>
+            	<entry>Error logging</entry>
+            </version>
+            <version release="32" version="1.4">
+            	<entry>email not send.</entry>
+            </version>
+            <version release="33" version="1.4">
+            	<entry>Dutch translations</entry>
+      
+            </version>
+            <version release="34" version="1.4">
+	<entry>Password</entry>
+</version>
+            <version release="35" version="1.4">
+            	<entry>typo with subscription type</entry>
+            </version>
+            <version release="36" version="1.4">
+            	<entry>removal of subscription from ccp</entry>
+            </version>
+            <version release="38" version="1.4">
+            	<entry>Lots more debugging</entry>
+            </version>
+            <version release="39" version="1.4">
+            	<entry>Better url handling</entry>
+            </version>
+            <version release="40" version="1.4">
+            	<entry>Removed some debugging</entry>
+            </version>
+            <version release="41" version="1.4">
+            	<entry>Documentation</entry>
+            	<entry>SubID in ordermail</entry>
+            </version>
+            <version release="44" version="1.4">
+            	<entry>Non functional entry point removed.</entry>
+            </version>
+            <version release="1" version="1.5">
+            	<entry>translations</entry>
+            	<entry> Check if email is registered
+</entry>
+            	<entry>CAM-4
+CAM-5
+CAM-8
+CAM-9
+CAM-12
+CAM-13
+
+</entry>
+            </version>
+            <version release="2" version="1.5">
+            	<entry>Verification script improvements</entry>
+            </version>
+            <version release="4" version="1.7">
+            	<entry>restructure</entry>
+            </version>
+            <version release="11" version="1.7">
+            	<entry>Certification version</entry>
+            	<entry>Veriication scripts</entry>
+            </version>
+            <version release="15" version="1.7">
+            	<entry>Url copy bug fixed.</entry>
+            </version>
+            <version release="25" version="1.7">
+            	<entry>CAM-16 Language and country in provisioning</entry>
+            	<entry>CAM-17 reseller</entry>
+            	<entry>user -&gt; User</entry>
+            	<entry>CAM-18 Could not login with the user credentials provided while creating the user</entry>
+            	<entry>CAM-19 old number of camera's</entry>
+            </version>
+            <version release="28" version="1.7">
+            	<entry>If number of camera's and number of users at provisioning is set at 0, set it at 1. Otherwise provisioning fails.</entry>
+            </version>
+            <version release="10" version="1.8">
+            	<entry>Dummy subscription	</entry>
+            	<entry>Remove subscription as resource</entry>
+            	<entry>Restructure users and subusers</entry>
+            	<entry>add new subuserslot before creating subuser
+delete subuserslot after removing subuser</entry>
+            </version>
+            <version release="12" version="1.8">
+            	<entry>Added some characters to password policy</entry>
+            </version>
+            <version release="1" version="2.0">
+            	<entry>New version, incompatibl with previous releases</entry>
+            </version>
+            <version release="2" version="2.0">
+            	<entry>regexes for passwords</entry>
+            </version>
+            <version release="3" version="2.0">
+            	<entry>typo</entry>
+            </version>
+            <version release="6" version="2.0">
+            	<entry>password</entry>
+            </version>
+            <version release="16" version="2.0">
+            	<entry>user creating</entry>
+            </version>
+            <version release="17" version="2.0">
+            	<entry>Company name remove invalid characters</entry>
+            	<entry>Keep company name over upgrades</entry>
+            </version>
+        </changelog>
+
+        <categories>
+            <category>Infrastructure/Security</category>
+        </categories>
+
+        <languages>
+            <language>en</language>
+            <language>nl</language>
+        </languages>
+    </presentation>
+    <global-settings>
+        <setting default-value="fieber1234" id="PARTNERPASSWORD" type="password">
+            <name>reseller password</name>
+        </setting>
+        <setting default-value="" id="PARTNEREMAIL" type="string">
+        	<name>reseller email</name>
+        </setting>
+        <setting default-value="1275" id="PARTNERID" type="integer">
+            <name>Reseller Partnerid</name>
+        </setting>
+        <setting default-value="https://api.cameramanager.com" id="BASEURL" type="string">
+            <name>Base Url</name>
+        </setting>
+        <setting default-value="false" id="DEBUG" type="boolean">
+            <name>Debug mode</name>
+        </setting>
+        <group>
+            <name>Mail</name>
+            <setting id="MAIL_SERVER_USERNAME" optional="true" type="string">
+                <name>Username Mail Server</name>
+            </setting>
+            <setting id="MAIL_SERVER_PASSWORD" optional="true" type="password">
+                <name>Mail server Password</name>
+            </setting>
+            <setting default-value="false" id="USE_AUTH" type="boolean">
+                <name>Use Authentication</name>
+            </setting>
+            <setting default-value="" id="HOST" type="host-name">
+                <name>SMTP Host</name>
+            </setting>
+            <setting default-value="" id="FROM_ADDRESS" type="string">
+                <name>Sender address</name>
+                <description>Sender address for Camera order
+                </description>
+            </setting>
+            <setting default-value="" id="FROM_NAME" type="string">
+                <name>Sender name for Camera order</name>
+            </setting>
+            <setting default-value="" id="TO_ADDRESS" type="string">
+                <name>Receiver address for Camera order</name>
+            </setting>
+            <setting default-value="" id="TO_NAME" type="string">
+                <name>Receiver name for Camera order</name>
+            </setting>
+        </group>
+        <group>
+            <name>branding</name>
+            <setting default-value="true" id="branding" type="boolean">
+                <name>branding</name>
+            </setting>
+        </group>
+    </global-settings>
+
+    <patch match="/application/version &gt;= '2.0'"/>
+
+    <service id="CameraManager" singular="true">
+    
+        <license must-accept="false">
+            <commercial/>
+            <text>
+                <name>Licence</name>
+                <url>https://www.cameramanager.com/website/privacy-policy</url>
+            </text>
+        </license>
+
+        <presentation>
+            <name>CameraManager</name>
+            <summary>Panasonic Cameramanager go! is an all-in-one cloud-based camera surveillance solution. It allows you to keep your eyes on important things with your computer, smartphone and tablet. </summary>
+            <summary xml:lang="nl-NL">Je bedrijf is iets waardevols. Iets om trots op te zijn. Cameramanager go! helpt je een oogje in het zeil te houden, met een alles-in-1 oplossing voor camerabeveiliging. We brengen je camerabeveiliging naar de cloud, zodat je overal en op elk moment de beelden kunt bekijken via een handige app. Cameramanager go! bestaat uit een Panasonic HD WiFi camera, een cloud opslag bundel en de Cameramanager applicatie waarmee je videobeelden bekijkt &amp; camera’s beheert.</summary>
+            <icon path="images/logo64.png"/>
+
+            <infolinks>
+
+                <link class="support" href="https://www.cameramanager.com/website/en/support">Support Link</link>
+                <link class="official" href="http://www.cameramanager.com">Home
+                </link>
+                <link class="howto" href="https://www.cameramanager.com/files/UserManual-Cameramanager-V1_6-en.pdf">Manual</link>
+                <link class="demo" href="https://www.cameramanager.com/website/demo">Demo</link>
+                <link class="deployment-guide" href="file:///docs/CameraManagerProvidersGuide.pdf">Installation</link>
+            </infolinks>
+
+        </presentation>
+        
+        <settings>
+
+            <group class="vcard">
+                <name>Company</name>
+                <group class="org">
+                    <name>Name</name>
+                    <setting class="organization-name" id="company_name" type="string" visibility="hidden">
+                        <name>Name</name>
+                        <name xml:lang="nl-NL">Bedrijfsnaam</name>
+                    </setting>
+                </group>
+                <group class="addr">
+                    <name>Address</name>
+                    <setting class="street-address" id="company_street" type="string" visibility="hidden">
+                        <name>Address</name>
+                    </setting>
+                    <setting class="postal-code" id="company_postalcode" type="string" visibility="hidden">
+                        <name>Postal Code</name>
+                    </setting>
+                    <setting class="locality" id="company_city" type="string" visibility="hidden">
+                        <name>City</name>
+                    </setting>
+                    <setting class="locale" id="company_country" type="string" visibility="hidden"/>
+                </group>
+                <group class="fn n">
+                    <name>Contact</name>
+                    <setting class="given-name" id="contact_firstname" optional="true" type="string" visibility="hidden">
+                        <name>First name</name>
+                    </setting>
+                    <setting class="additional-name" id="contact_middlename" optional="true" type="string" visibility="hidden">
+                        <name>Middle name</name>
+                    </setting>
+                    <setting class="family-name" id="contact_lastname" type="string" visibility="hidden">
+                        <name>Last name</name>
+                    </setting>
+                    <setting class="email" id="contact_email" installation-only="true" type="email" uniq="service">
+                        <name>Email</name>
+                        <name xml:lang="nl-NL">Email</name>
+                        <description>Email address used to login to the CameraManager system.</description>
+                        <error-message>This email address is already in use for another CameraManager subscription. Please choose another one.</error-message>
+                        <error-message xml:lang="nl-NL">Dit email adres is al in gebruik voor een ander CameraManager dienst. Graag een ander adres invoeren.</error-message>
+                    </setting>
+                    <setting class="work" id="contact_phone" type="string" visibility="hidden">
+                    	<name>Phone number</name>
+                    	<name xml:lang="nl-NL">Telefoonnummer</name>
+                    </setting>
+                    <setting class="password" generate="random" id="PASSWORD" max-length="32" min-length="6" regex="[a-zA-Z0-9\-\.,\!\?@\$\&amp;\*^\=%\:~\+#\&quot;]+" type="password">
+                    	<name>Password</name>
+                    	<error-message>Invalid characters in password, or password too short. Password should be at least 6 characters long.  "a-z", "A-Z", "0-9", -, .,",",?,@,$,&amp;amp;,*,^,=,%,:,~,+,# and " allowed</error-message>
+                    </setting>
+</group>
+            </group>
+
+            <group>
+                <name>branding</name>
+                <setting id="reseller" optional="true" type="string" visibility="hidden">
+                    <name>Reseller</name>
+                </setting>
+            </group>
+            <setting default-value="true" id="SEND_EMAIL" type="boolean" visibility="hidden">
+                <name>Send Email</name>
+            </setting>
+            <setting default-value="" id="userId" protected="true" type="string" visibility="hidden">
+                <name>User ID</name>
+            </setting>
+
+
+
+            <setting default-value="1000051" id="initial_typeId" track-old-value="true" type="string" visibility="hidden">
+                <name>Account Type</name>
+                <description>ID of initial account - before camera's are added.
+
+Can be
+1000051 (Business-0)
+11000 (Professional)
+10500 (Business) 
+10000 (Starter)</description>
+            </setting>
+            <setting class="subscription_id" default-value="" id="subscription_id" protected="true" type="string" visibility="hidden">
+            	<name>Subscription ID</name>
+            </setting>
+            <setting default-value="0" id="numberofcameras" track-old-value="true" type="integer" visibility="hidden">
+                <name>Number of cameras</name>
+                <name xml:lang="nl-NL">Aantal camera's</name>
+        </setting>
+            <setting default-value="0" id="numberoflicences" track-old-value="true" type="integer" visibility="hidden">
+            	<name>Number of licences</name>
+            </setting>
+        </settings>
+        <resources>
+            <resource class="item" id="numberofcameras" limiting-setting="numberofcameras">
+                <name>Number of camera's</name>
+            </resource>
+            <resource class="item" id="numberoflicences" limiting-setting="numberoflicences">
+            	<name>Number of licences</name>
+            </resource>
+
+        </resources>
+
+
+        <requirements>
+        <php:version min="4.3.10" xmlns:php="http://apstandard.com/ns/1/php"/>
+
+    </requirements>
+
+    <provision>
+        <configuration-script name="provisioning.php">
+            <script-language>php</script-language>
+            <structured-output/>
+        </configuration-script>
+        <verify-script name="provisioning-verification.php">
+        	<script-language>php</script-language>
+        	<structured-output/>
+        </verify-script>
+
+    </provision>
+    
+    <service class="account" id="user">
+    	<presentation>
+    		<name>User</name>
+    		<summary>CameraManager User</summary>
+    	</presentation>
+    	<settings>
+    		<setting default-value="" id="subuser_user_id" protected="true" type="string" visibility="hidden">
+    			<name>Subuser id</name>
+    		</setting>
+    		<group class="fn n">
+    			<setting class="given-name" default-value="" id="subuser_firstname" type="string">
+    				<name>First name</name>
+    				<name xml:lang="nl-NL">Voornaam</name>
+    			</setting>
+    			<setting class="family-name" default-value="" id="subuser_lastname" type="string">
+    				<name>Last name</name>
+    				<name xml:lang="nl-NL">Achternaam</name>
+    			</setting>
+    			<setting default-value="" id="subuser_email" installation-only="true" type="string">
+    				<name>Email</name>
+    				<description>Email address used to login to CameraManager</description>
+    			</setting>
+    			<setting default-value="" id="subuser_password2" min-length="6" regex="[a-zA-Z0-9\-\.,\!\?@\$\&amp;\*^\=%\:~\+#\&quot;]+" type="password">
+    				<name>Password</name>
+    				<description>Password used to login to CameraManager</description>
+    				<error-message>Invalid characters in password, or password too short. Password should be at least 6 characters long.  "a-z", "A-Z", "0-9", -, .,",",?,@,$,&amp;,*,^,=,%,:,~,+,# and " allowed</error-message>
+    				<error-message xml:lang="nl-NL">Ongeldige karakters password, of password is te kort. Password moet minimaal 6 karakters lang zijn.  "a-z", "A-Z", "0-9", "_", "$" and "&amp;amp;" toegestaan.</error-message>
+    			</setting>
+</group>
+    		<setting default-value="" id="userId" type="string" value-of-setting="userId" visibility="hidden">
+    		</setting>
+    		    
+     
+    	</settings>
+
+    	<provision>
+    		<configuration-script name="user.php">
+    			<script-language>php</script-language>
+    			<structured-output/>
+    		</configuration-script>
+    		<verify-script name="user-verification.php">
+    			<script-language>php</script-language>
+    			<structured-output/>
+    		</verify-script>
+    	</provision>
+    </service>
+</service>
+
+</application>

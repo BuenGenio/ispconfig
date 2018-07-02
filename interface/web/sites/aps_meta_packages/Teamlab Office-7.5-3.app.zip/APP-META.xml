@@ -1,0 +1,271 @@
+<application packaged="2014-01-24T10:43:53" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>http://www.teamlab.com/</id>
+    <name>Teamlab Office</name>
+    <version>7.5</version>
+    <release>3</release>
+    <homepage>http://www.teamlab.com/</homepage>
+	
+	<vendor>
+		<name>Ascensio System SIA</name>
+		<homepage>http://www.teamlab.com/</homepage>
+		<icon path="images/logo64.png"/>
+	</vendor>
+	
+	<packager>
+		<name>Teamlab</name>
+		<homepage>http://www.teamlab.com/</homepage>
+		<icon path="images/logo64.png"/>
+	</packager>
+	
+	<presentation>
+		<summary>TeamLab Office</summary>
+		<description>TeamLab - это универсальный облачный офис. Он позволяет управлять документами, проектами, командой и взаимоотношениями с клиентами в едином пространстве. Другими словами, для выполнения разных задач не надо переключаться туда и обратно между множеством приложений. Пользователи получают одну многофункциональную систему для организации каждого этапа вашей работы,что позволяет повысить производительность и оптимизировать усилия для достижения успеха.</description>
+        <description xml:lang="en">TeamLab Office is a cloud business service that enables users to manage projects, customer relations and documents in one place. In other words, users don't need to switch back and forth between multiple applications to perform different tasks, as they obtain a single multi-featured system to organize every step of  work improving productivity and optimizing efforts for success.</description>
+		<icon path="images/logo64.png"/>
+
+        <screenshot path="images/Main.jpg">
+            <description xml:lang="en">Teamlab is a cloud office including tools for project, document and customer relations management integrated in one platform.
+                Teamlab Office saves time and money helping small and medium business to reduce costs and be more productive.</description>
+            <description>Teamlab - это онлайн офис для малого и среднего бизнеса, включающий в себя инструменты для управления проектами, документами и взаимоотношениями с клиентами.
+                Teamlab Office экономит ваши ресурсы, помогая команде сократить расходы на ПО и работать продуктивнее.</description>
+        </screenshot>
+        <screenshot path="images/CRM.jpg">
+            <description xml:lang="en">Customize easy-to-use TeamLab CRM software to your specific needs.
+                Build your clients database, track sales, deal opportunities and communication history.
+                Embed web-to-lead form to your website and get the information on new leads automatically transferred to your CRM software database.</description>
+            <description>Кастомизируйте Teamlab CRM в зависимости от требований вашего бизнеса.
+                Формируйте клиентскую базу, отслеживайте продажи, возможные сделки и историю общения.
+                Встройте контактную форму TeamLab на свой сайт, и данные о новых потенциальных клиентах будет добавляться в Teamlab CRM автоматически.</description>
+        </screenshot>
+        <screenshot path="images/Gantt.jpg">
+            <description xml:lang="en">Use milestones, tasks and subtasks to determine priorities of your project.
+                Set access permissions for each element.
+                Analyze project progress and task dependencies, update the scheduled events and deadlines in a couple of clicks with Gantt Chart.</description>
+            <description>Используйте вехи, задачи и подзадачи для расстановки приоритетов в проекте.
+                Установите права доступа к задачам и дискуссиям.
+                Анализируйте ход проекта и взаимосвязь между задачами, обновляйте информацию по срокам при помощи диаграммы Ганта.</description>
+        </screenshot>
+        <screenshot path="images/doc.jpg">
+            <description xml:lang="en">Use full-featured online processors for text documents, spreadsheets and presentations.
+                Set individual access rights for your files, comment and co-edit them with your colleagues in realtime.
+                Connect SkyDrive, Google Drive, Box and Dropbox accounts to Teamlab Documents directory.</description>
+            <description>Работайте с полнофункциональными редакторами текстовых документов, электронных таблиц и презентаций.
+                Настройте права доступа к каждому файлу, комментируйте и редактируйте документы совместно с коллегами в режиме реального времени.
+                Подключите аккаунты SkyDrive, Google Drive, Dropbox и Box.</description>
+        </screenshot>
+        <screenshot path="images/mail.jpg">
+            <description xml:lang="en">Manage your email accounts in one place accessible from everywhere.
+                Create, customize and use tags for fast and easy message management, link a thread or a single message to CRM elements.</description>
+            <description>Управляйте своими почтовыми аккаунтами из облачного офиса, доступного, где бы вы ни находились.
+                Создавайте, кастомизируйте и используйте теги для удобства работы с корреспонденцией.
+                Связывайте отдельные письма или цепочки писем с CRM контактами и сделками.</description>
+        </screenshot>
+        <screenshot path="images/Forum.jpg">
+            <description xml:lang="en">Discuss project news with your team using corporate forums, blogs and polls.
+                Share your schedule with the rest of the team, create events and bookmarks, chat via built-in IM.</description>
+            <description>Обсуждайте новости проекта с командой в корпоративном форуме или блогах.
+                Обменивайтесь полезными ссылками, событиями календаря и мнениями в чате или с помощью голосования.</description>
+        </screenshot>
+		
+		<changelog>
+		    <version release="1" version="7.5">
+				<entry>First application</entry>
+			</version>
+		    <version release="2" version="7.5">
+				<entry>Change http to https</entry>
+			</version>
+		    <version release="3" version="7.5">
+				<entry>Minimum version of php increased to 3</entry>
+			</version>
+		</changelog>
+		
+		<categories>
+			<category>Collaboration/Calendaring</category>
+            <category>Collaboration/Project management</category>
+			<category>Collaboration/Chat</category>
+			<category>Collaboration/Email</category>
+			<category>Collaboration/Portal</category>
+			<category>Front office/Productivity</category>
+		</categories>
+		
+		<languages>
+			<language>ru</language>
+			<language>en</language>
+		</languages>
+	</presentation>
+
+    <global-settings>
+        <setting id="skey" type="string">
+            <name>Ключ для использования api</name>
+            <name xml:lang="en">Api key</name>
+        </setting>
+    </global-settings>
+
+	<service class="service" id="Teamlab">
+        <license must-accept="true">
+            <commercial/>
+            <text>
+                <name>SaaS</name>
+                <url>http://www.teamlab.com/legalterms.aspx</url>
+            </text>
+        </license>
+		
+		<presentation>
+			<name>Teamlab Office</name>
+			<summary>Универсальный облачный офис</summary>
+			<icon path="images/logo64.png"/>
+			
+			<infolinks>
+				<link class="official" href="http://www.teamlab.com">Официальный сайт</link>
+				<link class="official" href="http://www.teamlab.com" xml:lang="en">Official Site</link>
+
+				<link class="howto" href="http://helpcenter.teamlab.com">Справочная система</link>
+				<link class="howto" href="http://helpcenter.teamlab.com" xml:lang="en">Help Center</link>
+
+				<link class="community" href="https://developers.teamlab.com">Сообщество пользователей</link>
+				<link class="community" href="https://developers.teamlab.com" xml:lang="en">Developers community</link>
+
+				<link class="support" href="mailto:support@teamlab.com">Техническая поддержка</link>
+				<link class="support" href="mailto:support@teamlab.com" xml:lang="en">Support</link>
+
+				<link class="deployment-guide" href="file:///docs/Deployment-Guide.ru.docx">Service Provider Guide</link>
+				<link class="deployment-guide" href="file:///docs/Deployment-Guide.docx" xml:lang="en">Service Provider Guide</link>
+			</infolinks>
+
+            <entry-points>
+                <entry class="multi-step-login" dst="http://{address}.{region}" method="GET">
+                    <label xml:lang="en">Service entry</label>
+                    <label>Страница сервиса</label>
+                    <variable name="address" value-of-setting="address"/>
+                    <variable name="region" value-of-setting="region"/>
+                </entry>
+            </entry-points>
+			
+		</presentation>
+		
+		<settings>
+			<group class="web">
+				<setting class="locale" default-value="en-US" id="culture" installation-only="true" type="enum">
+					<name>Язык</name>
+					<name xml:lang="en">Language</name>
+					<choice id="en-US">
+						<name>Английский</name>
+						<name xml:lang="en">English</name>
+					</choice>
+                    <choice id="ru-RU">
+                        <name>Русский</name>
+                        <name xml:lang="en">Russia</name>
+                    </choice>
+				</setting>
+				<setting class="given-name" id="fname" installation-only="true" type="string">
+					<name>Имя пользователя</name>
+					<name xml:lang="en">First name</name>
+				</setting>
+				<setting class="family-name" id="lname" installation-only="true" type="string">
+					<name>Фамилия пользователя</name>
+					<name xml:lang="en">Last Name</name>
+				</setting>
+				<setting class="email" id="email" installation-only="true" type="string">
+					<name>Email пользователя</name>
+					<name xml:lang="en">Email address</name>
+				</setting>
+				<setting class="password" id="pwd" installation-only="true" type="password">
+					<name>Пароль пользователя</name>
+					<name xml:lang="en">Password</name>
+				</setting>
+				<setting class="tel" id="phone" installation-only="true" type="string">
+					<name>Телефон пользователя</name>
+					<name xml:lang="en">Phone</name>
+				</setting>
+				<setting default-value="teamlab.com" id="region" installation-only="true" type="enum">
+					<name>Регион размещения сервера</name>
+					<name xml:lang="en">Server Region</name>
+                    <choice id="teamlab.com">
+                        <name>Запад США(Орегон)</name>
+                        <name xml:lang="en">US West(Oregon) Region</name>
+                    </choice>
+                    <choice id="teamlab.eu.com">
+                        <name>Европа(Ирландия)</name>
+                        <name xml:lang="en">EU (Ireland) Region</name>
+                    </choice>
+				</setting>
+				<setting default-value="apsportal" id="address" installation-only="true" type="string">
+					<name>Адрес портала</name>
+					<name xml:lang="en">Portal Name</name>
+				</setting>
+                <setting default-value="m" id="month" installation-only="true" type="enum">
+                    <name>Период</name>
+                    <name xml:lang="en">Period</name>
+                    <choice id="m">
+                        <name>Месяц</name>
+                        <name xml:lang="en">Month</name>
+                    </choice>
+                    <choice id="y">
+                        <name>Год</name>
+                        <name xml:lang="en">Year</name>
+                    </choice>
+                </setting>
+                <setting default-value="-1" id="prod" installation-only="true" type="enum">
+                    <name>Список продуктов</name>
+                    <name xml:lang="en">Product List</name>
+                    <choice id="-1">
+                        <name>Триал</name>
+                        <name xml:lang="en">Trial</name>
+                    </choice>
+                    <choice id="10">
+                        <name>6-10 пользователей</name>
+                        <name xml:lang="en">6-10 active users</name>
+                    </choice>
+                    <choice id="20">
+                        <name>11-20 пользователей</name>
+                        <name xml:lang="en">11-20 active users</name>
+                    </choice>
+                    <choice id="30">
+                        <name>21-30 пользователей</name>
+                        <name xml:lang="en">21-30 active users</name>
+                    </choice>
+                    <choice id="45">
+                        <name>31-45 пользователей</name>
+                        <name xml:lang="en">31-45 active users</name>
+                    </choice>
+                    <choice id="70">
+                        <name>46-70 пользователей</name>
+                        <name xml:lang="en">46-70 active users</name>
+                    </choice>
+                    <choice id="100">
+                        <name>71-100 пользователей</name>
+                        <name xml:lang="en">71-100 active users</name>
+                    </choice>
+                    <choice id="200">
+                        <name>101-200 пользователей</name>
+                        <name xml:lang="en">101-200 active users</name>
+                    </choice>
+                    <choice id="300">
+                        <name>201-300 пользователей</name>
+                        <name xml:lang="en">201-300 active users</name>
+                    </choice>
+                    <choice id="400">
+                        <name>301-400 пользователей</name>
+                        <name xml:lang="en">301-400 active users</name>
+                    </choice>
+                </setting>
+			</group>
+		</settings>
+        <requirements>
+            <php:version min="5.3" xmlns:php="http://apstandard.com/ns/1/php"/>
+            <php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+            <env:environment xmlns:env="http://apstandard.com/ns/1/environment">
+                <env:x86/>
+                <env:windows/>
+            </env:environment>
+        </requirements>
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+                <status-control/>
+			</configuration-script>
+		</provision>
+		
+	</service>
+
+</application>

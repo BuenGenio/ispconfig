@@ -1,0 +1,251 @@
+<application packaged="2014-06-26T12:40:37" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>http://www.idsync.com/aps-package</id>
+    <name>Identity Syncronizer</name>
+    <version>2.6</version>
+    <release>30</release>
+    <homepage>http://www.idsync.com</homepage>
+    <vendor>
+    	<name>Identity Syncronizer</name>
+    	<homepage>http://www.idsync.com</homepage>
+    	<icon path="images/parallels-aps-logo.png"/>
+    </vendor>
+    <packager>
+    	<name>InnerApps</name>
+    	<homepage>http://www.innerapps.com</homepage>
+    	<icon path="images/parallels-aps-logo.png"/>
+    	<uri>uuid:5a66efef-2874-4204-b09e-fe99d7aaf309</uri>
+    </packager>
+    <presentation>
+    	<summary>IDSync™, created by InnerApps LLC is a tightly integrated Parallels software solution that supports the identity management needs for the automated provisioning, configuring, and billing features of the Parallels Automation platform.</summary>
+    	<description>IDSync is a low-cost extensible identity management solution that enables companies to manage user identity information and line-of-business software access and privileges in one location, Microsoft Active Directory, a familiar tool in everyday use.  It provides secure two-way synchronization of User Data and application or service permissions and settings as well as full synchronization of Contacts, Distribution Lists, and more.  In addition to identity synchronization between Active Directory and Parallels, the Self-Service Portal features of IDSync reduces IT support costs and employee down time by permitting users to manage their own personal identity data and a perform resets of their password and other identity  information.</description>
+    	<icon path="images/parallels-aps-logo.png"/>
+    	<screenshot path="images/screenshot1.png">
+    		<description>Screenshot of Management Studio's auto-provisioning page. </description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="2.6">
+    			<entry>Removed Service User reference</entry>
+    			<entry>Added license provisioning automation</entry>
+    		</version>
+    		<version release="3" version="2.6">
+    			<entry>Confirmation emails</entry>
+    		</version>
+    		<version release="5" version="2.6">
+    			<entry>Added Gateway environment overrides.  The Provider will be the only entity allowed to make this change. </entry>
+    		</version>
+    		<version release="20" version="2.6">
+    			<entry>Significant changes made to fit the provisioning of a customer license security, on both Windows and *nix instances of Parallels</entry>
+    		</version>
+    		<version release="21" version="2.6">
+    			<entry>Changed the provisioning method to better suite APS standardizations. </entry>
+    			<entry>Added more error capture points</entry>
+    		</version>
+    		<version release="22" version="2.6">
+    			<entry>Not applicable</entry>
+    		</version>
+    		<version release="23" version="2.6">
+    			<entry>Not applicable</entry>
+    		</version>
+    		<version release="24" version="2.6">
+    			<entry>Not applicable</entry>
+    		</version>
+    		<version release="25" version="2.6">
+    			<entry>Not applicable</entry>
+    		</version>
+    		<version release="26" version="2.6">
+    			<entry>Migrated and standardized the classes on Support's request. </entry>
+    		</version>
+    		<version release="27" version="2.6">
+    			<entry>Tweaks to the configuration script to extend the timeout before the licensing service quits. </entry>
+    		</version>
+    		<version release="28" version="2.6">
+    			<entry>Tweaked the descriptions for the global settings. </entry>
+    		</version>
+    		<version release="30" version="2.6">
+    			<entry>Refined requirements</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Infrastructure/Management</category>
+    		<category>Back office/Human Resource Management</category>
+    		<category>Collaboration/Portal</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<group>
+    		<name>Reseller Information</name>
+    		<group>
+    			<name>Parallels OpenAPI URLs</name>
+    			<setting default-value="" id="poa_api_url" track-old-value="true" type="string">
+    				<name>Parallels Operations OpenAPI URL</name>
+    				<description>This value is the URL of the POA/PA OpenAPI address.  (Example: http://www.apsdemo.org:8440/rpc2)</description>
+    			</setting>
+    			<setting default-value="" id="pba_api_url" track-old-value="true" type="string">
+    				<name>Parallels Billing OpenAPI URL</name>
+    				<description>This value is the URL of the PBA/Billing OpenAPI address.  (Example: https://pba.apsdemo.org:5224/rpc2)</description>
+    			</setting>
+</group>
+    		<setting default-value="" id="reseller_name" min-length="3" track-old-value="true" type="string">
+    			<name>Reseller Company Name</name>
+    			<description>Reseller Comany name. Case and space sensitive.</description>
+    			<error-message>Must provide reseller company name for provisioning client licenses.</error-message>
+    		</setting>
+    		<setting id="reseller_license" min-length="3" track-old-value="true" type="string">
+    			<name>Reseller License</name>
+    			<description>The license key that was provided to you after aquiring the license to the Identity Syncronizer software.
+    			</description>
+    			<error-message>Must provide license key.</error-message>
+    		</setting>
+</group>
+    	<group>
+    		<name>IDSync Information</name>
+    		<setting default-value="Parallels" id="tab_label" track-old-value="true" type="string">
+    			<name>IDSync AD Tab Label</name>
+    			<description>
+    				This will appear as a prefix on the client's AD tab.
+    				We recommend you use your company name, this field
+    				is provided for scenarios where the customer name
+    				provided for the license has changed, or is stylized
+    				in way not supported.  If unsure, leave blank. (Default: "Parallels")
+    			</description>
+    			<error-message>
+    				The AD Tab Label field is required.
+    			</error-message>
+    		</setting>
+    		<setting default-value="Syncronizer.Target.Parallels" id="plugin_name" type="string" visibility="hidden">
+    			<name>Plugin Name</name>
+    			<description>
+    				The name of the IDSync plugin to licesnse. If unsure, leave blank. (Default
+    				'Syncronizer.Target.Parallels')
+    			</description>
+    		</setting>
+</group>
+    	<group>
+    		<name>IDSync URLs</name>
+    		<setting default-value="http://licensing.identitysyncronizer.com/service.asmx?wsdl" id="licensing_url" optional="true" type="string">
+    			<name>IDSync Licensing Web-Service</name>
+    			<description>
+    				Leave Blank if unsure. The URL address of the IDSync License Web Service.
+    				(Default:
+    				http://licensing.identitysyncronizer.com/service.asmx?wsdl)
+    			</description>
+    		</setting>
+    		<setting id="gatewayurl" track-old-value="true" type="string">
+    			<name>Gateway URL</name>
+    			<description>
+    				The URL of the Gateway Agent. Format:
+    				http(s)://HOST:PORT/
+    			</description>
+    		</setting>
+    		<setting default-value="" id="autolic_gatewayurl" track-old-value="true" type="string">
+    			<name>Automatic Licensing Gateway URL</name>
+    			<description>
+    				Leave blank if unsure. This serves as an override
+    				for the licesning gateway URL.
+    			</description>
+    		</setting>
+</group>
+    	</global-settings>
+    <patch match="/application/version &gt;= '1.0'"/>
+    <patch match=""/>
+    <upgrade match="/application/version &gt;= '1.0'"/>
+    <upgrade match=""/>
+    <upgrade match=""/>
+    <service class="service" id="IndentitySyncronizerService" singular="true">
+    	<license must-accept="true">
+    		<commercial/>
+    		<text>
+    			<name>EULA</name>
+    			<file>LICENSE</file>
+    		</text>
+    	</license>
+    	<presentation>
+    	<name>Identity Syncronizer</name>
+    	<summary>Identity Syncronizer Service</summary>
+    	<icon path="images/parallels-aps-logo.png"/>
+    	<infolinks>
+    		<link class="howto" href="http://www.idsync.com/aps/howto">How-To</link>
+    		<link class="support" href="http://www.idsync.com/support">Support</link>
+    		<link class="deployment-guide" href="http://www.idsync.com/_aps/pa-idsync-provider-deployment-guide-v2.6-28.docx" xml:lang="en-US">Deployment Documentation</link>
+    		<link class="user-guide" href="http://www.idsync.com/_aps/PA-IDSync-Subscriber-Sheets.docx" xml:lang="en-US">User Guide</link>
+    	</infolinks>
+    	<entry-points>
+    		<entry class="frontpage" dst="http://www.idsync.com/_aps/download.php" method="POST">
+    			<label>Download Identity Syncronizer</label>
+    			<description>Download the Identity Syncronizer product. </description>
+    			<icon path="images/parallels-aps-logo.png"/>
+    			<variable name="customer_name" value-of-setting="reseller_name"/>
+    			<variable name="license" value-of-setting="reseller_license"/>
+    		</entry>
+    	</entry-points>
+
+    	</presentation>
+    	<settings>
+    		<group class="authn">
+    			<name class="type">Gateway Authorization</name>
+    			<setting default-value="user_" id="gateway_username" track-old-value="true" type="string">
+    				<name>Gateway User Name</name>
+    				<description/>
+    				<error-message>The gateway user name is required to provision your IDSync license. This information will be required when configuring IDSync. We recommend the user name be your company name. This field is case and space sensitive.</error-message>
+    			</setting>
+    			<setting class="presentation" generate="password" id="gateway_password" track-old-value="true" type="string">
+    				<name>Password</name>
+    				<description>This field will be required when configuring IDSync.</description>
+    				<error-message>The Gateway password is required to provision your account.</error-message>
+    			</setting>
+</group>
+    		<group>
+    			<name>Provisioning</name>
+    			<setting default-value="customer_" id="customer_name" optional="true" track-old-value="true" type="string">
+    				<name>Customer Name</name>
+    				<description>This field is filled during provisioning, however if you wish to use something different than your company name, or if you're a personal account type, please fill this in.  The customer name is what defines you as an entity in our license records. You will need this value to when installing the IDSync client.  It is case and space sensitive.		</description>
+    				<error-message>Customer name is required to create your license.</error-message>
+    			</setting>
+    			<setting default-value="license_" id="customer_license" optional="true" track-old-value="true" type="string">
+    				<name>Customer License</name>
+    				<description>Leave blank.  This value should be filled in after provisioning and is required when configuring IDSync.
+    				</description>
+    			</setting>
+    			<setting default-value="0" id="customer_id" optional="true" type="string">
+    				<name>Customer/Account ID</name>
+    				<description>Leave blank, will be auto-filled during the provisioning processs.  The Customer or Account ID.</description>
+    			</setting>
+    			<setting class="subscription_id" id="subscription_id" optional="true" track-old-value="true" type="string" visibility="hidden">
+    				<name>Subscription ID</name>
+    			</setting>
+    		</group>
+    		<group>
+    			<name>Seat Count</name>
+    			<setting class="subscription-user-limit" id="service_user_limit" optional="true" track-old-value="true" type="string" visibility="hidden">
+    				<name>Service User Limit</name>
+    			</setting>
+    			<setting default-value="0" id="seat_count" track-old-value="true" type="string" visibility="hidden">
+    				<description>The current seat count.</description>
+    			</setting>
+    			</group>
+    		</settings>
+    	<resources>
+    		<resource class="item" id="seat_count" limiting-setting="seat_count">
+    			<name>seat_count</name>
+    		</resource>
+    	</resources>
+    	<requirements>
+    		<php:extension xmlns:php="http://apstandard.com/ns/1/php">soap</php:extension>
+    		<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+    		<php:extension xmlns:php="http://apstandard.com/ns/1/php">xml</php:extension>
+    		<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output/>
+    		</configuration-script>
+    		<resource-script name="report-resource.php" poll-interval="1h" privileged="true">
+    			<script-language>php</script-language>
+    		</resource-script>
+    	</provision>
+    </service>
+</application>

@@ -1,0 +1,356 @@
+<application packaged="2015-01-28T11:15:11" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>mantis</id>
+	<name>mantis</name>
+	<version>1.2.19</version>
+	<release>12</release>
+	<homepage>http://www.mantisbt.org/</homepage>
+	<vendor>
+		<name>mantisbt.org</name>
+		<homepage>http://www.mantisbt.org</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Glowtouch Technologies</name>
+		<homepage>http://www.glowtouch.com/</homepage>
+		<icon path="images/GlowTouch.png"/>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>Issue tracking system</summary>
+		<description>
+			Mantis is a free popular Web-based bugtracking system. It is
+			written in the PHP scripting language and works with MySQL,
+			MS SQL, and PostgreSQL databases and a Web server. It comes
+			in 68 languages, and provides the following features:
+			different user access level per project; search and filters;
+			e-mail notification; attachments; RSS feeds; sponsorships
+			support (users are able to place sponsorships for specific
+			issues, also developers can track such sponsorships or
+			payments); self-service reset password support; export to
+			csv, Microsoft Excel, Microsoft Word; ability to extend
+			functionality through custom functions; Wiki integration;
+			online chat, and many other features.
+		</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/screenshot.jpg">
+			<description>
+				This screen shows a list of all reported and assigned
+				bugs and their status.
+			</description>
+		</screenshot>
+		<changelog>
+			<version release="4" version="1.2.14">
+				<entry>Changes in selenium scripts.</entry>
+			</version>
+			<version release="3" version="1.2.14">
+				<entry>Minor changes.</entry>
+			</version>
+			<version release="2" version="1.2.14">
+				<entry>Minor changes</entry>
+			</version>
+			<version release="1" version="1.2.14">
+				<entry>New version packaged</entry>
+			</version>
+			<version release="9" version="1.2.3">
+				<entry>
+					Mantis 1.2.3 update. Release notes:
+					http://sourceforge.net/projects/mantisbt/files/mantis-stable/1.2.3/RELEASE/view
+				</entry>
+			</version>
+			<version release="7" version="1.1.8">
+				<entry>Correct error handling in upgrade process</entry>
+			</version>
+			<version release="6" version="1.1.8">
+				<entry>
+					Mantis 1.1.8 update. Release notes:
+					http://sourceforge.net/project/shownotes.php?release_id=688312
+				</entry>
+			</version>
+			<version release="9" version="1.1.1">
+				<entry>Email configuration section is added</entry>
+			</version>
+			<version release="6" version="1.1.1">
+				<entry>
+					Some settings are removed from installation
+				</entry>
+			</version>
+			<version release="1" version="1.1.1">
+				<entry>New version packaged</entry>
+			</version>
+			<version release="1" version="1.0.6">
+				<entry>Initial package version</entry>
+			</version>
+			<version release="1" version="1.2.15">
+				<entry>Initial Package.</entry>
+			</version>
+			<version release="3" version="1.2.15">
+				<entry>small changes</entry>
+			</version>
+			<version release="4" version="1.2.15">
+				<entry>
+					added install_aps.php file in admin folder
+				</entry>
+			</version>
+			<version release="5" version="1.2.15">
+				<entry>tmp directory added</entry>
+			</version>
+			<version release="7" version="1.2.16">
+				<entry>Initial Package</entry>
+			</version>
+			<version release="8" version="1.2.17">
+				<entry> [news] undefined function db_params() in core/news_api.php (dregad) 
+ [other] The bug_get_bugnote_count() function in the bug API always returns 0 (atrol) 
+ [webpage] duplicate "&lt;a " tag (atrol)
+ [security] CVE-2014-2238: SQL injection vulnerability in adm_config_report.php (dregad) 
+</entry>
+			</version>
+			<version release="9" version="1.2.18">
+				<entry>This release resolves 23 security-related bugs and vulnerabilities:
+- 7 Cross-Site Scripting (XSS) issues
+- 2 Code injection issues
+- 2 SQL injection (XSS) issues
+- 5 Information disclosure issues
+- 7 Other security issues
+</entry>
+			</version>
+			<version release="10" version="1.2.18">
+				<entry>Settings class updated</entry>
+			</version>
+			<version release="12" version="1.2.19">
+				<entry>MantisBT 1.2.19 is a security update for the stable 1.2.x branch.
+This release resolves 5 security issues and fixes 2 regressions introduced in 1.2.18.
+- 0017940: [security] CVE-2014-9573: SQL Injection in manage_user_page.php (dregad) - closed.
+- 0017939: [security] CVE-2014-9572: Improper Access Control in install.php (dregad) - closed.
+- 0017938: [security] CVE-2014-9571: XSS in install.php (dregad) - closed.
+- 0017967: [bugtracker] Reporting an issue gives: 'Invalid argument supplied for foreach()' in '/opt/mantisbt-1.2.18/core/gpc_api.php' line 259 (dregad) - closed.
+- 0017925: [email] Order of notes in email notifications seem to be based on user who triggered the action (dregad) - closed.
+- 0017977: [bugtracker] Fix handling of due dates (dregad) - closed.
+- 0017997: [security] CVE-2015-1042: URL redirection issue (dregad) - closed.
+- 0018025: [administration] Installer UI tweaks (dregad) - closed.
+- 0011742: [bugtracker] Sort bug notes by date, not by ID (dregad) - closed.
+- 0017984: [security] CVE-2014-9624: CAPTCHA bypass is way easier than it should be (dregad) - closed.
+- 0017993: [authentication] User creation with captcha broken by fix for issue 0017811 (dregad) - closed.</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Front office/Help Desk</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '1.0.6' and /application/release &gt;= '1'"/>
+	<service id="mantis">
+		<license must-accept="true">
+			<text>
+				<name>GNU GENERAL PUBLIC LICENSE</name>
+				<file>htdocs/doc/LICENSE</file>
+			</text>
+		</license>
+		<presentation>
+			<summary>Issue tracking system.Keep your team and clients updated with notifications on issue updates, resolution, or comments.</summary>
+			<infolinks>
+				<link class="support" href="http://www.mantisbt.org/support.php">Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/login.php" method="POST">
+					<label>Administrator</label>
+					<variable class="login" name="username" value-of-setting="admin_name"/>
+					<variable class="password" name="password" value-of-setting="admin_password"/>
+				</entry>
+				<entry dst="/">
+					<label>Mantis</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>
+						Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				<setting class="password" id="admin_password" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Mail Configuration</name>
+				<group class="email">
+						<setting class="value" id="admin_email" type="email">
+							<name>Administrator's email</name>
+						</setting>
+						<setting class="value" id="webmaster_email" type="email">
+							<name>Webmaster email</name>
+						</setting>
+						<setting class="value" id="from_email" type="email">
+							<name>Sender email</name>
+						</setting>
+						<setting class="title" default-value="Mantis Bug Tracker" id="from_name" type="string">
+							<name>Sender Name</name>
+						</setting>
+						<setting class="value" id="return_path_email" type="email">
+							<name>Return bounced mail to</name>
+						</setting>
+						<setting class="value" id="admin_email" type="email">
+							<name>Administrator's email</name>
+						</setting>
+</group>
+			</group>
+			<group class="presentation">
+				<name>Language</name>
+				<setting class="locale" default-value="en-US" id="locale" type="enum">
+					<name>Interface language</name>
+					<choice id="bg-BG">
+						<name>Bulgarian</name>
+					</choice>
+					<choice id="ca-ES">
+						<name>Catalan</name>
+					</choice>
+					<choice id="zh-CN">
+						<name>Chinese Simplified</name>
+					</choice>
+					<choice id="zh-TW">
+						<name>Chinese Traditional</name>
+					</choice>
+					<choice id="hr-HR">
+						<name>Croatian</name>
+					</choice>
+					<choice id="cz-CZ">
+						<name>Czech</name>
+					</choice>
+					<choice id="da-DK">
+						<name>Danish</name>
+					</choice>
+					<choice id="nl-NL">
+						<name>Dutch</name>
+					</choice>
+					<choice id="en-US">
+						<name>English</name>
+					</choice>
+					<choice id="et-EE">
+						<name>Estonian</name>
+					</choice>
+					<choice id="fi-FI">
+						<name>Finnish</name>
+					</choice>
+					<choice id="fr-FR">
+						<name>French</name>
+					</choice>
+					<choice id="de-DE">
+						<name>German</name>
+					</choice>
+					<choice id="de-SI">
+						<name>German (eintrag)</name>
+					</choice>
+					<choice id="el-GR">
+						<name>Greek</name>
+					</choice>
+					<choice id="he-IL">
+						<name>Hebrew</name>
+					</choice>
+					<choice id="hu-HU">
+						<name>Hungarian</name>
+					</choice>
+					<choice id="is-IS">
+						<name>Icelandic</name>
+					</choice>
+					<choice id="it-IT">
+						<name>Italian</name>
+					</choice>
+					<choice id="ja-JP">
+						<name>Japanese</name>
+					</choice>
+					<choice id="ko-KP">
+						<name>Korean</name>
+					</choice>
+					<choice id="lv-LV">
+						<name>Latvian</name>
+					</choice>
+					<choice id="lt-LT">
+						<name>Lithuanian</name>
+					</choice>
+					<choice id="nb-NO">
+						<name>Norwegian</name>
+					</choice>
+					<choice id="pl-PL">
+						<name>Polish</name>
+					</choice>
+					<choice id="pt-PT">
+						<name>Portuguese (Standard)</name>
+					</choice>
+					<choice id="pt-BR">
+						<name>Portuguese (Brazil)</name>
+					</choice>
+					<choice id="ro-RO">
+						<name>Romanian</name>
+					</choice>
+					<choice id="ru-RU">
+						<name>Russian</name>
+					</choice>
+					<choice id="sr-RS">
+						<name>Serbian</name>
+					</choice>
+					<choice id="sk-SK">
+						<name>Slovak</name>
+					</choice>
+					<choice id="sl-SI">
+						<name>Slovene</name>
+					</choice>
+					<choice id="es-ES">
+						<name>Spanish</name>
+					</choice>
+					<choice id="sv-SE">
+						<name>Swedish</name>
+					</choice>
+					<choice id="tr-TR">
+						<name>Turkish</name>
+					</choice>
+					<choice id="uk-UA">
+						<name>Ukrainian</name>
+					</choice>
+					<choice id="ur-PK">
+						<name>Urdu</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.2.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:register-globals xmlns:php="http://apstandard.com/ns/1/php">
+				false
+			</php:register-globals>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>mantis</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>4.1.1</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>mantis</default-prefix>
+				<installed-size>11690126</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					<mapping url="upload">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

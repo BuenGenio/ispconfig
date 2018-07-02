@@ -1,0 +1,303 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-02-13T13:58:00">
+	<id>http://apsstandard.org/app/CakeMail</id>
+	<name>CakeMail</name>
+	<version>1.0</version>
+	<release>17</release>
+	<homepage>http://www.cakemail.com</homepage>
+	
+	<vendor>
+		<name>CakeMail</name>
+		<homepage>http://www.cakemail.com</homepage>
+		<icon path="images/cake_logo.png" />
+	</vendor>
+	<packager>
+		<name>CakeMail</name>
+		<homepage>http://www.cakemail.com</homepage>
+		<icon path="images/cake_logo.png" />
+	</packager>
+	
+	<presentation>
+		<summary>Generate more revenue. Resell email marketing to your customers.</summary>
+		<description>CakeMail is cloud-based email marketing software that allows businesses to send beautifully designed email campaigns, build contact lists and track the results. Customers can measure list engagement, design templates and make use of social media sharing functionality.</description>
+		<icon path="images/cake_logo.png" />
+		<screenshot path="images/CakeMail.png">
+			<description>CakeMail - See how your campaign is performing</description>
+		</screenshot>
+		<screenshot path="images/campaign_list_v2_640.png">
+			<description>CakeMail - Manage your campaigns</description>
+		</screenshot>
+		<screenshot path="images/campaign_list.png">
+			<description>CakeMail - Manage your campaigns</description>
+		</screenshot>
+		<screenshot path="images/contact_list.png">
+			<description>CakeMail - Manage your contact lists</description>
+		</screenshot>
+		<screenshot path="images/editor.png">
+			<description>CakeMail - Create your campaign</description>
+		</screenshot>
+		<changelog>
+			<version version="1.0" release="17">
+				<entry>Initial package version</entry>
+			</version>
+		</changelog>
+		
+		<categories>
+			<category>Front office/On-line Marketing</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	
+	<global-settings>
+		<setting id="api_key" class="title" type="string">
+			<name>API Key</name>
+			<description>This is the CakeMail API Key that will be used by the package.</description>
+		</setting>
+		<setting id="user_key" class="title" type="string">
+			<name>Admin User Key</name>
+			<description>This is the CakeMail Admin User Key that will be used by the package.</description>
+		</setting>
+		<setting id="reseller_id" class="title" type="string">
+			<name>Reseller Client ID</name>
+			<description>This is your reseller CakeMail ID.</description>
+		</setting>
+		<setting id="reseller_domain" class="web" type="domain-name">
+			<name>Public site URL</name>
+			<description>This is the public site URL for your clients.</description>
+		</setting>
+	</global-settings>
+	
+	<service id="account" class="service">
+		<license must-accept="true">
+			<commercial />
+			<text>
+				<name>CakeMail Terms of Use</name>
+				<url>http://www.cakemail.com/end-user-terms-of-use/</url>
+			</text>
+		</license>
+		<presentation>
+			<name>CakeMail</name>
+			<summary>Intuitive email marketing for your business.</summary>
+			<icon path="images/cake_logo.png" />
+			<infolinks>
+				<link class="official" href="http://www.cakemail.com/">
+					CakeMail website
+				</link>
+				<link class="support" href="http://kb.cakemail.com/">
+					CakeMail product support
+				</link>
+			</infolinks>
+			
+			<entry-points>
+				<entry dst="http://{reseller_domain}/signin/aps/{admin_guid}/" method="GET">
+					<label>Access your CakeMail account as the adminitrator</label>
+					<icon path="images/cake_logo.png" />
+					<variable name="admin_guid" value-of-setting="admin_guid" />
+					<variable name="reseller_domain" value-of-setting="reseller_domain" />
+				</entry>
+				<entry dst="http://{reseller_domain}/signin/" method="GET">
+					<label>CakeMail sign in page</label>
+					<icon path="images/cake_logo.png" />
+					<variable name="reseller_domain" value-of-setting="reseller_domain" />
+				</entry>
+			</entry-points>
+			
+		</presentation>
+		
+		<settings>
+			<group class="authn">
+				<setting id="company_name" class="organization-name" type="string" installation-only="true">
+					<name>Company name</name>
+				</setting>
+				<setting id="admin_email" uniq="global" class="value" type="email" installation-only="true">
+					<name>Primary email address</name>
+				</setting>
+				<setting id="admin_password" class="password" type="password" track-old-value="true" min-length="3" installation-only="true">
+					<name>Password for admin user</name>
+				</setting>
+				<setting id="admin_first_name" class="given-name" type="string" max-length="30" installation-only="true">
+			    	<name>First Name</name>
+		        </setting>
+   		        <setting id="admin_last_name" class="family-name" type="string" max-length="30" installation-only="true">
+			    	<name>Last Name</name>
+		        </setting>
+				<setting id="admin_guid" uniq="global" generate="uuid" type="string" protected="true" visibility="hidden" installation-only="true">
+					<name>Admin guid</name>
+				</setting>
+			</group>
+		</settings>
+		
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="5.2" />
+			<php:extension>curl</php:extension>
+		</requirements>
+		
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<status-control />
+				<structured-output />
+			</configuration-script>
+		</provision>
+		
+		<service id="edition_type" singular="true" class="service">
+	    	<presentation>
+	    		<name>CakeMail monthly plans</name>
+	    		<summary>Selection of available plans.</summary>
+	    	</presentation>
+	   		<settings>
+				<setting type="enum" id="edition" visibility="hidden" default-value="1000">
+					<name>Edition</name>
+					<choice id="1000">
+						<name>Up to 1,000 Contacts</name>
+					</choice>
+					<choice id="2500">
+						<name>Up to 2,500 Contacts</name>
+					</choice>
+					<choice id="5000">
+						<name>Up to 5,000 Contacts</name>
+					</choice>
+					<choice id="10000">
+						<name>Up to 10,000 Contacts</name>
+					</choice>
+					<choice id="25000">
+						<name>Up to 25,000 Contacts</name>
+					</choice>
+					<choice id="50000">
+						<name>Up to 50,000 Contacts</name>
+					</choice>
+					<choice id="75000">
+						<name>Up to 75,000 Contacts</name>
+					</choice>
+					<choice id="100000">
+						<name>Up to 100,000 Contacts</name>
+					</choice>
+					<choice id="150000">
+						<name>Up to 150,000 Contacts</name>
+					</choice>
+					<choice id="200000">
+						<name>Up to 200,000 Contacts</name>
+					</choice>
+					<choice id="250000">
+						<name>Up to 250,000 Contacts</name>
+					</choice>
+					<choice id="300000">
+						<name>Up to 300,000 Contacts</name>
+					</choice>
+					<choice id="350000">
+						<name>Up to 350,000 Contacts</name>
+					</choice>
+					<choice id="400000">
+						<name>Up to 400,000 Contacts</name>
+					</choice>
+					<choice id="450000">
+						<name>Up to 450,000 Contacts</name>
+					</choice>
+					<choice id="500000">
+						<name>Up to 500,000 Contacts</name>
+					</choice>
+					<choice id="600000">
+						<name>Up to 600,000 Contacts</name>
+					</choice>
+					<choice id="700000">
+						<name>Up to 700,000 Contacts</name>
+					</choice>
+					<choice id="800000">
+						<name>Up to 800,000 Contacts</name>
+					</choice>
+					<choice id="900000">
+						<name>Up to 900,000 Contacts</name>
+					</choice>
+					<choice id="1000000">
+						<name>Up to 1,000,000 Contacts</name>
+					</choice>
+					<choice id="1100000">
+						<name>Up to 1,100,000 Contacts</name>
+					</choice>
+					<choice id="1200000">
+						<name>Up to 1,200,000 Contacts</name>
+					</choice>
+					<choice id="1300000">
+						<name>Up to 1,300,000 Contacts</name>
+					</choice>
+					<choice id="1400000">
+						<name>Up to 1,400,000 Contacts</name>
+					</choice>
+					<choice id="1500000">
+						<name>Up to 1,500,000 Contacts</name>
+					</choice>
+					<choice id="1600000">
+						<name>Up to 1,600,000 Contacts</name>
+					</choice>
+					<choice id="1700000">
+						<name>Up to 1,700,000 Contacts</name>
+					</choice>
+					<choice id="1800000">
+						<name>Up to 1,800,000 Contacts</name>
+					</choice>
+					<choice id="1900000">
+						<name>Up to 1,900,000 Contacts</name>
+					</choice>
+					<choice id="2000000">
+						<name>Up to 2,000,000 Contacts</name>
+					</choice>
+					<choice id="2100000">
+						<name>Up to 2,100,000 Contacts</name>
+					</choice>
+					<choice id="2200000">
+						<name>Up to 2,200,000 Contacts</name>
+					</choice>
+					<choice id="2300000">
+						<name>Up to 2,300,000 Contacts</name>
+					</choice>
+					<choice id="2400000">
+						<name>Up to 2,400,000 Contacts</name>
+					</choice>
+					<choice id="2500000">
+						<name>Up to 2,500,000 Contacts</name>
+					</choice>
+					<choice id="2600000">
+						<name>Up to 2,600,000 Contacts</name>
+					</choice>
+					<choice id="2700000">
+						<name>Up to 2,700,000 Contacts</name>
+					</choice>
+					<choice id="2800000">
+						<name>Up to 2,800,000 Contacts</name>
+					</choice>
+					<choice id="2900000">
+						<name>Up to 2,900,000 Contacts</name>
+					</choice>
+					<choice id="3000000">
+						<name>Up to 3,000,000 Contacts</name>
+					</choice>
+					<choice id="3100000">
+						<name>Up to 3,000,000 Contacts</name>
+					</choice>
+					<choice id="3200000">
+						<name>Up to 3,000,000 Contacts</name>
+					</choice>
+					<choice id="3300000">
+						<name>Up to 3,000,000 Contacts</name>
+					</choice>
+					<choice id="3400000">
+						<name>Up to 3,000,000 Contacts</name>
+					</choice>
+				</setting>
+				<setting id="admin_guid" type="string" visibility="hidden" value-of-setting="admin_guid">
+					<name>Admin guid</name>
+				</setting>
+	    	</settings>
+	    	
+	    	<provision>
+				<configuration-script name="configure-limit.php">
+					<script-language>php</script-language>
+					<status-control />
+					<structured-output />
+				</configuration-script>
+			</provision>
+		</service>
+	</service>
+</application>

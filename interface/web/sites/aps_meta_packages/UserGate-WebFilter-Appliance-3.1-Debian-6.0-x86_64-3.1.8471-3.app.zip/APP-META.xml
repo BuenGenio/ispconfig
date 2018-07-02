@@ -1,0 +1,66 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2">
+    <id>http://apsstandard.org/app/DNSFilter-pvc</id>
+    <name>UserGate-WebFilter-Appliance-3.1-Debian-6.0-x86_64</name>
+    <version>3.1.8471</version>
+    <release>3</release>
+    <homepage>http://entensys.com</homepage>
+    <vendor>
+	<name>Entensys Inc.</name>
+	<homepage>http://entensys.com</homepage>
+	<icon path="images/webfilter-logo.png"/>
+    </vendor>
+    <packager>
+	<name>Entensys Corporation</name>
+	<homepage>http://entensys.com</homepage>
+	<uri>uuid:7A831F30-7C8A-11E1-B4E9-EE334924019B</uri>
+    </packager>
+    <presentation>
+	<summary>UserGate WebFilter Appliance 3.1</summary>
+	<description>
+Entensys Inc. specializes in the development of Internet content filtering and security software. UserGate Web Filter Environment APS is a fully customized for testing and daily use of UserGate Web Filter. UserGate Web Filter is a DNS forwarder and ICAP server with enhanced functionality. Its additional features include defining the requested host category, tracking and recording processed requests and managing DNS and HTTP traffic rules. An integrated system of rules allows Internet access management based on the lists of authorized/unauthorized hosts, time and URL categories and HTTP content filtering. UserGate Web Filter is a good choice for large networks with thousands of users.
+	</description>
+	<icon path="images/webfilter-logo.png"/>
+	<screenshot path="images/webfilter-web.png"><description>UserGate Web Filter-admin page</description></screenshot>
+	<changelog>
+	    <version version="3.1.8471" release="3">
+		<entry>fixed licence check error inside virtual containers</entry>
+		<entry>removed invalid public DNS from default settings</entry>
+	    </version>
+	</changelog>
+	<categories>
+	    <category>Web/Content management</category>
+	</categories>
+	<languages>
+	    <language>en</language>
+	</languages>
+    </presentation>
+    <content xmlns:pvc="http://apstandard.com/ns/1/pvc">
+	<pvc:templates class="ez-lin">
+	<pvc:template path="pvc/webfilter3-appliance-debian-6.0-x86_64-ez-1.0-1.noarch.rpm">
+	    <pvc:checksum algorithm="MD5">677d85458a257d76169d39dee60dddf9</pvc:checksum>
+	</pvc:template>
+    </pvc:templates>
+    </content>
+    <service id="vhost">
+	<license must-accept="true">
+	    <free/>
+	    <text>
+		<name>Entensys Service Level Agreement</name>
+		<file>WebFilter EULA en.txt</file>
+	    </text>
+	</license>
+	<presentation>
+	    <name>UserGate WebFilter Appliance 3.1</name>
+	    <summary>Basic services</summary>
+	    <infolinks>
+		<link class="official" href="http://entensys.com">Official site</link>
+		<link class="support" href="http://entensys.com/support">Support</link>
+	    </infolinks>
+	</presentation>
+	<requirements>
+	    <env:environment xmlns:env="http://apstandard.com/ns/1/environment">
+	    <env:linux>debian-6.0-x86_64</env:linux>
+	    </env:environment>
+	</requirements>
+    </service>
+</application>

@@ -1,0 +1,322 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-11-22T14:28:02">
+    <id>http://www.faxbox-integration.com</id>
+    <name>FaxBox Integration</name>
+    <version>1.0.4</version>
+    <release>1</release>
+    <homepage>https://www.cloudfax.fr/Web/</homepage>
+    <vendor>
+    	<name>RTE Network</name>
+    	<homepage>http://www.rtenetwork.com/en/</homepage>
+    	<icon path="images/RTENETWORK64.png" />
+    </vendor>
+    <packager>
+    	<name>rte</name>
+    	<homepage>http://www.rtenetwork.com/en/</homepage>
+    	<icon path="images/RTENETWORK64.png" />
+    </packager>
+    <presentation>
+    	<summary>Send and receive your faxes by email</summary>
+    	<description>Merci d’avoir souscrit au service Faxbox.
+Pour utiliser ce service pour envoyer et recevoir des Fax vous devez définir  les utilisateurs et attribuer les numéros de Fax.
+Cliquez sur « administrer Faxbox ».
+Une fois connecté à l’interface d’administration, n’hésitez pas à utiliser l’aide « eLearning » pour réaliser vos premiers pas avec Faxbox.
+</description>
+    	<icon path="images/Faxbox_SFR64x64.png" />
+    	<screenshot path="images/Screen2_640px.PNG">
+            <description>Sample system screen</description>
+        </screenshot>
+    	<changelog>
+    		<version release="0" version="1.0.0">
+    			<entry>FaxBox release notes : built at 01/08/2013  </entry>
+    		</version>
+    		<version release="2" version="1.0.0">
+    			<entry>changed sub-title</entry>
+    		</version>
+    		<version release="3" version="1.0.0">
+    			<entry>Added admin_login subservice for EntryPoint</entry>
+    		</version>
+    		<version release="4" version="1.0.0">
+    			<entry>Grouped Admin Account service settings in authn group</entry>
+    		</version>
+    		<version release="5" version="1.0.0">
+    			<entry>Changed entry point request method from Get to Post</entry>
+    		</version>
+    		<version release="6" version="1.0.0">
+    			<entry>specified class for entry point variables</entry>
+    		</version>
+    		<version release="7" version="1.0.0">
+    			<entry>Modified main service endpoint</entry>
+    		</version>
+    		<version release="8" version="1.0.0">
+    			<entry>added autologin parameter to entrypoint</entry>
+    		</version>
+    		<version release="9" version="1.0.0">
+    			<entry>changed entry point address</entry>
+    		</version>
+    		<version release="10" version="1.0.0">
+    			<entry>Changed entry point name</entry>
+    		</version>
+    		<version release="11" version="1.0.0">
+    			<entry>Changed settings name for Dids</entry>
+    		</version>
+    		<version release="12" version="1.0.0">
+    			<entry>Added default country name enum in global settings</entry>
+    		</version>
+    		<version release="13" version="1.0.0">
+    			<entry>changed default country names</entry>
+    		</version>
+    		<version release="14" version="1.0.0">
+    			<entry>Changed name of default_country_name setting</entry>
+    		</version>
+    		<version release="0" version="1.0.1">
+    			<entry>figuring out prepaid stuff</entry>
+    		</version>
+    		<version release="1" version="1.0.1">
+    			<entry>prepaid stuff</entry>
+    		</version>
+    		<version release="2" version="1.0.1">
+    			<entry>log settings</entry>
+    		</version>
+    		<version release="3" version="1.0.1">
+    			<entry>log environment settings</entry>
+    		</version>
+    		<version release="4" version="1.0.1">
+    			<entry>log settings and args</entry>
+    		</version>
+    		<version release="5" version="1.0.1">
+    			<entry>log argv</entry>
+    		</version>
+    		<version release="6" version="1.0.1">
+    			<entry>argv logging</entry>
+    		</version>
+    		<version release="7" version="1.0.1">
+    			<entry>administrator_contact_email setting</entry>
+    		</version>
+    		<version release="8" version="1.0.1">
+    			<entry>administrator contact email </entry>
+    		</version>
+    		<version release="0" version="1.0.2">
+    			<entry>No area quantities anymore. numbers are reserved from Naweb.
+Number of Numbers limit its similar to Number of Users Limit</entry>
+    		</version>
+    		<version release="1" version="1.0.2">
+    			<entry>new logo</entry>
+    		</version>
+    		<version release="2" version="1.0.2">
+    			<entry>fixed CustomerService -&gt; loadContractInfo</entry>
+    		</version>
+    		<version release="3" version="1.0.2">
+    			<entry>Added verification script to validate limits when trying to provision numbers and users</entry>
+    		</version>
+    		<version release="0" version="1.0.3">
+    			<entry>Added verification script. new version </entry>
+    		</version>
+    		<version release="1" version="1.0.3">
+    			<entry>logging in validate limits</entry>
+    		</version>
+    		<version release="2" version="1.0.3">
+    			<entry>added logging</entry>
+    		</version>
+    		<version release="3" version="1.0.3">
+    			<entry>fixed structured output of verification script</entry>
+    		</version>
+    		<version release="4" version="1.0.3">
+    			<entry>Modified verify script to check for unlimited settings.
+New setting and ressource for pay_as_you_go </entry>
+    		</version>
+    		<version release="0" version="1.0.4">
+    			<entry>PayAsYouGo option</entry>
+    		</version>
+    		<version release="1" version="1.0.4">
+    			<entry>fixed IsPrepayed bug</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Collaboration/Telecommunications</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    		<language>fr</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<group class="authn">
+    		<name>FaxBox Settings</name>
+    		<setting type="string" id="faxbox_url" default-value="https://www.cloudfax.fr/Web/LoginPage.aspx" visibility="hidden" class="access_point">
+    			<name>FaxBox URL</name>
+    		</setting>
+    	</group>
+    	<group>
+    		<name>API Settings</name>
+    		<setting type="string" id="apihost" class="title" default-value="www.cloudfax.fr/ws-aps/">
+    			<name>API host</name>
+    		</setting>
+    		<setting type="password" id="apipass" class="title" min-length="1">
+    			<name>API password</name>
+    			<description>To obtain API credentials, please contact FaxBox Support.</description>
+    		</setting>
+    		<setting type="string" id="apiuser" min-length="1" class="title">
+    			<name>API username</name>
+    			<description>To obtain API credentials, please contact FaxBox Support.</description>
+    		</setting>
+    	</group>
+    	<group>
+    		<name>Customer Settings</name>
+    		<setting type="string" id="provider_name" class="title">
+    			<name>provider_name</name>
+    			<description>Provider name. For CustomerCode prefix (ex: SFR)</description>
+    		</setting>
+    		<setting type="enum" id="default_country_name" default-value="FRANCE">
+    			<name>default country</name>
+    			<choice id="FRANCE">
+    				<name>France</name>
+    			</choice>
+    			<choice id="ITALY">
+    				<name>Italy</name>
+    			</choice>
+    			<choice id="BELGIUM">
+    				<name>Belgium</name>
+    			</choice>
+    			<choice id="UK">
+    				<name>UK</name>
+    			</choice>
+    		</setting>
+    	</group>
+    </global-settings>
+    <service id="faxbox" class="service">
+    	<license must-accept="true">
+    		<commercial />
+    		<text>
+    			<name>Conditions Générales de Vente</name>
+    			<file>Licenses/FaxboxLtd-FaxBox-CGV-FR-2012a.pdf</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<summary>Use this section to manage users, credits and fax-numbers</summary>
+    		<infolinks>
+    			<link href="http://www.faxbox.com/fr/contact-fax-email.html" class="support">Support</link>
+    			<link href="http://www.faxbox.com/fr/faxbox-service-fax-email.html" class="official">Official Site</link>
+    			<link href="https://www.cloudfax.fr/Guide/Deployment_guide.htm" class="deployment-guide">Deployment Guide</link>
+    		</infolinks>
+    	</presentation>
+    	<settings>
+    		<group class="authn">
+    			<name>Customer info</name>
+    			<setting type="string" id="administrator_email" class="value" protected="true">
+    				<name>FaxBox administrator email</name>
+    				<description>This field will be dynamically specified upon provisioning by the configuration script.</description>
+    			</setting>
+    			<setting type="password" id="administrator_password" class="password" track-old-value="true">
+    				<name>Administrator password</name>
+    			</setting>
+    			<setting type="string" id="customer_code" visibility="hidden" default-value="">
+    				<name>Customer code</name>
+    				<description>Unique identifier within BackOffice</description>
+    			</setting>
+    			<setting type="string" id="plesk_id" protected="true" generate="uuid" installation-only="true" track-old-value="true">
+    				<name>PleskID</name>
+    				<description>Number that Plesk will assign to instance to identify it</description>
+    			</setting>
+    			<setting type="string" id="customer_name" class="organization-name" track-old-value="true" installation-only="true" protected="true">
+    				<name>Customer name</name>
+    			</setting>
+    			<setting type="email"
+    				id="administrator_contact_email" class="value" protected="true">
+    				<name>Administrator contact email</name>
+    				<description>Address at which a confirmation email will be sent upon successful provisioning</description>
+    			</setting>
+    		</group>
+    		<group>
+    			<name>Customer contract</name>
+    			<setting type="string" id="cashdesk_limit" visibility="hidden" track-old-value="true" optional="true">
+    				<name>Real CashDesk balance</name>
+    				<description>Real CashDesk balance for customer. Reset at each new subscription period</description>
+    			</setting>
+    			<setting type="string" id="additional_cashdesk" optional="true" visibility="hidden" track-old-value="true">
+    				<name>Additional CashDesk Balance</name>
+    				<description>Extra CashDesk Credits</description>
+    			</setting><setting type="string" id="num_serviceusers_limit" optional="true" visibility="hidden" track-old-value="true">
+    				<name>Number of service users allowed</name>
+    				<description>Number of service-users for this customer-account</description>
+    			</setting>
+    			<setting type="string" id="num_numbers_limit" optional="true" visibility="hidden" track-old-value="true">
+    				<name>Number of numbers allowed</name>
+    				<description>Number of fax numbers that the customer may provision</description>
+    			</setting>
+    			<setting type="integer" id="pay_as_you_go" optional="true" visibility="hidden" default-value="0">
+    				<name>Pay As You Go</name>
+    				<description>Set to 1 for a 'pay as you go' subscription.
+Set to 0 for a 'prepaid' subscription</description>
+    			</setting>
+    		</group>
+    	</settings>
+    	<resources>
+    		<resource class="item" id="used_num_serviceusers" limiting-setting="num_serviceusers_limit">
+    			<name>Number of service users</name>
+    			<description>Number of service users created within the application</description>
+    		</resource>
+    		<resource class="item" id="used_cashdesk" limiting-setting="cashdesk_limit">
+    			<name>CashDesk usage per subscription period</name>
+    		</resource>
+    		<resource class="item" id="used_additional_cashdesk" limiting-setting="additional_cashdesk">
+    			<name>Extra CashDesk usage</name>
+    		</resource>
+    		<resource class="item" id="used_num_numbers" limiting-setting="num_numbers_limit">
+    			<name>Number of numbers</name>
+    			<description>Number of fax numbers reserved within the application</description>
+    		</resource>
+    		<resource class="item" id="pay_as_you_go" limiting-setting="pay_as_you_go">
+    			<name>Pay As You Go</name>
+    		</resource>
+    	</resources>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:extension>curl</php:extension>
+    		<php:extension>openssl</php:extension>
+    		<php:version min="5.3"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<status-control />
+    			<structured-output />
+    		</configuration-script>
+    		<verify-script name="verify.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</verify-script>
+    		<resource-script name="report-ressources.php">
+    			<script-language>php</script-language>
+    		</resource-script>
+    	</provision>
+    	<service id="admin_access" class="service" singular="true">
+    		<presentation>
+    			<name>Administrator access</name>
+    			<summary>Administrator access</summary>
+    			<entry-points>
+    				<entry dst="{naweb_url}" method="POST">
+    					<label>administrer Faxbox</label>
+    					<variable name="naweb_url" value-of-setting="faxbox_url" class="locale"></variable>
+    					<variable name="login" value-of-setting="admin_email" class="login"></variable>
+    					<variable name="password" value-of-setting="admin_password" class="password"></variable>
+    					<variable name="autologin" value-of-setting="autologin"></variable>
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+    			<group class="authn">
+    			<setting type="string" id="admin_email" class="email"
+    				visibility="hidden" value-of-setting="administrator_email">
+    				<name>admin email</name>
+    			</setting>
+    			<setting type="password" id="admin_password"
+    				visibility="hidden" value-of-setting="administrator_password" class="password">
+    				<name>admin password</name>
+    			</setting></group>
+    			<setting type="integer" id="autologin" default-value="1"
+    				visibility="hidden" protected="true">
+    				<name>autologin</name>
+    				<description>specifies wether the entry point should post login form automaticaly.</description>
+    			</setting></settings>
+    	</service>
+    </service>
+</application>

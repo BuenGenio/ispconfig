@@ -1,0 +1,80 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2">
+	<id>http://www.joomla.org/ns/jp</id>
+	<name>Japanese Translation for Joomla</name>
+	<version>2.5.8</version>
+	<release>1</release>
+
+	<homepage>http://www.joomla.fr/</homepage>
+
+        <master-package>
+                <package id="http://www.joomla.org/" match="version = '2.5.2' or version = '2.5.3' or version = '2.5.4' or version = '2.5.5' or version = '2.5.6' or version = '2.5.7' or version = '2.5.8' or version = '2.5.9' or version = '2.5.10'"  />
+        </master-package>
+
+	<vendor>
+		<name>Joomla Japanese Translation Community</name>
+		<homepage>http://www.joomla.jp/</homepage>
+	</vendor>
+
+	<packager>
+		<name>Parallels</name>
+		<homepage>http://parallels.com/</homepage>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+
+	<presentation>
+		<summary>Joomla Japanese Translation</summary>
+		<description>
+			Japanese language pack for Joomla CMS.
+		</description>
+
+		<icon path="images/icon.png"/>
+	
+		<changelog>
+			<version version="2.5.8" release="1">
+				<entry>Localization package 2.5.8</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Customization/Localization</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+
+<patch match="/application/version &gt; '1.5.1'"/>
+
+	<service id="ja_lang_pack">
+		<presentation>
+			<name>Joomla Japanese Translation</name>
+			<summary>Japanese language pack for Joomla CMS.</summary>
+		</presentation>
+
+		<settings>
+			<setting id="replace_current_lang" type="boolean" default-value="true" installation-only="true">
+				<name>Activate language immediately</name>
+			</setting>
+			<setting id="locale" type="string" default-value="ja-JP" installation-only="true" visibility="hidden" protected="true" />
+		</settings>
+		
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+			</configuration-script>
+
+			<url-mapping>
+				<installed-size>729088</installed-size>
+
+				<mapping url="/" path="htdocs" xmlns:php="http://apstandard.com/ns/1/php">
+					<mapping url="administrator">
+						<mapping url="language"/>
+					</mapping>
+					<mapping url="language"/>
+				</mapping>
+			</url-mapping>
+		</provision>
+	</service>
+	
+</application>

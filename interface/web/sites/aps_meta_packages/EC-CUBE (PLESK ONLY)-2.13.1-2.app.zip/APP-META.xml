@@ -1,0 +1,273 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-09-11T15:38:50">
+	<id>EC-CUBE</id>
+	<name>EC-CUBE (PLESK ONLY)</name>
+	<version>2.13.1</version>
+	<release>2</release>
+
+	<homepage>http://www.ec-cube.net/</homepage>
+
+	<vendor>
+		<name>Lockon</name>
+		<name xml:lang='ja-JA'>株式会社ロックオン</name>
+		<homepage>http://www.ec-cube.net/</homepage>
+		<icon path="images/icn.png" />
+	</vendor>
+
+	<packager>
+		<name>Lockon</name>
+		<name xml:lang='ja-JA'>株式会社ロックオン</name>
+		<homepage>http://www.ec-cube.net/</homepage>
+		<icon path="images/icn.png" />
+		<uri></uri>
+	</packager>
+
+	<presentation>
+		<summary xml:lang='ja-JA'>EC-CUBEは、日本で最も利用されているオープンソースのecommerceサイト構築パッケージです。ソースコードが公開されていますので、自由自在にecommerceサイトを構築することができます。</summary>
+		<summary>EC-CUBE (Japanese version) is the number one ecommerce system in Japan.</summary>
+		<description xml:lang='ja-JA'>
+EC-CUBEは、日本で最も利用されているオープンソースのecommerceサイト構築パッケージです。
+ソースコードが公開されていますので、自由自在にecommerceサイトを構築することができます。
+2006年公開以降、日本でのノウハウを活かし、運用視点に特化した充実の機能と、無駄がなく使いやすいユーザーインターフェースが高く評価されています。
+
+
+構成されるシステムファイルは、シンプル・スマートに書かれており、難解なソースコードの解読を必要としません。
+また、Smarty Template Engine の利用により、デザイナーでも簡単にテンプレートをカスタマイズする事が出来ます。
+少しの学習で、小規模サイトから大規模サイトまでニーズに応じたecommerceサイトの構築を可能にします。
+
+
+またユーザー同士が集まるコミュニティの利用により、誰でも簡単にお使い頂く事が可能です。
+新バージョンでは、英語への標準対応や多言語システムの実装など国際的な対応を行なっています。
+
+
+皆様のフィードバックによりEC-CUBEは更に使いやすいシステムを目指します。貴重なご意見お待ちしております。
+http://en.ec-cube.net/forum/
+
+
+*Apache only version.</description>
+<description> EC-CUBE (Japanese version) is the number one ecommerce system in Japan.</description>
+
+		<icon path="images/icn.png"/>
+
+		<screenshot path="images/screenshot.png">
+			<description>
+				Main screenshot.
+			</description>
+		</screenshot>
+
+		<changelog>
+			<version version="2.13.1" release="2">
+				<entry xml:lang='ja-JA'>初期パッケージバージョン</entry>
+				<entry>Initial packaged version</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Web/E-commerce</category>
+		</categories>
+
+		<languages>
+			<language>ja</language>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting type="string" id="user_locale" default-value="ja-JA" class="locale"></setting>
+	</global-settings>
+
+	<service id="main">
+		<license must-accept="false">
+			<free />
+			<text>
+				<name>GPLv2</name>
+				<file>htdocs/COPYING.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<summary>EC-CUBE</summary>
+			<infolinks>
+				<link href="http://ec-cube.net" class="support">EC-CUBE</link>
+				<link href="http://tempuri.org"></link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/">
+					<label>TOP</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<setting type="string" id="storename" min-length="1"
+				installation-only="true" default-value="">
+				<name xml:lang='ja-JA'>店名</name>
+				<name>Store name</name>
+				<description xml:lang='ja-JA'>あなたの店名をご記入ください。</description>
+				<description>Enter store name</description>
+			</setting>
+			<setting type="string" id="storeemail"
+				installation-only="true" default-value="">
+				<name xml:lang='ja-JA'>メールアドレス</name>
+				<name>Mail Address</name>
+				<description xml:lang='ja-JA'>受注メールなどの宛先になります。 (例) eccube@example.com</description>
+				<description>Ordered mail address</description>
+			</setting>
+			<setting type="string" id="storelogin" installation-only="true" default-value="">
+				<name xml:lang='ja-JA'>ログインID</name>
+				<name>Login ID</name>
+				<description xml:lang='ja-JA'>管理機能にログインするためのIDです。</description>
+				<description>Admin login ID</description>
+			</setting>
+			<setting type="password" id="storepass" installation-only="true" default-value="">
+				<name xml:lang='ja-JA'>パスワード</name>
+				<name>Password</name>
+				<description xml:lang='ja-JA'>管理機能にログインするためのパスワードです。</description>
+				<description>Admin password</description>
+			</setting>
+			<setting type="string" id="mail_backend"
+				default-value="mail" installation-only="true" optional="true">
+				<name xml:lang='ja-JA'>メーラーバックエンド</name>
+				<name>Mail backend</name>
+				<description xml:lang='ja-JA'>mail - PHP の組込関数 mail() を使用して送信します。
+SMTP - SMTP サーバに直接接続してメールを送信します。
+sendmail - sendmail プログラムにより送信します。</description>
+				<description>Mail - PHP, SMTP - SMTP server, sendmail - sent from program</description>
+			</setting>
+			<setting type="string" id="mail_host" installation-only="true" optional="true">
+				<name xml:lang='ja-JA'>SMTP ホスト</name>
+				<name>SMTP host</name>
+				<description xml:lang='ja-JA'>メーラーバックエンドが SMTP の場合のみ指定します。</description>
+				<description>Only select if mail backend is SMTP</description>
+			</setting>
+			<setting type="integer" id="mail_port" installation-only="true" optional="true">
+				<name xml:lang='ja-JA'>SMTP ポート</name>
+				<name>SMTP port</name>
+				<description xml:lang='ja-JA'>メーラーバックエンドが SMTP の場合のみ指定します。</description>
+				<description>Only select if mail backend is SMTP</description>
+			</setting>
+			<setting type="string" id="mail_user" installation-only="true" optional="true">
+				<name xml:lang='ja-JA'>SMTP ユーザー</name>
+				<name>SMTP User</name>
+				<description xml:lang='ja-JA'>メーラーバックエンドが SMTP の場合で、SMTP-AUTH 使用時のみ指定します。</description>
+				<description>SMTP-AUTH can be used ifmail backend is set to SMTP</description>
+			</setting>
+			<setting type="password" id="mail_password" installation-only="true" optional="true">
+				<name xml:lang='ja-JA'>SMTP パスワード</name>
+				<name>SMTP Password</name>
+				<description xml:lang='ja-JA'>メーラーバックエンドが SMTP の場合で、SMTP-AUTH 使用時のみ指定します。</description>
+				<description>SMTP-AUTH can be used ifmail backend is set to SMTP</description>
+			</setting>
+			<setting type="string" id="admin_allow_hosts" optional="true">
+				<name xml:lang='ja-JA'>IP制限</name>
+				<name>Allowed IP addresses</name>
+				<description xml:lang='ja-JA'>管理機能へのアクセスを特定のIPアドレスからの接続のみに制限します。
+アクセスを許可するIPアドレスを1行づつ入力してください。
+何も入力しない場合は全てを許可します。</description>
+<description>White listed IP's only can acccess admin section.</description>
+			</setting>
+			<setting type="string" id="domain_name" optional="true">
+				<name xml:lang='ja-JA'>共通ドメイン</name>
+				<name>Main domain</name>
+				<description xml:lang='ja-JA'>通常URLとセキュアURLでサブドメインが異なる場合に指定します。</description>
+				<description>Normal URL and secure URL can be used even when sub domain is different</description>
+			</setting>
+			<setting type="string" id="admin" installation-only="true"
+				default-value="admin">
+				<name xml:lang='ja-JA'>ディレクトリ</name>
+				<name>Admin folder</name>
+				<description xml:lang='ja-JA'>管理機能のディレクトリ名です。
+下記で管理機能にアクセスする場合の[管理機能]の部分です。
+https://[ホスト名].[ドメイン名]/[ショップディレクトリ]/[ディレクトリ]/</description>
+<description>Admin folder name</description>
+			</setting>
+		</settings>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:iis="http://apstandard.com/ns/1/iis" xmlns:db="http://apstandard.com/ns/1/db" xmlns:mysql="http://apstandard.com/ns/1/db/mysql" xmlns:svc="http://apstandard.com/ns/1/service">
+			<db:db>
+				<db:id>main</db:id>
+				<db:default-name>eccube</db:default-name>
+				<db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5</db:server-min-version>
+				<db:features>
+					<mysql:privilege>Create_tmp_table_priv</mysql:privilege>
+					<mysql:privilege>Create_priv</mysql:privilege>
+				</db:features>
+			</db:db>
+			<php:version min="5.2"/>
+			<php:extension>mysql</php:extension>
+		</requirements>
+		<provision xmlns:php="http://apstandard.com/ns/1/php">
+			<url-mapping>
+				<default-prefix>ECCUBE</default-prefix>
+				<installed-size>29017886</installed-size>
+				<mapping url="/" path="htdocs">
+					<php:permissions writable="true"/>
+					<mapping url="data" path="htdocs/data">
+						<php:permissions writable="true"/>
+						<mapping url="Smarty">
+							<php:permissions writable="true"/>
+							<mapping url="templates">
+								<php:permissions writable="true"/>
+								<mapping url="default">
+									<php:permissions writable="true"/>
+								</mapping>
+							</mapping>
+						</mapping>
+						<mapping url="config">
+							<php:permissions writable="true" />
+						</mapping><mapping url="class">
+							<php:permissions writable="true"/>
+							<mapping url="db/dbfactory">
+								<php:permissions writable="true"/>
+							</mapping>
+							<mapping url="sessionfactory">
+								<php:permissions writable="true"/>
+							</mapping>
+							<mapping url="pages/frontparts/bloc">
+								<php:permissions writable="true"/>
+							</mapping>
+							<mapping url="pages/upgrade/helper">
+								<php:permissions writable="true"/>
+							</mapping>
+							<mapping url="pages/admin">
+								<php:permissions writable="true"/>
+							</mapping>
+						</mapping>
+						<mapping url="upload">
+							<php:permissions writable="true"/>
+						</mapping>
+						<mapping url="cache">
+							<php:permissions writable="true"/>
+						</mapping>
+						<mapping url="logs">
+							<php:permissions writable="true"/>
+						</mapping>
+						<mapping url="downloads">
+							<php:permissions writable="true" /><mapping url="tmp">
+								<php:permissions writable="true"/>
+							</mapping>
+						</mapping>
+					</mapping>
+						<mapping url="user_data" path="htdocs/user_data">
+							<php:permissions writable="true"/>
+							<mapping url="packages">
+								<php:permissions writable="true"/>
+								<mapping url="default">
+									<php:permissions writable="true"/>
+									<mapping url="img">
+										<php:permissions writable="true"/>
+									</mapping>
+								</mapping>
+							</mapping>
+						</mapping>
+						<mapping url="install" path="htdocs/install">
+							<php:permissions writable="true"/>
+						</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+
+
+</application>
+

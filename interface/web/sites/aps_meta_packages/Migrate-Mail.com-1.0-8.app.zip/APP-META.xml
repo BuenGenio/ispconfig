@@ -1,0 +1,138 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-09-03T22:03:51">
+    <id>http://apsstandard.org/app/Migrate-Mail.com</id>
+	<name>Migrate-Mail.com</name>
+	<version>1.0</version>
+	<release>8</release>
+	<homepage>http://www.migrate-mail.com</homepage>
+	
+	<vendor>
+		<name>audriga GmbH</name>
+		<homepage>http://www.audriga.com</homepage>
+		<icon path="icons/audriga-logo.png"/>
+	</vendor>
+	
+	<packager>
+		<name>audriga GmbH</name>
+		<homepage>http://www.audriga.com/</homepage>
+		<icon path="icons/audriga-logo.png"/>
+		<uri>uuid:b244d663-0b65-4113-b1b8-6cf5d37aac8d</uri>
+	</packager>
+	
+	<presentation>
+		<summary>Migrate your mails fast, easy and secure from your existing mail accounts to new ones.</summary>
+		<summary xml:lang="de-DE">Ziehen Sie Ihre E-Mails einfach, schnell und sicher um.</summary>
+		<description>Migrate-Mail.com allows you to migrate your mails from an existing mail account to new one. No software installation is required. An easy-to-use web interface guides you through the setup process and provides a cockpit to monitor the migration process. To access your existing mails the mail protocols IMAP and POP3 are supported.</description>
+		<description xml:lang="de-DE">Email-Umzug.de hilft Ihnen beim Umzug Ihrer E-Mails aus einem bestehenden E-Mail Account in neuen E-Mail Account. Dafür ist keine Software Installation notwendig. Eine einfach zu bedienende Webseite führt Sie durch den Einrichtungsprozess. Den Fortschritt des Umzugs wird Ihnen auf einer Status-Webseite angezeigt. Für den Zugriff auf die E-Mails unterstützt Email-Umzug.de die E-Mail-Protokolle IMAP und POP3.</description>
+		<icon path="icons/audriga-logo.png"/>
+		<screenshot path="images/screenshots-1.png">
+			<description>Select source and destination mail providers.</description>
+			<description xml:lang="de-DE">Auswahl der Quell- und Ziel-E-Mail-Anbieter.</description>
+		</screenshot>
+		<screenshot path="images/screenshots-2.png">
+			<description>Enter the loginnames and passwords of the mail accounts.</description>
+			<description xml:lang="de-DE">Eingabe von Loginnamen und Passwörtern der Quell- und Ziel-E-Mail-Konten.</description>
+		</screenshot>
+		<screenshot path="images/screenshots-3.png">
+			<description>The cockpit showing the progress of the migration process.</description>
+			<description xml:lang="de-DE">Die Status-Webseite zeigt den Fortschritt des E-Mail Umzugs.</description>
+		</screenshot>
+		<changelog>
+			<version release="1" version="1.0" >
+				<entry>Initial version.</entry>
+				<entry xml:lang="de-DE">Initiale Version.</entry>
+			</version>
+			<version release="2" version="1.0">
+				<entry>Improved screenshots</entry>
+			</version>
+			<version release="3" version="1.0">
+				<entry>Improved Configure script</entry>
+			</version>
+			<version release="4" version="1.0">
+				<entry>Improved entry point.</entry>
+			</version>
+			<version release="5" version="1.0">
+				<entry>Improved settings.</entry>
+			</version>
+			<version release="6" version="1.0">
+				<entry>Improved categories.</entry>
+			</version>
+			<version release="7" version="1.0">
+				<entry>Improved resources.</entry>
+			</version>
+			<version release="8" version="1.0">
+				<entry>Improved settings.</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Infrastructure/Mail</category>
+			<category>Collaboration/Email</category>
+		</categories>
+		<languages>
+			<language>en</language>
+			<language>de</language>
+		</languages>
+	</presentation>
+	
+	<patch match="/application/version >= '1.0'" recommended="true"/>
+
+	<service id="migration">
+		<license must-accept="false">
+			<commercial/>
+			<text>
+				<name>Terms of Service</name>
+				<url>https://www.migrate-mail.com/en/contact/terms-of-use.html</url>
+			</text>
+			<text xml:lang="de-DE">
+				<name>Nutzungsbedingungen</name>
+				<url>https://www.email-umzug.de/de/kontakt/nutzungsbedingungen.html</url>
+			</text>
+		</license>
+		<presentation>
+			<name>Migrate-Mail.com Portal</name>
+			<summary>Easy, fast, and secure mail migration solution</summary>
+			<infolinks>
+				<link class="howto" href="https://www.migrate-mail.com/en/support/quick-guide-email-migration.html">Mail migration quick guide</link>
+				<link xml:lang="de-DE" class="howto" href="https://www.email-umzug.de/de/support/kurzanleitung-e-mail-umzug.html">Kurzanleitung E-Mail Umzug</link>
+				<link class="support" href="https://www.migrate-mail.com/en/support/frequently-asked-questions.html">FAQ</link>
+				<link xml:lang="de-DE" class="support" href="https://www.email-umzug.de/de/support/haeufig-gestellte-fragen.html">FAQ</link>
+				<link class="support" href="https://www.migrate-mail.com/en/support/provider-documentation.html">Provider Documentation</link>
+				<link xml:lang="de-DE" class="support" href="https://www.email-umzug.de/de/support/anbieterdokumentation.html">Anbieterdokumentation</link>
+			</infolinks>
+			<entry-points>
+            	<entry class="frontpage" dst="https://umzug.audriga.com/SMESwitchWebApp/" method="GET">
+            	<!-- <entry class="frontpage" dst="https://umzug.audriga.com/SMESwitchWebApp/?voucher={voucher}" method="GET">  -->
+                	<label>Mail Migration: Start Site</label>
+                    <label xml:lang="de-DE">E-Mail Umzug: Start Seite</label>
+                <!-- <variable name="voucher" value-of-setting="voucher"/>  -->
+            	</entry>
+            </entry-points>
+		</presentation>
+		
+		<!--
+		<settings>
+			<setting type="string" id="voucher" visibility="hidden" default-value="">
+            	<description>Voucher string of a voucher purchased from migrate-mail.com</description>
+            </setting>
+			<setting id="number_migrations" type="string" visibility="hidden" default-value="0">
+            	<name>Number of migrations available</name>
+                <description>Number of migratons avaliable</description>
+            </setting>
+		</settings>
+				
+		<resources>
+			<resource id="number_migrations" class="item" limiting-setting="number_migrations">
+              	<name>Number migrations</name>
+            </resource>	
+		</resources>
+		-->
+				
+		<provision>
+            <configuration-script name="configure.php">
+        		<script-language>php</script-language>
+            	<status-control />
+            	<structured-output/>
+        	</configuration-script>
+        </provision>
+		
+	</service>
+</application>

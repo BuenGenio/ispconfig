@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2010-08-19T14:15:22+07:00">
+  
+  <!-- common properties -->
+  
+  <id>http://www.pinnaclecart.com/non-ka</id>
+  <name>Pinnacle Cart non-KA</name>
+  <version>3.7.8</version>
+  <release>1</release>
+  <homepage>http://www.pinnaclecart.com</homepage>
+  
+  <vendor>
+    <name>Pinnacle Cart Shopping Cart Software</name>
+    <name xml:lang="en">Pinnacle Cart Shopping Cart Software</name>
+    <homepage>http://www.pinnaclecart.com</homepage>
+    <homepage xml:lang="en">http://www.pinnaclecart.com</homepage>
+    <icon path="images/pinnacle-icon.png" />
+  </vendor>
+  
+  <packager>
+    <name>GlowTouch Technologies</name>
+    <name xml:lang="en">www.pinnaclecart.com</name>
+    <homepage>http://glowtouch.com/</homepage>
+    <homepage xml:lang="en">http://www.pinnaclecart.com</homepage>
+    <icon path="images/GT-packager.png" />
+    <uri>uuid:27CF4576-555B-11DC-8C5F-571156D36913</uri>
+  </packager>
+  
+  <!-- application description -->
+  
+  <presentation>
+    <summary>Pinnacle Cart is a featured packed, PHP shopping cart and web site builder application</summary>
+    <summary xml:lang="en">Pinnacle Cart is a featured packed, PHP shopping cart and web site builder application</summary>
+    <description>
+      FREE 15-Day Trial.
+      Pinnacle Cart is an extremely powerful php shopping cart 
+      and website builder application. Designed from marketing perspective, 
+      this eCommerce application is feature-packed, robust, scalable and easy to use. 
+      Pinnacle Cart is the clear choice for serious merchants focused on rapidly 
+      and cost effectively deploying, managing and growing a successful web-based business. 
+    </description>
+    <description xml:lang="en">
+      FREE 15-Day Trial.
+      Pinnacle Cart is an extremely powerful php shopping cart 
+      and website builder application. Designed from marketing perspective, 
+      this eCommerce application is feature-packed, robust, scalable and easy to use. 
+      Pinnacle Cart is the clear choice for serious merchants focused on rapidly 
+      and cost effectively deploying, managing and growing a successful web-based business. 
+    </description>
+    
+    <icon path="images/pinnacle-icon.png" />
+    
+    <screenshot path="images/pinnacle-admin.png">
+      <description>This is the administrative area home page for Pinnacle Cart.</description>
+      <description xml:lang="en">This is the administrative area home page for Pinnacle Cart.</description>
+    </screenshot>
+    <changelog>
+    	<version release="1" version="3.7.8">
+    		<entry>First version, package without KA integration
+</entry>
+    	</version>
+    </changelog>
+
+
+    <categories>
+      <category>Web/E-commerce</category>
+    </categories>
+    
+    <languages>
+      <language>en</language>
+    </languages>
+    
+  </presentation>
+  <global-settings>
+  	<group>
+  		<name>Reseller Credentials</name>
+  		<setting type="string" id="user_name" min-length="1"
+  			protected="true" visibility="hidden"
+  			default-value="glowtouchtest">
+  			<name>User Name</name>
+  		</setting>
+  		<setting type="string" id="password" visibility="hidden"
+  			protected="true" default-value="nEwr6phuThed">
+  			<name>Password</name>
+  		</setting>
+  		<setting type="string" id="hashcode" protected="true"
+  			visibility="hidden"
+  			default-value="e99b3d99972fe6dbc4fc87da2f1c893d">
+  			<name>Hash</name>
+  		</setting>
+  		<setting type="string" id="api_url" visibility="hidden"
+  			protected="true"
+  			default-value="https://account.pinnaclecart.com/xml-api/1.1/">
+  			<name>API URL</name>
+  		</setting>
+  	</group></global-settings>
+
+
+  <service class="ecommerce" id="main">
+  
+    <!--license-->
+  
+    <license must-accept="true">
+      <commercial />
+      <text>
+        <name>Commercial License</name>
+        <file>licenses/license.txt</file>
+      </text>
+      <text xml:lang="en">
+        <name>Commercial License</name>
+        <file>licenses/license.txt</file>
+      </text>
+    </license>
+
+    <!--presentation-->
+	
+    <presentation>
+      <name>PinnacleCart</name>  
+      <summary>Pinnacle Cart is a featured packed, PHP shopping cart and web site builder application</summary>
+      <summary xml:lang="en">Pinnacle Cart is a featured packed, PHP shopping cart and web site builder application</summary>
+      <icon path="images/pinnacle-icon.png" />
+   
+      <infolinks>
+      	<link class="official" href="http://www.pinnaclecart.com">Official Site</link>
+        <link xml:lang="en" class="official" href="http://www.pinnaclecart.com">Official Site</link>
+        
+        <link class="support" href="http://support.pinnaclecart.com">Support Area</link>
+        <link xml:lang="en" class="support" href="http://support.pinnaclecart.com">Support Area</link>
+        
+        <link class="demo" href="http://admin-demo.pinnaclecart.com/login.php">Admin Area Demo</link>
+        <link xml:lang="en" class="demo" href="http://admin-demo.pinnaclecart.com/375/login.php">Admin Area Demo</link>
+        
+        <link class="demo" href="http://demo.pinnaclecart.com/">Storefront Demo</link>
+        <link xml:lang="en" class="demo" href="http://demo.pinnaclecart.com/375/">Storefront Demo</link>
+      </infolinks>
+      
+      <entry-points>
+        <entry dst="/">
+          <label>User Site Front End</label>
+          <label xml:lang="en">User Site Front End</label>
+          <icon path="images/pinnacle-icon.png" />
+        </entry>
+        <entry class="control-panel" dst="/login.php" method="POST">
+          <label>Administrative Area</label>
+          <label xml:lang="en">Administrative Area</label>
+          <icon path="images/pinnacle-icon.png" />
+        </entry>
+      </entry-points>
+
+    </presentation>
+    
+    <!--settings-->
+    
+    <settings>
+
+      <group class="web">
+        <name>Common Settings</name>
+        <setting id="title" class="site_title" type="string" default-value="Shopping Cart" min-length="1">
+          <name>Application Title / Site Name</name>
+        </setting>
+      </group>
+
+      <group>
+        <name>Administrator's Preferences</name>
+        <group class="vcard">
+          <setting id="admin_name" class="fn" type="string" default-value="Administrator" min-length="1">
+            <name>Administrator's Name</name>
+          </setting>
+          <setting id="admin_email" class="email" type="email">
+            <name>Administrator's Email</name>
+          </setting>
+        </group>
+
+        <group class="authn">
+          <setting id="admin_login" class="login" type="string" default-value="admin" min-length="1" regex="^[a-zA-Z]{1}[0-9a-zA-Z_\-]{0,32}">
+            <name>Administrator's Login</name>
+          </setting>
+          <setting id="admin_password" class="password" type="password" min-length="1">
+            <name>Password</name>
+          </setting>
+        </group>
+      </group>
+      </settings>
+
+    <!--requirements-->
+    
+    <requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:l="http://apstandard.com/ns/1/licensing">
+      <php:version min="5.1" />
+      <php:extension>gd</php:extension>
+      <php:extension>zlib</php:extension>
+      <php:extension>mysql</php:extension>
+      <php:extension>curl</php:extension>
+      <php:extension>ionCube Loader</php:extension>
+      <php:allow-url-fopen>true</php:allow-url-fopen>
+      <php:file-uploads>true</php:file-uploads>
+      <php:short-open-tag>true</php:short-open-tag>
+      <db:db xmlns:db="http://apstandard.com/ns/1/db">
+        <db:id>main</db:id>
+        <db:default-name>pinnacle</db:default-name>
+        <db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+        <db:server-type>mysql</db:server-type>
+        <db:server-min-version>4.1.0</db:server-min-version>
+      </db:db>
+    </requirements>
+    
+    <!--provision-->
+    
+    <provision xmlns:l="http://apstandard.com/ns/1/licensing">
+    
+      <!--mapping-->
+      
+      <url-mapping>
+        <default-prefix>cart</default-prefix>
+        <installed-size>75000000</installed-size>
+        
+        <mapping url="/" path="htdocs" xmlns:php="http://apstandard.com/ns/1/php">
+          <php:handler>
+            <php:extension>php</php:extension>
+          </php:handler>
+          <mapping url="robots.txt">
+            <php:permissions writable="true"/>
+          </mapping>
+          <mapping url=".htaccess">
+            <php:permissions writable="true"/>
+          </mapping>
+          <mapping url="content/backups">
+            <php:permissions writable="true" />
+          </mapping>
+          <mapping url="content/cache">
+            <php:permissions writable="true" />
+            <mapping url="languages">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="license">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="log">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="sessiondata">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="skins">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="smarty">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="tmp">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="update">
+              <php:permissions writable="true" />
+            </mapping>
+          </mapping>
+          <mapping url="content/engine">
+            <php:permissions writable="true" />
+            <mapping url="engine_config.php">
+             <php:permissions writable="true" />
+            </mapping>
+          </mapping>
+          <mapping url="content/skins">
+            <php:permissions writable="true" />
+            <mapping url="_custom">
+              <php:permissions writable="true" />
+              <mapping url="css">
+                <php:permissions writable="true" />
+              </mapping>
+              <mapping url="skin">
+                <php:permissions writable="true" />
+                <mapping url="images">
+                  <php:permissions writable="true" />
+                  <mapping url="custom">
+                    <php:permissions writable="true" />
+                  </mapping>
+                </mapping>
+                <mapping url="javascript">
+                  <php:permissions writable="true" />
+                </mapping>
+                <mapping url="styles">
+                  <php:permissions writable="true" />
+                </mapping>
+                <mapping url="templates">
+                  <php:permissions writable="true" />
+                </mapping>
+              </mapping>
+            </mapping>
+          </mapping>
+          <mapping url="content/languages">
+            <php:permissions writable="true" />
+          </mapping>
+          <mapping url="images">
+            <php:permissions writable="true" />
+            <mapping url="buttons">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="catalog">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="custom">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="headers">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="images">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="manufacturers">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="products">
+              <php:permissions writable="true" />
+            </mapping>
+            <mapping url="themes">
+              <php:permissions writable="true" />
+            </mapping>
+          </mapping>
+        </mapping>
+
+
+      </url-mapping>
+      
+      <!--license script-->
+    
+    
+      <!--configuration script-->
+    
+      <configuration-script name="configure">
+        <script-language>php</script-language>
+        <structured-output />
+      </configuration-script>
+      
+    </provision>
+
+  </service>
+  
+</application>

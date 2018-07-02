@@ -1,0 +1,208 @@
+<application packaged="2014-10-01T13:36:20" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>dokuwiki</id>
+	<name>dokuwiki</name>
+	<version>20140929</version>
+	<release>3</release>
+	<homepage>http://splitbrain.org/</homepage>
+	<vendor>
+		<name>splitbrain.org</name>
+		<homepage>http://splitbrain.org/</homepage>
+		<icon path="images/logo.png"/>
+	</vendor>
+	<packager>
+		<name>GlowTouch Technologies</name>
+		<homepage>http://www.glowtouch.com/</homepage>
+		<icon path="images/parrallels-GT6.png"/>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>DokuWiki is a standards compliant, simple to use Wiki.
+</summary>
+		<description>DokuWiki is a standards compliant, simple to use Wiki,mainly aimed at creating documentation of any kind. It is targeted at developer teams, workgroups and small companies.	It has a simple but powerful syntax which makes sure the datafiles remain readable outside the Wiki and eases the creation of structured texts. All data is stored in plain text files . no database is required.
+		</description>
+		<icon path="images/logo.png"/>
+		<screenshot path="images/main_screenshot.jpg">
+			<description>
+				This is the screen where you add new text and graphics
+				to your site. You can preview the page before publishing
+				and set up publishing at a specific time.
+			</description>
+		</screenshot>
+		<changelog>
+			<version release="5" version="20130510">
+				<entry>Weatherwax release: https://www.dokuwiki.org/changes#release_2013-05-10_weatherwax</entry>
+			</version>
+			<version release="1" version="20121013">
+				<entry>
+					Release notes: http://www.dokuwiki.org/changes
+				</entry>
+			</version>
+			<version release="7" version="20091225c">
+				<entry>
+					Release notes: http://www.dokuwiki.org/changes
+				</entry>
+			</version>
+			<version release="4" version="20080505">
+				<entry>Collaboration/Portals category removed</entry>
+			</version>
+			<version release="3" version="20080505">
+				<entry>Updated version</entry>
+			</version>
+			<version release="9" version="2007-06-26b">
+				<entry>Initial package version</entry>
+			</version>
+			<version release="1" version="20131208">
+				<entry>Improved random generator for more secure passwords
+Added capability to import and export users in User Manager via CSV files
+Implemented LESS compiler for CSS
+The old 'default' template was removed
+Users can delete their own account now
+Improvements for RTL languages/scripts, accessibility (WAI-ARIA) and farms
+Many, many translation updates and smaller bugfixes</entry>
+			</version>
+			<version release="2" version="20131208">
+				<entry>Added user entry point</entry>
+			</version>
+			<version release="3" version="20131208">
+				<entry>Modified upgradeapp file</entry>
+			</version>
+			<version release="4" version="20131208">
+				<entry>Disabled updatecheck</entry>
+			</version>
+			<version release="5" version="20131208">
+				<entry>updated</entry>
+			</version>
+			<version release="2" version="20140505">
+				<entry>New Release</entry>
+			</version>
+			<version release="3" version="20140929">
+				<entry>new release</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Collaboration/Portal</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '2007_06_26b' "/>
+	<service id="dokuwiki">
+		<license must-accept="true">
+			<text>
+				<name>GPLv2</name>
+				<file>htdocs/COPYING</file>
+			</text>
+		</license>
+		<presentation>
+			<name>dokuwiki</name>
+			<summary>dokuwiki Collaboration/Portal engine</summary>
+			<infolinks>
+				<link class="support" href="https://www.dokuwiki.org/faq:support">Dokuwiki Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/doku.php" method="POST">
+					<label>Administrative interface</label>
+					<variable name="u" value-of-setting="admin_name"/>
+					<variable name="p" value-of-setting="admin_password"/>
+				</entry>
+				<entry dst="/doku.php">
+					<label>User</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+		<group class="authn">
+                <name>Administrator's preferences</name>
+
+               <setting class="login" id="admin_name" max-length="32" min-length="1" regex="^[a-z][0-9a-z_\-]*" type="string">
+
+                   <name>Administrator's login</name>
+                    <error-message>
+                        Please make sure the text you entered starts
+                        with a lowercase letter and continues with
+                        either numbers, lowercase letters, underscores
+                        or hyphens.
+                    </error-message>
+                </setting>
+
+
+              <setting class="password" id="admin_password" min-length="1" type="password">
+                    <name>Password</name>
+                </setting>
+              </group>
+
+             <group class="vcard">
+
+               <group class="fn n">
+                  <setting class="given-name" id="admin_p_name" min-length="1" type="string">
+                    <name>Administrator's name</name>
+                  </setting>
+                </group>
+
+               <group class="email">
+                 <setting class="value" id="admin_email" type="email">
+                    <name>Administrator's email</name>
+                  </setting>
+                </group>
+
+               <group class="org">
+                  <setting class="organization-name" default-value="Admin" id="title" min-length="1" type="string">
+                    <name>Wiki title</name>
+                  </setting>
+                </group>
+            </group>
+			<group class="web">
+				<name>Other preferences</name>
+				<setting class="locale" default-value="en-US" id="locale" type="enum">
+					<name>Interface language</name>
+					<choice id="en-US">
+						<name>English</name>
+					</choice>
+					<choice id="fr-FR">
+						<name>French</name>
+					</choice>
+					<choice id="de-DE">
+						<name>German</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.1.2" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<php:register-globals xmlns:php="http://apstandard.com/ns/1/php">false</php:register-globals>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>docuwiki</default-prefix>
+				<installed-size>13578164</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="data">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="tmp">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+					<mapping url="lib">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="plugins">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+					<mapping url="conf">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

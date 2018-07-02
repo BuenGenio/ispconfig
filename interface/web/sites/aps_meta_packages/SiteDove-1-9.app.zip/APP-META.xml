@@ -1,0 +1,110 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-02-22T12:39:21">
+    <id>SiteDove</id>
+    <name>SiteDove</name>
+    <version>1</version>
+    <release>9</release>
+    <homepage>http://sitedove.com</homepage>
+    <vendor>
+    	<name>SiteDove</name>
+    	<homepage>http://sitedove.com</homepage>
+    	<icon path="images/sitedove_icon.png" />
+    </vendor>
+    <packager>
+    	<name>SiteDove</name>
+    	<homepage>http://sitedove.com</homepage>
+    	<uri>http://sitedove.com</uri>
+    </packager>
+    <presentation>
+    	<summary>Website Health Monitor</summary>
+    	<description>A hands-off Website Maintenance, Vital Intelligence and Health Monitor plugin. Designed to help you make more money, while also protecting you from disasters that can seriously damage your income. SiteDove monitors site uptime and performance, continuously scans for spam on your site, ensures your site does not appear on any domain blacklists, and checks your site for malware and phishing attempts. Notifications of any problems found are sent via SMS or email.</description>
+    	<icon path="images/sitedove_icon.png" />
+    	<screenshot path="images/sitedove_screenshot1.png">
+    		<description>The SiteDove dashboard</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="9" version="1">
+    			<entry>Initial Release</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Infrastructure/Security</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<setting type="string" id="reseller_key" default-value="">
+    		<name>API Key</name>
+    		<description>Reseller API Key for SiteDove. Request a key from admin@sitedove.com</description>
+    	</setting>
+    </global-settings>
+    <service id="account" class="account">
+    	<license must-accept="true">
+    		<commercial />
+    		<text>
+    			<name>Terms of Service</name>
+    			<url>http://sitedove.com/members/tos.php</url>
+    		</text>
+    	</license>
+    	<presentation>
+    		<summary>A user account for access to the SiteDove.com members area</summary>
+    		<infolinks>
+    			<link href="http://sitedove.com/support" class="support">SiteDove Support</link>
+    			<link href="file:///docs/SiteDove - PA Deployment Guide.docx" class="deployment-guide">SiteDove APS Deployment Guide</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry dst="http://sitedove.com/members" method="GET">
+    				<label>SiteDove Control Panel</label>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+    		<group class="authn">
+    			<name class="type">Userinfo</name>
+
+
+	    		<setting type="string" id="sitedove_lite" visibility="hidden" track-old-value="true" default-value="0">
+	    			<description>Lite</description>
+	    		</setting>
+	    		<setting type="string" id="sitedove_pro" visibility="hidden" track-old-value="true" default-value="0">
+	    			<description>Pro</description>
+	    		</setting>
+	    		<setting type="string" id="sitedove_elite" visibility="hidden" track-old-value="true" default-value="0">
+	    			<description>Elite</description>
+	    		</setting>
+
+
+	    		<setting type="email" id="email"
+	    			installation-only="true" optional="true">
+	    			<name>Email Address</name>
+	    			<description>Email for delivery of SiteDove credentials</description>
+	    		</setting>
+    		</group>
+    	</settings>
+    	<resources>
+    		<resource class="item" id="sitedove-lite" limiting-setting="sitedove_lite">
+    			<name>SiteDove Lite</name>
+    		</resource>
+    		<resource class="item" id="sitedove-pro" limiting-setting="sitedove_pro">
+    			<name>SiteDove Pro</name>
+    		</resource>
+    		<resource class="item" id="sitedove-elite" limiting-setting="sitedove_elite">
+    			<name>SiteDove Elite</name>
+    		</resource>
+    	</resources>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:version min="4.3"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<status-control />
+    			<structured-output />
+    		</configuration-script>
+    		<resource-script name="resources.php" poll-interval="5m">
+    			<script-language>php</script-language>
+    		</resource-script>
+    	</provision>
+    </service>
+</application>

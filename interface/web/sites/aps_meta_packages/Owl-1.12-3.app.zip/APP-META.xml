@@ -1,0 +1,126 @@
+<application packaged="2014-04-09T09:02:56" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>http://doxbox.ca</id>
+    <name>Owl</name>
+    <version>1.12</version>
+    <release>3</release>
+    <homepage>http://www.doxbox.ca/</homepage>
+    <vendor>
+    	<name>Doxbox</name>
+    	<homepage>http://www.doxbox.ca/</homepage>
+    	<icon path="images/icon.png"/>
+    </vendor>
+    
+    <packager>
+    	<name>SofCloudIT</name>
+    	<homepage>http://www.sofcloudit.com</homepage>
+    	<icon path="images/sofcloudit64.png"/>
+    	<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+    </packager>
+    <presentation>
+    	<summary>OWL is a multi-user document repository or knowledge based system.</summary>
+    	<description>Owl is a multi user document repository (knowledgebase) system written in PHP4 for publishing files/documents onto the web for a corporation, small business, group of people, or just for yourself.</description>
+    	<icon path="images/icon.png"/>
+    	<screenshot path="images/app_screenshot_1.png">
+          <description>
+           Screenshot 1.
+          </description>
+        </screenshot>
+    	<changelog>
+    		<version release="3" version="1.12">
+    			<entry>Disable debug mode. It's incompatible with windows systems.</entry>
+    		</version>
+    		<version release="1" version="1.12">
+    			<entry>Several bugs fixed and some new features added (list of users online, note notifications, new transtaltions...)</entry>
+    		</version>
+    		<version release="1" version="1.10">
+    			<entry>New package version</entry>
+    		</version>
+    		<version release="37" version="0.80">
+      			<entry>Initial package version</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Front office/Help Desk</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <upgrade match="/application/version &gt;= '0.80'"/>
+
+    <service id="instance">
+  	<license must-accept="true">
+  		<text>
+  			<name>License</name>
+  			<file>htdocs/LICENSE.txt</file>
+  		</text>
+  	</license>
+  	<presentation>
+  		<name>Owl</name>
+  		<summary>Owl Intranet Engine</summary>
+  		<infolinks>
+  			<link class="support" href="http://www.doxbox.ca/index.php/forum.html?defaultmenu=79">Owl Forum</link>
+  		</infolinks>
+  		<entry-points>
+  			<entry class="control-panel" dst="/index.php" method="POST">
+					<label>Application entry</label>
+					<description/>
+					<variable class="" name="loginname" value-of-setting="admin_name">admin</variable>
+					<variable name="password" value-of-setting="admin_password">owl</variable>
+				</entry>
+  		</entry-points>
+  	</presentation>
+  	<settings>
+    <group>
+      <name>Administrator's preferences</name>
+      <setting default-value="" id="admin_name" type="string">
+        <name>Administrator's login</name>
+        <error-message>For security reasons, you are not allowed to use "admin", "administrator" or "root" as the user name for the administrative account.</error-message>
+      </setting>
+      <setting default-value="" id="admin_password" type="password">
+        <name>Password</name>
+        <error-message>The password should be at least 7 characters long and contain at least 2 numbers.</error-message>
+      </setting>
+    </group>
+  </settings>
+
+  	<requirements>
+  		<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+  		<db:db xmlns:db="http://apstandard.com/ns/1/db">
+  			<db:id>main</db:id>
+  			<db:default-name>owl</db:default-name>
+  			<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+  			<db:server-type>mysql</db:server-type>
+  			<db:server-min-version>3.20.0</db:server-min-version>
+  		</db:db>
+  		<php:version min="5.1.6" xmlns:php="http://apstandard.com/ns/1/php"/>
+  	</requirements>
+  	<provision>
+  		<configuration-script name="configure">
+  			<script-language>php</script-language>
+  			<structured-output/>
+  		</configuration-script>
+  		<url-mapping>
+  			<default-prefix>owl</default-prefix>
+  			<installed-size>44637769</installed-size>
+  			<mapping path="htdocs" url="/">
+  				<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+  					<php:extension>php</php:extension>
+  				</php:handler>
+  			<mapping path="htdocs/Documents" url="Documents">
+    	<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+    		</mapping>
+    		<mapping path="htdocs/RSSTorrent" url="RSSTorrent">
+    	<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+    		</mapping>
+    		<mapping path="htdocs/ThumbNails" url="ThumbNails">
+    	<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+    		</mapping>
+    		<mapping path="htdocs/TrashCan" url="TrashCan">
+    	<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+    		</mapping>
+    		</mapping>
+  		</url-mapping>
+  	</provision>
+  </service>
+</application>

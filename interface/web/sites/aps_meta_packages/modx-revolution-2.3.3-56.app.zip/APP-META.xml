@@ -1,0 +1,463 @@
+<application packaged="2015-02-02T14:30:05" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>modx-revolution</id>
+	<name>modx-revolution</name>
+	<version>2.3.3</version>
+	<release>56</release>
+	<homepage>http://modxcms.com</homepage>
+	<vendor>
+		<name>modxcms</name>
+		<homepage>http://modx.com/</homepage>
+		<icon path="images/icon.jpg"/>
+	</vendor>
+	<packager>
+		<name>Glowtouch Technologies</name>
+		<homepage>http://www.glowtouch.com/</homepage>
+		<icon path="images/parrallels-GT6.png"/>
+		<uri>uuid:0a584641-6a8a-4810-a69d-7ef8d5fd29b9</uri>
+	</packager>
+	<presentation>
+	<summary xml:lang="ru-RU">Система управления контентом MODx.</summary>
+    <summary xml:lang="en-US">MODx - content managment system.</summary>
+		<summary>MODx is an Open Source PHP web application framework with a capable built-in Content Management System(CMS).</summary>
+
+    <description>MODx Revolution is a powerful PHP Content Management Framework that plays nicely with custom code and helps you build sites faster and maintain them with ease. With Revolution you'll leverage the best things to come around since MVC and Active Record.Voted as Critic’s Choice for Best Open Source CMS of 2012, MODX is a powerful and flexible content management system that molds itself to your design.
+  </description>
+		
+		<description xml:lang="ru-RU">
+			MODx — это профессиональный инструмент разработки сайтов,
+			позволяющий управлять контентом. В отличие от большинства
+			бесплатных CMS — на MODx вы можете построить сайт любой
+			сложности, практически с любым набором функций, при этом
+			система не будет никоим образом влиять на ваш html-код.
+		</description>
+		<description xml:lang="en-US">MODx Revolution is a powerful PHP Content Management Framework that plays nicely with custom code and helps you build sites faster and maintain them with ease. With Revolution you'll leverage the best things to come around since MVC and Active Record.Voted as Critic’s Choice for Best Open Source CMS of 2012, MODX is a powerful and flexible content management system that molds itself to your design.
+  </description>
+		
+		<icon path="images/icon.jpg"/>
+		<screenshot path="images/modx1.jpg">
+			<description xml:lang="ru-RU">
+				Административная часть.
+			</description>
+			<description xml:lang="en-US">Admin panel.</description>
+			<description>Typical view</description>
+		</screenshot>
+		<changelog>
+			<version release="3" version="2.0.0">
+				<entry xml:lang="ru-RU">
+					Изначальная версия пакета.
+				</entry>
+				<entry xml:lang="en-US">Initial package version.</entry>
+			</version>
+			<version release="1" version="2.2.8">
+				<entry>Creating Initial package</entry>
+			</version>
+			<version release="2" version="2.2.8">
+				<entry>Updated</entry>
+			</version>
+			<version release="3" version="2.2.8">
+				<entry>Updated</entry>
+			</version>
+			<version release="4" version="2.2.8">
+				<entry>Updated</entry>
+			</version>
+			<version release="1" version="2.2.9">
+				<entry>Avoid critical error when resource tree not initialized
+- Avoid suppressed warnings with ob_get_level()
+- Upgrade xPDO to 2.2.8-pl
+- [#10043] Fix class-loading LFI in registerLogging
+- [#6937] Fix Persistent/Reflected XSS in User Messaging
+- Set default error_handler_types to error_reporting()
+- Upgrade to ExtJS 3.4.1.1 and add ExtJS debug support
+- [#9976] Fix cross-context symlink caching
+- [#10093] Add create/update methods to S3 Media Sources
+- [#9902] Added error window when package download fails
+- [#10070] fix potential SQL injection vulnerability in modImport
+- [#9843] Added lang_topics field to create and update action window
+- [#10094] Defaults overwriting properties in ResourceCreateProcessor
+- [#10007] Fix parser logic when processing elements via API
+- [#10087] Avoid stat warnings with missing static sources
+- [#9809] Remove empty ULs in topmenu
+- [#7569] Add bottom border to collapsed panels
+- [#146] Also fire field change event on change event
+- Fix contextsAffected in resource/sort processor
+- [#9815] Improved manager redraw on browser resize
+- Fix clearcache timing issue with MODx.Console
+- Prevent accumulation of MODx.Console onMessage callbacks
+- Prevent session write errors from phpthumb cache
+- [#9964] Fix Import HTML to use context of parent
+- [#9916] Add TABLE to TRUNCATE command in flushSessions (SQLSRV)
+- [#9527] Fix password reset by user email
+- Fix login processor to use absolute url redirects for mgr
+- [#9826] Fix errant creation of Policy Templates
+</entry>
+			</version>
+			<version release="19" version="2.2.9">
+				<entry>Applied classes</entry>
+			</version>
+			<version release="29" version="2.2.9">
+				<entry>Added template code and changed group class</entry>
+			</version>
+			<version release="36" version="2.2.10">
+				<entry> Fixed an issue that particularly caused problems when using Static Chunks in Wayfinder, FormIt, and other Extras, as well as causing issues with parsing order on any Resource that made use of a Media Source.
+ Improve sanitization of processor_err_nf response
+ Fixed issues with stale data being returned from the database cache
+ Greatly increased coverage and accuracy of [^qt^] (query time) and [^q^] (number of queries) tag statistics.
+  Prevent extended user classes being set to modUser</entry>
+			</version>
+			<version release="1" version="2.2.11">
+				<entry>- Increase message_limit for ExtJS HttpStateProvider
+- Fix lexicon getList processor
+- Remove warnings/preview button for deleted Resources
+- Ensure context_key is passed when reloading Resource
+- Destroy drop targets on panel destroying
+- Add separation between a minute (singular) and minutes (plural)
+- Confirm navigation when unsaved changes exist in resource panel
+- Fix deprecated returnValue to prevent confirm navigation alert
+- Fix xPDO-&gt;parseBindings bug triggering modDbRegisterMessage errors
+- Prevent processor property overwriting in modX::runProcessor()
+- Add open in new window action to middle mouse button click in trees
+- Preserve value types in modSystemEvent::output()
+- Prevent removal of user groups after validation fails
+- Remove extra dot in filename for Content Disposition attachment
+- Fix unescaped backslash in file and image TV
+- Update xPDO to 2.3.0-alpha
+- Remove all dependency on mysql extension (deprecated in PHP &gt;= 5.5)
+- Prevent "core" namespace removal
+- Remove cache clearing logic from system setting model
+- Update phpthumb to 1.7.11-beta to close security vulnerability
+- Prevent XSS on actionVar in header.tpl
+- Fix caching of manager menus</entry>
+			</version>
+			<version release="2" version="2.2.11">
+				<entry>Regex added</entry>
+			</version>
+			<version release="3" version="2.2.11">
+				<entry>- Increase message_limit for ExtJS HttpStateProvider
+- Fix lexicon getList processor
+- Remove warnings/preview button for deleted Resources
+- Ensure context_key is passed when reloading Resource
+- Destroy drop targets on panel destroying
+- Add separation between a minute (singular) and minutes (plural)
+- Confirm navigation when unsaved changes exist in resource panel
+- Fix deprecated returnValue to prevent confirm navigation alert
+- Fix xPDO-&gt;parseBindings bug triggering modDbRegisterMessage errors
+- Prevent processor property overwriting in modX::runProcessor()
+- Add open in new window action to middle mouse button click in trees
+- Preserve value types in modSystemEvent::output()
+- Prevent removal of user groups after validation fails
+- Remove extra dot in filename for Content Disposition attachment
+- Fix unescaped backslash in file and image TV
+- Update xPDO to 2.3.0-alpha
+- Remove all dependency on mysql extension (deprecated in PHP &gt;= 5.5)
+- Prevent "core" namespace removal
+- Remove cache clearing logic from system setting model
+- Update phpthumb to 1.7.11-beta to close security vulnerability
+- Prevent XSS on actionVar in header.tpl
+- Fix caching of manager menus
+- Added Regex</entry>
+			</version>
+			<version release="38" version="2.2.11">
+				<entry>- Increase message_limit for ExtJS HttpStateProvider
+- Fix lexicon getList processor
+- Remove warnings/preview button for deleted Resources
+- Ensure context_key is passed when reloading Resource
+- Destroy drop targets on panel destroying
+- Add separation between a minute (singular) and minutes (plural)
+- Confirm navigation when unsaved changes exist in resource panel
+- Fix deprecated returnValue to prevent confirm navigation alert
+- Fix xPDO-&gt;parseBindings bug triggering modDbRegisterMessage errors
+- Prevent processor property overwriting in modX::runProcessor()
+- Add open in new window action to middle mouse button click in trees
+- Preserve value types in modSystemEvent::output()
+- Prevent removal of user groups after validation fails
+- Remove extra dot in filename for Content Disposition attachment
+- Fix unescaped backslash in file and image TV
+- Update xPDO to 2.3.0-alpha
+- Remove all dependency on mysql extension (deprecated in PHP &gt;= 5.5)
+- Prevent "core" namespace removal
+- Remove cache clearing logic from system setting model
+- Update phpthumb to 1.7.11-beta to close security vulnerability
+- Prevent XSS on actionVar in header.tpl
+- Fix caching of manager menus
+- Added Regex</entry>
+			</version>
+			<version release="39" version="2.2.12">
+				<entry>Navigation Nag and PHPThumb Fixed</entry>
+			</version>
+			<version release="41" version="2.2.13">
+				<entry>new release</entry>
+			</version>
+			<version release="45" version="2.2.14">
+				<entry>Base release
+Changed shema
+Changes in site_templates table</entry>
+			</version>
+			<version release="46" version="2.2.14">
+				<entry>updated</entry>
+			</version>
+			<version release="47" version="2.2.14">
+				<entry>updated</entry>
+			</version>
+			<version release="48" version="2.2.14">
+				<entry>updated</entry>
+			</version>
+			<version release="50" version="2.2.14">
+				<entry>updated</entry>
+			</version>
+			<version release="52" version="2.3.1">
+				<entry>- Make Gravatar optional (enabled by default)
+- Update logos, login and help view
+- Update base_help_url to be protocol relative
+- Fix login after a session expired [#11763]
+- Fix manager menus for sqlsrv driver [#11677]
+- Refactor validation of a connector being included [#11738]
+- Updated RSS security feed to be Revo specific [#9440]
+- Do not output modScript include result w/o explicit string return [#11705]
+- Move OnInitCulture event to parser service [#10366]
+- Fix password reset feature [#11725]
+- Adjust appearance of saving window for new design
+- Fix labels / TVs in custom FC tabs [#11758]
+- Fix hover-preview thumbnail border width in Files tree
+- Fix long category name overflow in vertical tabs [#11728]
+- Enable usernav menus for mobile devices
+- Update phpthumb release to v1.7.13 [#11742]
+- Fix pagination in Topic combobox [#11713]
+- Simplify Gravatar profile image fallback [#11716]
+- Correct duplicate method declarations in phpthumb class [#11700]
+- Chnaged index.css file</entry>
+			</version>
+			<version release="55" version="2.3.2">
+				<entry>In this version
+- Fixed issue with S3 buckets containing dots
+- Fixes issue with Form Customizations containing multiple constraints on TVs
+- Single-Select TVs now retain custom values in the dropdown select options
+- Fixed birthdate on 1970/01/01 resulting in false
+- Restores horizontal scrolling to the Resource tree [#11949]
+- Language simplification for context menu items
+- Fixed property set creation which allowed empty 'name'
+- Fix for arrow that pointed wrong way in collapse areas
+- Fixed rendering TVs to modx-resource-content by Manager customizations
+- Fix default category name when creating a new element instead of showing 0
+- Fix store load if init combobox value is 0
+- Display context name in combo box
+- Fixed elements search results icons
+- Removed listeners/actions on Media browser data view double click
+- Added visual indication in elements trees when an element is edited (active class)
+- Removed unused code in Resource Tree Panel
+- Enable path style on AWS driver if the bucket's name contains a dot
+- More use of 'manager_date_format' in the manager
+- Use FontAwesome checkbox icons instead of sprite images
+- Made MODx.combo.Browser Media Source defaulting to the defined default Media source instead of hard coded id "1"
+- Replace security/forms/set/export processor with a class based one and fix
+- Fixed issue where batch removing access policies was only allowed for "core" policies.
+- Updated alias length to 255 in ExtJS</entry>
+			</version>
+			<version release="56" version="2.3.3">
+				<entry>- Add OnCacheUpdate event to refresh() method
+- Check for valid google.com DNS before trying to load feeds
+- Fix case of table_prefix and service_class in modX-&gt;_loadExtensionPackages()
+- Fixed showing RTE in all resource types
+- Fixed sorting in MODX browser
+- Fixed updating resources from recent resources in user's profile
+- Fixed duplicating user
+- Unset modx.user.userGroups in joinGroup()
+- Use window.location.search to populate MODx.request
+- Added option to delete property from Property Set using the UI
+- Fixed preserving locked attribute in elements after quick update
+- Allow copy&amp;paste system information page
+- Fixed urlAbsolute path in media sources
+- Fixed column width grid head/content
+- Fixed connector's URL when getting media source list
+- Make syncsite checkbox a system setting
+- Added system setting for automatic/manual switching container property in resources
+- Fixed showing lock tree icon for locked resources
+- Fixed @INHERIT binding in TVs
+- Make FC profiles sortable by template
+- Removed limit to getnodes for menu items
+- Fixed error message and missed lexicon for create chunk
+- Fix timezone problem
+- Fix javascript error while revert to default new property
+- Hide Duplicate buttons from Resource panel when user don't have permissions
+- Fix Password tab visible in edit profile to users without permission
+- Remove C:\fakepath\ from filename when importing property sets
+- Fix unnecessary scrollbars in windows
+- Fix wrong error message for creating new namespace
+- Remove limit from modx-combo-category combobox
+- Improved generateContext method to be quicker
+- Fixed loading theme based styles on login screen
+- Fixed selecting the same file to upload again
+- Fixed removing plugin from an event via the Update plugin event window
+- Fixed autoredirect after creating user
+- Fix context settings remove and update from window
+- Fixed showing minLength and maxLength value in error msg for text TVs
+- Prevent $this-&gt;resourceArray['resource_groups'] from being undefined
+- Fixed disabling caching of a chunk's output
+- Fixed Duplicate resource button visibility
+- Updated memberof output filter to return integer
+- Fixed setting resource as it's own parent
+- Trim setting's key before saving
+- Sort plugin events by enabled
+- Restore permission for menu help
+- Fixed processor path in user panel
+- Move refreshURIs() call from clear cache to new menu item Refresh URIs
+- Fix uploading packages on Windows</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+		<languages>
+			<language>ru</language>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '2.0.0'"/>
+	<upgrade match="/application/version = '2.8.8' and aplication/release = '4'"/>
+	<upgrade match="/application/version &gt;= '2.2.10' and aplication/release &gt;= '1'"/>
+	<service id="modx-revolution">
+		<license must-accept="true">
+			<text>
+				<name>GPLv3</name>
+				<file>scripts/LICENSE</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Modx-Revolution</name>
+			<summary>Modx-Revolution Web/Content management blog</summary>
+			<infolinks>
+				<link class="support" href="http://modx.com/support/">Modx-Revolution Support</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/">
+					<label>Blog</label>
+				</entry>
+				<entry class="control-panel" dst="/manager/" method="POST">
+					<label>Administrative interface</label>
+					<variable class="login" name="username" value-of-setting="admin_name"/>
+					<variable class="password" name="password" value-of-setting="admin_password"/>
+					<variable name="login_context">mgr</variable>
+					<variable name="login">mgr</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name xml:lang="ru-RU">Имя администратора</name>
+					<name xml:lang="en-US">Admin name</name>
+					<name>Administrator's login</name>
+				</setting>
+				<setting class="password" id="admin_password" min-length="1" regex="^[a-zA-Z0-9!@#$%\^&amp;*+=._-{}\[\]:``\\|?,]*$" type="password">
+					<name xml:lang="ru-RU">Пароль</name>
+					<name xml:lang="en-US">Password</name>
+					<name>Password</name>
+					<error-message>The following characters are not allowed in password field '&lt;&gt;();"</error-message>
+				</setting>
+</group>
+<group class="vcard">
+				<name xml:lang="ru-RU">Настройки</name>
+				<name xml:lang="en-US">Settings</name>
+				<name>Main configuration</name>
+				<group class="email">
+				<setting class="value" id="admin_email" type="email">
+					<name xml:lang="ru-RU">Email администратора</name>
+					<name xml:lang="en-US">Admin email</name>
+				</setting>
+				</group>
+				<group class="org">
+				<setting class="organization-name" default-value="Modx" id="title" min-length="1" type="string">
+					<name xml:lang="ru-RU">Имя сайта</name>
+					<name xml:lang="en-US">Site Name</name>
+					<name>Blog</name>
+				</setting>
+				</group>
+			</group>
+			<group class="web">
+				<name>Other preferences</name>
+				<setting class="description" default-value="true" id="demodata" installation-only="true" type="enum">
+					<name xml:lang="ru-RU">Установить демо-данные</name>
+					<name xml:lang="en-US">Install demo data</name>
+					<choice id="true">
+						<name>Yes</name>
+						<name xml:lang="ru-RU">Да</name>
+						<name xml:lang="en-US">Yes</name>
+					</choice>
+					<choice id="false">
+						<name>No</name>
+						<name xml:lang="ru-RU">Нет</name>
+						<name xml:lang="en-US">No</name>
+					</choice>
+				</setting>
+				<setting class="locale" default-value="en-US" id="locale" type="enum">
+					<name>Interface language</name>
+					<name xml:lang="ru-RU">Язык интерфейса</name>
+					<name xml:lang="en-US">Interface language</name>
+					<choice id="en-US">
+						<name xml:lang="ru-RU">Английский</name>
+						<name xml:lang="en-US">English</name>
+					</choice>
+					<choice id="ru-RU">
+						<name xml:lang="ru-RU">Русский</name>
+						<name xml:lang="en-US">Russian</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">zlib</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">pdo_mysql</php:extension>
+			<php:memory-limit xmlns:php="http://apstandard.com/ns/1/php">25165824</php:memory-limit>
+			<php:version min="5.1.1" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>modx</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>4.1.20</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>modx</default-prefix>
+				<installed-size>29119125</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="core">
+						<mapping url="cache">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="packages">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="export">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="import">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="components">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+					<mapping url="assets">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="components">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

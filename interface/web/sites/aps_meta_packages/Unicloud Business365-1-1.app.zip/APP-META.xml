@@ -1,0 +1,108 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-10-24T17:26:55">
+    <id>https://business365.ru</id>
+    <name>Unicloud Business365</name>
+    <version>1</version>
+    <release>1</release>
+    <homepage>http://www.business365.ru</homepage>
+    <vendor>
+    	<name>LCC Unicloud Labs</name>
+    	<homepage>http://uni-cloud.ru/</homepage>
+    	<icon path="images/business365_logo.jpg" />
+    </vendor>
+    <packager>
+    	<name>LCC Unicloud Labs</name>
+    	<homepage>http://uni-cloud.ru/</homepage>
+    	<icon path="images/business365_logo.jpg" />
+    	<uri>http://uni-cloud.ru/</uri>
+    </packager>
+    <presentation>
+    	<summary>Unicloud Business 365</summary>
+    	<description>Облачная система позволяет эффективно автоматизировать основные процессы
+малого и среднего бизнеса и организовывать совместную работу между
+компаниями прямо в рамках системы. Компании могут вести совместные проекты,
+задачи, обсуждения, обмениваться файлами и даже подписывать договоры, акты,
+счета-фактуры с помощью электронной подписи.
+
+http://www.youtube.com/watch?v=bTr5KBqHCVE</description>
+    	<icon path="images/business365_logo.jpg" />
+    	<screenshot path="images/business365_01.jpg">
+    		<description>Возможности
+
+Business 365 позволяет легко ставить задачи перед
+командой и контролировать ход их выполнения. Система
+несет полную ответственность за все ваши проекты и
+позволит вам легко наверстать то, что вы пропустили.
+
+Business 365 является центральным местом для хранения
+всех заметок о партнерах и клиентах. Система упрощает
+процесс ведения сделок и позволяет делиться их
+статусом внутри компании, отдела и команды.
+
+Загружайте документы любого формата или создавайте
+их из шаблонов, отправляйте и принимайте электронную
+корреспонденцию от ваших партнеров.</description>
+    	</screenshot>
+    	<screenshot path="images/business365_02.jpg">
+    		<description>Преимущества
+
+− Интерфейс системы един как на настольном
+компьютере или ноутбуке, так и на планшете, а
+сама система работает из любого современного
+браузера без необходимости установки на
+локальные компьютеры.
+
+− Все формы, с которыми работает пользователь,
+максимально упрощены и зачастую имеют не
+более одного обязательного поля. Например,
+чтобы завести клиента, достаточно ввести только
+его наименование.
+
+− В интерфейсе применена новейшая концепция
+слоев, которая позволяет увидеть всю картину
+целиком, погрузиться в необходимые детали, а
+затем мгновенно вернуться к исходной точке. Это
+невероятно повышает эффективность работы
+обычного сотрудника и делает процесс работы с
+системой приятным и удобным.
+
+− В любом месте системы присутствует единая
+командная строка, в которую можно ввести
+текст, например «Предоставить отчет Петр
+послезавтра», нажать на «Создать задачу» и
+получить задачу с текстом «Предоставить отчет»,
+назначенную на сотрудника Петра со сроком
+выполнения послезавтра.</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1">
+    			<entry>ProductionRelise</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Back office/Customer Relationship Management</category>
+    	</categories>
+    	<languages>
+    		<language>ru</language>
+    	</languages>
+    </presentation>
+    <service id="Unicloud Business 365" class="service">
+    	<license must-accept="false">
+    		<free />
+    		<text>
+    			<name>License</name>
+    			<url>http://business365.ru</url>
+    		</text>
+    	</license>
+    	<presentation>
+    	<summary>Unicloud Business 365</summary>
+    		<infolinks>
+    			<link href="http://business365.copiny.com/" class="support">help</link>
+    		</infolinks>
+			<entry-points>
+				<entry dst="https://www.business365.ru" method="GET" class="frontpage">
+					<label>Вход в приложение</label>
+				</entry>
+			</entry-points>
+    	</presentation>
+    </service>
+</application>

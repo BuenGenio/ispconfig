@@ -1,0 +1,178 @@
+<application packaged="2016-09-29T12:27:38" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>https://moguta.ru/</id>
+    <name>MogutaCMS</name>
+    <version>6.6.5</version>
+    <release>3</release>
+    <homepage>https://moguta.ru/</homepage>
+    <vendor>
+        <name>Moguta CMS</name>
+        <homepage>https://moguta.ru</homepage>
+        <icon path="images/logo.png"/>
+    </vendor>
+    <packager>
+	<name>KOMTET</name>
+	<homepage>https://komtet.ru</homepage>
+	<icon path="images/packager.png"/>
+	<uri>uuid:0f463d3b-3333-499e-976c-a55a515853c8</uri>
+    </packager>
+    
+    
+    <presentation>
+	<summary>CMS-платформа для вашего интернет-магазина!</summary>
+	<summary xml:lang="en-US">CMS-platform for your online store!</summary>
+	<description>83% наших пользователей считают нашу систему управления более интуитивно понятной и удобной в работе.
+В Moguta.CMS есть модули, которые автоматически повышают продажи вашего интернет-магазина на 15-40%. 
+Абсолютно бесплатно мы поделимся знаниями как раскрутить ваш бизнес. 
+Наши специалисты помогут Вам технически настроить магазин.
+	</description>
+	<description xml:lang="en-US">83% of our users consider our management system more intuitive and user-friendly operation.
+In Moguta.CMS have modules that automatically increase the sales of your online store at 15-40%.
+Absolutely free, we will share knowledge how to promote your business.
+Our technical experts will help you set up shop.
+	</description>
+    
+	<icon path="images/logo.png"/>
+	<screenshot path="images/site.png">
+    	    <description>Главный экран</description>
+    	    <description xml:lang="en-US">Main screenshot.</description>
+	</screenshot>
+	<screenshot path="images/admin.png">
+    	    <description>Панель управления сайтом</description>
+    	    <description xml:lang="en-US">Admin screenshot.</description>
+	</screenshot>
+	<changelog>
+    	    <version release="1" version="6.6.5">
+        	<entry>Изначальная версия пакета от КОМТЕТ</entry>
+        	<entry xml:lang="en-US">Initial package version from KOMTET</entry>
+    	    </version>
+    	    <version release="2" version="6.6.5">
+                <entry>Добавление правила RewriteBase в htaccess</entry>
+                <entry xml:lang="en-US">Adding RewriteBase rules in htaccess</entry>
+            </version>
+            <version release="3" version="6.6.5">
+                <entry>Изменение RewriteBase в htaccess при конфигурации пакета</entry>
+                <entry xml:lang="en-US">Change RewriteBase in htaccess with package configuration</entry>
+            </version>
+	</changelog>
+	<categories>
+            <category>Web/Content management</category>
+        </categories>
+	<languages>
+    	    <language>ru</language>
+    	    <language>en</language>
+    	    <language>ua</language>
+	</languages>
+    </presentation>	
+
+    <service id="instance">
+	<license must-accept="true">
+    	    <text>
+    		<name>GNU GENERAL PUBLIC LICENSE Version 2.</name>
+        	<file>htdocs/LICENSE.txt</file>
+    	    </text>
+	</license>  
+	<presentation>
+	    <name>Moguta</name>
+	    <summary>MogutaCMS</summary>
+	    <infolinks>
+                <link class="support" href="http://forum.moguta.ru/">Форум поддержки</link>
+            </infolinks>
+            <entry-points>
+    		<entry class="control-panel" dst="/mg-admin/" method="GET">
+        	    <label>Панель управления</label>
+    		</entry>
+    		<entry dst="/" method="GET">
+        	    <label>Сайт</label>
+    		</entry>
+	    </entry-points>
+	</presentation>
+	
+	<settings>
+	    <group class="authn">
+		<name>Настройки администрирования</name>
+		<setting class="login" default-value="admin" id="admin_name" installation-only="true" max-length="64" min-length="1" type="string">
+		    <name>Имя администратора</name>
+		</setting>
+		<setting class="password" id="admin_password" min-length="1" type="password">
+		    <name>Пароль администратора</name>
+		</setting>
+	    </group>
+	    <group class="vcard">
+		<name>Главные настройки</name>
+		<group class="email">
+		    <setting class="value" id="admin_email" type="email">
+			<name>email администратора</name>
+		    </setting>
+		</group>
+		<group class="fn n">
+		    <setting class="organization-name" default-value="Мой магазин" id="title" installation-only="true" min-length="1" type="string">
+			<name>Имя сайта</name>
+		    </setting>
+		</group>		
+	    </group>
+	    <group class="web">    
+        	<setting default-value="ru" id="language" installation-only="true" type="enum">
+            	    <name>Язык сайта</name>
+            	    <choice id="en"> <name>English</name> </choice>
+            	    <choice id="ru"> <name>Русский</name> </choice>
+            	    <choice id="ua"> <name>Український</name> </choice>
+        	</setting>		
+	    </group>
+	</settings>
+	
+	<requirements>
+    	    <php:version min="5.3.3" xmlns:php="http://apstandard.com/ns/1/php"/>
+    	    <php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+    	    <php:extension xmlns:php="http://apstandard.com/ns/1/php">xmlreader</php:extension>
+    	    <php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+    	    <php:extension xmlns:php="http://apstandard.com/ns/1/php">zlib</php:extension>
+    	    <php:extension xmlns:php="http://apstandard.com/ns/1/php">session</php:extension>
+    	    <php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+    	    <php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+    	    <php:extension xmlns:php="http://apstandard.com/ns/1/php">zip</php:extension>
+    	    <php:extension xmlns:php="http://apstandard.com/ns/1/php">xmlwriter</php:extension>
+    	    <php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+        
+    	    <db:db xmlns:db="http://apstandard.com/ns/1/db">
+        	<db:id>main</db:id>
+        	<db:default-name>moguta</db:default-name>
+        	<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+        	<db:server-type>mysql</db:server-type>
+        	<db:server-min-version>5.0.4</db:server-min-version>
+    	    </db:db>	
+	</requirements>
+	<provision>
+	    <configuration-script name="configure">
+		<script-language>php</script-language>
+	    </configuration-script>
+	    <url-mapping>
+		<default-prefix>moguta</default-prefix>
+		<installed-size>33343177</installed-size>
+		<mapping path="htdocs" url="/">
+    		    <php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+    		    <php:handler xmlns:php="http://apstandard.com/ns/1/php">
+        		<php:extension>php</php:extension>
+    		    </php:handler>
+    		    <mapping url="uploads">
+<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+</mapping>
+    		    <mapping url="mg-templates">
+<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+</mapping>
+    		    <mapping url="mg-admin">
+<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+</mapping>
+    		    <mapping url="mg-core">
+<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+</mapping>
+    		    <mapping url="mg-pages">
+<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+</mapping>
+    		    <mapping url="mg-plugins">
+<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+</mapping>
+		</mapping>
+	    </url-mapping>
+	</provision>
+    </service>
+</application>

@@ -1,0 +1,335 @@
+<application packaged="2018-03-19T09:02:37" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>moodle</id>
+	<name>moodle</name>
+	<version>3.4.2</version>
+	<release>98</release>
+	<homepage>http://moodle.org/</homepage>
+	<vendor>
+		<name>moodle.org</name>
+		<homepage>http://moodle.org/</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Plesk</name>
+		<homepage>http://plesk.com</homepage>
+		<icon path="images/packager.png"/>
+		<uri/>
+	</packager>
+	<presentation>
+		<summary>Open source software for creating online education sites</summary>
+		<description>Moodle is a course management system (CMS) - a free, open source software package designed using sound pedagogical principles, to help educators create effective online learning communities. It can scale from a single-teacher site to a 50,000-student university.</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/app_screenshot.png">
+			<description>This screen shows the front page of a Moodle site. Here you can view a list of available learning programs and	choose the one you need.</description>
+		</screenshot>
+		<changelog>
+			<version release="98" version="3.4.2">
+				<entry>https://docs.moodle.org/dev/Moodle_3.4.2_release_notes</entry>
+			</version>
+			<version release="1" version="3.4.1">
+				<entry>https://docs.moodle.org/dev/Moodle_3.4.1_release_notes</entry>
+			</version>
+			<version release="1" version="3.4">
+				<entry>https://docs.moodle.org/dev/Moodle_3.4_release_notes</entry>
+			</version>
+			<version release="1" version="3.3.2">
+				<entry>https://docs.moodle.org/dev/Moodle_3.3.2_release_notes</entry>
+			</version>
+			<version release="1" version="3.3.1">
+				<entry>https://docs.moodle.org/dev/Moodle_3.3.1_release_notes</entry>
+			</version>
+			<version release="1" version="3.3">
+				<entry>https://docs.moodle.org/dev/Moodle_3.3_release_notes</entry>
+			</version>
+			<version release="1" version="3.2.3">
+				<entry>https://docs.moodle.org/dev/Moodle_3.2.3_release_notes</entry>
+			</version>
+			<version release="1" version="3.2.2">
+				<entry>https://docs.moodle.org/dev/Moodle_3.2.2_release_notes</entry>
+			</version>
+			<version release="1" version="3.2.1">
+				<entry>https://docs.moodle.org/dev/Moodle_3.2.1_release_notes</entry>
+			</version>
+			<version release="1" version="3.1.4">
+				<entry>https://docs.moodle.org/dev/Moodle_3.1.4_release_notes</entry>
+			</version>
+			<version release="1" version="3.1.3">
+				<entry>https://docs.moodle.org/dev/Moodle_3.1.3_release_notes</entry>
+			</version>
+			<version release="1" version="3.1.2">
+				<entry>https://docs.moodle.org/dev/Moodle_3.1.2_release_notes</entry>
+			</version>
+			<version release="1" version="3.1">
+				<entry>https://docs.moodle.org/dev/Moodle_3.1_release_notes</entry>
+			</version>
+			<version release="1" version="3.0.4">
+				<entry>https://docs.moodle.org/dev/Moodle_3.0.4_release_notes</entry>
+			</version>
+			<version release="1" version="3.0.3">
+				<entry>https://docs.moodle.org/dev/Moodle_3.0.3_release_notes</entry>
+			</version>
+			<version release="1" version="2.8.11">
+				<entry>https://docs.moodle.org/dev/Moodle_2.8.11_release_notes</entry>
+			</version>
+			<version release="1" version="2.8.10">
+				<entry>https://docs.moodle.org/dev/Moodle_2.8.10_release_notes</entry>
+			</version>
+			<version release="1" version="2.8.9">
+				<entry>https://docs.moodle.org/dev/Moodle_2.8.9_release_notes</entry>
+			</version>
+			<version release="1" version="2.8.8">
+				<entry>http://docs.moodle.org/dev/Moodle_2.8.8_release_notes</entry>
+			</version>
+			<version release="1" version="2.8.7">
+				<entry>https://docs.moodle.org/dev/Moodle_2.8.7_release_notes</entry>
+			</version>
+			<version release="1" version="2.8.6">
+				<entry>https://docs.moodle.org/dev/Moodle_2.8.6_release_notes</entry>
+			</version>
+			<version release="1" version="2.8.5">
+				<entry>https://docs.moodle.org/dev/Moodle_2.8.5_release_notes</entry>
+			</version>
+			<version release="1" version="2.8.3">
+				<entry>https://docs.moodle.org/dev/Moodle_2.8.3_release_notes</entry>
+			</version>
+			<version release="27" version="2.8.2">
+				<entry>https://docs.moodle.org/dev/Moodle_2.8.2_release_notes</entry>
+			</version>
+			<version release="26" version="2.8.1">
+				<entry>https://docs.moodle.org/dev/Moodle_2.8.1_release_notes</entry>
+			</version>
+			<version release="24" version="2.8">
+				<entry>https://docs.moodle.org/dev/Moodle_2.8_release_notes</entry>
+			</version>
+			<version release="23" version="2.7.2">
+				<entry>Atto now working with form change checker and quiz autosave
+Mathjax address that changed, that caused Atto to fail to load, has been updated in Moodle 
+Gradebook Sum of grades shows correct total if items are hidden
+Warning given when the same memcached instance is used for both sessions and MUC 
+For Multiple choices questions in the quiz / question bank, the options "Clear incorrect responses" and "Show the number of correct responses" did not make sense for "One answer only" questions. It is now impossible to select that combination of options on the form
+ Description of assignment hidden in calendar if "always show description" = NO
+Weekly stats now working again
+Automatic emails now sent after users import from CSV
+Parent role only sees course total and no longer individual grades
+Start New Attempt option is now followed if SCORM is set to appear in a popup </entry>
+			</version>
+			<version release="1" version="2.7.1">
+				<entry>https://docs.moodle.org/dev/Moodle_2.7.1_release_notes</entry>
+			</version>
+			<version release="21" version="2.7">
+				<entry>Interface
+Moodle is focussed on Bootstrap and improved responsive design. Clean is now the default theme and most other old themes have been removed from core (still available from Plugins directory). Many small improvements have been made all through the interface. 
+A completely new theme called More that provides easy configuration though the UI, while retaining the efficiency of LESS and the responsiveness of Bootstrap. 
+Atto - Tightly integrated in Moodle and focussing on usability and accessibility (TinyMCE still available as an option). 
+Complex boolean combinations are now supported, with a conditions plugin API and a better interface...and it's faster! 
+New mathematical equation editor for Atto, producing TeX using a GUI without needing Java. Works everywhere, even tablets and phones.
+New MathJax filter for displaying mathematical equations without needing binaries on the server.
+New report listing all events possible on a site. 
+
+Platform
+Logging - a new logging subsystem with plugins allowing Moodle logs to be very detailed and external. Log reports have been updated too. Many new events have been added which developers can take advantage of. These advancements will support better analytics in future as well as reporting standards like TinCan.
+Scheduled Tasks - an improved scheduling system (like Unix cron) that allows precise scheduling of tasks even on complex clustered servers.
+Performance - With improvements to logging and scheduled tasks, as well as many other small improvements, overall performance will be improved, particularly on large sites</entry>
+			</version>
+			<version release="20" version="2.6.2">
+				<entry>Auto-saved responses are used when a quiz attempt is submitted automatically
+Order and Paging controls are now more accessible
+Improved accessibility of shortform collapsing
+Random short answer matching question type now works again (with thanks to Jean-Michel Védrine) 
+Language menu in Clean shows language used 
+"Time spent waiting for the database" value added to performance info
+Behat now has an option to take screenshots on failure 
+Skydrive, Box.net and Google Docs are renamed OneDrive, Box and Google Drive to reflect these remote service name changes. 
+Mod chooser no longer causes a jump in scroll position when first used.
+JavaScript no longer breaks on IE8
+Long course names are truncated in navigation menu
+Long block titles are truncated in Clean
+Performance improvement to missing root directory upgrade step
+Assignment marking guide screen fixed in Clean
+The link colour in Bootstrapbase (and Clean) is now WCAG compliant
+Quiz user overrides no longer deleted by group event handler
+Variant field of question_attempts is backed up by Moodle backup
+Scrolling is locked behind full-screen dialogues
+Activity show/hide toggle fixed in hidden and orphaned sections
+Backup no longer introduces duplicate gradeitem sortorders when restoring </entry>
+			</version>
+			<version release="19" version="2.6.1">
+				<entry>added user entry point</entry>
+			</version>
+			<version release="1" version="2.6.1">
+				<entry>Able to edit a larger number of grades in the grader report
+Improved ActionMenu ARIA support 
+Timeouts are now configurable in repository plugins
+Quiz auto-save detects that the connection to the server has been lost and warns students 
+Behat tests adapted to Clean theme
+Environmental information shown at the beginning of every Behat run
+Behat hardcoded waits removed 
+Can start a new attempt in Assignment (based on previous one)
+Invalid JSON no longer output on filepicker when repository plugins output invalid content
+get_child_contexts() returns correct contexts when context path missing
+Group cache works as expected
+Can now delete users with invalid emails
+Assignment submission comments are restored
+Default enrolment duration is now applied when manually enrolling a user </entry>
+			</version>
+			<version release="1" version="2.6">
+				<entry>Easily review and provide in-line feedback by annotating on PDF files directly within browser. Conveniently allocate student assignments to different markers, and control when marks are released to individual students.
+Certainty-based marking in Quizzes now provides improved feedback for learners.
+
+Quickly edit course activities and resources across all devices.
+ Easily add a Single activity course format.
+ Create and manage bulk courses efficiently
+ Simpler course and category management
+Create additional name fields
+Conveniently import and export role definition using XML file
+Restoring of very large courses possible</entry>
+			</version>
+			<version release="12" version="2.5.2">
+				<entry>Removal script is fixed</entry>
+			</version>
+			<version release="1" version="2.5.2">
+				<entry>Form validation and error recovery draws the user to where focus is needed
+Uploaded users can be added with authentication options other than Manual account or No login. Folders displayed on course pages show their name. 
+Folders displayed on course pages show their name. 
+Links to course activities/resources do not appear to users without appropriate view capabilities. 
+Confirmation is no longer needed after deleting a comment.
+Folders displayed on course pages show their name.
+Question category info is now edited using the HTML editor. 
+API changes-Mock form submission introduced for testing. </entry>
+			</version>
+			<version release="1" version="2.5.1">
+				<entry>http://docs.moodle.org/dev/Moodle_2.5.1_release_notes</entry>
+			</version>
+			<version release="6" version="2.5">
+				<entry>http://docs.moodle.org/dev/Moodle_2.5_release_notes</entry>
+			</version>
+			<version release="1" version="2.4.3">
+				<entry>http://docs.moodle.org/dev/Moodle_2.4.3_release_notes</entry>
+			</version>
+			<version release="1" version="2.4.2">
+				<entry>http://docs.moodle.org/dev/Moodle_2.4.2_release_notes</entry>
+			</version>
+			<version release="1" version="2.4.1">
+				<entry>http://docs.moodle.org/dev/Moodle_2.4.1_release_notes</entry>
+			</version>
+			<version release="1" version="2.4">
+				<entry>http://docs.moodle.org/dev/Moodle_2.4_release_notes</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/eLearning</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<upgrade match="/application/version &gt;= '2.7.14'"/>
+	<service id="moodle">
+		<license must-accept="true">
+			<text>
+				<name>GNU LESSER GENERAL PUBLIC LICENSE Version 2.1</name>
+				<file>htdocs/LICENSE.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>moodle</name>
+			<summary>moodle Web/eLearning engine</summary>
+			<infolinks>
+				<link class="support" href="https://moodle.org/support/">Moodle Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/login/index.php" method="POST">
+					<label>Administrative interface</label>
+					<variable class="login" name="username" value-of-setting="admin_name"/>
+					<variable class="password" name="password" value-of-setting="admin_password"/>
+				</entry>
+				<entry dst="/">
+					<label>Moodle</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting class="password" id="admin_password" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Main configuration</name>
+				<group class="email">
+					<setting class="value" id="admin_email" installation-only="true" type="email">
+						<name>Administrator's email</name>
+					</setting>
+				</group>
+				<group class="org">
+					<name>Default preferences</name>
+					<setting class="organization-name" id="full_site_name" installation-only="true" min-length="1" type="string">
+						<name>Full site name</name>
+					</setting>
+					<setting class="organization-name" id="short_site_name" installation-only="true" min-length="1" type="string">
+						<name>Short name for site</name>
+					</setting>
+					<setting class="organization-name" id="summary" installation-only="true" min-length="0" optional="true" type="string">
+						<name>The summary to be displayed on the front page</name>
+					</setting>
+				</group>
+			</group> 
+		</settings>
+		<requirements>
+			<php:version min="7.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">ctype</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">dom</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">hash</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">iconv</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">intl</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">pcre</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">SimpleXML</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">SPL</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">xml</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">xmlreader</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">zip</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">zlib</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">fileinfo</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">openssl</php:extension>
+
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<php:register-globals xmlns:php="http://apstandard.com/ns/1/php">false</php:register-globals>
+			<php:file-uploads xmlns:php="http://apstandard.com/ns/1/php">true</php:file-uploads>
+			<php:memory-limit xmlns:php="http://apstandard.com/ns/1/php">134217728</php:memory-limit>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>moodle</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.5.31</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>moodle</default-prefix>
+				<installed-size>187497927</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="moodledata">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

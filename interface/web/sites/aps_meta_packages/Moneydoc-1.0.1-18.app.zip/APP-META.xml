@@ -1,0 +1,216 @@
+<application xmlns="http://apstandard.com/ns/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packaged="2013-01-22T16:16:54" version="1.2">
+   <id>http://pro.moneydoc.fr</id>
+   <name>Moneydoc</name>
+   <version>1.0.1</version>
+   <release>18</release>
+   <homepage>http://www.moneydoc.fr</homepage>
+   <vendor>
+   	<name>Moneydoc</name>
+   	<homepage>http://pro.moneydoc.fr</homepage>
+   	<icon path="images/icon_72.png"/>
+   </vendor>
+   <packager>
+   	<name>FIDUCEO</name>
+   	<homepage>http://pro.moneydoc.fr</homepage>
+   	<icon path="images/icon_72.png"/>
+   </packager>
+   <presentation>
+   	<summary>Moneydoc votre gestion financière</summary>
+   	<description>Vous souhaitez suivre et comprendre les dépenses de votre entreprise ?Vous souhaitez automatiser la gestion et l’archivage de vos documents ?MoneyDoc Pro va révolutionner le suivi quotidien de la vie administrative et financière de votre entreprise.
+Tous vos comptes bancaires et vos documents administratifs accessibles sur un même espace• Vos comptes décryptées et maîtrisées• Vos documents automatiquement associés àvos opérations bancaires• Vos données sauvegardées et sécurisées</description>
+   	<icon path="images/icon_72.png"/>
+   	<screenshot path="images/screen_0.png">
+   		<description>Dashboard presentation.</description>
+   		<description xml:lang="fr-BE">Dashboard presentation.</description>
+   		<description xml:lang="fr-CA">Dashboard presentation.</description>
+   		<description xml:lang="fr-CH">Dashboard presentation.</description>
+   		<description xml:lang="fr-LU">Dashboard presentation.</description>
+   		<description xml:lang="fr-FR">Dashboard presentation.</description>
+   	</screenshot>
+   	<changelog>
+   		<version release="1" version="1.0.1">
+   			<entry>Mise en ligne</entry>
+   		</version>
+   		<version release="9" version="1.0.1">
+   			<entry>First release for APS team.</entry>
+   			<entry xml:lang="fr-FR">First release for APS team.</entry>
+   			<entry xml:lang="fr-BE">First release for APS team.</entry>
+   			<entry xml:lang="fr-CA">First release for APS team.</entry>
+   			<entry xml:lang="fr-CH">First release for APS team.</entry>
+   			<entry xml:lang="fr-LU">First release for APS team.</entry>
+   		</version>
+   		<version release="10" version="1.0.1">
+   			<entry>Nouvelle version</entry>
+   			<entry xml:lang="fr-BE">Nouvelle version</entry>
+   			<entry xml:lang="fr-CA">Nouvelle version</entry>
+   			<entry xml:lang="fr-CH">Nouvelle version</entry>
+   			<entry xml:lang="fr-LU">Nouvelle version</entry>
+   			<entry xml:lang="fr-FR">Nouvelle version</entry>
+   		</version>
+   		<version release="11" version="1.0.1">
+   			<entry>Typo Fix</entry>
+   			<entry xml:lang="fr-BE">Typo Fix</entry>
+   			<entry xml:lang="fr-CA">Typo Fix</entry>
+   			<entry xml:lang="fr-LU">Typo Fix</entry>
+   			<entry xml:lang="fr-CH">Typo Fix</entry>
+   			<entry xml:lang="fr-FR">Typo Fix</entry>
+   		</version>
+   		<version release="12" version="1.0.1">
+   			<entry>Ready for production.</entry>
+   			<entry xml:lang="fr-BE">Ready for production.</entry>
+   			<entry xml:lang="fr-CA">Ready for production.</entry>
+   			<entry xml:lang="fr-CH">Ready for production.</entry>
+   			<entry xml:lang="fr-LU">Ready for production.</entry>
+   			<entry xml:lang="fr-FR">Ready for production.</entry>
+   		</version>
+   		<version release="13" version="1.0.1">
+   			<entry>Api update</entry>
+   			<entry xml:lang="fr-BE">Api update</entry>
+   			<entry xml:lang="fr-CA">Api update</entry>
+   			<entry xml:lang="fr-CH">Api update</entry>
+   			<entry xml:lang="fr-LU">Api update</entry>
+   			<entry xml:lang="fr-FR">Api update</entry>
+   		</version>
+   		<version release="14" version="1.0.1">
+   			<entry>Option Moneydoc Free</entry>
+   			<entry xml:lang="fr-BE">Option Moneydoc Free</entry>
+   			<entry xml:lang="fr-CA">Option Moneydoc Free</entry>
+   			<entry xml:lang="fr-CH">Option Moneydoc Free</entry>
+   			<entry xml:lang="fr-LU">Option Moneydoc Free</entry>
+   			<entry xml:lang="fr-FR">Option Moneydoc Free</entry>
+   		</version>
+   		<version release="15" version="1.0.1">
+   			<entry>Refactoring with ressource to manage upsell.</entry>
+   			<entry xml:lang="fr-BE">Refactoring with ressource to manage upsell.</entry>
+   			<entry xml:lang="fr-CA">Refactoring with ressource to manage upsell.</entry>
+   			<entry xml:lang="fr-CH">Refactoring with ressource to manage upsell.</entry>
+   			<entry xml:lang="fr-LU">Refactoring with ressource to manage upsell.</entry>
+   			<entry xml:lang="fr-FR">Refactoring with ressource to manage upsell.</entry>
+   		</version>
+   		<version release="16" version="1.0.1">
+   			<entry>Entry point fix</entry>
+   			<entry xml:lang="fr-BE">Entry point fix</entry>
+   			<entry xml:lang="fr-CA">Entry point fix</entry>
+   			<entry xml:lang="fr-CH">Entry point fix</entry>
+   			<entry xml:lang="fr-LU">Entry point fix</entry>
+   			<entry xml:lang="fr-FR">Entry point fix</entry>
+   		</version>
+   		<version release="17" version="1.0.1">
+   			<entry>Fix error ouput schema</entry>
+   			<entry xml:lang="fr-BE">Fix error ouput schema</entry>
+   			<entry xml:lang="fr-CA">Fix error ouput schema</entry>
+   			<entry xml:lang="fr-CH">Fix error ouput schema</entry>
+   			<entry xml:lang="fr-LU">Fix error ouput schema</entry>
+   			<entry xml:lang="fr-FR">Fix error ouput schema</entry>
+   		</version>
+   		<version release="18" version="1.0.1">
+   			<entry>Fix Encoding output</entry>
+   			<entry xml:lang="fr-CA">Fix Encoding output</entry>
+   			<entry xml:lang="fr-BE">Fix Encoding output</entry>
+   			<entry xml:lang="fr-LU">Fix Encoding output</entry>
+   			<entry xml:lang="fr-CH">Fix Encoding output</entry>
+   			<entry xml:lang="fr-FR">Fix Encoding output</entry>
+   		</version>
+   	</changelog>
+   	<categories>
+   		<category>Back office/Accounting and Financial</category>
+   	</categories>
+   	<languages>
+   		<language>fr</language>
+   	</languages>
+   </presentation>
+   <global-settings>
+   	<setting default-value="sfrapi" id="API_USER" type="string">
+   		<name>Moneydoc Api User</name>
+   	</setting>
+   	<setting default-value="123" id="API_PASSWORD" type="password">
+   		<name>Moneydoc API Password</name>
+   	</setting>
+   	<setting default-value="https://authapi.moneydoc.fr" id="API_URL" type="string">
+   		<name>Moneydoc API Url</name>
+   	</setting>
+   </global-settings>
+   <service id="Moneydoc_service">
+   	<license must-accept="true">
+   		<commercial/>
+   		<text>
+   			<name>License</name>
+   			<url>https://www.moneydoc.fr/conditions-generales-d-utilisation-18.html</url>
+   		</text>
+   	</license>
+   	<presentation>
+   		<name>Moneydoc Pro</name>
+   		<summary>Votre compte Moneydoc Pro</summary>
+   		<infolinks>
+   			<link class="support" href="https://www.moneydoc.fr">Support Moneydoc</link>
+   		</infolinks>
+   	</presentation>
+     	<settings>
+<group class="authn">
+<setting class="password" id="PASSWORD" min-length="4" type="password">
+<name>Mot de passe</name>
+	<error-message>Veuillez saisir un mot de passe valide.</error-message>
+</setting>
+</group>
+<group class="vcard">
+<group class="email">
+<setting class="value" id="EMAIL" installation-only="true" type="email">
+<name>Email utilisateur</name>
+	<error-message>Veuillez saisir un email valide.</error-message>
+</setting>
+</group>
+</group>
+<setting id="ACCOUNT_ID" optional="true" protected="true" type="string" uniq="global" visibility="hidden"/>
+<setting default-value="true" id="STATUS" type="string" visibility="hidden"/>
+<setting default-value="8" id="SUBSCRIPTION" type="enum" visibility="hidden">
+              <name>Votre abonnement Moneydoc</name>
+              <choice id="8">
+                 <name>Moneydoc Pro Gratuit</name>
+              </choice><choice id="9">
+                 <name>Moneydoc Pro Basique</name>
+              </choice>
+              <choice id="10">
+                 <name>Moneydoc Pro Premium</name>
+              </choice>
+           </setting>
+</settings>
+<resources>
+            <resource class="item" id="subscription" limiting-setting="SUBSCRIPTION">
+        <name>Subscription Type</name>
+        <description>Subscription Type</description>
+     </resource>
+ </resources>
+   	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+   		<php:extension>openssl</php:extension>
+   		<php:extension>curl</php:extension>
+   		<php:version min="5.3"/>
+   	</requirements>
+   	<provision>
+   		<configuration-script name="configure-script.php">
+   			<script-language>php</script-language>
+   			<structured-output/>
+   		</configuration-script>
+   	</provision>
+   	<service class="service" id="moneydoc_access" singular="true">
+   		<presentation>
+   			<name>Moneydoc</name>
+   			<summary>Votre service moneydoc</summary>
+   			<entry-points>
+   			<entry class="login" dst="https://pro.moneydoc.fr/" method="POST">
+   				<label>Moneydoc Pro Application</label>
+   				<variable class="login" name="login" value-of-setting="EMAIL"/>
+   				<variable class="password" name="password" value-of-setting="PASSWORD"/>
+   			</entry>
+   		</entry-points>
+   		</presentation>
+   		<settings>
+   			<setting id="ACCOUNT_ID" protected="true" type="string" value-of-setting="ACCOUNT_ID" visibility="hidden"/>
+   			<setting id="STATUS" type="string" value-of-setting="STATUS" visibility="hidden"/>
+               <setting id="EMAIL" type="string" value-of-setting="EMAIL" visibility="hidden"/>
+               <setting id="PASSWORD" type="string" value-of-setting="PASSWORD" visibility="hidden"/>
+   		</settings>
+   		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+   		</requirements>
+   	</service>
+   </service>
+</application>

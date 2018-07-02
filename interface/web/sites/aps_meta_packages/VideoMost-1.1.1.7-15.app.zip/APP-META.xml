@@ -1,0 +1,328 @@
+<application packaged="2017-08-01T20:03:00" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>http://apsstandard.org/app/videomost</id>
+	<name>VideoMost</name>
+	<version>1.1.1.7</version>
+	<release>15</release>
+	<homepage>http://www.videomost.com/</homepage>
+	
+	
+	<vendor>
+		<name>VideoMost</name>
+		<homepage>http://www.videomost.com/</homepage>
+		<icon path="images/Logo_64.png"/>
+	</vendor>
+
+	<packager>
+		<name>ASoft Packaging</name>
+		<homepage>http://www.asoft.ru/</homepage>
+		<icon path="images/ASoftLogo.png"/>
+		<uri>uuid:fc89aa70-5433-11df-9879-0800200c9a10</uri>
+	</packager>
+	
+		
+	<presentation>
+		<summary xml:lang="ru-RU">ВидеоМост – сервис многоточечной видеоконференцсвязи на ПК через Интернет</summary>
+		<summary>VideoMost is a multipoint video conferencing service on personal computers over the Internet</summary>
+		<description xml:lang="ru-RU">ВидеоМост — качественная видеоконференцсвязь между любой группой людей, с любого компьютера через обычный Интернет (в основе – технологии российской компании SPIRIT, мирового лидера в области Voice and Video over IP).
+		ВидеоМост — видеосвязь за 5 минут, доступная и оперативная (в отличие от аппаратных решений в заранее оборудованных переговорных).
+		Программное решение ВидеоМост — видеосвязь «для среднего звена», для 20-40% сотрудников любой компании, а не только для топ-менеджмента. При необходимости, средствами современной видеоконференцсвязи может быть оснащено каждое рабочее место в организации.
+		ВидеоМост поддерживает все необходимое для эффективного взаимодействия – групповые видеоконференции, модерацию участников, текстовый чат и совместный просмотр документов. 
+		ВидеоМост является контролируемой, безопасной и надежной системой для бизнеса и гос.организаций, в отличие от Skype.</description>
+		<description>VideoMost is high-quality video conferencing between any group of people, from any computer via public Internet (based on technologies by SPIRIT DSP, the world’s top Voice and Video over IP engines provider). VideoMost enables instant video communication in less than 5 minutes (unlike hardware systems in specially equipped meeting rooms). VideoMost brings video conferencing to "middle management" who constitutes 20-40% of any organization, not just to top-management. If needed, each working place can be equipped with the videoconferencing service powered by VideoMost.
+VideoMost provides all functionality for efficient collaboration: group multi-user video conferences, text chat, moderation and document/desktop sharing. VideoMost is a secure, controllable and reliable solution for corporate usage, unlike Skype.</description>
+	
+		
+		<icon path="images/Logo_64.png"/>
+		<screenshot path="images/1-VideoMost-Scheduling.jpg">
+			<description>Schedule a videoconference for any convenient time</description>
+			<description xml:lang="ru-RU">Назначение видеоконференции на любое удобное для вас время</description>
+		</screenshot>
+		<screenshot path="images/2-VideoMost-Invite-Participants.jpg">
+		<description>Schedule a videoconference and invite participants</description>
+		<description xml:lang="ru-RU">Назначайте видеоконференцию и приглашайте участников</description>
+		</screenshot>
+		<screenshot path="images/3-VideoMost-Enter-Conference.jpg">
+			<description>To join a videoconference, enter the conference ID and password or use a direct link received from the conference organizer</description>
+			<description xml:lang="ru-RU">Для подключения к видеоконференции используется ID конференции и пароль. Войти в конференцию также можно по прямой ссылке, полученной от организатора</description>
+		</screenshot>
+		<screenshot path="images/4-VideoMost-Manage-Conferences.jpg">
+			<description>You can review the list of planned and archived videoconferences and manage your conferences</description>
+			<description xml:lang="ru-RU">Вы можете просматривать список прошедших и будущих видеоконференций и управлять своими конференциями</description>
+		</screenshot>
+		<screenshot path="images/VideoMost_Conference.jpg">
+			<description>Hold videoconferences without borders, collaborate with colleagues in business trips, communicate with business partners and customers throughout the world </description>
+			<description xml:lang="ru-RU">Проводите видеоконференции без границ, общайтесь с сотрудниками в командировках, работайте с клиентами и партнерами по всей стране и всему миру</description>
+		</screenshot>
+		<changelog>
+                        <version release="15" version="1.1.1.7">
+                            <entry>Added constants required to publish the application to the catalog</entry>
+                        </version>
+                        <version release="14" version="1.1.1.7">
+                            <entry>Added constants required to publish the application to the catalog</entry>
+                        </version>
+                        <version release="13" version="1.1.1.7">
+                            <entry>Added constants required to publish the application to the catalog</entry>
+                        </version>
+                        <version release="12" version="1.1.1.7">
+                            <entry>change release number</entry>
+                        </version>
+                        <version release="10" version="1.1.1.7">
+                            <entry>change regexp for login and password</entry>
+                        </version>
+			<version release="9" version="1.1.1.7">
+				<entry>Error messages for password and login settings are added</entry>
+			</version>
+			<version release="8" version="1.1.1.7">
+				<entry>Regex added for password. Users-management script fixed.</entry>
+			</version>
+			<version release="7" version="1.1.1.7">
+				<entry>remove url-homepage from description</entry>
+			</version>
+			<version release="6" version="1.1.1.6">
+				<entry>answer error if error create user</entry>
+			</version>
+			<version release="5" version="1.1.1.5">
+				<entry>remove account if error create user</entry>
+			</version>
+			<version release="4" version="1.1.1.4">
+				<entry>structured output removed. </entry>
+			</version>
+			<version release="3" version="1.1.1.4">
+				<entry>Scripts return values fixed. share and HD are integers now</entry>
+			</version>
+			<version release="2" version="1.1.1.4">
+				<entry>Remove refs to global settings from account service</entry>
+			</version>
+			<version release="1" version="1.1.1.4">
+				<entry>Some options were moved to global settings and it's description changed. default land is english</entry>
+			</version>
+			<version release="2" version="1.1.1.3">
+				<entry>Initial version</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Collaboration/Web conferencing</category>
+		</categories>
+		<languages>
+			<language>ru</language>
+			<language>en</language>
+		</languages>
+	</presentation>
+
+	<global-settings>
+		<setting default-value="videomost.com" id="server_location" type="string">
+			<name xml:lang="ru-RU">Адрес сервера</name>
+			<name>Server address</name>
+		</setting>
+		<setting default-value="DmkCXgJcLY" id="admin_log" type="string">
+				<name xml:lang="ru-RU">Логин администратора</name>
+				<name>Admin login</name>
+		</setting>
+		<setting default-value="DmkCXgJcLY" id="admin_pass" type="string">
+			<name xml:lang="ru-RU">Пароль администратора</name>
+			<name>Admin password</name>
+		</setting>			
+		<setting default-value="1" id="accountIDShift" type="integer">
+				<name xml:lang="ru-RU">Стартовый идентификатор учетной записи</name>
+				<name>Initial account ID</name>
+		</setting>
+	</global-settings>
+	<patch match="/application/version &gt;= '1.1.1.3'"/>
+	<service class="service" id="VideoMost">
+		<license must-accept="true">
+			<commercial/>
+			<text xml:lang="ru-RU">
+				<name>Лицензионное соглашение VideoMost</name>
+				<file>licenses/LICENSE.txt</file> 
+			</text>
+			<text>
+				<name>VideoMost License Agreement</name>
+				<file>licenses/LICENSE_eng.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>VideoMost</name>
+			<summary xml:lang="ru-RU">ВидеоМост – сервис многоточечной видеоконференцсвязи на ПК через Интернет</summary>
+			<summary>VideoMost - a multipoint videoconferencing service on personal computers over the Internet</summary>
+			<icon path="images/Logo_64.png"/>
+			<infolinks>
+				 <link class="official" href="http://www.videomost.com/">
+					Official site
+				</link>
+				<link class="official" href="http://www.videomost.com/" xml:lang="ru-RU">
+					Официальный сайт
+				</link>
+				 <link class="support" href="http://www.videomost.com/podderzhka">
+					Support
+				</link>
+				<link class="support" href="http://www.videomost.com/podderzhka" xml:lang="ru-RU">
+					Страница поддержки
+				</link>
+                                <link class="deployment-guide" href="http://www.videomost.com/podderzhka/faq">
+                                    Deployment instruction
+                                </link>
+                                <link class="deployment-guide" href="http://www.videomost.com/podderzhka/faq" xml:lang="ru-RU">
+                                    Инструкция по настройке
+                                </link>
+			</infolinks>
+
+			<entry-points>
+				<entry dst="http://{server_location}/service/join" method="POST">
+					<label xml:lang="ru-RU">Страница сервиса</label>
+					<label>Service entry</label>
+
+                                        <variable class="login" name="login">DmkCXgJcLY</variable>
+					<variable class="password" name="password">DmkCXgJcLY</variable>
+					<variable name="remember_auth">1</variable>
+					<variable name="referer">/service</variable>
+					<variable name="server_location" value-of-setting="server_location">videomost.com</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<setting class="login" id="login" installation-only="true" max-length="32" min-length="1" regex="^[a-zA-Z0-9_\-]+$" type="string" uniq="global">
+					<name>Login</name>
+					<name xml:lang="ru-RU">Логин</name>
+						<error-message>Login must contain letters in latin, digits and symbols "_","-". Field must be not empty, maximum length - 32 symbols</error-message>
+						<error-message xml:lang="ru-RU">Логин должен содержать только латинские буквы, цифры и символы "_","-". Это обязательное поле, максимальная длина - 32 символа.</error-message>
+				</setting>
+				<setting class="password" id="pass" installation-only="true" max-length="32" min-length="1" regex="^[a-zA-Z0-9]+$" type="password">
+					<name>Password</name>
+					<name xml:lang="ru-RU">Пароль</name>
+						<error-message>Password must contain only latin letters or digits. Field must be not empty, maximum length - 32 symbols</error-message>
+						<error-message xml:lang="ru-RU">Пароль должен начинаться с буквы и содержать только латинские буквы и цифры. Это обязательное поле, максимальная длина - 32 символа.</error-message>
+				</setting>
+			</group>
+			<setting class="display-name" id="fullName" installation-only="true" max-length="32" min-length="1" type="string">
+				<name>Full name</name>
+				<name xml:lang="ru-RU">ФИО</name>
+			</setting>
+			<setting default-value="1" id="quantity_users_service" min="0" protected="true" type="integer">
+				<name>Maximum number of accounts</name>
+				<name xml:lang="ru-RU">Максимальное количество пользователей</name>
+			</setting>
+			<setting default-value="1" id="quantity_simultaneous_conferences" min="0" protected="true" type="integer">
+				<name>Maximum number of concurrent conferences</name>
+				<name xml:lang="ru-RU">Максимальное количество одновременных конференций</name>
+			</setting>
+			<setting default-value="1" id="quantity_users_conference" min="0" protected="true" type="integer">
+				<name>Maximum number of concurrent conference participants</name>
+				<name xml:lang="ru-RU">Максимальное количество пользователей в одной конференции</name>
+			</setting>
+			<setting default-value="0" id="share" protected="true" type="integer">
+				<name>Desktop/Application sharing enabled</name>
+				<name xml:lang="ru-RU">Совместный просмотр документов включен</name>
+			</setting>
+				<setting default-value="0" id="HD" protected="true" type="integer">
+				<name>Enable HD video</name>
+				<name xml:lang="ru-RU">Создание HD конференции возможно</name>
+			</setting>
+			
+			
+			<setting generate="sequence" id="accountID" protected="true" type="integer" visibility="hidden">
+					<name>Account ID</name>
+					<name xml:lang="ru-RU">Идентификатор учетной записи</name>
+			</setting>
+		</settings>
+
+		<resources>
+			<resource class="item" id="quantity_users_service" limiting-setting="quantity_users_service">
+				<name>Maximum number of accounts</name>
+				<name xml:lang="ru-RU">Максимальное количество пользователей</name>
+				<description>Maximum number of accounts</description>
+				<description xml:lang="ru-RU">Максимальное количество пользователей</description>
+			</resource>
+			<resource class="item" id="quantity_simultaneous_conferences" limiting-setting="quantity_simultaneous_conferences">
+				<name>Maximum number of concurrent conferences</name>
+				<name xml:lang="ru-RU">Максимальное количество одновременных конференций</name>
+				<description>Maximum number of concurrent conferences</description>
+				<description xml:lang="ru-RU">Количество одновременных видеоконференций</description>
+			</resource>
+			<resource class="item" id="quantity_users_conference" limiting-setting="quantity_users_conference">
+				<name>Maximum number of concurrent conference participants</name>
+				<name xml:lang="ru-RU">Максимальное количество пользователей в одной конференции</name>
+				<description>Maximum number of concurrent conference participants</description>
+				<description xml:lang="ru-RU">Максимальное количество пользователей в одной конференции</description>
+			</resource>
+			<resource class="item" id="share" limiting-setting="share">
+				<name>Desktop/Application sharing enabled</name>
+				<name xml:lang="ru-RU">Совместный просмотр документов включен</name>
+				<description>Desktop/Application sharing enabled</description>
+				<description xml:lang="ru-RU">Совместный просмотр документов включен</description>
+			</resource>
+			<resource class="item" id="HD" limiting-setting="HD">
+				<name>Enable HD video</name>
+				<name xml:lang="ru-RU">Создание HD конференции возможно</name>
+				<description>Enable HD video</description>
+				<description xml:lang="ru-RU">Создание HD конференции возможно</description>
+			</resource>
+		</resources>
+
+		<requirements>
+			<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+		</requirements>
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				
+			</configuration-script>
+		</provision>
+		
+		<service class="account" id="account">
+			<presentation>
+				<name>Account service</name>
+				<name xml:lang="ru-RU">Сервис аккаунтов</name>
+				<summary>VideoMost account service</summary>
+				<summary xml:lang="ru-RU">Сервис аккаунтов для VideoMost</summary>
+				<entry-points>
+					<entry dst="http://{server_location}/service/join" method="POST">
+						<label>Service entry</label>
+						<label xml:lang="ru-RU">Страница сервиса</label>
+						<variable class="login" name="login">DmkCXgJcLY</variable>
+						<variable class="password" name="password">DmkCXgJcLY</variable>
+						
+						<variable name="remember_auth">1</variable>
+						<variable name="referer">/service</variable>
+						<variable name="server_location" value-of-setting="server_location">videomost.com</variable>
+					</entry>
+				</entry-points>
+			</presentation>
+
+			<settings>
+				<group class="authn">
+					<setting default-value="DmkCXgJcLY" id="user_login" installation-only="true" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z]*" type="string" uniq="global">
+					
+						<name>Login</name>
+						<name xml:lang="ru-RU">Логин</name>
+						<error-message>Login must start with latin letter and continue in latin letters or digits. Field must be not empty, maximum length - 32 symbols</error-message>
+						<error-message xml:lang="ru-RU">Логин должен начинаться с буквы и содержать только латинские буквы и цифры. Это обязательное поле, максимальная длина - 32 символа.</error-message>
+					</setting>
+					<setting default-value="DmkCXgJcLY" id="user_password" installation-only="true" max-length="32" min-length="1" regex="^[0-9a-zA-Z]*" type="password">
+						<name>Password</name>
+						<name xml:lang="ru-RU">Пароль</name>
+						<error-message>Password must contain only latin letters or digits. Field must be not empty, maximum length - 32 symbols</error-message>
+						<error-message xml:lang="ru-RU">Пароль должен начинаться с буквы и содержать только латинские буквы и цифры. Это обязательное поле, максимальная длина - 32 символа.</error-message>
+					</setting>
+				</group>
+				<setting class="display-name" id="fullName" installation-only="true" max-length="32" min-length="1" type="string">
+					<name>Full name</name>
+					<name xml:lang="ru-RU">ФИО</name>
+				</setting>
+			
+				<setting id="accountID" type="integer" value-of-setting="accountID" visibility="hidden"/>
+			</settings>
+
+			<requirements>
+				<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			</requirements>
+			<provision>
+				<configuration-script name="users-management.php">
+					<script-language>php</script-language>
+					
+				</configuration-script>
+			</provision>
+		</service>
+	</service>
+</application>

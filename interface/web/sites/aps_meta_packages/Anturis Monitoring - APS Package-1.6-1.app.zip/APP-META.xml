@@ -1,0 +1,349 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-09-25T17:53:03">
+	<id>http://anturis.com/aps1</id>
+	<name>Anturis Monitoring - APS Package</name>
+	<version>1.6</version>
+	<release>1</release>
+
+	<homepage>https://anturis.com/</homepage>
+
+	<vendor>
+		<name>Anturis Inc.</name>
+		<homepage>https://anturis.com/</homepage>
+		<icon path="images/a.png" />
+	</vendor>
+
+	<packager>
+		<name>Anturis Inc.</name>
+		<homepage>https://anturis.com/</homepage>
+		<icon path="images/a.png" />
+		<uri>https://anturis.com/</uri>
+	</packager>
+
+	<presentation>
+		<summary>Anturis - Hosted Monitoring and Troubleshooting for Web Services and IT Infrastructure</summary>
+		<description>Anturis monitoring and troubleshooting cloud service is a must-have tool to keep your or your clients' IT infrastructure up and running and prevent problems before they happen. 
+
+Key features include: 
+-  External monitoring of web services and internal monitoring of servers and applications.
+-  Reliable and real-time SMS and voice alerts out of the box.
+-  Uptime and QoS reports.
+-  Easy to use GUI.
+-  No extra HW resources required, no software to install and maintain.
+
+Monitoring is a snap with Anturis !</description>
+
+		<icon path="images/a.png"/>
+	
+		<screenshot path="images/scr1.png">
+			<description>Main screen with the infrastructure graph</description>
+		</screenshot>
+		<screenshot path="images/scr2.png">
+			<description>Multi-location external monitoring of a web service</description>
+		</screenshot>
+		<screenshot path="images/scr3.png">
+			<description>Problem troubleshooting</description>
+		</screenshot>
+		<screenshot path="images/scr4.png">
+			<description>Daily status report</description>
+		</screenshot>
+		<screenshot path="images/scr5.png">
+			<description>Map of public and private agents</description>
+		</screenshot>
+		<screenshot path="images/scr6.png">
+			<description>Complex incident visualization</description>
+		</screenshot>
+
+		<changelog>
+			<version release="6" version="1.4">
+				<entry>with plan</entry>
+			</version>
+			<version release="7" version="1.4">
+				<entry>bugfix</entry>
+			</version>
+			<version release="8" version="1.4">
+				<entry>with login</entry>
+			</version>
+			<version release="9" version="1.4">
+				<entry>fix</entry>
+			</version>
+			<version release="10" version="1.4">
+				<entry>resources, enable, diable</entry>
+			</version>
+			<version release="11" version="1.4">
+				<entry>bugfix</entry>
+			</version>
+			<version release="12" version="1.4">
+				<entry>address info added</entry>
+			</version>
+			<version release="13" version="1.4">
+				<entry>certificate fixed, logo updated</entry>
+			</version>
+			<version release="14" version="1.4">
+				<entry>test data removed</entry>
+			</version>
+			<version release="1" version="1.5">
+			    <entry>removed plan_id, changed plan upgrade behaviour</entry>
+			</version>
+			<version release="2" version="1.5">
+                <entry>removed logging</entry>
+            </version>
+			<version release="3" version="1.5">
+                <entry>min value fixed</entry>
+            </version>
+			<version release="4" version="1.5">
+                <entry>description updated</entry>
+            </version>
+			<version release="1" version="1.6">
+                <entry>for certification</entry>
+            </version>
+
+		</changelog>
+
+		<categories>
+			<category>Infrastructure/Management</category>
+			<category>Infrastructure/Application Management</category>
+			<category>Web/Tools</category>
+			<category>Back office/Professional Services Automation</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting type="host-name" id="hosting_provider" default-value="somehosterdomain.com">
+			<name>Hosting Provider domain name (obtained from Anturis)</name>
+		</setting>
+		<setting type="password" class="password" id="hosting_provider_password" default-value="1q2w3e">
+			<name>Hosting Provider password (obtained from Anturis)</name>
+		</setting>
+		<setting type="string" id="anturis_base_url" default-value="https://test.anturis.com">
+			<name>Anturis service base URL (obtained from Anturis)</name>
+		</setting>
+		<setting type="string" id="anturis_admin_path" default-value="api/1/aps">
+			<name>Anturis service account admin path (obtained from Anturis)</name>
+		</setting>
+		<setting type="string" id="anturis_config" default-value="" visibility="hidden" optional="true">
+			<name>Anturis service configuration (obtained from Anturis)</name>
+		</setting>
+	</global-settings>
+
+	<patch match="/application/version &gt;= '1.4'"/>
+
+	<service id="monitoring" class="service" singular="true">
+		<license must-accept="true">
+			<commercial />
+			<text>
+				<name>Anturis Terms of Service</name>
+				<url>https://anturis.com/terms</url>
+			</text>
+			<text>
+				<name>Anturis Privacy Policy</name>
+				<url>https://anturis.com/privacy</url>
+			</text>
+		</license>
+
+		<presentation>
+			<name>Anturis Monitoring and Troubleshooting Service</name>
+			<summary>Anturis Monitoring and Troubleshooting Service is a must-have tool to keep your IT infrastructure up and running and prevent problems before they happen.</summary>
+
+			<infolinks>
+				<link class="howto" href="http://wiki.anturis.com">
+					Documentation				</link>
+				<link class="support" href="https://anturis.com/company/contacts">
+					Contact us!
+				</link>
+				<link class="deployment-guide" href="https://anturis.com/aps/Anturis_APS_Package.inst.docx">
+					Installation Guide
+				</link>
+			</infolinks>
+
+			<entry-points>
+				<entry dst="{host}/{path}/authenticate" method="POST" class="control-panel">
+					<label>Login here</label>
+					<icon path="images/enter-icon.png"/>
+					<variable name="host" value-of-setting="anturis_base_url"/>
+					<variable name="path" value-of-setting="anturis_admin_path"/>
+					<variable name="account_key" value-of-setting="account_key"/>
+				</entry>
+				<!--  
+				<entry class="action">
+					<label>Test action 1</label>
+					<icon path="images/a.png"/>
+					<variable name="status" class="action">test-action-1-invoked</variable>
+					// <variable name="var_a" class="status">var-a-value-1</variable >  
+					<variable name="var1" class="status" value-of-setting="test_action_1_status"/>
+					<variable name="var1" class="status_condition"/>
+				</entry>
+				-->
+			</entry-points>
+		</presentation>
+
+		<settings>
+			<group>
+				<name>Anturis Account Access Settings</name>
+				<setting id="account_id" type="string" visibility="hidden" protected="true" default-value="not initialized">
+					<name>Anturis Account Name</name>
+				</setting>
+				<setting id="account_key" type="string" visibility="hidden" protected="true" default-value="not initialized">
+					<name>Anturis Account Auto-login Key</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Cutomer and user data</name>
+				<group class="authn">
+					<setting id="pa_user_name" type="string" class="login"  optional="true" visibility="hidden">
+						<name>PA user name</name>
+					</setting>
+					<!-- setting id="pa_user_pwd" type="password" class="password"  optional="true" visibility="hidden">
+						<name>PA user password</name>
+					</setting -->
+				</group>
+				<setting id="pa_user_email" class="email"  type="email"  optional="true" visibility="hidden" track-old-value="true">
+      				<name>PA user email</name>
+      			</setting>
+      			<group class="fn n">
+  				    <setting id="pa_user_first_name" class="given-name" type="string"  optional="true" visibility="hidden">
+  				    	<name>PA user first name</name>
+  				    </setting>
+      				<setting id="pa_user_last_name"  class="family-name" type="string"  optional="true" visibility="hidden">
+      					<name>PA user last name</name>
+      				</setting>
+      			</group>
+      			<setting id="pa_user_display_name" class="display-name"  type="string" optional="true" visibility="hidden">
+      				<name>PA display name of a Service User </name>
+      			</setting>
+				<setting id="pa_organization_name" class="organization-name"  type="string" optional="true" visibility="hidden">
+      				<name>PA name of customer’s organization </name>
+      			</setting>
+				<setting id="pa_tz" class="tz"  type="string" optional="true" visibility="hidden">
+      				<name>PA time zone of customer</name>
+      			</setting>
+      			<setting id="pa_language" type="enum" class="locale" default-value="en-US"  visibility="hidden">
+					<name>PA language</name>
+					<choice id="en-US" >
+						<name>English (USA)</name>
+					</choice>
+					<choice id="en-GB" >
+						<name>English (GB)</name>
+					</choice>
+					<choice id="de-DE" >
+						<name>German</name>
+					</choice>
+					<choice id="ru-RU" >
+						<name>Russian</name>
+					</choice>
+				</setting>
+				<group class="adr">
+					<setting id="pa_street_business" class="street-address" type="string" optional="true"  visibility="hidden">
+						<name>Street</name>
+					</setting>
+					<setting id="pa_city_business" class="locality" type="string" optional="true" visibility="hidden">
+						<name>City</name>
+					</setting>
+					<setting id="pa_state_business" class="region" type="string" optional="true" visibility="hidden">
+						<name>Region</name>
+					</setting>
+					<setting id="pa_country_business" class="country-name" type="string" optional="true" visibility="hidden">
+						<name>Country</name>
+					</setting>
+					<setting id="pa_postal_code_business" class="postal-code" type="string" optional="true" visibility="hidden">
+						<name>Postal Code</name>
+					</setting>
+				</group>
+<!--       			<setting id="pa_user_phone" class="tel" type="string"  optional="true" visibility="hidden">
+      				<name>PA phone</name>
+      			</setting>  -->
+				<group class="tel">
+		            <setting id="pa_user_phone" class="work" type="string" min-length="3" max-length="255" visibility="hidden" optional="true">
+		            	<name>PA phone</name>
+		            </setting>
+		        </group>
+      		</group>
+      		<group>
+      			<name>Subscription data</name>
+      			<setting id="pa_subscription_trial" class="subscription_trial"  type="boolean" optional="true" visibility="hidden" protected="true">
+      				<name>PA Trial subscription flag</name>
+      			</setting>
+				<setting id="pa_subscription_id" class="subscription_id"  type="integer" optional="true" visibility="hidden" protected="true">
+      				<name>PA Unique subscription ID</name>
+      			</setting>
+      		</group>
+
+
+			<setting id="monitors_quota" type="integer" default-value="20" min="1" visibility="hidden">
+                <name>Number of Monitors limit</name>
+		    </setting>
+		    <setting id="notifications_quota" type="integer" default-value="20" min="0" visibility="hidden">
+                <name>Notification credits granted per month</name>
+		    </setting>
+
+		    
+<!-- 		
+			<setting type="enum" id="test_action_1_status" class="status" protected="true" default-value="Stopped">
+				<name>Current Service Status</name>
+				<name xml:lang="en-US">Current service status</name>
+				<choice id="Running">
+					<name>Running{color:green}</name>
+					<name xml:lang="en-US">Running{color:green}</name>
+				</choice>
+				<choice id="Failed">
+					<name>Failed to start! Try again.{color:red}</name>
+					<name xml:lang="en-US">Failed to start! Try again.{color:red}</name>
+				</choice>
+				<choice id="Stopped">
+					<name>Stopped{color:red}</name>
+					<name xml:lang="en-US">Stopped{color:red}</name>
+				</choice>
+				<choice id="Starting">
+					<name>Starting{color:yellow}</name>
+					<name xml:lang="en-US">Starting{color:yellow}</name>
+				</choice>
+			</setting>
+			 -->
+		</settings>
+		
+		<resources>
+            <resource id="monitors_in_use" class="item" limiting-setting="monitors_quota">
+                <name>Number of Monitors in use</name>
+            </resource>
+            <resource id="notifications_used" class="item"  limiting-setting="notifications_quota">
+                <name>Number of Notification used within current billing period (month or year)</name>
+            </resource>
+        </resources>
+
+		<requirements xmlns:php="http://apstandard.com/ns/1/php" >
+			<php:version min="5.4.0"/>
+			<php:extension>zlib</php:extension>    
+			<php:extension>xml</php:extension>
+			<php:extension>curl</php:extension>
+			<php:extension>openssl</php:extension>    
+			<php:safe-mode>false</php:safe-mode>
+			<php:file-uploads>true</php:file-uploads>
+			<php:register-globals>false</php:register-globals>
+			
+			<!-- PERL 
+		    <perl:version match="version &gt;= 5.0"/>
+      		<perl:module name="LWP"/>
+      		<perl:module name="Mail::Sendmail"/> -->
+		</requirements>
+
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+			<resource-script name="resources.php">
+				<script-language>php</script-language>
+            </resource-script>
+            <verify-script name="verify.php">
+            	<script-language>php</script-language>
+            	<structured-output/>
+            </verify-script>
+		</provision>
+
+	
+	
+	</service>	
+
+</application>

@@ -1,0 +1,340 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-03-19T09:43:41">
+
+	<id>http://apsstandard.org/app/OfficeDrive</id>
+	<name>OfficeDrive DNS-A</name>
+	<version>2.4</version>
+	<release>10</release>
+	
+	<homepage>http://officedrive.net</homepage>
+	
+	<vendor>
+		<name>OfficeDrive</name>
+		<homepage>http://officedrive.net</homepage>
+		<icon path="images/OfficeDriveLightDNS.png" />
+	</vendor>
+	<packager>
+		<name>1Site1 B.V.</name>
+		<homepage>http://officedrive.net</homepage>
+		<icon path="images/OfficeDriveLightDNS.png" />
+	</packager>
+	<presentation>
+		<summary>OfficeDrive Hosting Edition is a highly advanced business-class document sharing solution.</summary>
+		<description>OfficeDrive is a highly advanced and very easy to use document sharing solution. Assign rights to folders or individual documents with ease. Open and edit all your documents directly from the browser using your own trusted software. All changes in documents are kept available. Upload folders or whole file systems up to 500,000 files in one go. Create a local drive in seconds to access all documents on your desktop. Ready for all modern browsers on PC and on Mac.</description>
+		<icon path="images/OfficeDriveLightDNS.png" />
+		<screenshot path="images/screenshot-documents.png">
+			<description>OfficeDrive documents page</description>
+		</screenshot>
+		<changelog>
+			<version release="10" version="2.1">
+				<entry>Added upgrade rule</entry>
+			</version>
+			<version release="11" version="2.1">
+				<entry>Altered description text</entry>
+			</version>
+			<version release="12" version="2.1">
+				<entry>Curl included</entry>
+			</version>
+			<version release="13" version="2.1">
+				<entry>bug fix</entry>
+			</version>
+			<version release="14" version="2.1">
+				<entry>DNS fix</entry>
+			</version>
+			<version release="15" version="2.1">
+				<entry>Better CURL error handling</entry>
+			</version>
+			<version release="16" version="2.1">
+				<entry>Better CURL error handling</entry>
+			</version>
+			<version release="17" version="2.1">
+				<entry>Better CURL error handling</entry>
+			</version>
+			<version release="18" version="2.1">
+				<entry>Option to use strict or loose SSL handling added</entry>
+			</version>
+			<version release="1" version="2.2">
+				<entry>structured output</entry>
+			</version>
+			<version release="1" version="2.3">
+				<entry>Fixed disk space reporting</entry>
+			</version>
+			<version release="3" version="2.3">
+				<entry>structured output</entry>
+			</version>
+			<version release="10" version="2.4">
+				<entry>enable user data to be set in OfficeDrive interface</entry>
+			</version>
+		</changelog>
+		
+		<categories>
+			<category>Collaboration/Project management</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	
+	<global-settings>
+		<setting id="internal_host" class="web" type="string" default-value="https://officedrive.net:10000" regex="^https://.*$">
+			<name>OfficeDrive installation host</name>
+			<description>This is the URL to the OfficeDrive server, used for provisioning access.</description>
+			<error-message>Please make sure the text you entered starts with https://</error-message>
+		</setting>
+		<setting type="boolean" id="internal_host_ssl_strict" default-value="false">
+			<name>Allow SSL communication with self-signed certificate or with non-matching common name.</name>
+		</setting>
+		<setting id="maintenance_user" class="title" type="string" min-length="3">
+			<name>Administrator login</name>
+			<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens. If you don't have an API user, Go to officedrive.net to request your free trial user.</error-message>
+		</setting>
+		<setting id="maintenance_user_password" class="title" type="password">
+			<name>Administrator password</name>
+		</setting>
+		<setting id="officedrive_domain" class="web" type="domain-name" default-value="officedrive.net">
+			<name>OfficeDrive public site domain</name>
+			<description>This is the public accuess URL for the OfficeDrive server.</description>
+		</setting>
+		<setting type="host-name" id="officedrive_ip" class="web" default-value="46.137.74.221">
+			<name>OfficeDrive public site IP .This is used for auto-provisioning of A-records in DNS server.</name>
+		</setting>
+		<setting type="string" id="system_id" installation-only="true" default-value="" visibility="hidden">
+			<name>POA identifier - create a unique string to identify this Parallels Automation system. Your company domain for instance.</name>
+		</setting>
+		<group class="branding">
+			<name>branding options</name>
+			<setting id="branding_theme" class="branding_theme" type="string" default-value="">
+				<name>Optional branding theme</name>
+			</setting>
+			<setting type="string" id="control_panel_url" regex="^https?://.+$" default-value="https://">
+				<name>Hosting control panel URL for customers</name>
+				<error-message>THis is used to redirect users to the hosting control panel when users must be added or changed. Please make sure the text you entered starts with http:// or https://</error-message>
+			</setting>
+		</group>
+		<setting type="string" id="api_user_agent" visibility="hidden" default-value="APS (1.2) - OfficeDrive DNS-A (2.4-9)" protected="true" min-length="1">
+			<name>Hidden user agent string for API calls</name>
+		</setting>
+	</global-settings>
+	<patch match="/application/version &gt; '2.0'" recommended="true"/>
+
+	<service id="context" class="service">
+		<license must-accept="true">
+			<commercial />
+			<text>
+				<name>End User License Agreement</name>
+				<url>http://officedrive.net/aps/licence.html</url>
+			</text>
+		</license>
+
+		<presentation>
+			<name>OfficeDrive Account</name>
+			<summary>OfficeDrive is a highly advanced business-class document sharing solution.</summary>
+			<icon path="images/OfficeDriveLightDNS.png" />
+			<infolinks>
+				<link class="deployment-guide" href="file:///docs/APS installation guide OfficeDrive DNS-A.pdf">Deployment guide</link>
+				<link class="support" href="http://{officedrive_domain}/support/">OfficeDrive Support</link>
+			</infolinks>
+
+			<entry-points>
+				<entry dst="https://{mainDomain}/{domain}/" method="POST" class="login">
+					<label>Admin user access</label>
+					<icon path="images/OfficeDrive.gif" />
+					<variable name="autoLogin" class="">1</variable>
+					<variable name="mainDomain" value-of-setting="officedrive_domain" />
+					<variable name="domain" value-of-setting="account_domain" />
+					<variable name="foreignAccountId" value-of-setting="account_id" />
+					<variable name="userName" value-of-setting="admin_user_name" />
+					<variable name="password" value-of-setting="admin_password"/>
+				</entry>
+			</entry-points>
+
+		</presentation>
+
+		<settings>
+			<setting id="account_domain" type="domain-name" class="domain-name" protected="true" visibility="hidden">
+				<name>Account domain</name>
+			</setting>
+			<setting type="string" id="account_id" visibility="hidden" protected="true" default-value="">
+				<name>Account ID (leave empty)</name>
+			</setting><group class="vcard">
+				<setting id="admin_user_name" class="login" type="string" track-old-value="true" min-length="1" default-value="officedrive.admin.user">
+					<name>Username for admin user</name>
+				</setting>
+				<setting id="admin_password" class="password" type="password" min-length="6">
+					<name>Password for admin user</name>
+				</setting>
+				<setting id="admin_given_name" class="given-name" type="string" installation-only="true" visibility="hidden">
+					<name>Given name</name>
+				</setting>
+				<setting id="admin_surname" class="family-name" type="string" installation-only="true" visibility="hidden">
+					<name>Surname</name>
+				</setting>
+				<setting id="admin_email" class="email" type="string" optional="true" default-value="" installation-only="true" visibility="hidden">
+					<name>Email address</name>
+				</setting>
+				<group class="tel">
+					<setting id="admin_phone" type="string" class="work" installation-only="true" visibility="hidden">
+						<name>Phone number</name>
+					</setting>
+				</group>
+				<setting id="admin_language" type="enum" default-value="en-GB" class="locale" visibility="hidden" installation-only="true">
+					<name>Interface Language</name>
+					<choice id="en-GB">
+						<name>English</name>
+					</choice>
+					<choice id="de-DE">
+						<name>Deutch</name>
+					</choice>
+					<choice id="fr-FR">
+						<name>Français</name>
+					</choice>
+					<choice id="ed-ES">
+						<name>Español</name>
+					</choice>
+					<choice id="nl-NL">
+						<name>Nederlands</name>
+					</choice>
+				</setting>
+			</group>
+
+			<setting id="is_trial" class="subscription_trial" type="boolean" protected="true" visibility="hidden">
+				<name>Trial account</name>
+			</setting><setting id="disk_quota" type="string" visibility="hidden" default-value="1024">
+				<name>OfficeDrive account disk quota (in MB).</name>
+			</setting>
+			<setting id="subscription_id" class="subscription_id" protected="true" visibility="hidden" type="string">
+				<name>Subscription ID (leave empty)</name>
+			</setting>
+			<setting id="user_limit" type="string" class="subscription-user-limit" visibility="hidden" protected="true">
+				<name>User limit</name>
+			</setting>
+			<setting id="subservice_limits" type="list" protected="true" element-type="string" class="subservice-limits" visibility="hidden">
+				<name>Limits for subservices</name>
+			</setting>
+			<setting id="subservice_ids" type="list" protected="true" element-type="string" class="subservice-ids" visibility="hidden">
+				<name>IDs for subservices</name>
+			</setting>
+			<setting id="subservice_setting_names" type="list" protected="true" element-type="string" class="subservice-setting-names" visibility="hidden">
+				<name>Names of subservice settings</name>
+			</setting>
+			<setting id="subservice_setting_values" type="list" protected="true" element-type="string" class="subservice-setting-values" visibility="hidden">
+				<name>Default values of subservice settings</name>
+			</setting>
+			
+		</settings>
+		
+		<resources>
+			<resource id="disk_usage" class="mb" limiting-setting="disk_quota">
+				<name>Used disk space</name>
+			</resource>
+		</resources>
+		
+		<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:dns="http://apstandard.com/ns/1/dns" xmlns:db="http://apstandard.com/ns/1/db" xmlns:mysql="http://apstandard.com/ns/1/db/mysql">
+			<dns:record xmlns:dns="http://apstandard.com/ns/1/dns">
+				<dns:a>
+					<dns:src>
+						<dns:current />
+					</dns:src>
+					<dns:ip value-of-setting="officedrive_ip" ></dns:ip>
+				</dns:a>
+			</dns:record>
+			<php:version min="5.0"/>
+		</requirements>
+		
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<status-control />
+				<structured-output />
+			</configuration-script>
+			<verify-script name="verify.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</verify-script>
+			<resource-script name="report-resources.php" poll-interval="12h">
+  				<script-language>php</script-language>
+			</resource-script>
+		</provision>
+		<service id="account" class="account">
+			<presentation>
+				<name>OfficeDrive User-account</name>
+				<summary>OfficeDrive User-account service.</summary>
+				<entry-points>
+					<entry dst="https://{mainDomain}/{domain}/" method="POST" class="login">
+						<label>Auto login</label>
+						<icon path="images/OfficeDrive.gif" />
+						<variable name="autoLogin">1</variable>
+						<variable name="mainDomain" value-of-setting="officedrive_domain" />
+						<variable name="domain" value-of-setting="account_domain" />
+						<variable name="foreignAccountId" value-of-setting="account_id" />
+						<variable name="userName" value-of-setting="user_name" />
+						<variable name="password" value-of-setting="user_password"/>
+					</entry>
+				</entry-points>
+			</presentation>
+
+			<settings>
+				<group class="authn">
+					<setting id="user_name" class="login" type="string" uniq="global" track-old-value="true" visibility="hidden">
+						<name>User name</name>
+					</setting>
+					<setting id="user_password" class="password" type="password" min-length="3" default-value="">
+						<name>User password</name>
+					</setting>
+					<setting type="boolean" id="user_in_admin_group" installation-only="true" default-value="true">
+						<name>This user is a member of the admin group (this can be changed in the OfficeDrive user interface)</name>
+					</setting>
+				</group>
+				<group class="vcard">
+					<setting id="user_email" class="email" type="string" optional="true" visibility="hidden" installation-only="true">
+						<name>Email address</name>
+					</setting>
+					<setting id="user_given_name" class="given-name" type="string" visibility="hidden" installation-only="true">
+						<name>Given name</name>
+					</setting>
+					<setting id="user_surname" class="family-name" type="string" visibility="hidden" installation-only="true">
+						<name>Surname</name>
+					</setting>
+					<setting id="user_phone" type="string" class="work" visibility="hidden" installation-only="true">
+						<name>Phone number</name>
+					</setting>
+				</group>
+				<group class="web">
+					<setting id="user_language" type="enum" default-value="en-GB" class="locale" installation-only="true" visibility="hidden">
+						<name>Interface Language</name>
+						<choice id="en-GB">
+							<name>English</name>
+						</choice>
+						<choice id="de-DE">
+							<name>Deutch</name>
+						</choice>
+						<choice id="nl-NL">
+							<name>Nederlands</name>
+						</choice>
+						<choice id="ed-ES">
+							<name>Español</name>
+						</choice>
+					</setting>
+				</group>
+				<setting id="account_domain" type="string" visibility="hidden" value-of-setting="account_domain" />
+				<setting id="account_id" type="integer" visibility="hidden" value-of-setting="account_id" />
+			</settings>
+			
+			<requirements xmlns:php="http://apstandard.com/ns/1/php">
+				<php:version min="5.0"/>
+			</requirements>
+
+			<provision>
+				<configuration-script name="configure-user.php">
+					<script-language>php</script-language>
+					<status-control/>
+					<structured-output/>
+				</configuration-script>
+				<verify-script name="verify-user.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</verify-script>
+			</provision>
+			
+		</service>
+	</service>
+</application>

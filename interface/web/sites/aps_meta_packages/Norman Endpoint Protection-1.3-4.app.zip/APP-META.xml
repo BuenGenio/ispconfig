@@ -1,0 +1,270 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-07-20T12:20:44">
+	<id>http://apsstandard.org/app/NormanCertificate</id>
+	<name>Norman Endpoint Protection</name>
+	<version>1.3</version>
+	<release>4</release>
+	
+	<homepage>http://www.norman.com/products/endpoint_protection/</homepage>
+	
+	<vendor>
+		<name>Norman</name>
+		<homepage>http://www.norman.com</homepage>
+		<icon path="images/norman.icon.png" />
+	</vendor>
+	<packager>
+		<name>Norman</name>
+		<homepage>http://www.norman.com</homepage>
+		<icon path="images/norman.icon.png" />
+	</packager>
+
+	<presentation>
+		<summary>Norman Endpoint Protection</summary>
+		<description>Award-winning Norman security technology constantly protects laptops, desktops and servers against the latest malware, viruses and spyware.</description>
+		<icon path="images/norman.icon.png" />
+		<screenshot path="images/norman.antivirus.sreenshot1.png">
+			<description>Home page</description>
+		</screenshot>
+		<screenshot path="images/norman.antivirus.sreenshot2.png">
+			<description>Antivirus and Antispyware</description>
+		</screenshot>
+		<changelog>
+			<version release="1" version="1.0">
+				<entry>Initial release</entry>
+			</version>
+			<version release="16" version="1.0">
+				<entry>small changes</entry>
+			</version>
+			<version release="10" version="1.1">
+				<entry>Service user display name and locale added</entry>
+			</version>
+			<version release="2" version="1.2">
+				<entry>Service user limits added</entry>
+			</version>
+			<version release="3" version="1.2">
+				<entry>remove structured output propertie</entry>
+			</version>
+			<version release="4" version="1.2">
+				<entry>update settings</entry>
+			</version>
+			<version release="5" version="1.2">
+				<entry>structured output</entry>
+			</version>
+			<version release="1" version="1.3">
+				<entry>Trial version added</entry>
+			</version>
+			<version release="4" version="1.3">
+				<entry>add phone setting to group with class &quot;tel&quot;</entry>
+			</version>
+		</changelog>
+		
+		<categories>
+			<category>Infrastructure/Security</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	
+
+	<global-settings>
+		<setting id="provisioning_host" class="web" type="domain-name">
+			<name>APS provisioning server</name>
+			<description>This is the domain of the Norman APS server, used for provisioning access.</description>
+		</setting>
+		<setting type="boolean" id="provisioning_host_ssl_strict" default-value="true">
+			<name>Use strict SSL communication</name>
+		</setting>
+		<setting id="provisioning_user" class="login" type="string" min-length="3">
+			<name>APS provisioning login</name>
+			<error-message>Please contact Norman if you don't have an provisioning login.</error-message>
+		</setting>
+		<setting id="provisioning_password" class="password" type="password">
+			<name>APS provisioning password</name>
+		</setting>
+		<setting type="string" id="system_id" min-length="5" max-length="30" installation-only="true" default-value="">
+			<name>POA identifier - create a unique string to identify this Parallels Automation system. Your company domain for instance.</name>
+			<error-message>Minimal 5 and maximal 30 characters</error-message>
+		</setting>
+		<setting type="password" id="access_key" default-value="">
+			<name>Access Key</name>
+		</setting>
+	</global-settings>
+	
+	<patch match="/application/version &gt; '1.0'" recommended="true"/>	
+	
+	<service id="context" class="service">
+		<license must-accept="false">
+			<text>
+				<name>End User License Agreement</name>
+				<url>http://www.norman.com/aps/licence.html</url>
+			</text>
+		</license>
+		
+		<presentation>
+			<name>Account settings</name>
+			<summary>Award-winning Norman security technology constantly protects laptops, desktops and servers against the latest malware, viruses and spyware.</summary>
+			<icon path="images/norman.icon.png" />
+			<infolinks>
+				<link class="support" href="http://{provisioning_host}/support/">Norman Support</link>
+			</infolinks>
+
+			<entry-points>
+				<entry dst="https://{provisioning_host}/access/" method="POST" class="login">
+					<label>Install software and access all installation keys</label>
+					<icon path="images/norman.icon.png" />
+					<variable name="provisioning_host" value-of-setting="provisioning_host" class=""/>
+					<variable name="contextUser" value-of-setting="context_user" />
+					<variable name="systemId" value-of-setting="system_id" />
+					<variable name="contextId" value-of-setting="context_id" />
+					<variable name="contextKey" value-of-setting="context_key" />
+					<variable name="accessKey" value-of-setting="access_key" />
+				</entry>
+				<entry dst="https://{provisioning_host}/access/?excel" method="POST" class="login">
+					<label>Download installation keys in Excel</label>
+					<icon path="images/norman.icon.png" />
+					<variable name="provisioning_host" value-of-setting="provisioning_host" class=""/>
+					<variable name="contextUser" value-of-setting="context_user" />
+					<variable name="systemId" value-of-setting="system_id" />
+					<variable name="contextId" value-of-setting="context_id" />
+					<variable name="contextKey" value-of-setting="context_key" />
+					<variable name="accessKey" value-of-setting="access_key" />
+					<variable name="action">download</variable>
+				</entry>
+			</entry-points>
+
+		</presentation>
+		
+		<settings>
+			<group class="authn">
+				<setting id="context_user" class="login" type="string"
+					uniq="global" track-old-value="true" installation-only="true" visibility="hidden">
+					<name>User name</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<setting id="context_organization_name" type="string" class="organization-name">
+					<name>Company name</name>
+				</setting>
+				<setting id="context_given_name" class="given-name" type="string">
+					<name>Given name</name>
+				</setting>
+				<setting id="context_surname" class="family-name" type="string">
+					<name>Surname</name>
+				</setting>
+				<setting id="context_email" class="email" type="string" optional="true">
+					<name>Email address</name>
+				</setting>
+				<group class="tel">
+					<setting id="context_phone" type="string" class="work">
+						<name>Phone number</name>
+					</setting>
+				</group>
+				<setting id="context_locale" type="string" class="locale" visibility="hidden">
+					<name>Language</name>
+				</setting>
+			</group>
+			<setting id="context_id" type="integer" uniq="global" generate="sequence" visibility="hidden" protected="true" installation-only="true">
+				<name>Context ID (leave empty)</name>
+			</setting>
+			<setting id="context_key" type="integer" generate="random" protected="true" visibility="hidden" min="1000000" max="9999999" installation-only="true">
+				<name>Context Key (leave empty)</name>
+			</setting>
+			<setting id="context_is_trial" class="subscription_trial" type="boolean" protected="true">
+				<name>Trial account</name>
+			</setting>
+			<setting id="subscription_id" class="subscription_id" protected="true" visibility="hidden" type="string" installation-only="true">
+				<name>Subscription ID (leave empty)</name>
+			</setting>
+			<setting id="context_user_limit" type="string" class="subscription-user-limit" visibility="hidden" protected="true">
+				<name>User limit</name>
+			</setting>
+			<setting id="subservice_limits" type="list" protected="true" element-type="string" class="subservice-limits" visibility="hidden">
+				<name>Limits for subservices</name>
+			</setting>
+			<setting id="subservice_ids" type="list" protected="true" element-type="string" class="subservice-ids" visibility="hidden">
+				<name>IDs for subservices</name>
+			</setting>
+			<setting id="subservice_setting_names" type="list" protected="true" element-type="string" class="subservice-setting-names" visibility="hidden">
+				<name>Names of subservice settings</name>
+			</setting>
+			<setting id="subservice_setting_values" type="list" protected="true" element-type="string" class="subservice-setting-values" visibility="hidden">
+				<name>Default values of subservice settings</name>
+			</setting>
+			
+		</settings>	
+		
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="5.0"/>
+			<php:extension>curl</php:extension>
+		</requirements>
+		
+		<provision>
+			<configuration-script name="configure-context.php">
+				<script-language>php</script-language>
+				<status-control />
+				<structured-output />
+			</configuration-script>
+		</provision>
+		
+		<service id="account" class="account">
+			<presentation>
+				<name>Service User</name>
+				<summary>Award-winning Norman security technology constantly protects laptops, desktops and servers against the latest malware, viruses and spyware.</summary>
+				
+				<entry-points>
+					<entry dst="https://{provisioning_host}/access/" method="POST" class="login">
+						<label>Download software and access installation key</label>
+						<icon path="images/norman.icon.png" />
+						<variable name="provisioning_host" value-of-setting="provisioning_host" />
+						<variable name="systemId" value-of-setting="system_id" />
+						<variable name="contextId" value-of-setting="context_id" />
+						<variable name="contextKey" value-of-setting="context_key" />
+						<variable name="accountUser" value-of-setting="account_user" />
+						<variable name="accessKey" value-of-setting="access_key"></variable>
+					</entry>
+				</entry-points>
+				
+			</presentation>
+			<settings>
+				<group class="authn">
+					<setting id="account_user" class="login" type="string" uniq="service" track-old-value="true">
+						<name>User name</name>
+					</setting>
+				</group>
+				<group class="vcard">
+					<group class="fn n">
+					<setting id="account_name" type="string" class="display-name" protected="true">
+						<name>Display name</name>
+					</setting>
+					</group>
+				</group>
+				<group class="web">
+					<setting id="account_locale" type="string" class="locale" protected="true">
+						<name>Language</name>
+					</setting>
+				</group>
+				<setting id="context_id" type="integer" visibility="hidden" value-of-setting="context_id" />
+				<setting id="context_key" type="integer" visibility="hidden" value-of-setting="context_key" />
+				<setting id="subscription_id" visibility="hidden" type="string" value-of-setting="subscription_id" />
+			</settings>
+			
+			<requirements xmlns:php="http://apstandard.com/ns/1/php">
+				<php:version min="5.0"/>
+				<php:extension>curl</php:extension>
+			</requirements>
+			
+			<provision>
+				<configuration-script name="configure-account.php">
+					<script-language>php</script-language>
+					<status-control />
+					<structured-output />
+				</configuration-script>
+			</provision>
+		</service>
+
+
+	</service>
+	
+	
+	
+</application>

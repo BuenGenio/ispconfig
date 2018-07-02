@@ -1,0 +1,166 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-06-20T13:27:12">
+    <id>Leostream_Cloud_Desktops</id>
+    <name>Leostream Cloud Desktops</name>
+  <version>1.0</version>
+    <release>3</release>
+    
+    <homepage>http://leostreamdesktops.com</homepage>
+    
+<vendor>
+    	<name>Leostreamdesktops</name>
+    	<homepage>http://leostreamdesktops.com</homepage>
+    	<icon path="images/leostream_aps_logo_256.jpg" />
+    </vendor>
+    <packager>
+    	<name>Veritra</name>
+    	<homepage>http://veritra.com</homepage>
+    	<icon path="images/logo.png" />
+    	
+    </packager>
+    <presentation>
+    	<summary>The Leostream Cloud Desktops service provides fully functional and personalizable Microsoft Windows desktops delivered from the public cloud.</summary>
+    	<description>Many organizations want to realize the benefits of VDI: lowering IT costs, securing data in the datacenter, allowing users to bring their own devices to work, etc., but are blocked by the cost and complexity of VDI. The Leostream Cloud Desktops service gives these organizations all the benefits of VDI without the associated price tag and hassle. The Leostream Cloud Desktops interface provides a suite of tools that allows customers to build their VDI in the public cloud, instead of in their private data centers.   
+</description>
+    	<icon path="images/leostream_aps_logo_256.jpg" />
+    	<screenshot path="images/AddUser.png">
+    		<description>This is the page for Adding User</description>
+    	</screenshot>
+    	<screenshot path="images/AddDesktop.png">
+    		<description>This is the Page for Adding Desktop</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.0">
+    			<entry>Leostream Cloud Desktops Basic Release</entry>
+    		</version>
+    		<version release="2" version="1.0">
+    			<entry>Logo was changed</entry>
+    		</version>
+    		<version release="3" version="1.0">
+    			<entry>Logo changes with patch settings</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Web/E-commerce</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+
+    </presentation>
+    <global-settings>
+    	<group>
+    		<name>Reseller Settings</name>
+    		<setting type="string" id="reseller_id" class="authn">
+    			<name>Reseller Id</name>
+    		</setting>
+    		<setting type="password" id="reseller_password"
+    			class="authn">
+    			<name>Reseller Password</name>
+    		</setting>
+    		<setting type="string" id="Leostream_account_create_Url" default-value="http://leostreamdesktops.com/account/create">
+					<name>Leostream Account Create Url</name>
+				</setting>
+				<setting type="string"
+					id="Leostream_desktop_count_Url" default-value="http://leostreamdesktops.com/us/list">
+					<name>Leostream Desktop Count Url</name>
+				</setting>
+				<setting type="string" id="Leostream_Session_Url" default-value="http://leostreamdesktops.com/session/login">
+					<name>Leostream Session Url</name>
+				</setting>
+    	</group>
+    </global-settings>
+    <patch match="/application/version = '1.0' and /application/release='3'" recommended="true"/>
+    <service id="LeostreamCloudDesktops" class="service" singular="true">
+    	<license must-accept="true">
+    		<free />
+    		<text>
+    			<name>Licence</name>
+    			<file>docs/licence.txt</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>Leostream Cloud Desktops</name>
+    		<summary>Leostream Cloud Desktops Service</summary>
+    		<infolinks>
+    			<link href="http://www.leostreamdesktops.com/support.html" class="support">support</link>
+    			<link href="file:///docs/Leostream Cloud Desktops-PA-Provider-Deployment-guide.docx" class="deployment-guide">Leostream Cloud Desktops Provider Deployment Guide</link>
+    			<link href="file:///docs/Leostream Cloud Desktops-PA-Subscriber-guide.docx" class="subscriber-guide">Leostream Cloud Desktops Subscriber Guide</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry dst="https://www.leostreamdesktops.com/login" class="frontpage">
+    				<label>Leostream Cloud Desktops Portal</label>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+    	<group class="authn">
+					<setting id="admin_login" class="login" type="string" installation-only="true" uniq="global">
+					<name>Administrator Login</name>
+					
+				</setting>
+				<setting id="admin_password" type="password" track-old-value="true" min-length="1" installation-only="true" default-value="">
+					<name>Password</name>
+					
+				</setting>
+				</group>
+			<group class="vcard">
+				<name>ADMIN PREFERENCES</name>
+				<group class="email">
+					<setting id="admin_email" class="value" type="email">
+						<name>Email</name>
+						
+					</setting>
+				</group>
+				
+				<group class="fn n">
+				
+					<setting id="admin_display_name" class="display-name" type="string" protected="true">
+						<name>Administrator display name</name>
+					</setting>
+					<setting id="admin_given_name" class="given-name" type="string">
+						<name>Your Name</name>
+						
+					</setting>
+					<setting id="admin_surname" class="family-name" type="string">
+						<name>Surname</name>
+						
+					</setting>
+				</group>
+				
+				<setting id="organization_name" class="organization-name" type="string">
+					<name>Company Name</name>
+					
+				</setting>
+			</group>
+			<group>
+				<name>LeostreamInfo</name>
+				<setting type="integer" id="totaldesktops" visibility="hidden" protected="true" track-old-value="true" default-value="0">
+					<name>totaldesktops</name>
+				</setting>
+				
+			</group>
+
+    	</settings>
+    	
+    	<resources>
+    		<resource class="item" id="totaldesktops" limiting-setting="totaldesktops">
+    			<name>Desktops</name>
+    		</resource>
+    	</resources>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:version min="5.2.17"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<status-control />
+    			<structured-output />
+    		</configuration-script>
+    		<resource-script name="resource.php" poll-interval="1m">
+    			<script-language>php</script-language>
+    		</resource-script>
+    	</provision>
+    	
+    </service>
+   
+    </application>

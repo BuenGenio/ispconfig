@@ -1,0 +1,348 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-02-06T10:14:16">
+	<id>http://www.joomla.org/</id>
+	<name>joomla</name>
+	<version>2.5.11</version>
+	<release>6</release>
+
+	<homepage>http://www.joomla.org/</homepage>
+
+	<vendor>
+		<name>Joomla!</name>
+		<homepage>http://www.joomla.org/</homepage>
+		<icon path="images/icon.png" />
+	</vendor>
+
+	<packager>
+		<name>Sofcloudit</name>
+		<homepage>http://www.sofcloudit.com</homepage>
+		<icon path="images/sofcloudit64.png" />
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+
+	<presentation>
+		<summary>Content management system and Web application framework</summary>
+		<description>
+			Joomla! is a powerful open source content management system. It is used for managing 
+			simple Web sites and complex corporate applications. Joomla! is easy to install, simple 
+			to manage, and reliable. Once Joomla! is installed and running, it is simple for even 
+			non-technical users to add or edit content, update images, and to manage critical data. 
+			Anybody with basic word processing skills can easily learn to manage a Joomla! site.
+		</description>
+
+		<icon path="images/icon.png"/>
+	
+		<screenshot path="images/main_screenshot.jpg">
+			<description>
+				Main screenshot.
+			</description>
+		</screenshot>
+	
+		<screenshot path="images/admin_screenshot.jpg">
+			<description>
+				Admin screenshot.
+			</description>
+		</screenshot>
+
+		<changelog>
+			<version release="6" version="2.5.11">
+				<entry>php-cgi bug fixed</entry>
+			</version><version release="4" version="2.5.11">
+				<entry>Security update 2.5.11. Release notes: 
+http://www.joomla.org/announcements/release-news/5493-joomla-2-5-10-released.html</entry>
+			</version><version release="2" version="2.5.10">
+				<entry>Security update 2.5.10. Release notes: 
+http://www.joomla.org/announcements/release-news/5493-joomla-2-5-10-released.html</entry>
+			</version><version release="2" version="2.5.9">
+				<entry>Security update 2.5.9. Release notes: 
+http://www.joomla.org/announcements/release-news/5477-joomla-2-5-9-released.html</entry>
+			</version><version release="10" version="2.5.8">
+				<entry>Security update 2.5.8. Release notes: 
+http://www.joomla.org/announcements/release-news/5470-joomla-2-5-8-released.html</entry>
+			</version><version version="2.5.7" release="4">
+				<entry>Security update 2.5.7. Release notes: http://www.joomla.org/announcements/release-news/5463-joomla-2-5-7-released.html</entry>
+			</version>
+			<version version="2.5.6" release="4">
+				<entry>New JUpgrade version 2.5.2 included</entry>
+			</version>
+			<version version="2.5.6" release="2">
+				<entry>Security patch 2.5.6. Release notes: http://www.joomla.org/announcements/release-news/5428-joomla-256-released.html</entry>
+				<entry>Security patch 2.5.5. Release notes: http://www.joomla.org/announcements/release-news/5427-joomla-255-released.html</entry>
+				<entry>Migration from Joomla 1.5.x is added</entry>
+			</version>
+			<version version="2.5.4" release="4">
+				<entry>Bugfixing patch 2.5.4. Release notes: http://www.joomla.org/announcements/release-news/5427-joomla-255-released.html</entry>
+			</version>
+			<version version="2.5.3" release="2">
+				<entry>Security patch 2.5.3. Release notes: http://www.joomla.org/announcements/release-news/5416-joomla-253-released.html</entry>
+			</version>
+			<version version="2.5.2" release="6">
+				<entry>Update Version 2.5.2. Release notes: http://www.joomla.org/announcements/release-news/5415-joomla-252-released.html</entry>
+			</version>
+			<version version="1.7.3" release="10">
+				<entry>Update Version 1.7.3. Release notes: http://www.joomla.org/announcements/release-news/5392-joomla-173-released.html</entry>
+			</version>
+			<version version="1.7.0" release="2">
+				<entry>Release notes: http://www.joomla.org/announcements/release-news/5380-joomla-170-released.html</entry>
+			</version>
+			<version version="1.6.4" release="2">
+				<entry>Release notes: http://www.joomla.org/announcements/release-news/5374-joomla-164-released.html</entry>
+			</version>
+			<version version="1.6.3" release="18">
+				<entry>Release notes: http://www.joomla.org/announcements/release-news/5370-joomla-163-released.html</entry>
+			</version>
+			<version version="1.5.22" release="2">
+				<entry>Release notes: http://docs.joomla.org/Category:Version_1.5.22_FAQ</entry>
+			</version>
+			<version version="1.5.20" release="2">
+				<entry>Release notes: http://docs.joomla.org/Category:Version_1.5.20_FAQ</entry>
+			</version>
+			<version version="1.5.18" release="4">
+				<entry>Upgraded to version 1.5.18</entry>
+			</version>
+			<version version="1.5.15" release="19">
+				<entry>autologin token is marked as 'optinal'</entry>
+			</version>
+			<version version="1.5.15" release="18">
+				<entry>New setting: default site language.</entry>
+				<entry>Locale is filled automatically now.</entry>
+			</version>
+			<version version="1.5.15" release="9">
+				<entry>Language packages are separated to add-ons.</entry>
+				<entry>eXtplorer plug-in is separated to add-on.</entry>
+			</version>
+	                <version version="1.5.15" release="1">
+				<entry>Upgraded to version 1.5.15.</entry>
+				<entry>Auto-login is added.</entry>
+				<entry>Packaged into APS 1.2.</entry>
+                	</version>
+			<version version="1.5.13" release="10">
+				<entry>Upgrade procedure fixed. Old configuration.php is renamed before upgrade.</entry>
+			</version>
+			<version version="1.5.13" release="6">
+				<entry>TinyMCE localization is turned on upon upgrade and fresh installation</entry>
+			</version>
+			<version version="1.5.13" release="5">
+				<entry>TinyMCE FR, DE and ES localizations are added</entry>
+			</version>
+			<version version="1.5.13" release="4">
+				<entry>eXtplorer File Manager plug-in and Spanish localization are included. Security release Joomla! 1.5.13 is packed. Refer to Joomla! announcements for release notes (http://www.joomla.org/announcements/)</entry>
+			</version>
+			<version version="1.5.11" release="14">
+				<entry>configuration file set writable before upgrade</entry>
+			</version>
+			<version version="1.5.11" release="13">
+				<entry>Installation on Plesk fixed</entry>
+			</version>
+			<version version="1.5.11" release="12">
+				<entry>
+					Security
+	
+					One low-level and two moderate-level security issues were fixed in this release:
+	
+					    * Moderate Priority: Core - com_users XSS.
+					    * Moderate Priority: Core - ja_purity XSS.
+					    * Low Priority: Core - Front-end XSS.
+	
+					For more information refer to http://www.joomla.org/announcements/release-news
+				</entry>
+			</version>
+			<version version="1.5.9" release="1">
+				<entry>Initial package version</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+
+	<upgrade match="/application/version &gt;= '1.6.0'"/>
+	<!-- upgrade match="/application/version &gt;= '1.5.0'"/ -->
+
+	<service id="instance">
+		<license must-accept="true">
+			<text>
+				<name>GPLv2</name>
+				<file>htdocs/LICENSE.txt</file>
+			</text>
+		</license>
+
+		<presentation>
+			<name>Joomla</name>
+			<summary>Joomla CMS</summary>
+
+			<infolinks>
+				<link class="support" href="http://forum.joomla.org/">
+					Joomla! Discussion Forums
+				</link>
+			</infolinks>
+
+			<entry-points>
+				<entry dst="/administrator/" method="POST" class='control-panel'>
+					<label>Administrative interface</label>
+					<variable name="user" value-of-setting="admin_name"/>
+					<variable name="passw" value-of-setting="admin_password"/>
+				</entry>
+				<entry dst="/" method="GET" class='control-panel'>
+					<label>Site</label>
+				</entry>
+			</entry-points>
+		</presentation>
+
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting id="admin_name" type="string" class="login" default-value="admin" min-length="1" max-length="32" regex="^[a-zA-Z][0-9a-zA-Z_\-]*">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting id="admin_password" type="password" class="password" min-length="1" >
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Main configuration</name>
+				<group class="email">
+					<setting id="admin_email" type="email" class="value">
+						<name>Administrator's email</name>
+					</setting>
+				</group>
+				<group class="fn n">
+					<setting id="title" type="string" default-value="My CMS" min-length="1" class="organization-name" installation-only="true">
+						<name>Site name</name>
+					</setting>
+				</group>
+			</group>
+			<group class="web">
+				<setting id="sample_data" type="enum" default-value="yes" installation-only="true">
+					<name>Install Sample Data</name>
+					<choice id="yes" >
+						<name>yes</name>
+					</choice>
+					<choice id="no" >
+						<name>no</name>
+					</choice>
+				</setting>
+				<setting id="locale" type="enum" default-value="en-GB" class="locale">
+					<name>Interface language</name>
+					<choice id="da-DK" >
+						<name>Danish</name>
+					</choice>
+					<choice id="nl-NL" >
+						<name>Dutch</name>
+					</choice>
+					<choice id="en-GB" >
+						<name>English</name>
+					</choice>
+					<choice id="fr-FR" >
+						<name>French</name>
+					</choice>
+					<choice id="de-DE" >
+						<name>German</name>
+					</choice>
+					<choice id="it-IT" >
+						<name>Italian</name>
+					</choice>
+					<choice id="ja-JP" >
+						<name>Japanese</name>
+					</choice>
+					<choice id="nb-NO" >
+						<name>Norwegian</name>
+					</choice>
+					<choice id="ru-RU" >
+						<name>Russian</name>
+					</choice>
+					<choice id="es-ES" >
+						<name>Spanish</name>
+					</choice>
+				</setting>
+				<setting id="smtp_host" type="string" optional="true" default-value="example.com">
+					<name>SMTP Host, which Joomla will use to send email</name>
+				</setting>
+				<setting id="smtp_port" type="string" default-value="25" optional="true">
+					<name>SMTP Port</name>
+				</setting>
+			</group>
+			<group>
+				<name>Migration from Joomla 1.5.x</name>
+				<setting id="migrate" type="enum" installation-only="true" default-value="no">
+					<name>Import site contents from Joomla 1.5.x instance</name>
+					<description>IMPORTANT! Before doing the import, upgrade all extensions on your Joomla 1.5 to latest versions. Only extensions DATA will be migrated. After the migration, install extensions on Joomla 2.5 again, data will be preserved</description>
+					<choice id="no" >
+						<name>no</name>
+					</choice>
+					<choice id="yes" >
+						<name>yes</name>
+					</choice>
+				</setting>
+				<setting id="migration_path" type="string" optional="true" installation-only="true" default-value="joomla 1.5 path">
+					<name>Joomla 1.5.x site root directory</name>
+					<description>Path in filesystem, where your old Joomla 1.5 instance is installed. Joomla configuration.php must be in this directory</description>
+				</setting>
+			</group>
+		</settings>
+		
+		<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:db="http://apstandard.com/ns/1/db">
+			<php:version min="5.2.4"/>
+			<php:extension>mysql</php:extension>
+			<php:extension>zlib</php:extension>    
+			<php:extension>xml</php:extension>    
+			<php:safe-mode>false</php:safe-mode>
+			<php:file-uploads>true</php:file-uploads>
+			<php:register-globals>false</php:register-globals>
+			
+			<db:db>
+				<db:id>main</db:id>
+				<db:default-name>joomla</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0.4</db:server-min-version>
+			</db:db>
+		</requirements>
+
+		<provision>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+
+			<url-mapping>
+				<default-prefix>joomla</default-prefix>
+				<installed-size>27942912</installed-size>
+
+				<mapping url="/" path="htdocs" xmlns:php="http://apstandard.com/ns/1/php">
+					<php:permissions writable="true"/>
+					<php:handler>
+						<php:extension>php</php:extension>
+					</php:handler>
+
+					<mapping url="administrator">
+						<mapping url="components"><php:permissions writable="true"/></mapping>
+						<mapping url="language"><php:permissions writable="true"/></mapping>
+						<mapping url="modules"><php:permissions writable="true"/></mapping>
+						<mapping url="templates"><php:permissions writable="true"/></mapping>
+						<mapping url="cache"><php:permissions writable="true"/></mapping>
+					</mapping>
+
+					<mapping url="cache"><php:permissions writable="true"/></mapping>
+					<mapping url="components"><php:permissions writable="true"/></mapping>
+					<mapping url="images">
+						<php:permissions writable="true"/>
+						<mapping url="banners"><php:permissions writable="true"/></mapping>
+					</mapping>
+					<mapping url="language"><php:permissions writable="true"/></mapping>
+					<mapping url="logs"><php:permissions writable="true"/></mapping>
+					<mapping url="modules"><php:permissions writable="true"/></mapping>
+					<mapping url="media"><php:permissions writable="true"/></mapping>
+					<mapping url="plugins"><php:permissions writable="true"/></mapping>
+					<mapping url="templates"><php:permissions writable="true"/></mapping>
+					<mapping url="tmp"><php:permissions writable="true"/></mapping>
+				</mapping>
+			</url-mapping>
+		</provision>
+	</service>
+	
+</application>

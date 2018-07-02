@@ -1,0 +1,1101 @@
+<application packaged="2014-07-24T12:30:20" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>http://apsstandard.org/app/CloudBackup</id>
+    <name>Acronis Backup as a Service</name>
+    <version>1.2</version>
+    <release>147</release>
+
+    <homepage>http://www.acronis.com/provider/backup-as-a-service/</homepage>
+
+    <vendor>
+        <name>Acronis</name>
+        <homepage>http://www.acronis.com/provider/backup-as-a-service/</homepage>
+        <icon path="images/logo_A_64px.png"/>
+    </vendor>
+
+    <packager>
+        <name>Acronis</name>
+        <homepage>http://www.acronis.com/provider/backup-as-a-service/</homepage>
+    </packager>
+
+    <presentation>
+        <summary>A service for backing up physical machines running Windows and Linux, and virtual machines on ESX(i) and Hyper-V hosts.</summary>
+        <description>A service for backing up physical machines running Windows and Linux, and virtual machines on ESX(i) and Hyper-V hosts.</description>
+
+        <icon path="images/logo_A_64px.png"/>
+        <screenshot path="images/screenshoot.png">
+            <description>Acronis Backup as a Service directly enables service providers to add new revenue streams. This offering, powered by the Acronis AnyData Engine, is a comprehensive file- and image, cloud backup and recovery solution that enables service providers to expand their data protection offerings, localize an automated backup service, grow recurring revenue, and increase customer stickiness. Service Providers face zero entry costs and can easily scale with the pay-per-use model. Acronis Backup as a Service can be syndicated (hosted by Acronis) or deployed in a hybrid model, using the service provider’s own local backup storage.</description>
+        </screenshot>
+
+        <changelog>
+            <version release="147" version="1.2">
+                <entry>Initial release.</entry>
+            </version>
+        </changelog>
+
+        <categories>
+            <category>Infrastructure/Backup</category>
+        </categories>
+
+        <languages>
+            <language>en</language>
+        </languages>
+
+    </presentation>
+
+    <global-settings>
+        <setting default-value="" id="globals_baas_admin_login" type="string">
+            <name>Partner login</name>
+        </setting>
+        <setting default-value="" id="globals_baas_admin_password" type="password">
+            <name>Partner password</name>
+        </setting>
+
+        <setting id="globals_user_guide" type="string">
+            <name>User guide url</name>
+        </setting>
+
+        <setting default-value="http://dl.managed-protection.com/u/baas/Backup_Client_for_Windows_en-US.exe" id="globals_windows_client_download_url" type="string">
+            <name>Download URL for Windows</name>
+            <description>Backup client download URLs for installation in Windows</description>
+        </setting>
+
+        <setting default-value="http://dl.managed-protection.com/u/baas/Backup_Client_for_Linux_en-US_x86_64.bin" id="globals_linux_client_download_url" type="string">
+            <name>Download URL for Linux</name>
+            <description>Backup client download URLs for installation in Linux</description>
+        </setting>
+
+        <setting default-value="false" id="globals_branding_is_active" type="boolean">
+            <name>Enable branding</name>
+        </setting>
+
+        <setting default-value="" id="globals_branding_logo_url" type="string">
+            <name>Logo url</name>
+            <description>
+                Format: JPG, PNG. Size: 160x32 pixels (recommended)
+            </description>
+        </setting>
+
+        <setting default-value="" id="globals_branding_color" type="string">
+            <name>Brand color</name>
+        </setting>
+
+        <setting default-value="" id="globals_branding_company_name" type="string">
+            <name>Company name</name>
+        </setting>
+
+        <setting default-value="" id="globals_branding_home_url" type="string">
+            <name>Home url</name>
+            <description>
+                Your company's home webpage to appear in the 'About' window
+            </description>
+        </setting>
+
+        <setting default-value="" id="globals_branding_support_url" type="string">
+            <name>Support url</name>
+            <description>
+                Your company's home webpage to appear in the 'About' window
+            </description>
+        </setting>
+
+        <setting default-value="" id="globals_branding_terms_url" type="string">
+            <name>Terms url</name>
+            <description>
+                Your company's Support webpage to appear in the 'About' window
+            </description>
+        </setting>
+
+        <setting default-value="" id="globals_branding_support_phone" type="string">
+            <name>Support phone</name>
+        </setting>
+    </global-settings>
+
+    <patch match="/application/version &gt;= '1.0'"/>
+
+    <service class="service" id="group">
+
+        <presentation>
+            <name>General information</name>
+            <summary>A service for backing up physical machines running Windows and Linux, and virtual machines on ESX(i) and Hyper-V hosts.</summary>
+            <infolinks>
+                <link class="official" href="http://www.acronis.com/provider/backup-as-a-service/">Official site</link>
+                <link class="support" href="http://www.acronis.com/provider/backup-as-a-service/">Support</link>
+                <link class="demo" href="http://www.acronis.com/provider/backup-as-a-service/">Online-Demo</link>
+                <link class="deployment-guide" href="file:///docs/Acronis_Backup-as-a-Service_APS_1.2_deployment guide.pdf">Deployment Guide</link>
+            </infolinks>
+            <entry-points>
+                <entry dst="https://baas.acronis.com">
+                    <label>Login to Manage Backups</label>
+                </entry>
+            </entry-points>
+        </presentation>
+
+        <settings>
+            <group class="authn">
+                <setting class="login" id="group_login" installation-only="true" type="string" uniq="global">
+                    <name>Administrator login</name>
+                </setting>
+                <setting class="password" id="group_password" track-old-value="true" type="password">
+                    <name>Administrator password</name>
+                </setting>
+            </group>
+            <group class="vcard">
+                <setting class="email" id="admin_email" type="email">
+                    <name>Admnistrator email</name>
+                </setting>
+                <setting class="given-name" id="admin_given_name" type="string">
+                    <name>Administrator given Name</name>
+                </setting>
+                <setting class="family-name" id="admin_surname" type="string">
+                    <name>Administrator surname</name>
+                </setting>
+                <setting class="organization-name" id="admin_company" type="string">
+                    <name>Company</name>
+                </setting>
+                <setting class="street-address" id="admin_address" type="string">
+                    <name>Address</name>
+                </setting>
+                <setting class="postal-code" id="admin_zipcode" type="string">
+                    <name>Zip code</name>
+                </setting>
+                <setting class="locality" id="admin_city" type="string">
+                    <name>City</name>
+                </setting>
+                <setting class="region" id="admin_state" type="string">
+                    <name>State</name>
+                </setting>
+                <setting class="country-name" id="admin_country" type="enum">
+                    <name>Country</name>
+                    <choice id="af">
+                        <name>Afghanistan</name>
+                    </choice>
+                    <choice id="al">
+                        <name>Albania</name>
+                    </choice>
+                    <choice id="dz">
+                        <name>Algeria</name>
+                    </choice>
+                    <choice id="as">
+                        <name>American Samoa</name>
+                    </choice>
+                    <choice id="ad">
+                        <name>Andorra</name>
+                    </choice>
+                    <choice id="ao">
+                        <name>Angola</name>
+                    </choice>
+                    <choice id="ai">
+                        <name>Anguilla</name>
+                    </choice>
+                    <choice id="aq">
+                        <name>Antarctica</name>
+                    </choice>
+                    <choice id="ag">
+                        <name>Antigua and Barbuda</name>
+                    </choice>
+                    <choice id="ar">
+                        <name>Argentina</name>
+                    </choice>
+                    <choice id="am">
+                        <name>Armenia</name>
+                    </choice>
+                    <choice id="aw">
+                        <name>Aruba</name>
+                    </choice>
+                    <choice id="ac">
+                        <name>Ascension Island</name>
+                    </choice>
+                    <choice id="au">
+                        <name>Australia</name>
+                    </choice>
+                    <choice id="at">
+                        <name>Austria</name>
+                    </choice>
+                    <choice id="az">
+                        <name>Azerbaijan</name>
+                    </choice>
+                    <choice id="bs">
+                        <name>Bahamas</name>
+                    </choice>
+                    <choice id="bh">
+                        <name>Bahrain</name>
+                    </choice>
+                    <choice id="bd">
+                        <name>Bangladesh</name>
+                    </choice>
+                    <choice id="bb">
+                        <name>Barbados</name>
+                    </choice>
+                    <choice id="by">
+                        <name>Belarus</name>
+                    </choice>
+                    <choice id="be">
+                        <name>Belgium</name>
+                    </choice>
+                    <choice id="bz">
+                        <name>Belize</name>
+                    </choice>
+                    <choice id="bj">
+                        <name>Benin</name>
+                    </choice>
+                    <choice id="bm">
+                        <name>Bermuda</name>
+                    </choice>
+                    <choice id="bt">
+                        <name>Bhutan</name>
+                    </choice>
+                    <choice id="bo">
+                        <name>Bolivia</name>
+                    </choice>
+                    <choice id="ba">
+                        <name>Bosnia and Herzegovina</name>
+                    </choice>
+                    <choice id="bv">
+                        <name>Bouvet Island</name>
+                    </choice>
+                    <choice id="br">
+                        <name>Brazil</name>
+                    </choice>
+                    <choice id="io">
+                        <name>British Indian Ocean Territory</name>
+                    </choice>
+                    <choice id="bn">
+                        <name>Brunei</name>
+                    </choice>
+                    <choice id="bg">
+                        <name>Bulgaria</name>
+                    </choice>
+                    <choice id="bf">
+                        <name>Burkina Faso</name>
+                    </choice>
+                    <choice id="bi">
+                        <name>Burundi</name>
+                    </choice>
+                    <choice id="kh">
+                        <name>Cambodia</name>
+                    </choice>
+                    <choice id="cm">
+                        <name>Cameroon</name>
+                    </choice>
+                    <choice id="ca">
+                        <name>Canada</name>
+                    </choice>
+                    <choice id="cv">
+                        <name>Cape Verde</name>
+                    </choice>
+                    <choice id="ky">
+                        <name>Cayman Islands</name>
+                    </choice>
+                    <choice id="cf">
+                        <name>Central African Republic</name>
+                    </choice>
+                    <choice id="td">
+                        <name>Chad</name>
+                    </choice>
+                    <choice id="cl">
+                        <name>Chile</name>
+                    </choice>
+                    <choice id="cn">
+                        <name>China</name>
+                    </choice>
+                    <choice id="cx">
+                        <name>Christmas Island</name>
+                    </choice>
+                    <choice id="cc">
+                        <name>Cocos (Keeling) Islands</name>
+                    </choice>
+                    <choice id="co">
+                        <name>Colombia</name>
+                    </choice>
+                    <choice id="km">
+                        <name>Comoros</name>
+                    </choice>
+                    <choice id="cg">
+                        <name>Congo</name>
+                    </choice>
+                    <choice id="cd">
+                        <name>Congo (drc)</name>
+                    </choice>
+                    <choice id="ck">
+                        <name>Cook Islands</name>
+                    </choice>
+                    <choice id="cr">
+                        <name>Costa Rica</name>
+                    </choice>
+                    <choice id="bw">
+                        <name>Cotswana</name>
+                    </choice>
+                    <choice id="hr">
+                        <name>Croatia</name>
+                    </choice>
+                    <choice id="cu">
+                        <name>Cuba</name>
+                    </choice>
+                    <choice id="cy">
+                        <name>Cyprus</name>
+                    </choice>
+                    <choice id="cz">
+                        <name>Czech Republic</name>
+                    </choice>
+                    <choice id="dk">
+                        <name>Denmark</name>
+                    </choice>
+                    <choice id="dj">
+                        <name>Djibouti</name>
+                    </choice>
+                    <choice id="dm">
+                        <name>Dominica</name>
+                    </choice>
+                    <choice id="do">
+                        <name>Dominican Republic</name>
+                    </choice>
+                    <choice id="ec">
+                        <name>Ecuador</name>
+                    </choice>
+                    <choice id="eg">
+                        <name>Egypt</name>
+                    </choice>
+                    <choice id="sv">
+                        <name>El Salvador</name>
+                    </choice>
+                    <choice id="gq">
+                        <name>Equatorial Guinea</name>
+                    </choice>
+                    <choice id="er">
+                        <name>Eritrea</name>
+                    </choice>
+                    <choice id="ee">
+                        <name>Estonia</name>
+                    </choice>
+                    <choice id="et">
+                        <name>Ethiopia</name>
+                    </choice>
+                    <choice id="fk">
+                        <name>Falkland Islands (Islas Malvinas)</name>
+                    </choice>
+                    <choice id="fo">
+                        <name>Faroe Islands</name>
+                    </choice>
+                    <choice id="fj">
+                        <name>Fiji Islands</name>
+                    </choice>
+                    <choice id="fi">
+                        <name>Finland</name>
+                    </choice>
+                    <choice id="fr">
+                        <name>France</name>
+                    </choice>
+                    <choice id="gf">
+                        <name>French Guiana</name>
+                    </choice>
+                    <choice id="pf">
+                        <name>French Polynesia</name>
+                    </choice>
+                    <choice id="tf">
+                        <name>French Southern and Antarctic Lands</name>
+                    </choice>
+                    <choice id="ga">
+                        <name>Gabon</name>
+                    </choice>
+                    <choice id="gm">
+                        <name>Gambia, the</name>
+                    </choice>
+                    <choice id="ge">
+                        <name>Georgia</name>
+                    </choice>
+                    <choice id="de">
+                        <name>Germany</name>
+                    </choice>
+                    <choice id="gh">
+                        <name>Ghana</name>
+                    </choice>
+                    <choice id="gi">
+                        <name>Gibraltar</name>
+                    </choice>
+                    <choice id="gr">
+                        <name>Greece</name>
+                    </choice>
+                    <choice id="gl">
+                        <name>Greenland</name>
+                    </choice>
+                    <choice id="gd">
+                        <name>Grenada</name>
+                    </choice>
+                    <choice id="gp">
+                        <name>Guadeloupe</name>
+                    </choice>
+                    <choice id="gu">
+                        <name>Guam</name>
+                    </choice>
+                    <choice id="gt">
+                        <name>Guatemala</name>
+                    </choice>
+                    <choice id="gg">
+                        <name>Guernsey</name>
+                    </choice>
+                    <choice id="gn">
+                        <name>Guinea</name>
+                    </choice>
+                    <choice id="gw">
+                        <name>Guinea-Bissau</name>
+                    </choice>
+                    <choice id="gy">
+                        <name>Guyana</name>
+                    </choice>
+                    <choice id="ht">
+                        <name>Haiti</name>
+                    </choice>
+                    <choice id="hm">
+                        <name>Heard Island and Mcdonald Islands</name>
+                    </choice>
+                    <choice id="hn">
+                        <name>Honduras</name>
+                    </choice>
+                    <choice id="hk">
+                        <name>Hong Kong Sar</name>
+                    </choice>
+                    <choice id="hu">
+                        <name>Hungary</name>
+                    </choice>
+                    <choice id="is">
+                        <name>Iceland</name>
+                    </choice>
+                    <choice id="in">
+                        <name>India</name>
+                    </choice>
+                    <choice id="id">
+                        <name>Indonesia</name>
+                    </choice>
+                    <choice id="ir">
+                        <name>Iran</name>
+                    </choice>
+                    <choice id="iq">
+                        <name>Iraq</name>
+                    </choice>
+                    <choice id="ie">
+                        <name>Ireland</name>
+                    </choice>
+                    <choice id="im">
+                        <name>Isle of Man</name>
+                    </choice>
+                    <choice id="il">
+                        <name>Israel</name>
+                    </choice>
+                    <choice id="it">
+                        <name>Italy</name>
+                    </choice>
+                    <choice id="ci">
+                        <name>Ivoire</name>
+                    </choice>
+                    <choice id="jm">
+                        <name>Jamaica</name>
+                    </choice>
+                    <choice id="jp">
+                        <name>Japan</name>
+                    </choice>
+                    <choice id="je">
+                        <name>Jersey</name>
+                    </choice>
+                    <choice id="jo">
+                        <name>Jordan</name>
+                    </choice>
+                    <choice id="kz">
+                        <name>Kazakhstan</name>
+                    </choice>
+                    <choice id="ke">
+                        <name>Kenya</name>
+                    </choice>
+                    <choice id="ki">
+                        <name>Kiribati</name>
+                    </choice>
+                    <choice id="kr">
+                        <name>Korea</name>
+                    </choice>
+                    <choice id="kw">
+                        <name>Kuwait</name>
+                    </choice>
+                    <choice id="kg">
+                        <name>Kyrgyzstan</name>
+                    </choice>
+                    <choice id="la">
+                        <name>Laos</name>
+                    </choice>
+                    <choice id="lv">
+                        <name>Latvia</name>
+                    </choice>
+                    <choice id="lb">
+                        <name>Lebanon</name>
+                    </choice>
+                    <choice id="ls">
+                        <name>Lesotho</name>
+                    </choice>
+                    <choice id="lr">
+                        <name>Liberia</name>
+                    </choice>
+                    <choice id="ly">
+                        <name>Libya</name>
+                    </choice>
+                    <choice id="li">
+                        <name>Liechtenstein</name>
+                    </choice>
+                    <choice id="lt">
+                        <name>Lithuania</name>
+                    </choice>
+                    <choice id="lu">
+                        <name>Luxembourg</name>
+                    </choice>
+                    <choice id="mo">
+                        <name>Macao Sar</name>
+                    </choice>
+                    <choice id="mk">
+                        <name>Macedonia, former Yugoslav Republic of</name>
+                    </choice>
+                    <choice id="mg">
+                        <name>Madagascar</name>
+                    </choice>
+                    <choice id="mw">
+                        <name>Malawi</name>
+                    </choice>
+                    <choice id="my">
+                        <name>Malaysia</name>
+                    </choice>
+                    <choice id="mv">
+                        <name>Maldives</name>
+                    </choice>
+                    <choice id="ml">
+                        <name>Mali</name>
+                    </choice>
+                    <choice id="mt">
+                        <name>Malta</name>
+                    </choice>
+                    <choice id="mh">
+                        <name>Marshall Islands</name>
+                    </choice>
+                    <choice id="mq">
+                        <name>Martinique</name>
+                    </choice>
+                    <choice id="mr">
+                        <name>Mauritania</name>
+                    </choice>
+                    <choice id="mu">
+                        <name>Mauritius</name>
+                    </choice>
+                    <choice id="yt">
+                        <name>Mayotte</name>
+                    </choice>
+                    <choice id="mx">
+                        <name>Mexico</name>
+                    </choice>
+                    <choice id="fm">
+                        <name>Micronesia</name>
+                    </choice>
+                    <choice id="md">
+                        <name>Moldova</name>
+                    </choice>
+                    <choice id="mc">
+                        <name>Monaco</name>
+                    </choice>
+                    <choice id="mn">
+                        <name>Mongolia</name>
+                    </choice>
+                    <choice id="ms">
+                        <name>Montserrat</name>
+                    </choice>
+                    <choice id="ma">
+                        <name>Morocco</name>
+                    </choice>
+                    <choice id="mz">
+                        <name>Mozambique</name>
+                    </choice>
+                    <choice id="mm">
+                        <name>Myanmar</name>
+                    </choice>
+                    <choice id="na">
+                        <name>Namibia</name>
+                    </choice>
+                    <choice id="nr">
+                        <name>Nauru</name>
+                    </choice>
+                    <choice id="np">
+                        <name>Nepal</name>
+                    </choice>
+                    <choice id="nl">
+                        <name>Netherlands</name>
+                    </choice>
+                    <choice id="an">
+                        <name>Netherlands Antilles</name>
+                    </choice>
+                    <choice id="nc">
+                        <name>New Caledonia</name>
+                    </choice>
+                    <choice id="nz">
+                        <name>New Zealand</name>
+                    </choice>
+                    <choice id="ni">
+                        <name>Nicaragua</name>
+                    </choice>
+                    <choice id="ne">
+                        <name>Niger</name>
+                    </choice>
+                    <choice id="ng">
+                        <name>Nigeria</name>
+                    </choice>
+                    <choice id="nu">
+                        <name>Niue</name>
+                    </choice>
+                    <choice id="nf">
+                        <name>Norfolk Island</name>
+                    </choice>
+                    <choice id="kp">
+                        <name>North Korea</name>
+                    </choice>
+                    <choice id="mp">
+                        <name>Northern Mariana Islands</name>
+                    </choice>
+                    <choice id="no">
+                        <name>Norway</name>
+                    </choice>
+                    <choice id="om">
+                        <name>Oman</name>
+                    </choice>
+                    <choice id="pk">
+                        <name>Pakistan</name>
+                    </choice>
+                    <choice id="pw">
+                        <name>Palau</name>
+                    </choice>
+                    <choice id="ps">
+                        <name>Palestinian Authority</name>
+                    </choice>
+                    <choice id="pa">
+                        <name>Panama</name>
+                    </choice>
+                    <choice id="pg">
+                        <name>Papua New Guinea</name>
+                    </choice>
+                    <choice id="py">
+                        <name>Paraguay</name>
+                    </choice>
+                    <choice id="pe">
+                        <name>Peru</name>
+                    </choice>
+                    <choice id="ph">
+                        <name>Philippines</name>
+                    </choice>
+                    <choice id="pn">
+                        <name>Pitcairn Islands</name>
+                    </choice>
+                    <choice id="pl">
+                        <name>Poland</name>
+                    </choice>
+                    <choice id="pt">
+                        <name>Portugal</name>
+                    </choice>
+                    <choice id="pr">
+                        <name>Puerto Rico</name>
+                    </choice>
+                    <choice id="qa">
+                        <name>Qatar</name>
+                    </choice>
+                    <choice id="re">
+                        <name>Reunion</name>
+                    </choice>
+                    <choice id="ro">
+                        <name>Romania</name>
+                    </choice>
+                    <choice id="ru">
+                        <name>Russian Federation</name>
+                    </choice>
+                    <choice id="rw">
+                        <name>Rwanda</name>
+                    </choice>
+                    <choice id="ws">
+                        <name>Samoa</name>
+                    </choice>
+                    <choice id="sm">
+                        <name>San Marino</name>
+                    </choice>
+                    <choice id="sa">
+                        <name>Saudi Arabia</name>
+                    </choice>
+                    <choice id="sn">
+                        <name>Senegal</name>
+                    </choice>
+                    <choice id="yu">
+                        <name>Serbia and Montenegro</name>
+                    </choice>
+                    <choice id="sc">
+                        <name>Seychelles</name>
+                    </choice>
+                    <choice id="sl">
+                        <name>Sierra Leone</name>
+                    </choice>
+                    <choice id="sg">
+                        <name>Singapore</name>
+                    </choice>
+                    <choice id="sk">
+                        <name>Slovakia</name>
+                    </choice>
+                    <choice id="si">
+                        <name>Slovenia</name>
+                    </choice>
+                    <choice id="sb">
+                        <name>Solomon Islands</name>
+                    </choice>
+                    <choice id="so">
+                        <name>Somalia</name>
+                    </choice>
+                    <choice id="za">
+                        <name>South Africa</name>
+                    </choice>
+                    <choice id="gs">
+                        <name>South Georgia and The South Sandwich Islands</name>
+                    </choice>
+                    <choice id="es">
+                        <name>Spain</name>
+                    </choice>
+                    <choice id="lk">
+                        <name>Sri Lanka</name>
+                    </choice>
+                    <choice id="sh">
+                        <name>St. Helena</name>
+                    </choice>
+                    <choice id="kn">
+                        <name>St. Kitts and Nevis</name>
+                    </choice>
+                    <choice id="lc">
+                        <name>St. Lucia</name>
+                    </choice>
+                    <choice id="pm">
+                        <name>St. Pierre and Miquelon</name>
+                    </choice>
+                    <choice id="vc">
+                        <name>St. Vincent and The Grenadines</name>
+                    </choice>
+                    <choice id="sd">
+                        <name>Sudan</name>
+                    </choice>
+                    <choice id="sr">
+                        <name>Suriname</name>
+                    </choice>
+                    <choice id="sj">
+                        <name>Svalbard and Jan Mayen</name>
+                    </choice>
+                    <choice id="sz">
+                        <name>Swaziland</name>
+                    </choice>
+                    <choice id="se">
+                        <name>Sweden</name>
+                    </choice>
+                    <choice id="ch">
+                        <name>Switzerland</name>
+                    </choice>
+                    <choice id="sy">
+                        <name>Syria</name>
+                    </choice>
+                    <choice id="st">
+                        <name>São Tomé and Príncipe</name>
+                    </choice>
+                    <choice id="tw">
+                        <name>Taiwan</name>
+                    </choice>
+                    <choice id="tj">
+                        <name>Tajikistan</name>
+                    </choice>
+                    <choice id="tz">
+                        <name>Tanzania</name>
+                    </choice>
+                    <choice id="th">
+                        <name>Thailand</name>
+                    </choice>
+                    <choice id="tp">
+                        <name>Timor-leste</name>
+                    </choice>
+                    <choice id="tg">
+                        <name>Togo</name>
+                    </choice>
+                    <choice id="tk">
+                        <name>Tokelau</name>
+                    </choice>
+                    <choice id="to">
+                        <name>Tonga</name>
+                    </choice>
+                    <choice id="tt">
+                        <name>Trinidad and Tobago</name>
+                    </choice>
+                    <choice id="ta">
+                        <name>Tristan da Cunha</name>
+                    </choice>
+                    <choice id="tn">
+                        <name>Tunisia</name>
+                    </choice>
+                    <choice id="tr">
+                        <name>Turkey</name>
+                    </choice>
+                    <choice id="tm">
+                        <name>Turkmenistan</name>
+                    </choice>
+                    <choice id="tc">
+                        <name>Turks and Caicos Islands</name>
+                    </choice>
+                    <choice id="tv">
+                        <name>Tuvalu</name>
+                    </choice>
+                    <choice id="ug">
+                        <name>Uganda</name>
+                    </choice>
+                    <choice id="ua">
+                        <name>Ukraine</name>
+                    </choice>
+                    <choice id="ae">
+                        <name>United Arab Emirates</name>
+                    </choice>
+                    <choice id="gb">
+                        <name>United Kingdom</name>
+                    </choice>
+                    <choice id="us">
+                        <name>United States</name>
+                    </choice>
+                    <choice id="um">
+                        <name>United States Minor Outlying Islands</name>
+                    </choice>
+                    <choice id="uy">
+                        <name>Uruguay</name>
+                    </choice>
+                    <choice id="uz">
+                        <name>Uzbekistan</name>
+                    </choice>
+                    <choice id="vu">
+                        <name>Vanuatu</name>
+                    </choice>
+                    <choice id="va">
+                        <name>Vatican City</name>
+                    </choice>
+                    <choice id="ve">
+                        <name>Venezuela</name>
+                    </choice>
+                    <choice id="vn">
+                        <name>Vietnam</name>
+                    </choice>
+                    <choice id="vg">
+                        <name>Virgin Islands, British</name>
+                    </choice>
+                    <choice id="vg">
+                        <name>Virgin Islands, British</name>
+                    </choice>
+                    <choice id="wf">
+                        <name>Wallis and Futuna</name>
+                    </choice>
+                    <choice id="ye">
+                        <name>Yemen</name>
+                    </choice>
+                    <choice id="zm">
+                        <name>Zambia</name>
+                    </choice>
+                    <choice id="zw">
+                        <name>Zimbabwe</name>
+                    </choice>
+                </setting>
+                <setting class="work" id="admin_phone" type="string">
+                    <name>Phone</name>
+                </setting>
+            </group>
+            <group class="web">
+                <setting class="locale" default-value="en-GB" id="default_language" type="enum">
+                    <name>Interface language</name>
+                    <choice id="en-GB">
+                        <name>English</name>
+                    </choice>
+                    <choice id="de-DE">
+                        <name>German</name>
+                    </choice>
+                    <choice id="es-ES">
+                        <name>Spanish</name>
+                    </choice>
+                    <choice id="fr-FR">
+                        <name>France</name>
+                    </choice>
+                    <choice id="it-IT">
+                        <name>Italian</name>
+                    </choice>
+                    <choice id="nl-NL">
+                        <name>Dutch</name>
+                    </choice>
+                    <choice id="pl-PL">
+                        <name>Polish</name>
+                    </choice>
+                    <choice id="tr-TR">
+                        <name>Turkish</name>
+                    </choice>
+                    <choice id="pt-PT">
+                        <name>Portuguese</name>
+                    </choice>
+                    <choice id="da-DK">
+                        <name>Danish</name>
+                    </choice>
+                    <choice id="hu-HU">
+                        <name>Hungarian</name>
+                    </choice>
+                    <choice id="ro-RO">
+                        <name>Romanian</name>
+                    </choice>
+                    <choice id="ru-RU">
+                        <name>Russian</name>
+                    </choice>
+                    <choice id="ja-JP">
+                        <name>Japanese</name>
+                    </choice>
+                    <choice id="pt-BR">
+                        <name>Portuguese(Brazilian)</name>
+                    </choice>
+                    <choice id="vi-VN">
+                        <name>Vietnamese</name>
+                    </choice>
+                </setting>
+            </group>
+            <setting class="subscription_id" id="subscription_id" protected="true" type="string">
+                <name>Subscription ID</name>
+            </setting>
+            <setting default-value="0" id="msp_group_id" protected="true" type="string" visibility="hidden"/>
+        </settings>
+
+        <requirements>
+            <php:version min="5.3" xmlns:php="http://apstandard.com/ns/1/php"/>
+        </requirements>
+
+        <provision>
+            <configuration-script name="configure.php">
+                <script-language>php</script-language>
+                <status-control/>
+                <structured-output/>
+            </configuration-script>
+            <verify-script name="verification.php">
+                <script-language>php</script-language>
+                <structured-output/>
+            </verify-script>
+        </provision>
+
+        <service class="account" id="account">
+            <license must-accept="true">
+                <commercial/>
+                <text>
+                    <name>EULA</name>
+                    <file>eula.rtf</file>
+                </text>
+            </license>
+            <presentation>
+                <name>Cloud Backup</name>
+                <summary>Backup accounts</summary>
+                <entry-points>
+                    <entry dst="https://baas.acronis.com">
+                        <label>Manage Backups</label>
+                    </entry>
+                    <entry dst="{user_guide_url}">
+                        <label>User guide</label>
+                        <variable name="user_guide_url" value-of-setting="globals_user_guide"/>
+                    </entry>
+                    <entry dst="{download_url}">
+                        <label>Backup client for Windows, Hyper-V, VMware</label>
+                        <variable name="download_url" value-of-setting="globals_windows_client_download_url"/>
+                    </entry>
+                    <entry dst="{download_url}">
+                        <label>Backup client for Linux (64-bit only)</label>
+                        <variable name="download_url" value-of-setting="globals_linux_client_download_url"/>
+                    </entry>
+                </entry-points>
+            </presentation>
+
+            <settings>
+                <group class="authn">
+                    <setting class="login" id="user_login" installation-only="true" type="email" uniq="global">
+                        <name>Login</name>
+                    </setting>
+                    <setting class="password" id="user_password" track-old-value="true" type="password">
+                        <name>Password</name>
+                    </setting>
+                </group>
+                <group class="vcard">
+                    <setting class="email" id="user_email" optional="true" type="email" visibility="hidden">
+                        <name>Email</name>
+                    </setting>
+                    <setting class="given-name" id="user_given_name" type="string" visibility="hidden">
+                        <name>Given name</name>
+                    </setting>
+                    <setting class="family-name" id="user_surname" type="string" visibility="hidden">
+                        <name>Surname</name>
+                    </setting>
+                    <setting class="organization-name" id="user_company" type="string" visibility="hidden">
+                        <name>Company</name>
+                    </setting>
+                    <setting class="street-address" id="user_address" type="string" visibility="hidden">
+                        <name>Address</name>
+                    </setting>
+                    <setting class="postal-code" id="user_zipcode" type="string" visibility="hidden">
+                        <name>Zip code</name>
+                    </setting>
+                    <setting class="locality" id="user_city" type="string" visibility="hidden">
+                        <name>City</name>
+                    </setting>
+                    <setting class="region" id="user_state" type="string" visibility="hidden">
+                        <name>State</name>
+                    </setting>
+                    <setting class="country-name" id="user_country" type="string" visibility="hidden">
+                        <name>Country</name>
+                    </setting>
+                    <setting class="work" id="user_phone" type="string" visibility="hidden">
+                        <name>Phone</name>
+                    </setting>
+                </group>
+                <group class="web">
+                    <setting id="default_language" type="string" value-of-setting="default_language" visibility="hidden"/>
+                </group>
+
+                <setting default-value="0" id="msp_user_id" protected="true" type="string" visibility="hidden"/>
+                <setting id="subscription_id" protected="true" type="string" value-of-setting="subscription_id" visibility="hidden"/>
+                <setting id="msp_group_id" protected="true" type="string" value-of-setting="msp_group_id" visibility="hidden"/>
+
+                <setting default-value="25" id="user_storage_quota" type="string">
+                    <name>Storage usage</name>
+                </setting>
+                <setting default-value="5" id="user_physical_workstation_count" type="string">
+                    <name>Physical workstations</name>
+                </setting>
+                <setting default-value="5" id="user_physical_servers_count" type="string">
+                    <name>Physical servers</name>
+                </setting>
+                <setting default-value="5" id="user_virtual_machines_count" type="string">
+                    <name>Virtual machines</name>
+                </setting>
+            </settings>
+
+            <resources>
+                <resource class="GB" id="user_storage_quota" limiting-setting="user_storage_quota">
+                    <name>Storage usage</name>
+                </resource>
+                <resource class="unit" id="user_physical_workstation_count" limiting-setting="user_physical_workstation_count">
+                    <name>Physical workstations count</name>
+                </resource>
+                <resource class="unit" id="user_physical_servers_count" limiting-setting="user_physical_servers_count">
+                    <name>Physical servers count</name>
+                </resource>
+                <resource class="unit" id="user_virtual_machines_count" limiting-setting="user_virtual_machines_count">
+                    <name>Virtual machines count</name>
+                </resource>
+            </resources>
+
+            <provision>
+                <configuration-script name="configure-user.php">
+                    <script-language>php</script-language>
+                    <status-control/>
+                    <structured-output/>
+                </configuration-script>
+                <verify-script name="verification-user.php">
+                    <script-language>php</script-language>
+                    <structured-output/>
+                </verify-script>
+                <resource-script name="report-resource-user.php">
+                    <script-language>php</script-language>
+                </resource-script>
+            </provision>
+        </service>
+    </service>
+</application>

@@ -1,0 +1,488 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-06-14T15:36:46">
+    <id>DELL-QODME</id>
+    <name>Dell On Demand Migration for Email</name>
+    <version>1.2</version>
+    <release>4</release>
+    <homepage>http://software.dell.com/products/ondemand-migration-for-email</homepage>
+    <vendor>
+    	<name>Dell Software Inc.</name>
+    	<homepage>http://software.dell.com/products/ondemand-migration-for-email</homepage>
+    	<icon path="images/dell-logo-blue.png" />
+    </vendor>
+    <packager>
+    	<name>GlowTouch Technologies</name>
+    	<homepage>http://www.glowtouch.com/</homepage>
+    	<icon path="images/parrallels-GT6.png" />
+    	<uri>uuid:2ea47912-f361-46e8-88ae-d5289cf50e59</uri>
+    </packager>
+    <presentation>
+    	<summary>Dell On Demand Migration for Email enables you to securely migrate users and data to Office 365 (Exchange Online), on-premises Exchange, or hosted Exchange email platforms without installing or maintaining migration software.</summary>
+    	<description>Dell On Demand Migration for Email enables you to securely migrate users and data to Office 365 (Exchange Online), on-premises Exchange, or hosted Exchange email platforms without installing or maintaining migration software.
+
+Simultaneously migrate multiple users from a single console, moving data such as email, calendars and folders. You can also quickly filter out unwanted data to reduce migration time.</description>
+    	<icon path="images/dell-logo-blue.png" />
+    	<screenshot path="images/screenshot1.jpg">
+    		<description>Dashboard Screenshot - Getting Started</description>
+    	</screenshot>
+    	<screenshot path="images/screenshot2.jpg">
+    		<description>Migration Settings Screenshot</description>
+    	</screenshot>
+    	<screenshot path="images/screenshot3.jpg">
+    		<description>Migration Plan - Mailboxes Screenshot</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.0">
+    			<entry>Initial Package</entry>
+    		</version>
+    		<version release="1" version="1.1">
+    			<entry>Added validation for country</entry>
+    		</version>
+    		<version release="2" version="1.1">
+    			<entry>Added some changes</entry>
+    		</version>
+    		<version release="3" version="1.1">
+    			<entry>Added Phone number description.</entry>
+    		</version>
+    		<version release="4" version="1.1">
+    			<entry>Fixed issue with ActivationCode field</entry>
+    		</version>
+    		<version release="5" version="1.1">
+    			<entry>Updated verification script for Activation Code</entry>
+    		</version>
+    		<version release="6" version="1.1">
+    			<entry>Updated Provider's guide</entry>
+    		</version>
+    		<version release="7" version="1.1">
+    			<entry>Updated Provisioning Code</entry>
+    		</version>
+    		<version release="8" version="1.1">
+    			<entry>Added Infolinks to Providers and Subscribers Guide</entry>
+    		</version>
+    		<version release="10" version="1.1">
+    			<entry>Modified API calls removed global settings and replaced with access key
+changed branding</entry>
+    		</version>
+    		<version release="11" version="1.1">
+    			<entry>Modified API calls removed global settings and replaced with access key
+changed branding</entry>
+    		</version>
+    		<version release="1" version="1.2">
+    			<entry>Updated Security token file storage details and Updated resource script not to run if license ID is empty</entry>
+    		</version>
+    		<version release="2" version="1.2">
+    			<entry>Updated Security token file storage details and Updated resource script not to run if license ID is empty</entry>
+    		</version>
+    		<version release="4" version="1.2">
+    			<entry>Updated the providers document and added the xml extension for PHP</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Collaboration/Email</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+
+    	<group class="presentation">
+    		<name>Admin Partner Preferences</name>
+    		<setting type="string" id="access_key" default-value="">
+    			<name>Access Key</name>
+    			<description>Your access key should be provided by Dell</description>
+    		</setting>
+    	</group>
+    </global-settings>
+    <upgrade match="/application/release&gt;1" />
+    <service id="User Registration" class="service">
+    	<license must-accept="true">
+    		<free />
+    		<text>
+    			<name>License</name>
+    			<file>htdocs/license.txt</file>
+    		</text>
+    	</license>
+
+    	<presentation>
+    		<name>User Registration</name>
+    		<summary>Dell On Demand Migration for Email enables you to securely migrate users and data to Office 365 (Exchange Online), on-premises Exchange, or hosted Exchange email platforms without installing or maintaining migration software.</summary>
+    		<infolinks>
+    			<link href="https://support.software.dell.com" class="support">Support</link>
+    			<link href="file:///htdocs/docs/Dell_ODME_Provider_Deployment_Guide.doc" class="deployment-guide">Providers Guide</link>
+    			<link href="file:///htdocs/docs/Dell_ODME_Subscriber_Guide.doc" class="user-guide">Subscribers Guide</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry dst="{url}" method="POST" class="login">
+    				<label>Please use this link to login to Dell On Demand Migration</label>
+    				<variable name="url" class="login" value-of-setting="service_url"></variable>
+    				<variable name="email" class="login" value-of-setting="user_email"></variable>
+    				<variable name="pwd" value-of-setting="user_password" class="password"></variable>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+ <setting type="string" id="error" optional="true" protected="true">
+    		  </setting>
+ <group class="vcard">
+				<name>Users Details</name>
+				<group class="fn n">
+					<setting id="full_name" class="given-name" type="string"
+						default-value="" installation-only="true">
+						<name>First Name*</name>
+					</setting>
+					
+				<!-- </group>
+				 <group class="fn n"> -->
+					<setting type="string" id="last_name" class="family-name" installation-only="true">
+						<name>Last Name*</name>
+					</setting>
+				</group>
+				<group class="email">
+					<!-- <setting id="user_email" class="value" type="email" installation-only="true"> -->
+					<setting id="user_email" class="email" type="string" installation-only="true">
+						<name>Email Address*</name>
+						<description>This will be user name</description>
+					</setting>
+				</group>
+				<group class="authn">
+					<setting type="password" id="user_password" installation-only="true" default-value="">
+						<name>Password*</name>
+						<description>8 - 15 characters, at least one letter and one number</description>
+					</setting>
+				</group>
+			<group class="tel">
+					<setting type="string" id="phone" class="work" installation-only="true">
+						<name> Phone Number*</name>
+						<description>Phone number should not include country code</description>
+					</setting>
+				</group>
+
+				</group>
+              
+    		  <group class="vcard">
+    			<name>Company Details</name>
+    			<group class="org">
+    				<setting type="string" id="company_name" class="organization-name" installation-only="true">
+    				<name>Company Name*</name>
+    				<description>Full company name, e.g., Acme, Inc</description>
+    				</setting>
+    			</group>
+    			<group class="adr">
+    				<setting type="enum" id="country"  installation-only="true" default-value="SEL">
+    				<name>Country*</name>
+					<choice id="AF"><name>Afghanistan</name></choice>
+				    <choice id="AL"><name>Albania</name></choice>
+				    <choice id="DZ"><name>Algeria</name></choice>
+				    <choice id="AS"><name>American Samoa</name></choice>
+				    <choice id="AD"><name>Andorra</name></choice>
+				    <choice id="AO"><name>Angola</name></choice>
+				    <choice id="AI"><name>Anguilla</name></choice>
+				    <choice id="AQ"><name>Antarctica</name></choice>
+				    <choice id="AG"><name>Antigua and Barbuda</name></choice>
+				    <choice id="AR"><name>Argentina</name></choice>
+				    <choice id="AM"><name>Armenia</name></choice>
+				    <choice id="AW"><name>Aruba</name></choice>
+				    <choice id="AU"><name>Australia</name></choice>
+				    <choice id="AT"><name>Austria</name></choice>
+				    <choice id="AZ"><name>Azerbaijan</name></choice>
+				    <choice id="BS"><name>Bahamas</name></choice>
+				    <choice id="BH"><name>Bahrain</name></choice>
+				    <choice id="BD"><name>Bangladesh</name></choice>
+				    <choice id="BB"><name>Barbados</name></choice>
+				    <choice id="BY"><name>Belarus</name></choice>
+				    <choice id="BE"><name>Belgium</name></choice>
+				    <choice id="BZ"><name>Belize</name></choice>
+				    <choice id="BJ"><name>Benin</name></choice>
+				    <choice id="BM"><name>Bermuda</name></choice>
+				    <choice id="BT"><name>Bhutan</name></choice>
+				    <choice id="BO"><name>Bolivia</name></choice>
+					<choice id="BQ"><name>Bonaire, Sint Eustatius &amp; Saba</name></choice>
+				    <choice id="BA"><name>Bosnia and Herzegovina</name></choice>
+				    <choice id="BW"><name>Botswana</name></choice>
+				    <choice id="BR"><name>Brazil</name></choice>
+				    <choice id="IO"><name>British Indian Ocean Territory</name></choice>
+				    <choice id="BN"><name>Brunei Darussalam</name></choice>
+				    <choice id="BG"><name>Bulgaria</name></choice>
+				    <choice id="BF"><name>Burkina Faso</name></choice>
+				    <choice id="BI"><name>Burundi</name></choice>
+				    <choice id="KH"><name>Cambodia</name></choice>
+				    <choice id="CM"><name>Cameroon</name></choice>
+				    <choice id="CA"><name>Canada</name></choice>
+				    <choice id="CV"><name>Cape Verde</name></choice>
+				    <choice id="KY"><name>Cayman Islands</name></choice>
+				    <choice id="CF"><name>Central African Republic</name></choice>
+				    <choice id="TD"><name>Chad</name></choice>
+				    <choice id="CL"><name>Chile</name></choice>
+				    <choice id="CN"><name>China</name></choice>
+				    <choice id="CX"><name>Christmas Island</name></choice>
+				    <choice id="CC"><name>Cocos (Keeling) Islands</name></choice>
+				    <choice id="CO"><name>Colombia</name></choice>
+				    <choice id="KM"><name>Comoros</name></choice>
+				    <choice id="CG"><name>Congo</name></choice>
+				    <choice id="CK"><name>Cook Islands</name></choice>
+				    <choice id="CR"><name>Costa Rica</name></choice>
+				    <choice id="CI"><name>Cote d'Ivoire</name></choice>
+				    <choice id="HR"><name>Croatia</name></choice>
+					<choice id="CW"><name>Curacao</name></choice>
+				    <choice id="CY"><name>Cyprus</name></choice>
+				    <choice id="CZ"><name>Czech Republic</name></choice>
+					<choice id="CD"><name>Democratic Republic of Congo</name></choice>
+				    <choice id="DK"><name>Denmark</name></choice>
+					<choice id="DJ"><name>Djibouti</name></choice>
+				    <choice id="DM"><name>Dominica</name></choice>
+				    <choice id="DO"><name>Dominican Republic</name></choice>
+				    <choice id="EC"><name>Ecuador</name></choice>
+				    <choice id="EG"><name>Egypt</name></choice>
+				    <choice id="SV"><name>El Salvador</name></choice>
+				    <choice id="GQ"><name>Equatorial Guinea</name></choice>
+				    <choice id="ER"><name>Eritrea</name></choice>
+				    <choice id="EE"><name>Estonia</name></choice>
+				    <choice id="ET"><name>Ethiopia</name></choice>
+				    <choice id="FK"><name>Falkland Islands (Malvinas)</name></choice>
+				    <choice id="FO"><name>Faroe Islands</name></choice>
+				    <choice id="FJ"><name>Fiji</name></choice>
+				    <choice id="FI"><name>Finland</name></choice>
+				    <choice id="FR"><name>France</name></choice>
+				    <choice id="GF"><name>French Guiana</name></choice>
+				    <choice id="PF"><name>French Polynesia</name></choice>				    
+				    <choice id="GA"><name>Gabon</name></choice>
+				    <choice id="GM"><name>Gambia</name></choice>
+				    <choice id="GE"><name>Georgia</name></choice>
+				    <choice id="DE"><name>Germany</name></choice>
+				    <choice id="GH"><name>Ghana</name></choice>
+				    <choice id="GI"><name>Gibraltar</name></choice>
+				    <choice id="GR"><name>Greece</name></choice>
+				    <choice id="GL"><name>Greenland</name></choice>
+				    <choice id="GD"><name>Grenada</name></choice>
+				    <choice id="GP"><name>Guadeloupe</name></choice>
+				    <choice id="GU"><name>Guam</name></choice>
+				    <choice id="GT"><name>Guatemala</name></choice>
+					<choice id="GG"><name>Guernsey</name></choice>
+				    <choice id="GN"><name>Guinea</name></choice>
+				    <choice id="GW"><name>Guinea-Bissau</name></choice>
+				    <choice id="GY"><name>Guyana</name></choice>
+				    <choice id="HT"><name>Haiti</name></choice>				    
+				    <choice id="VA"><name>Holy See (Vatican City State)</name></choice>
+				    <choice id="HN"><name>Honduras</name></choice>
+				    <choice id="HK"><name>Hong Kong</name></choice>
+				    <choice id="HU"><name>Hungary</name></choice>
+				    <choice id="IS"><name>Iceland</name></choice>
+				    <choice id="IN"><name>India</name></choice>
+				    <choice id="ID"><name>Indonesia</name></choice>				    
+				    <choice id="IQ"><name>Iraq</name></choice>
+				    <choice id="IE"><name>Ireland</name></choice>
+				    <choice id="IL"><name>Israel</name></choice>
+				    <choice id="IT"><name>Italy</name></choice>
+				    <choice id="JM"><name>Jamaica</name></choice>
+				    <choice id="JP"><name>Japan</name></choice>
+					<choice id="JE"><name>Jersey</name></choice>
+				    <choice id="JO"><name>Jordan</name></choice>
+				    <choice id="KZ"><name>Kazakhstan</name></choice>
+				    <choice id="KE"><name>Kenya</name></choice>
+				    <choice id="KI"><name>Kiribati</name></choice>
+				    <choice id="KR"><name>Korea, Republic of</name></choice>
+				    <choice id="KW"><name>Kuwait</name></choice>
+				    <choice id="KG"><name>Kyrgyzstan</name></choice>
+				    <choice id="LA"><name>Lao People's Democratic Republic</name></choice>
+				    <choice id="LV"><name>Latvia</name></choice>
+				    <choice id="LB"><name>Lebanon</name></choice>
+				    <choice id="LS"><name>Lesotho</name></choice>
+				    <choice id="LR"><name>Liberia</name></choice>
+				    <choice id="LY"><name>Libyan Arab Jamahiriya</name></choice>
+				    <choice id="LI"><name>Liechtenstein</name></choice>
+				    <choice id="LT"><name>Lithuania</name></choice>
+				    <choice id="LU"><name>Luxembourg</name></choice>
+				    <choice id="MO"><name>Macau</name></choice>
+				    <choice id="MK"><name>Macedonia</name></choice>
+				    <choice id="MG"><name>Madagascar</name></choice>
+				    <choice id="MW"><name>Malawi</name></choice>
+				    <choice id="MY"><name>Malaysia</name></choice>
+				    <choice id="MV"><name>Maldives</name></choice>
+				    <choice id="ML"><name>Mali</name></choice>
+				    <choice id="MT"><name>Malta</name></choice>
+				    <choice id="MH"><name>Marshall Islands</name></choice>
+				    <choice id="MQ"><name>Martinique</name></choice>
+				    <choice id="MR"><name>Mauritania</name></choice>
+				    <choice id="MU"><name>Mauritius</name></choice>
+				    <choice id="YT"><name>Mayotte</name></choice>
+				    <choice id="MX"><name>Mexico</name></choice>
+				    <choice id="FM"><name>Micronesia, Federated States of</name></choice>
+				    <choice id="MD"><name>Moldova, Republic of</name></choice>
+				    <choice id="MC"><name>Monaco</name></choice>
+				    <choice id="MN"><name>Mongolia</name></choice>
+					<choice id="ME"><name>Montenegro</name></choice>
+				    <choice id="MS"><name>Montserrat</name></choice>
+					<choice id="MA"><name>Morocco</name></choice>
+				    <choice id="MZ"><name>Mozambique</name></choice>
+				    <choice id="MM"><name>Myanmar</name></choice>
+				    <choice id="NA"><name>Namibia</name></choice>
+				    <choice id="NR"><name>Nauru</name></choice>
+				    <choice id="NP"><name>Nepal</name></choice>
+				    <choice id="NL"><name>Netherlands</name></choice>				    
+				    <choice id="NC"><name>New Caledonia</name></choice>
+				    <choice id="NZ"><name>New Zealand</name></choice>
+				    <choice id="NI"><name>Nicaragua</name></choice>
+				    <choice id="NE"><name>Niger</name></choice>
+				    <choice id="NG"><name>Nigeria</name></choice>
+				    <choice id="NU"><name>Niue</name></choice>
+				    <choice id="NF"><name>Norfolk Island</name></choice>
+				    <choice id="MP"><name>Northern Mariana Islands</name></choice>
+				    <choice id="NO"><name>Norway</name></choice>
+				    <choice id="OM"><name>Oman</name></choice>
+				    <choice id="PK"><name>Pakistan</name></choice>
+				    <choice id="PW"><name>Palau</name></choice>
+					<choice id="PS"><name>Palestinian Territory, Occupied</name></choice>
+				    <choice id="PA"><name>Panama</name></choice>
+				    <choice id="PG"><name>Papua New Guinea</name></choice>
+				    <choice id="PY"><name>Paraguay</name></choice>
+				    <choice id="PE"><name>Peru</name></choice>
+				    <choice id="PH"><name>Philippines</name></choice>
+				    <choice id="PN"><name>Pitcairn</name></choice>
+				    <choice id="PL"><name>Poland</name></choice>
+				    <choice id="PT"><name>Portugal</name></choice>
+				    <choice id="PR"><name>Puerto Rico</name></choice>
+				    <choice id="QA"><name>Qatar</name></choice>
+				    <choice id="RE"><name>Reunion</name></choice>
+				    <choice id="RO"><name>Romania</name></choice>
+				    <choice id="RU"><name>Russian Federation</name></choice>
+				    <choice id="RW"><name>Rwanda</name></choice>
+				    <choice id="KN"><name>Saint Kitts and Nevis</name></choice> 
+				    <choice id="LC"><name>Saint Lucia</name></choice>
+				    <choice id="VC"><name>Saint Vincent &amp; the Grenadines</name></choice>
+				    <choice id="WS"><name>Samoa</name></choice>
+				    <choice id="SM"><name>San Marino</name></choice>
+				    <choice id="ST"><name>Sao Tome and Principe</name></choice> 
+				    <choice id="SA"><name>Saudi Arabia</name></choice>
+				    <choice id="SN"><name>Senegal</name></choice>
+					<choice id="RS"><name>Serbia</name></choice>
+				    <choice id="SC"><name>Seychelles</name></choice>
+				    <choice id="SL"><name>Sierra Leone</name></choice>
+				    <choice id="SG"><name>Singapore</name></choice>
+					<choice id="SX"><name>Sint Maarten</name></choice>
+				    <choice id="SK"><name>Slovakia</name></choice>
+				    <choice id="SI"><name>Slovenia</name></choice>
+				    <choice id="SB"><name>Solomon Islands</name></choice>
+				    <choice id="SO"><name>Somalia</name></choice>
+				    <choice id="ZA"><name>South Africa</name></choice>
+				    <choice id="ES"><name>Spain</name></choice>
+				    <choice id="LK"><name>Sri Lanka</name></choice>
+				    <choice id="SH"><name>Saint Helena</name></choice>
+				    <choice id="PM"><name>Saint Pierre and Miquelon</name></choice>				    
+				    <choice id="SR"><name>Suriname</name></choice>
+				    <choice id="SJ"><name>Svalbard and Jan Mayen Islands</name></choice>
+				    <choice id="SZ"><name>Swaziland</name></choice>
+				    <choice id="SE"><name>Sweden</name></choice>
+				    <choice id="CH"><name>Switzerland</name></choice>				    
+				    <choice id="TW"><name>Taiwan</name></choice>
+				    <choice id="TJ"><name>Tajikistan</name></choice>
+				    <choice id="TZ"><name>Tanzania, United Republic of</name></choice>
+				    <choice id="TH"><name>Thailand</name></choice>
+					<choice id="TL"><name>Timor-Leste</name></choice>
+				    <choice id="TG"><name>Togo</name></choice>
+				    <choice id="TK"><name>Tokelau</name></choice>
+				    <choice id="TO"><name>Tonga</name></choice>
+				    <choice id="TT"><name>Trinidad and Tobago</name></choice>
+				    <choice id="TN"><name>Tunisia</name></choice>
+				    <choice id="TR"><name>Turkey</name></choice>
+				    <choice id="TM"><name>Turkmenistan</name></choice>
+				    <choice id="TC"><name>Turks and Caicos Islands</name></choice>
+				    <choice id="TV"><name>Tuvalu</name></choice>
+				    <choice id="UG"><name>Uganda</name></choice>
+				    <choice id="UA"><name>Ukraine</name></choice>
+				    <choice id="AE"><name>United Arab Emirates</name></choice>
+				    <choice id="GB"><name>United Kingdom</name></choice>
+				    <choice id="US"><name>United States</name></choice>
+				    <choice id="UM"><name>United States Minor Outlying Islands</name></choice>
+				    <choice id="UY"><name>Uruguay</name></choice>
+				    <choice id="UZ"><name>Uzbekistan</name></choice>
+				    <choice id="VU"><name>Vanuatu</name></choice>
+				    <choice id="VE"><name>Venezuela</name></choice>
+				    <choice id="VN"><name>Vietnam</name></choice>
+				    <choice id="VG"><name>Virgin Islands (British)</name></choice>
+				    <choice id="VI"><name>Virgin Islands (U.S.)</name></choice>
+				    <choice id="WF"><name>Wallis and Futuna Islands</name></choice>
+				    <choice id="EH"><name>Western Sahara</name></choice>
+				    <choice id="YE"><name>Yemen</name></choice>
+				    <choice id="ZM"><name>Zambia</name></choice>
+				    <choice id="ZW"><name>Zimbabwe</name></choice>
+				    <choice id="SEL">
+				    	<name>Select</name>
+				    </choice>
+    				</setting>
+<!--     			</group> 
+  			<group class="presentation"> -->
+    				<setting type="string" id="city" class="locality" installation-only="true">
+    					<name>City*</name>
+    				</setting>
+    			</group>
+    		  </group>
+    		  <group>
+    		  	<name>Others</name>
+    		  	<setting type="enum" id="data_center" default-value="select" installation-only="true">
+    		  		<name>Data Center*</name>
+    		  		<choice id="select">
+    		  			<name>Select</name>
+    		  		</choice>
+    		  	</setting>
+    		  	<setting type="string" id="activation_code" installation-only="true" default-value="">
+    				<name>Activation Code*</name>
+    				<description>If your email address has not yet been verified you will receive an activation code by email when you click Next.</description>
+    		  	</setting>
+    		  	<setting type="integer" id="usage_limit" default-value="0" protected="true" visibility="hidden">
+    		  		<name>Usage</name>
+    		  	</setting><setting type="string" id="tokenstatus" optional="true" protected="true" default-value="false" visibility="hidden">
+    		  		<name>Tokenstatus</name>
+    		  	</setting>
+    		  	<setting type="string" id="license_id" protected="true" optional="true" visibility="hidden">
+    		  		<name>License ID</name>
+    		  	</setting>
+    		  	<setting type="string" id="provision_id" protected="true" optional="true" visibility="hidden">
+    		  		<name>Provision ID</name>
+    		  	</setting>
+    		  	<setting type="string" id="provision_status" protected="true" optional="true" visibility="hidden">
+    		  		<name>Provision Status</name>
+    		  	</setting>
+    		  	<setting type="string" id="service_url" optional="true" protected="true" visibility="hidden">
+    		  		<name>Service URL</name>
+    		  	</setting>
+    		  	<setting type="string" id="sts_url" default-value="https://sts.ondemand.quest.com" optional="true" protected="true" visibility="hidden">
+	    			<name>STS URL</name>
+    			</setting>
+    			<setting type="string" id="partner_url" default-value="https://portal.ondemand.quest.com" optional="true" protected="true" visibility="hidden">
+	    			<name>Partner URL</name>
+    			</setting>
+    		  </group>
+    		  <!--  <group>
+    		  	<name>Reseller </name>
+    		  	<setting type="string" id="reseller_name"
+    		  		default-value="" protected="true" visibility="hidden">
+    		  		<name>Reseller Name</name>
+    		  		<description>Please provide the unique reseller name
+    		  		</description>
+    		  	</setting></group> -->
+    	</settings>
+    	<resources>
+    		<resource class="item" id="usage" limiting-setting="usage_limit">
+    			<name>Mailbox Usage</name>
+    		</resource>
+    	</resources>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:extension>curl</php:extension>
+    		<php:extension>xml</php:extension>
+    		<php:version min="5.3.3"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    		<verify-script name="verification.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</verify-script>
+    		<resource-script name="resource.php">
+    			<script-language>php</script-language>
+    		</resource-script>
+    	</provision>
+    </service>
+</application>

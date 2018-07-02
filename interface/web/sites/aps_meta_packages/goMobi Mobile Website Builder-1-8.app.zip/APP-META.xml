@@ -1,0 +1,207 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-07-26T15:20:10">
+	<id>http://gomobi.com</id>
+	<name>goMobi Mobile Website Builder</name>
+	<version>1</version>
+	<release>8</release>
+
+	<homepage>http://www.gomobi.info/</homepage>
+
+	<vendor>
+		<name>goMobi</name>
+		<homepage>http://www.gomobi.info/</homepage>
+		<icon path="images/logo.png" />
+	</vendor>
+
+	<packager>
+		<name>Afilias Technologies Ltd.</name>
+		<homepage>http://www.gomobi.info</homepage>
+		<icon path="images/logo.png" />
+		<uri>uuid:55098c00-5bdb-11e1-b86c-0800200c9a66</uri>
+	</packager>
+
+	<presentation>
+		<summary>Put your business on every mobile phone with goMobi!</summary>
+      <description>goMobi offers small businesses a fast, easy to use and complete mobile website to grow traffic, convert leads and grow revenue.
+
+Its simple icon-driven interface delivers a great experience on any mobile phone and helps convert traffic into customers.
+
+goMobi is built on a highly extensible platform leveraging dotMobi’s powerful device detection and content adaptation solution and can
+adapt to the changing needs of any business.
+</description>
+
+		<icon path="images/logo.png"/>
+	
+		<screenshot path="images/samplesite.jpg">
+			<description>a goMobi site</description>
+		</screenshot>
+		<screenshot path="images/feature.jpg">
+			<description>The goMobi Setup Assistant</description>
+		</screenshot>
+		<screenshot path="images/analytics.jpg">
+			<description>Analytics Tab in the Setup Assistant</description>
+		</screenshot>
+	
+		<changelog>
+<version version="1" release="8">
+                                <entry>Added support to modify Mobile Domain</entry>
+                                <entry>Added support for Japanese language</entry>
+                        </version>
+<version version="1" release="7">
+                                <entry>Improved Error Management</entry>
+                        </version>
+
+<version version="1" release="6">
+                                <entry>Bug Fixes</entry>
+                        </version>
+			<version version="1" release="1">
+				<entry>Initial product package</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Web/Site editing</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting type="enum" id="api_server" default-value="live">
+			<name>API Entry Point</name>
+			<description>Select which environment should the package connect to.</description>
+				<choice id="live">
+     					 <name>Production</name>
+     				</choice>
+     				<choice id="sandbox">
+     					 <name>Test</name>
+     				</choice>
+		</setting>
+		<setting type="string" id="api_user" default-value="">
+			<name>Username</name>
+			<description>Username of your goMobi Reseller account</description>
+		</setting>
+		<setting type="password" id="api_password" default-value="">
+			<name>Password</name>
+			<description>Password of your goMobi Reseller account</description>
+		</setting>
+		<setting type="string" id="reseller_id" default-value="">
+			<name>Reseller ID</name>
+			<description>Your goMobi Reseller ID</description>
+		</setting>
+		<setting type="enum" id="contract_type" default-value="FT">
+			<name>Contract Type</name>
+			<description>Select whether new subscriptions should be created as Free Trials or Paid</description>
+     				<choice id="FT">
+     					 <name>Free Trial</name>
+     				</choice>
+     				<choice id="AR">
+     					 <name>Paid</name>
+     				</choice>
+		</setting>
+			<setting type="string" id="promotion_code" default-value="" optional="true">
+			<name>Promotion code</name>
+			<description>(optional) code for special promotions. To automatically convert FT subscriptions to Monthly Autorenew use the code "free_trial:armo".</description>
+		</setting>
+		<setting type="string" id="sso_url" default-value="">
+			<name>Setup Assistant's URL</name>
+			<description>Insert the URL provided by the Setup Assistant's package</description>
+		</setting>
+		<setting type="string" id="subreseller_id" default-value="" optional="true" >
+			<name>Subreseller ID</name>
+			<description>(optional) your own internal ID for subresellers</description>
+		</setting>
+</global-settings>
+<patch match="/application/release > '4'" recommended="true"/>
+	<service id="instance" singular="true">
+		<license must-accept="true">
+		<commercial />
+			<text>
+				<name>goMobi Terms and Conditions</name>
+				<url>http://www.gomobi.info/license.txt</url>
+			</text>
+		</license>
+
+		<presentation>
+			<name>goMobi Mobile Website</name>
+			<summary>Get your business on every mobile phone, quick and easy.</summary>
+
+			<infolinks>
+            	<link class="official" href="http://www.gomobi.info/parallels.html">goMobi Home</link>
+		<link class="support" href="http://www.gomobi.info/partnersContact.php">Contact Link</link>
+			</infolinks>
+		<entry-points>
+		<entry class="control-panel" dst="{sso_url}" method="POST">
+					<label>goMobi Setup Assistant</label>
+		 <variable name="sso_url" value-of-setting="sso_url" />
+		<variable name="apiserver" value-of-setting="api_server" />
+                    <variable name="prefix" value-of-setting="mobile_domain_prefix" />
+                    <variable name="mobile_domain_name" value-of-setting="mobile_domain" />
+                    <variable name="language" value-of-setting="language" />
+		 <variable name="reseller_id" value-of-setting="reseller_id" />
+		<variable name="redirect">_BASE_</variable>		
+				</entry>
+		<entry class="frontpage" dst="http://{prefix}.{mobile_domain_name}">
+		<label>Your goMobi site</label>
+                   <variable name="prefix" value-of-setting="mobile_domain_prefix" />
+                    <variable name="mobile_domain_name" value-of-setting="mobile_domain" />
+ 		 </entry>
+	</entry-points>		
+		</presentation>
+
+		<settings>
+			<setting id="reference" type="string" visibility="hidden" default-value="" protected="true" />
+			<setting id="subscription_id" type="string" visibility="hidden" class="subscription_id" protected="true" />						
+			<group class="web">
+				<name>Setup your goMobi site</name>
+				<setting id="mobile_domain" class="domain-name" type="domain-name" protected="true" track-old-value="true">
+					<name>Mobile Domain</name>
+					<description>Select under which domain you want to install your goMobi site.</description>
+				</setting>
+<setting id="mobile_domain_prefix" type="string" default-value="m" regex="^[a-z,0-9]+[-,a-z,0-9]*$" track-old-value="true">
+					<name>Sub-domain</name>
+					<description>Specify the unique subdomain that should be associated with your goMobi site (for example, if you want your goMobi site to be accessible at m.yourdomain.com, you should enter "m" here and select "yourdomain.com" in the Mobile Domain dropdown menu above)
+</description>
+					<error-message>A valid sub-domain is required.</error-message> 
+				</setting>					
+				<setting type="host-name" optional="true" id="source_domain" default-value="" track-old-value="true">
+					<name>Source Site</name>
+					<description>If you want, specify the domain of your existing website to allow goMobi to fetch content from it (optional - you can also add or edit this field from the goMobi Setup Assistant later)</description><error-message>A valid domain is required.</error-message> 
+				</setting>
+			<setting type="enum" id="language" optional="true">
+					<name>Language</name>
+					<choice id="en"><name>English</name></choice>
+					<choice id="fr"><name>French</name></choice>
+					<choice id="de"><name>German</name></choice>
+					<choice id="es"><name>Spanish</name></choice>
+					<choice id="pt"><name>Portuguese</name></choice>
+					<choice id="nl"><name>Dutch</name></choice>
+					<choice id="ja"><name>Japanese</name></choice>
+					<choice id="zh-CN"><name>Simplified Chinese</name></choice>
+				</setting>
+			</group>
+		</settings>
+		
+		<requirements xmlns:dns="http://apstandard.com/ns/1/dns">
+			<dns:record>
+				<dns:cname>
+					<dns:src>
+						<dns:prefix value-of-setting="mobile_domain_prefix"></dns:prefix>
+					</dns:src>
+					<dns:dst>
+						<dns:external>lb.gomobi.info</dns:external>
+					</dns:dst>
+				</dns:cname>
+			</dns:record>
+		</requirements>
+
+		<provision>
+			<configuration-script name="configure.php">
+            	<script-language>php</script-language>
+                <status-control/>
+                <structured-output/>                              
+			</configuration-script>
+			</provision>
+
+	</service>
+</application>

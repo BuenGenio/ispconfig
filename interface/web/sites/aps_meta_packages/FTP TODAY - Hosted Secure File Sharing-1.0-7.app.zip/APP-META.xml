@@ -1,0 +1,97 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-07-13T21:05:33">
+    <id>ftptoday</id>
+    <name>FTP TODAY - Hosted Secure File Sharing</name>
+    <version>1.0</version>
+    <release>7</release>
+    <homepage>http://www.ftptoday.com/aps</homepage>
+    <vendor>
+    	<name>FTP Today</name>
+    	<homepage>http://www.ftptoday.com/aps</homepage>
+    	<icon path="images/App-Icon-64.png" />
+    </vendor>
+    <packager>
+    	<name>Glowtouch Technologies</name>
+    	<homepage>http://www.glowtouch.com</homepage>
+    	<icon path="images/parrallels-GT6.png" />
+    </packager>
+    <presentation>
+    	<summary>FTP Today is a robust, multi-user hosted (SaaS) FTP, FTPS, SFTP and HTTPS application for managing secure file transfer and secure file sharing with external users</summary>
+    	<description>FTP Today offers private and secure file transfer/sharing via a Hosted Software-as-a-Service model with a highly-configurable control panel. Supports multi-user FTPS, SFTP, HTTPS and FTP connections—more than any other file sharing application or service. Granular settings protect what each user can see and access. Unique upload, download, delete and directory listing privileges can be set by user (per folder). Multiple administrator roles and accounts, user authentications by password or SSH key authentication, branded web FTP client, email notifications, auto-delete and auto-suspend triggers, and much more.
+
+Note: This is a HOSTED service requiring a paid subscription. All FTP user accounts and files are managed on FTP Today’s PRIVATE and SECURE FTP CLOUD.</description>
+    	<icon path="images/App-Icon-64.png" />
+    	<screenshot path="images/Screenshot-640.png">
+    		<description>Screenshot</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.0">
+    			<entry>Initial Package</entry>
+    		</version>
+    		<version release="2" version="1.0">
+    			<entry>Updated fields description</entry>
+    		</version>
+    		<version release="3" version="1.0">
+    			<entry>Renamed Entry Point and updated description</entry>
+    		</version>
+    		<version release="4" version="1.0">
+    			<entry>Updated summary: FTP Today is a robust, multi-user hosted (SaaS) FTP, FTPS, SFTP and HTTPS application for managing secure file transfer and secure file sharing with external users</entry>
+    		</version>
+    		<version release="5" version="1.0">
+    			<entry>Updated Description and entry point link</entry>
+    		</version>
+    		<version release="6" version="1.0">
+    			<entry>Changing entrypoint link, descriptions
+</entry>
+    		</version>
+    		<version release="7" version="1.0">
+    			<entry>Updating descriptions/language</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Front office/Productivity</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<group class="presentation">
+    		<name>Referral Partner Program</name>
+    		<setting type="string" id="affiliateid" min-length="3" default-value="" max-length="3" optional="true">
+    			<name>Partner ID</name>
+    			<description>You do NOT need a Partner ID if you manage this server for your own domain(s). Simply install the package on a domain, then follow the link from the domain Applications screen in order to subscribe to FTP Today. --- If you host domains for other businesses, you can learn more about our Referral Partner Program and apply for a Partner ID at the following URL: http://www.ftptoday.com/parallels-aps-partner-program/</description>
+    		</setting>
+    	</group>
+    </global-settings>
+    <service id="main">
+    	<license must-accept="false">
+    		<free />
+    		<text>
+    			<name>FTP Today Policy</name>
+    			<url>http://www.ftptoday.com/acceptable-use-policy/</url>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>FTP Today</name>
+    		<summary>FTP Today Partner</summary>
+    		<infolinks>
+    			<link href="http://www.ftptoday.com/support/" class="support">FTP Today Support</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry dst="https://myaccount.ftptoday.com/aff.php?aff={affiliateid}" class="frontpage">
+    				<label>Please use this link to register for your FTP Today service</label>
+    				<description></description>
+    				<icon path="images/App-Icon-64.png" />
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<requirements xmlns:l="http://apstandard.com/ns/1/licensing">
+    	</requirements>
+    	<provision xmlns:l="http://apstandard.com/ns/1/licensing">
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    	</provision>
+    </service>
+</application>

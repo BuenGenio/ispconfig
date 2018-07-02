@@ -1,0 +1,275 @@
+<application packaged="2014-06-02T13:48:27" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>eGroupWare</id>
+	<name>eGroupWare</name>
+	<version>1.8.007</version>
+	<release>18</release>
+	<homepage>http://www.egroupware.org/</homepage>
+	<vendor>
+		<name>www.egroupware.org</name>
+		<homepage>http://www.egroupware.org/</homepage>
+		<icon path="images/logo.png"/>
+	</vendor>
+	<packager>
+		<name>Sofcloudit</name>
+		<homepage>http://www.sofcloudit.com</homepage>
+		<icon path="images/sofcloudit64.png"/>
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+	<presentation>
+		<summary>Open source groupware software</summary>
+		<description>eGroupWare is many things. It is a very flexible pluggable framework capable of hosting applications like a group calendar, AddressBook, Email, accounting ledger, inventory, and whatever else your can think of. These applications can share a common user store, and a flexible Access Control List (ACL) system to control access and information sharing. At it's core there is the phpgwapi, an API written for php, that provides some very useful functions and tools for developers, including the user store, which has several back ends, database abstraction, and a flexible templating system. Applications are then written using the phpgwapi and phpgw framework to provide web based tools to users.</description>
+		<icon path="images/logo.png"/>
+		<screenshot path="images/addressbook.jpg">
+			<description>Addressbook.</description>
+		</screenshot>
+		<screenshot path="images/adminpannel.jpg">
+			<description>Admin pannel.</description>
+		</screenshot>
+		<screenshot path="images/calendar1.jpg">
+			<description>Calendar: Day view.</description>
+		</screenshot>
+		<screenshot path="images/calendar3.jpg">
+			<description>Calendar: Planner view.</description>
+		</screenshot>
+		<screenshot path="images/infolog.jpg">
+			<description>Infolog: CRM + Todos + Notes.</description>
+		</screenshot>
+		<screenshot path="images/knowlegebase.jpg">
+			<description>Knowlegebase.</description>
+		</screenshot>
+		<screenshot path="images/manual.jpg">
+			<description>Manual / Helping system.</description>
+		</screenshot>
+		<screenshot path="images/projectmanager.jpg">
+			<description>Projectmanager.</description>
+		</screenshot>
+		<screenshot path="images/resources.jpg">
+			<description>Resources: RBS + Inventory.</description>
+		</screenshot>
+		<screenshot path="images/sitemgr.jpg">
+			<description>Sitemgr: CMS.</description>
+		</screenshot>
+		<screenshot path="images/wiki.jpg">
+			<description>Wiki.</description>
+		</screenshot>
+		<changelog>
+			<version release="18" version="1.8.007">
+				<entry>Security and maintenance release. This release contains important security fixes; please update ASAP. These include remote command execution for logged in users with administrative privileges, and cross-site request forgery allowing one to create new admin users or run the above commands.</entry>
+			</version>
+			<version release="14" version="1.8.006">
+				<entry>set disable_autoload_langfiles=true in header.inc.php, to fix login timeouts; </entry>
+				<entry>submit var in setup manager entry point is changed to Submit, since it conflicts with submit controls in POA and Plesk</entry>
+				<entry>added default values to setupadmin and headeradmin settings</entry>
+			</version>
+			<version release="15" version="1.8.006">
+				<entry>schema.sql fixed</entry>
+			</version>
+			<version release="1" version="1.8.006">
+				<entry>Security release: http://www.egroupware.org/changelog</entry>
+			</version>
+			<version release="8" version="1.8.005">
+				<entry>Security release: http://www.egroupware.org/changelog</entry>
+			</version>
+			<version release="8" version="1.8.004">
+				<entry>Made Administrator password setting editable (not 'installation-only')</entry>
+			</version>
+			<version release="6" version="1.8.004">
+				<entry>Default values for mailserver settings added.</entry>
+			</version>
+			<version release="4" version="1.8.004">
+				<entry>Cookiepath value changed, default values for setting removed.</entry>
+			</version>
+			<version release="3" version="1.8.004">
+				<entry>Automatic tests fixed.</entry>
+			</version>
+			<version release="2" version="1.8.004">
+				<entry>Sql encryption type changed.</entry>
+			</version>
+			<version release="1" version="1.8.004">
+				<entry>Upgrade package. Release notes: http://community.egroupware.org/wiki?wikipage=releasenotes1.8</entry>
+			</version>
+			<version release="10" version="1.8.002">
+				<entry>Release notes: http://community.egroupware.org/wiki?wikipage=releasenotes1.8</entry>
+			</version>
+			<version release="5" version="1.6.001">
+				<entry>Aplication removal improved.</entry>
+			</version>
+			<version release="4" version="1.6.001">
+				<entry>Backups and file manager are moved under application root.</entry>
+			</version>
+			<version release="3" version="1.6.001">
+				<entry>Upgrade procedure corrected.</entry>
+			</version>
+			<version release="2" version="1.6.001">
+				<entry>Default site url fix.</entry>
+			</version>
+			<version release="1" version="1.6.001">
+				<entry>
+					# Complete new implementation of the filemanager DMS by means of Streamwrapper and WebDAV, ACL control on directories and files - the new architecture allows now uploading of big files. 
+					# Implementation of new functions like multiple mail accounts and many bugfixes in the email client. 
+					# Extensive new features for the tracker-application: for example escalation-matrix for tickets and automatic mail-convertion as a ticket. 
+					# Improved calendar functions especially with recurring-events. 
+					# Supplements and adaptations in the addressbook like appointment-view, custom fields, distribution lists shown in the contact directly and in the addressbook list, multiple categorization of contacts in the addressbook list. 
+					# Improvement of the template functionality of the project manager and some bugfixes. 
+					# Many useful extensions and adaptations as well as bug-fixes in all modules.
+				</entry>
+			</version>
+			<version release="14" version="1.4.002">
+				<entry>Updated package</entry>
+			</version>
+			<version release="15" version="1.2.104">
+				<entry>Initial package version</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Collaboration/Portal</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '1.2.104'"/>
+	<service id="instance">
+		<license must-accept="true">
+			<free/>
+			<text>
+				<name>GPLv2</name>
+				<file>htdocs/doc/LICENSE</file>
+			</text>
+		</license>
+		<presentation>
+			<name>eGroupWare</name>
+			<summary>eGroupWare Community Edition</summary>
+			<infolinks>
+				<link class="support" href="https://www.egroupware.org/community_support">eGroupWare Community support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/login.php" method="POST">
+					<label>Administrator Management Area</label>
+					<description/>
+					<variable name="passwd_type">text</variable>
+					<variable name="account_type">u</variable>
+					<variable name="logindomain">default</variable>
+					<variable class="login" name="login" value-of-setting="admin_login">admin</variable>
+					<variable class="password" name="passwd" value-of-setting="admin_passwd">egroupware</variable>
+					<variable name="submitit">++Login++</variable>
+				</entry>
+				<entry class="control-panel" dst="/setup/index.php" method="POST">
+					<label>Setup Administrator Management Area</label>
+					<description/>
+					<variable class="login" name="FormUser" value-of-setting="setupadmin_login">admin</variable>
+					<variable name="ConfigLang">en</variable>
+					<variable class="password" name="FormPW" value-of-setting="setupadmin_passwd">egroupware</variable>
+					<variable name="FormDomain">default</variable>
+					<variable name="ConfigLogin">Login</variable>
+					<variable name="Submit">Login</variable>
+				</entry>
+				<entry class="control-panel" dst="/setup/manageheader.php" method="POST">
+					<label>Header Administrator Management Area</label>
+					<description/>
+					<variable class="login" name="FormUser" value-of-setting="headeradmin_login">admin</variable>
+					<variable name="ConfigLang">en</variable>
+					<variable class="password" name="FormPW" value-of-setting="headeradmin_passwd">egroupware</variable>
+					<variable name="Submit">Login</variable>
+					<variable name="HeaderLogin">Login</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" id="admin_login" installation-only="true" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting class="password" id="admin_passwd" min-length="1" type="password">
+					<name>Admin Password</name>
+				</setting>
+			</group>
+			<group>
+				<name>Setup admin preferences</name>
+				<setting class="login" default-value="setupadmin" id="setupadmin_login" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Setup admin login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting class="password" id="setupadmin_passwd" min-length="1" type="password">
+					<name>Setup Admin Password</name>
+				</setting>
+			</group>
+			<group>
+				<name>Header admin preferences</name>
+				<setting class="login" default-value="headeradmin" id="headeradmin_login" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Header admin login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting class="password" id="headeradmin_passwd" min-length="1" type="password">
+					<name>Header Admin Password</name>
+				</setting>
+				<setting default-value="eGroupWare" id="title" installation-only="true" min-length="1" type="string">
+					<name>Site name</name>
+				</setting>
+			</group>
+			<group>
+				<name>Standart mailserver settings</name>
+				<setting default-value="localhost" id="mail_server" min-length="1" type="string">
+					<name>IMAP mail server hostname or IP address</name>
+				</setting>
+				<setting default-value="localhost" id="mail_suffix" min-length="1" type="string">
+					<name>Mail domain</name>
+				</setting>
+				<setting default-value="localhost" id="smtp_server" min-length="1" type="string">
+					<name>SMTP server hostname or IP address</name>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<apache:htaccess xmlns:apache="http://apstandard.com/ns/1/apache"/>
+			<php:version min="5.2.3" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">pdo_mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mbstring</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mcrypt</php:extension>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<php:magic-quotes-gpc xmlns:php="http://apstandard.com/ns/1/php">false</php:magic-quotes-gpc>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>egroupware</db:default-name>
+				<db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0.0</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>egroupware</default-prefix>
+				<installed-size>52087915</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="backups">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="temp">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="phpgwapi/images">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="sitemgr/sitemgr-site/images">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

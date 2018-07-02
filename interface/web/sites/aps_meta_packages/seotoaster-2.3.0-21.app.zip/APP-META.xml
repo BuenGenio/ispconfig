@@ -1,0 +1,190 @@
+<application packaged="2014-10-31T08:55:00" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>http://www.seotoaster.com</id>
+	<name>seotoaster</name>
+	<version>2.3.0</version>
+	<release>21</release>
+	<homepage>http://www.seotoaster.com/</homepage>
+	<vendor>
+		<name>www.seotoaster.com</name>
+		<homepage>http://www.seotoaster.com/</homepage>
+		<icon path="images/64x64.png"/>
+	</vendor>
+	<packager>
+		<name>SeoSamba</name>
+		<homepage>http://www.seotoaster.com/</homepage>
+		<icon path="images/64x64.png"/>
+		<uri/>
+	</packager>
+
+	<presentation>
+		<summary>SEOTOASTER is the most advanced SEO CMS and Ecommerce web site builder. </summary>
+		<description>SEOTOASTER is the most advanced SEO CMS and Ecommerce web site builder. 
+			It is also free and open source.
+			The only CMS with Hub and Spoke marketing technology. Deploy websites locally then manage and market them all from a central interface in the cloud.
+			Create or make your existing designs fully editable in no time, distinguish yourself from the competition and increase your margins by delivering built-in world-class SEO to your clients.
+			Enjoy more traffic, leads and sales for your B2B website or web store with built-in marketing. Learn to edit your website in 2 minutes. Out of the box, SEOTOASTER just works.
+		</description>
+
+		<icon path="images/64x64.png"/>
+		<screenshot path="images/640-admin-demo_seotoaster_com.jpg">
+			<description>
+				Admin screenshot.
+			</description>
+		</screenshot>
+		
+		<screenshot path="images/640-demo_seotoaster_com.jpg">
+			<description>
+				Seotoaster demo
+			</description>
+		</screenshot>
+
+		<changelog>
+			<version release="21" version="2.3.0">
+				<entry>
+Improved cache system.
+Added reformat code for edit css.
+Added drop down widgets list to template editor.
+Added edit JS screen.
+Improved search system.
+Updated tinyMCE to v4.
+Added calls and sms integration.
+Added option no-captcha for forms.
+Page options improvments.
+Styles and translations fixes.
+Security fixes.
+				</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+
+	<service id="Seotoaster">
+		<license must-accept="true">
+			<free/>
+			<text>
+				<name>License Type</name>
+				<url>http://www.seotoaster.com/seotoaster-license.html</url>
+			</text>
+		</license>
+
+		<presentation>
+			<name>Seotoaster</name>
+			<summary>Seotoaster CMS</summary>
+
+			<infolinks>
+				<link class="support" href="http://www.seotoaster.com/questions-and-answers/">Support Link</link>
+			</infolinks>
+
+			<entry-points>
+				<entry class="login" dst="/go" method="GET">
+					<label>Admin login</label>
+				</entry>
+				<entry dst="/">
+					<label>Site</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+		    <group class="vcard">
+		        <name>Administrator's email</name>
+		        <setting class="email" id="admin_email" type="email">
+		            <name>Administrator's email</name>
+		        </setting>
+		        <group class="fn n">
+		            <setting class="given-name" default-value="Admin" id="admin_name" type="string">
+		                <name>Administrator's name</name>
+		            </setting>
+		        </group>
+		    </group>
+		    <group class="authn">
+		        <setting class="password" id="admin_password" min-length="8" type="password">
+		            <name>Password</name>
+		        </setting>
+		    </group>
+		    <group>
+		        <name>Main configuration</name>
+		        <setting default-value="Seotaster CMS" id="title" installation-only="true" min-length="1" type="string">
+		            <name>Site name</name>
+		        </setting>
+		        <setting class="locale" default-value="en-US" id="locale" installation-only="true" type="enum">
+		            <name>Default site language</name>
+		            <choice id="en-US">
+		                <name>English</name>
+		            </choice>
+		            <choice id="de-DE">
+		                <name>German</name>
+		            </choice>
+		            <choice id="fr-FR">
+		                <name>French</name>
+		            </choice>
+		            <choice id="ru-RU">
+		                <name>Russian</name>
+		            </choice>
+		        </setting>
+		    </group>
+		</settings>
+
+		<requirements>
+			<apache:required-module xmlns:apache="http://apstandard.com/ns/1/apache">mod_rewrite</apache:required-module>
+			<apache:htaccess xmlns:apache="http://apstandard.com/ns/1/apache"/>
+			<php:version min="5.3.3" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">pdo_mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">zlib</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mbstring</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">ionCube Loader</php:extension>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<php:file-uploads xmlns:php="http://apstandard.com/ns/1/php">true</php:file-uploads>
+			
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>seotoaster</db:default-name>
+				<db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0.15</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>seotoaster</default-prefix>
+				<installed-size>41961216</installed-size>
+				
+			    <mapping path="htdocs" url="/">
+			    	<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+		    		<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+			      		<php:extension>php</php:extension>
+			    	</php:handler>
+					
+					<mapping url="tmp">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="media">
+						<php:permissions xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="previews">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="cache">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="themes">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

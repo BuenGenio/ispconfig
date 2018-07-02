@@ -1,0 +1,452 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-12-11T15:14:54">
+    <id>delaPORTAL</id>
+    <name>delaPORTAL</name>
+    <version>1.3</version>
+    <release>26</release>
+    <homepage>http://www.delaportal.com/</homepage>
+    <vendor>
+    	<name>delaPORTAL</name>
+    	<homepage>http://www.delaportal.com/</homepage>
+    	<icon path="images/icon.png" />
+    </vendor>
+    <packager>
+    	<name>Active Technologies</name>
+    	<homepage>http://active.by/</homepage>
+    	<icon path="images/active.png" />
+    	<uri>uuid:0392ec09-41c9-adf4-e39a-6a4c01ed6885</uri>
+    </packager>
+    <presentation>
+    	<summary>delaPORTAL The Ultimate In Web-Based Portal Collaboration.</summary>
+    	<summary xml:lang="ru-RU">делаПОРТАЛ — многопользовательский Интернет-портал</summary>
+    	<description>The delaPORTAL project began development in 1999 as a stand-alone document management system. As users' needs grew, a secured portal was wrapped around the product to support inclusion of an ever expanding list of optional modules. Using experience gained while working with Kickfire (a CRM portal company), we built a product utilizing the best combinations of security, features and scalibilty.</description>
+    	<description xml:lang="ru-RU">Проект делаПОРТАЛ начался в 1999 г. как независимая система управления документооборотом. По мере роста потребностей пользователей, портал с безопасным соединением развивался и получил возможность дополняться бесконечным количеством вспомогательных модулей. Используя опыт, полученный во время работы с компанией «Kickfire» (компания, предоставляющая систему управления взаимодействия с клиентами), мы создали продукт, отвечающий всем требованиям безопасности, функциональности и масштабируемости.</description>
+    	<icon path="images/icon.png" />
+    	<screenshot path="images/image001.png">
+    		<description>Календарь</description>
+    	</screenshot>
+    	<screenshot path="images/image002.png">
+    		<description>login page</description>
+    	</screenshot>
+    	<screenshot path="images/image003.png">
+    		<description>application</description>
+    	</screenshot>
+    	<screenshot path="images/image004.png">
+    		<description>documents</description>
+    	</screenshot>
+    	<screenshot path="images/image005.png">
+    		<description>documents</description>
+    	</screenshot>
+    	<screenshot path="images/image006.png">
+    		<description>application</description>
+    	</screenshot>
+    	<screenshot path="images/image007.png">
+    		<description>application</description>
+    	</screenshot>
+    	<screenshot path="images/image008.png">
+    		<description>application</description>
+    	</screenshot>
+    	<screenshot path="images/image009.png">
+    		<description>application</description>
+    	</screenshot>
+    	<screenshot path="images/image010.png">
+    		<description>application</description>
+    	</screenshot>
+    	<screenshot path="images/image011.png">
+    		<description>application</description>
+    	</screenshot>
+    	<screenshot path="images/image012.png">
+    		<description>application</description>
+    	</screenshot>
+    	<screenshot path="images/image013.png">
+    		<description>application</description>
+    	</screenshot>
+    	<screenshot path="images/image014.png">
+    		<description>application</description>
+    	</screenshot>
+    	<screenshot path="images/image015.png">
+    		<description>application</description>
+    	</screenshot>
+    	<screenshot path="images/image016.png">
+    		<description>application</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.2">
+    			<entry>APS Version 1.2</entry>
+    		</version>
+    		<version release="2" version="1.2">
+    			<entry>fix transtations</entry>
+    		</version>
+    		<version release="2" version="1.3">
+    			<entry>fix usability issues</entry>
+    		</version>
+    		<version release="9" version="1.3">
+    			<entry>fixes</entry>
+    		</version>
+    		<version release="10" version="1.3">
+    			<entry>fixes 2</entry>
+    		</version>
+    		<version release="11" version="1.3">
+    			<entry>with demo mode ON</entry>
+    		</version>
+    		<version release="13" version="1.3">
+    			<entry>fixed images</entry>
+    		</version>
+    		<version release="14" version="1.3">
+    			<entry>fixed classes</entry>
+    		</version>
+    		<version release="15" version="1.3">
+    			<entry>aps issues fixe</entry>
+    		</version>
+    		<version release="17" version="1.3">
+    			<entry>aps issues fixe</entry>
+    		</version>
+    		<version release="19" version="1.3">
+    			<entry>aps issues fixe</entry>
+    		</version>
+    		<version release="21" version="1.3">
+    			<entry>aps issues fixe</entry>
+    		</version>
+    		<version release="24" version="1.3">
+    			<entry>aps standart issues fix</entry>
+    		</version>
+    		<version release="25" version="1.3">
+    			<entry>aps standart fix</entry>
+    		</version>
+    		<version release="26" version="1.3">
+    			<entry>apsstandart fixes</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Collaboration/Portal</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    		<language>ru</language>
+    	</languages>
+    </presentation>
+    <patch match="/application/version &gt;= '1.0'" />
+    <service id="delaPORTAL" class="service">
+    	<license must-accept="true">
+    		<commercial />
+    		<text xml:lang="ru-RU">
+    			<name>Условия использования делаПОРТАЛ</name>
+    			<file>htdocs/LICENSE-ru.txt</file>
+    		</text>
+    		<text xml:lang="en-US">
+    			<name>Terms of use</name>
+    			<file>htdocs/LICENSE.txt</file>
+    		</text>
+    		<text>
+    			<name>Terms of use</name>
+    			<file>htdocs/LICENSE.txt</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>delaPORTAL</name>
+    		<summary>delaPORTAL The Ultimate In Web-Based Portal Collaboration.</summary>
+    		<summary xml:lang="ru-RU">делаПОРТАЛ — многопользовательский Интернет-портал</summary>
+    		<infolinks>
+    			<link href="http://www.delaportal.ru" class="official" xml:lang="ru-RU">делаПОРТАЛ (Россия Главный офис)</link>
+    			<link href="http://www.delaportal.ru" class="official">delaPORTAL The Ultimate In Web-Based Portal Collaboration.</link>
+    			<link href="https://www.delaportal.com/demo/about_us.cfm?lang=en" class="support">Support  www.delaportal.ru</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry dst="https://www.delaportal.com/direct_login.cfm" method="POST" class="control-panel">
+    				<label>Application entry</label>
+    				<label xml:lang="ru-RU">Вход в приложение</label>
+    				<variable name="lang" class="locale" value-of-setting="locale"></variable>
+    				<variable name="loginname" class="login" value-of-setting="login_name"></variable>
+    				<variable name="password" class="password" value-of-setting="password"></variable>
+    				<variable name="company" class="" value-of-setting="abbr_company_name"></variable>
+
+    			</entry>
+				<entry dst="https://www.delaportal.com/login/index.cfm?company={company}" method="GET">
+					<label>Login form</label>
+					<label xml:lang="ru-RU">Login form</label>
+					<variable name="company" class="" value-of-setting="abbr_company_name"></variable>
+				</entry>
+    		</entry-points>
+			
+    	</presentation>
+    	<settings>
+    		<setting type="string" id="parent_site_url" installation-only="true" optional="true">
+    					<name>Your company site URL  http://</name>
+    					<name xml:lang="ru-RU">URL сайта Вашей компании</name>
+    		</setting><group class="presentation">
+    				<name>Language</name>
+    				<name xml:lang="ru-RU">Язык</name>
+    				<setting type="enum" id="locale" class="locale" installation-only="true" default-value="en">
+    					<name>Default Language</name>
+    					<name xml:lang="ru-RU">Язык по умолчанию</name>
+    					<choice id="en">
+    						<name>English (en)</name>
+    					</choice>
+    					<choice id="ru">
+    						<name>Русский (ру)</name>
+    					</choice>
+    					<choice id="fr">
+    						<name>Français (fr)</name>
+    					</choice>
+    					<choice id="pl">
+    						<name>Polski (pl)</name>
+    					</choice>
+    					<choice id="mx">
+    						<name>Español (mx)</name>
+    					</choice>
+    				</setting>
+    			</group><group>
+    				<name>Which Features Would You Like</name>
+    				<name xml:lang="ru-RU">Список необходимых функций</name>
+    				<setting type="enum" id="announcements" installation-only="true" default-value="Y">
+    					<name>Announcements</name>
+    					<name xml:lang="ru-RU">Объявления</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="document_management" installation-only="true" default-value="Y">
+    					<name>Document Management</name>
+    					<name xml:lang="ru-RU">Управление документооборотом</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="events_calendar" installation-only="true" default-value="Y">
+    					<name>Events Calendar</name>
+    					<name xml:lang="ru-RU">Календарь</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="forums" installation-only="true" default-value="Y">
+    					<name>Forums (Discussions)</name>
+    					<name xml:lang="ru-RU">Форумы (Обсуждения)</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+					<setting type="enum" id="bookmarks" installation-only="true" default-value="Y">
+    					<name>My Personal Bookmarks</name>
+    					<name xml:lang="ru-RU">Мои закладки</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="contacts" installation-only="true" default-value="Y">
+    					<name>My Personal Contacts</name>
+    					<name xml:lang="ru-RU">Мои контакты</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="notes" installation-only="true" default-value="Y">
+    					<name>My Personal Notes</name>
+    					<name xml:lang="ru-RU">Мои примечания</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="newsletter" installation-only="true" default-value="Y">
+    					<name>Newsletter</name>
+    					<name xml:lang="ru-RU">Рассылка новостей</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="polls" installation-only="true" default-value="Y">
+    					<name>Polls (Surveys)</name>
+    					<name xml:lang="ru-RU">Опросы (Голосование)</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="presentations" installation-only="true" default-value="Y">
+    					<name>Presentations (Slide Shows)</name>
+    					<name xml:lang="ru-RU">Презентации (Слайд шоу)</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="web_sites" installation-only="true" default-value="Y">
+    					<name>Recommended WebSites</name>
+    					<name xml:lang="ru-RU">Рекомендованные вебсайты</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="tasks" installation-only="true" default-value="Y">
+    					<name>Task Manager</name>
+    					<name xml:lang="ru-RU">Менеджер Задач</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="web_mail" installation-only="true" default-value="Y">
+    					<name>WebMail (Corporate)</name>
+    					<name xml:lang="ru-RU">(Корпоративный) WebMail</name>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    				<setting type="enum" id="view_docs" installation-only="true" default-value="Y">
+    					<name>View delaPORTAL Documents</name>
+    					<name xml:lang="ru-RU">Просмотреть документацию делаПОРТАЛ</name>
+    					<description>Will Show In Document Management</description>
+    					<description xml:lang="ru-RU">Документация будет доступна через систему документооборота</description>
+    					<choice id="Y">
+    						<name>Yes</name>
+    						<name xml:lang="ru-RU">Да</name>
+    					</choice>
+    					<choice id="N">
+    						<name>No</name>
+    						<name xml:lang="ru-RU">Нет</name>
+    					</choice>
+    				</setting>
+    			</group>
+    	<group class="authn">
+    				<name>Administrative preferences</name>
+    				<name xml:lang="ru-RU">Данные администратора</name>
+    				<setting type="string" id="abbr_company_name" max-length="20" min-length="4" regex="[a-zA-Z0-9_]+" installation-only="true" class="org_id">
+    				<name>Abbreviated Company Name</name>
+    				<name xml:lang="ru-RU">Сокращенное наименование компании</name>
+    			</setting><setting type="integer" id="maximum_number_of_seats" installation-only="true" default-value="10" visibility="hidden" protected="true">
+    					<name>Maximum Number Of Seats</name>
+    					<name xml:lang="ru-RU">Максимальное количество пользователей</name>
+    					<description> This refers to the number of concurrent users in delaPORTAL.</description>
+    					<description xml:lang="ru-RU"> Максимальное число одновременных подключений к делаПОРТАЛ</description>
+    				</setting><setting type="string" id="login_name" installation-only="true" class="login">
+    					<name>Login Name</name>
+    					<name xml:lang="ru-RU">Имя пользователя</name>
+    				</setting><setting type="password" id="password" installation-only="true" class="password">
+    					<name>Password</name>
+    					<name xml:lang="ru-RU">Пароль</name>
+    				</setting>
+
+
+
+    	</group>
+    	
+    	<group class="vcard">
+    	<name>Contact information</name>
+    				<setting type="email" id="email_address" installation-only="true" default-value="admin@delaportal.com" class="email">
+    					<name>Email Address</name>
+    					<name xml:lang="ru-RU">Адрес электронной почты</name>
+    				</setting>
+    				<group class="tel">
+               			<name>work</name>
+	                       <setting id="telephone_business1" class="work" type="string">
+				               <name>Work Phone Number</name>
+				               <name xml:lang="ru-RU">Телефон компании</name>
+	                       </setting>
+					</group>
+
+			<group class="org">
+					<setting type="string" id="full_company_name" installation-only="true" min-length="1" optional="true" class="organization-name">
+    					<name>Full Company Name</name>
+    					<name xml:lang="ru-RU">Полное наименование компании</name>
+    				</setting>
+			</group>
+			<group class="fn n">
+					<setting type="string" id="title" installation-only="true" min-length="1" class="title">
+    					<name>Account administrator's title</name>
+    					<name xml:lang="ru-RU">Должность администратора аккаунта</name>
+					</setting>
+    				<setting type="string" id="first_name" default-value="" installation-only="true" min-length="2" class="given-name">
+    					<name>First Name (Primary Contact)</name>
+    					<name xml:lang="ru-RU">Имя (Контактное лицо)</name>
+    				</setting>
+    				<setting type="string" id="last_name" min-length="1" installation-only="true" class="family-name">
+    					<name>Last Name (Primary Contact)</name>
+    					<name xml:lang="ru-RU">Фамилия (Контактное лицо)</name>
+    				</setting>    				
+    			</group><group class="adr">
+    	<setting type="string" id="street_address" installation-only="true" default-value="" min-length="1" class="street-address">
+    					<name>Street Address</name>
+    					<name xml:lang="ru-RU">Адрес</name>
+    				</setting><setting type="string" id="city" installation-only="true" min-length="1" default-value="" class="locality">
+    					<name>City</name>
+    					<name xml:lang="ru-RU">Город</name>
+    				</setting><setting type="integer" id="zip" installation-only="true" class="postal-code">
+    					<name>Zip</name>
+    					<name xml:lang="ru-RU">Индекс</name>
+    				</setting><setting type="string" id="state" default-value="" min-length="1" installation-only="true" class="region">
+    					<name>State, province or region</name>
+    					<name xml:lang="ru-RU">Штат, область, провинция или район</name>
+</setting>
+    		</group></group>
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:version min="5"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure">
+    			<script-language>php</script-language>
+    		</configuration-script>
+    	</provision>
+    </service>
+</application>

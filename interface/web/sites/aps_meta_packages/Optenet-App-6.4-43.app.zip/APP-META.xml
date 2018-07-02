@@ -1,0 +1,266 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-06-27T11:29:46">
+	<id>Optenet</id>
+	<name>Optenet-App</name>
+	<version>6.4</version>
+	<release>43</release>
+
+	<homepage>http://www.optenet.com</homepage>
+	<master-package>
+		<package id="http://tempuri.org" match=""/>
+	</master-package>
+
+	<vendor>
+		<name>Optenet S.A.</name>
+		<homepage>http://www.optenet.com</homepage>
+		<homepage>http://www.optenet.com</homepage>
+		<icon path="images/icon.png" />
+	</vendor>
+
+	<packager>
+		<name>Optenet</name>
+		<homepage>http://www.optenet.com</homepage>
+		<icon path="images/icon.png" />
+		<uri>http://www.optenet.com</uri>
+	</packager>
+
+	<presentation>
+		<summary>Optenet is a highly advanced class security suite for internet.</summary>
+		<description>Optenet is a highly advanced class security suite for internet. It offers security for email, and all kind of internet content.
+Optenet’s technology protects 120+ million end users around the globe, including customers of many of the world’s leading ISPs and mobile operators, as well as employees of global enterprise organizations.
+
+As a socially conscious organization, Optenet is committed to eliminating illegal content on the Internet, protecting children and supporting government agencies and non-profit organizations that share the same goal.
+
+    Founded: 1997
+    Headquarters: Madrid, Spain
+    Headcount: > 150
+    Customer base:
+        120+ million end users
+        140,000 enterprise customers
+        Largest ISP customer base (>100) implementing SaaS 
+
+		</description>
+
+		<icon path="images/icon.png"/>
+	
+		<screenshot path="images/iconScreen.png">
+			<description>
+				Main screenshot.
+			</description>
+		</screenshot>
+	
+		<changelog>
+			<version version="6.4" release="24">
+				<entry>Initial package version</entry>
+			</version>
+			<version release="25" version="6.4">
+				<entry>Improve and some errors corrected</entry>
+			</version>
+			<version release="26" version="6.4">
+				<entry>Improve and some errors corrected</entry>
+			</version>
+			<version release="27" version="6.4">
+				<entry>Improve and some errors corrected</entry>
+			</version>
+			<version release="28" version="6.4">
+				<entry>Improve and some errors corrected</entry>
+			</version>
+			<version release="29" version="6.4">
+				<entry>some errors corrected about provisioning</entry>
+			</version>
+			<version release="30" version="6.4">
+				<entry>some errors corrected about </entry>
+			</version>
+			<version release="31" version="6.4">
+				<entry>Para quitarlos mensajes al provisionar. De este modo si provisiona bien sale con 0 y de lo contrario sale con 1</entry>
+			</version>
+			<version release="32" version="6.4">
+				<entry>Para quitarlos mensajes al dar de baja. De este modo si da de baja bien sale con 0 y de lo contrario sale con 1</entry>
+			</version>
+			<version release="33" version="6.4">
+				<entry>Se ha mejorado la fuincion Remove y se a agregado codigo para la funcion Configure (Modificar)</entry>
+			</version>
+			<version release="34" version="6.4">
+				<entry>Cambios para agregar servicios</entry>
+			</version>
+			<version release="35" version="6.4">
+				<entry>Algunos cambios en los datos</entry>
+			</version>
+			<version release="36" version="6.4">
+				<entry>changing packager to Optenet packager.</entry>
+			</version>
+			<version release="37" version="6.4">
+				<entry>To add info about deployment.</entry>
+			</version>
+			<version release="38" version="6.4">
+				<entry>changing  info about deployment.</entry>
+			</version>
+			<version release="39" version="6.4">
+				<entry>Some changes to services.</entry>
+			</version>
+			<version release="40" version="6.4">
+				<entry>Changes on script to implement Enable and Disable. Also implement output errors.</entry>
+			</version>
+			<version release="41" version="6.4">
+				<entry>changes in deployment guide</entry>
+			</version>
+			<version release="42" version="6.4">
+				<entry>corect the empty name file of Deployment guide</entry>
+			</version>
+			<version release="43" version="6.4">
+				<entry>Set a new file of License Agreement.
+Was deleted a folder file://presentation/infolinks</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+			<language>es</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<group class="authn">
+			<name>Optenet Panel Settings</name>
+			<setting type="string" id="optpanel_url" class="title"
+				default-value="" regex="^https?://.*$">
+				<name>Optenet Panel URL</name>
+				<description>This is an URL in format &apos;http://www.optenet.com/&apos; showing where Optenet Panel is installed. Unless you use a custom CNAME, this is the primary hostname of your first server.</description>
+				<error-message>Please make sure the text you entered starts with either http:// or https://.</error-message>
+			</setting>
+		</group>
+		<group>
+			<name>Optenet Settings</name>
+			<setting id="opthost" class="title" type="string" default-value="" min-length="1">
+				<name>hostname</name>
+				<description>
+					This is IP address of Optenet product installation, used for API access.
+				</description>
+			</setting>
+		</group>
+	</global-settings>
+
+
+	<service id="OPTServices">
+		<license must-accept="true">
+			<commercial />
+			<text>
+				<name>General Terms &amp; Conditions and License Terms</name>
+				<file>doc/LicenseAgreement.pdf</file>
+			</text>
+		</license>
+
+		<presentation>
+			<name>Optenet</name>
+			<summary>This part contains all on Optenet service</summary>
+
+			<infolinks>
+				<link href="http://www.optenet.com" class="official">official</link>
+				<link href="files://doc/Deployment.pdf" class="deployment-guide">Deployment documentation</link>
+				<link href="http://www.optenet.com/es/contact.asp" class="support">Support</link>
+			</infolinks>
+
+			<entry-points>
+				<entry dst="{optpanel_url}/default2.htmopt" method="POST">
+					<label>Services Optenet Control Panel</label>
+					<variable name="optpanel_url" class="locale" value-of-setting="optpanel_url">as</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+
+		<settings>
+			<group class="authn">
+				<name class="type"></name>
+				<setting id="username" type="string" class="login" min-length="1" protected="true">
+					<name>Username</name>
+					<description>This username is being used to login to the user control panel.</description>
+				</setting>
+				<setting type="password" id="passwd" class="opt_pass" min-length="1" track-old-value="true" default-value="">
+					<name>Password</name>
+					<description>This password is being used to login to the user control panel.</description>
+				</setting>
+				<setting type="string" id="serviceWF"
+					protected="true" default-value="WebFilter">
+					<name>Service included</name>
+					<description>Application with WebFilter service included</description>
+				</setting>
+				<setting type="integer" id="wfunits" default-value="1" min="1" max="3">
+					<name>Units contracted</name>
+					<description>Units contracted for WebFilter service of Optenet</description>
+				</setting>
+			</group>
+		</settings>
+
+
+		<requirements xmlns:db="http://apstandard.com/ns/1/db" xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="5.2"/>
+			<php:extension>zlib</php:extension>    
+			<php:extension>xml</php:extension>
+			<php:extension>openssl</php:extension>
+			<php:extension>curl</php:extension>
+			<php:extension>soap</php:extension>
+			<php:safe-mode>false</php:safe-mode>
+						
+		</requirements>
+
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<status-control />
+				<structured-output />
+			</configuration-script>
+			  
+			
+			
+		</provision>
+		<service id="OPTFirewall">
+			<presentation>
+				<name>Firewall</name>
+				<summary>This part contains all of Firewall service of Optenet</summary>
+			</presentation>
+			<settings>
+				<setting type="integer" id="fwunits" value-of-setting="wfunits" protected="true">
+					<name>Units contracted</name>
+					<description>Units contracted for Firewall service of Optenet</description>
+				</setting>
+				<setting type="string" id="userFW"
+					value-of-setting="username" protected="true">
+					<name>Username</name>
+				</setting>
+				<setting type="password" id="passFW" protected="true" value-of-setting="passwd">
+				</setting>
+			</settings>
+			<provision>
+				<configuration-script name="configure.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</configuration-script>
+			</provision>
+		</service>
+		<service id="OPTAntivirus">
+			<presentation>
+				<name>Antivirus</name>
+				<summary>This part contains all of Antivirus service of Optenet</summary>
+			</presentation>
+			<settings>
+				<setting type="integer" id="avunits" value-of-setting="wfunits" protected="true">
+					<name>Units contracted</name>
+					<description>Units contracted for Antivirus service of Optenet</description>
+				</setting>
+				<setting type="string" id="userAV" protected="true" value-of-setting="username">
+					<name>Username</name>
+				</setting>
+				<setting type="password" id="passAV" protected="true" value-of-setting="passwd"></setting>
+			</settings>
+			<provision>
+				<configuration-script name="configure.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</configuration-script>
+			</provision>
+		</service>
+	</service>
+
+	</application>

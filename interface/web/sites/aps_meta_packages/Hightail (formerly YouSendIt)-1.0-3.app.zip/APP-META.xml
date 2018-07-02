@@ -1,0 +1,221 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-01-23T16:31:43">
+    <id>Hightail</id>
+    <name>Hightail (formerly YouSendIt)</name>
+    <version>1.0</version>
+    <release>3</release>
+    <homepage>http://www.glowtouch.com/</homepage>
+    <vendor>
+    	<name>Hightail (formerly YouSendIt)</name>
+    	<homepage>https://www.hightail.com/</homepage>
+    	<icon path="images/hightop-outline-64.png" />
+    </vendor>
+    <packager>
+    	<name>GlowTouch Technologies</name>
+    	<homepage>http://www.glowtouch.com/</homepage>
+    	<icon path="images/parrallels-GT6.png" />
+    	<uri>uuid:448c844d-0f5a-4b72-aa18-29adb7bd1022</uri>
+    </packager>
+    <presentation>
+    	<summary>Hightail is the easiest way to securely store, access and share your files and folders from anywhere. Use Hightail to work with anyone in one simple place and move your ideas forward.</summary>
+    	<description>Hightail is the easiest way to store and access your files and folders from anywhere and share your work with anyone, making it simple to work together. You can even sign documents electronically and return them right away—no printers or scanners required.Hightail is secure. You get complete control over who sees your work and how they change it. You can access your files on your computer, phone or tablet so no matter what you’re doing or where you’re working, Hightail helps you get it done.</description>
+    	<icon path="images/hightop-outline-64.png" />
+    	<screenshot path="images/screenshot1.png">
+    		<description> Access and share your files and folders from anywhere.</description>
+    	</screenshot>
+    	<screenshot path="images/screenshot2.png">
+    		<description> Access and share your files and folders from anywhere.</description>
+    	</screenshot>
+    	<screenshot path="images/screenshot3.png">
+    		<description> Access and share your files and folders from anywhere.</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.0">
+    			<entry>Hightail Initial Draft</entry>
+    		</version>
+    		<version release="2" version="1.0">
+    			<entry>Update product category</entry>
+    		</version>
+    		<version release="3" version="1.0">
+    			<entry>Change package name to reflect formerly YouSendIt
+</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Collaboration/Portal</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<group class="presentation">
+    		<name>Admin Partner Preferences</name>
+    		<setting type="string" id="api_url" default-value="" min-length="1">
+  		<name>API Url</name>
+  		<description>Partner API Url</description>
+  	</setting>
+  	<setting type="string" id="partner_id" default-value="">
+  		<name>Partner ID</name>
+  		<description>Partner ID</description>
+  	</setting>
+  	<setting type="string" id="api_key" default-value="" min-length="1">
+  		<name>API Key</name>
+  		<description>API Key</description>
+  	</setting>
+  	<setting type="string" id="webportal_url" default-value="" min-length="1">
+  		<name>Web portal URL</name>
+  		<description>Web portal URL</description>
+  	</setting>
+  	<setting type="string" id="plan1" default-value="">
+  		<name>Plan1</name>
+  		<description>Lite</description>
+  	</setting>
+  	<setting type="string" id="plan2" default-value="">
+  		<name>Plan2</name>
+  		<description>Pro Monthly</description>
+  	</setting>
+  	<setting type="string" id="plan3" default-value="">
+  		<name>Plan3</name>
+  		<description>Pro Annual</description>
+  	</setting>
+  	<setting type="string" id="plan4" default-value="">
+  		<name>Plan4</name>
+  		<description>ProPlus Monthly</description>
+  	</setting>
+  	<setting type="string" id="plan5" default-value="">
+  		<name>Plan5</name>
+  		<description>ProPlus Annual</description>
+  	</setting>
+  	<setting type="string" id="plan6" default-value="">
+  		<name>Plan6</name>
+  		<description>Teams Monthly</description>
+  	</setting>
+  	<setting type="string" id="plan7" default-value="">
+  		<name>Plan7</name>
+  		<description>Teams Annual</description>
+  	</setting>
+    	</group>
+    </global-settings>
+    <upgrade match="/application/release&gt;1" />
+    <service id="User Registration" class="service">
+    	<license must-accept="true">
+    		<commercial />
+    		<text>
+    			<name>Commercial License</name>
+    			<file>scripts/license.txt</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>User Registration</name>
+    		<summary>Hightail is the easiest way to securely store, access and share your files and folders from anywhere. Use Hightail to work with anyone in one simple place and move your ideas forward.</summary>
+    			
+    			<infolinks>
+    				<link href="http://www.learn.hightail.com" class="support">Support</link>
+    				<link href="file:///htdocs/docs/Providers-Guide.doc" class="deployment-guide">Providers Guide</link>
+    				<link href="file:///htdocs/docs/Subscribers-Guide.doc" class="user-guide">Subscribers Guide</link>
+    				<link href="file:///htdocs/docs/Release_notes_v_1.0.doc" class="support">Release Notes</link>
+    			</infolinks>
+    			<entry-points>
+    		     <entry dst="{url}/login" class="login">
+    				<label>Login to Hightail Web Portal</label>
+    				<variable name="url" value-of-setting="webportal_url"></variable>
+    		     </entry> 
+    		</entry-points>
+    	</presentation>
+    	<settings>
+    		<group class="vcard">
+    			<name>User Info</name>
+    			<group class="fn n">
+    			</group>
+    			<setting type="string" id="first_name" class="given-name" optional="true">
+    				<name>First Name</name>
+    			</setting><setting type="string" id="last_name" class="family-name" optional="true">
+    			<name>Last Name</name>
+    		</setting>
+    				<group>
+    				<name>email</name>
+    				</group>
+					<setting type="email" id="user_email" class="value" installation-only="true">
+    				<name>Email Address</name>
+    				<description>For  User Registration</description>
+    				<error-message>This Field is Mandatory</error-message>
+    			</setting>
+<group>
+    					<name>authn</name>
+    					<setting type="password" id="user_password"
+    						min-length="5" default-value="">
+    						<name>Password</name>
+    					</setting>
+</group>   			
+    			
+    			</group>
+    		<group>
+    			<name>Included Resources</name>
+    			<setting type="string" id="yousendit_plan1"
+    				protected="true" default-value="0" visibility="hidden">
+    				<name>YousendIt_Plan1</name>
+    			</setting>
+    			<setting type="string" id="yousendit_plan2" protected="true" default-value="0" visibility="hidden">
+    				<name>YousendIt_Plan2</name>
+    			</setting>
+    			<setting type="string" id="yousendit_plan3" protected="true" default-value="0" visibility="hidden">
+    				<name>YousendIt_Plan3</name>
+    			</setting>
+    			<setting type="string" id="yousendit_plan4" protected="true" default-value="0" visibility="hidden">
+    				<name>YousendIt_Plan4</name>
+    			</setting>
+    			<setting type="string" id="yousendit_plan5" protected="true" default-value="0" visibility="hidden">
+    				<name>YousendIt_Plan5</name>
+    			</setting>
+    			<setting type="string" id="yousendit_plan6" protected="true" default-value="0" visibility="hidden">
+    				<name>YousendIt_Plan6</name>
+    			</setting>
+    			<setting type="string" id="yousendit_plan7" protected="true" default-value="0" visibility="hidden">
+    				<name>YousendIt_Plan7</name>
+    			</setting>
+    			<setting type="string" id="authenticationkey" protected="true" default-value="" visibility="hidden"></setting>
+    			<setting type="string" id="plan_selected" protected="true" default-value="" visibility="hidden">
+    				<name>Selected Plan</name>
+    			</setting>
+    			<setting type="string" id="package_type" protected="true" default-value="" visibility="hidden"></setting>
+    		</group>
+    	</settings>
+    	<resources>
+    		<resource class="item" id="plan1" limiting-setting="yousendit_plan1">
+    			<name>Plan1</name>
+    		</resource>
+    		<resource class="item" id="plan2" limiting-setting="yousendit_plan2">
+    			<name>Plan2</name>
+    		</resource>
+    		<resource class="item" id="plan3" limiting-setting="yousendit_plan3">
+    			<name>Plan3</name>
+    		</resource>
+    		<resource class="item" id="plan4" limiting-setting="yousendit_plan4">
+    			<name>Plan4</name>
+    		</resource>
+    		<resource class="item" id="plan5" limiting-setting="yousendit_plan5">
+    			<name>Plan5</name>
+    		</resource>
+    		<resource class="item" id="plan6" limiting-setting="yousendit_plan6">
+    			<name>Plan6</name>
+    		</resource>
+    		<resource class="item" id="plan7" limiting-setting="yousendit_plan7">
+    			<name>Plan7</name>
+    		</resource>
+    	</resources>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:extension>curl</php:extension>
+    		<php:version min="5.2"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    		<verify-script name="verification.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</verify-script>
+    	</provision>
+    </service>
+</application>

@@ -1,0 +1,205 @@
+<application packaged="2016-02-16T05:31:29" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>bbclone</id>
+	<name>bbclone</name>
+	<version>0.64</version>
+	<release>52</release>
+	<homepage>http://bbclone.de/</homepage>
+	<vendor>
+		<name>bbclone.de</name>
+		<homepage>http://bbclone.de/</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Plesk</name>
+		<homepage>http://plesk.com</homepage>
+		<icon path="images/packager.png"/>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>Feature rich counter</summary>
+		<description>
+			BBclone is a web counter written in PHP. It looks similar to
+			Big Brother Webstats. But it is not *just* a counter :
+			BBClone gives a detailed view of the visitors of your web
+			site. It does it by displaying the n-th last users (and the
+			data they provided, like their IP, browser and so on) that
+			went of the web site, not just showing a number of visitors.
+			This is very handy for slow to medium traffic web site
+			webmasters that want to see who visit their sites, what
+			browser people use, where do they come from etc. Please note
+			that it's very design, BBclone is not useful for high
+			traffic websites where you only need agregated data.
+		</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/bbcl.JPG">
+			<description>Screenshot 1.</description>
+		</screenshot>
+		<changelog>
+			<version release="52" version="0.64">
+				<entry>Update: Now detects Windows 10 correctly.
+                    Update: Languages where possible.
+                    Update: Added new domains as there where some new additions.
+                    Update: New detections for Browsers, OS and Robots. With thanks to all forum users who submitted updates</entry>
+			</version>
+			<version release="12" version="0.63">
+				<entry>Package updated to avoid crashing if PHP7 is selected</entry>
+			</version>
+			<version release="11" version="0.63">
+				<entry>Statistics issue solved</entry>
+			</version>
+			<version release="1" version="0.63">
+				<entry>
+					* NEW: You can now sellect if you want to use stripped-down or the original uri with the option $BBC_USE_ORIGINAL_URI
+					* NEW: The max. characters for the page name is now more flexable with the option $BBC_MAX_PAGENAME
+					* Update: Added new domains as there where some new additions.
+					* Update: New detections for Browsers, OS and Robots. With thanks to all forum users who submitted updates.</entry>
+			</version>
+			<version release="6" version="0.62">
+				<entry>
+					New: GeoIP PHP/Perl Module plugin added
+					Update: Corrected Top Origin for Global Stats
+					Update: Improved Top Hosts for Global Stats
+					Update: Languages where possible (now including template for new language)
+					Update: Added new domains as there where some new additions
+					Update: Added detections for Browsers, OS and Robots. With thanks to all forum users who submitted updates</entry>
+			</version>
+			<version release="4" version="0.61">
+				<entry>Changes in the script</entry>
+			</version>
+			<version release="3" version="0.61">
+				<entry>Test script patches</entry>
+			</version>
+			<version release="2" version="0.61">
+				<entry>Minor changes</entry>
+			</version>
+			<version release="1" version="0.61">
+				<entry>
+					GeoIP detection IPv4 language code change to utf-8
+					Update: New detections for Browsers, OS and Robots.
+					With thanks to all forum users who submitted updates
+					Update: Added new domains as there where some new
+					additions (.asia .cat .pro .tel etc)
+				</entry>
+			</version>
+			<version release="1" version="0.6.0">
+				<entry>
+					Update: Upgrade from GPL version 2 to version 3 for
+					better protection NEW: Moved extension/country
+					look-up into plug-in mechanism NEW: Over-right
+					feature for version detections (use text:version)
+					NEW: Now load-time can be displayed (configurable)
+					on the bottom of each page NEW: Moved layout to CSS,
+					meaning some configuration parts (like font sizes
+					etc.) are now moved into CSS Update: Time-format is
+					now translated and not system specific (especially
+					within time-stats) Update: Title bar is now more
+					flexible, by default a fixed language specific text
+					Change: Selected statistics page is now highlighted
+					in navigation menu Change: The "who is"
+					option, now configurable and from detailed view for
+					IP numbers only Update: New detections for Browsers,
+					OS and Robots. With thanks to all forum users who
+					submitted updates Update: Added new domains as there
+					where some new additions (.asia .cat .pro .tel etc)
+				</entry>
+			</version>
+			<version release="1" version="0.5.0">
+				<entry>
+					Add support to export the detailed stats to XML Add
+					experimental SQL backend Add menu for development
+					features
+				</entry>
+			</version>
+			<version release="1" version="0.4.9">
+				<entry>
+					add many robots and many browser add favorite
+					weekend mod from the forums add regression suite to
+					evaluate correctness of expressions add most of the
+					mobile browsers out there add some rare user agents
+					like the PSP add color in detailed stats for access
+					of the local ip-adress to spot yourself in the log
+					Updated ip2ext database
+				</entry>
+			</version>
+			<version release="1" version="0.4.8b">
+				<entry>
+					Fixed wrong reference usage in io.php Fixed broken
+					referrers once they contain multibyte characters
+					Replaced broken cyrillic detection with
+					mb_detect_encoding Replaced Javascript redirector
+					with conventional Javascript generated links Changed
+					processing order in lib/marker.php to block unwanted
+					things as early as possible Changed behaviour of
+					$BBC_IGNORE_REFER to truly ignore visitors/bots with
+					unwanted referrers Added Korean and Thai translation
+					Updated Greek and Spanish translation Updated a lot
+					of broken detection patterns Updated W3C validator
+					url Updated ip2ext database
+				</entry>
+			</version>
+			<version release="1" version="0.48.a">
+				<entry>
+					Fixed uninitialised variable with $BBC_IGNORE_AGENT
+					set to "1" (Dave) Fixed language not
+					recognised in Opera if multiple languages are set
+					(Olliver) Fixed implicit usage of multibyte function
+					in lib/referrer.php (Olliver) Don't list www*.
+					aliases of multiple frontends as separated referrers
+					(Olliver) Open external links in new window again
+					(Nanna Ellegaard) Added "noscript" for
+					javascript links to address "Cynthia Says"
+					warnings (Olliver) Extended javascript code to
+					create anchor tags as well (Olliver) Updated both
+					Ukrainian and Russian translation (Leppa) Doc
+					updates (Olliver)
+				</entry>
+			</version>
+			<version release="31" version="0.48">
+				<entry>Initial package version</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Analytics</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '0.48' and /application/release &gt;= '1'"/>
+	<service id="bbclone">
+		<license must-accept="true">
+			<text>
+				<name>GPLv2</name>
+				<file>htdocs/doc/copying.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<summary>A PHP based Web Counter on Steroids</summary>
+			<infolinks>
+				<link class="support" href="http://bbclone.de">Support</link>
+			</infolinks>
+		</presentation>
+		<settings/>
+		<requirements>
+			<php:version max-not-including="7.0" min="4.0.6" xmlns:php="http://apstandard.com/ns/1/php"/>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>bbclone</default-prefix>
+				<installed-size>1850009</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="var">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

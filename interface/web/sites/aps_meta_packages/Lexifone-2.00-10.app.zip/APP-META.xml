@@ -1,0 +1,254 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-04-30T17:31:08">
+	<id>lexifone_callme</id>
+	<name>Lexifone</name>
+	<version>2.00</version>
+	<release>10</release>
+	<homepage>https://www.lexifone.com/sfr/fr/</homepage>
+	<vendor>
+		<name>Lexifone</name>
+		<homepage>https://www.lexifone.com/sfr</homepage>
+		<icon path="images/lexi_logo.png" />
+	</vendor>
+	<packager>
+		<name>Lexifone</name>
+		<homepage>https://www.lexifone.com/sfr</homepage>
+		<icon path="images/lexi_logo.png" />
+	</packager>
+	<presentation>
+		<summary>Lexifone - SFR automated in-call interpreter</summary>
+		<summary xml:lang="fr-FR">Lexifone - SFR Traduction automatique d'appel téléphonique</summary>
+		<description>Receive translated calls: unlimited* plan (Up to 1000 minutes per month).
+Option to buy your own unique access number.
+Receive calls from your customers around the world and speak your language.
+Fully automatic service, no 3rd party on the call. Available 24/7.
+By using Lexifone you agree to our terms of use:
+https://www.lexifone.com/sfr/terms-of-use.
+Price includes the automatic interpretation and the international call itself.
+Operator charges may apply for the call to the local access number (a domestic landline).
+Subject to fair use policy http://www.lexifone.com/sfr/fair-usage-policy.
+Supported Languages: English, Spanish, Portuguese, German, Italian, French, Russian, Polish and Chinese.
+User manual at http://www.lexifone.com/sfr/support/user-manual.
+Visit our website at http://www.lexifone.com/sfr/support.</description>
+<description xml:lang="fr-FR">
+Le service CallMe de Lexifone traduit vos appels entrants.
+Plan "illimité" (Jusque 1000 minutes par mois).
+Nous vous fournissons vos propres numéros d'accès, là où sont vos clients.
+Indispensable pour les PME: Dans le monde entier, vos clients appellent votre
+numéro d'accès, nous redirigeons l'appel vers votre téléphone et traduisons la communication.
+Appels à partir de n'importe quel téléphone fixe ou mobile.
+Service entièrement automatique, sans tierce personne en ligne et disponible 24h/24 7j/7.
+Langues proposées: Français, Anglais, Espagnol, Portugais, Allemand, Italien, Russe et Chinois.
+En utilisant Lexifone, vous acceptez nos conditions d'utilisation: https://www.lexifone.com/sfr/fr/terms-of-use.
+Le prix comprend le service de traduction et la connection vers votre téléphone.
+Le coût de l'appel de votre numéro d'accès, par votre client, lui est facturé par son opérateur.
+Sous reserve d'une utilisation raisonnable https://www.lexifone.com/sfr/fr/fair-usage-policy.
+</description>
+		<icon path="images/lexi_logo.png" />
+		<screenshot path="images/Lexifone_screen.jpg">
+			<description>Lexifone screen home page</description>
+		</screenshot>
+		<changelog>
+			<version release="10" version="2.00">
+				<entry>Initial application version</entry>
+				<entry xml:lang="fr-FR">Version initiale</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Infrastructure/Management</category>
+			<category>Collaboration/Telecommunications</category>
+			<category>Front office/Call Center</category>
+		</categories>
+		<languages>
+			<language>en</language>
+			<language>fr</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<group>
+			<name>Lexifone API</name>
+			<name xml:lang="fr-FR">API Lexifone</name>
+			<setting type="string" id="lexifone_api_host"
+				default-value="www.lexifone.com/API/v2-05/partners/index.php"
+				protected="true">
+				<name>Lexifone API Host</name>
+				<name xml:lang="fr-FR">Hôte API Lexifone</name>
+				<description>DNS name or IP address of SaaS API Host for
+					provisioning actions.
+				</description>
+				<description xml:lang="fr-FR">Nom DNS ou adresse IP de l'API
+					SaaS.</description>
+			</setting>
+			<setting type="email" id="saas_api_email" default-value="email@domain.com">
+				<name>SAAS API Login access</name>
+			</setting>
+			<setting type="password" id="saas_api_password"
+				default-value="Define_Saas_password_here">
+				<name>SAAS API password access</name>
+			</setting>
+			<setting type="password" id="saas_api_secret_key"
+				default-value="''">
+				<name>Secret key</name>
+			</setting>
+		</group>
+		<setting id="title" type="string" default-value="http://www.lexifone.com"
+			regex="^https?://.*$" protected="true">
+			<name>Public web site URL</name>
+			<name xml:lang="fr-FR">URL du site publique</name>
+			<description>URL of public web site of Lexifone</description>
+			<description xml:lang="fr-FR">Adresse URL Publique de Lexifone
+			</description>
+			<error-message>URL have to start with either http:// or https://.
+			</error-message>
+			<error-message xml:lang="fr-FR">L'URL doit commencer par
+				http:// ou https://. 	
+			</error-message>
+		</setting>
+		<setting type="enum" id="debug" default-value="off"
+			visibility="hidden" protected="true">
+			<name>Debug mode</name>
+			<name xml:lang="fr-FR">Mode de débogage</name>
+			<choice id="on">
+				<name>On</name>
+			</choice>
+			<choice id="off">
+				<name>Off</name>
+			</choice>
+		</setting>
+		<setting type="string" id="lexifone_login_host"
+			default-value="https://www.lexifone.biz/fr/login?login=1">
+			<name>Login to Lexifone site</name>
+			<name xml:lang="fr-FR">Connexion au site Lexifone</name>
+		</setting>
+		<setting type="string" id="id_setting_generating_error"
+			visibility="hidden" optional="true">
+			<name>id_setting_generating_error</name>
+		</setting>
+	</global-settings>
+	<upgrade match="/application/version &gt; '0.0'" />
+	<service id="lexifone_callme" class="service">
+		<license must-accept="true">
+			<text>
+				<name>Terms of use</name>
+				<url>http://lexifone.biz/fr/conditions-d-utilisation2</url>
+			</text>
+		</license>
+		<presentation>
+			<name>Lexifone Translation Service</name>
+			<name xml:lang="fr-FR">Service de Traduction Lexifone</name>
+			<summary>Lexifone translation service for CallMe service</summary>
+			<summary xml:lang="fr-FR">Service de traduction Lexifone pour la souscription et les utilisateurs de services</summary>
+			<infolinks>
+				<link href="http://www.lexifone.biz/en/" class="official">Lexifone Product
+					site</link>
+				<link href="https://www.lexifone.biz/en/support/tutorial"
+					class="howto">Lexifone tutorial page</link>
+				<link href="http://www.lexifone.biz/en/support" class="support">Lexifone
+					support page</link>
+				<link href="http://www.lexifone.biz/fr/" class="official"
+					xml:lang="fr-FR">Site Lexifone</link>
+				<link href="https://www.lexifone.biz/fr/support/tutorial"
+					class="howto" xml:lang="fr-FR">Tutoriel Lexifone</link>
+				<link href="http://www.lexifone.biz/fr/support" class="support"
+					xml:lang="fr-FR">Support Lexifone</link>
+				<link href="http://www.lexifone.biz/en/" class="official"
+					xml:lang="en-US">Lexifone Product site</link>
+				<link href="https://www.lexifone.biz/en/support/tutorial"
+					class="howto" xml:lang="en-US">Lexifone tutorial page</link>
+				<link href="http://www.lexifone.biz/en/support" class="support"
+					xml:lang="en-US">Lexifone support page</link>
+				<link href="http://tempuri.org"></link>
+				<link xml:lang="en" class="deployment-guide"
+					href="file:///docs/LexifoneParallelsDeployment.docx"> Deployment Guide</link>
+			</infolinks>
+			<entry-points>
+				<entry method="POST" dst="{lexifone_url}" class="login">
+					<label>Lexifone Web Site</label>
+					<label xml:lang="fr-FR">Accès à l'nterface Web SaaS pour le
+						souscripteur</label>
+					<variable name="email" class="login" value-of-setting="admin_login"></variable>
+					<variable name="password" class="password"
+						value-of-setting="admin_password"></variable>
+					<variable name="lexifone_url" value-of-setting="lexifone_login_host"
+						class="">https://www.lexifone.biz/login?login=1</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator credentials</name>
+				<name xml:lang="fr-FR">Informations d’identification</name>
+				<setting type="email" id="admin_login" class="email"
+					installation-only="true" track-old-value="true" visibility="hidden">
+					<name>Administrator email to login</name>
+					<name xml:lang="fr-FR">Adresse email de l’administrateur </name>
+				</setting>
+				<setting type="string" id="admin_password" class="password"
+					track-old-value="true" min-length="6" max-length="100" visibility="hidden">
+					<name>Administrator password</name>
+					<name xml:lang="fr-FR">Mot de passe d’administrateur</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Administrator representation info</name>
+				<name xml:lang="fr-FR">Informations de présentation d’administrateur
+				</name>
+				<group class="fn n">
+					<name>Personal info</name>
+					<name xml:lang="fr-FR">Informations personelles</name>
+					<setting id="admin_first_name" class="given-name" type="string">
+						<name>Administrator first name</name>
+						<name xml:lang="fr-FR">Prénom de l'administrateur</name>
+					</setting>
+					<setting id="admin_last_name" class="family-name" type="string">
+						<name>Administrator last name</name>
+						<name xml:lang="fr-FR">Nom de famille de l'administrateur</name>
+					</setting>
+				</group>
+			</group>
+			<setting type="string" id="organization_name" max-length="50"
+				default-value="">
+				<name>Company name</name>
+				<name xml:lang="fr-FR">Nom de société</name>
+			</setting>
+			<setting type="string" id="user_amount_lines" class="user_amount_lines"
+				visibility="hidden" track-old-value="true">
+				<name>user_amount_lines</name>
+			</setting>
+			<setting type="string" id="access_numbers_amount" class="access_numbers_amount"
+				visibility="hidden" track-old-value="true">
+				<name>access_numbers_amount</name>
+			</setting>
+		</settings>
+		<resources>
+			<resource class="item" id="user_amount_lines"
+				limiting-setting="user_amount_lines">
+				<name>user_amount_lines</name>
+			</resource>
+			<resource class="item" id="access_numbers_amount"
+				limiting-setting="access_numbers_amount">
+				<name>access_numbers_amount</name>
+			</resource>
+		</resources>
+		<requirements xmlns:aspnet="http://apstandard.com/ns/1/aspnet"
+			xmlns:php="http://apstandard.com/ns/1/php">
+			<php:extension>json</php:extension>
+			<php:extension>curl</php:extension>
+			<php:version min="5.3" />
+		</requirements>
+		<provision>
+			<configuration-script name="configure-application.php">
+				<script-language>php</script-language>
+				<status-control />
+				<structured-output />
+			</configuration-script>
+			<verify-script name="verification-application.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</verify-script>
+			<resource-script name="resours.php">
+				<script-language>php</script-language>
+			</resource-script>
+		</provision>
+	</service>
+</application>

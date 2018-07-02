@@ -1,0 +1,572 @@
+<application xmlns="http://apstandard.com/ns/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packaged="2013-03-14T09:36:36" version="1.2">
+
+
+
+  <!-- Full URL specifying where the application is to be installed
+
+
+
+   -->
+
+
+
+  <!--
+
+
+
+    BASE_URL_SCHEME
+
+
+
+    BASE_URL_HOST
+
+
+
+    BASE_URL_PORT
+
+
+
+    BASE_URL_PATH
+
+
+
+  -->
+
+
+
+	<id>https://odooc.fr/sfr/fr/tableau-de-bord</id>
+
+
+
+	<name>EDOCEA</name>
+
+
+
+	<version>13</version>
+
+
+
+	<release>1</release>
+
+
+
+	<homepage>https://odooc.fr/sfr/fr/tableau-de-bord</homepage>
+
+
+
+	<vendor>
+
+
+
+	    <name>Edocea</name>
+
+
+
+	    <homepage>https://odooc.fr/sfr/fr/tableau-de-bord</homepage>
+
+
+
+	    <icon path="images/logo64x64.png"/>
+
+
+
+	</vendor>
+
+
+
+	<packager>
+
+
+
+		<name>HOME-BUBBLE</name>
+
+
+
+		<homepage>https://odooc.fr/sfr/fr/tableau-de-bord</homepage>
+
+		<icon path="images/logo64x64.png"/>
+
+
+
+		<uri>uuid:20130213-v1 01</uri>
+
+
+
+	</packager>
+
+
+
+	<presentation>
+
+
+
+		<summary>edocea classe et conserve vos factures et documents, et vous aide à préparer votre compta.</summary>
+
+
+
+		<description>Archivez, conservez et classez tous vos documents professionnels. Simplement.
+
+ 
+
+Centralisez sans effort tous vos documents professionnels, qu’ils soient sous format papier ou sous format électronique. Plus de documents perdus ou de dépenses dont vous ne vous souvenez plus à la fin de l'année... Grâce aux nombreux modes d’archivage (directement depuis vos fournisseurs, par email, par glisser-déposer, par photo depuis un mobile ou une tablette, par zone de dépôt sécurisé...), vous mettez tous vos documents dans votre boite d’archivage, comme pour la gestion de vos emails, et vous pouvez ensuite les classer à votre guise.
+
+ </description>
+
+
+
+		<icon path="images/logo64x64.png"/>
+
+		<screenshot path="images/screenshot-edocea.png">
+
+			<description>Connection au service edocea</description>
+
+		</screenshot>
+
+		<changelog>
+
+			<version release="1" version="1">
+
+				<entry>First release</entry>
+
+			</version>
+
+			<version release="1" version="11">
+
+				<entry>Configuration script update</entry>
+
+			</version>
+
+			<version release="2" version="11">
+
+				<entry>Suppression du service account</entry>
+
+			</version>
+
+			<version release="3" version="11">
+
+				<entry>Script release</entry>
+
+			</version>
+			<version release="1" version="13">
+				<entry>Major bugs correction</entry>
+			</version>
+
+		</changelog>
+
+		<categories>
+
+			<category>Web/Tools</category>
+
+		</categories>
+
+		<languages>
+
+			<language>fr</language>
+
+		</languages>
+
+	
+
+	</presentation>
+
+	<global-settings>
+
+		<group>
+
+			<name>General setting</name>
+
+			<setting default-value="https://odooc.fr/sfr/fr/sfrcloud" id="api_host" type="string">
+
+				<name>API Host</name>
+
+			</setting>
+
+			<setting default-value="aerss-78444-41002" id="app_key" type="string"/></group>
+
+	</global-settings>
+
+	
+
+
+
+	<service id="instance">
+
+
+
+		<license must-accept="true">
+
+
+
+			<free/>
+
+
+
+			<text>
+
+
+
+				<name>CGV</name>
+
+				<url>http://www.edocea.fr/fr/a-propos/cgv</url>
+
+
+
+
+
+			</text>
+
+
+
+		</license>
+
+
+
+		<presentation>
+
+
+
+			<name>Edocea Instance</name>
+
+
+
+			<summary>Basic services</summary>
+
+			<infolinks>
+
+				<link class="support" href="https://odooc.fr/sfr/fr/support" xml:lang="fr">Support technique</link>
+
+				<link href="https://odooc.fr/sfr/fr/sfrcloud/deployment-guide" class="deployment-guide">Deployment guide</link>
+				
+
+			</infolinks>
+
+			<entry-points>
+
+				<entry class="control-panel" dst="https://odooc.fr/sfr/fr/sfrcloud/login" method="POST">
+
+					<label>Espace client</label>
+
+					<variable class="login" name="email" value-of-setting="admin_email"/>
+
+					<variable class="password" name="password" value-of-setting="admin_password"/>
+
+					<variable class="" name="app_key" value-of-setting="app_key"/>
+
+				</entry>
+
+			</entry-points>
+
+
+
+
+
+		</presentation>
+
+
+
+  <!-- For each service setting declared in package, the corresponding
+
+
+
+  environment variable SETTINGS_[id] MUST be passed on to
+
+
+
+  the configuration script  -->
+
+
+
+		<settings>
+
+
+
+			<setting class="pack" default-value="1" id="pack" type="integer" visibility="hidden">
+
+			</setting>
+
+			<setting id="instance_ID" installation-only="true" type="integer" visibility="hidden" default-value="0"/>
+
+			<group class="authn">
+
+
+
+				<name class="type">Administrator's Account</name>
+
+
+
+                     <!--
+
+
+
+                     SETTINGS_admin_name
+
+
+
+                     -->
+
+
+
+				<setting class="login" id="admin_name" track-old-value="true" type="string">
+
+
+
+					<name>Administrator's Login</name>
+
+
+
+
+
+				</setting>
+
+
+
+                     <!--
+
+
+
+                     SETTINGS_admin_password
+
+
+
+                     -->
+
+
+
+				<setting class="password" id="admin_password" track-old-value="true" type="password">
+
+
+
+					<name>Administrator's Password</name>
+
+
+
+				</setting>
+
+
+
+				</group>
+
+				<group class="vcard">
+
+					<name>Information</name>
+
+					<group class="email">
+
+						<setting class="value" id="admin_email" track-old-value="true" type="email">
+
+						<name>Administrator email</name>
+
+						</setting>
+
+					</group>
+
+					<group class="fn n">
+
+						<setting class="given-name" id="firstname" type="string">
+
+						<name>Prenom</name>
+
+						</setting>
+
+						<setting class="family-name" id="lastname" type="string">
+
+						<name>Nom</name>
+
+						</setting>
+
+					</group>
+
+					<setting class="organization-name" id="company_name" type="string">
+
+					<name>Societe</name>
+
+					</setting>
+
+				</group>
+				<group>
+					<name>Subscription_Information</name>
+					<setting type="string" id="Quota_docs"
+						visibility="hidden" protected="true" track-old-value="true"
+						default-value="20000">
+					</setting>
+					<setting type="string" id="Quota_Hotodatage"
+						visibility="hidden" protected="true" track-old-value="true"
+						default-value="0">
+					</setting>
+					<setting type="string" id="Quota_Autoarchive_banque" visibility="hidden" protected="true" track-old-value="true" default-value="0"></setting>
+					</group>
+
+
+
+
+		</settings>
+
+		<resources>
+
+			<resource class="item" id="number_docs" limiting-setting="Quota_docs">
+
+				<name>Nombre de documents</name>
+
+			</resource>
+
+			<resource class="item" id="number_horodatage" limiting-setting="Quota_Hotodatage">
+
+				<name>Nombre de documents horodatés</name>
+
+			</resource>
+
+
+			<resource class="item" id="autoarchive_banque" limiting-setting="Quota_Autoarchive_banque">
+
+				<name>Nombre de collecteurs bancaires</name>
+
+			</resource>
+
+
+		</resources>
+
+
+
+		<requirements xmlns:apache="http://apstandard.com/ns/1/apache" xmlns:db="http://apstandard.com/ns/1/db" xmlns:php="http://apstandard.com/ns/1/php">
+
+			<php:magic-quotes-gpc>true</php:magic-quotes-gpc>
+
+			<php:extension>curl</php:extension>
+
+			<php:version min="5.0"/>
+
+
+
+			<!--
+
+
+
+               PHP_VERSION
+
+
+
+               -->
+
+
+
+
+
+
+
+
+
+              <!-- 
+
+
+
+              DB_main_TYPE
+
+
+
+              DB_main_NAME
+
+
+
+              DB_main_LOGIN
+
+
+
+              DB_main_PASSWORD
+
+
+
+              DB_main_HOST
+
+
+
+              DB_main_PORT
+
+
+
+              DB_main_VERSION
+
+
+
+              DB_main_PREFIX
+
+
+
+              -->
+
+
+
+
+
+		</requirements>
+
+
+
+		<provision>
+
+
+
+         <!-- For each mapping, except ones which do not map to the 
+
+
+
+          file system, WEB_<id>_DIR must be passed with the absolute
+
+
+
+          path to the directory to which mapping maps, where id is 
+
+
+
+          the full URL path of the mapping, with all '/' characters
+
+
+
+          converted to '_'.
+
+
+
+         -->
+
+
+
+
+
+			<configuration-script name="configure.php">
+
+
+
+				<script-language>php</script-language>
+
+				<structured-output/>
+
+
+
+			</configuration-script>
+
+			<verify-script name="verification.php">
+
+				<script-language>php</script-language>
+
+				<structured-output/>
+
+			</verify-script>
+
+			<resource-script name="resource.php">
+
+				<script-language>php</script-language>
+
+			</resource-script>
+
+
+
+		</provision>
+
+
+
+
+
+	</service>
+
+
+
+</application>

@@ -1,0 +1,341 @@
+<application packaged="2014-11-18T07:58:16" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>concrete5</id>
+	<name>concrete5</name>
+	<version>5.7.2.1</version>
+	<release>23</release>
+	<homepage>http://www.concrete5.org/</homepage>
+	<vendor>
+		<name>Concrete5</name>
+		<homepage>http://www.concrete5.org/</homepage>
+		<icon path="images/logo.png"/>
+	</vendor>
+	<packager>
+		<name>Glowtouch Technologies</name>
+		<homepage>http://www.glowtouch.com</homepage>
+		<icon path="images/parrallels-GT6.png"/>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>concrete5 makes running a website easy</summary>
+
+		<description>Building and running a website are two very different challenges. Certainly, one person may wear both hats, but the process of launching a great website is far different from running a great website over time. concrete5 lets you do both: build and run great websites. Most other content management systems are built for one side of the equation or the other. Go to any page in your site, and an editing toolbar gives you all the controls you need to update your website. No intimidating manuals, no complicated administration interfaces-just point and click.</description>
+		<description xml:lang="en-US">
+			Building and running a website are two very different
+			challenges. Certainly, one person may wear both hats, but
+			the process of launching a great website is far different
+			from running a great website over time. concrete5 lets you
+			do both: build and run great websites. Most other content
+			management systems are built for one side of the equation or
+			the other. Go to any page in your site, and an editing
+			toolbar gives you all the controls you need to update your
+			website. No intimidating manuals, no complicated
+			administration interfaces - just point and click.
+		</description>
+		<description xml:lang="de-DE">
+			Die Erstellung und der Betrieb einer Homepage sind zwei
+			grundverschiedene Herausforderungen. Natürlich kann sich
+			eine Person um beides kümmern, aber die Aufgabe, eine
+			erfolgreiche Homepage aufzusetzen, unterscheidet sich
+			vollständig von der Aufgabe, eine Homepage dauerhaft
+			erfolgreich zu betreiben. Mit concrete5 können Sie beides
+			erledigen: Homepages erfolgreich aufsetzen und erfolgreich
+			betreiben. Die meisten anderen Content Management Systeme
+			sind entweder auf die eine oder auf die andere Aufgabe
+			ausgerichtet. Wenn Sie eine Seite Ihrer Homepage laden,
+			erscheint eine Bearbeitungsleiste, die Ihnen alle
+			Möglichkeiten bietet, die zur Aktualisierung der Homepage
+			erforderlich sind. Keine einschüchternden Handbücher, keine
+			komplizierten Administrationsoberflächen ‒ einfach nur
+			auswählen und anklicken!
+		</description>
+		<description xml:lang="fr-FR">
+			La construction et l'exploitation d'un site Web sont deux
+			défis tout à fait différents. Certes, une personne peut
+			endosser les deux rôles, mais le processus de lancement d'un
+			bon site Web est très différent de l'exploitation d'un bon
+			site Web dans la durée. concrete5 vous permet de réaliser
+			les deux tâches : construire et exploiter de bons sites Web.
+			La majorité des autres système de gestion des contenus sont
+			construits soit pour un côté de l'équation, soit pour
+			l'autre. Allez sur n'importe quelle page de votre site et
+			une barre d'outils d'édition vous met à disposition toutes
+			les commandes dont vous avez besoin pour mettre à jour votre
+			site Web. Pas de manuels intimidants, pas d'interfaces
+			d'administration compliquées : il vous suffit de pointer et
+			de cliquer.
+		</description>
+		<description xml:lang="pl-PL">
+			Stworzenie strony i zarządzanie nią to dwa bardzo różne
+			wyzwania. Oczywiście jedna osoba może zajmować się obydwoma
+			zadaniami, lecz proces tworzenia świetnej strony bardzo się
+			różni od procesu zarządzania stroną przez długi czas tak,
+			aby pozostała ona równie świetna. concrete5 umożliwia Ci
+			obydwie te rzeczy: tworzenie świetnych stron i zarządzanie
+			nimi. Większość innych systemów zarządzania treścią
+			uwzględnia najczęściej tylko jeden z tych dwóch aspektów.
+			Gdy przejdziesz na dowolną stronę swojej witryny, pasek
+			edycji udostępni Ci wszystkie narzędzia potrzebne Ci do
+			zaktualizowania swojej strony. Bez wielkich instrukcji, bez
+			skomplikowanych interfejsów zarządzania - po prostu
+			naprowadź kursor i kliknij.
+		</description>
+		<description xml:lang="es-ES">
+			Diseñar y utilizar un sitio web son dos retos muy distintos.
+			Hay gente que, sin duda, puede hacer ambas cosas a la vez.
+			Pero el proceso de lanzar un gran sitio web es muy diferente
+			al de gestionar un gran sitio web a lo largo del tiempo.
+			concrete5 le permite hacer ambas cosas: construir y lanzar
+			webs de gran calidad. La mayoría de los grandes gestores de
+			contenido se diseñan para una cosa o para la otra. Visite
+			cualquier página de su web y una herramienta de edición le
+			ofrecerá los controles que necesita para actualizarla. Sin
+			manuales intimidatorios ni programas complejos de
+			administración; sólo hay que señalar con el ratón y hacer
+			clic.
+		</description>
+		<icon path="images/logo.png"/>
+		<screenshot path="images/screen.png">
+			<description>Administration Screen.</description>
+		</screenshot>
+		<changelog>
+			<version release="2" version="5.6.0.2">
+				<entry>Removal sql script fixed</entry>
+			</version>
+			<version release="1" version="5.6.0.2">
+				<entry>http://www.concrete5.org/documentation/background/version_history/5-6-0-2-release-notes/</entry>
+			</version>
+			<version release="4" version="5.6.0.1">
+				<entry>Minor changes</entry>
+			</version>
+<version release="3" version="5.6.0.1">
+				<entry>Minor changes</entry>
+			</version>
+<version release="2" version="5.6.0.1">
+				<entry>Minor changes</entry>
+			</version>
+<version release="1" version="5.6.0.1">
+				<entry>Minor changes</entry>
+			</version>
+<version release="2" version="5.6.0">
+				<entry>Minor changes</entry>
+			</version>
+<version release="1" version="5.6.0">
+				<entry>http://www.concrete5.org/documentation/background/version_history/5-6-0-release-notes/</entry>
+			</version>
+<version release="5" version="5.5.2.1">
+				<entry>Minor changes</entry>
+			</version>
+<version release="4" version="5.5.2.1">
+				<entry>Minor change.</entry>
+			</version>
+<version release="3" version="5.5.2.1">
+				<entry>Added images into files folder</entry>
+			</version>
+			<version release="2" version="5.5.2.1">
+				<entry>Changed database schema file</entry>
+			</version>
+			<version release="1" version="5.5.2.1">
+				<entry>Better update checking for new versions of
+concrete5. Attribute types have friendlier names(Checkbox instead of Boolean, etc...) . When a fixed footprint isn’t set, the image cropper in the file manager now defaults to the full size of the image.Improved performance of intelligent search
+				</entry>
+			</version>
+			<version release="5" version="5.4.1">
+				<entry>DIR_REL corrected in case of installation in site root
+				</entry>
+			</version>
+			<version release="4" version="5.4.1">
+				<entry>mbstring requirement corrected</entry>
+			</version>
+			<version release="3" version="5.4.1">
+				<entry>Database prefix deleted from sql files</entry>
+			</version>
+			<version release="2" version="5.4.1">
+				<entry>Translations included</entry>
+			</version>
+			<version release="1" version="5.4.1">
+				<entry>Initial package version</entry>
+			</version>
+			<version release="1" version="5.7.0.1">
+				<entry>A completely new layout engine allows for inline editing of content, layouts and style customization. Blocks can be dragged into the page and easily rearranged.
+Inline content editing uses the Redactor editor, a beautiful editor with deep integration to concrete5, and full bootstrap 3 interface integration.
+The Dashboard user interface is completely updated. Navigating it is much easier, and the interface is much more attractive.
+concrete5’s user interface is now powered by Bootstrap 3.
+
+concrete5 now ships with the Elemental theme, by far the prettiest theme we’ve ever built.
+The concrete5 Dashboard, main toolbar and Elemental theme are all fully responsive.
+Themes can optionally refer to grid frameworks, and can have full grid support built in. Layouts have been substantially updated to support these grid frameworks (as well as be fully responsive.)
+Theme controllers can control many aspects of a theme, including its grid framework, custom CSS classes that are available for different block types, which assets a theme supports, and more.
+Theme customization is completely rewritten, far more powerful and based on LESS. Themes may have multiple preset groups of LESS variables that power their stylesheets.
+Every block in the core has been reskinned, and many are new or completely rebuilt. Blocks like Feature, FAQ, Horizontal Rule, Page Attribute Display, Topic List, Social Links, Share this Page and Testimonial add useful new functionality to concrete5. The HTML block now includes the ACE editor. The video block is fully HTML5 compliant. And so. much. more.
+Block-level MVC no longer generates ugly URLs.</entry>
+			</version>
+			<version release="2" version="5.7.0.1">
+				<entry>Updated</entry>
+			</version>
+			<version release="3" version="5.7.0.3">
+				<entry>New release</entry>
+			</version>
+			<version release="16" version="5.7.0.4">
+				<entry>A completely new layout engine allows for inline editing of content, layouts and style customization. Blocks can be dragged into the page and easily rearranged.
+Inline content editing uses the Redactor editor, a beautiful editor with deep integration to concrete5, and full bootstrap 3 interface integration.
+The Dashboard user interface is completely updated. Navigating it is much easier, and the interface is much more attractive.
+concrete5’s user interface is now powered by Bootstrap 3.
+
+Note: There is currently NO UPGRADE script from 5.6, 
+this is a new version for new sites.</entry>
+			</version>
+			<version release="1" version="5.7.1">
+				<entry>concrete5 can now once again connect to the concrete5.org marketplace to download themes and add-ons. The experience takes place through the dashboard and is much smoother than before.
+Community authentication is available as an authentication type. Attach a community authentication token to your concrete5 site through concrete5.org, and you an login with your concrete5.org account to your concrete5 site.
+You can now set your site’s time zone through the Timezone settings page. Developers can set it through a configuration value.
+Sitemap Flat View is now available in the Dashboard again.
+You can now search for a specific block type in the add block panel.
+You can now override block type caching settings on a block-specific basis, through the Advanced menu option in the block menu. This menu also houses the Block name field now.
+We now ship with Twitter authentication available in the core.
+</entry>
+			</version>
+			<version release="21" version="5.7.2">
+				<entry>Bug Fixes
+    Fixed inability to choose local file to upload into the file manager ( you had to drag and drop or us an alternate uploading method.)
+    Marketplace: Fixed showing of theme sets on the add-ons page in the marketplace.
+    Marketplace: Made filter by set actually work.
+    Fixed inability to scroll panels in older browser versions.
+    Fixed -1 memory limit failing installation (thanks EC-Chris)
+    Maintenance mode now works again.
+    Fixed bug where SMTP settings weren’t being honored when sending email.
+    Fixed bug where user selector couldn’t be used in a block or accessed in a dialog window.
+    Fixed “Undefined class constant” error when activate page templates from a theme where those templates didn’t have a corresponding icon in the core.
+    Fixed page attribute display block breaking when being used with a file/image attribute type.
+    Fixing bug where group sets couldn’t be used in advanced permissions.
+    Fixed bug grid handle resizing when adding grid-based layouts to areas that don’t have the container enabled.
+    Fixed bug where you could insert a link or an image into the Redactor rich text editor instance in the Image Slider block.
+    Fixed dashboard errors when asset cache was turned on and social links attribute was used. (thanks Mnkras).
+    Fixed bug where old database updates would attempt to be re-run by the Migrations scripts.
+    Fixed bug where “Force upgrade” didn’t work (thanks mlabrum)
+    Miscellaneous bug fixes to account profile private message system.
+    Fixed bug where “Exclude from Page List” custom attribute wasn’t actually excluding pages from page lists (thanks SaschaGalley)
+    Fixed bug where automatic header/footer assets from menu items were being included on pages and tools scripts where they weren’t being displayed.
+    Fixed bugs in user attribute sort and attribute set sorting.
+    Fixed Image/File attribute form not loading all needed assets when rendered on single_page
+    Fixed bug where core properties couldn’t be removed from customizable search dialogs due to a javascript error.
+    Attribute categories and keys can now be correctly packaged again (thanks cpill0789!)
+    Fixed bug where changing a page template on a page where the target page template defaults for that page type had different blocks than the source page template defaults could result in a SQL error.
+    Fixed http://www.concrete5.org/developers/bugs/5-7-1/use-exception-declaration-missing-in-concreteblocksformcontrolle/
+    Fixed form block error with built-in captcha where enabling captcha would cause a javascript error on submitting form on subsequent occasions, making updating the form impossible.
+    Fixed JavaScript error when changing advanced permissions from the sitemap.
+    Fixed JavaScript error that occurred when switching between Blocks, Clipboard and Stacks sub-panels in the Add panel, that made reloading a requirement.
+    Fixed “Trying to add theme throws "Class \Concrete\Attribute\Rating\Service does not exist" error on case-sensitive systems when installing a theme.
+    Fixed float bug on get more blocks in add block panel on certain browsers.
+</entry>
+			</version>
+			<version release="23" version="5.7.2.1">
+				<entry>    Feature block now can link to pages and external links.
+    Improvements to Grid Framework for use with frameworks that require two class names on columns.
+    Theme Developer Feature Update: Zurb Foundation Grid Framework now available.
+    Improvements to Theme Customizer for developers who don’t want to create multiple presets, they just want to make their theme customizable.
+    Members directory has been brought back for sites with public profiles.
+    Added Most Popular to Remote marketplace search results.
+</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '5.7.1' and /application/release &gt;= '1'"/>
+	<service id="Concrete5">
+		<license must-accept="true">
+			<text>
+				<name>GNU GENERAL PUBLIC LICENSE</name>
+				<file>htdocs/LICENSE.TXT</file>
+			</text>
+		</license>
+		<presentation>
+			<summary>Concrete5 makes running a website easy.</summary>
+			<infolinks>
+				<link class="support" href="http://www.concrete5.org/support/">Concrete5 Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/index.php/login/authenticate/concrete" method="POST">
+					<label>Administrative interface</label>
+					<variable class="" name="uName" value-of-setting="admin_name">admin</variable>
+					<variable class="" name="uPassword" value-of-setting="admin_password">admin_password</variable>
+				</entry>
+				<entry dst="/">
+					<label>User</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				
+				<setting class="password" default-value="" id="admin_password" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<setting class="title" default-value="Concrete" id="title" min-length="1" type="string">
+					<name>Site Name</name>
+				</setting>
+				<setting class="email" default-value="admin@concrete5.org" id="admin_email" type="email">
+					<name>email</name>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.2.4" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mbstring</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mcrypt</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">openssl</php:extension>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>Concrete5</db:default-name>
+				<db:can-use-tables-prefix>
+					false
+				</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>concrete5</default-prefix>
+				<installed-size>70795755</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="packages">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="application/files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="application/config">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

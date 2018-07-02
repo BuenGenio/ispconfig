@@ -1,0 +1,163 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2011-11-14T01:26:54">
+	<id>http://www.orangehrm.com/OrangeHRM-shared</id>
+	<name>OrangeHRM</name>
+	<version>2.6.2</version>
+	<release>8</release>
+	<homepage>http://www.orangehrm.com/</homepage>
+	<vendor>
+		<name>www.orangehrm.com</name>
+		<homepage>http://www.orangehrm.com/</homepage>
+	</vendor>
+	<packager>
+		<name>Parallels</name>
+		<homepage>http://www.parallels.com</homepage>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>
+			Open Source Human Resource Management Software
+		</summary>
+		<description>
+			OrangeHRM aims to be the world's leading open source HRM
+			solution for small and medium-sized enterprises (SMEs) by
+			providing a flexible and easy HRM system affordable for any
+			company worldwide. The project was started in the fall of
+			2005, and the first beta release was made in January 2006.
+			Today, OrangeHRM has users worldwide enjoying a free,
+			stable, and highly usable HRM solution. The system is backed
+			by professional support and services as well as a
+			fast-growing, receptive, and knowledgeable worldwide open
+			source community. By building and leveraging this community
+			of users, developers, and partners, the usability, scope,
+			and international adoption of OrangeHRM is continuously
+			being improved.
+		</description>
+		<icon path="images/icon.png" />
+		<screenshot path="images/main_page.png">
+			<description>main page</description>
+		</screenshot>
+		<changelog>
+		    <version release="8" version="2.6.2">
+				<entry>Repackaged in APS 1.2 standard</entry>
+			</version>
+			<version release="5" version="2.6.2">
+				<entry>
+					Corrected formating in symfony databases config
+				</entry>
+				<entry>Allow php version from php 5.2.4</entry>
+			</version>
+			<version release="2" version="2.6.2">
+				<entry>No table prefix allow</entry>
+			</version>
+			<version release="1" version="2.6.2">
+				<entry>Initial package</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Back office/Human Resource Management</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<service id="orange">
+		<license must-accept="true">
+			<text>
+				<name>GPLv2</name>
+				<file>htdocs/license/LICENSE.TXT</file>
+			</text>
+		</license>
+		<presentation>
+		<infolinks>
+		<link class="official" href="http://www.orangehrm.com/">Official site</link>
+		<link class="support" href="http://www.orangehrm.com/subscribe-support.shtml">Subscribe to support</link>
+		<link class="support" href="http://www.orangehrm.com/frequently-asked-questions.shtml">FAQ</link>
+		<link class="demo" href="http://www.orangehrm.com/demo.shtml">Demo</link>
+		</infolinks>
+		<entry-points>
+		 <entry class="control-panel" dst="/login.php" method="POST">
+		   <label>Application entry</label>
+		   <variable name="actionID">chkAuthentication</variable>
+		   <variable name="txtUserName" class="login" value-of-setting="admin_name"/>
+		   <variable name="txtPassword" class="password" value-of-setting="admin_password"/>
+		   <variable name="Submit">Login</variable>
+		</entry>			
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting id="admin_name" type="string"
+					default-value="admin" min-length="1" max-length="32"
+					regex="^[a-zA-Z][0-9a-zA-Z_\-]*" class="login">
+					<name>Administrator's login</name>
+					<error-message>
+						Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				<setting id="admin_password" type="password"
+					min-length="1" class="password">
+					<name>Password</name>
+				</setting>
+			</group>
+		</settings>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php"
+			xmlns:db="http://apstandard.com/ns/1/db">
+			<php:version min="5.2.4" />
+			<php:safe-mode>false</php:safe-mode>
+			<php:extension>mysql</php:extension>
+			<db:db>
+				<db:id>main</db:id>
+				<db:default-name>orangehrm</db:default-name>
+				<db:can-use-tables-prefix>
+					false
+				</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0.51</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>OrangeHRM</default-prefix>
+				<installed-size>28692583</installed-size>
+				<mapping url="/" path="htdocs"
+					xmlns:php="http://apstandard.com/ns/1/php">
+					<php:handler>
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="lib">
+						<mapping url="confs">
+							<php:permissions writable="true" />
+						</mapping>
+						<mapping url="logs">
+							<php:permissions writable="true" />
+						</mapping>
+					</mapping>
+					<mapping url="symfony">
+						<mapping url="config">
+							<php:permissions writable="true" />
+						</mapping>
+						<mapping url="cache">
+							<php:permissions writable="true" />
+						</mapping>
+						<mapping url="log">
+							<php:permissions writable="true" />
+						</mapping>
+						<mapping url="apps">
+							<mapping url="orangehrm">
+								<mapping url="config">
+									<php:permissions writable="true" />
+								</mapping>
+							</mapping>
+						</mapping>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

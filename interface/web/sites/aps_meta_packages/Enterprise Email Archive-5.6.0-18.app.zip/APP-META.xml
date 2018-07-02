@@ -1,0 +1,262 @@
+<application packaged="2015-01-07T20:36:54" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>http://www.messagesolution.com</id>
+	<name>Enterprise Email Archive</name>
+	<version>5.6.0</version>
+	<release>18</release>
+
+	<homepage>http://www.messagesolution.com/</homepage>
+
+	<vendor>
+		<name>MessageSolution Inc.</name>
+		<homepage>http://www.messagesolution.com</homepage>
+		<icon path="images/EEA_logo02__64.png"/>
+	</vendor>
+
+	<packager>
+		<name>messagesolution</name>
+		<homepage>http://www.messagesolution.com</homepage>
+		<icon path="images/EEA_logo02__64.png"/>
+		<uri>uuid:packager_uri</uri>
+	</packager>
+
+	<presentation>
+		<summary>MessageSolution's award-winning Enterprise Email ArchiveTM (EEA) software deftly manages petabytes of data, a powerful enterprise archiving solution.</summary>
+		<description>
+			MessageSolution's team of dedicated professionals comes from a wide array of companies in Silicon Valley, including technology veterans from Sun Microsystems and IBM as well as graduates of Stanford University. With more than 20 years of high tech experience, the MessageSolution team puts their skills to work creating software to solve IT problems for enterprises in various industries across the world. Managed by a team of highly experienced Valley veterans, MessageSolution is positioned to lead the rapidly growing archiving and e-Discvory market.
+			MessageSolution is headquartered in Silicon Valley, California, with operations in North America, Europe, and mainland China, along with distribution channels in Europe, South Africa, Australia, and Asia Pacific. We are a growing independent software vendor dedicated to providing innovative email, file systems, SharePoint, and Quickr archiving for compliance, electronic discovery, storage management, and mail server migrations. 
+		</description>
+
+		<icon path="images/EEA_logo02__64.png"/>
+	
+		<screenshot path="images/main_screenshot.jpg">
+			<description>
+				Main screenshot.
+			</description>
+		</screenshot>
+	
+		<changelog>
+			<version release="1" version="5.6">
+				<entry>Packaged in APS 5.6.1</entry>
+			</version>
+			<version release="2" version="5.6">
+				<entry>Packaged in APS 5.6.1</entry>
+			</version>
+			<version release="3" version="5.6">
+				<entry>Packaged in APS 5.6.1</entry>
+			</version>
+			<version release="4" version="5.6.">
+				<entry> added verification.php 
+1. validate  user name`s domain is the same with company primary domain.
+2.  check company primary domain whether exists in  enterprise email archive.</entry>
+			</version>
+			<version release="5" version="5.6">
+				<entry>1. fix function array_insert() in utils.php on line 74
+
+2. Resource script fails with PHP Catchable fatal error:  Object of class
+stdClass could not be converted to string. It helped to use $response-&gt;status instead of $resource in this line. 
+
+3. set limit for monthArchivedVolume, license, Total Storage Size
+</entry>
+				<entry/>
+			</version>
+			<version release="7" version="5.6">
+				<entry>change primary domain and domain list.</entry>
+			</version>
+			<version release="10" version="5.6">
+				<entry>skip settings verification on resource upgrade</entry>
+			</version>
+			<version release="15" version="5.6">
+				<entry>Proper summary is added.</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Collaboration/Email</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+			<group class="authn">
+				<name>EEA's preferences</name>
+
+
+					
+
+
+				<setting class="title" default-value="http://" id="eea_host" min-length="1" regex="^https?://.*$" type="string">
+					<name>EEA installation host</name>
+					<description>
+						This is URL address of Enterprise Email Archive public site address.
+						Please make sure the text you entered starts with either http:// or https://.
+					</description>
+					<error-message>
+						Please make sure the text you entered starts with either http:// or https://.
+					</error-message>
+				</setting>
+				
+				
+				<setting default-value="en_US" id="eeaLang" type="enum">
+					<name>EEA Interface Language</name>
+					<choice id="en_US">
+						<name>English(USA)</name>
+					</choice>
+					<choice id="zh_CN">
+						<name>Chinese(Simplified Chinese)</name>
+					</choice>
+					<choice id="ja_JP">
+						<name>Jpanese</name>
+					</choice>
+				</setting>
+			</group>
+			<setting default-value="off" id="debug" type="enum">
+				<name>Debug mode</name>
+				<choice id="on">
+					<name>On</name>
+				</choice>
+				<choice id="off">
+					<name>Off</name>
+				</choice>
+			</setting>
+		
+	</global-settings>
+	<patch match="/application/version &gt;= '5.6.1'"/>
+	<upgrade match="/application/version &gt;= '5.6.1'"/>
+	
+	<service class="service" id="EEA Account Management">
+			<presentation>
+				<name>EEA Account Management</name>
+				<summary>Enterprise Email Archive accounts managment service.</summary>
+				<infolinks>
+					<link class="official" href="http://www.messagesolution.com">official site</link>
+					<link class="support" href="http://www.messagesolution.com">support site</link>
+				</infolinks>
+				<entry-points>
+					<entry class="control-panel" dst="{eea_host}/Login.jp" method="POST">
+						<label>Company Administrator UI</label>
+						<variable class="password" name="password" value-of-setting="admin_password"/>
+						<variable class="locale" name="eeaLang" value-of-setting="eeaLang"/>
+						<variable class="" name="eea_host" value-of-setting="eea_host"/>
+						<variable name="userName" value-of-setting="admin_name"/>
+					</entry>					
+				
+					<entry dst="{eea_host}/index.jsp" method="GET">
+						<label>Company Administrative interface</label>
+						<variable class="" name="eea_host" value-of-setting="eea_host"/>
+					</entry>
+					
+				</entry-points>
+			</presentation>
+			<settings>
+				
+				
+				<group class="vcard">
+				<name>Accout Management</name>
+				<group class="org">
+					<setting class="organization-name" id="company_name" type="string">
+						<name>Company Name</name>
+						<description>
+						This is hosted company name.
+					</description>
+						<error-message>
+						Please make sure input your company`s name.
+				</error-message>
+					</setting>
+				</group>
+			 
+				
+				<group class="domains">
+					<name>company domains setting</name>
+					
+					<setting class="Company Domain" id="company_domain" type="domain-name">
+						<name>Company Primary Domain</name>
+						<description>					This is the company's SMTP domain.For example 'messagesolution.com'</description>
+						<error-message>
+							Please make sure input your company primary domain name.</error-message>
+					</setting>
+					
+					
+					<setting class="Company Domain" element-type="domain-name" id="other_company_domain" min-items="0" type="list">
+						<name>Other Company Domains</name>
+						<description>This is for company that has multiple domains . keep empty if you
+						have one primary domain.</description>
+					</setting>
+					
+				</group>
+				
+				<group class="vcard">
+					<group class="email">
+					<name>company administator setting</name>
+					<setting class="admin name" id="admin_name" type="email">
+						<name>Company Administrator's email address</name>
+						<description>
+							This is the company's administrator's username. It should be a unique name that does not exist in the email system. 
+	
+							For example, eeaadmin@domain.com. Notes: domain name is required, and domain name must be your company primary domain.</description>
+					</setting>
+					</group>
+					<group class="authn">
+					<setting class="password" id="admin_password" min-length="1" type="password">
+						<name>Company Administrator's login password</name>
+						<description>
+							This is administration account password of Enterprise Email Archive .
+						</description>
+					</setting>
+					</group>
+				</group>
+				
+
+				<setting class="user limit" default-value="10" id="user_limit" protected="true" type="integer">
+					<name>Number of Users</name>
+					<description>
+						Licensed number of users</description>
+				</setting>
+					
+					
+										
+					<setting id="company_id" optional="true" protected="true" type="string" visibility="hidden">
+						<name>EEA company id</name>
+					</setting>
+				</group>
+				<setting id="monthArchivedVolume" optional="true" type="string" visibility="hidden">
+					<name>Monthly Archived Data Volume size(mb)</name>
+				</setting>
+				<setting id="totalSize" optional="true" type="string" visibility="hidden">
+					<name>Company total storage data size (mb)</name>
+				</setting>
+			</settings>
+			<resources>
+				<resource class="mb" id="monthArchivedVolume" limiting-setting="monthArchivedVolume">
+					<name>Monthly Archived Data Volume</name>
+					<description>Monthly Archived Data Volume size(mb)</description>
+				</resource>
+				<resource class="mb" id="totalSize" limiting-setting="totalSize">
+					<name>Total Storage Size</name>
+					<description>Company total storage data size (mb)</description>
+				</resource>
+				<resource class="item" id="license" limiting-setting="user_limit">
+					<name>Licence</name>
+					<description>company can create user limit.</description>
+				</resource>
+			</resources>
+			<requirements>
+				<php:extension xmlns:php="http://apstandard.com/ns/1/php">soap</php:extension>
+				<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			</requirements>
+			<provision>
+				<configuration-script name="configure-company.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+				<verify-script name="verification.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</verify-script>
+				<resource-script name="report-resources.php">
+					<script-language>php</script-language>
+				</resource-script>
+			</provision>			
+		</service>
+</application>

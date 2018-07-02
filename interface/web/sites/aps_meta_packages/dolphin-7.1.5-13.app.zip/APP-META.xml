@@ -1,0 +1,334 @@
+<application packaged="2015-01-22T21:46:17" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>dolphin</id>
+	<name>dolphin</name>
+	<version>7.1.5</version>
+	<release>13</release>
+	<homepage>http://www.boonex.com/dolphin/</homepage>
+	<vendor>
+		<name>www.boonex.com</name>
+		<homepage>http://www.boonex.com/dolphin/</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Glowtouch Technologies</name>
+		<homepage>http://glowtouch.com/</homepage>
+		<icon path="images/parrallels-GT6.png"/>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>Smart Community Builder</summary>
+		<description>
+			Dolphin - Smart Community Builder. It is the universal web
+			community script written in PHP and MySQL. Dolphin has a lot
+			of features: Innovative Builders for site customization,
+			Groups, Classifieds and Events , Tags, Rss feeds, Flash
+			Promo and much more
+		</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/app_screenshot_1.png">
+			<description>Base administrative interface.</description>
+		</screenshot>
+		<changelog>
+			<version release="4" version="7.1.1">
+				<entry>Initial package version</entry>
+			</version>
+			<version release="1" version="7.1.3">
+				<entry>Initial Package</entry>
+			</version>
+			<version release="2" version="7.1.3">
+				<entry>Changes in the App-Meta.xml</entry>
+			</version>
+			<version release="1" version="7.1.4">
+				<entry>Initial PAckage</entry>
+			</version>
+			<version release="13" version="7.1.5">
+				<entry>Security update! 
+It is strongly recommend to upgrade to 7.1.5 immediately while this is just a service update, triggered by urgent security improvements.</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Collaboration/Portal</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version = '7.1.1' and /application/release = '4'"/>
+	<upgrade match="/application/version &gt;= '7.1.3' and /application/release &gt;= '1'"/>
+	<service id="dolphin">
+		<license must-accept="true">
+			<text>
+				<name>Boonex Ltd.</name>
+				<file>htdocs/license.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Dolphin</name>
+			<summary>dolphin Collaboration/Portal engine</summary>
+			<infolinks>
+				<link class="support" href="http://www.boonex.com/market">Dolphin Support</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/">
+					<label>Portal</label>
+				</entry>
+				<entry class="control-panel" dst="administration/index.php" method="POST">
+					<label>Administration</label>
+					<variable class="" name="ID" value-of-setting="admin_name"/>
+					<variable name="Password" value-of-setting="admin_password"/>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts		with a letter and continues with either numbers,
+letters, underscores or hyphens.		</error-message>
+				</setting>
+				<setting class="password" id="admin_password" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Configuration</name>
+				<group class="email">
+					<setting class="value" id="site_email" type="email">
+						<name>Site e-mail</name>
+						<description>Your site e-mail</description>
+						<error-message>
+							Please make sure the text you entered starts
+							with a letter and continues with either
+							numbers, letters, underscores or hyphens.
+						</error-message>						
+					</setting>
+						<setting class="value" id="notify_email" type="email">
+					<name>Notify e-mail</name>
+					<description>
+						Envelope "From:" address for notification
+						messages.
+					</description>
+					<error-message>
+						Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				<setting class="value" id="bugreport_email" type="email">
+					<name>Bug report e-mail</name>
+					<description>
+						Your e-mail for receiving bug reports
+					</description>
+					<error-message>
+						Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+</group>
+				<group class="org">
+					<setting class="title" default-value="The Best Community " id="site_title" min-length="0" type="string">
+						<name>Site title</name>
+						<description>The name of your site</description>
+						<error-message>
+							Please make sure the text you entered starts
+							with a letter and continues with either
+							numbers, letters, underscores or hyphens.
+						</error-message>
+					</setting>
+				
+</group>
+				
+			</group>
+			<group>
+				<name>General script paths</name>
+				<setting default-value="/usr/bin/php" id="php_path" min-length="0" type="string">
+					<name>Path to php binary</name>
+					<description>
+						You should specify full path to your PHP
+						interpreter here.
+					</description>
+					<error-message>
+						Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				<setting default-value="/usr/bin/mogrify" id="mogrify_path" min-length="0" type="string">
+					<name>Path to mogrify</name>
+					<error-message>
+						Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				<setting default-value="/usr/bin/convert" id="convert_path" min-length="0" type="string">
+					<name>Path to convert</name>
+					<error-message>
+						Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				<setting default-value="/usr/bin/composite" id="composite_path" min-length="0" type="string">
+					<name>Path to composite</name>
+					<error-message>
+						Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.2.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mbstring</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+			<php:magic-quotes-gpc xmlns:php="http://apstandard.com/ns/1/php">false</php:magic-quotes-gpc>
+			<php:register-globals xmlns:php="http://apstandard.com/ns/1/php">false</php:register-globals>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<php:short-open-tag xmlns:php="http://apstandard.com/ns/1/php">true</php:short-open-tag>
+			<php:allow-url-fopen xmlns:php="http://apstandard.com/ns/1/php">true</php:allow-url-fopen>
+			<php:memory-limit xmlns:php="http://apstandard.com/ns/1/php">67108864</php:memory-limit>
+			<apache:required-module xmlns:apache="http://apstandard.com/ns/1/apache">mod_rewrite</apache:required-module>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>boonex_ray</db:default-name>
+				<db:can-use-tables-prefix>
+					true
+				</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>4.1.2</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>mycommunity</default-prefix>
+				<installed-size>42166162</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="inc">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="backup">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="cache">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="cache_public">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="langs">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="media">
+						<mapping url="app">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="images">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+					<mapping url="tmp">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="plugins/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/board/files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/chat/files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/photo/files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/im/files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/mp3/files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/video/files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/video_comments/files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="sitemap.xml">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/global/data/integration.dat">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/board/xml">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/chat/xml">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/desktop/xml">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/global/xml">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/im/xml">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/mp3/xml">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/photo/xml">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/video/xml">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/video_comments/xml">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="flash/modules/global/app/ffmpeg.exe">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="modules/boonex/avatar/data/images">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="modules/boonex/avatar/data/tmp">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="modules/boonex/files/data/files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="modules/boonex/forum">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="modules/boonex/photos/data/files">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="modules/boonex/profile_customize/data/images">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="modules/boonex/profiler/log">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="modules/boonex/smtpmailer/data/logs">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

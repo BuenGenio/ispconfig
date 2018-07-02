@@ -1,0 +1,2719 @@
+<application packaged="2014-07-21T10:23:07" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>http://www.mcafee.com/us/mcafeesaas</id>
+	<name>McAfee Cloud-based Security</name>
+	<version>1.13</version>
+	<release>0</release>
+
+	<homepage>http://www.mcafee.com/</homepage>
+
+	<vendor>
+		<name>McAfee</name>
+		<homepage>http://www.mcafee.com/us/</homepage>
+<homepage xml:lang="pt-BR">http://www.mcafee.com/br/</homepage>
+<homepage xml:lang="es-ES">http://www.mcafee.com/es/</homepage>
+<homepage xml:lang="en-US">http://www.mcafee.com/us/</homepage>
+		<icon path="images/logo-mcafee.png"/>
+	</vendor>
+
+	<packager>
+		<name>McAfee </name>
+		<homepage>http://www.mcafee.com/us/</homepage>
+<homepage xml:lang="pt-BR">http://www.mcafee.com/br/</homepage>
+<homepage xml:lang="es-ES">http://www.mcafee.com/es/</homepage>
+<homepage xml:lang="en-US">http://www.mcafee.com/us/</homepage>
+		<icon path="images/logo-mcafee.png"/>
+		<uri>uuid:http://www.mcafee.com/us/</uri>
+	</packager>
+
+	<presentation>
+		<summary>McAfee Cloud-based Security</summary>
+<summary xml:lang="pt-BR">McAfee Cloud-based Security</summary>
+<summary xml:lang="es-ES">McAfee Cloud-based Security</summary>
+<summary xml:lang="en-US">McAfee Cloud-based Security</summary>
+		<description>The McAfee Cloud-based Security APS package provides robust integration into the Parallels Automation cloud services system, allowing Service Providers a seamless way to order and automatically provision a broad range of cloud-based security products from McAfee.  Specifically, the products Parallels Automation customers can subscribe to include SaaS Email Protection, SaaS Web Protection, SaaS Email Archiving, SaaS Endpoint Protection. Additionally, McAfee SaaS Service Suites are available in bundles of two or more products for easy ordering with additional price discounts.</description>
+<description xml:lang="pt-BR">O pacote McAfee Cloud-based Security APS fornece uma integração robusta com o sistema de serviços em nuvem Parallels Automation, permitindo que os provedores de serviço comprem de modo contínuo e forneçam automaticamente uma ampla gama de produtos de segurança baseados em nuvem da McAfee.  Os clientes dos produtos Parallels Automation podem, especificamente, fazer a assinatura para incluir o SaaS Email Protection, SaaS Web Protection, SaaS Email Archiving, e o SaaS Endpoint Protection. Além disso, os McAfee SaaS Service Suites estão disponíveis em grupos de dois ou mais produtos para facilitar a compra com descontos adicionais no preço.</description>
+<description xml:lang="es-ES">El paquete McAfee Cloud-based Security APS ofrece una sólida integración con el sistema de servicios en la nube Parallels Automation, lo que ofrece a los proveedores de servicios un modo excepcional de solicitar y aprovisionar automáticamente una amplia gama de productos de seguridad basada en la nube de McAfee.  En concreto, los productos a los que se pueden suscribir los clientes de Parallels Automation incluyen SaaS Email Protection, SaaS Web Protection, SaaS Email Archiving y SaaS Endpoint Protection. Además, hay suites de McAfee SaaS Service disponibles en paquetes de dos o más productos que pueden solicitarse fácilmente con descuentos de precios adicionales.</description>
+<description xml:lang="en-US">The McAfee Cloud-based Security APS package provides robust integration into the Parallels Automation cloud services system, allowing Service Providers a seamless way to order and automatically provision a broad range of cloud-based security products from McAfee.  Specifically, the products Parallels Automation customers can subscribe to include SaaS Email Protection, SaaS Web Protection, SaaS Email Archiving, SaaS Endpoint Protection. Additionally, McAfee SaaS Service Suites are available in bundles of two or more products for easy ordering with additional price discounts.</description>
+
+		<icon path="images/logo-mcafee.png"/>
+
+		<screenshot path="images/main_screenshot.jpg">
+			<description>
+				Main screenshot.
+			</description>
+		</screenshot>
+
+		<changelog>
+			<version release="0" version="1.3">
+				<entry>Initial package</entry>
+			</version>
+			<version release="1" version="1.3">
+				<entry>Fixed a bug when checking if the customer already exists in McAfee and no customers are returned</entry>
+				<entry>Removed a workaround which was created to work around the restriction that a Service Provider customer could not be created on McAfee with no products.</entry>
+				<entry>Changed the formatting for the package description and summary</entry>
+			</version>
+			<version release="0" version="1.4">
+				<entry>Implement the ability to limit the number of Service Users that can be provisioned based on the number of products which have been ordered.</entry>
+				<entry>When provisioning, customers containing the McAfee Partner Administrator API User are not linked to each other</entry>
+				<entry>Handle Service User Disable and Enable requests from POA</entry>
+				<entry>Changed the Endpoint password to be an optional field. If not entered then customers will need to sign into the SecurityCenter to complete the setup</entry>
+				<entry>Added an additional entry point to the package to link to the SecurityCenter</entry>
+			</version>
+			<version release="0" version="1.5">
+				<entry>Implement the ability to specify a downstream partners reseller ID when the customer is provisioning</entry>
+			</version>
+			<version release="0" version="1.6">
+				<entry>Introduced 2 new products (Web/Email/Archiving 1 year and Email/Archiving 1 year)</entry>
+				<entry>Ability to enable/disable customers subscription. This will change the customers subscribed products to disrupt their service.</entry>
+				<entry>Implemented an internationalization framework to support localization</entry>
+			</version>
+			<version release="1" version="1.6">
+				<entry>Fixed a bug where Service Users were not being created if the domain provisioned contained uppercase characters</entry>
+			</version>
+<version release="0" version="1.7">
+				<entry>Created the ability for Service Providers to specify whether domains should be mandatory for customers ordering Email/Web/Archiving products</entry>
+				<entry>Fixed an issue when provisioning and a partner has an inactive customer beneath them</entry>
+			</version>
+			<version release="0" version="1.8">
+				<entry>Adding unique codes to each error message</entry>
+				<entry>Localized for Spanish and Brazilian Portuguese</entry>
+				<entry>Automatically setting the MX records on Parallels and Inbound IP on McAfee for each provisioned domain if configured to do so</entry>
+			</version>
+			<version release="1" version="1.8">
+				<entry>Adding password validation surrounding the SecurityCenter Password</entry>
+				<entry>Fixed a bug where the state was not accepting abbreviations</entry>
+				<entry>Adding support for Windows platform which will use a PEM file on the server instead of building one on the fly</entry>
+			</version>
+			<version release="2" version="1.8">
+				<entry>Fixed a region issue when full text vs abbreviation passed</entry>
+			</version>
+			<version release="3" version="1.8">
+				<entry>Fixed an issue one of the providers was encountering when a customer admin already existed. Now if the account already exists it will not throw an error but instead proceed.</entry>
+				<entry>Added a new hidden setting which contains the version and release number. Makes for easier debugging on failed tasks in the task manager</entry>
+			</version>
+			<version release="4" version="1.8">
+				<entry>Catching a possible error where no customer detail is returned prior to issuing an update API request</entry>
+			</version>
+			<version release="5" version="1.8">
+				<entry>One partner is receiving errors when creating an end-user that I suspect is because the Update is issued immediately after the Create. The fix was to not throw an error into the task manager when this request is sent after the Create	
+				</entry>
+				<entry>Added the requesting function call into the Soap class error message. The same partner is having issues where the customer ID is empty within whatever API request is being sent in</entry>
+			</version>
+			<version release="6" version="1.8">
+				<entry>Fixed an issue when attempting to pull the customer domains within McAfee that was not collecting the customer ID correctly from the environment variables</entry>
+			</version>
+			<version release="0" version="1.9">
+				<entry>API request and response logging</entry>
+				<entry>Add CloudSSO as a new product to order</entry>
+				<entry>Updated the resource descriptions to describe each product better</entry>
+				<entry>Updated the CCP UI</entry>
+				<entry>Created the capability to support multiple subscriptions for the same customer</entry>
+				<entry>Added a verification check to ensure the SecurityCenter email address is provided when ordering an Endpoint product. Presenting the error on the UI in the CCP.</entry>
+			</version>
+			<version release="1" version="1.9">
+				<entry>Updated the reference to the deployment pdf</entry>
+			</version>
+			<version release="0" version="1.10">
+				<entry>Fixed an issue when an end-user already exists within McAfee</entry>
+				<entry>Added the ability for Service Users to specify their allow/deny lists</entry>
+				<entry>Added the ability for Service Users to specify their email aliases</entry>
+			</version>
+			<version release="0" version="1.11">
+				<entry>Added conditional logic to the CCP UI to show/hide fields based on products being purchased</entry>
+				<entry>Re-worked some UI strings according to the new UI</entry>
+				<entry>Created a new field on the CCP UI when ordering Endpoint Protection to have the customers re-enter the SecurityCenter Email to confirm that they have entered it correctly</entry>
+				<entry>Added conditional logic to the CCP UI to only show the McAfee Control Console/SecurityCenter based on products being purchased</entry>
+			</version>
+			<version release="1" version="1.11">
+				<entry>Fixed an issue when requesting to decrease seats of an add-on and the product being removed instead of decreased</entry>
+				<entry>Added validation to the SC Password field to prevent /* and */</entry>
+				<entry>Fixed an error related to domains not being available when customer updates their application settings</entry>
+				<entry>Removed the SSL certificate requirement</entry>
+			</version>
+			<version release="0" version="1.12">
+				<entry>1.12 release</entry>
+			</version>
+			<version release="0" version="1.13">
+				<entry>SecurityCenter fields are now read-only once they have been provided for Endpoint Protection subscriptions. They may only be modified in the SecurityCenter.</entry>
+				<entry>Resolved an issue with managed versus unmanaged customers when using a multi-subscription model</entry>
+				<entry>Removal of Cloud SSO product</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Infrastructure/Security</category>
+			<category>Collaboration/Email</category>
+		</categories>
+		<languages>
+			<language>en</language>
+			<language>es</language>
+			<language>pt</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting default-value="" id="partner_id" max-length="15" min-length="1" regex="[0-9]+" track-old-value="true" type="string">
+			<name>Partner ID</name>
+<name xml:lang="pt-BR">ID de parceiro</name>
+<name xml:lang="es-ES">ID de partner</name>
+<name xml:lang="en-US">Partner ID</name>
+			<description>Your McAfee Partner ID</description>
+<description xml:lang="pt-BR">Sua ID de parceiro da McAfee</description>
+<description xml:lang="es-ES">Su ID de partner de McAfee</description>
+<description xml:lang="en-US">Your McAfee Partner ID</description>
+			<error-message>Please enter your Partner ID</error-message>
+<error-message xml:lang="pt-BR">Digite sua ID de parceiro</error-message>
+<error-message xml:lang="es-ES">Introduzca su ID de partner.</error-message>
+<error-message xml:lang="en-US">Please enter your Partner ID</error-message>
+		</setting>
+		<setting default-value="" id="reseller_id" max-length="15" min-length="1" regex="[0-9]+" track-old-value="true" type="string">
+			<name>Reseller ID</name>
+<name xml:lang="pt-BR">ID de revendedor</name>
+<name xml:lang="es-ES">ID de reseller</name>
+<name xml:lang="en-US">Reseller ID</name>
+			<description>Your McAfee Reseller ID</description>
+<description xml:lang="pt-BR">Sua ID de revendedor da McAfee</description>
+<description xml:lang="es-ES">Su ID de reseller de McAfee</description>
+<description xml:lang="en-US">Your McAfee Reseller ID</description>
+			<error-message>Please enter your McAfee Reseller ID</error-message>
+<error-message xml:lang="pt-BR">Digite sua ID de revendedor da McAfee</error-message>
+<error-message xml:lang="es-ES">Introduzca su ID de reseller de McAfee.</error-message>
+<error-message xml:lang="en-US">Please enter your McAfee Reseller ID</error-message>
+		</setting>
+		<group>
+			<name>Customer Administration Settings</name>
+<name xml:lang="pt-BR">Configurações administrativas do cliente</name>
+<name xml:lang="es-ES">Configuración de administración de clientes</name>
+<name xml:lang="en-US">Customer Administration Settings</name>
+			<setting default-value="" id="mcafee_contact_id" max-length="15" min-length="1" regex="[0-9]+" type="string">
+				<name>Contact ID</name>
+<name xml:lang="pt-BR">Identificação de contato</name>
+<name xml:lang="es-ES">ID de contacto</name>
+<name xml:lang="en-US">Contact ID</name>
+				<description>Your McAfee Contact ID</description>
+<description xml:lang="pt-BR">Sua identificação de contato McAfee</description>
+<description xml:lang="es-ES">Su ID de contacto de McAfee </description>
+<description xml:lang="en-US">Your McAfee Contact ID</description>
+				<error-message>Please enter your McAfee Contact ID</error-message>
+<error-message xml:lang="pt-BR">Digite sua ID de contato McAfee</error-message>
+<error-message xml:lang="es-ES">Introduzca su ID de contacto de McAfee </error-message>
+<error-message xml:lang="en-US">Please enter your McAfee Contact ID</error-message>
+			</setting>
+			<setting default-value="" id="mcafee_admin_user_name" max-length="255" min-length="1" regex="[^@]+@[^\.]+\..+" type="string">
+				<name>McAfee API User Name</name>
+<name xml:lang="pt-BR">Nome de usuário da API da McAfee</name>
+<name xml:lang="es-ES">Nombre de usuario de API de McAfee</name>
+<name xml:lang="en-US">McAfee API User Name</name>
+				<description>The API user name provided in the 'Welcome Email' from McAfee</description>
+<description xml:lang="pt-BR">O nome do usuário da API fornecido no "e-mail de boas-vindas" pela McAfee</description>
+<description xml:lang="es-ES">El nombre de usuario de API proporcionado en el mensaje de correo electrónico de bienvenida de McAfee</description>
+<description xml:lang="en-US">The API user name provided in the 'Welcome Email' from McAfee</description>
+				<error-message>Please enter the API user name provided in the 'Welcome email' from McAfee</error-message>
+<error-message xml:lang="pt-BR">Digite o nome do usuário da API fornecido no "e-mail de boas-vindas" pela McAfee</error-message>
+<error-message xml:lang="es-ES">Introduzca el nombre de usuario de API proporcionado en el mensaje de correo electrónico de bienvenida de McAfee</error-message>
+<error-message xml:lang="en-US">Please enter the API user name provided in the 'Welcome email' from McAfee</error-message>
+			</setting>
+			<setting default-value="" id="mcafee_admin_user_pass" max-length="20" min-length="6" type="string">
+				<name>McAfee API User Password</name>
+<name xml:lang="pt-BR">Senha de usuário da API da McAfee</name>
+<name xml:lang="es-ES">Contraseña de usuario de API de McAfee</name>
+<name xml:lang="en-US">McAfee API User Password</name>
+				<description>The API user password set from the McAfee Control Console</description>
+<description xml:lang="pt-BR">O conjunto de senhas de usuário da API do McAfee Control Console</description>
+<description xml:lang="es-ES">La contraseña de usuario de API definida desde la Control Console de McAfee</description>
+<description xml:lang="en-US">The API user password set from the McAfee Control Console</description>
+				<error-message>Please enter the API user password set from the McAfee Control Console</error-message>
+<error-message xml:lang="pt-BR">Digite o conjunto de senhas de usuário da API do McAfee Control Console</error-message>
+<error-message xml:lang="es-ES">Introduzca la contraseña de usuario de API definida desde la Control Console de McAfee.</error-message>
+<error-message xml:lang="en-US">Please enter the API user password set from the McAfee Control Console</error-message>
+			</setting>
+		</group>
+		<setting default-value="https://api.mxlogic.com/stage/" id="mcafee_service_location" min-length="10" regex="^https?://.*$" track-old-value="true" type="string">
+			<name>Service Endpoint</name>
+<name xml:lang="pt-BR">Terminal de serviço</name>
+<name xml:lang="es-ES">Endpoint de servicio</name>
+<name xml:lang="en-US">Service Endpoint</name>
+			<description>The McAfee SaaS service endpoint Example: https://partnerfocus.api.mcafee.com/production/Ordering.asmx</description>
+<description xml:lang="pt-BR">O desfecho de serviço Saas McAfee Exemplo: https://partnerfocus.api.mcafee.com/production/Ordering.asmx</description>
+<description xml:lang="es-ES">El endpoint de servicio de McAfee SaaS. Ejemplo: https://partnerfocus.api.mcafee.com/production/Ordering.asmx</description>
+<description xml:lang="en-US">The McAfee SaaS service endpoint Example: https://partnerfocus.api.mcafee.com/production/Ordering.asmx</description>
+			<error-message>Please enter your service endpoint</error-message>
+<error-message xml:lang="pt-BR">Digite seu terminal de serviço</error-message>
+<error-message xml:lang="es-ES">Introduzca su endpoint de servicio.</error-message>
+<error-message xml:lang="en-US">Please enter your service endpoint</error-message>
+		</setting>
+		<setting default-value="0" id="domains_mandatory" type="enum">
+			<name>Make domain provisioning mandatory?</name>
+<name xml:lang="pt-BR">Tornar o configuração de domínio obrigatória?</name>
+<name xml:lang="es-ES">¿Hacer que el aprovisionamiento de dominios sea obligatorio?</name>
+<name xml:lang="en-US">Make domain provisioning mandatory?</name>
+			<description>Would you like to make it mandatory to provision a domain when ordering Archiving or Email/Web protection?</description>
+<description xml:lang="pt-BR">Deseja tornar obrigatória a configuração de um domínio ao adquirir o Archiving ou Email/Web Protection?</description>
+<description xml:lang="es-ES">¿Desea hacer que el aprovisionamiento de dominios sea obligatorio al solicitar Archiving o Email/Web Protection?</description>
+<description xml:lang="en-US">Would you like to make it mandatory to provision a domain when ordering Archiving or Email/Web protection?</description>
+			<choice id="1">
+				<name>Yes</name>
+<name xml:lang="pt-BR">Sim</name>
+<name xml:lang="es-ES">Sí</name>
+<name xml:lang="en-US">Yes</name>
+			</choice>
+			<choice id="0">
+				<name>No</name>
+<name xml:lang="pt-BR">Não</name>
+<name xml:lang="es-ES">No</name>
+<name xml:lang="en-US">No</name>
+			</choice>
+		</setting>
+
+	<setting default-value="0" id="hide_quarantine_period_option" type="enum">
+			<name>Hide Quarantine Period option from Customer Control Panel?</name>
+<name xml:lang="pt-BR">Opção Ocultar Período de Quarentena no Painel de Controle do Cliente?</name>
+<name xml:lang="es-ES">¿Ocultar la opción Período de cuarentena del Panel de control del cliente?</name>
+<name xml:lang="en-US">Hide Quarantine Period option from Customer Control Panel?</name>
+			<description>Would you like to prevent customers from configuring the Quarantine Period on the Customer Control Panel?</description>
+<description xml:lang="pt-BR">Você gostaria de impedir os clientes de configurar o Período de Quarentena do Painel de Controle do Cliente?</description>
+<description xml:lang="es-ES">¿Desea impedir que los clientes configuren el período de cuarentena en el Panel de control del cliente?</description>
+<description xml:lang="en-US">Would you like to prevent customers from configuring the Quarantine Period on the Customer Control Panel?</description>
+			<choice id="1">
+				<name>Yes</name>
+<name xml:lang="pt-BR">Sim</name>
+<name xml:lang="es-ES">Sí</name>
+<name xml:lang="en-US">Yes</name>
+			</choice>
+			<choice id="0">
+				<name>No</name>
+<name xml:lang="pt-BR">Não</name>
+<name xml:lang="es-ES">No</name>
+<name xml:lang="en-US">No</name>
+			</choice>
+		</setting>
+		<setting default-value="01" id="billing_terms" track-old-value="true" type="enum">
+			<name>Billing Terms</name>
+			<name xml:lang="pt-BR">Termos de faturamento</name>
+			<name xml:lang="es-ES">Términos de facturación</name>
+			<name xml:lang="en-US">Billing Terms</name>
+			<choice id="01">
+				<name>Monthly</name>
+				<name xml:lang="pt-BR">Mensalmente</name>
+				<name xml:lang="es-ES">Mensual</name>
+				<name xml:lang="en-US">Monthly</name>
+			</choice>
+			<choice id="12">
+				<name>Pre-Paid Annually</name>
+				<name xml:lang="pt-BR">Pré-pago anualmente</name>
+				<name xml:lang="es-ES">Prepago anual</name>
+				<name xml:lang="en-US">Pre-Paid Annually</name>
+			</choice>
+		</setting>
+<setting default-value="1" id="customer_managed" type="enum">
+			<name>Will Endpoint Protection customers be managed or unmanaged?</name>
+<name xml:lang="pt-BR">Os clientes Endpoint Protection serão gerenciados ou não??</name>
+<name xml:lang="es-ES">¿Desea que los clientes de Endpoint Protection Suite sean gestionados o no gestionados?</name>
+<name xml:lang="en-US">Will Endpoint Protection customers be managed or unmanaged?</name>
+			<description>Would you like to manage Endpoint Protection customers directly and receive all email notifications to the Partner Administrator account or leave them unmanaged and have the email notifications sent to the SecurityCenter email address?</description>
+<description xml:lang="pt-BR">Você gostaria de gerenciar os clientes Endpoint Protection diretamente e receber todas as notificações de e-mail na conta Administrador Parceiro ou deixá-los sem gerenciamento e enviar as notificações de e-mail para o endereço de e-mail do SecurityCenter?</description>
+<description xml:lang="es-ES">¿Desea gestionar los clientes de Endpoint Protection Suite directamente y recibir todas las notificaciones por correo electrónico en la cuenta de administrador de partner o dejarlos como no gestionados y hacer que las notificaciones por correo electrónico se envíen a la dirección de correo electrónico de SecurityCenter?</description>
+<description xml:lang="en-US">Would you like to manage Endpoint Protection customers directly and receive all email notifications to the Partner Administrator account or leave them unmanaged and have the email notifications sent to the SecurityCenter email address?</description>
+			<choice id="1">
+				<name>Managed</name>
+<name xml:lang="pt-BR">Gerenciado</name>
+<name xml:lang="es-ES">Gestionado</name>
+<name xml:lang="en-US">Managed</name>
+			</choice>
+			<choice id="0">
+				<name>Unmanaged</name>
+<name xml:lang="pt-BR">Não gerenciado</name>
+<name xml:lang="es-ES">No gestionado</name>
+<name xml:lang="en-US">Unmanaged</name>
+			</choice>
+		</setting>
+		</global-settings>
+
+	<patch match="/application/version &gt;= '1.0'"/>
+
+	<service class="service" id="McAfee">
+		<license must-accept="true">
+			<commercial/>
+			<text>
+				<name>Corporate End User License Agreement</name>
+				<url>http://www.mcafee.com/us/about/legal/saas-terms.aspx</url>
+			</text>
+		</license>
+		<presentation>
+			<name>McAfee</name>
+<name xml:lang="pt-BR">McAfee</name>
+<name xml:lang="es-ES">McAfee</name>
+<name xml:lang="en-US">McAfee</name>
+			<summary>McAfee SaaS Provisioning Package</summary>
+<summary xml:lang="pt-BR">McAfee SaaS Provisioning Package</summary>
+<summary xml:lang="es-ES">McAfee SaaS Provisioning Package</summary>
+<summary xml:lang="en-US">McAfee SaaS Provisioning Package</summary>
+			<infolinks>
+				<link class="support" href="http://www.mcafee.com/us/support.aspx">Support
+					Link</link>
+				<link class="deployment-guide" href="file:///doc/McAfee_deployment_guide.pdf">Deployment Guide</link>
+				<link class="user-guide" href="file:///doc/McAfee_subscribers_guide.pdf">Subscribers Guide</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="{control_url}" method="GET">
+    				<label>Control Console</label>
+<label xml:lang="pt-BR">Control Console</label>
+<label xml:lang="es-ES">Control Console</label>
+<label xml:lang="en-US">Control Console</label>
+    				<variable name="control_url" value-of-setting="show_control_console_entry_point"/>
+    			</entry>
+				<entry class="control-panel" dst="{sc_url}">
+					<label>SecurityCenter</label>
+<label xml:lang="pt-BR">SecurityCenter</label>
+<label xml:lang="es-ES">SecurityCenter</label>
+<label xml:lang="en-US">SecurityCenter</label>
+					<variable name="sc_url" value-of-setting="show_security_center_entry_point"/>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+		
+			<group>
+				<name class="type">Required Customer Information</name>
+<name xml:lang="pt-BR">Informações necessárias do cliente</name>
+<name xml:lang="es-ES">Información de cliente necesaria</name>
+<name xml:lang="en-US">Required Customer Information</name>
+				
+				<setting class="organization-name" id="company_name" protected="true" type="string">
+					<name>Company Name</name>
+<name xml:lang="pt-BR">Nome da empresa</name>
+<name xml:lang="es-ES">Nombre de la empresa</name>
+<name xml:lang="en-US">Company Name</name>
+				</setting>
+				<setting class="street-address" id="address_street" max-length="100" track-old-value="true" type="string">
+					<name>Street Address</name>
+<name xml:lang="pt-BR">Endereço</name>
+<name xml:lang="es-ES">Dirección postal</name>
+<name xml:lang="en-US">Street Address</name>
+				</setting>
+				<setting class="locality" id="address_city" max-length="25" track-old-value="true" type="string">
+					<name>City</name>
+<name xml:lang="pt-BR">Cidade</name>
+<name xml:lang="es-ES">Ciudad</name>
+<name xml:lang="en-US">City</name>
+				</setting>
+				<setting class="region" id="address_region" max-length="100" track-old-value="true" type="string">
+					<name>Region</name>
+<name xml:lang="pt-BR">Região</name>
+<name xml:lang="es-ES">Región</name>
+<name xml:lang="en-US">Region</name>
+				</setting>
+				<setting class="postal-code" id="address_postalcode" max-length="20" track-old-value="true" type="string">
+					<name>Postal/Zip Code</name>
+<name xml:lang="pt-BR">CEP/Código postal</name>
+<name xml:lang="es-ES">Código postal</name>
+<name xml:lang="en-US">Postal/Zip Code</name>
+				</setting>
+				<setting class="country-name" id="address_country" track-old-value="true" type="enum">
+					<name>Country</name>
+<name xml:lang="pt-BR">País</name>
+<name xml:lang="es-ES">País</name>
+<name xml:lang="en-US">Country</name>
+					<choice id="af">
+						<name>Afghanistan</name>
+<name xml:lang="pt-BR">Afeganistão</name>
+<name xml:lang="es-ES">Afganistán</name>
+<name xml:lang="en-US">Afghanistan</name>
+					</choice>
+					<choice id="al">
+						<name>Albania</name>
+<name xml:lang="pt-BR">Albânia</name>
+<name xml:lang="es-ES">Albania</name>
+<name xml:lang="en-US">Albania</name>
+					</choice>
+					<choice id="dz">
+						<name>Algeria</name>
+<name xml:lang="pt-BR">Argélia</name>
+<name xml:lang="es-ES">Argelia</name>
+<name xml:lang="en-US">Algeria</name>
+					</choice>
+					<choice id="as">
+						<name>American Samoa</name>
+<name xml:lang="pt-BR">Samoa Americana</name>
+<name xml:lang="es-ES">Samoa Americana</name>
+<name xml:lang="en-US">American Samoa</name>
+					</choice>
+					<choice id="ad">
+						<name>Andorra</name>
+<name xml:lang="pt-BR">Andorra</name>
+<name xml:lang="es-ES">Andorra</name>
+<name xml:lang="en-US">Andorra</name>
+					</choice>
+					<choice id="ao">
+						<name>Angola</name>
+<name xml:lang="pt-BR">Angola</name>
+<name xml:lang="es-ES">Angola</name>
+<name xml:lang="en-US">Angola</name>
+					</choice>
+					<choice id="ai">
+						<name>Anguilla</name>
+<name xml:lang="pt-BR">Anguila</name>
+<name xml:lang="es-ES">Anguila</name>
+<name xml:lang="en-US">Anguilla</name>
+					</choice>
+					<choice id="ag">
+						<name>Antigua and Barbuda</name>
+<name xml:lang="pt-BR">Antígua e Barbuda</name>
+<name xml:lang="es-ES">Antigua y Barbuda</name>
+<name xml:lang="en-US">Antigua and Barbuda</name>
+					</choice>
+					<choice id="ar">
+						<name>Argentina</name>
+<name xml:lang="pt-BR">Argentina</name>
+<name xml:lang="es-ES">Argentina</name>
+<name xml:lang="en-US">Argentina</name>
+					</choice>
+					<choice id="am">
+						<name>Armenia</name>
+<name xml:lang="pt-BR">Armênia</name>
+<name xml:lang="es-ES">Armenia</name>
+<name xml:lang="en-US">Armenia</name>
+					</choice>
+					<choice id="aw">
+						<name>Aruba</name>
+<name xml:lang="pt-BR">Aruba</name>
+<name xml:lang="es-ES">Aruba</name>
+<name xml:lang="en-US">Aruba</name>
+					</choice>
+					<choice id="au">
+						<name>Australia</name>
+<name xml:lang="pt-BR">Austrália</name>
+<name xml:lang="es-ES">Australia</name>
+<name xml:lang="en-US">Australia</name>
+					</choice>
+					<choice id="at">
+						<name>Austria</name>
+<name xml:lang="pt-BR">Áustria</name>
+<name xml:lang="es-ES">Austria</name>
+<name xml:lang="en-US">Austria</name>
+					</choice>
+					<choice id="az">
+						<name>Azerbaijan</name>
+<name xml:lang="pt-BR">Azerbaijão</name>
+<name xml:lang="es-ES">Azerbaiyán</name>
+<name xml:lang="en-US">Azerbaijan</name>
+					</choice>
+					<choice id="bs">
+						<name>Bahamas</name>
+<name xml:lang="pt-BR">Bahamas</name>
+<name xml:lang="es-ES">Bahamas</name>
+<name xml:lang="en-US">Bahamas</name>
+					</choice>
+					<choice id="bh">
+						<name>Bahrain</name>
+<name xml:lang="pt-BR">Bahrain</name>
+<name xml:lang="es-ES">Bahréin</name>
+<name xml:lang="en-US">Bahrain</name>
+					</choice>
+					<choice id="bd">
+						<name>Bangladesh</name>
+<name xml:lang="pt-BR">Bangladesh</name>
+<name xml:lang="es-ES">Bangladesh</name>
+<name xml:lang="en-US">Bangladesh</name>
+					</choice>
+					<choice id="bb">
+						<name>Barbados</name>
+<name xml:lang="pt-BR">Barbados</name>
+<name xml:lang="es-ES">Barbados</name>
+<name xml:lang="en-US">Barbados</name>
+					</choice>
+					<choice id="by">
+						<name>Belarus</name>
+<name xml:lang="pt-BR">Belarus</name>
+<name xml:lang="es-ES">Bielorrusia</name>
+<name xml:lang="en-US">Belarus</name>
+					</choice>
+					<choice id="be">
+						<name>Belgium</name>
+<name xml:lang="pt-BR">Bélgica</name>
+<name xml:lang="es-ES">Bélgica</name>
+<name xml:lang="en-US">Belgium</name>
+					</choice>
+					<choice id="bz">
+						<name>Belize</name>
+<name xml:lang="pt-BR">Belize</name>
+<name xml:lang="es-ES">Belice</name>
+<name xml:lang="en-US">Belize</name>
+					</choice>
+					<choice id="bj">
+						<name>Benin</name>
+<name xml:lang="pt-BR">Benin</name>
+<name xml:lang="es-ES">Benín</name>
+<name xml:lang="en-US">Benin</name>
+					</choice>
+					<choice id="bm">
+						<name>Bermuda</name>
+<name xml:lang="pt-BR">Bermuda</name>
+<name xml:lang="es-ES">Bermudas</name>
+<name xml:lang="en-US">Bermuda</name>
+					</choice>
+					<choice id="bt">
+						<name>Bhutan</name>
+<name xml:lang="pt-BR">Butão</name>
+<name xml:lang="es-ES">Bután</name>
+<name xml:lang="en-US">Bhutan</name>
+					</choice>
+					<choice id="bo">
+						<name>Bolivia, Plurinational State of</name>
+<name xml:lang="pt-BR">Estado Plurinacional da Bolivia</name>
+<name xml:lang="es-ES">Bolivia, Estado Plurinacional de</name>
+<name xml:lang="en-US">Bolivia, Plurinational State of</name>
+					</choice>
+					<choice id="ba">
+						<name>Bosnia and Herzegovina</name>
+<name xml:lang="pt-BR">Bósnia e Herzegovina</name>
+<name xml:lang="es-ES">Bosnia y Herzegovina</name>
+<name xml:lang="en-US">Bosnia and Herzegovina</name>
+					</choice>
+					<choice id="bw">
+						<name>Botswana</name>
+<name xml:lang="pt-BR">Botswana</name>
+<name xml:lang="es-ES">Botsuana</name>
+<name xml:lang="en-US">Botswana</name>
+					</choice>
+					<choice id="bv">
+						<name>Bouvet Island</name>
+<name xml:lang="pt-BR">Ilha Bouvet</name>
+<name xml:lang="es-ES">Isla Bouvet</name>
+<name xml:lang="en-US">Bouvet Island</name>
+					</choice>
+					<choice id="br">
+						<name>Brazil</name>
+<name xml:lang="pt-BR">Brasil</name>
+<name xml:lang="es-ES">Brasil</name>
+<name xml:lang="en-US">Brazil</name>
+					</choice>
+					<choice id="io">
+						<name>British Indian Ocean Territory</name>
+<name xml:lang="pt-BR">Território Britânico no Oceano Índico</name>
+<name xml:lang="es-ES">Territorio Británico del Océano Índico</name>
+<name xml:lang="en-US">British Indian Ocean Territory</name>
+					</choice>
+					<choice id="bn">
+						<name>Brunei Darussalam</name>
+<name xml:lang="pt-BR">Brunei</name>
+<name xml:lang="es-ES">Brunéi Darussalam</name>
+<name xml:lang="en-US">Brunei Darussalam</name>
+					</choice>
+					<choice id="bg">
+						<name>Bulgaria</name>
+<name xml:lang="pt-BR">Bulgária</name>
+<name xml:lang="es-ES">Bulgaria</name>
+<name xml:lang="en-US">Bulgaria</name>
+					</choice>
+					<choice id="bf">
+						<name>Burkina Faso</name>
+<name xml:lang="pt-BR">Burkina Faso</name>
+<name xml:lang="es-ES">Burkina Faso</name>
+<name xml:lang="en-US">Burkina Faso</name>
+					</choice>
+					<choice id="bi">
+						<name>Burundi</name>
+<name xml:lang="pt-BR">Burundi</name>
+<name xml:lang="es-ES">Burundi</name>
+<name xml:lang="en-US">Burundi</name>
+					</choice>
+					<choice id="kh">
+						<name>Cambodia</name>
+<name xml:lang="pt-BR">Camboja</name>
+<name xml:lang="es-ES">Camboya</name>
+<name xml:lang="en-US">Cambodia</name>
+					</choice>
+					<choice id="cm">
+						<name>Cameroon</name>
+<name xml:lang="pt-BR">Camarões</name>
+<name xml:lang="es-ES">Camerún</name>
+<name xml:lang="en-US">Cameroon</name>
+					</choice>
+					<choice id="ca">
+						<name>Canada</name>
+<name xml:lang="pt-BR">Canadá</name>
+<name xml:lang="es-ES">Canadá</name>
+<name xml:lang="en-US">Canada</name>
+					</choice>
+					<choice id="cv">
+						<name>Cape Verde</name>
+<name xml:lang="pt-BR">Cabo verde</name>
+<name xml:lang="es-ES">Cabo Verde</name>
+<name xml:lang="en-US">Cape Verde</name>
+					</choice>
+					<choice id="ky">
+						<name>Cayman Islands</name>
+<name xml:lang="pt-BR">Ilhas Cayman</name>
+<name xml:lang="es-ES">Islas Caimán</name>
+<name xml:lang="en-US">Cayman Islands</name>
+					</choice>
+					<choice id="cf">
+						<name>Central African Republic</name>
+<name xml:lang="pt-BR">República Centro-Africana</name>
+<name xml:lang="es-ES">República Centroafricana</name>
+<name xml:lang="en-US">Central African Republic</name>
+					</choice>
+					<choice id="td">
+						<name>Chad</name>
+<name xml:lang="pt-BR">Chade</name>
+<name xml:lang="es-ES">Chad</name>
+<name xml:lang="en-US">Chad</name>
+					</choice>
+					<choice id="cl">
+						<name>Chile</name>
+<name xml:lang="pt-BR">Chile</name>
+<name xml:lang="es-ES">Chile</name>
+<name xml:lang="en-US">Chile</name>
+					</choice>
+					<choice id="cn">
+						<name>China</name>
+<name xml:lang="pt-BR">China</name>
+<name xml:lang="es-ES">China</name>
+<name xml:lang="en-US">China</name>
+					</choice>
+					<choice id="cx">
+						<name>Christmas Island</name>
+<name xml:lang="pt-BR">Ilha Christmas</name>
+<name xml:lang="es-ES">Isla Christmas</name>
+<name xml:lang="en-US">Christmas Island</name>
+					</choice>
+					<choice id="cc">
+						<name>Cocos (Keeling) Islands</name>
+<name xml:lang="pt-BR">Ilhas Cocos (Keeling)</name>
+<name xml:lang="es-ES">Islas Cocos (Keeling)</name>
+<name xml:lang="en-US">Cocos (Keeling) Islands</name>
+					</choice>
+					<choice id="co">
+						<name>Colombia</name>
+<name xml:lang="pt-BR">Colômbia</name>
+<name xml:lang="es-ES">Colombia</name>
+<name xml:lang="en-US">Colombia</name>
+					</choice>
+					<choice id="km">
+						<name>Comoros</name>
+<name xml:lang="pt-BR">Comores</name>
+<name xml:lang="es-ES">Comoras</name>
+<name xml:lang="en-US">Comoros</name>
+					</choice>
+					<choice id="cg">
+						<name>Congo</name>
+<name xml:lang="pt-BR">Congo</name>
+<name xml:lang="es-ES">Congo</name>
+<name xml:lang="en-US">Congo</name>
+					</choice>
+					<choice id="cd">
+						<name>Congo, The Democratic Republic of the</name>
+<name xml:lang="pt-BR">República Democrática do Congo</name>
+<name xml:lang="es-ES">Congo, República Democrática del</name>
+<name xml:lang="en-US">Congo, The Democratic Republic of the</name>
+					</choice>
+					<choice id="ck">
+						<name>Cook Islands</name>
+<name xml:lang="pt-BR">Ilhas Cook</name>
+<name xml:lang="es-ES">Islas Cook</name>
+<name xml:lang="en-US">Cook Islands</name>
+					</choice>
+					<choice id="cr">
+						<name>Costa Rica</name>
+<name xml:lang="pt-BR">Costa Rica</name>
+<name xml:lang="es-ES">Costa Rica</name>
+<name xml:lang="en-US">Costa Rica</name>
+					</choice>
+					<choice id="ci">
+						<name>Cote D'ivoire (Ivory Coast)</name>
+<name xml:lang="pt-BR">Costa do Marfim</name>
+<name xml:lang="es-ES">Costa de Marfil</name>
+<name xml:lang="en-US">Cote D'ivoire (Ivory Coast)</name>
+					</choice>
+					<choice id="hr">
+						<name>Croatia</name>
+<name xml:lang="pt-BR">Croácia</name>
+<name xml:lang="es-ES">Croacia</name>
+<name xml:lang="en-US">Croatia</name>
+					</choice>
+					<choice id="cy">
+						<name>Cyprus</name>
+<name xml:lang="pt-BR">Chipre</name>
+<name xml:lang="es-ES">Chipre</name>
+<name xml:lang="en-US">Cyprus</name>
+					</choice>
+					<choice id="cz">
+						<name>Czech Republic</name>
+<name xml:lang="pt-BR">República Tcheca</name>
+<name xml:lang="es-ES">República Checa</name>
+<name xml:lang="en-US">Czech Republic</name>
+					</choice>
+					<choice id="dk">
+						<name>Denmark</name>
+<name xml:lang="pt-BR">Dinamarca</name>
+<name xml:lang="es-ES">Dinamarca</name>
+<name xml:lang="en-US">Denmark</name>
+					</choice>
+					<choice id="dj">
+						<name>Djibouti</name>
+<name xml:lang="pt-BR">Djibouti</name>
+<name xml:lang="es-ES">Yibuti</name>
+<name xml:lang="en-US">Djibouti</name>
+					</choice>
+					<choice id="dm">
+						<name>Dominica</name>
+<name xml:lang="pt-BR">Dominica</name>
+<name xml:lang="es-ES">Dominica</name>
+<name xml:lang="en-US">Dominica</name>
+					</choice>
+					<choice id="do">
+						<name>Dominican Republic</name>
+<name xml:lang="pt-BR">República Dominicana</name>
+<name xml:lang="es-ES">República Dominicana</name>
+<name xml:lang="en-US">Dominican Republic</name>
+					</choice>
+					<choice id="ec">
+						<name>Ecuador</name>
+<name xml:lang="pt-BR">Equador</name>
+<name xml:lang="es-ES">Ecuador</name>
+<name xml:lang="en-US">Ecuador</name>
+					</choice>
+					<choice id="eg">
+						<name>Egypt</name>
+<name xml:lang="pt-BR">Egito</name>
+<name xml:lang="es-ES">Egipto</name>
+<name xml:lang="en-US">Egypt</name>
+					</choice>
+					<choice id="sv">
+						<name>El Salvador</name>
+<name xml:lang="pt-BR">El Salvador</name>
+<name xml:lang="es-ES">El Salvador</name>
+<name xml:lang="en-US">El Salvador</name>
+					</choice>
+					<choice id="gq">
+						<name>Equatorial Guinea</name>
+<name xml:lang="pt-BR">Guiné Equatorial</name>
+<name xml:lang="es-ES">Guinea Ecuatorial</name>
+<name xml:lang="en-US">Equatorial Guinea</name>
+					</choice>
+					<choice id="er">
+						<name>Eritrea</name>
+<name xml:lang="pt-BR">Eritreia</name>
+<name xml:lang="es-ES">Eritrea</name>
+<name xml:lang="en-US">Eritrea</name>
+					</choice>
+					<choice id="ee">
+						<name>Estonia</name>
+<name xml:lang="pt-BR">Estônia</name>
+<name xml:lang="es-ES">Estonia</name>
+<name xml:lang="en-US">Estonia</name>
+					</choice>
+					<choice id="et">
+						<name>Ethiopia</name>
+<name xml:lang="pt-BR">Etiópia</name>
+<name xml:lang="es-ES">Etiopía</name>
+<name xml:lang="en-US">Ethiopia</name>
+					</choice>
+					<choice id="fk">
+						<name>Falkland Islands (Malvinas)</name>
+<name xml:lang="pt-BR">Ilhas Falkland (Malvinas)</name>
+<name xml:lang="es-ES">Islas Falkland (Malvinas)</name>
+<name xml:lang="en-US">Falkland Islands (Malvinas)</name>
+					</choice>
+					<choice id="fo">
+						<name>Faroe Islands</name>
+<name xml:lang="pt-BR">Ilhas Faroe</name>
+<name xml:lang="es-ES">Islas Feroe</name>
+<name xml:lang="en-US">Faroe Islands</name>
+					</choice>
+					<choice id="fj">
+						<name>Fiji</name>
+<name xml:lang="pt-BR">Fiji</name>
+<name xml:lang="es-ES">Fiyi</name>
+<name xml:lang="en-US">Fiji</name>
+					</choice>
+					<choice id="fi">
+						<name>Finland</name>
+<name xml:lang="pt-BR">Finlândia</name>
+<name xml:lang="es-ES">Finlandia</name>
+<name xml:lang="en-US">Finland</name>
+					</choice>
+					<choice id="fr">
+						<name>France</name>
+<name xml:lang="pt-BR">França</name>
+<name xml:lang="es-ES">Francia</name>
+<name xml:lang="en-US">France</name>
+					</choice>
+					<choice id="gf">
+						<name>French Guiana</name>
+<name xml:lang="pt-BR">Guiana Francesa</name>
+<name xml:lang="es-ES">Guayana Francesa</name>
+<name xml:lang="en-US">French Guiana</name>
+					</choice>
+					<choice id="pf">
+						<name>French Polynesia</name>
+<name xml:lang="pt-BR">Polinésia Francesa</name>
+<name xml:lang="es-ES">Polinesia Francesa</name>
+<name xml:lang="en-US">French Polynesia</name>
+					</choice>
+					<choice id="tf">
+						<name>French Southern Territories</name>
+<name xml:lang="pt-BR">Territórios Franceses do Sul</name>
+<name xml:lang="es-ES">Territorios Franceses Del Sur</name>
+<name xml:lang="en-US">French Southern Territories</name>
+					</choice>
+					<choice id="ga">
+						<name>Gabon</name>
+<name xml:lang="pt-BR">Gabão</name>
+<name xml:lang="es-ES">Gabón</name>
+<name xml:lang="en-US">Gabon</name>
+					</choice>
+					<choice id="gm">
+						<name>Gambia</name>
+<name xml:lang="pt-BR">Gâmbia</name>
+<name xml:lang="es-ES">Gambia</name>
+<name xml:lang="en-US">Gambia</name>
+					</choice>
+					<choice id="ge">
+						<name>Georgia</name>
+<name xml:lang="pt-BR">Geórgia</name>
+<name xml:lang="es-ES">Georgia</name>
+<name xml:lang="en-US">Georgia</name>
+					</choice>
+					<choice id="de">
+						<name>Germany</name>
+<name xml:lang="pt-BR">Alemanha</name>
+<name xml:lang="es-ES">Alemania</name>
+<name xml:lang="en-US">Germany</name>
+					</choice>
+					<choice id="gh">
+						<name>Ghana</name>
+<name xml:lang="pt-BR">Gana</name>
+<name xml:lang="es-ES">Ghana</name>
+<name xml:lang="en-US">Ghana</name>
+					</choice>
+					<choice id="gi">
+						<name>Gibraltar</name>
+<name xml:lang="pt-BR">Gibraltar</name>
+<name xml:lang="es-ES">Gibraltar</name>
+<name xml:lang="en-US">Gibraltar</name>
+					</choice>
+					<choice id="gr">
+						<name>Greece</name>
+<name xml:lang="pt-BR">Grécia</name>
+<name xml:lang="es-ES">Grecia</name>
+<name xml:lang="en-US">Greece</name>
+					</choice>
+					<choice id="gl">
+						<name>Greenland</name>
+<name xml:lang="pt-BR">Groenlândia</name>
+<name xml:lang="es-ES">Groenlandia</name>
+<name xml:lang="en-US">Greenland</name>
+					</choice>
+					<choice id="gd">
+						<name>Grenada</name>
+<name xml:lang="pt-BR">Granada</name>
+<name xml:lang="es-ES">Granada</name>
+<name xml:lang="en-US">Grenada</name>
+					</choice>
+					<choice id="gp">
+						<name>Guadeloupe</name>
+<name xml:lang="pt-BR">Guadalupe</name>
+<name xml:lang="es-ES">Guadalupe</name>
+<name xml:lang="en-US">Guadeloupe</name>
+					</choice>
+					<choice id="gu">
+						<name>Guam</name>
+<name xml:lang="pt-BR">Guam</name>
+<name xml:lang="es-ES">Guam</name>
+<name xml:lang="en-US">Guam</name>
+					</choice>
+					<choice id="gt">
+						<name>Guatemala</name>
+<name xml:lang="pt-BR">Guatemala</name>
+<name xml:lang="es-ES">Guatemala</name>
+<name xml:lang="en-US">Guatemala</name>
+					</choice>
+					<choice id="gn">
+						<name>Guinea</name>
+<name xml:lang="pt-BR">Guiné</name>
+<name xml:lang="es-ES">Guinea</name>
+<name xml:lang="en-US">Guinea</name>
+					</choice>
+					<choice id="gw">
+						<name>Guinea-Bissau</name>
+<name xml:lang="pt-BR">Guiné-Bissau</name>
+<name xml:lang="es-ES">Guinea-Bissau</name>
+<name xml:lang="en-US">Guinea-Bissau</name>
+					</choice>
+					<choice id="gy">
+						<name>Guyana</name>
+<name xml:lang="pt-BR">Guiana</name>
+<name xml:lang="es-ES">Guyana</name>
+<name xml:lang="en-US">Guyana</name>
+					</choice>
+					<choice id="ht">
+						<name>Haiti</name>
+<name xml:lang="pt-BR">Haiti</name>
+<name xml:lang="es-ES">Haití</name>
+<name xml:lang="en-US">Haiti</name>
+					</choice>
+					<choice id="hm">
+						<name>Heard and McDonald Islands</name>
+<name xml:lang="pt-BR">Ilhas Heard e McDonald</name>
+<name xml:lang="es-ES">Islas Heard Y McDonald</name>
+<name xml:lang="en-US">Heard and McDonald Islands</name>
+					</choice>
+					<choice id="va">
+						<name>Holy See (Vatican City State)</name>
+<name xml:lang="pt-BR">Santa Sé (Estado da Cidade do Vaticano)</name>
+<name xml:lang="es-ES">Santa Sede (Estado Ciudad del Vaticano)</name>
+<name xml:lang="en-US">Holy See (Vatican City State)</name>
+					</choice>
+					<choice id="hn">
+						<name>Honduras</name>
+<name xml:lang="pt-BR">Honduras</name>
+<name xml:lang="es-ES">Honduras</name>
+<name xml:lang="en-US">Honduras</name>
+					</choice>
+					<choice id="hk">
+						<name>Hong Kong</name>
+<name xml:lang="pt-BR">Hong Kong</name>
+<name xml:lang="es-ES">Hong Kong</name>
+<name xml:lang="en-US">Hong Kong</name>
+					</choice>
+					<choice id="hu">
+						<name>Hungary</name>
+<name xml:lang="pt-BR">Hungria</name>
+<name xml:lang="es-ES">Hungría</name>
+<name xml:lang="en-US">Hungary</name>
+					</choice>
+					<choice id="is">
+						<name>Iceland</name>
+<name xml:lang="pt-BR">Islândia</name>
+<name xml:lang="es-ES">Islandia</name>
+<name xml:lang="en-US">Iceland</name>
+					</choice>
+					<choice id="in">
+						<name>India</name>
+<name xml:lang="pt-BR">Índia</name>
+<name xml:lang="es-ES">India</name>
+<name xml:lang="en-US">India</name>
+					</choice>
+					<choice id="id">
+						<name>Indonesia</name>
+<name xml:lang="pt-BR">Indonésia</name>
+<name xml:lang="es-ES">Indonesia</name>
+<name xml:lang="en-US">Indonesia</name>
+					</choice>
+					<choice id="iq">
+						<name>Iraq</name>
+<name xml:lang="pt-BR">Iraque</name>
+<name xml:lang="es-ES">Irak</name>
+<name xml:lang="en-US">Iraq</name>
+					</choice>
+					<choice id="ie">
+						<name>Ireland</name>
+<name xml:lang="pt-BR">Irlanda</name>
+<name xml:lang="es-ES">Irlanda</name>
+<name xml:lang="en-US">Ireland</name>
+					</choice>
+					<choice id="il">
+						<name>Israel</name>
+<name xml:lang="pt-BR">Israel</name>
+<name xml:lang="es-ES">Israel</name>
+<name xml:lang="en-US">Israel</name>
+					</choice>
+					<choice id="it">
+						<name>Italy</name>
+<name xml:lang="pt-BR">Itália</name>
+<name xml:lang="es-ES">Italia</name>
+<name xml:lang="en-US">Italy</name>
+					</choice>
+					<choice id="jm">
+						<name>Jamaica</name>
+<name xml:lang="pt-BR">Jamaica</name>
+<name xml:lang="es-ES">Jamaica</name>
+<name xml:lang="en-US">Jamaica</name>
+					</choice>
+					<choice id="jp">
+						<name>Japan</name>
+<name xml:lang="pt-BR">Japão</name>
+<name xml:lang="es-ES">Japón</name>
+<name xml:lang="en-US">Japan</name>
+					</choice>
+					<choice id="jo">
+						<name>Jordan</name>
+<name xml:lang="pt-BR">Jordânia</name>
+<name xml:lang="es-ES">Jordan</name>
+<name xml:lang="en-US">Jordan</name>
+					</choice>
+					<choice id="kz">
+						<name>Kazakhstan</name>
+<name xml:lang="pt-BR">Cazaquistão</name>
+<name xml:lang="es-ES">Kazajistán</name>
+<name xml:lang="en-US">Kazakhstan</name>
+					</choice>
+					<choice id="ke">
+						<name>Kenya</name>
+<name xml:lang="pt-BR">Quênia</name>
+<name xml:lang="es-ES">Kenia</name>
+<name xml:lang="en-US">Kenya</name>
+					</choice>
+					<choice id="ki">
+						<name>Kiribati</name>
+<name xml:lang="pt-BR">Kiribati</name>
+<name xml:lang="es-ES">Kiribati</name>
+<name xml:lang="en-US">Kiribati</name>
+					</choice>
+					<choice id="kr">
+						<name>Korea, Republic of</name>
+<name xml:lang="pt-BR">República da Coreia</name>
+<name xml:lang="es-ES">Corea, República de</name>
+<name xml:lang="en-US">Korea, Republic of</name>
+					</choice>
+					<choice id="kw">
+						<name>Kuwait</name>
+<name xml:lang="pt-BR">Kuweit</name>
+<name xml:lang="es-ES">Kuwait</name>
+<name xml:lang="en-US">Kuwait</name>
+					</choice>
+					<choice id="kg">
+						<name>Kyrgyzstan</name>
+<name xml:lang="pt-BR">Quirguistão</name>
+<name xml:lang="es-ES">Kirguistán</name>
+<name xml:lang="en-US">Kyrgyzstan</name>
+					</choice>
+					<choice id="la">
+						<name>Lao People's Democratic Republic</name>
+<name xml:lang="pt-BR">República Democrática Popular do Laos</name>
+<name xml:lang="es-ES">República Democrática Popular de Laos</name>
+<name xml:lang="en-US">Lao People's Democratic Republic</name>
+					</choice>
+					<choice id="lv">
+						<name>Latvia</name>
+<name xml:lang="pt-BR">Letônia</name>
+<name xml:lang="es-ES">Letonia</name>
+<name xml:lang="en-US">Latvia</name>
+					</choice>
+					<choice id="lb">
+						<name>Lebanon</name>
+<name xml:lang="pt-BR">Líbano</name>
+<name xml:lang="es-ES">Líbano</name>
+<name xml:lang="en-US">Lebanon</name>
+					</choice>
+					<choice id="ls">
+						<name>Lesotho</name>
+<name xml:lang="pt-BR">Lesoto</name>
+<name xml:lang="es-ES">Lesoto</name>
+<name xml:lang="en-US">Lesotho</name>
+					</choice>
+					<choice id="lr">
+						<name>Liberia</name>
+<name xml:lang="pt-BR">Libéria</name>
+<name xml:lang="es-ES">Liberia</name>
+<name xml:lang="en-US">Liberia</name>
+					</choice>
+					<choice id="li">
+						<name>Liechtenstein</name>
+<name xml:lang="pt-BR">Liechtenstein</name>
+<name xml:lang="es-ES">Liechtenstein</name>
+<name xml:lang="en-US">Liechtenstein</name>
+					</choice>
+					<choice id="lt">
+						<name>Lithuania</name>
+<name xml:lang="pt-BR">Lituânia</name>
+<name xml:lang="es-ES">Lituania</name>
+<name xml:lang="en-US">Lithuania</name>
+					</choice>
+					<choice id="lu">
+						<name>Luxembourg</name>
+<name xml:lang="pt-BR">Luxemburgo</name>
+<name xml:lang="es-ES">Luxemburgo</name>
+<name xml:lang="en-US">Luxembourg</name>
+					</choice>
+					<choice id="mo">
+						<name>Macao</name>
+<name xml:lang="pt-BR">Macau</name>
+<name xml:lang="es-ES">Macao</name>
+<name xml:lang="en-US">Macao</name>
+					</choice>
+					<choice id="mk">
+						<name>Macedonia, The Former Yugoslav Republic of</name>
+<name xml:lang="pt-BR">Macedônia, antiga República da Iugoslávia</name>
+<name xml:lang="es-ES">Macedonia, Antigua República Yugoslava de</name>
+<name xml:lang="en-US">Macedonia, The Former Yugoslav Republic of</name>
+					</choice>
+					<choice id="mg">
+						<name>Madagascar</name>
+<name xml:lang="pt-BR">Madagascar</name>
+<name xml:lang="es-ES">Madagascar</name>
+<name xml:lang="en-US">Madagascar</name>
+					</choice>
+					<choice id="mw">
+						<name>Malawi</name>
+<name xml:lang="pt-BR">Malaui</name>
+<name xml:lang="es-ES">Malaui</name>
+<name xml:lang="en-US">Malawi</name>
+					</choice>
+					<choice id="my">
+						<name>Malaysia</name>
+<name xml:lang="pt-BR">Malásia</name>
+<name xml:lang="es-ES">Malasia</name>
+<name xml:lang="en-US">Malaysia</name>
+					</choice>
+					<choice id="mv">
+						<name>Maldives</name>
+<name xml:lang="pt-BR">Maldivas</name>
+<name xml:lang="es-ES">Maldivas</name>
+<name xml:lang="en-US">Maldives</name>
+					</choice>
+					<choice id="ml">
+						<name>Mali</name>
+<name xml:lang="pt-BR">Mali</name>
+<name xml:lang="es-ES">Mali</name>
+<name xml:lang="en-US">Mali</name>
+					</choice>
+					<choice id="mt">
+						<name>Malta</name>
+<name xml:lang="pt-BR">Malta</name>
+<name xml:lang="es-ES">Malta</name>
+<name xml:lang="en-US">Malta</name>
+					</choice>
+					<choice id="mh">
+						<name>Marshall Islands</name>
+<name xml:lang="pt-BR">Ilhas Marshall</name>
+<name xml:lang="es-ES">Islas Marshall</name>
+<name xml:lang="en-US">Marshall Islands</name>
+					</choice>
+					<choice id="mq">
+						<name>Martinique</name>
+<name xml:lang="pt-BR">Martinica</name>
+<name xml:lang="es-ES">Martinica</name>
+<name xml:lang="en-US">Martinique</name>
+					</choice>
+					<choice id="mr">
+						<name>Mauritania</name>
+<name xml:lang="pt-BR">Mauritânia</name>
+<name xml:lang="es-ES">Mauritania</name>
+<name xml:lang="en-US">Mauritania</name>
+					</choice>
+					<choice id="mu">
+						<name>Mauritius</name>
+<name xml:lang="pt-BR">Maurício</name>
+<name xml:lang="es-ES">Mauricio</name>
+<name xml:lang="en-US">Mauritius</name>
+					</choice>
+					<choice id="yt">
+						<name>Mayotte</name>
+<name xml:lang="pt-BR">Mayotte</name>
+<name xml:lang="es-ES">Mayotte</name>
+<name xml:lang="en-US">Mayotte</name>
+					</choice>
+					<choice id="mx">
+						<name>Mexico</name>
+<name xml:lang="pt-BR">México</name>
+<name xml:lang="es-ES">México</name>
+<name xml:lang="en-US">Mexico</name>
+					</choice>
+					<choice id="fm">
+						<name>Micronesia, Federated States of</name>
+<name xml:lang="pt-BR">Estados Federados da Micronésia</name>
+<name xml:lang="es-ES">Micronesia, Estados Federados de</name>
+<name xml:lang="en-US">Micronesia, Federated States of</name>
+					</choice>
+					<choice id="md">
+						<name>Moldova, Republic of</name>
+<name xml:lang="pt-BR">República da Moldova</name>
+<name xml:lang="es-ES">Moldavia, República de</name>
+<name xml:lang="en-US">Moldova, Republic of</name>
+					</choice>
+					<choice id="mc">
+						<name>Monaco</name>
+<name xml:lang="pt-BR">Mônaco</name>
+<name xml:lang="es-ES">Mónaco</name>
+<name xml:lang="en-US">Monaco</name>
+					</choice>
+					<choice id="mn">
+						<name>Mongolia</name>
+<name xml:lang="pt-BR">Mongólia</name>
+<name xml:lang="es-ES">Mongolia</name>
+<name xml:lang="en-US">Mongolia</name>
+					</choice>
+					<choice id="ms">
+						<name>Monserrat</name>
+<name xml:lang="pt-BR">Monserrat</name>
+<name xml:lang="es-ES">Monserrat</name>
+<name xml:lang="en-US">Monserrat</name>
+					</choice>
+					<choice id="ma">
+						<name>Morocco</name>
+<name xml:lang="pt-BR">Marrocos</name>
+<name xml:lang="es-ES">Marruecos</name>
+<name xml:lang="en-US">Morocco</name>
+					</choice>
+					<choice id="mz">
+						<name>Mozambique</name>
+<name xml:lang="pt-BR">Moçambique</name>
+<name xml:lang="es-ES">Mozambique</name>
+<name xml:lang="en-US">Mozambique</name>
+					</choice>
+					<choice id="na">
+						<name>Nambia</name>
+<name xml:lang="pt-BR">Namíbia</name>
+<name xml:lang="es-ES">Namibia</name>
+<name xml:lang="en-US">Nambia</name>
+					</choice>
+					<choice id="nr">
+						<name>Nauru</name>
+<name xml:lang="pt-BR">Nauru</name>
+<name xml:lang="es-ES">Nauru</name>
+<name xml:lang="en-US">Nauru</name>
+					</choice>
+					<choice id="np">
+						<name>Nepal</name>
+<name xml:lang="pt-BR">Nepal</name>
+<name xml:lang="es-ES">Nepal</name>
+<name xml:lang="en-US">Nepal</name>
+					</choice>
+					<choice id="nl">
+						<name>Netherlands</name>
+<name xml:lang="pt-BR">Holanda</name>
+<name xml:lang="es-ES">Países Bajos</name>
+<name xml:lang="en-US">Netherlands</name>
+					</choice>
+					<choice id="an">
+						<name>Netherlands Antilles</name>
+<name xml:lang="pt-BR">Antilhas Holandesas</name>
+<name xml:lang="es-ES">Antillas Holandesas</name>
+<name xml:lang="en-US">Netherlands Antilles</name>
+					</choice>
+					<choice id="nc">
+						<name>New Caledonia</name>
+<name xml:lang="pt-BR">Nova Caledônia</name>
+<name xml:lang="es-ES">Nueva Caledonia</name>
+<name xml:lang="en-US">New Caledonia</name>
+					</choice>
+					<choice id="nz">
+						<name>New Zealand</name>
+<name xml:lang="pt-BR">Nova Zelândia</name>
+<name xml:lang="es-ES">Nueva Zelanda</name>
+<name xml:lang="en-US">New Zealand</name>
+					</choice>
+					<choice id="ni">
+						<name>Nicaragua</name>
+<name xml:lang="pt-BR">Nicarágua</name>
+<name xml:lang="es-ES">Nicaragua</name>
+<name xml:lang="en-US">Nicaragua</name>
+					</choice>
+					<choice id="ne">
+						<name>Niger</name>
+<name xml:lang="pt-BR">Níger</name>
+<name xml:lang="es-ES">Níger</name>
+<name xml:lang="en-US">Niger</name>
+					</choice>
+					<choice id="ng">
+						<name>Nigeria</name>
+<name xml:lang="pt-BR">Nigéria</name>
+<name xml:lang="es-ES">Nigeria</name>
+<name xml:lang="en-US">Nigeria</name>
+					</choice>
+					<choice id="nu">
+						<name>Niue</name>
+<name xml:lang="pt-BR">Niue</name>
+<name xml:lang="es-ES">Niue</name>
+<name xml:lang="en-US">Niue</name>
+					</choice>
+					<choice id="nf">
+						<name>Norfolk Island</name>
+<name xml:lang="pt-BR">Ilha Norfolk</name>
+<name xml:lang="es-ES">Isla Norfolk</name>
+<name xml:lang="en-US">Norfolk Island</name>
+					</choice>
+					<choice id="mp">
+						<name>Northern Mariana Islands</name>
+<name xml:lang="pt-BR">Ilhas Marianas do Norte</name>
+<name xml:lang="es-ES">Islas Marianas del Norte</name>
+<name xml:lang="en-US">Northern Mariana Islands</name>
+					</choice>
+					<choice id="no">
+						<name>Norway</name>
+<name xml:lang="pt-BR">Noruega</name>
+<name xml:lang="es-ES">Noruega</name>
+<name xml:lang="en-US">Norway</name>
+					</choice>
+					<choice id="om">
+						<name>Oman</name>
+<name xml:lang="pt-BR">Omã</name>
+<name xml:lang="es-ES">Omán</name>
+<name xml:lang="en-US">Oman</name>
+					</choice>
+					<choice id="pk">
+						<name>Pakistan</name>
+<name xml:lang="pt-BR">Paquistão</name>
+<name xml:lang="es-ES">Pakistán</name>
+<name xml:lang="en-US">Pakistan</name>
+					</choice>
+					<choice id="pw">
+						<name>Palau</name>
+<name xml:lang="pt-BR">Palau</name>
+<name xml:lang="es-ES">Palau</name>
+<name xml:lang="en-US">Palau</name>
+					</choice>
+					<choice id="ps">
+						<name>Palestinian Territory, Occupied</name>
+<name xml:lang="pt-BR">Território Ocupado da Palestina</name>
+<name xml:lang="es-ES">Territorios Palestinos, Ocupados</name>
+<name xml:lang="en-US">Palestinian Territory, Occupied</name>
+					</choice>
+					<choice id="pa">
+						<name>Panama</name>
+<name xml:lang="pt-BR">Panamá</name>
+<name xml:lang="es-ES">Panamá</name>
+<name xml:lang="en-US">Panama</name>
+					</choice>
+					<choice id="pg">
+						<name>Papua New Guinea</name>
+<name xml:lang="pt-BR">Papua-Nova Guiné</name>
+<name xml:lang="es-ES">Papúa Nueva Guinea</name>
+<name xml:lang="en-US">Papua New Guinea</name>
+					</choice>
+					<choice id="py">
+						<name>Paraguay</name>
+<name xml:lang="pt-BR">Paraguai</name>
+<name xml:lang="es-ES">Paraguay</name>
+<name xml:lang="en-US">Paraguay</name>
+					</choice>
+					<choice id="pe">
+						<name>Peru</name>
+<name xml:lang="pt-BR">Peru</name>
+<name xml:lang="es-ES">Perú</name>
+<name xml:lang="en-US">Peru</name>
+					</choice>
+					<choice id="ph">
+						<name>Philippines</name>
+<name xml:lang="pt-BR">Filipinas</name>
+<name xml:lang="es-ES">Filipinas</name>
+<name xml:lang="en-US">Philippines</name>
+					</choice>
+					<choice id="pn">
+						<name>Pitcairn</name>
+<name xml:lang="pt-BR">Pitcairn</name>
+<name xml:lang="es-ES">Pitcairn</name>
+<name xml:lang="en-US">Pitcairn</name>
+					</choice>
+					<choice id="pl">
+						<name>Poland</name>
+<name xml:lang="pt-BR">Polônia</name>
+<name xml:lang="es-ES">Polonia</name>
+<name xml:lang="en-US">Poland</name>
+					</choice>
+					<choice id="pt">
+						<name>Portugal</name>
+<name xml:lang="pt-BR">Portugal</name>
+<name xml:lang="es-ES">Portugal</name>
+<name xml:lang="en-US">Portugal</name>
+					</choice>
+					<choice id="pr">
+						<name>Puerto Rico</name>
+<name xml:lang="pt-BR">Porto Rico</name>
+<name xml:lang="es-ES">Puerto Rico</name>
+<name xml:lang="en-US">Puerto Rico</name>
+					</choice>
+					<choice id="qa">
+						<name>Qatar</name>
+<name xml:lang="pt-BR">Qatar</name>
+<name xml:lang="es-ES">Qatar</name>
+<name xml:lang="en-US">Qatar</name>
+					</choice>
+					<choice id="re">
+						<name>Reunion</name>
+<name xml:lang="pt-BR">Reunião</name>
+<name xml:lang="es-ES">Reunión</name>
+<name xml:lang="en-US">Reunion</name>
+					</choice>
+					<choice id="ro">
+						<name>Romania</name>
+<name xml:lang="pt-BR">Romênia</name>
+<name xml:lang="es-ES">Rumanía</name>
+<name xml:lang="en-US">Romania</name>
+					</choice>
+					<choice id="ru">
+						<name>Russian Federation</name>
+<name xml:lang="pt-BR">Federação Russa</name>
+<name xml:lang="es-ES">Federación Rusa</name>
+<name xml:lang="en-US">Russian Federation</name>
+					</choice>
+					<choice id="rw">
+						<name>Rwanda</name>
+<name xml:lang="pt-BR">Ruanda</name>
+<name xml:lang="es-ES">Ruanda</name>
+<name xml:lang="en-US">Rwanda</name>
+					</choice>
+					<choice id="sh">
+						<name>Saint Helena, Ascension and Tristan Da Cunha</name>
+<name xml:lang="pt-BR">Santa Helena, Ascenção e Tristão da Cunha</name>
+<name xml:lang="es-ES">Santa Elena, Ascensión y Tristán de Acuña</name>
+<name xml:lang="en-US">Saint Helena, Ascension and Tristan Da Cunha</name>
+					</choice>
+					<choice id="kn">
+						<name>Saint Kitts and Nevis</name>
+<name xml:lang="pt-BR">São Cristóvão e Névis</name>
+<name xml:lang="es-ES">San Cristóbal y Nieves</name>
+<name xml:lang="en-US">Saint Kitts and Nevis</name>
+					</choice>
+					<choice id="lc">
+						<name>Saint Lucia</name>
+<name xml:lang="pt-BR">Santa Lúcia</name>
+<name xml:lang="es-ES">Santa Lucía</name>
+<name xml:lang="en-US">Saint Lucia</name>
+					</choice>
+					<choice id="pm">
+						<name>Saint Pierre and Miquelon</name>
+<name xml:lang="pt-BR">São Pedro e Miquelon</name>
+<name xml:lang="es-ES">San Pedro y Miquelón</name>
+<name xml:lang="en-US">Saint Pierre and Miquelon</name>
+					</choice>
+					<choice id="vc">
+						<name>Saint Vincent and The Grenadines</name>
+<name xml:lang="pt-BR">São Vicente de Granadinas</name>
+<name xml:lang="es-ES">San Vicente y Las Granadinas</name>
+<name xml:lang="en-US">Saint Vincent and The Grenadines</name>
+					</choice>
+					<choice id="ws">
+						<name>Samoa</name>
+<name xml:lang="pt-BR">Samoa</name>
+<name xml:lang="es-ES">Samoa</name>
+<name xml:lang="en-US">Samoa</name>
+					</choice>
+					<choice id="sm">
+						<name>San Marino</name>
+<name xml:lang="pt-BR">São Marinho</name>
+<name xml:lang="es-ES">San Marino</name>
+<name xml:lang="en-US">San Marino</name>
+					</choice>
+					<choice id="st">
+						<name>Sao Tome and Principe</name>
+<name xml:lang="pt-BR">São Tomé e Príncipe</name>
+<name xml:lang="es-ES">Santo Tomé y Príncipe</name>
+<name xml:lang="en-US">Sao Tome and Principe</name>
+					</choice>
+					<choice id="sa">
+						<name>Saudi Arabia</name>
+<name xml:lang="pt-BR">Arábia Saudita</name>
+<name xml:lang="es-ES">Arabia Saudí</name>
+<name xml:lang="en-US">Saudi Arabia</name>
+					</choice>
+					<choice id="sn">
+						<name>Senegal</name>
+<name xml:lang="pt-BR">Senegal</name>
+<name xml:lang="es-ES">Senegal</name>
+<name xml:lang="en-US">Senegal</name>
+					</choice>
+					<choice id="rs">
+						<name>Serbia</name>
+<name xml:lang="pt-BR">Sérvia</name>
+<name xml:lang="es-ES">Serbia</name>
+<name xml:lang="en-US">Serbia</name>
+					</choice>
+					<choice id="sc">
+						<name>Seychelles</name>
+<name xml:lang="pt-BR">Seychelles</name>
+<name xml:lang="es-ES">Seychelles</name>
+<name xml:lang="en-US">Seychelles</name>
+					</choice>
+					<choice id="sl">
+						<name>Sierra Leone</name>
+<name xml:lang="pt-BR">Serra Leoa</name>
+<name xml:lang="es-ES">Sierra Leona</name>
+<name xml:lang="en-US">Sierra Leone</name>
+					</choice>
+					<choice id="sg">
+						<name>Singapore</name>
+<name xml:lang="pt-BR">Cingapura</name>
+<name xml:lang="es-ES">Singapur</name>
+<name xml:lang="en-US">Singapore</name>
+					</choice>
+					<choice id="sk">
+						<name>Slovakia</name>
+<name xml:lang="pt-BR">Eslováquia</name>
+<name xml:lang="es-ES">Eslovaquia</name>
+<name xml:lang="en-US">Slovakia</name>
+					</choice>
+					<choice id="si">
+						<name>Slovenia</name>
+<name xml:lang="pt-BR">Eslovênia</name>
+<name xml:lang="es-ES">Eslovenia</name>
+<name xml:lang="en-US">Slovenia</name>
+					</choice>
+					<choice id="sb">
+						<name>Solomon Islands</name>
+<name xml:lang="pt-BR">Ilhas Salomão</name>
+<name xml:lang="es-ES">Islas Salomón</name>
+<name xml:lang="en-US">Solomon Islands</name>
+					</choice>
+					<choice id="so">
+						<name>Somalia</name>
+<name xml:lang="pt-BR">Somália</name>
+<name xml:lang="es-ES">Somalia</name>
+<name xml:lang="en-US">Somalia</name>
+					</choice>
+					<choice id="za">
+						<name>South Africa</name>
+<name xml:lang="pt-BR">África do Sul</name>
+<name xml:lang="es-ES">Sudáfrica</name>
+<name xml:lang="en-US">South Africa</name>
+					</choice>
+					<choice id="gs">
+						<name>South Georgia and the South Sandwich Islands</name>
+<name xml:lang="pt-BR">Ilhas Geórgia do Sul e Sandwich do Sul</name>
+<name xml:lang="es-ES">Georgia Del Sur e Islas Sandwich del Sur</name>
+<name xml:lang="en-US">South Georgia and the South Sandwich Islands</name>
+					</choice>
+					<choice id="es">
+						<name>Spain</name>
+<name xml:lang="pt-BR">Espanha</name>
+<name xml:lang="es-ES">España</name>
+<name xml:lang="en-US">Spain</name>
+					</choice>
+					<choice id="lk">
+						<name>Sri Lanka</name>
+<name xml:lang="pt-BR">Sri Lanka</name>
+<name xml:lang="es-ES">Sri Lanka</name>
+<name xml:lang="en-US">Sri Lanka</name>
+					</choice>
+					<choice id="sr">
+						<name>Suriname</name>
+<name xml:lang="pt-BR">Suriname</name>
+<name xml:lang="es-ES">Surinam</name>
+<name xml:lang="en-US">Suriname</name>
+					</choice>
+					<choice id="sj">
+						<name>Svalbard and Jan Mayen</name>
+<name xml:lang="pt-BR">Ilhas Svalbard e Jan Mayen</name>
+<name xml:lang="es-ES">Svalbard e Islas Jan Mayen</name>
+<name xml:lang="en-US">Svalbard and Jan Mayen</name>
+					</choice>
+					<choice id="sz">
+						<name>Swaziland</name>
+<name xml:lang="pt-BR">Suazilândia</name>
+<name xml:lang="es-ES">Suazilandia</name>
+<name xml:lang="en-US">Swaziland</name>
+					</choice>
+					<choice id="se">
+						<name>Sweden</name>
+<name xml:lang="pt-BR">Suécia</name>
+<name xml:lang="es-ES">Suecia</name>
+<name xml:lang="en-US">Sweden</name>
+					</choice>
+					<choice id="ch">
+						<name>Switzerland</name>
+<name xml:lang="pt-BR">Suíça</name>
+<name xml:lang="es-ES">Suiza</name>
+<name xml:lang="en-US">Switzerland</name>
+					</choice>
+					<choice id="tw">
+						<name>Taiwan, Province of China</name>
+<name xml:lang="pt-BR">Taiwan</name>
+<name xml:lang="es-ES">Taiwán, Provincia de China</name>
+<name xml:lang="en-US">Taiwan, Province of China</name>
+					</choice>
+					<choice id="tj">
+						<name>Tajikistan</name>
+<name xml:lang="pt-BR">Tadjiquistão</name>
+<name xml:lang="es-ES">Tayikistán</name>
+<name xml:lang="en-US">Tajikistan</name>
+					</choice>
+					<choice id="tz">
+						<name>Tanzania, United Republic of</name>
+<name xml:lang="pt-BR">República Unida da Tanzânia</name>
+<name xml:lang="es-ES">Tanzania, República Unida de</name>
+<name xml:lang="en-US">Tanzania, United Republic of</name>
+					</choice>
+					<choice id="th">
+						<name>Thailand</name>
+<name xml:lang="pt-BR">Tailândia</name>
+<name xml:lang="es-ES">Tailandia</name>
+<name xml:lang="en-US">Thailand</name>
+					</choice>
+					<choice id="tg">
+						<name>Togo</name>
+<name xml:lang="pt-BR">Togo</name>
+<name xml:lang="es-ES">Togo</name>
+<name xml:lang="en-US">Togo</name>
+					</choice>
+					<choice id="tk">
+						<name>Tokelau</name>
+<name xml:lang="pt-BR">Tokelau</name>
+<name xml:lang="es-ES">Tokelau</name>
+<name xml:lang="en-US">Tokelau</name>
+					</choice>
+					<choice id="to">
+						<name>Tonga</name>
+<name xml:lang="pt-BR">Tonga</name>
+<name xml:lang="es-ES">Tonga</name>
+<name xml:lang="en-US">Tonga</name>
+					</choice>
+					<choice id="tt">
+						<name>Trinidad and Tobago</name>
+<name xml:lang="pt-BR">Trinidad e Tobago</name>
+<name xml:lang="es-ES">Trinidad y Tobago</name>
+<name xml:lang="en-US">Trinidad and Tobago</name>
+					</choice>
+					<choice id="tn">
+						<name>Tunisia</name>
+<name xml:lang="pt-BR">Tunísia</name>
+<name xml:lang="es-ES">Túnez</name>
+<name xml:lang="en-US">Tunisia</name>
+					</choice>
+					<choice id="tr">
+						<name>Turkey</name>
+<name xml:lang="pt-BR">Turquia</name>
+<name xml:lang="es-ES">Turquía</name>
+<name xml:lang="en-US">Turkey</name>
+					</choice>
+					<choice id="tm">
+						<name>Turkmenistan</name>
+<name xml:lang="pt-BR">Turcomenistão</name>
+<name xml:lang="es-ES">Turkmenistán</name>
+<name xml:lang="en-US">Turkmenistan</name>
+					</choice>
+					<choice id="tc">
+						<name>Turks and Caicos Islands</name>
+<name xml:lang="pt-BR">Ilhas Turks e Caicos</name>
+<name xml:lang="es-ES">Islas Turcas y Caicos</name>
+<name xml:lang="en-US">Turks and Caicos Islands</name>
+					</choice>
+					<choice id="tv">
+						<name>Tuvalu</name>
+<name xml:lang="pt-BR">Tuvalu</name>
+<name xml:lang="es-ES">Tuvalu</name>
+<name xml:lang="en-US">Tuvalu</name>
+					</choice>
+					<choice id="ug">
+						<name>Uganda</name>
+<name xml:lang="pt-BR">Uganda</name>
+<name xml:lang="es-ES">Uganda</name>
+<name xml:lang="en-US">Uganda</name>
+					</choice>
+					<choice id="ua">
+						<name>Ukraine</name>
+<name xml:lang="pt-BR">Ucrânia</name>
+<name xml:lang="es-ES">Ucrania</name>
+<name xml:lang="en-US">Ukraine</name>
+					</choice>
+					<choice id="ae">
+						<name>United Arab Emirates</name>
+<name xml:lang="pt-BR">Emirados Árabes Unidos</name>
+<name xml:lang="es-ES">Emiratos Árabes Unidos</name>
+<name xml:lang="en-US">United Arab Emirates</name>
+					</choice>
+					<choice id="gb">
+						<name>United Kingdom (Great Britain)</name>
+<name xml:lang="pt-BR">Reino Unido (Grã-Bretanha)</name>
+<name xml:lang="es-ES">Reino Unido (Gran Bretaña)</name>
+<name xml:lang="en-US">United Kingdom (Great Britain)</name>
+					</choice>
+					<choice id="us">
+						<name>United States</name>
+<name xml:lang="pt-BR">Estados Unidos</name>
+<name xml:lang="es-ES">Estados Unidos</name>
+<name xml:lang="en-US">United States</name>
+					</choice>
+					<choice id="um">
+						<name>United States Minor Outlying Islands</name>
+<name xml:lang="pt-BR">Territórios Insulares dos EUA</name>
+<name xml:lang="es-ES">Islas Menores Alejadas de los Estados Unidos</name>
+<name xml:lang="en-US">United States Minor Outlying Islands</name>
+					</choice>
+					<choice id="uy">
+						<name>Uruguay</name>
+<name xml:lang="pt-BR">Uruguai</name>
+<name xml:lang="es-ES">Uruguay</name>
+<name xml:lang="en-US">Uruguay</name>
+					</choice>
+					<choice id="uz">
+						<name>Uzbekistan</name>
+<name xml:lang="pt-BR">Uzbequistão</name>
+<name xml:lang="es-ES">Uzbekistán</name>
+<name xml:lang="en-US">Uzbekistan</name>
+					</choice>
+					<choice id="vu">
+						<name>Vanuatu</name>
+<name xml:lang="pt-BR">Vanuatu</name>
+<name xml:lang="es-ES">Vanuatu</name>
+<name xml:lang="en-US">Vanuatu</name>
+					</choice>
+					<choice id="ve">
+						<name>Venezuela, Bolivarian Republic of</name>
+<name xml:lang="pt-BR">República Bolivariana da Venezuela</name>
+<name xml:lang="es-ES">Venezuela, República Bolivariana de</name>
+<name xml:lang="en-US">Venezuela, Bolivarian Republic of</name>
+					</choice>
+					<choice id="vn">
+						<name>Viet Nam</name>
+<name xml:lang="pt-BR">Vietnã</name>
+<name xml:lang="es-ES">Vietnam</name>
+<name xml:lang="en-US">Viet Nam</name>
+					</choice>
+					<choice id="vg">
+						<name>Virgin Islands, British</name>
+<name xml:lang="pt-BR">Ilhas Virgens Britânicas</name>
+<name xml:lang="es-ES">Islas Vírgenes, Británicas</name>
+<name xml:lang="en-US">Virgin Islands, British</name>
+					</choice>
+					<choice id="vi">
+						<name>Virgin Islands, U.S.</name>
+<name xml:lang="pt-BR">Ilhas Virgens Americanas</name>
+<name xml:lang="es-ES">Islas Vírgenes, Estadounidenses</name>
+<name xml:lang="en-US">Virgin Islands, U.S.</name>
+					</choice>
+					<choice id="wf">
+						<name>Wallis and Futuna Islands</name>
+<name xml:lang="pt-BR">Ilhas Wallis e Futuna</name>
+<name xml:lang="es-ES">Islas Wallis y Futuna</name>
+<name xml:lang="en-US">Wallis and Futuna Islands</name>
+					</choice>
+					<choice id="eh">
+						<name>Western Sahara</name>
+<name xml:lang="pt-BR">Saara Ocidental</name>
+<name xml:lang="es-ES">Sahara Occidental</name>
+<name xml:lang="en-US">Western Sahara</name>
+					</choice>
+					<choice id="ye">
+						<name>Yemen</name>
+<name xml:lang="pt-BR">Iêmen</name>
+<name xml:lang="es-ES">Yemen</name>
+<name xml:lang="en-US">Yemen</name>
+					</choice>
+					<choice id="zm">
+						<name>Zambia</name>
+<name xml:lang="pt-BR">Zâmbia</name>
+<name xml:lang="es-ES">Zambia</name>
+<name xml:lang="en-US">Zambia</name>
+					</choice>
+					<choice id="zw">
+						<name>Zimbabwe</name>
+<name xml:lang="pt-BR">Zimbábue</name>
+<name xml:lang="es-ES">Zimbabue</name>
+<name xml:lang="en-US">Zimbabwe</name>
+					</choice>
+				</setting>
+				<setting class="work" id="contact_phone" max-length="25" min-length="1" track-old-value="true" type="string">
+					<name>Phone</name>
+<name xml:lang="pt-BR">Telefone</name>
+<name xml:lang="es-ES">Teléfono</name>
+<name xml:lang="en-US">Phone</name>
+				</setting>
+				<setting class="locale" default-value="en-US" id="user_language" type="enum">
+					<name>Language</name>
+<name xml:lang="pt-BR">Idioma</name>
+<name xml:lang="es-ES">Idioma</name>
+<name xml:lang="en-US">Language</name>
+					<description>Please select the language you would like for error messages.</description>
+<description xml:lang="pt-BR">Selecione o idioma no qual deseja receber mensagens de erro.</description>
+<description xml:lang="es-ES">Seleccione el idioma que desea para los mensajes de error.</description>
+<description xml:lang="en-US">Please select the language you would like for error messages.</description>
+					<choice id="en-US">
+						<name>English</name>
+<name xml:lang="pt-BR">Inglês</name>
+<name xml:lang="es-ES">Inglés</name>
+<name xml:lang="en-US">English</name>
+					</choice>
+					<choice id="es-ES">
+						<name>Spanish</name>
+<name xml:lang="pt-BR">Espanhol</name>
+<name xml:lang="es-ES">Español</name>
+<name xml:lang="en-US">Spanish</name>
+					</choice>
+					<choice id="pt-BR">
+						<name>Portuguese</name>
+<name xml:lang="pt-BR">Português</name>
+<name xml:lang="es-ES">Portugués</name>
+<name xml:lang="en-US">Portuguese</name>
+					</choice>
+				</setting>
+			</group>
+			
+			<group class="show:endpoint_added=1">
+				<name class="type">Administrator Contact for the McAfee SecurityCenter (Endpoint Protection)</name>
+<name xml:lang="pt-BR">Contato do administrador do McAfee SecurityCenter (Endpoint Protection Suite)</name>
+<name xml:lang="es-ES">Contacto de administrador para McAfee SecurityCenter (Endpoint Protection Suite)</name>
+<name xml:lang="en-US">Administrator Contact for the McAfee SecurityCenter (Endpoint Protection)</name>
+				
+				
+				<setting class="show:hide_security_center_input_fields=0" default-value="" id="security_center_static_text" optional="true" protected="true" type="string">
+					<description>Please enter the email address of the person who will receive credentials to log in to the McAfee SecurityCenter.</description>
+<description xml:lang="pt-BR">Digite o endereço de e-mail da pessoa que receberá as credenciais para efetuar login no McAfee SecurityCenter.</description>
+<description xml:lang="es-ES">Introduzca la dirección de correo electrónico de la persona que recibirá las credenciales para iniciar sesión en McAfee SecurityCenter.</description>
+<description xml:lang="en-US">Please enter the email address of the person who will receive credentials to log in to the McAfee SecurityCenter.</description>
+				</setting>
+				<setting class="show:hide_security_center_input_fields=0" default-value="" id="security_center_email" type="string">
+					<name>SecurityCenter Email</name>
+<name xml:lang="pt-BR">E-mail do SecurityCenter</name>
+<name xml:lang="es-ES">Dirección de correo electrónico de SecurityCenter</name>
+<name xml:lang="en-US">SecurityCenter Email</name>
+				</setting>
+				<setting class="show:hide_security_center_input_fields=0" default-value="" id="security_center_email_confirm" type="string">
+					<name>Confirm SecurityCenter Email</name>
+<name xml:lang="pt-BR">Confirmar e-mail do SecurityCenter</name>
+<name xml:lang="es-ES">Confirmar dirección de correo electrónico de SecurityCenter</name>
+<name xml:lang="en-US">Confirm SecurityCenter Email</name>
+				<description>Please re-enter your SecurityCenter Email to confirm.</description>
+<description xml:lang="pt-BR">Digite novamente seu e-mail do SecurityCenter para confirmar.</description>
+<description xml:lang="es-ES">Vuelva a introducir su dirección de correo electrónico de SecurityCenter para confirmarla.</description>
+<description xml:lang="en-US">Please re-enter your SecurityCenter Email to confirm.</description>
+			</setting>
+			
+				<setting class="show:hide_security_center_input_fields=1" default-value="" id="security_center_email_read_only" protected="true" type="string">
+					<name>SecurityCenter Email</name>
+<name xml:lang="pt-BR">E-mail do SecurityCenter</name>
+<name xml:lang="es-ES">Dirección de correo electrónico de SecurityCenter</name>
+<name xml:lang="en-US">SecurityCenter Email</name>
+			</setting>
+<setting class="show:hide_security_center_input_fields=0" default-value="" id="security_center_static_text_two" optional="true" protected="true" type="string">
+					<description>SecurityCenter Password for Endpoint Protection products.</description>
+<description xml:lang="pt-BR">Senha do SecurityCenter para os produtos Endpoint Protection.</description>
+<description xml:lang="es-ES">Contraseña de SecurityCenter para productos de Endpoint Protection Suite.</description>
+<description xml:lang="en-US">SecurityCenter Password for Endpoint Protection products.</description>
+				</setting>
+				
+				<setting class="show:hide_security_center_input_fields=0" default-value="" id="security_center_password" type="password">
+					<name>SecurityCenter Password</name>
+<name xml:lang="pt-BR">Senha do SecurityCenter</name>
+<name xml:lang="es-ES">Contraseña de SecurityCenter</name>
+<name xml:lang="en-US">SecurityCenter Password</name>
+				</setting>
+				<setting class="show:hide_security_center_input_fields=0" default-value="" id="security_center_password_confirm" type="password">
+					<name>Confirm SecurityCenter Password</name>
+<name xml:lang="pt-BR">Confirmar senha do SecurityCenter</name>
+<name xml:lang="es-ES">Confirmar contraseña de SecurityCenter</name>
+<name xml:lang="en-US">Confirm SecurityCenter Password</name>
+					<description>Please re-enter your SecurityCenter Password to confirm.</description>
+<description xml:lang="pt-BR">Digite novamente sua senha do SecurityCenter para confirmar.</description>
+<description xml:lang="es-ES">Vuelva a introducir su contraseña de SecurityCenter para confirmarla.</description>
+<description xml:lang="en-US">Please re-enter your SecurityCenter Password to confirm.</description>
+				</setting>
+<setting class="show:hide_security_center_input_fields=0" default-value="" id="security_center_password_value" protected="true" type="string" visibility="hidden"/>
+			<setting class="show:hide_security_center_input_fields=1" id="security_center_password_read_only" protected="true" type="string">
+					<name>SecurityCenter Password</name>
+<name xml:lang="pt-BR">Senha do SecurityCenter</name>
+<name xml:lang="es-ES">Contraseña de SecurityCenter</name>
+<name xml:lang="en-US">SecurityCenter Password</name>
+					<description>To manage your password please follow the SecurityCenter entry point to make changes directly on the McAfee SecurityCenter</description>
+<description xml:lang="pt-BR">Para gerenciar a sua senha, siga o ponto de entrada do SecurityCenter e faça as alterações diretamente no McAfee SecurityCenter</description>
+<description xml:lang="es-ES">Para administrar su contraseña, siga el punto de entrada de SecurityCenter a fin de realizar cambios directamente en McAfee SecurityCenter</description>
+<description xml:lang="en-US">To manage your password please follow the SecurityCenter entry point to make changes directly on the McAfee SecurityCenter</description>
+			</setting>
+</group>
+		
+			<group class="show:only_endpoint_added=0">
+				<name class="type">Administrator Contact for the McAfee Control Console (Email Protection, Web Protection, Archiving)</name>
+<name xml:lang="pt-BR">Contato do administrador para o McAfee Control Console (Email Protection, Web Protection, Arquivamento)</name>
+<name xml:lang="es-ES">Contacto administrador para la consola McAfee Control Console (Email Protection, Web Protection, Archiving)</name>
+<name xml:lang="en-US">Administrator Contact for the McAfee Control Console (Email Protection, Web Protection, Archiving)</name>
+				
+				<setting default-value="" id="other_settings_second_group_static_text" optional="true" protected="true" type="string">
+					<description>Please enter the email address of the person who will receive credentials to log into the McAfee Control Console.</description>
+<description xml:lang="pt-BR">Digite o endereço de e-mail da pessoa que receberá as credenciais para fazer login no McAfee Control Console.</description>
+<description xml:lang="es-ES">Introduzca la dirección de correo electrónico de la persona que recibirá las credenciales para iniciar sesión en McAfee Control Console.</description>
+<description xml:lang="en-US">Please enter the email address of the person who will receive credentials to log into the McAfee Control Console.</description>
+				</setting>
+<setting default-value="" id="other_settings_group_static_text" optional="true" protected="true" type="string">
+					<description>NOTE: You must select a domain on the previous screen in order to set up a Customer Administrator.</description>
+<description xml:lang="pt-BR">NOTA: você deve selecionar um domínio na tela anterior para configurar uma conta de Administrador de clientes.</description>
+<description xml:lang="es-ES">NOTA: Debe seleccionar un dominio en la pantalla anterior para configurar un administrador de clientes.</description>
+<description xml:lang="en-US">NOTE: You must select a domain on the previous screen in order to set up a Customer Administrator.</description>
+				</setting>
+<setting class="email-on-application-domain" default-value="" id="mfe_customer_admin_email" optional="true" type="email">
+					<name>McAfee Control Console Customer Administrator</name>
+<name xml:lang="pt-BR">Administrador de clientes do McAfee Control Console</name>
+<name xml:lang="es-ES">Administrador de clientes de McAfee Control Console</name>
+<name xml:lang="en-US">McAfee Control Console Customer Administrator</name>
+					<description>The Customer Administrator account cannot be modified from Parallels.  Please log into the McAfee Control Console to manage the Customer Administrator(s).</description>
+<description xml:lang="pt-BR">A conta de Administrador de clientes não pode ser modificada no Parallels. Faça login no McAfee Control Console para gerenciar os Administradores de clientes.</description>
+<description xml:lang="es-ES">La cuenta de administrador de clientes no se puede modificar desde Parallels.  Inicie sesión en McAfee Control Console para gestionar los administradores de clientes.</description>
+<description xml:lang="en-US">The Customer Administrator account cannot be modified from Parallels.  Please log into the McAfee Control Console to manage the Customer Administrator(s).</description>
+					<error-message>The value entered is not a valid email address</error-message>
+<error-message xml:lang="pt-BR">O valor digitado não é um endereço de e-mail válido</error-message>
+<error-message xml:lang="es-ES">El valor introducido no es una dirección de correo electrónico válida.</error-message>
+<error-message xml:lang="en-US">The value entered is not a valid email address</error-message>
+				</setting>
+				<setting default-value="" id="domains_settings_group_static_text" optional="true" protected="true" type="string">
+					<description>The Domain Contact email address will receive password reset requests for the McAfee Control Console.</description>
+<description xml:lang="pt-BR">O endereço de e-mail do Contato de domínio receberá as solicitações de redefinição de senha do McAfee Control Console.</description>
+<description xml:lang="es-ES">La dirección de correo electrónico de contacto de dominio recibirá solicitudes de restablecimiento de contraseña para McAfee Control Console.</description>
+<description xml:lang="en-US">The Domain Contact email address will receive password reset requests for the McAfee Control Console.</description>
+				</setting>
+				<setting class="email" id="admin_email" optional="true" track-old-value="true" type="email">
+					<name>Domain Contact</name>
+<name xml:lang="pt-BR">Contato de domínio</name>
+<name xml:lang="es-ES">Contacto de dominio</name>
+<name xml:lang="en-US">Domain Contact</name>
+					<description>If you choose to manage the domain contact within this section, do not make modifications to the domain contacts within the McAfee Control Console.</description>
+<description xml:lang="pt-BR">Se você optar por gerenciar o contato de domínio nesta seção, não faça modificações nos contatos de domínio no McAfee Control Console.</description>
+<description xml:lang="es-ES">Si elige gestionar el contacto de dominio en esta sección, no haga modificaciones en los contactos de dominio en McAfee Control Console.</description>
+<description xml:lang="en-US">If you choose to manage the domain contact within this section, do not make modifications to the domain contacts within the McAfee Control Console.</description>
+				</setting>
+<setting element-type="string" id="hidden_domains_list" protected="true" track-old-value="true" type="list" visibility="hidden">
+					<default-value/>
+				</setting>
+<setting class="domain-name" element-type="domain-name" id="domains" protected="true" track-old-value="true" type="list">
+					<name>Domains</name>
+<name xml:lang="pt-BR">Domínios</name>
+<name xml:lang="es-ES">Dominios</name>
+<name xml:lang="en-US">Domains</name>
+				</setting>
+				<setting class="show:hide_quarantine_period=0" default-value="7" id="customer_quarantine_period" track-old-value="true" type="enum">
+					<name>Quarantine Period</name>
+<name xml:lang="pt-BR">Período de quarentena</name>
+<name xml:lang="es-ES">Período de cuarentena</name>
+<name xml:lang="en-US">Quarantine Period</name>
+					<description>The retention period for quarantined email. This value is only used for standalone email products.</description>
+<description xml:lang="pt-BR">Período de retenção do e-mail em quarentena. Este valor é usado somente para os produtos de e-mail independentes.</description>
+<description xml:lang="es-ES">El período de retención del correo electrónico en cuarentena. Este valor solo se usa para productos de correo electrónico independientes.</description>
+<description xml:lang="en-US">The retention period for quarantined email. This value is only used for standalone email products.</description>
+					<choice id="7">
+						<name>7</name>
+					</choice>
+					<choice id="14">
+						<name>14</name>
+					</choice>
+				</setting>
+			</group>
+			
+			<group>
+				<name class="type">Email Protection</name>
+<name xml:lang="pt-BR">Email Protection</name>
+<name xml:lang="es-ES">Email Protection</name>
+<name xml:lang="en-US">Email Protection</name>
+				<group>
+					<name>MX Records</name>
+<name xml:lang="pt-BR">Registros MX</name>
+<name xml:lang="es-ES">Registros MX</name>
+<name xml:lang="en-US">MX Records</name>
+					
+					<setting class="show:email_protection_added=1" default-value="0" id="report_mx_records" type="enum">
+						<name>Automatically set MX records?</name>
+<name xml:lang="pt-BR">Deseja configurar automaticamente os registros MX?</name>
+<name xml:lang="es-ES">¿Establecer registros MX automáticamente?</name>
+<name xml:lang="en-US">Automatically set MX records?</name>
+						<description>In order to begin email filtering, you or your provider need to redirect your mail exchange (MX) records for all protected domains.</description>
+<description xml:lang="pt-BR">Para começar a filtragem de e-mails, é necessário que você ou seu provedor redirecione os seus registros MX para todos os domínios protegidos.</description>
+<description xml:lang="es-ES">Para comenzar el filtrado de correo electrónico, usted o su proveedor deben redirigir los registros de intercambio de correo (MX) para todos sus dominios protegidos.</description>
+<description xml:lang="en-US">In order to begin email filtering, you or your provider need to redirect your mail exchange (MX) records for all protected domains.</description>
+						<choice id="1">
+							<name>Yes</name>
+<name xml:lang="pt-BR">Sim</name>
+<name xml:lang="es-ES">Sí</name>
+<name xml:lang="en-US">Yes</name>
+						</choice>
+						<choice id="0">
+							<name>No</name>
+<name xml:lang="pt-BR">Não</name>
+<name xml:lang="es-ES">No</name>
+<name xml:lang="en-US">No</name>
+						</choice>
+					</setting>
+					
+					<setting class="show:email_protection_added=1" default-value="NA_MX_SERVERS" id="mcafee_data_center" type="enum">
+						<name>Datacenter Region</name>
+<name xml:lang="pt-BR">Região do Datacenter</name>
+<name xml:lang="es-ES">Región del centro de datos</name>
+<name xml:lang="en-US">Datacenter Region</name>
+	<description>Select the region that you wish to use for email filtering.</description>
+<description xml:lang="pt-BR">Selecione a região que você deseja usar para a filtragem de e-mails.</description>
+<description xml:lang="es-ES">Seleccione la región que desea usar para el filtrado de correo electrónico.</description>
+<description xml:lang="en-US">Select the region that you wish to use for email filtering.</description>
+	<choice id="NA_MX_SERVERS">
+							<name>North America</name>
+<name xml:lang="pt-BR">América do Norte</name>
+<name xml:lang="es-ES">América del Norte</name>
+<name xml:lang="en-US">North America</name>
+						</choice>
+						<choice id="EMEA_MX_SERVERS">
+							<name>Amsterdam/London</name>
+<name xml:lang="pt-BR">Amsterdam/Londres</name>
+<name xml:lang="es-ES">Ámsterdam/Londres</name>
+<name xml:lang="en-US">Amsterdam/London</name>
+						</choice>
+						<choice id="APAC_MX_SERVERS">
+							<name>Tokyo, Japan</name>
+<name xml:lang="pt-BR">Tóquio, Japão</name>
+<name xml:lang="es-ES">Tokio, Japón</name>
+<name xml:lang="en-US">Tokyo, Japan</name>
+						</choice>
+						<choice id="ANZ_MX_SERVERS">
+							<name>Sydney, Australia</name>
+<name xml:lang="pt-BR">Sydney, Austrália</name>
+<name xml:lang="es-ES">Sídney, Australia</name>
+<name xml:lang="en-US">Sydney, Australia</name>
+						</choice>
+						<choice id="NZ_MX_SERVERS">
+							<name>Auckland, New Zealand</name>
+<name xml:lang="pt-BR">Auckland, Nova Zelândia</name>
+<name xml:lang="es-ES">Auckland, Nueva Zelanda</name>
+<name xml:lang="en-US">Auckland, New Zealand</name>
+						</choice>
+					</setting>
+					<setting element-type="string" id="mx-source" protected="true" type="list" visibility="hidden">
+						<default-value/>
+					</setting>
+					<setting element-type="string" id="mx-target" protected="true" type="list" visibility="hidden">
+						<default-value/>
+					</setting>
+				</group>
+				
+				<group>
+					<name>Inbound Servers</name>
+<name xml:lang="pt-BR">Servidores de entrada</name>
+<name xml:lang="es-ES">Servidores entrantes</name>
+<name xml:lang="en-US">Inbound Servers</name>
+					<setting class="show:email_product_added=1" default-value="" id="inbound_server_static_text" optional="true" protected="true" type="string">
+						<description>Provide the inbound server(s) to which McAfee will route your filtered email.</description>
+<description xml:lang="pt-BR">Forneça os servidores de entrada para os quais a McAfee direcionará seus e-mails filtrados.</description>
+<description xml:lang="es-ES">Proporcione los servidores entrantes a los que McAfee enrutará su correo electrónico filtrado.</description>
+<description xml:lang="en-US">Provide the inbound server(s) to which McAfee will route your filtered email.</description>
+					</setting>
+<setting class="show:email_product_added=1" id="inbound_server" optional="true" track-old-value="true" type="list">
+						<name>Inbound Servers</name>
+<name xml:lang="pt-BR">Servidores de entrada</name>
+<name xml:lang="es-ES">Servidores entrantes</name>
+<name xml:lang="en-US">Inbound Servers</name>
+						<description>If you choose to manage the inbound servers within this section, do not make modifications to the inbound servers within the McAfee Control Console.</description>
+<description xml:lang="pt-BR">Se você optar por gerenciar os servidores de entrada nesta seção, não faça modificações nos servidores de entrada no McAfee Control Console.</description>
+<description xml:lang="es-ES">Si elige gestionar los servidores entrantes en esta sección, no haga modificaciones en los servidores entrantes en McAfee Control Console.</description>
+<description xml:lang="en-US">If you choose to manage the inbound servers within this section, do not make modifications to the inbound servers within the McAfee Control Console.</description>
+					</setting>
+				</group>
+				
+				<group class="show:email_protection_added=1">
+					<name>Outbound Servers</name>
+<name xml:lang="pt-BR">Servidores de saída</name>
+<name xml:lang="es-ES">Servidores salientes</name>
+<name xml:lang="en-US">Outbound Servers</name>
+					<setting class="show:email_protection_added=1" default-value="" id="outbound_server_static_text" optional="true" protected="true" type="string">
+						<description>Provide the outbound server(s) for outbound email filtering.  You can configure individual IP addresses or a range of addresses using CIDR notation.</description>
+<description xml:lang="pt-BR">Forneça os servidores de saída para a filtragem de e-mails enviados. É possível configurar endereços IP individuais ou um intervalo de endereços usando a notação CIDR.</description>
+<description xml:lang="es-ES">Proporcione los servidores salientes para el filtrado de correo electrónico saliente. Puede configurar direcciones IP individuales o un intervalo de direcciones con la notación CIDR.</description>
+<description xml:lang="en-US">Provide the outbound server(s) for outbound email filtering.  You can configure individual IP addresses or a range of addresses using CIDR notation.</description>
+					</setting>
+<setting class="show:email_protection_added=1" id="outbound_server" optional="true" track-old-value="true" type="list">
+						<name>Outbound Servers</name>
+<name xml:lang="pt-BR">Servidores de saída</name>
+<name xml:lang="es-ES">Servidores salientes</name>
+<name xml:lang="en-US">Outbound Servers</name>
+						<description>If you choose to manage the outbound servers within this section, do not make modifications to the outbound servers within the McAfee Control Console.</description>
+<description xml:lang="pt-BR">Se você optar por gerenciar os servidores de saída nesta seção, não faça modificações nos servidores de saída no McAfee Control Console.</description>
+<description xml:lang="es-ES">Si elige gestionar los servidores salientes en esta sección, no haga modificaciones en los servidores salientes en McAfee Control Console.</description>
+<description xml:lang="en-US">If you choose to manage the outbound servers within this section, do not make modifications to the outbound servers within the McAfee Control Console.</description>
+					</setting>
+				</group>
+			</group>
+			
+			<group class="show:archiving_added=1">
+				<name>Email Archiving</name>
+<name xml:lang="pt-BR">Email Archiving</name>
+<name xml:lang="es-ES">Email Archiving</name>
+<name xml:lang="en-US">Email Archiving</name>
+				
+				<group>
+					<name>Journal Retention Months</name>
+<name xml:lang="pt-BR">Meses de retenção do diário</name>
+<name xml:lang="es-ES">Meses de retención del diario</name>
+<name xml:lang="en-US">Journal Retention Months</name>
+					<setting default-value="0" id="archive_retention_months" track-old-value="true" type="enum">
+						<name>Email Archiving Retention Period</name>
+<name xml:lang="pt-BR">Período de retenção do Email Archiving</name>
+<name xml:lang="es-ES">Período de retención de Email Archiving</name>
+<name xml:lang="en-US">Email Archiving Retention Period</name>
+						<error-message>Please choose the archive retention period</error-message>
+<error-message xml:lang="pt-BR">Escolha o período de retenção de arquivo</error-message>
+<error-message xml:lang="es-ES">Elija el período de retención de archivado.</error-message>
+<error-message xml:lang="en-US">Please choose the archive retention period</error-message>
+						<choice id="0">
+							<name>Select</name>
+<name xml:lang="pt-BR">Selecionar</name>
+<name xml:lang="es-ES">Seleccionar</name>
+<name xml:lang="en-US">Select</name>
+						</choice>
+<choice id="01">
+							<name>30 Days</name>
+<name xml:lang="pt-BR">30 dias</name>
+<name xml:lang="es-ES">30 días</name>
+<name xml:lang="en-US">30 Days</name>
+						</choice>
+						<choice id="02">
+							<name>60 Days</name>
+<name xml:lang="pt-BR">60 dias</name>
+<name xml:lang="es-ES">60 días</name>
+<name xml:lang="en-US">60 Days</name>
+						</choice>
+						<choice id="03">
+							<name>90 Days</name>
+<name xml:lang="pt-BR">90 dias</name>
+<name xml:lang="es-ES">90 días</name>
+<name xml:lang="en-US">90 Days</name>
+						</choice>
+						<choice id="06">
+							<name>180 Days</name>
+<name xml:lang="pt-BR">180 dias</name>
+<name xml:lang="es-ES">180 días</name>
+<name xml:lang="en-US">180 Days</name>
+						</choice>
+						<choice id="09">
+							<name>270 Days</name>
+<name xml:lang="pt-BR">270 dias</name>
+<name xml:lang="es-ES">270 días</name>
+<name xml:lang="en-US">270 Days</name>
+						</choice>
+						<choice id="12">
+							<name>1 Year</name>
+<name xml:lang="pt-BR">1 ano</name>
+<name xml:lang="es-ES">1 año</name>
+<name xml:lang="en-US">1 Year</name>
+						</choice>
+						<choice id="24">
+							<name>2 Years</name>
+<name xml:lang="pt-BR">2 anos</name>
+<name xml:lang="es-ES">2 años</name>
+<name xml:lang="en-US">2 Years</name>
+						</choice>
+						<choice id="36">
+							<name>3 Years</name>
+<name xml:lang="pt-BR">3 anos</name>
+<name xml:lang="es-ES">3 años</name>
+<name xml:lang="en-US">3 Years</name>
+						</choice>
+						<choice id="48">
+							<name>4 Years</name>
+<name xml:lang="pt-BR">4 anos</name>
+<name xml:lang="es-ES">4 años</name>
+<name xml:lang="en-US">4 Years</name>
+						</choice>
+						<choice id="60">
+							<name>5 Years</name>
+<name xml:lang="pt-BR">5 anos</name>
+<name xml:lang="es-ES">5 años</name>
+<name xml:lang="en-US">5 Years</name>
+						</choice>
+						<choice id="72">
+							<name>6 Years</name>
+<name xml:lang="pt-BR">6 anos</name>
+<name xml:lang="es-ES">6 años</name>
+<name xml:lang="en-US">6 Years</name>
+						</choice>
+						<choice id="84">
+							<name>7 Years</name>
+<name xml:lang="pt-BR">7 anos</name>
+<name xml:lang="es-ES">7 años</name>
+<name xml:lang="en-US">7 Years</name>
+						</choice>
+						<choice id="96">
+							<name>8 Years</name>
+<name xml:lang="pt-BR">8 anos</name>
+<name xml:lang="es-ES">8 años</name>
+<name xml:lang="en-US">8 Years</name>
+						</choice>
+						<choice id="108">
+							<name>9 Years</name>
+<name xml:lang="pt-BR">9 anos</name>
+<name xml:lang="es-ES">9 años</name>
+<name xml:lang="en-US">9 Years</name>
+						</choice>
+						<choice id="120">
+							<name>10 Years</name>
+<name xml:lang="pt-BR">10 anos</name>
+<name xml:lang="es-ES">10 años</name>
+<name xml:lang="en-US">10 Years</name>
+						</choice>
+					</setting>
+				</group>
+			</group>
+			
+			<group>
+				<setting default-value="mainservice" id="sku" protected="true" type="string" visibility="hidden">
+					<name>sku</name>
+				</setting>
+				<setting default-value="0" id="customer_id" protected="true" track-old-value="true" type="string" visibility="hidden">
+					<name>McAfee Customer Id</name>
+				</setting>
+				<setting default-value="0" id="custadmin_id" protected="true" track-old-value="true" type="string" visibility="hidden">
+					<name>McAfee Customer Administrator Id</name>
+				</setting>
+<setting class="subscription_id" default-value="" id="subscription_id" protected="true" track-old-value="true" type="string" visibility="hidden">
+					<name>Subscription Id</name>
+				</setting>
+				<setting default-value="false" id="customer_already_existed" protected="true" type="boolean" visibility="hidden">
+					<name>Customer already existed on McAfee</name>
+				</setting>
+				<setting class="subscription-user-limit" id="mcafee_user_limit" protected="true" type="string" visibility="hidden">
+					<name>Service User Limit</name>
+				</setting>
+				<setting default-value="0" id="only_endpoint_added" protected="true" type="string" visibility="hidden">
+					<name>only_endpoint_added</name>
+				</setting>
+			<setting default-value="0" id="endpoint_added" protected="true" type="string" visibility="hidden">
+					<name>endpoint_added</name>
+				</setting>
+<setting default-value="1" id="first_load" protected="true" type="string" visibility="hidden">
+					<name>First load of the provisioning screen</name>
+				</setting>
+<setting default-value="0" id="email_protection_added" protected="true" type="string" visibility="hidden">
+					<name>email_protection_added</name>
+				</setting>
+<setting default-value="0" id="archiving_added" protected="true" type="string" visibility="hidden">
+					<name>archiving_added</name>
+				</setting>
+<setting default-value="0" id="inbound_filtering_added" protected="true" type="string" visibility="hidden">
+					<name>inbound_filtering_added</name>
+				</setting>
+<setting default-value="0" id="email_product_added" protected="true" type="string" visibility="hidden">
+					<name>email_product_added</name>
+				</setting>
+<setting default-value="" id="show_control_console_entry_point" protected="true" type="string" visibility="hidden">
+					<name>show_control_console_entry_point</name>
+				</setting>
+<setting default-value="" id="show_security_center_entry_point" protected="true" type="string" visibility="hidden">
+					<name>show_security_center_entry_point</name>
+				</setting>
+				<setting default-value="1.13" id="version" optional="true" protected="true" type="string" visibility="hidden">
+					<name>APS Version</name>
+				</setting>
+				<setting default-value="0" id="hide_quarantine_period" protected="true" type="string" visibility="hidden"/>
+			<setting default-value="0" id="hide_security_center_input_fields" protected="true" type="string" visibility="hidden"/>
+</group>
+			
+			<group>
+				<name>Purchase Instructions</name>
+<name xml:lang="pt-BR">Instruções de compra</name>
+<name xml:lang="es-ES">Instrucciones de compra</name>
+<name xml:lang="en-US">Purchase Instructions</name>
+				<setting default-value="" id="additional_ordering_information" optional="true" protected="true" type="string" visibility="hidden">
+					<name>Additional Ordering Information</name>
+<name xml:lang="pt-BR">Informações adicionais sobre o pedido</name>
+<name xml:lang="es-ES">Información de pedido adicional</name>
+<name xml:lang="en-US">Additional Ordering Information</name>
+					<description>If you wish to add special notes to appear on each invoice sent from McAfee, provide the necessary text here.</description>
+				</setting>
+			</group>
+		
+			<group class="">
+				<name class="type">Products</name>
+				
+				<setting default-value="0" id="email_protection_and_continuity" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email Protection and Continuity</name>
+				</setting>
+				<setting default-value="0" id="email_inbound_filtering" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email Inbound Filtering</name>
+				</setting>
+<setting default-value="0" id="email_14_day_quarantine" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email 14 day Quarantine</name>
+				</setting>
+<setting default-value="0" id="web_protection" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Web Protection</name>
+				</setting>
+				<setting default-value="0" id="email_archiving_1_year" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email Archiving 1 Year</name>
+				</setting>
+				<setting default-value="0" id="email_archiving_multi_year" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email Archiving Multi Year</name>
+				</setting>
+				<setting default-value="0" id="bundle_web_email_security_archiving_one_yr" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Bundle Web and Email Security with Archiving - One Year</name>
+				</setting>
+				<setting default-value="0" id="bundle_web_email_security_archiving_multiyr" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Bundle Web and Email Security with Archiving - Multi Year Retention</name>
+				</setting>
+				<setting default-value="0" id="bundle_email_security_archiving_one_yr" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Bundle Email Security and Archiving 1 Year Retention</name>
+				</setting>
+				<setting default-value="0" id="bundle_email_security_archiving_multiyr" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Bundle Email Security and Archiving Multi Year Retention</name>
+				</setting>
+				<setting default-value="0" id="bundle_web_email_protection" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Bundle Web and Email Protection</name>
+				</setting>
+				<setting default-value="0" id="saas_endpoint_protection" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>SaaS Endpoint Protection</name>
+				</setting>
+				<setting default-value="0" id="saas_endpoint_advanced_protection" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>SaaS Endpoint Advanced Protection</name>
+				</setting>
+				<setting default-value="0" id="bundle_saas_endpoint_email_protection" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>SaaS Endpoint and Email Protection Suite</name>
+				</setting>
+				<setting default-value="0" id="data_storage" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Historical Data Storage</name>
+				</setting>
+				<setting default-value="0" id="email_encryption" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email Encryption</name>
+				</setting>
+			</group>
+			<group class="show:0">
+				<name class="type">Hidden Product Settings</name>
+
+				<setting default-value="0" id="hidden_email_protection_and_continuity" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email Protection and Continuity</name>
+				</setting>
+				<setting default-value="0" id="hidden_email_inbound_filtering" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email Inbound Filtering</name>
+				</setting>
+				<setting default-value="0" id="hidden_email_14_day_quarantine" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email 14 day Quarantine</name>
+				</setting>
+				<setting default-value="0" id="hidden_web_protection" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Web Protection</name>
+				</setting>
+				<setting default-value="0" id="hidden_email_archiving_1_year" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email Archiving 1 Year</name>
+				</setting>
+				<setting default-value="0" id="hidden_email_archiving_multi_year" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email Archiving Multi Year</name>
+				</setting>
+				<setting default-value="0" id="hidden_bundle_web_email_security_archiving_one_yr" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Bundle Web and Email Security with Archiving - One Year</name>
+				</setting>
+				<setting default-value="0" id="hidden_bundle_web_email_security_archiving_multiyr" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Bundle Web and Email Security with Archiving - Multi Year Retention</name>
+				</setting>
+				<setting default-value="0" id="hidden_bundle_email_security_archiving_one_yr" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Bundle Email Security and Archiving 1 Year Retention</name>
+				</setting>
+				<setting default-value="0" id="hidden_bundle_email_security_archiving_multiyr" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Bundle Email Security and Archiving Multi Year Retention</name>
+				</setting>
+				<setting default-value="0" id="hidden_bundle_web_email_protection" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Bundle Web and Email Protection</name>
+				</setting>
+				<setting default-value="0" id="hidden_saas_endpoint_protection" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>SaaS Endpoint Protection</name>
+				</setting>
+				<setting default-value="0" id="hidden_saas_endpoint_advanced_protection" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>SaaS Endpoint Advanced Protection</name>
+				</setting>
+				<setting default-value="0" id="hidden_bundle_saas_endpoint_email_protection" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>SaaS Endpoint and Email Protection Suite</name>
+				</setting>
+				<setting default-value="0" id="hidden_data_storage" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Historical Data Storage</name>
+				</setting>
+				<setting default-value="0" id="hidden_email_encryption" protected="true" track-old-value="true" type="integer" visibility="hidden">
+					<name>Email Encryption</name>
+				</setting>
+			</group>
+			<group class="show:0">
+				<name class="type">Hidden Debugging Settings</name>
+				<setting default-value="" id="debug_transaction_ids" type="string" visibility="hidden"/>
+			</group>
+		</settings>
+		
+		<resources>
+			<resource class="item" id="mcafee_email_protection_and_continuity" limiting-setting="email_protection_and_continuity">
+				<name>SaaS Email Protection &amp; Continuity</name>
+<name xml:lang="pt-BR">SaaS Email Protection &amp; Continuity</name>
+<name xml:lang="es-ES">SaaS Email Protection &amp; Continuity</name>
+<name xml:lang="en-US">SaaS Email Protection &amp; Continuity</name>
+				<description>McAfee's cloud-based SaaS Email Protection blocks over 99% of spam, fraudulent messages and malware before they enter your network, in addition to enforcing policy based controls on outgoing mail.  In case of planned or unplanned outage, SaaS Email Continuity enables web-based email access, management and use, keeping businesses running when their email server is not.</description>
+<description xml:lang="pt-BR">O SaaS Email Protection baseado em nuvem da McAfee bloqueia cerca de 99% de spam, mensagens fraudulentas e malware antes que entrem em sua rede, além de impor a política com base em controles no e-mail enviado.  Em caso de interrupção planejada ou não, o SaaS Email Continuity permite o acesso, gerenciamento e uso de e-mail com base na web, mantendo os negócios funcionando mesmo quando seu servidor de e-mail não está.</description>
+<description xml:lang="es-ES">La función SaaS Email Protection basada en la nube de McAfee bloquea más del 99 % del spam, los mensajes fraudulentos y el malware antes de que entren en su red, además de ejercer controles basados en directivas sobre el correo saliente.  En caso de una caída de red (planeada o no), SaaS Email Continuity activa el acceso, la gestión y el uso del correo electrónico basados en Internet, lo que permite a las empresas seguir funcionando cuando no disponen de su servidor de correo electrónico.</description>
+<description xml:lang="en-US">McAfee's cloud-based SaaS Email Protection blocks over 99% of spam, fraudulent messages and malware before they enter your network, in addition to enforcing policy based controls on outgoing mail.  In case of planned or unplanned outage, SaaS Email Continuity enables web-based email access, management and use, keeping businesses running when their email server is not.</description>
+			</resource>
+			<resource class="item" id="mcafee_email_inbound_filtering" limiting-setting="email_inbound_filtering">
+				<name>SaaS Email Inbound Filtering</name>
+<name xml:lang="pt-BR">SaaS Email Inbound Filtering</name>
+<name xml:lang="es-ES">SaaS Email Inbound Filtering</name>
+<name xml:lang="en-US">SaaS Email Inbound Filtering</name>
+				<description>McAfee's cloud-based SaaS Email Inbound Filtering blocks over 99% of spam, fraudulent messages and malware before they enter your network.</description>
+<description xml:lang="pt-BR">O SaaS Email Inbound Filtering baseado em nuvem da McAfee bloqueia cerca de 99% de spam, mensagens fraudulentas e malware antes que entrem em sua rede.</description>
+<description xml:lang="es-ES">McAfee SaaS Email Inbound Filtering basado en la nube bloquea más del 99 % del spam, los mensajes fraudulentos y el malware antes de que entren en su red.</description>
+<description xml:lang="en-US">McAfee's cloud-based SaaS Email Inbound Filtering blocks over 99% of spam, fraudulent messages and malware before they enter your network.</description>
+			</resource>
+<resource class="item" id="mcafee_email_14_day_quarantine" limiting-setting="email_14_day_quarantine">
+				<name>SaaS Email 14 day Quarantine</name>
+<name xml:lang="pt-BR">E-mail do SaaS - 14 dias de quarentena</name>
+<name xml:lang="es-ES">Cuarentena de 14 días de SaaS Email</name>
+<name xml:lang="en-US">SaaS Email 14 day Quarantine</name>
+				<description>McAfee 14 Day Quarantine extends the retention period for messages processed by the email security service by an additional 7 days, for those that require additional days of quarantine storage.</description>
+<description xml:lang="pt-BR">Os 14 dias de quarentena estendida do McAfee estendem o período de retenção de mensagens processadas pelo serviço de segurança de e-mail por um período adicional de sete dias, para aqueles que necessitam de dias adicionais de armazenamento em quarentena.</description>
+<description xml:lang="es-ES">La cuarentena de 14 días de McAfee amplía el período de conservación de los mensajes procesados por el servicio de seguridad del correo electrónico 7 días más para aquellos que requieren días adicionales de almacenamiento de cuarentena.</description>
+<description xml:lang="en-US">McAfee 14 Day Quarantine extends the retention period for messages processed by the email security service by an additional 7 days, for those that require additional days of quarantine storage.</description>
+			</resource>
+<resource class="item" id="mcafee_web_protection" limiting-setting="web_protection">
+				<name>SaaS Web Protection</name>
+<name xml:lang="pt-BR">SaaS Web Protection</name>
+<name xml:lang="es-ES">SaaS Web Protection</name>
+<name xml:lang="en-US">SaaS Web Protection</name>
+				<description>McAfee SaaS Web Protection protects businesses against web-borne threats through a reliable security-as-a-service deployment model. Web traffic is simply routed to our load-balanced data centers, where it is scanned with state-of-the-art security technologies to provide comprehensive policy-based protection and web usage control, at near-zero latency.</description>
+<description xml:lang="pt-BR">O McAfee SaaS Web Protection protege os negócios contra ameaças transmitidas pela web por meio de um modelo de distribuição confiável de segurança como serviço (security-as-a-service). O tráfego da Web é simplesmente roteado para nossos data centers com balanceamento de carga, onde é verificado com as mais avançadas tecnologias de segurança para oferecer proteção baseada em política e controle de uso da web abrangentes, com latência próxima a zero.</description>
+<description xml:lang="es-ES">McAfee SaaS Web Protection protege a las empresas frente a amenazas web con un fiable modelo de despliegue de Security-as-a-Service. Simplemente, el tráfico web se dirige a nuestros centros de datos con equilibrio de carga, donde se analizan con tecnologías de seguridad vanguardistas para proporcionar una protección exhaustiva basada en directivas y un control de uso de Internet con una latencia casi inexistente.</description>
+<description xml:lang="en-US">McAfee SaaS Web Protection protects businesses against web-borne threats through a reliable security-as-a-service deployment model. Web traffic is simply routed to our load-balanced data centers, where it is scanned with state-of-the-art security technologies to provide comprehensive policy-based protection and web usage control, at near-zero latency.</description>
+			</resource>
+			<resource class="item" id="mcafee_email_archiving_1_year" limiting-setting="email_archiving_1_year">
+				<name>SaaS Email Archiving - 1-Year Retention</name>
+<name xml:lang="pt-BR">SaaS Email Archiving - 1 ano de retenção</name>
+<name xml:lang="es-ES">SaaS Email Archiving: 1 año de retención</name>
+<name xml:lang="en-US">SaaS Email Archiving - 1-Year Retention</name>
+				<description>McAfee SaaS Email Archiving - 1-Year Retention provides unlimited, in-the-cloud email storage that is tamperproof, scalable, and provides easy compliance to strict industry regulations.</description>
+<description xml:lang="pt-BR">McAfee SaaS Email Archiving: 1 ano de retenção fornece armazenamento de e-mail ilimitado na nuvem, que é inviolável, dimensionável e fornece conformidade simples com os rígidos regulamentos da indústria.</description>
+<description xml:lang="es-ES">McAfee SaaS Email Archiving: la conservación de 1 año proporciona almacenamiento ilimitado de correo electrónico en la nube. Este almacenamiento es altamente seguro, escalable y permite cumplir fácilmente las exigentes normativas del sector.</description>
+<description xml:lang="en-US">McAfee SaaS Email Archiving - 1-Year Retention provides unlimited, in-the-cloud email storage that is tamperproof, scalable, and provides easy compliance to strict industry regulations.</description>
+			</resource>
+			<resource class="item" id="mcafee_email_archiving_multi_year" limiting-setting="email_archiving_multi_year">
+				<name>SaaS Email Archiving - Multi-Year Retention</name>
+<name xml:lang="pt-BR">SaaS Email Archiving - Vários anos de retenção</name>
+<name xml:lang="es-ES">SaaS Email Archiving: varios años de retención</name>
+<name xml:lang="en-US">SaaS Email Archiving - Multi-Year Retention</name>
+				<description>McAfee SaaS Email Archiving - Multi-Year Retention provides unlimited, in-the-cloud email storage that is tamperproof, scalable, and provides easy compliance to strict industry regulations.</description>
+<description xml:lang="pt-BR">McAfee SaaS Email Archiving: Vários anos de retenção fornece armazenamento de e-mail ilimitado na nuvem, que é inviolável, dimensionável e fornece conformidade simples com os rígidos regulamentos da indústria.</description>
+<description xml:lang="es-ES">McAfee SaaS Email Archiving: la conservación de varios años proporciona almacenamiento ilimitado de correo electrónico en la nube. Este almacenamiento es altamente seguro, escalable y permite cumplir fácilmente las exigentes normativas del sector.</description>
+<description xml:lang="en-US">McAfee SaaS Email Archiving - Multi-Year Retention provides unlimited, in-the-cloud email storage that is tamperproof, scalable, and provides easy compliance to strict industry regulations.</description>
+			</resource>
+			<resource class="item" id="mcafee_data_storage" limiting-setting="data_storage">
+				<name>SaaS Email Archiving - Historical Data Storage (25GB)</name>
+<name xml:lang="pt-BR">SaaS Email Archiving - Armazenamento de dados do histórico (25 GB)</name>
+<name xml:lang="es-ES">SaaS Email Archiving: almacenamiento de datos históricos (25 GB)</name>
+<name xml:lang="en-US">SaaS Email Archiving - Historical Data Storage (25GB)</name>
+				<description>Customers of McAfee SaaS Email Archiving can turn to McAfee for storage of their historical message data, a feature available in 25 GB increments. Specify the 25 GB increment you would like (enter 1 for 25 GB, 2 for 50 GB, etc.)</description>
+<description xml:lang="pt-BR">Os clientes do McAfee SaaS Email Archiving podem voltar-se para a McAfee para armazenamento de seus dados do histórico de mensagens, um recurso disponível em incrementos de 25 GB. Especifique o incremento de 25 GB que deseja (insira 1 para 25 GB, 2 para 50 GB etc.)</description>
+<description xml:lang="es-ES">Los clientes de McAfee SaaS Email Archiving pueden cambiar a McAfee para obtener almacenamiento de los datos de sus mensajes históricos, una función disponible en incrementos de 25 GB. Especifique el incremento de 25 GB que desee (introduzca 1 para 25 GB, 2 para 50 GB, etc.)</description>
+<description xml:lang="en-US">Customers of McAfee SaaS Email Archiving can turn to McAfee for storage of their historical message data, a feature available in 25 GB increments. Specify the 25 GB increment you would like (enter 1 for 25 GB, 2 for 50 GB, etc.)</description>
+			</resource>
+<resource class="item" id="mcafee_email_encryption" limiting-setting="email_encryption">
+				<name>SaaS Email Encryption</name>
+<name xml:lang="pt-BR">SaaS Email Encryption</name>
+<name xml:lang="es-ES">SaaS Email Encryption</name>
+<name xml:lang="en-US">SaaS Email Encryption</name>
+				<description>SaaS Email Encryption is an add-on service and complements McAfee SaaS Email Protection with enterprise-level performance going beyond push/pull encryption by helping with the critical task of being able to identify sensitive information and prevent data loss.</description>
+<description xml:lang="pt-BR">O SaaS Email Encryption é um serviço complementar que completa o McAfee SaaS Email Protection com desempenho em nível de empresa e vai além da criptografia push/pull ao ajudar com a tarefa crítica de identificar informações confidenciais e evitar perda de dados.</description>
+<description xml:lang="es-ES">SaaS Email Encryption es un servicio que complementa a McAfee SaaS Email Protection con un rendimiento a nivel empresarial que va más allá del cifrado de inserción/extracción y que sirve de gran ayuda para la difícil tarea de identificar información confidencial y evitar la fuga de datos.</description>
+<description xml:lang="en-US">SaaS Email Encryption is an add-on service and complements McAfee SaaS Email Protection with enterprise-level performance going beyond push/pull encryption by helping with the critical task of being able to identify sensitive information and prevent data loss.</description>
+			</resource>
+			<resource class="item" id="mcafee_bundle_web__email_security_archiving_one_yr" limiting-setting="bundle_web_email_security_archiving_one_yr">
+				<name>SaaS Web &amp; Email Security with Archiving Suite - 1-Year Retention</name>
+<name xml:lang="pt-BR">SaaS Web &amp; Email Security with Archiving Suite - 1 ano de retenção</name>
+<name xml:lang="es-ES">SaaS Web &amp; Email Security with Archiving Suite: 1 año de retención</name>
+<name xml:lang="en-US">SaaS Web &amp; Email Security with Archiving Suite - 1-Year Retention</name>
+				<description>McAfee SaaS Web &amp; Email Security with Archiving is a comprehensive suite that protects your business from spam, viruses, worms, email attacks, fraud, and spyware, while enabling you to store and retrieve all inbound, outbound, and internal emails efficiently. In addition to McAfee SaaS Email Protection and Continuity, this service suite includes McAfee SaaS Web Protection and McAfee SaaS Email Archiving service with one year of data retention.</description>
+<description xml:lang="pt-BR">O McAfee SaaS Web &amp; Email Security with Archiving é um pacote abrangente que protege os seus negócios contra spam, vírus, worms, ataques por e-mail, fraudes e spyware, permitindo-lhe armazenar e recuperar todos os e-mails recebidos, enviados e internos de forma eficiente. Além de McAfee SaaS Email Protection and Continuity, este pacote de serviços inclui o McAfee SaaS Web Protection e o serviço McAfee SaaS Email Archiving com um ano de retenção de dados.</description>
+<description xml:lang="es-ES">McAfee SaaS Web &amp; Email Security with Archiving es una completa suite que protege a su negocio de spam, virus, gusanos, ataques por correo electrónico, fraude y spyware, a la vez que le permite almacenar y recuperar con eficacia todos los correos electrónicos entrantes, salientes e internos. Además de McAfee SaaS Email Protection and Continuity, este conjunto de aplicaciones de servicio incluye McAfee SaaS Web Protection y McAfee SaaS Email Archiving con un año de conservación de datos.</description>
+<description xml:lang="en-US">McAfee SaaS Web &amp; Email Security with Archiving is a comprehensive suite that protects your business from spam, viruses, worms, email attacks, fraud, and spyware, while enabling you to store and retrieve all inbound, outbound, and internal emails efficiently. In addition to McAfee SaaS Email Protection and Continuity, this service suite includes McAfee SaaS Web Protection and McAfee SaaS Email Archiving service with one year of data retention.</description>
+			</resource>
+<resource class="item" id="mcafee_bundle_web__email_security_archiving_multiyr" limiting-setting="bundle_web_email_security_archiving_multiyr">
+				<name>SaaS Web &amp; Email Security with Archiving Suite - Multi-Year Retention</name>
+<name xml:lang="pt-BR">SaaS Web &amp; Email Security with Archiving Suite - Vários anos de retenção</name>
+<name xml:lang="es-ES">SaaS Web &amp; Email Security with Archiving Suite: varios años de retención</name>
+<name xml:lang="en-US">SaaS Web &amp; Email Security with Archiving Suite - Multi-Year Retention</name>
+				<description>McAfee SaaS Web &amp; Email Security with Archiving is a comprehensive suite that protects your business from spam, viruses, worms, email attacks, fraud, and spyware, while enabling you to store and retrieve all inbound, outbound, and internal emails efficiently. In addition to McAfee SaaS Email Protection and Continuity, this service suite includes McAfee SaaS Web Protection and McAfee SaaS Email Archiving service with either one, three, five, or seven years of data retention.</description>
+<description xml:lang="pt-BR">O McAfee SaaS Web &amp; Email Security with Archiving é um pacote abrangente que protege os seus negócios contra spam, vírus, worms, ataques por e-mail, fraudes e spyware, permitindo-lhe armazenar e recuperar todos os e-mails recebidos, enviados e internos de forma eficiente. Além do McAfee SaaS Email Protection and Continuity, este pacote de serviços inclui o McAfee SaaS Web Protection e o serviço McAfee SaaS Email Archiving com retenção de dados de um, três, cinco ou sete anos.</description>
+<description xml:lang="es-ES">McAfee SaaS Web &amp; Email Security with Archiving es una completa suite que protege a su negocio de spam, virus, gusanos, ataques por correo electrónico, fraude y spyware, a la vez que le permite almacenar y recuperar con eficacia todos los correos electrónicos entrantes, salientes e internos. Además de McAfee SaaS Email Protection and Continuity, esta suite de servicio incluye McAfee SaaS Web Protection y McAfee SaaS Email Archiving con uno, tres, cinco o siete años de conservación de datos.</description>
+<description xml:lang="en-US">McAfee SaaS Web &amp; Email Security with Archiving is a comprehensive suite that protects your business from spam, viruses, worms, email attacks, fraud, and spyware, while enabling you to store and retrieve all inbound, outbound, and internal emails efficiently. In addition to McAfee SaaS Email Protection and Continuity, this service suite includes McAfee SaaS Web Protection and McAfee SaaS Email Archiving service with either one, three, five, or seven years of data retention.</description>
+			</resource>
+			<resource class="item" id="mcafee_bundle_email_security_archiving_one_yr" limiting-setting="bundle_email_security_archiving_one_yr">
+				<name>SaaS Email Security &amp; Archiving Suite - 1-Year Retention</name>
+<name xml:lang="pt-BR">SaaS Email Security &amp; Archiving Suite - 1 ano de retenção</name>
+<name xml:lang="es-ES">SaaS Email Security &amp; Archiving Suite: 1 año de retención</name>
+<name xml:lang="en-US">SaaS Email Security &amp; Archiving Suite - 1-Year Retention</name>
+				<description>McAfee SaaS Email Security &amp; Archiving Suite - This suite combines award-winning McAfee SaaS Email Protection threat and disaster recovery services with the McAfee SaaS Email Archiving service for organizations looking to protect their vital email communications. This suite is available with one year of data retention.</description>
+<description xml:lang="pt-BR">McAfee SaaS Email Security &amp; Archiving Suite: este pacote combina os premiados serviços de recuperação de desastres e ameaças McAfee SaaS Email Protection com o serviço McAfee SaaS Email Archiving para organizações que buscam proteger suas comunicações vitais de e-mail. Este pacote está disponível com um ano de retenção de dados.</description>
+<description xml:lang="es-ES">McAfee SaaS Email Security &amp; Archiving Suite: esta suite combina los galardonados servicios de recuperación de desastres y amenazas de McAfee SaaS Email Protection con el servicio McAfee SaaS Email Archiving para organizaciones que desean proteger sus indispensables comunicaciones por correo electrónico. Esta suite está disponible con un año de conservación de datos.</description>
+<description xml:lang="en-US">McAfee SaaS Email Security &amp; Archiving Suite - This suite combines award-winning McAfee SaaS Email Protection threat and disaster recovery services with the McAfee SaaS Email Archiving service for organizations looking to protect their vital email communications. This suite is available with one year of data retention.</description>
+			</resource>
+<resource class="item" id="mcafee_bundle_email_security_archiving_multiyr" limiting-setting="bundle_email_security_archiving_multiyr">
+				<name>SaaS Email Security &amp; Archiving Suite - Multi-Year Retention</name>
+<name xml:lang="pt-BR">SaaS Email Security &amp; Archiving Suite - Vários anos de retenção</name>
+<name xml:lang="es-ES">SaaS Email Security &amp; Archiving Suite: varios años de retención</name>
+<name xml:lang="en-US">SaaS Email Security &amp; Archiving Suite - Multi-Year Retention</name>
+				<description>McAfee SaaS Email Security &amp; Archiving Suite - This suite combines award-winning McAfee SaaS Email Protection threat and disaster recovery services with the McAfee SaaS Email Archiving service for organizations looking to protect their vital email communications. This suite is available with one, three, five, or seven years of data retention.</description>
+<description xml:lang="pt-BR">McAfee SaaS Email Security &amp; Archiving Suite: este pacote combina os premiados serviços de recuperação de desastres e ameaças McAfee SaaS Email Protection com o serviço McAfee SaaS Email Archiving para organizações que buscam proteger suas comunicações vitais de e-mail. Este pacote está disponível com um ano, três, cinco ou sete anos de retenção de dados.</description>
+<description xml:lang="es-ES">McAfee SaaS Email Security &amp; Archiving Suite: esta suite combina los galardonados servicios de recuperación de desastres y amenazas de McAfee SaaS Email Protection con el servicio McAfee SaaS Email Archiving para organizaciones que desean proteger sus indispensables comunicaciones por correo electrónico. Esta suite está disponible con uno, tres, cinco o siete años de conservación de datos.</description>
+<description xml:lang="en-US">McAfee SaaS Email Security &amp; Archiving Suite - This suite combines award-winning McAfee SaaS Email Protection threat and disaster recovery services with the McAfee SaaS Email Archiving service for organizations looking to protect their vital email communications. This suite is available with one, three, five, or seven years of data retention.</description>
+			</resource>
+			<resource class="item" id="mcafee_bundle_web_email_protection" limiting-setting="bundle_web_email_protection">
+				<name>SaaS Web &amp; Email Protection Suite</name>
+<name xml:lang="pt-BR">SaaS Web &amp; Email Protection Suite</name>
+<name xml:lang="es-ES">SaaS Web &amp; Email Protection Suite</name>
+<name xml:lang="en-US">SaaS Web &amp; Email Protection Suite</name>
+				<description>McAfee SaaS Web &amp; Email Protection Suite - The services included in this bundle effectively keep a wide range of email and web threats from ever entering or leaving your corporate network by combining the award-winning McAfee SaaS Email Protection service with McAfee SaaS Web Protection service.</description>
+<description xml:lang="pt-BR">McAfee SaaS Web &amp; Email Protection Suite: os serviços incluídos neste pacote impedem efetivamente que uma grande variedade de ameaças por e-mail e web entrem ou saiam da sua rede corporativa ao combinar o premiado serviço McAfee SaaS Email Protection com o serviço McAfee SaaS Web Protection.</description>
+<description xml:lang="es-ES">McAfee SaaS Web &amp; Email Protection Suite: los servicios incluidos en este paquete impiden de forma eficaz que una amplia variedad de amenazas web y de correo electrónico entren o salgan de su red empresarial al combinar el galardonado McAfee SaaS Email Protection con McAfee SaaS Web Protection Service.</description>
+<description xml:lang="en-US">McAfee SaaS Web &amp; Email Protection Suite - The services included in this bundle effectively keep a wide range of email and web threats from ever entering or leaving your corporate network by combining the award-winning McAfee SaaS Email Protection service with McAfee SaaS Web Protection service.</description>
+			</resource>
+			<resource class="item" id="mcafee_saas_endpoint_protection" limiting-setting="saas_endpoint_protection">
+				<name>SaaS Endpoint Protection</name>
+<name xml:lang="pt-BR">SaaS Endpoint Protection</name>
+<name xml:lang="es-ES">SaaS Endpoint Protection</name>
+<name xml:lang="en-US">SaaS Endpoint Protection</name>
+				<description>McAfee SaaS Endpoint Protection provides anti-virus, anti-spyware and desktop firewall, with automatic updates.</description>
+<description xml:lang="pt-BR">O McAfee SaaS Endpoint Protection oferece antivírus, antispyware e firewall de desktop, com atualizações automáticas.</description>
+<description xml:lang="es-ES">McAfee SaaS Endpoint Protection proporciona antivirus, antispyware y firewall personal, con actualizaciones automáticas.</description>
+<description xml:lang="en-US">McAfee SaaS Endpoint Protection provides anti-virus, anti-spyware and desktop firewall, with automatic updates.</description>
+			</resource>
+			<resource class="item" id="mcafee_saas_endpoint_advanced_protection" limiting-setting="saas_endpoint_advanced_protection">
+				<name>[End of Life] SaaS Endpoint Protection Advanced</name>
+<name xml:lang="pt-BR">[Fim de vida útil] SaaS Endpoint Protection Advanced</name>
+<name xml:lang="es-ES">[Final de vida útil] SaaS Endpoint Protection Advanced</name>
+<name xml:lang="en-US">[End of Life] SaaS Endpoint Protection Advanced</name>
+				<description>[End of Life] McAfee SaaS Endpoint Protection Advanced provides anti-virus, anti-spyware and desktop firewall, plus website blocking and content filtering with automatic updates.</description>
+<description xml:lang="pt-BR">[Fim de vida útil] O McAfee SaaS Endpoint Protection Advanced oferece antivírus, antispyware e firewall de desktop, além de bloqueio de site e filtragem de conteúdo, com atualizações automáticas.</description>
+<description xml:lang="es-ES">[Final de vida útil] McAfee SaaS Endpoint Protection Advanced proporciona antivirus, antispyware y firewall personal, además de bloqueo de sitios web y filtrado de contenido, con actualizaciones automáticas.</description>
+<description xml:lang="en-US">[End of Life] McAfee SaaS Endpoint Protection Advanced provides anti-virus, anti-spyware and desktop firewall, plus website blocking and content filtering with automatic updates.</description>
+			</resource>
+			<resource class="item" id="mcafee_saas_bundle_endpoint_email_protection" limiting-setting="bundle_saas_endpoint_email_protection">
+				<name>SaaS Endpoint &amp; Email Protection Suite</name>
+<name xml:lang="pt-BR">SaaS Endpoint &amp; Email Protection Suite</name>
+<name xml:lang="es-ES">SaaS Endpoint &amp; Email Protection Suite</name>
+<name xml:lang="en-US">SaaS Endpoint &amp; Email Protection Suite</name>
+				<description>McAfee SaaS Endpoint &amp; Email Protection suite provides anti-virus, anti-spyware and desktop firewall, plus website blocking and content filtering and email security service with additional protection for your email server.</description>
+<description xml:lang="pt-BR">O pacote McAfee SaaS Endpoint &amp; Email Protection oferece antivírus, antispyware e firewall de desktop, além de bloqueio da web, filtragem de conteúdo e serviço de segurança de e-mail, com proteção adicional para o seu servidor de e-mail.</description>
+<description xml:lang="es-ES">McAfee SaaS Endpoint &amp; Email Protection Suite proporciona antivirus, antispyware y firewall personal, además de bloqueo de sitios web, filtrado de contenido y un servicio de seguridad del correo electrónico con protección adicional para su servidor de correo electrónico.</description>
+<description xml:lang="en-US">McAfee SaaS Endpoint &amp; Email Protection suite provides anti-virus, anti-spyware and desktop firewall, plus website blocking and content filtering and email security service with additional protection for your email server.</description>
+			</resource>
+		</resources>
+		<requirements>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">soap</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">zlib</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">xml</php:extension>
+			<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<dns:record xmlns:dns="http://apstandard.com/ns/1/dns">
+				<dns:id>MX1</dns:id>
+				<dns:mx>
+					<dns:src>
+						<dns:external value-of-setting="mx-source"/>
+					</dns:src>
+					<dns:priority>10</dns:priority>
+					<dns:dst>
+						<dns:external value-of-setting="mx-target"/>
+					</dns:dst>
+					<dns:substitute/>
+				</dns:mx>
+			</dns:record>
+		</requirements>
+
+		<provision>
+			<configuration-script name="main_service.php">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+			<verify-script name="verification.php">
+				<script-language>php</script-language>
+				<structured-output/>
+			</verify-script>
+			<resource-script name="resource.php" poll-interval="">
+				<script-language>php</script-language>
+			</resource-script>
+		</provision>
+		<service class="account" id="ServiceUser">
+			<presentation>
+				<name>Service User for McAfee</name>
+<name xml:lang="pt-BR">Usuário do serviço para McAfee</name>
+<name xml:lang="es-ES">Usuario de servicio de McAfee</name>
+<name xml:lang="en-US">Service User for McAfee</name>
+				<summary>Service users provisioning from Parallels into McAfee are required to go to the McAfee Control Console and complete the "Forgot your password or need to create a password?" step to finish their setup</summary>
+<summary xml:lang="pt-BR">Os usuários do serviço McAfee que estão configurados na Parallels e que possuem acesso ao Control Console devem solicitar sua senha diretamente no portal através da opção "Esqueceu sua senha ou precisa criar uma senha?" e concluir a configuração.</summary>
+<summary xml:lang="es-ES">Los usuarios de servicio que aprovisionan desde Parallels a McAfee deben dirigirse a McAfee Control Console y completar el paso "¿Ha olvidado su contraseña o necesita crear una?" para finalizar la instalación</summary>
+<summary xml:lang="en-US">Service users provisioning from Parallels into McAfee are required to go to the McAfee Control Console and complete the "Forgot your password or need to create a password?" step to finish their setup</summary>
+				<entry-points>
+	    			<entry class="control-panel" dst="{control_url}" method="GET">
+	    				<label>Control Console</label>
+<label xml:lang="pt-BR">Control Console</label>
+<label xml:lang="es-ES">Control Console</label>
+<label xml:lang="en-US">Control Console</label>
+	    				<variable name="control_url" value-of-setting="show_control_console_entry_point"/>
+	    			</entry>
+				</entry-points>
+			</presentation>
+			
+			<settings>
+				<setting default-value="serviceuser" id="sku" protected="true" type="string" visibility="hidden">
+					<name>sku</name>
+				</setting>
+				<setting default-value="0" id="service_user_id" protected="true" track-old-value="true" type="string" visibility="hidden">
+					<name>Service User ID</name>
+					<description>This field will be populated as Service Users are provisioned. Leave as 0 for now.</description>
+				</setting>
+				<setting element-type="string" id="service_user_domains" type="list" value-of-setting="domains" visibility="hidden"/>
+				<setting default-value="0" id="service_user_mcafee_customer_id" protected="true" type="string" value-of-setting="customer_id" visibility="hidden"/>
+				<setting class="subscription-user-limit" id="service_user_limit" protected="true" type="string" visibility="hidden"/>
+				<setting default-value="" id="static-message" optional="true" protected="true" type="string"/>
+				
+				<setting class="locale" default-value="en-US" id="service_user_language" protected="true" type="string" value-of-setting="user_language" visibility="hidden"/>
+				<setting class="subscription_id" default-value="" id="service_user_subscription_id" protected="true" type="string" visibility="hidden"/>
+				
+				<group>
+					<setting class="email-on-application-domain" id="service_user_account" track-old-value="true" type="email" uniq="global">
+						<name>McAfee Control Console User</name>
+<name xml:lang="pt-BR">Usuário do McAfee Control Console</name>
+<name xml:lang="es-ES">Usuario de McAfee Control Console</name>
+<name xml:lang="en-US">McAfee Control Console User</name>
+						<description>The email from this account will be carried over into McAfee as an end-user. The user must proceed through the "Forgot your password or need to create a password" functionality to complete the setup of their account within McAfee in order to gain access to the Control Console.</description>
+<description xml:lang="pt-BR">O e-mail desta conta será transferido para a McAfee como um usuário final. O usuário deve prosseguir com a funcionalidade "Esqueceu sua senha ou precisa criar uma senha" para concluir a configuração de sua conta na McAfee a fim de obter acesso ao Control Console.</description>
+<description xml:lang="es-ES">El correo electrónico de esta cuenta se transmitirá a McAfee como un usuario final. El usuario debe continuar con la funcionalidad "¿Ha olvidado su contraseña o necesita crear una?" para completar la configuración de su cuenta en McAfee y obtener acceso a Control Console.</description>
+<description xml:lang="en-US">The email from this account will be carried over into McAfee as an end-user. The user must proceed through the "Forgot your password or need to create a password" functionality to complete the setup of their account within McAfee in order to gain access to the Control Console.</description>
+					</setting>
+					<setting element-type="string" id="service_user_alias_emails" optional="true" track-old-value="true" type="list">
+						<name>User Alias Address(es)</name>
+<name xml:lang="pt-BR">Endereço(s) de alias de usuário</name>
+<name xml:lang="es-ES">Direcciones de alias de usuario</name>
+<name xml:lang="en-US">User Alias Address(es)</name>
+						<description>If you choose to manage user aliases within this section, do not make modifications to the user aliases within the McAfee Control Console</description>
+<description xml:lang="pt-BR">Se você optar por gerenciar aliases de usuários nesta seção, não faça modificações aos aliases de usuários no McAfee Control Console</description>
+<description xml:lang="es-ES">Si elige gestionar alias de usuario en esta sección, no haga modificaciones a alias de usuario en McAfee Control Console</description>
+<description xml:lang="en-US">If you choose to manage user aliases within this section, do not make modifications to the user aliases within the McAfee Control Console</description>
+					</setting>
+<setting element-type="string" id="service_user_allow_list" optional="true" track-old-value="true" type="list">
+						<name>Add senders to the Allowed Senders list</name>
+<name xml:lang="pt-BR">Adicionar remetentes à lista de Remetentes permitidos</name>
+<name xml:lang="es-ES">Agregar remitentes a la lista de remitentes permitidos</name>
+<name xml:lang="en-US">Add senders to the Allowed Senders list</name>
+						<description>You can define lists of senders whose email addresses are always accepted without spam filtering. If you choose to manage allowed senders within this section, do not make modifications to allowed senders within the McAfee Control Console</description>
+<description xml:lang="pt-BR">É possível definir listas de remetentes cujos endereços de e-mail sempre serão aceitos sem filtragem de spam. Se você optar por gerenciar remetentes permitidos nesta seção, não faça modificações aos remetentes permitidos no McAfee Control Console</description>
+<description xml:lang="es-ES">Puede definir listas de remitentes cuyas direcciones de correo electrónico se acepten siempre sin el filtrado de spam. Si elige gestionar remitentes permitidos en esta sección, no haga modificaciones a remitentes permitidos en McAfee Control Console</description>
+<description xml:lang="en-US">You can define lists of senders whose email addresses are always accepted without spam filtering. If you choose to manage allowed senders within this section, do not make modifications to allowed senders within the McAfee Control Console</description>
+					</setting>
+					<setting element-type="string" id="service_user_deny_list" optional="true" track-old-value="true" type="list">
+						<name>Add senders to the Blocked Senders list</name>
+<name xml:lang="pt-BR">Adicionar remetentes à lista de Remetentes bloqueados</name>
+<name xml:lang="es-ES">Agregar remitentes a la lista de remitentes bloqueados</name>
+<name xml:lang="en-US">Add senders to the Blocked Senders list</name>
+						<description>You can define lists of senders whose email addresses will never be accepted for delivery. If you choose to manage blocked senders within this section, do not make modifications to blocked senders within the McAfee Control Console</description>
+<description xml:lang="pt-BR">É possível definir listas de remetentes cujos endereços de e-mail nunca serão aceitos para entrega. Se você optar por gerenciar remetentes bloqueados nesta seção, não faça modificações aos remetentes bloqueados no McAfee Control Console</description>
+<description xml:lang="es-ES">Puede definir listas de remitentes cuyas direcciones de correo electrónico no se aceptarán nunca para su entrega. Si elige gestionar remitentes bloqueados en esta sección, no haga modificaciones a remitentes bloqueados en McAfee Control Console</description>
+<description xml:lang="en-US">You can define lists of senders whose email addresses will never be accepted for delivery. If you choose to manage blocked senders within this section, do not make modifications to blocked senders within the McAfee Control Console</description>
+					</setting>
+					<setting default-value="0" id="service_user_info_updated" protected="true" type="integer" visibility="hidden"/>
+				</group>
+				<group>
+					<name>Products</name>
+					<setting default-value="0" id="service_user_mcafee_email_protection_and_continuity" protected="true" type="integer" value-of-setting="email_protection_and_continuity" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_email_inbound_filtering" protected="true" type="integer" value-of-setting="email_inbound_filtering" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_email_14_day_quarantine" protected="true" type="integer" value-of-setting="email_14_day_quarantine" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_web_protection" type="integer" value-of-setting="web_protection" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_email_archiving_1_year" protected="true" type="integer" value-of-setting="email_archiving_1_year" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_email_archiving_multi_year" protected="true" type="integer" value-of-setting="email_archiving_multi_year" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_bundle_web_email_security_archiving_multiyr" protected="true" type="integer" value-of-setting="bundle_web_email_security_archiving_multiyr" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_bundle_web_email_security_archiving_one_yr" protected="true" type="integer" value-of-setting="bundle_web_email_security_archiving_one_yr" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_bundle_email_security_archiving_multiyr" protected="true" type="integer" value-of-setting="bundle_email_security_archiving_multiyr" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_bundle_email_security_archiving_one_yr" protected="true" type="integer" value-of-setting="bundle_email_security_archiving_one_yr" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_bundle_web_email_protection" protected="true" type="integer" value-of-setting="bundle_web_email_protection" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_saas_endpoint_protection" protected="true" type="integer" value-of-setting="saas_endpoint_protection" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_saas_endpoint_advanced_protection" protected="true" type="integer" value-of-setting="saas_endpoint_advanced_protection" visibility="hidden"/>
+					<setting default-value="0" id="service_user_mcafee_bundle_saas_endpoint_email_protection" protected="true" type="integer" value-of-setting="bundle_saas_endpoint_email_protection" visibility="hidden"/>
+				</group>
+				<group class="show:0">
+					<name class="type">Hidden Debugging Settings</name>
+					<setting default-value="" id="service_user_debug_transaction_ids" type="string" visibility="hidden">
+					</setting>
+				</group>
+			</settings>
+			<provision>
+				<configuration-script name="service_user.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+				<verify-script name="verification.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</verify-script>
+			</provision>
+		</service>
+
+
+	</service>
+
+</application>

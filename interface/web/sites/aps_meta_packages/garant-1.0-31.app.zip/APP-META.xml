@@ -1,0 +1,162 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2014-05-27T16:40:36">
+    <id>garant</id>
+    <name>garant</name>
+    <version>1.0</version>
+    <release>31</release>
+    <homepage>http://garant.ru</homepage>
+    <vendor>
+    	<name>garant</name>
+    	<homepage>http://garant.ru</homepage>
+    	<icon path="images/Logo_sign_64x64.jpg" />
+    </vendor>
+    <packager>
+    	<name>Active Technologies</name>
+    	<homepage>http://active.by</homepage>
+    	<icon path="images/active.png" />
+    </packager>
+    <presentation>
+    	<summary>Быстрое решение ваших правовых вопросов</summary>
+    	<description>Представьте: ваши правовые вопросы для вас больше не вопросы. Нравится? Это возможно благодаря специальному решению «ГАРАНТ – Бухгалтер малого предприятия».
+Вы легко и быстро получаете всю необходимую для вашего бизнеса правовую информацию и уверенно принимаете любые решения. Вы работаете с правовой системой, используете мощные поисковые инструменты и инновационные технологии, ежедневно получаете интересные именно вам новости законодательства.
+Упростите себе жизнь, имея под рукой всю необходимую информацию для уверенности в каждом решении.</description>
+    	<icon path="images/Logo_sign_64x64.jpg" />
+    	<screenshot path="images/screen.jpg">
+    		<description>Гарант</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="27" version="1.0">
+    			<entry>Быстрое решение ваших правовых вопросов</entry>
+    		</version>
+    		<version release="29" version="1.0">
+    			<entry>Prepared for certification criteria.</entry>
+    		</version>
+    		<version release="30" version="1.0">
+    			<entry>Some bug fixes</entry>
+    		</version>
+    		<version release="31" version="1.0">
+    			<entry>Fixed redirect URL</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Web/E-commerce</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<setting type="string" id="ServiceUrl"
+    		default-value="nash.garant.ru">
+    		<name>Service Host</name>
+    	</setting>
+    	<setting type="string" id="AdminUserName" default-value="">
+    		<name>AdminUserName</name>
+    	</setting>
+    	<setting type="password" id="AdminPassWord" default-value="">
+    		<name>AdminPassWord</name>
+    	</setting>
+    	<setting type="string" id="RedirectUrl" default-value="http://nash.garant.ru:8080/provision">
+    		<name>RedirectUrl</name>
+    	</setting>
+    </global-settings>
+    <upgrade match="/application/version >= '1.0' and /application/release >='1'" />
+    <service id="garant" class="service">
+    	<presentation>
+    		<name>Гарант</name>
+    		<summary>Быстрое решение ваших правовых вопросов</summary>
+    		<entry-points>
+    			<entry dst="https://nash.garant.ru/sso/plogin" method="POST" class="control-panel">
+    				<label>Вход в сервис</label>
+    				<variable name="userName" class="" value-of-setting="UserName"></variable>
+    				<variable name="passWord" value-of-setting="PassWord"></variable>
+    				<variable name="redirect" value-of-setting="RedirectUrl">http://nash.garant.ru</variable>
+    				<variable name="realmName" value-of-setting="RealmName"></variable>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+    		<setting type="string" id="RealmName" installation-only="true" class="organization-name" default-value="">
+    			<name>Имя организации</name>
+    			<description>Имя организации</description>
+    		</setting>
+    		<setting type="string" id="UserName" installation-only="true" class="login" default-value="">
+    			<name>Имя пользователя</name>
+    		</setting>
+    		<setting type="password" id="PassWord" class="password">
+    			<name>Пароль</name>
+    		</setting>
+    		<setting type="email" id="Email" class="email">
+    			<name>Адрес электронной почты</name>
+    		</setting>
+    		<setting type="string" id="FirstName" class="given-name" default-value="">
+    			<name>Имя</name>
+    		</setting>
+    		<setting type="string" id="LastName" class="family-name" default-value="">
+    			<name>Фамилия</name>
+    		</setting>
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:version min="4.0"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure-normativ.php">
+    			<script-language>php</script-language>
+    			<status-control />
+    			<structured-output />
+    		</configuration-script>
+    		<verify-script name="verify-normativ.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</verify-script>
+    	</provision>
+    	<service id="account" class="account">
+    		<presentation>
+    			<name>Пользователи</name>
+    			<summary>Пользователи для сервиса</summary>
+    			<infolinks>
+    				<link href="http://garant.ru" class="support">Служба поддержки</link>
+    			</infolinks>
+    			<entry-points>
+    			<entry dst="https://nash.garant.ru/sso/plogin" method="POST" class="control-panel">
+    				<label>Вход в сервис</label>
+    				<variable name="userName" class="" value-of-setting="UserName"></variable>
+    				<variable name="passWord" value-of-setting="PassWord"></variable>
+    				<variable name="redirect" value-of-setting="RedirectUrl">http://nash.garant.ru</variable>
+    				<variable name="realmName" value-of-setting="RealmName"></variable>
+    			</entry>
+    		</entry-points>
+    		</presentation>
+    		<settings>
+    			<setting type="string" id="UserName" installation-only="true" default-value="">
+    				<name>Имя Пользователя</name>
+    			</setting>
+    			<setting type="password" id="PassWord" installation-only="true" default-value="">
+    				<name>Пароль</name>
+    			</setting>
+    			<setting type="string" id="FirstName" installation-only="true" default-value="">
+    				<name>Имя</name>
+    			</setting>
+    			<setting type="string" id="LastName" installation-only="true" default-value="">
+    				<name>Фамилия</name>
+    			</setting>
+    			<setting type="email" id="Email" installation-only="true" default-value="user@example.com">
+    				<name>Адрес электронной почты</name>
+    			</setting>
+    			<setting type="string" id="RealmName"
+    				value-of-setting="RealmName" protected="true" visibility="hidden" default-value="">
+    				<name>Имя организации</name>
+    			</setting>
+    		</settings>
+    		<provision>
+    			<configuration-script name="account-configure.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</configuration-script>
+    			<verify-script name="account-verify.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</verify-script>
+    		</provision>
+    	</service>
+    </service>
+</application>

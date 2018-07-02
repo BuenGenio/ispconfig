@@ -1,0 +1,327 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-03-27T17:41:02">
+    <id>http://www.netzima.com</id>
+    <name>Netzima</name>
+    <version>1</version>
+    <release>6</release>
+
+    <homepage>http://www.netzima.com/</homepage>
+    <vendor>
+    	<name>Netzima</name>
+    	<name xml:lang="en-GB">netzima.com</name>
+    	<name xml:lang="en-US">netzima.com</name>
+    	<name xml:lang="es-ES">netzima.com</name>
+    	<homepage>http://www.netzima.com/</homepage>
+    	<icon path="images/icaria.png" />
+    </vendor>
+    <packager>
+    	<name>SofCloudIT</name>
+    	<homepage>http://www.sofcloudit.com</homepage>
+    	<icon path="images/sofcloudit64.png" />
+    	<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+    </packager>
+    <presentation>
+    	<summary>icaria Suite: cloud-based applications for business management</summary>
+    	<summary xml:lang="en-US">icaria Suite: cloud-based applications for business management</summary>
+    	<summary xml:lang="es-ES">icaria Suite: aplicaciones en la nube para la gestión empresarial</summary>
+    	<summary xml:lang="pt-PT">icaria Suite: aplicativos baseados em nuvem para gestão de negócios</summary>
+    	<description>icaria Suite is a set of cloud-based applications for
+business management. These apps support CRM
+procesess, time and expenses management,
+information assets management, project management
+and much more.</description>
+    	<description xml:lang="en-US">icaria Suite is a set of cloud-based applications for
+business management. These apps support CRM
+procesess, time and expenses management,
+information assets management, project management
+and much more.</description>
+        <description xml:lang="es-ES">icaria Suite es un conjunto de aplicaciones en la nube
+para la gestión empresarial. Ofrecen soporte a la
+función comercial y gestión de clientes (CRM), registro
+de dedicación y gastos, gestión de activos de
+información y continuidad del negocio, gestión de
+proyectos, y mucho más.</description>
+         <description xml:lang="pt-PT">icaria Suite é um conjunto de aplicativos
+baseados em nuvem para gestão de
+negócios. Estes suporte aplicativos
+procesess CRM, o tempo e as despesas de
+gestão, ativos gestão da informação,
+gestão de projetos e muito mais.</description>
+    	
+    	<icon path="images/icaria.png" />
+    	<screenshot path="images/friday_01_inicio.png">
+    		<description>Friday screenshot 1</description>
+    	</screenshot>
+    	<screenshot path="images/friday_02_admin_oc.png">
+    		<description>Friday screenshot 2</description>
+    	</screenshot>
+    	<screenshot
+    		path="images/friday_03_reporte_horas_empleado.png">
+    		<description>Friday screenshot 3</description>
+    	</screenshot>
+    	<screenshot
+    		path="images/friday_04_reporte_gastos_empleado.png">
+    		<description>Friday screenshot 4</description>
+    	</screenshot>
+    	<screenshot path="images/friday_05_cuadro_mando_oc.png">
+    		<description>Friday screenshot 5</description>
+    	</screenshot><screenshot path="images/sails_01_inicio.png">
+    		<description>Sails screenshot 1</description>
+    	</screenshot><screenshot path="images/sails_02_catalogo_ps.png">
+    		<description>Sails screenshot 2</description>
+    	</screenshot>
+    	<screenshot path="images/sails_03_catalogo_scoring.png">
+    		<description>Sails screenshot 3</description>
+    	</screenshot>
+    	<screenshot path="images/sails_04_ficha_comercial.png">
+    		<description>Sails screenshot 4</description>
+    	</screenshot>
+    	<screenshot path="images/sails_05_pista_comercial.png">
+    		<description>Sails screenshot 5</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="0" version="1">
+    			<entry>Initial Version
+			</entry>
+    		</version>
+    		<version release="1" version="1">
+    			<entry>Screenshot added</entry>
+    		</version>
+    		<version release="2" version="1">
+    			<entry>License url changed</entry>
+    		</version>
+    		<version release="3" version="1">
+    			<entry>Link to documentation fixed</entry>
+    		</version>
+    		<version release="4" version="1">
+    			<entry>Warning in the log script fixed</entry>
+    		</version>
+    		<version release="5" version="1">
+    			<entry>Warning in the log script fixed</entry>
+    		</version>
+    		<version release="6" version="1">
+    			<entry>Changed summary and description</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Back office/Billing</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    		<language>es</language>
+    		<language>pt</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+   		<setting type="string" id="api_url" default-value="">
+   			<name>API Url</name>
+   			<name xml:lang="en-US">API Url</name>
+   			<name xml:lang="es-ES">API Url</name>
+   			<name xml:lang="pt-PT">API Url</name>
+   		</setting>
+   		<setting type="string" id="api_username" default-value="">
+   			<name>API Username</name>
+   			<name xml:lang="en-US">API  Username</name>
+   			<name xml:lang="es-ES">API Usuario</name>
+   			<name xml:lang="pt-PT">API  Username</name>
+   		</setting>
+   		<setting type="string" id="api_password" default-value="">
+   			<name>API Password</name>
+   			<name xml:lang="en-US">API Password</name>
+   			<name xml:lang="es-ES">API contraseña</name>
+   			<name xml:lang="pt-PT">API Password</name>
+   		</setting>
+   		<setting type="string" id="provider_id" default-value="">
+   			<name>Provider Id</name>
+   			<name xml:lang="en-US">Provider Id</name>
+   			<name xml:lang="es-ES">Id de Proveedor</name>
+   			<name xml:lang="pt-PT">Provider Id</name>
+   		</setting>
+   		<setting type="string" id="cp_base_url" default-value="">
+   			<name>Base Url of Netzima Control Panel</name>
+   			<name xml:lang="en-US">Base Url</name>
+   			<name xml:lang="es-ES">Base Url</name>
+   			<name xml:lang="pt-PT">Base Url</name>
+   		</setting>
+   		<setting type="string" id="product" default-value="">
+   			<name>Netzima Product Code-Name (application name)</name>
+   			<name xml:lang="en-US">Product Code</name>
+   			<name xml:lang="es-ES">Codigo de Producto</name>
+   			<name xml:lang="pt-PT">Product Code</name>
+   		</setting>
+   		<setting type="enum" id="package_log" default-value="false">
+   			<name>Activates log file</name>
+   			<name xml:lang="en-US">Package Log</name>
+   			<name xml:lang="es-ES">Registro de Log</name>
+   			<name xml:lang="pt-PT">Package Log</name>
+   			<choice id="true">
+   				<name>Yes</name>
+   				<name xml:lang="en-US">Yes</name>
+   				<name xml:lang="es-ES">Si</name>
+   				<name xml:lang="pt-PT">Sim</name>
+   			</choice>
+   			<choice id="false">
+   				<name>No</name>
+   				<name xml:lang="en-US">No</name>
+   				<name xml:lang="es-ES">No</name>
+   				<name xml:lang="pt-PT">No</name>
+   			</choice>
+   		</setting>
+    </global-settings>
+    <patch match="/application/version &gt;= '0.001'" />
+    <upgrade match="/application/version &gt;= '0.001'" />
+    <service id="Product" singular="true" class="service">
+    	<license must-accept="true">
+    		<commercial />
+    		<text>
+    			<name>License</name>
+    			<url>http://icariasuite.com/terms-of-service/</url>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>Netzima</name>
+    		<name xml:lang="en-US">icaria Suite: cloud-based applications for business management</name>
+    		<name xml:lang="es-ES">icaria Suite: aplicaciones en la nube para la gestión empresarial</name>
+    		<name xml:lang="pt-PT">icaria Suite: aplicativos baseados em
+nuvem para gestão de negócios</name>
+    		<summary>Netzima</summary>
+    		<summary xml:lang="en-US">icaria Suite is a set of cloud-based applications for
+business management. These apps support CRM
+procesess, time and expenses management,
+information assets management, project management
+and much more.</summary>
+    		<summary xml:lang="es-ES">icaria Suite es un conjunto de aplicaciones en la nube
+para la gestión empresarial. Ofrecen soporte a la
+función comercial y gestión de clientes (CRM), registro
+de dedicación y gastos, gestión de activos de
+información y continuidad del negocio, gestión de
+proyectos, y mucho más.</summary>
+    		<summary xml:lang="pt-PT">icaria Suite é um conjunto de aplicativos
+baseados em nuvem para gestão de
+negócios. Estes suporte aplicativos
+procesess CRM, o tempo e as despesas de
+gestão, ativos gestão da informação,
+gestão de projetos e muito mais.</summary>
+    		<infolinks>
+    			<link href="http://www.icariasuite.com/service-provider-spc" class="support">Soporte</link>
+    			<link href="file:///docs/Provider.pdf" class="deployment-guide">Service Provider Guide</link>
+				<link href="file:///docs/Subscriber.pdf" class="user-guide">Subscribers Guide</link>
+
+    		</infolinks>
+    		<entry-points>
+    			<entry dst="{url_base}/{product}/home?tenant={domain}">
+    				<label>Netzima Control Panel</label>
+    				<label xml:lang="en-US">Icaria Control Panel</label>
+    				<label xml:lang="es-ES">Icaria Panel de Control</label>
+    				<label xml:lang="pt-PT">Icaria Panel do Control</label>
+    				<variable name="url_base" value-of-setting="cp_base_url"></variable>
+    				<variable name="product" value-of-setting="product"></variable>
+    				<variable name="domain" value-of-setting="domain"></variable>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+    		<!-- Hidden para aprovisioanmiento -->
+    		<setting id="subscription_id" type="string" class="subscription_id" protected="true" visibility="hidden">
+    			<name>Subscription ID (hidden)</name>
+    		</setting>
+
+			<!-- TODO: Combo de tipo de documento y Documento -->
+			<group class="vcard">
+				<name>Datos de contacto</name>
+				<name xml:lang="en-US">CONTACT DATA</name>
+				<name xml:lang="es-ES">DATOS DE CONTACTO</name>
+				<name xml:lang="pt-PT">DATOS DO CONTACTO</name>
+				<group class="org">
+        			<setting id="name" type="string" class="organization-name">
+            			<name>Nombre</name>
+            			<name xml:lang="en-US">Name</name>
+            			<name xml:lang="es-ES">Nombre</name>
+            			<name xml:lang="pt-PT">Nome</name>
+        			</setting>
+			    </group>
+			    <group class="email">
+			    	<setting id="email" type="email" class="value">
+			    		<name>Email</name>
+			    		<name xml:lang="en-US">email</name>
+			    		<name xml:lang="es-ES">Correo electrónico</name>
+			    		<name xml:lang="pt-PT">e-mail</name>
+			    	</setting>
+			    </group>
+			    <group class="tel">
+			        <setting id="phone" type="string" class="work">
+            			<name>Teléfono</name>
+            			<name xml:lang="en-US">Phone</name>
+            			<name xml:lang="es-ES">Teléfono</name>
+            			<name xml:lang="pt-PT">Teléfono</name>
+			        </setting>
+			    </group>
+				<setting type="enum" id="document_type" default-value="1">
+					<name>Tipo de documento</name>
+					<name xml:lang="en-US">Document type</name>
+					<name xml:lang="es-ES">Tipo de documento</name>
+					<name xml:lang="pt-PT">Tipo de documento</name>
+					<choice id="1"><name>DNI</name></choice>
+					<choice id="2"><name>Pasaporte</name></choice>
+					<choice id="3"><name>No informado</name></choice>
+					<choice id="4"><name>NIE</name></choice>
+					<choice id="5"><name>CIF</name></choice>
+					<choice id="6"><name>NIF</name></choice>
+					<choice id="7"><name>Tarjeta residente</name></choice>
+					<choice id="8"><name>Otros</name></choice>
+				</setting>
+				<setting type="string" id="document_number" default-value="">
+					<name>Documento</name>
+					<name xml:lang="en-US">Document number</name>
+					<name xml:lang="es-ES">Número de documento</name>
+					<name xml:lang="pt-PT">Número do documento</name>
+				</setting>
+			</group>
+			<group>
+				<name>Datos de la cuenta</name>
+				<name xml:lang="en-US">ACCOUNT DATA</name>
+				<name xml:lang="es-ES">DATOS DE LA CUENTA</name>
+				<name xml:lang="pt-PT">DATOS DO CUENTA</name>
+				<setting type="string" id="domain" installation-only="true" default-value="">
+					<name>Dominio</name>
+					<name xml:lang="en-US">Domain</name>
+					<name xml:lang="es-ES">Dominio</name>
+					<name xml:lang="pt-PT">Dominio</name>
+				</setting>
+			</group>
+
+   			<!-- Hidden Resources -->
+   			<group>
+   				<name>Recursos</name>
+	   			<setting id="users" type="integer" visibility="hidden" track-old-value="true" default-value="0">
+		    		<name>Users</name>
+		    		<name xml:lang="en-US">Number of users</name>
+		    		<name xml:lang="es-ES">Número de usuarios</name>
+		    		<name xml:lang="pt-PT">Número do usuarios</name>
+	   			</setting>
+   			</group>
+    	</settings>
+    	<resources>
+    		<!--  Resources para service plan -->
+			<resource id="resource_users" class="item" limiting-setting="users">
+				<name>Provision Resource - Users</name>
+				<name xml:lang="en-US">Provision Resource - Users Number</name>
+				<name xml:lang="es-ES">Recurso Número de Usuarios</name>
+				<name xml:lang="pt-PT">Recurso Número do Usuarios</name>
+			</resource>
+        </resources>
+    	<requirements xmlns:svc="http://apstandard.com/ns/1/service" xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:extension>soap</php:extension>
+    		<php:version min="5.4"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    		<verify-script name="verify.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</verify-script>
+    	</provision>
+    </service>
+</application>

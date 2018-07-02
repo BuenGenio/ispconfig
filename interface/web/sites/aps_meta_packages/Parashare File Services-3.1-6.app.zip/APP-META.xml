@@ -1,0 +1,279 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-12-18T17:32:51">
+    <id>http://www.parashare.com/3.0</id>
+    <name>Parashare File Services</name>
+    <version>3.1</version>
+    <release>6</release>
+    <homepage>http://www.parashare.com</homepage>
+    <vendor>
+    	<name>Parashare</name>
+    	<homepage>http://www.parashare.com</homepage>
+    	<icon path="images/PFSIcon.png" />
+    </vendor>
+    <packager>
+    	<name>Cloud Base Integration ltd</name>
+    	<homepage>http://www.comlinegroup.co.il/</homepage>
+    	<icon path="images/PFSIcon.png" />
+    	<uri>uuid:0b6cd094-8801-4d2d-ad2b-0a2d77b54c0c</uri>
+    </packager>
+    <presentation>
+    	<summary>ParaShare File Services for Parallels Automation</summary>
+    	<description>ParaShare File Services enables cloud providers to offer an on-premises hosted secure file sharing and synchronization services, delivering business data to any end-user device.
+Integration with Parallels Automation allows cloud providers to deploy a complete private-labeled solution within hours. 
+ParaShare File Services is a unique platform used by hosting providers to help SMBs with a true cloud transition.
+</description>
+    	<icon path="images/PFSLogo.png" />
+    	<screenshot path="images/wac_schreen.PNG">
+    		<description>WebAccess application</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.0">
+    			<entry>APS Draft</entry>
+    		</version>
+    		<version release="2" version="1.0">
+    			<entry>Provision scripts</entry>
+    		</version>
+    		<version release="3" version="1.0">
+    			<entry>User Entry point</entry>
+    		</version>
+    		<version release="4" version="1.0">
+    			<entry>Disable group provision</entry>
+    		</version>
+    		<version release="5" version="1.0">
+    			<entry>Additional user quotas</entry>
+    		</version>
+    		<version release="6" version="1.0">
+    			<entry>User Resource script</entry>
+    		</version>
+    		<version release="7" version="1.0">
+    			<entry>Groups</entry>
+    		</version>
+    		<version release="1" version="2.0">
+    			<entry>Major  redesign</entry>
+    		</version>
+    		<version release="2" version="2.0">
+    			<entry>Tenant verification script</entry>
+    		</version>
+    		<version release="3" version="2.0">
+    			<entry>Customer resource names</entry>
+    		</version>
+    		<version release="1" version="3.0">
+    			<entry>Redesign for new PSH data model</entry>
+    		</version>
+    		<version release="4" version="3.0">
+    			<entry>service id issue
+remove sensitive info from error log
+</entry>
+    		</version>
+    		<version release="1" version="3.1">
+    			<entry>Remove group feature</entry>
+    		</version>
+    		<version release="2" version="3.1">
+    			<entry>Add documentation</entry>
+    		</version>
+    		<version release="4" version="3.1">
+    			<entry>Update packager info
+doc location</entry>
+    		</version>
+    		<version release="5" version="3.1">
+    			<entry>added infolinks</entry>
+    		</version>
+    		<version release="6" version="3.1">
+    			<entry>Correct EULA path</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Front office/Productivity</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<setting type="string" id="managementUrl" default-value="">
+    		<name>ParaShare FileStorage Server </name>
+    	</setting>
+    	<setting type="string" id="admin_login" class="login"
+    		default-value="" min-length="1" max-length="32">
+    		<name>Administrator Login Name</name>
+    	</setting>
+    	<setting type="password" id="admin_password" class="password" default-value="" min-length="6" max-length="256">
+    		<name>Administrator Password</name>
+    	</setting>
+    	<setting type="string" id="webAccessUrl" default-value="">
+    		<name>Web Access Url</name>
+    	</setting>
+    </global-settings>
+    <upgrade match="" />
+    <service id="tenant" class="service" singular="true">
+    	<license must-accept="false">
+    		<commercial />
+    		<text>
+    			<name>End User License Agreement</name>
+    			<url>http://parashare.com/license/EULA.html</url>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>Parashare File Services</name>
+    		<summary>This Service represent a company's account contains end users and groups</summary>
+    		<infolinks>
+    			<link href="http://www.parashare.com" class="official">Parashare</link>
+    			<link href="http://www.parashare.com/portal" class="support">Support</link>
+    			<link href="http://parashare.com/doc/APS1.2/ParaShare-Provider-guide_v1.2.pdf" class="deployment-guide">Provider guide </link>
+    			<link href="http://parashare.com/doc/APS1.2/ParaShare-Subscriber-guide_v1.2.pdf" class="user-guide">Subscriber guide</link>
+    		</infolinks>
+    		<!--entry-points>
+    			<entry class="control-panel" dst="{webAccessUrl}/Login.aspx" method="POST">
+    				<label>Organization Administrator Panel</label>
+    				<variable name="webAccessUrl" class="" value-of-setting="webAccessUrl"></variable>
+    				<variable name="pwd" value-of-setting="customer_password" class="password"></variable>
+    				<variable name="name" value-of-setting="customer_login"></variable>
+				</entry>
+    		</entry-points-->
+    	</presentation>
+    	<settings>
+    		<group class="authn">
+    			<name>Organization Administator</name>
+    			<setting type="string" id="customer_login" track-old-value="true" min-length="1" max-length="32" default-value="" class="login" uuid="ed49fa51-b3ce-4361-bb95-896cf56d5014" uniq="global">
+    				<name>Organization Administator Login</name>
+    			</setting>
+    			<setting type="password" id="customer_password"
+    				min-length="6" max-length="256" track-old-value="true" default-value="" class="password">
+    				<name>Organization Administator Password</name>
+    			</setting>
+    		</group>
+    		<group>
+    			<name>Account Limits</name>
+    			<setting type="integer" id="diskspace_org_quota" visibility="hidden" default-value="-1" min="-1">
+    				<name>Organization diskspace quota (MB)</name>
+    				<description>Diskspace limit for organization in MB. 
+When value is -1 the user quota will be used.</description>
+    			</setting>
+    			<setting type="integer" id="user_diskspace_limit" default-value="0" visibility="hidden" protected="true">
+    				<name>Default diskspace limit for User</name>
+    				<description>Default diskspace limit for Service User.</description>
+    			</setting><setting type="integer" id="shared_folder_org_quota" default-value="-1" visibility="hidden" min="-1">
+    				<name>Organization shared folder quota</name>
+    				<description>Shared netfolder quota. 
+-1 = unlimited</description>
+    			</setting>
+    		</group>
+    		<group class="vcard">
+    			<setting type="string" id="organization_name" default-value="" class="organization-name" min-length="0" max-length="16">
+    				<name>Organization Name</name>
+    			</setting>
+                <group class="email">
+	    			<setting type="email" id="customer_email" default-value="email@email.com" class="value">
+	    				<name>Administator Email</name>
+	    			</setting>
+    			</group>
+     		</group>
+    		<group>
+    			<name>Internal</name>
+    			<setting type="integer" id="customer_id" visibility="hidden" protected="true" default-value="0"></setting>
+    		</group>
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    		<verify-script name="verify.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</verify-script>
+    	</provision>
+    	<service id="user" class="account">
+    		<presentation>
+    			<name>Storage User</name>
+    			<summary>Parashare Storage End User</summary>
+	     		<infolinks>
+	    			<link href="http://www.parashare.com" class="official">Parashare</link>
+	    			<link href="http://www.parashare.com/portal" class="support">Support</link>
+	    			<link href="http://parashare.com/doc/APS1.2/ParaShare-Provider-guide_v1.2.pdf" class="deployment-guide">Provider guide</link>
+	    			<link href="http://parashare.com/doc/APS1.2/ParaShare-Subscriber-guide_v1.2.pdf" class="user-guide">Subscriber guide</link>
+	    		</infolinks>
+    			<entry-points>
+    				<entry dst="{webAccessUrl}/Login.aspx" class="control-panel" method="POST">
+    					<label>Web Access</label>
+    					<description>Access and control your account anywhere.</description>
+    					<variable name="name" value-of-setting="user_login" class="login"></variable>
+    					<variable name="pwd" value-of-setting="user_password" class="password"></variable>
+    					<variable name="webAccessUrl" value-of-setting="webAccessUrl" class=""></variable>
+    				</entry>
+    				<entry dst="{WACUrl}/clientDeploy/DataSyncSrv.msi" class="login">
+    					<label>Download DataSync (Windows)</label>
+    					<description>Downolad Parashare DataSync application for Windows</description>
+    					<variable name="WACUrl" value-of-setting="webAccessUrl"></variable>
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+	               <group class="authn">
+	                   <setting id="user_login" class="login" type="string" uniq="global" track-old-value="true" min-length="1" max-length="50">
+	                       <name>Login</name>
+	                   </setting>
+	                   <setting id="user_password" class="password" type="password" min-length="1">
+	                       <name>Password</name>
+	                   </setting>
+	                </group>
+		            <group class="vcard">
+		                <group class="fn n">
+		                    <setting id="first_name" class="given-name" type="string" max-length="30" default-value="" visibility="hidden">
+		                        <name>First Name</name>
+		                    </setting>
+		                    <setting id="last_name" class="family-name" type="string" max-length="30" visibility="hidden" default-value="">
+		                        <name>Last Name</name>
+		                    </setting>
+		                </group>
+		                <setting type="string" id="display_name" class="display-name" default-value="" max-length="30" visibility="hidden"></setting>
+		            </group>
+            		<group>
+    				<name>Quotas and Limits</name>
+    				<setting type="integer" id="user_diskspace_quota"
+    					visibility="hidden" default-value="-1" min="-1">
+    					<name>User diskspace quota (Mb)</name>
+    					<description></description>
+    				</setting>
+    				<setting type="integer" id="netfolder_quota" visibility="hidden" default-value="10">
+    					<name>NetFolder count</name>
+    				</setting>
+    				<setting type="integer" id="max_file_size" default-value="50" visibility="hidden">
+    					<name>Maximal file size (Mb)</name>
+    				</setting>
+    				<setting type="integer" id="sync_period"
+    					default-value="5" visibility="hidden">
+    					<name>Data synchronization period (minutes)</name>
+    				</setting>
+            		</group>
+            		<group>
+            			<name>Internal</name>
+            			<setting type="integer" id="user_id" visibility="hidden" default-value="0" protected="true"></setting>
+    					<setting type="string" id="customer_id" protected="true" visibility="hidden" value-of-setting="customer_id"></setting>
+    					<setting type="string" id="customer_login" value-of-setting="customer_login" visibility="hidden" protected="true"></setting>
+             		</group>
+    		</settings>
+    		<resources>
+    			<resource class="mb" id="diskspace_used" limiting-setting="user_diskspace_quota">
+    				<name>Diskspace Used</name>
+    			</resource><resource class="item" id="netfolder_count" limiting-setting="netfolder_quota">
+    				<name>NetFolder Count</name>
+    			</resource>
+    		</resources>
+    		<provision>
+    			<configuration-script name="configure.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</configuration-script>
+    			<verify-script name="verify.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</verify-script>
+    			<resource-script name="resources.php">
+    				<script-language>php</script-language>
+    			</resource-script>
+    		</provision>
+    	</service>
+    </service>
+</application>

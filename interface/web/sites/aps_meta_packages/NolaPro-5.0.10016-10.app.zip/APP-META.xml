@@ -1,0 +1,134 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-04-17T09:30:54">
+    <id>http://www.nolapro.com</id>
+    <name>NolaPro</name>
+    <version>5.0.10016</version>
+    <release>10</release>
+    <homepage>http://www.nolapro.com</homepage>
+    <vendor>
+    	<name>Nolapro</name>
+    	<homepage>http://www.nolapro.com</homepage>
+    	<icon path="images/logo.png" />
+    </vendor>
+    <packager>
+    	<name>Noguska</name>
+    	<homepage>http://www.noguska.com</homepage>
+    </packager>
+    <presentation>
+    	<summary>NolaPro Web Accounting</summary>
+    	<description>NolaPro is a complete accounting, order tracking and inventory suite. Customizations allow the software to fit your business operations or industry niche. International features such as multi-currency, VAT/GST and built-in language translator all supported.
+
+In a competitive market, using accounting software you can access 24/7 makes business sense. In a challenging economy, finding one for a few coins a day makes perfect fiscal sense. So it's little wonder that thousands of new users are switching to NolaPro every month.</description>
+    	<icon path="images/logo.png" />
+    	<screenshot path="images/ss1.png">
+    		<description>Nolapro Dashboard</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="5.0">
+    			<entry>------</entry>
+    		</version>
+    		<version release="2" version="5.0">
+    			<entry>----</entry>
+    		</version>
+    		<version release="3" version="5.0">
+    			<entry>---</entry>
+    		</version>
+    		<version release="4" version="5.0">
+    			<entry>-----</entry>
+    		</version>
+    		<version release="5" version="5.0">
+    			<entry>Updated Package Description.</entry>
+    		</version>
+    		<version release="6" version="5.0.9394">
+    			<entry>Updated to build #9394</entry>
+    		</version>
+    		<version release="7" version="5.0.10016">
+    			<entry>APS package updated with the newest NolaPro version.</entry>
+    		</version>
+    		<version release="8" version="5.0.10016">
+    			<entry>...</entry>
+    		</version>
+    		<version release="9" version="5.0.10016">
+    			<entry>Fixed &quot;Undefined index: wlhost&quot; and converted LICENSE file to ASCII only.</entry>
+    		</version>
+    		<version release="10" version="5.0.10016">
+    			<entry>...</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Back office/Billing</category>
+    		<category>Back office/Accounting and Financial</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <service id="NolaPro">
+    	<license must-accept="true">
+    		<text>
+    			<name>EULA</name>
+    			<file>LICENSE</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>NolaPro Instance</name>
+    		<summary>NolaPro Accounting Software</summary>
+    		<infolinks>
+    			<link href="http://support.nolapro.com" class="support">Support</link>
+    			<link href="http://demo.nolapro.com" class="demo">Demo Site</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry dst="/" class="login">
+    				<label>Home</label>
+    				<icon path="images/logo.png" />
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<requirements xmlns:db="http://apstandard.com/ns/1/db" xmlns:mysql="http://apstandard.com/ns/1/db/mysql" xmlns:env="http://apstandard.com/ns/1/environment" xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:max-execution-time>59</php:max-execution-time>
+    		<php:memory-limit>134217728</php:memory-limit>
+    		<php:extension>mysql</php:extension>
+    		<php:extension>gd</php:extension>
+    		<php:extension>session</php:extension>
+    		<php:extension>curl</php:extension>
+    		<php:extension>mbstring</php:extension>
+    		<php:extension>zlib</php:extension>
+    		<db:db>
+    			<db:id>main</db:id>
+    			<db:default-name>nolapro</db:default-name>
+    			<db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+    			<db:server-type>mysql</db:server-type>
+    			<db:server-min-version>5.0</db:server-min-version>
+    		</db:db>
+    		<php:short-open-tag>true</php:short-open-tag>
+    		<php:version min="5.0" max-not-including="5.5"/>
+    	</requirements>
+    	<provision xmlns:php="http://apstandard.com/ns/1/php">
+    		<url-mapping>
+    			<default-prefix>NolaPro</default-prefix>
+    			<installed-size>72166664</installed-size>
+    			<mapping url="/" path="htdocs" xmlns:php="http://apstandard.com/ns/1/php">
+					<php:permissions writable="true"/>
+					<php:handler>
+						<php:extension>php</php:extension>
+					</php:handler>
+    				<mapping url="uploads">
+    					<php:permissions writable="true"/>
+    				</mapping>
+    				<mapping url="includes/my_defines.php">
+    					<php:permissions writable="true"/>
+    				</mapping>
+    				<mapping url="b2b/database/database.inc">
+    					<php:permissions writable="true"/>
+    				</mapping>
+    				<mapping url="api/app/config/database.php">
+    					<php:permissions writable="true"/>
+    				</mapping>
+    			</mapping>
+    		</url-mapping>
+    		<configuration-script name="configure">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    	</provision>
+    </service>
+</application>

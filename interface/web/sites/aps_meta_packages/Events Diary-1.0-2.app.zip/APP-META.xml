@@ -1,0 +1,140 @@
+<application xmlns="http://apstandard.com/ns/1" packaged="2013-04-01T12:35:30" version="1.2">
+
+  <!-- common properties -->
+  <id>http://www.mjbtech.com/event_diary</id>
+  <name>Events Diary</name>
+  <version>1.0</version>
+  <release>2</release>
+  <homepage>http://196.12.36.231:81/events_diary/</homepage>
+  <!-- application and package vendors -->
+  <vendor>
+    <name>MJB Tech</name>
+    <homepage>http://www.mjbtech.com/</homepage>
+    <icon path="images/logo.png"/>
+  </vendor> 
+
+  <packager>
+    <name>mjbtechindia</name>
+    <homepage>http://www.mjbtech.com</homepage>
+    <icon path="images/logo.png"/>
+  </packager> 
+
+  <!-- application description --> 
+
+  	<presentation>
+	
+    <summary>The Events Diary is an application allows adding description of day-to-day events for selected date, month, and year in a calendar.</summary>
+  	<summary xml:lang="de-DE">Der Veranstaltungskalender ist eine Anwendung, erlaubt das Hinzufügen Beschreibung der Tag-zu-Tag Veranstaltungen für das gewählte Datum, Monat und Jahr in einem Kalender.</summary>
+  	<summary xml:lang="en-US">The Events Diary is an application allows adding description of day-to-day events for selected date, month, and year in a calendar.</summary>
+  	<summary xml:lang="fr-FR">Le journal des événements est une application permet d'ajouter la description de jour en jour des événements pour la date choisie, le mois et l'année dans le calendrier.</summary>
+  	<summary xml:lang="es-ES">El diario Events es una aplicación permite añadir descripciones de los acontecimientos del día a día para la fecha seleccionada, el mes y el año en un calendario.</summary>  	
+<description>
+		The Events Diary is an application allows adding description of day-to-day events for selected date, month, and year in a calendar. The application also allows editing and searching of the already added events. The Events Diary application empowers easy management of events with a simple user interface.
+   </description>
+   <description xml:lang="de-DE">
+		Der Veranstaltungskalender ist eine Anwendung, erlaubt das Hinzufügen Beschreibung der Tag-zu-Tag Veranstaltungen für das gewählte Datum, Monat und Jahr in einem Kalender. Die Anwendung ermöglicht auch die Bearbeitung und Suche der bereits hinzugefügten Events. Der Terminkalender-Anwendung ermöglicht eine einfache Verwaltung von Ereignissen mit einer einfachen Benutzeroberfläche.
+</description>
+   <description xml:lang="en-US">
+		The Events Diary is an application allows adding description of day-to-day events for selected date, month, and year in a calendar. The application also allows editing and searching of the already added events. The Events Diary application empowers easy management of events with a simple user interface.
+   </description>
+   <description xml:lang="fr-FR">
+		Le journal des événements est une application permet d'ajouter la description de jour en jour des événements pour la date choisie, le mois et l'année dans le calendrier. L'application permet également d'éditer et de rechercher des événements déjà ajoutés. L'application Journal des événements permet une gestion facile des événements avec une interface utilisateur simple.
+</description>
+   <description xml:lang="es-ES">
+		El diario Events es una aplicación permite añadir descripciones de los acontecimientos del día a día para la fecha seleccionada, el mes y el año en un calendario. La aplicación también permite la edición y la búsqueda de los eventos ya agregados. La aplicación permite a Diario La agenda de facilitar la gestión de eventos con una interfaz de usuario sencilla.
+</description>  
+
+    <icon path="images/events_diary.jpg"/>
+	
+    <screenshot path="images/screenshot-1.JPG">
+      <description>Add Event Description</description>
+    </screenshot>
+	<screenshot path="images/screenshot-2.JPG">	
+		  <description>View Event Description</description>	
+	</screenshot>	
+	<screenshot path="images/screenshot-3.JPG">	
+		  <description>Edit Event Description</description>
+	</screenshot>	
+	<screenshot path="images/screenshot-4.JPG">	
+		  <description>Navigate Calendar Dates</description>	
+	</screenshot>	
+	<screenshot path="images/screenshot-5.JPG">	
+		  <description>Search Events</description>
+	</screenshot>
+	
+    <changelog>
+      <version release="1" version="1.0">
+        <entry>The first and basic version of the application.</entry>
+      </version>
+	  <version release="2" version="1.0">
+        <entry>The stable version of application, after adding proper screenshots and infolink.</entry>
+      </version>
+    </changelog>
+
+   <categories>
+    <category>Web/Blog</category>
+   </categories>
+   
+   <languages>
+		<language>en</language>
+   </languages>
+   
+  </presentation>
+
+
+  <service id="diary">
+	<license must-accept="true">
+	<free/>
+	
+	<text>
+	<name>GPLv2 or later</name>
+	<url>http://opensource.org/licenses/gpl-2.0.php</url>
+	</text>
+	</license>
+
+	<presentation>	
+	
+	<name>Events Diary</name>	
+	<summary>Events Logger Application</summary>
+	
+	<infolinks>				
+				<link href="http://www.mjbtech.com/contactus.html" class="support">Events Diary Support Request</link>
+	</infolinks>
+			
+	<entry-points>	
+	<entry dst="/">	
+		<label>Events Diary</label>	
+		<description>Main page of Application</description>	
+	</entry>	
+	</entry-points>	
+	
+	</presentation>
+
+	<requirements xmlns:db="http://apstandard.com/ns/1/db" xmlns:php="http://apstandard.com/ns/1/php">
+	<php:version min="5.2"/>
+	<php:safe-mode>false</php:safe-mode>
+	</requirements>
+
+    <provision>
+	
+    <url-mapping>
+    <default-prefix>diary</default-prefix>
+    <installed-size>200995</installed-size>
+	
+    <mapping xmlns:php="http://apstandard.com/ns/1/php" path="htdocs" url="/">
+     <php:permissions writable="true"/>
+     <php:handler>
+      <php:extension>php</php:extension>
+     </php:handler>
+    </mapping>
+   </url-mapping>  
+
+	<configuration-script name="configure.php">	
+	  <script-language>php</script-language>	
+	  <structured-output/>	
+	</configuration-script>    
+
+    </provision>
+  </service>
+  
+</application>

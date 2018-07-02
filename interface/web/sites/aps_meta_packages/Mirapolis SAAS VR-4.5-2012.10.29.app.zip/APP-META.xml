@@ -1,0 +1,255 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-10-29T16:35:27">
+        <id>http://mirapolis.ru/saas/vr</id>
+        <name>Mirapolis SAAS VR</name>
+        <version>4.5</version>
+        <release>2012.10.29</release>
+        <homepage>http://www.virtualroom.ru/</homepage>
+        <vendor>
+            <name>Mirapolis Development</name>
+            <homepage>http://mirapolis.ru</homepage>
+            <icon path="images/mirapolis_logo.png" />
+        </vendor>
+        <packager>
+            <name>Mirapolis</name>
+            <homepage>http://mirapolis.ru</homepage>
+            <icon path="images/mirapolis_logo.png" />
+            <uri>uuid:c9fa49b2-ba47-11dd-9fed-00155882361a</uri>
+        </packager>
+        <presentation>
+            <summary>Mirapolis Virtual Room</summary>
+            <description xml:lang='en'>Mirapolis Virtual Room enables peoples to efficiently communicate, share screen and work together. 
+Mirapolis Virtual Room lets anyone host and attend live meetings, demos and webinars using just a web browser.  
+You can instantly sharing documents, web pages, whiteboards, audio, video. Also webinar recording is available.</description>
+            <description>Mirapolis Virtual Room – это эффективная, простая и удобная в использовании система для проведения веб-конференций, маркетинговых презентаций, онлайн-обучения, совещаний и любых других видов онлайн-встреч.
+Для маркетинга - это:
+- Увеличение количества и качества лидов
+- Сокращение цикла продаж
+- Расширение аудитории потенциальных клиентов
+- Выстраивание отношений с клиентами
+- Повышение узнаваемости брэнда
+Для продаж - это:
+- Сокращение цикла продаж
+- Живые демонстрации продуктов
+- Упрощение и повышение качества работы с удаленными заказчиками
+- Выстраивание отношений с клиентами
+Для обучения и тренингов - это:
+- Охват практически неограниченной аудитории
+- Экономия средств на проведение тренингов
+- Высокий уровень доступности для удаленных слушателей
+- Формирование библиотеки записей видеопрезентаций и обучающих семинаров
+Для рабочих групп - это:
+- Совещания распределенных рабочих групп
+- Доклады сотрудников
+- Проектные совещания с заказчиками</description>
+            <icon path="images/mvr_logo.png" />
+            <screenshot path="images/shot.png">
+                <description>Вид комнаты</description>
+                <description xml:lang='en'>Room Screen</description>
+            </screenshot>
+            <changelog>
+                <version version="4.5" release="2012.10.01">
+                    <entry>Packaged as APS 1.2 external SaaS</entry>
+                </version>
+                <version version="4.5" release="2012.10.19">
+                    <entry>Tariff choice has been added</entry>
+                </version>
+                <version release="2012.10.29" version="4.5">
+                	<entry>Tariff resource has been added</entry>
+                </version>
+            </changelog>
+            <categories>
+                <category>Collaboration/Web conferencing</category>
+            </categories>
+            <languages>
+				<language>ru</language>
+                <language>en</language>
+            </languages>
+        </presentation>
+        <global-settings>
+            <setting id="mp_host_url" class="title" type="string" installation-only="true" 
+            	default-value="http://saas.miranimbus.ru:8100/saas/service/saas" min-length="0" optional="true">
+                <name>Mirapolis Provisioning Host</name>
+                <description>This is DNS name or IP address of Mirapolis Systems installation, used for provisioning access.</description>
+            </setting>
+            <setting id="mp_provider_id" class="title" type="string" default-value="providerid" min-length="0" optional="true">
+                <name>Provider ID</name>
+                <description>This is Provider ID of Mirapolis Systems installation, used for provisioning access.</description>
+            </setting>
+            <setting id="mp_provider_key" class="title" type="string" default-value="providerkey" min-length="0" optional="true">
+                <name>Provider Key</name>
+                <description>This is Provider Key of Mirapolis Systems installation, used for provisioning access.</description>
+            </setting>
+            <setting id="mp_host_timeout"  type="integer" min="0" max="1800" default-value="900" optional="true">
+                <name>Таймаут соединения (сек)</name>
+                <name xml:lang="en">Connection timeout (sec)</name>
+                <description>Таймаут соединения к консоли управления, в секундах.</description>
+                <description xml:lang="en">Connection timeout for management console, seconds.</description>
+                <error-message>Допустимые значения - от 0 до 1800 (до получаса).</error-message>
+                <error-message xml:lang="en">Valid values - 0 to 1800 (up to half of hour).</error-message>
+            </setting>
+            <setting id="sys_type" class="title" type="string" default-value="vr" min-length="0" optional="true">
+                <name>Mirapolis SAAS System Type</name>
+                <description>This is the system type of Mirapolis SAAS System.</description>
+            </setting>
+        </global-settings>
+        <service id="context" class="service">
+            <license must-accept="true">
+                <text>
+                    <name>Пользовательское соглашение</name>
+                    <url>http://virtualroom.ru/saas_license.html</url>
+                </text>
+                <text xml:lang='en'>
+                    <name>End User License Agreement</name>
+                    <url>http://virtualroom.ru/saas_license_en.html</url>
+                </text>
+            </license>
+            <presentation>
+                <name>SAAS context</name>
+                <summary>Base parameters</summary>
+                <infolinks>
+                    <link class="official" href="http://virtualroom.ru">Official site</link>
+                    <link class="support" href="http://client.mirapolis.ru">Support site</link>
+                </infolinks>
+                <entry-points>
+                    <entry dst="{url}/Do?viewType=html&amp;doaction=loginformaction" method="POST">
+                        <label>Административный вход</label>
+                        <label xml:lang='en'>Administrator entry</label>
+                        <variable name="user" value-of-setting="admin_email" />
+                        <variable name="password" value-of-setting="admin_password" />
+                        <variable name="url" value-of-setting="url">http://a000.vr.mirapolis.ru/mira</variable>
+                    </entry>
+                </entry-points>
+            </presentation>
+            <!-- Service settings (step 7) -->
+            <settings>
+                <group class="instance">
+                    <name>Instance Settings</name>
+                    <group class="vcard">
+                    <name>User Info</name>
+                    <group class="email">
+                    <setting id="admin_email" class="value" type="email" installation-only="true">
+                        <name>Email</name>
+                        <name xml:lang="en">Email</name>
+                        <description>Логин/email администратора</description>
+                        <description xml:lang="en">Administrator login/email</description>
+                    </setting>
+                </group>
+                <group class="authn">
+                    <setting id="admin_password" class="password" type="password">
+                        <name>Пароль</name>
+                        <name xml:lang="en">Password</name>
+                        <description>Пароль администратора</description>
+                        <description xml:lang="en">Administrator password</description>
+                    </setting>
+                </group>
+                <group class="fn n">
+                    <setting id="admin_firstname" class="given-name" type="string" min-length="0" 
+                    	max-length="50" installation-only="true" optional="true">
+                        <name>Имя</name>
+                        <name xml:lang="en">Name</name>
+                        <description>Имя</description>
+                        <description xml:lang="en">Administrators name</description>
+                    </setting>
+                    <setting id="admin_lastname" class="family-name" type="string" min-length="0" 
+                    	max-length="50" installation-only="true" optional="true">
+                        <name>Фамилия</name>
+                        <name xml:lang="en">Surname</name>
+                        <description>Фамилия</description>
+                        <description xml:lang="en">Administrator surname</description>
+                    </setting>
+                </group>
+            </group>
+            <group>
+                <name>System URL</name>
+                <setting id="url" class="domain" type="string" track-old-value="true" min-length="0" protected="true">
+                    <name>Base URL</name>
+                </setting>
+                <!-- 
+                <setting id="alias" class="domain" type="host-name" track-old-value="true" optional="true">
+                    <name>User URL</name>
+                </setting>
+                 -->
+            </group>
+            <group>
+                <name>System parameters</name>
+                <setting id="tariff" type="enum" default-value="10050" track-old-value="true" visibility="hidden">
+                    <name xml:lang='en'>Tariff</name>
+                    <name>Тариф</name>
+                    <description xml:lang='en'>See http://virtualroom.ru/tariffs/ and http://virtualroom.ru/tariffs/saas_en.php for codes</description>
+                    <description>Описание тарифов: http://virtualroom.ru/tariffs/ и кодов: http://virtualroom.ru/tariffs/saas.php</description>
+                    <choice id="10050">
+                        <name xml:lang='en'>Standard up to 50</name>
+                        <name>Стандарт до 50</name>
+                    </choice>
+                    <choice id="10150">
+                        <name xml:lang='en'>Standard up to 150</name>
+                        <name>Стандарт до 150</name>
+                    </choice>
+                    <choice id="10300">
+                        <name xml:lang='en'>Standard up to 300</name>
+                        <name>Стандарт до 300</name>
+                    </choice>
+                    <choice id="10301">
+                        <name xml:lang='en'>Standard over 300</name>
+                        <name>Стандарт свыше 300</name>
+                    </choice>
+                    <choice id="20050">
+                        <name xml:lang='en'>Pro up to 50</name>
+                        <name>с до 50</name>
+                    </choice>
+                    <choice id="20150">
+                        <name xml:lang='en'>Pro up to 150</name>
+                        <name>Профессионал до 150</name>
+                    </choice>
+                    <choice id="20300">
+                        <name xml:lang='en'>Pro up to 300</name>
+                        <name>Профессионал до 300</name>
+                    </choice>
+                    <choice id="20301">
+                        <name xml:lang='en'>Pro over 300</name>
+                        <name>Профессионал свыше 300</name>
+                    </choice>
+                </setting>
+                <setting id="enddate" default-value="2022-02-22" track-old-value="true" type="date" visibility="hidden">
+                    <name>End date</name>
+                </setting>
+                <setting id="filestore_quota" type="integer" visibility="hidden" default-value="10240">
+                    <name>Filestore quota (in MB)</name>
+                </setting>
+                <setting id="users_quota" type="integer" visibility="hidden" default-value="1024">
+                    <name>Users quota in units</name>
+                </setting>
+            </group>
+        </group>
+    </settings>
+    <resources>
+        <resource id="users_count" class="item" limiting-setting="users_quota">
+            <name>Used Users Accounts</name>
+        </resource>
+        <resource id="disk_usage" class="mb" limiting-setting="filestore_quota">
+            <name>Used Disk Space</name>
+        </resource>
+        <resource class="item" id="tariff_code" limiting-setting="tariff">
+                <name>Тариф</name>
+                <name xml:lang="en">Tariff</name>
+                <description>Уровень услуг, предоставляемый при работе с MVR</description>
+                <description xml:lang="en">Service level of MVR company account.</description>
+		</resource>
+    </resources>
+    <requirements xmlns:php="http://apstandard.com/ns/1/php">
+        <php:version min="5.0" />
+        <php:extension>curl</php:extension>
+    </requirements>
+    <provision>
+        <configuration-script name="configure.php">
+            <script-language>php</script-language>
+            <status-control/>
+            <structured-output/>
+        </configuration-script>
+        <resource-script name="report-resources.php">
+            <script-language>php</script-language>
+        </resource-script>
+    </provision>
+</service>
+</application>

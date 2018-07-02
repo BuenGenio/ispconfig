@@ -1,0 +1,284 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-04-19T21:01:58">
+	<id>http://www.deskera.com/crm</id>
+	<name>Deskera CRM</name>
+	<version>1.0</version>
+	<release>13</release>
+
+	<homepage>http://www.deskera.com/crm</homepage>
+
+	<vendor>
+		<name>Deskera</name>
+		<homepage>http://www.deskera.com/</homepage>
+		<icon path="images/deskera-logo64x64-1.png" />
+	</vendor>
+
+	<packager>
+		<name>Deskera</name>
+		<homepage>http://www.deskera.com/</homepage>
+		<icon path="images/deskera-logo64x64-1.png" />
+		<uri>uuid:a614c0ac-a02a-11e2-916b-0019d1fb07b2</uri>
+	</packager>
+
+	<presentation>
+		<summary>Deskera CRM</summary>
+		<description>Deskera Customer Relationship Management Software offers a web based CRM solution that provides an organization with a single view of its customers; helps automating critical sales processes - from leads qualification to promotional campaigns and enables decision makers to easily implement customer centric strategies and ensure effective sales management.</description>
+
+		<icon path="images/crm-64x64.png"/>
+	
+		<screenshot path="images/Deskera-Tour.png">
+			<description>Home screenshot</description>
+		</screenshot>
+
+		<changelog>
+			<version version="1.0" release="1">
+				<entry>Packaged in APS 1.2</entry>
+			</version>
+			<version release="2" version="1.0">
+				<entry>Added PHPv5 requirement to the package</entry>
+			</version>
+			<version release="3" version="1.0">
+				<entry>Added scriptlet to handle package upgrade and update domain prefix to avoid conflicts</entry>
+			</version>
+			<version release="4" version="1.0">
+				<entry>Added php extension information</entry>
+			</version>
+			<version release="5" version="1.0">
+				<entry>Added operating system requirement entry</entry>
+			</version>
+			<version release="6" version="1.0">
+				<entry>* Fixed entry point URL
+* Change master service name
+* Removed x86 architecture requirement</entry>
+			</version>
+			<version release="7" version="1.0">
+				<entry>Updated entry point URL</entry>
+			</version>
+			<version release="8" version="1.0">
+				<entry>Added auto-login from POA feature</entry>
+			</version>
+			<version release="9" version="1.0">
+				<entry>Changed settings so that these are auto-filled</entry>
+			</version>
+			<version release="10" version="1.0">
+				<entry>Added deployment guide for service providers</entry>
+			</version>
+			<version release="11" version="1.0">
+				<entry>Parameterization for autologin to support all Deskera apps.</entry>
+			</version>
+			<version release="12" version="1.0">
+				<entry>Updated service provider documentation to include application requirement section</entry>
+			</version>
+			<version release="13" version="1.0">
+				<entry>Updated documentation and commercial name of the package</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Back office/Customer Relationship Management</category>
+			<category>Back office/Sales Force Automation</category>
+			<category>Front office/Help Desk</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting type="string" id="AdminUsername" visibility="hidden" default-value="" protected="true">
+			<name>Admin Username</name>
+		</setting>
+		<setting type="password" id="AdminPassword" visibility="hidden" default-value="" protected="true">
+			<name>Admin Password</name>
+		</setting>
+		<setting type="string" id="ApplicationUrl" visibility="hidden"
+			protected="true" installation-only="true" default-value="http://apps.deskera.com/api/soap/ProvisionServicePort?wsdl">
+			<name>Application's URL</name>
+		</setting>
+		<setting type="string" id="ApplicationId" installation-only="true" default-value="2" protected="true" visibility="hidden">
+			<name>Deskera Application ID</name>
+		</setting>
+		<setting type="string" id="Subdomainprefix" visibility="hidden" protected="true" installation-only="true" default-value="pob">
+			<name>Subdomain Prefix for URL</name>
+		</setting>
+	</global-settings>
+
+	<patch match="/application/version &gt;= '1.0'"/>
+
+	<service id="organization">
+		<license must-accept="false">
+			<free />
+			<text>
+				<name>Tems of service</name>
+				<url>http://deskera.com/terms-service</url>
+			</text>
+		</license>
+
+		<presentation>
+			<name>Deskera Administrator Account</name>
+			<summary>Your Organization's Deskera Administrator Account</summary>
+
+			<infolinks>
+				<link class="howto" href="http://support.deskera.com">Documentation</link>
+				<link href="http://forum.deskera.com" class="community">Forum</link>
+				<link href="support@deskera.com" class="support">Support</link>
+				<link href="file:///docs/Deskera Applications - PA - Service Providers v1.1.pdf" class="deployment-guide">Deskera Applications Service Provider Guide</link>
+			</infolinks>
+
+			<entry-points>
+				<entry dst="https://apps.deskera.com/apslogin.jsp" method="POST" class="frontpage">
+					<label>Deskera Apps Portal - Administrator</label>
+					<variable name="suffix" value-of-setting="subsuffix"></variable>
+					<variable name="prefix" value-of-setting="Subdomainprefix"></variable>
+					<variable name="u" value-of-setting="admin_username" class="login"></variable>
+					<variable name="p" value-of-setting="admin_password" class="password"></variable>
+					<variable name="service">0</variable>
+					<variable name="appid" value-of-setting="ApplicationId"></variable>
+				</entry>
+				<entry dst="https://apps.deskera.com/apslogin.jsp" method="POST" class="frontpage">
+					<label>Deskera CRM - Administrator</label>
+					<variable name="suffix" value-of-setting="subsuffix"></variable>
+					<variable name="prefix" value-of-setting="Subdomainprefix"></variable>
+					<variable name="u" value-of-setting="admin_username" class="login"></variable>
+					<variable name="p" value-of-setting="admin_password" class="password"></variable>
+					<variable name="service" value-of-setting="ApplicationId"></variable>
+					<variable name="appid" value-of-setting="ApplicationId"></variable>
+				</entry>
+			</entry-points>
+		</presentation>
+
+		<settings>
+			<group class="authn">
+				<name>Administrator's Preferences</name>
+				<setting id="admin_username" type="string" default-value="orgadmin" min-length="1" max-length="32" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" protected="true" class="login" installation-only="true">
+					<name>Administrator's Username</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting id="admin_password" type="password" min-length="1" default-value="welcome" track-old-value="true" class="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Administrator's Details</name>
+				<group class="email">
+					<setting id="admin_email" type="email" default-value="admin@organization.com">
+						<name>Email</name>
+					</setting>
+				</group>
+				<group class="fn n">
+					<setting type="string" id="admin_fname" min-length="1" max-length="64" class="given-name">
+						<name>First Name</name>
+					</setting>
+					<setting type="string" id="admin_lname" min-length="1" max-length="64" class="family-name">
+						<name>Last Name</name>
+					</setting>
+				</group>
+				<setting type="string" id="orgname"
+					min-length="0" max-length="120"
+					optional="true" installation-only="true" class="organization-name">
+					<name>Organization Name</name>
+				</setting></group>
+			<group class="web">
+				<setting type="string" id="subsuffix" uniq="global" installation-only="true" generate="sequence" protected="true" visibility="hidden">
+				</setting>
+				<setting type="string" id="realmid" uniq="global" visibility="hidden" protected="true" generate="uuid" installation-only="true"></setting></group>
+		</settings>
+
+
+		<requirements xmlns:db="http://apstandard.com/ns/1/db" xmlns:svc="http://apstandard.com/ns/1/service" xmlns:php="http://apstandard.com/ns/1/php" xmlns:env="http://apstandard.com/ns/1/environment">
+			<env:environment>
+				<env:linux></env:linux>
+			</env:environment>
+			<php:extension>soap</php:extension>
+			<php:version min="5"/>
+		</requirements>
+
+		<provision>
+			<configuration-script name="configure-organization.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</configuration-script>
+
+		</provision>
+		<service id="user" class="account">
+			<license must-accept="false">
+				<free />
+				<text>
+					<name>Terms of Service</name>
+					<url>http://deskera.com/terms-service</url>
+				</text>
+			</license>
+			<presentation>
+				<name>Organization Users</name>
+				<summary>User Account Service</summary>
+				<infolinks>
+					<link href="http://support.deskera.com" class="howto">Documentation</link>
+					<link href="support@deskera.com" class="support">Support</link>
+					<link href="http://forum.deskera.com" class="community">Forum</link>
+				</infolinks>
+				<entry-points>
+					<entry dst="https://apps.deskera.com/apslogin.jsp" method="POST" class="frontpage">
+					<label>Deskera Apps Portal</label>
+					<variable name="suffix" value-of-setting="subsuffix"></variable>
+					<variable name="prefix" value-of-setting="Subdomainprefix"></variable>
+					<variable name="u" value-of-setting="user_login" class="login"></variable>
+					<variable name="p" value-of-setting="user_password" class="password"></variable>
+					<variable name="service">0</variable>
+					<variable name="appid" value-of-setting="ApplicationId"></variable>
+				</entry>
+				<entry dst="https://apps.deskera.com/apslogin.jsp" method="POST" class="frontpage">
+					<label>Deskera CRM</label>
+					<variable name="suffix" value-of-setting="subsuffix"></variable>
+					<variable name="prefix" value-of-setting="Subdomainprefix"></variable>
+					<variable name="u" value-of-setting="user_login" class="login"></variable>
+					<variable name="p" value-of-setting="user_password" class="password"></variable>
+					<variable name="service" value-of-setting="ApplicationId"></variable>
+					<variable name="appid" value-of-setting="ApplicationId"></variable>
+				</entry>
+				</entry-points>
+			</presentation>
+
+			<settings>
+				<group class="authn">
+						<name>User's Preferences</name>
+						<setting id="user_login" class="login" type="string" min-length="3" max-length="32"
+								regex="^[a-zA-Z][0-9a-zA-Z_@\-\.]*" installation-only="true">
+								<name>Username</name>
+						</setting>
+						<setting id="user_password" class="password" type="password" min-length="4">
+								<name>Password</name>
+						</setting>
+				</group>
+				<group class="vcard">
+					<name>User's Details</name>
+					<group class="email">
+						<setting type="email" id="user_email" default-value="user@organization.com">
+							<name>Email</name>
+						</setting>
+					</group>
+					<group class="fn n">
+						<setting type="string" id="user_fname" min-length="1" max-length="64" class="given-name">
+						<name>First Name</name>
+					</setting>
+					<setting type="string" id="user_lname" min-length="1" max-length="64" class="family-name">
+						<name>Last Name</name>
+					</setting>
+					</group>
+				</group><setting type="string" id="subsuffix" visibility="hidden" value-of-setting="subsuffix"></setting>
+				<setting type="string" id="realmid" value-of-setting="realmid" visibility="hidden"></setting>
+			</settings>
+			<requirements xmlns:php="http://apstandard.com/ns/1/php">
+				<php:extension>soap</php:extension>
+				<php:version min="5"/>
+			</requirements>
+
+			<provision>
+				<configuration-script name="configure-user.php">
+						<script-language>php</script-language>
+						<status-control/>
+						<structured-output />
+				</configuration-script>
+			</provision>
+		</service>
+	</service>
+
+	</application>

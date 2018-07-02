@@ -1,0 +1,604 @@
+<application packaged="2018-03-19T11:27:22" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>VamShop</id>
+	<name>VamShop</name>
+	<version>2.51</version>
+	<release>1</release>
+	<homepage>http://vamshop.com/</homepage>
+	<vendor>
+		<name>VamShop</name>
+		<homepage>http:/vamshop.com/</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>VamShop</name>
+		<homepage>http://vamshop.ru/</homepage>
+		<icon path="images/icon.png"/>
+	</packager>
+	<presentation>
+		<summary>VamShop is an online shop e-commerce solution.</summary>
+		<summary xml:lang="ru-RU">VamShop - Движок (CMS) для создания интернет-магазина.</summary>
+		<description>
+			VamShop is an online shop solution that offers a wide
+			range of out-of-the-box features that allows online stores
+			to be setup fairly quickly with ease.
+
+			Features:
+			* Responsive design
+			* Fast loading (css,js,html code minified, merged, compressed and gzipped)
+			* One click buy
+			* Ratings &amp; Reviews
+			* Discount coupons
+			* Product comparison
+			* Integration with social networks
+			* Electronic payments
+			* Import/export
+			* Update in «one click»
+			* Multi-currency
+			* Multi-language
+			* And much more...
+			
+		</description>
+		<description xml:lang="ru-RU">
+			VamShop - Движок (CMS) для создания интернет-магазина.
+
+			Ключевые особенности:
+			* Адаптивный дизайн
+			* Быстрая загрузка (минификация, объединение, сжатие css,js,html кода)
+			* Покупка в "один клик"
+			* Рейтинги и отзывы
+			* Купоны
+			* Сравнение товаров
+			* Интеграция с социальными сетями
+			* Электронным платежи
+			* Импорт/экспорт
+			* Обновление в "один клик"
+			* Мультивалютный
+			* Мильтиязычный
+			* и многое, многое другое...
+			
+		</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/vamshop-catalog.png">
+			<description>VamShop Catalog</description>
+			<description xml:lang="ru-RU">Каталог VamShop</description>
+		</screenshot>
+		<screenshot path="images/vamshop-catalog-listing.png">
+			<description>VamShop Product Listing</description>
+			<description xml:lang="ru-RU">VamShop список товара</description>
+		</screenshot>
+		<screenshot path="images/vamshop-admin.png">
+			<description>VamShop Admin</description>
+			<description xml:lang="ru-RU">Админка VamShop</description>
+		</screenshot>
+    <changelog>
+        <version version="2.51" release="1">
+            <entry>1. New payment module - Bitcoin.</entry>
+            <entry>2. New payment module - Ethereum.</entry>
+            <entry>3. Fixes for php 7.2 compatibility.</entry>
+            <entry>4. CakePHP updated to 2.10.8 for php 7.2 compatibility.</entry>
+            <entry>5. Price fixes at Google Shopping module.</entry>
+            <entry>6. Placeholder free_download fixes.</entry>
+            <entry>7. Placeholder xsell price display fixes.</entry>
+            <entry>8. New parameter manufacturer_url added to the content_listing tag.</entry>
+            <entry>9. Currency display for email templates.</entry>
+            <entry>10. New placeholders shipping_method_description and payment_method_description.</entry>
+            <entry xml:lang="ru-RU">1. Добавлен новый модуль оплаты - Bitcoin.</entry>
+            <entry xml:lang="ru-RU">2. Добавлен новый модуль оплаты - Ethereum.</entry>
+            <entry xml:lang="ru-RU">3. Внесены правки в код для совместимости с php 7.2.</entry>
+            <entry xml:lang="ru-RU">4. CakePHP обновлён до версии 2.10.8 для правильной работы на php 7.2.</entry>
+            <entry xml:lang="ru-RU">5. Корректировка вывода цены в выгрузке Google Shopping.</entry>
+            <entry xml:lang="ru-RU">6. Корректировка кода метки free_download, что б не сбивался фильтр товаров на странице категории.</entry>
+            <entry xml:lang="ru-RU">7. Корректировка вывода цен в метке сопутствующих товаров xsell.</entry>
+            <entry xml:lang="ru-RU">8. Добавлен новый параметр manufacturer_url в тэг content_listing.</entry>
+            <entry xml:lang="ru-RU">9. Вывод всех цен в текущей валюте в письмах о новом заказе, о смене статуса заказа.</entry>
+            <entry xml:lang="ru-RU">10. Добавлены метки shipping_method_description и payment_method_description.</entry>            
+        </version>    
+        <version version="2.50" release="1">
+            <entry>1. Navigation fixes at admin.</entry>
+            <entry>2. New default font Roboto.</entry>
+            <entry>3. jQuery updated to 3.3.1.</entry>
+            <entry>4. Bootstrap fixes for jQuery 3.3.1.</entry>
+            <entry>5. Code fixes for jQuery 3.3.1</entry>
+            <entry>6. Default font size increased.</entry>
+            <entry>7. Color correction for W3C WCAG standard.</entry>
+            <entry>8. Accessibility fixes.</entry>
+            <entry>9. Import/export fixes.</entry>
+            <entry>10. Ajax indicator image added to the checkout page.</entry>
+            <entry>11. New attribute parent_id for content_listing, search_result, xsell tags.</entry>
+            <entry>12. New attribute plain for product_price tag.</entry>
+            <entry>13. Html fixes at attributes page.</entry>
+            <entry>14. New placeholders at shopping cart.</entry>
+            <entry>15. New routes.php settings for json files.</entry>
+            <entry>16. New placholder page_description.</entry>
+            <entry>17. Session settings fixes, new option chekAgent added.</entry>
+            <entry>18. Payment method Yandex fixes.</entry>
+            <entry>19. Cross sells template fixes.</entry>
+            <entry>20. jQuery plugin chosen added for Parent select field.</entry>
+            <entry>21. jQuery plugin chosen added for categories navigation at admin.</entry>
+            <entry>22. jQuery plugin chosen added for Brands.</entry>
+            <entry>23. jQuery plugin chosen added for Country and State fields at the checkout page.</entry>
+            <entry>24. PHP warning fixes at the checkout page.</entry>
+            <entry>25. Error layout fixes.</entry>
+            <entry>26. New placeholder $language for the current language code.</entry>
+            <entry>27. shipping_methods and payment_methods placeholders fixes.</entry>
+            <entry>28. jQuery module scrollup fixes.</entry>
+            <entry>29. jQuery Validate updated.</entry>
+            <entry>30. jQuery MaskedInput updated.</entry>
+            <entry>31. jQuery Colorbox updated.</entry>
+            <entry>32. jQuery UI updated.</entry>
+            <entry>33. jQuery bxSlider updated.</entry>
+            <entry>34. jQuery DynaTree updated.</entry>
+            <entry>35. jQuery modules fixes for jQuery 3.3.1 compatibility.</entry>
+            <entry>36. PHP warnings fixed.</entry>
+            <entry xml:lang="ru-RU">1. Корректировка навигации в админке.</entry>
+            <entry xml:lang="ru-RU">2. Шрифт по умолчанию изменён на Roboto, размер шрифта по умолчанию увеличен.</entry>
+            <entry xml:lang="ru-RU">3. Обновлён jQuery до текущей версии 3.3.1.</entry>
+            <entry xml:lang="ru-RU">4. Обновлён Bootstrap для правильной работы с jQuery 3.3.1.</entry>
+            <entry xml:lang="ru-RU">5. Корректировка кода для совместимости с jQuery 3.3.1</entry>
+            <entry xml:lang="ru-RU">6. Увеличен размер шрифта в html-редакторе по умолчанию.</entry>
+            <entry xml:lang="ru-RU">7. Корректировка цветов для соответствия стандарту контрастности W3C WCAG.</entry>
+            <entry xml:lang="ru-RU">8. Корректировка кода для прохождения тестов на доступность (accessibility).</entry>
+            <entry xml:lang="ru-RU">9. Корректировка импорта/экспорта, убрана запаковка в zip архив.</entry>
+            <entry xml:lang="ru-RU">10. На странице оформления заказа добавлен ajax индикатор-картинка.</entry>
+            <entry xml:lang="ru-RU">11. Добавлена метка parent_id в тэги content_listing, search_result, xsell.</entry>
+            <entry xml:lang="ru-RU">12. Добавлен параметр plain в метку product_price, для возможности вывода стоимости товара числом, без символа валюты.</entry>
+            <entry xml:lang="ru-RU">13. Корректировка кнопки добавить на странице шаблонов атрибутов в Админке.</entry>
+            <entry xml:lang="ru-RU">14. Добавлены новые метки в массив корзины, для вывода данных о товаре.</entry>
+            <entry xml:lang="ru-RU">15. Корректировка настроек routes.php по умолчанию, добавлена обработка json файлов.</entry>
+            <entry xml:lang="ru-RU">16. Добавлена новая метка page_description для вывода поля с описанием любого элемента.</entry>
+            <entry xml:lang="ru-RU">17. Корректировка настроек сессий по умолчанию, добавлена опция chekAgent.</entry>
+            <entry xml:lang="ru-RU">18. Корректирока кода в модуле оплаты Яндекс.Касса, спасибо sdi_68.</entry>
+            <entry xml:lang="ru-RU">19. Корректировка шаблона сопутствующих товаров, добавлен json шаблон.</entry>
+            <entry xml:lang="ru-RU">20. Подключён плагин chosen для поля Родитель, в админке, при добавлении контента.</entry>
+            <entry xml:lang="ru-RU">21. Подключён плагин chosen для быстрой навигации по разделам в Админке.</entry>
+            <entry xml:lang="ru-RU">22. Подключён плагин chosen для поля Производитель.</entry>
+            <entry xml:lang="ru-RU">23. Подключён jQuery модуль Chosen для полей Страна и Регион на странице оформления заказа.</entry>
+            <entry xml:lang="ru-RU">24. Корректировка php предупрежений на странице оформления заказа.</entry>
+            <entry xml:lang="ru-RU">25. Корректировка шаблона с ошибкой, убран редирект.</entry>
+            <entry xml:lang="ru-RU">26. Добавлена метка $language для вывода кода текущего языка.</entry>
+            <entry xml:lang="ru-RU">27. Корректирока кода меток shipping_methods и payment_methods.</entry>
+            <entry xml:lang="ru-RU">28. Корректировка кода в jQuery модуле scrollup.</entry>
+            <entry xml:lang="ru-RU">29. Обновлён модуль jQuery Validate.</entry>
+            <entry xml:lang="ru-RU">30. Обновлён модуль jQuery MaskedInput.</entry>
+            <entry xml:lang="ru-RU">31. Обновлён модуль jQuery Colorbox.</entry>
+            <entry xml:lang="ru-RU">32. Обновлён модуль jQuery UI.</entry>
+            <entry xml:lang="ru-RU">33. Обновлён модуль jQuery bxSlider.</entry>
+            <entry xml:lang="ru-RU">34. Обновлён модуль jQuery DynaTree.</entry>
+            <entry xml:lang="ru-RU">35. Корректировка кода jQuery модулей для правильной работы с jQuery 3.3.1.</entry>
+            <entry xml:lang="ru-RU">36. Корректировка php предупреждений</entry>
+        </version>
+        <version version="2.48" release="1">
+            <entry>New shipping module added - SDEK.</entry>
+            <entry>New shipping module added - SPSR.</entry>
+            <entry>New product columns added: length, width, height, volume.</entry>
+            <entry>New columns added to Import/Export module.</entry>
+            <entry>New placeholder added {product_length}.</entry>
+            <entry>New placeholder added {product_width}.</entry>
+            <entry>New placeholder added {product_height}.</entry>
+            <entry>New placeholder added {product_volume}.</entry>
+            <entry>New placeholder added {cookie}.</entry>
+            <entry>New placeholder added {payment_methods}.</entry>
+            <entry>New placeholder added {shipping_methods}.</entry>
+            <entry>New placeholder added {cdek_pvz}.</entry>
+            <entry>New parameters added to the content_listing tag.</entry>
+            <entry>Help text added to the Admin - Extensions - Tags page.</entry>
+            <entry>Sypex IP Geo API added.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый модуль доставки - СДЭК.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый модуль доставки - СПСР.</entry>
+            <entry xml:lang="ru-RU">Добавлены новые данные для товара: длина, ширина, высота, объём.</entry>
+            <entry xml:lang="ru-RU">Добавлены новые поля товава в модуль Импорта/Экспорта.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая метка {product_length} - выводит длину товара.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая метка {product_width} - выводит ширину товара.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая метка {product_height} - выводит высоту товара.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая метка {product_volume} - выводит объём товара.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая смарти-метка {cookie} для вывода значений cookie.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая метка {payment_methods} для вывода активных способов оплаты в виде иконок.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая метка {shipping_methods} для вывода активных способов доставки с предварительным расчётом стоимости доставки.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая метка {cdek_pvz} для вывода списка пунктов самовывоза для модуля доставки СДЭК.</entry>
+            <entry xml:lang="ru-RU">Добавлены метки длины, ширины, высоты, объёма в тэг content_listing.</entry>
+            <entry xml:lang="ru-RU">Добавлен вывод подсказок для тэгов прямо в список тэгов в Админке - Расширения - Тэги.</entry>
+            <entry xml:lang="ru-RU">Город посетителя определяется API сервисом Sypex IP Geo.</entry>
+        </version>
+        <version version="2.47" release="1">
+            <entry>New shipping module — PickPoint.</entry>
+            <entry>Customers search added.</entry>
+            <entry>New smarty placeholder shopping_cart_in.</entry>
+            <entry>New smarty placeholder free_download.</entry>
+            <entry>Stat graphs corrected at admin dashboard.</entry>
+            <entry>Html minification off at debug mode.</entry>
+            <entry>Yandex.Metrika stat code changes.</entry>
+            <entry>Added CakePHP system messages localization.</entry>
+            <entry>New css file sequence-left.css added for sequence slider.</entry>
+            <entry>{my_orders} placeholder changes.</entry>
+            <entry>Order admin view template changes.</entry>
+            <entry>Product images added to the product listing at admin side.</entry>
+            <entry>Php 7.1 fixes.</entry>
+            <entry>Shopping cart box fixes.</entry>
+            <entry>JS confirmation window added for mass operations.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый модуль доставки — PickPoint.</entry>
+            <entry xml:lang="ru-RU">Добавлен поиск клиентов по имени, email, телефону в Админке — Заказы — Покупатели.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая метка shopping_cart_in для определения наличия товара в корзине.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая метка free_download, коорая позволяет скачивать бесплатные виртуальные товары без оформления заказа.</entry>
+            <entry xml:lang="ru-RU">Корректирока графиков статистики в админке на главной странице, выводятся только подтверждённые заказы, а не все, убраны брошенные корзины с графиков.</entry>
+            <entry xml:lang="ru-RU">Отключена минификация html кода если включена отладка (debug).</entry>
+            <entry xml:lang="ru-RU">Корректировка электронной коммерции в яндекс метрике в соответствии с текущей документацией.</entry>
+            <entry xml:lang="ru-RU">Добавлен перевод на русский системных сообщений CakePHP.</entry>
+            <entry xml:lang="ru-RU">Добавил файл стилей sequence-left.css, пример стиля для слайдера: картинка слева, текст справа.</entry>
+            <entry xml:lang="ru-RU">Корректировка метки смарти-метки my_orders, если в настройках оформления заказа выключены поля формы, то и в истории заказов эти поля не видны.</entry>
+            <entry xml:lang="ru-RU">Корректировка страницы заказа в админке, не выводятся поля, отключённые в Админке — Настройки — Оформление заказа.</entry>
+            <entry xml:lang="ru-RU">Добавлен вывод картинок в Админке — Содержание — Категории и товары.</entry>
+            <entry xml:lang="ru-RU">Корректировка кода для совместимости с php 7.1.</entry>
+            <entry xml:lang="ru-RU">Корректировка ссылки на товар в боксе Корзина.</entry>
+            <entry xml:lang="ru-RU">Добавлено окно с подтверждением при массовом удалении элементов.</entry>
+        </version>
+        <version version="2.46" release="1">
+            <entry>New module - Gift.</entry>
+            <entry>bxSlider added for additional images at product info page.</entry>
+            <entry>Admin dashboard news tab added.</entry>
+            <entry>Privacy text added to the reviews module.</entry>
+            <entry>New tag {product_ordered} added.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый модуль - Подарок.</entry>
+            <entry xml:lang="ru-RU">Добавлен слайдер bxSlider для дополнительных картинок на странице карточки товара.</entry>
+            <entry xml:lang="ru-RU">На главной странице в админке новости выводятся справа, на первом экране, а не в самом низу.</entry>
+            <entry xml:lang="ru-RU">Добавлен текст про защиту персональных данных в модуль отзывов.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый тэг {product_ordered}, выводящий количество заказов товара.</entry>
+        </version>
+        <version version="2.45" release="1">
+            <entry>Composer integrated for library install/update.</entry>
+            <entry>Smarty placeholders moved to /app/Controller.</entry>
+            <entry>Privacy text added to the contact page.</entry>
+            <entry>Privacy text added to the one click buy module.</entry>
+            <entry>Privacy text added to the ask a question module.</entry>
+            <entry>Ajax sessions timeout fixed.</entry>
+            <entry xml:lang="ru-RU">Интегрирован менеджер пакетов Composer для быстрого и удобного добавления/обновления php библиотек.</entry>
+            <entry xml:lang="ru-RU">Smarty метки перенесены в папку /app/Controller.</entry>
+            <entry xml:lang="ru-RU">Добавлен текст про защиту персональных данных на страницу обратной связи.</entry>
+            <entry xml:lang="ru-RU">Добавлен текст про защиту персональных данных на страницу модуля купить за 1 клик.</entry>
+            <entry xml:lang="ru-RU">Добавлен текст про защиту персональных данных на страницу модуля задать вопрос о товаре.</entry>
+            <entry xml:lang="ru-RU">Исправлена возникающая не некоторых хостингах проблема с частым вылетом из админки.</entry>
+        </version>
+        <version version="2.44" release="1">
+            <entry>Yandex.Kassa payment module fixes.</entry>
+            <entry>Checkout settings added at Admin - Settings - Store - Checkout Settings.</entry>
+            <entry>404 page added.</entry>
+            <entry>Featured products added at shopping cart page.</entry>
+            <entry>PHP warning fixes.</entry>
+            <entry>Orders list added at success checkout page.</entry>
+            <entry>Featured products added at success checkout page.</entry>
+            <entry>Customer id added to the php session.</entry>
+            <entry>Redirect to 404 page at production mode.</entry>
+            <entry>HTML editor settings fixes. Youtube will not removed.</entry>
+            <entry>Customer email added to the php session.</entry>
+            <entry>Cache clear after currency change.</entry>
+            <entry>Russian language pack updated.</entry>
+            <entry>phpThumb image quality settings changes.</entry>
+            <entry>Checkout page privacy text added.</entry>
+            <entry>Email template at 1 click buy module changes.</entry>
+            <entry>Email template at contact us page changes.</entry>
+            <entry>Customer sort by default changed (new customers - first) at admin page.</entry>
+            <entry>Checkout page fixes.</entry>
+            <entry>Payment forms at account page fixes.</entry>
+            <entry xml:lang="ru-RU">Добавлена поддержка онлайн-касс в модуль оплаты яндекс.касса.</entry>
+            <entry xml:lang="ru-RU">Добавлены настройки оформления заказа, можно максимально упрощать оформление заказа в Админке - Настройки Магазин - Настройка оформления заказа.</entry>
+            <entry xml:lang="ru-RU">Добавлена отдельная 404 страница с управлением из админки.</entry>
+            <entry xml:lang="ru-RU">Добавлены рекомендуемые товары на страницу корзины.</entry>
+            <entry xml:lang="ru-RU">Корректировка php уведомлений.</entry>
+            <entry xml:lang="ru-RU">Добавлен вывод списка заказов покупателя на страницу после успешного оформления заказа.</entry>
+            <entry xml:lang="ru-RU">Добавлен вывод рекомендуемых товаров на страницу после успешного оформления заказа.</entry>
+            <entry xml:lang="ru-RU">Добавлен код записи в сессию id покупателя, что позволяет получать данные о сделанном заказе после оформления.</entry>
+            <entry xml:lang="ru-RU">В рабочем режиме добавлен редирект со страницы ошибки на страницу 404.</entry>
+            <entry xml:lang="ru-RU">Корректировка настроек html-редактора, youtube ролики не вырезаются.</entry>
+            <entry xml:lang="ru-RU">Добавлена запись в сессию email адрес покупателя.</entry>
+            <entry xml:lang="ru-RU">Очистка кэша при переключении валюты.</entry>
+            <entry xml:lang="ru-RU">Корректировка перевода на русский.</entry>
+            <entry xml:lang="ru-RU">Настройка сжатия картинок в phpThumb.</entry>
+            <entry xml:lang="ru-RU">На страницу оформления заказа добавлен текст про защиту персональных данных.</entry>
+            <entry xml:lang="ru-RU">Корректировка письма в модуле задать вопрос о товаре и купить за 1 клик.</entry>
+            <entry xml:lang="ru-RU">Корректировка письма со страницы обратной связи.</entry>
+            <entry xml:lang="ru-RU">Корректировка сортировки покупателей в админке, новые - сверху.</entry>
+            <entry xml:lang="ru-RU">Корректировка кода на странице оформления заказа.</entry>
+            <entry xml:lang="ru-RU">Корректировка кода для оплаты заказа после оформления, со страницы аккаунта покупателя.</entry>
+        </version>
+        <version version="2.43" release="1">
+            <entry>After process order payment added.</entry>
+            <entry>Google Shopping data feed added.</entry>
+            <entry>PHPMailer updated to 5.2.22.</entry>
+            <entry>PHP RSS parser SimplePie added.</entry>
+            <entry>Signature check at webmoney payment module changed from md5 to sha256.</entry>
+            <entry>Dumper changes for php 7/php 5 compatibility.</entry>
+            <entry>Dumper fixes for InnoDB tables.</entry>
+            <entry>New tag {payment_after}.</entry>
+            <entry>Payment form added at customers account page.</entry>
+            <entry>Abandoned carts module fixes.</entry>
+            <entry>Payment module yandex fixes.</entry>
+            <entry>{content_listing} tag fixes.</entry>
+            <entry>DKIM settings added to email component.</entry>
+            <entry>Phone name clickable now at the header.</entry>
+            <entry>Mainpage slider settings moved from home page settings to main layout template.</entry>
+            <entry>Header fixes for smartphones.</entry>
+            <entry>TinyMCE fixes, all images now responsive.</entry>
+            <entry>Auto generated aliases fixes.</entry>
+            <entry>PclZip library updated for php 7 compatibility.</entry>
+            <entry>Stylesheets export fixes for php 7 compatibility.</entry>
+            <entry>Templates export for php 7 compatibility.</entry>
+            <entry>HTML code highlighting added for users tags code.</entry>
+            <entry>SKU field added to the order products table.</entry>
+            <entry xml:lang="ru-RU">Добавлена возможность оплаты заказа после оформление заказа, со страницы аккаунта покупателя.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый модуль - выгрузка в Google Shopping.</entry>
+            <entry xml:lang="ru-RU">PHPMailer обновлён до текущей версии 5.2.22.</entry>
+            <entry xml:lang="ru-RU">Вывод новостей в админке реализован через PHP RSS парсер SimplePIE.</entry>
+            <entry xml:lang="ru-RU">Проверка подписи в модуле оплаты webmoney заменена с md5 на sha256.</entry>
+            <entry xml:lang="ru-RU">Корректировка модуля резервного копирования dumper, правильно работает на php 7/php 5.</entry>
+            <entry xml:lang="ru-RU">Исправлена ошибк в модуле dumper, неправильно считал количество строку в некоторых таблицах InnoDB.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый тэг {payment_after} для вывода платёжной формы на странице аккаунте покупателя.</entry>
+            <entry xml:lang="ru-RU">Добавлена кнопка Оплатить заказ на странице аккаунта покупателя.</entry>
+            <entry xml:lang="ru-RU">В модуле брошенных корзин выводятся только те брошенные заказы, в которых указаны контактные данные - email либо телефон.</entry>
+            <entry xml:lang="ru-RU">Корректировка модуля оплаты яндекс.касса, письмо с заказом клиенту отправляется до ухода на сайт платёжной системы.</entry>
+            <entry xml:lang="ru-RU">Корректировка тэга content_listing, параметр parent теперь необязателен.</entry>
+            <entry xml:lang="ru-RU">Добавлены DKIM настройки в компонент email.</entry>
+            <entry xml:lang="ru-RU">Номер телефона в шапке сайта сделан кликабельным. На смартфонах открывается сразу звонилка по клику на телефон.</entry>
+            <entry xml:lang="ru-RU">Вывод слайдера, рекомендуемых вынесен из содержимого главной страницы в основной шаблон.</entry>
+            <entry xml:lang="ru-RU">Шапка в шаблоне по умолчанию отображается и на смартфонах.</entry>
+            <entry xml:lang="ru-RU">Корректировка настроек html-редактора TinyMCE, все вставляемые через редактор картинки адаптивные.</entry>
+            <entry xml:lang="ru-RU">Генерируемые автометически псевдонимы сохраняются в нижнем регистре.</entry>
+            <entry xml:lang="ru-RU">Библиотека PclZip обновлена для совместимости с php 7.</entry>
+            <entry xml:lang="ru-RU">Корректировка экспорта стилей для правильной работы на php 7.</entry>
+            <entry xml:lang="ru-RU">Корректировка экспорта шаблонов и микро-шаблонов для правильной работы на php 7.</entry>
+            <entry xml:lang="ru-RU">Добавлена подсветка синтаксиса на страницах тэги пользователя и блоки.</entry>
+            <entry xml:lang="ru-RU">Добавлен вывод поля SKU в заказ.</entry>
+        </version>
+        <version version="2.42" release="1">
+            <entry>Stripe payment module added.</entry>
+            <entry>Content images moved from /img/content/product-id/image-name to /img/content/image-name.</entry>
+            <entry>jqzoom plugin added.</entry>
+            <entry>Description for shipping, payment methods added.</entry>
+            <entry>Default html editor settings changed.</entry>
+            <entry>jPushMenu plugin updated.</entry>
+            <entry>Dumper updated for php7 compatibility.</entry>
+            <entry>DaData suggestions updates.</entry>
+            <entry>PayPal payment module fixes.</entry>
+            <entry>content_listing tag fixes.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый модуль оплаты Stripe.</entry>
+            <entry xml:lang="ru-RU">Картинки выводятся теперь из папки /img/content/картинка, а не /img/content/id-товара/картинка.</entry>
+            <entry xml:lang="ru-RU">Добавлена библиотека jqzoom для увеличения картинок (лупа).</entry>
+            <entry xml:lang="ru-RU">Добавлено описание для модулей доставки, оплаты.</entry>
+            <entry xml:lang="ru-RU">Корректировка настроек html-редактора, что б не вырезал js код.</entry>
+            <entry xml:lang="ru-RU">Обновлена библиотека jPushMenu.</entry>
+            <entry xml:lang="ru-RU">Обновлён скрипт резервного копирования dumper для правильной работы на php7.</entry>
+            <entry xml:lang="ru-RU">Обновлены DaData подсказки.</entry>
+            <entry xml:lang="ru-RU">Корректировка кода в модуле оплаты PayPal.</entry>
+            <entry xml:lang="ru-RU">Корректировка кода вывода товара в метке content_listing.</entry>
+        </version>
+        <version version="2.41" release="1">
+            <entry>Fixes for php 7 compatibility.</entry>
+            <entry>Fixes for mysql 5.7 compatibility.</entry>
+            <entry>CakePHP updated to 2.8.4 for php 7, mysql 5.7 compatibility.</entry>
+            <entry>Smarty updated to 3.1.29 for php 7 compatibility.</entry>
+            <entry>PHPThumb updated to 1.7.14 for php 7 compatibility.</entry>
+            <entry>PHPMailer updated to 5.2.15 for php 7 compatibility.</entry>
+            <entry>Order total edit for order editor at admin.</entry>
+            <entry>Master/slave products fixes.</entry>
+            <entry xml:lang="ru-RU">Корректировка кода для совместимости с php 7.</entry>
+            <entry xml:lang="ru-RU">Корректировка кода для совместимости с mysql 5.7.</entry>
+            <entry xml:lang="ru-RU">CakePHP обновлён до версии 2.8.4 для правильной работы на php 7, mysql 5.7.</entry>
+            <entry xml:lang="ru-RU">Smarty обновлён до версии 3.1.29 для правильной работы на php 7.</entry>
+            <entry xml:lang="ru-RU">PHPThumb обновлён до версии 1.7.14 для правильной работы на php 7.</entry>
+            <entry xml:lang="ru-RU">PHPMailer обновлён до версии 5.2.15 для правильной работы на php 7.</entry>
+            <entry xml:lang="ru-RU">Добавлена возможность редактирования суммы заказа в редакторе заказа в админке.</entry>
+            <entry xml:lang="ru-RU">Корректировка кода вывода сгруппированных товаров.</entry>
+        </version>
+        <version version="2.40" release="1">
+            <entry>New payment method - YandexFizlico.</entry>
+            <entry>Product groups fixes.</entry>
+            <entry>Sort order field added to product attributes.</entry>
+            <entry>Products by manufacturers fixes.</entry>
+            <entry>New method - display_all added to reviews module.</entry>
+            <entry>Yandex.Market fixes.</entry>
+            <entry>Import/Export fixes.</entry>
+            <entry>CSS corrections.</entry>
+            <entry>TinyMCE 4 default theme fixes.</entry>
+            <entry>Content adding/saving fixes.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый модуль оплаты - Яндекс.Касса для физических лиц.</entry>
+            <entry xml:lang="ru-RU">Корректировка группировки товаров, сбрасывалась группировка.</entry>
+            <entry xml:lang="ru-RU">Добавлено поле порядок сортировки в менеджер атрибутов.</entry>
+            <entry xml:lang="ru-RU">Корректировка вывода товара по производителю, не выводились мастер товары.</entry>
+            <entry xml:lang="ru-RU">В модуль отзывы добавлен новый метод - display_all, который позволяет выводить все отзывы магазина в одном месте.</entry>
+            <entry xml:lang="ru-RU">Корректировка модуля Яндекс.Маркет.</entry>
+            <entry xml:lang="ru-RU">Корректировка импорта/экспорта, добавлен вырез 0d 0a, перевод каретки, разделитель колонок по умолчанию изменён на ~</entry>
+            <entry xml:lang="ru-RU">Уменьшен отступ между ссылками в шаблоне по умолчанию.</entry>
+            <entry xml:lang="ru-RU">Внешний вид html-редактора TinyMCE 4 в админке подогнан под используемый ранее TinyMCE 3.</entry>
+            <entry xml:lang="ru-RU">Корректировка вывода данных, при создании нового товара уже была заполнена форма предыдущим товаров, исправлено.</entry>
+        </version>
+        <version version="2.39" release="1">
+            <entry>New attributes manager.</entry>
+            <entry>New import/export module.</entry>
+            <entry>Currency fixes.</entry>
+            <entry>Add quick links at admin.</entry>
+            <entry>Content listing sorting fixes.</entry>
+            <entry>Minimum required fields at checkout - firstname and telephone. </entry>
+            <entry>Admin comments for reviews added.</entry>
+            <entry>New session informaton added.</entry>
+            <entry>Scrolling addded to shopping cart box.</entry>
+            <entry>Orders editor fixes.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый модуль управления атрибутами/спецификациями/фильтрами/сравнением/доп. полями товаров прямо на странице категории/товара в админке.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый модуль импорта/экспорта.</entry>
+            <entry xml:lang="ru-RU">Корректировка переключения валют, кэшировались страницы с ценами, исправлено.</entry>
+            <entry xml:lang="ru-RU">Добавлены быстрые ссылки на главную страницу админки.</entry>
+            <entry xml:lang="ru-RU">Корректировка сортировки в тэге content_listing.</entry>
+            <entry xml:lang="ru-RU">В модуле оформления заказа оставлены два обязательных поля - Имя и Телефон.</entry>
+            <entry xml:lang="ru-RU">Добавлена возможность редактирования/добавления ответов в отзывы.</entry>
+            <entry xml:lang="ru-RU">Добавлены новые метки в сессию с информацией о текущей валюте.</entry>
+            <entry xml:lang="ru-RU">Добавлена полоса прокрутки в бокс корзины.</entry>
+            <entry xml:lang="ru-RU">В редакторе заказа не добавлялась сумма доставки, исправлено.</entry>
+        </version>
+        <version version="2.36" release="1">
+            <entry>Auto update fixes.</entry>
+            <entry>Country/State ajax select menu.</entry>
+            <entry>Copy product fixes.</entry>
+            <entry>New placeholder meta title.</entry>
+            <entry>Add product name column to reviews module.</entry>
+            <entry>Default font size at TinyMCE set to 16px.</entry>
+            <entry>Add password recovery for customers.</entry>
+            <entry>SMS notifications added for new order and order status change.</entry>
+            <entry>Sequence slider CSS fixes.</entry>
+            <entry>New js code for equal height columns.</entry>
+            <entry xml:lang="ru-RU">Корректировка скрипта обновления, добавлено создание несуществующих директорий.</entry>
+            <entry xml:lang="ru-RU">Корректировка страницы редактирования покупателя в админке, регион и страна сделаны в удобном виде, в виде select меню.</entry>
+            <entry xml:lang="ru-RU">Корректировка копирования товаров, задаётся новый alias для скопированных товаров.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая метка, выводящая meta title.</entry>
+            <entry xml:lang="ru-RU">Добавлен вывод названия товара в модуль отзыыв.</entry>
+            <entry xml:lang="ru-RU">Увеличен размер шрифта по умолчанию в html-редакторе TinyMCE.</entry>
+            <entry xml:lang="ru-RU">Добавлена напоминалка пароля.</entry>
+            <entry xml:lang="ru-RU">Добавлены SMS уведомления клиентов при оформлении заказа, при изменении статуса заказа.</entry>
+            <entry xml:lang="ru-RU">Исправлены ошибки в css стилях слайдера.</entry>
+            <entry xml:lang="ru-RU">Добавлен новый js код для выравнивания высоты колонок (equal height).</entry>
+        </version>
+        <version version="2.30" release="1">
+            <entry>PHP warnings fixed</entry>
+            <entry>Bootstrap updated to current 3.3 version.</entry>
+            <entry xml:lang="ru-RU">Исправлена php уведомления.</entry>
+            <entry xml:lang="ru-RU">Bootstrap обновлён до текущей 3.3 версии.</entry>
+        </version>
+        <version version="2.22" release="1">
+            <entry>Add SKU column.</entry>
+            <entry>Add manufacturers.</entry>
+            <entry>Add new menu WASlideMenu.</entry>
+            <entry>Add new menu JsTreeMenu.</entry>
+            <entry>Add star rating and total reviews placeholders.</entry>
+            <entry>Add paging for product reviews.</entry>
+            <entry>Speed up content_listing tag.</entry>
+            <entry>Remove unnecessary sql queries.</entry>
+            <entry>Add new product_manufacturer tag.</entry>
+            <entry>Add import/export manufacturers.</entry>
+            <entry>Add pending orders highlighting.</entry>
+            <entry xml:lang="ru-RU">Добавлено поле SKU товарам.</entry>
+            <entry xml:lang="ru-RU">Добавлены производители.</entry>
+            <entry xml:lang="ru-RU">Добавлено меню WASlideMenu.</entry>
+            <entry xml:lang="ru-RU">Добавлено меню JsTreeMenu.</entry>
+            <entry xml:lang="ru-RU">Добавлен вывод рейтинга товара и количества отзывов.</entry>
+            <entry xml:lang="ru-RU">Добавлена разбивка на страницы отызвов.</entry>
+            <entry xml:lang="ru-RU">Ускорена работа тэга content_listing.</entry>
+            <entry xml:lang="ru-RU">Убраны лишние sql запросы.</entry>
+            <entry xml:lang="ru-RU">Добавлена метка product_manufacturer для вывода производителя товара на странице карточки товара.</entry>
+            <entry xml:lang="ru-RU">Добавлен в импорт/экспорт производитель.</entry>
+            <entry xml:lang="ru-RU">Добавлена подсветка ожидающих проверки заказов в админке.</entry>
+        </version>
+        <version version="2.21" release="1">
+            <entry>Add ajax price change</entry>
+            <entry>Max execution time set in ImportExportController.php.</entry>
+            <entry>Add addons, support site links</entry>
+            <entry>Add parameter order to content_listing tag.</entry>
+            <entry>Add sorting inside categories.</entry>
+            <entry>Add new tag - page_url, returns cuurent page url.</entry>
+            <entry>Fixes in QiwiRest payment module.</entry>
+            <entry>Fixes in robots.txt.</entry>
+            <entry xml:lang="ru-RU">Добавлена возможность изменения цены товара с помощью ajax прямо в списке в Админке - Содержание - Категории и товары.</entry>
+            <entry xml:lang="ru-RU">Увеличено время исполнения скрипта в ImportExportController.php.</entry>
+            <entry xml:lang="ru-RU">Добавлены ссылки на сайт расширений, сайт поддержки в шапке админки.</entry>
+            <entry xml:lang="ru-RU">Добавлен параметр order в тэг content_listing.</entry>
+            <entry xml:lang="ru-RU">Добавлена возможность сортировки товара внутри категории.</entry>
+            <entry xml:lang="ru-RU">Добавлена новая метка - page_url, выводит url адрес страницы.</entry>
+            <entry xml:lang="ru-RU">Корректировка кода в модуле оплаты QiwiRest.</entry>
+            <entry xml:lang="ru-RU">Корректировка robots.txt.</entry>
+        </version>
+    </changelog>		
+    <categories>
+		<category>Web/E-commerce</category>
+    </categories>
+		<languages>
+			<language>en</language>
+			<language>ru</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '2.22' and /application/release &gt;= '1'"/>
+	<service id="vamshop">
+		<license must-accept="true">
+			<text>
+				<name>VamShop EULA</name>
+				<file>htdocs/LICENSE</file>
+			</text>
+		</license>
+		<presentation>
+			<summary>Support Service</summary>
+			<infolinks>
+				<link class="support" href="http://support.vamshop.com/modules/amcontact/">Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/users/admin_login/" method="POST">
+					<label>Administrative interface</label>
+					<variable class="login" name="data[User][username]" value-of-setting="admin_name"/>
+					<variable class="password" name="data[User][password]" value-of-setting="admin_password"/>
+				</entry>
+				<entry dst="/">
+					<label>Catalog</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>
+						Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				<setting class="password" id="admin_password" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="web">
+			<setting class="locale" default-value="en-US" id="locale" type="enum">
+				<name>Interface language</name>
+				<choice id="en-US">
+					<name>English</name>
+				</choice>
+				<choice id="ru-RU">
+					<name>Russian</name>
+				</choice>
+			</setting>
+			</group>
+		</settings>
+		<requirements>
+			<apache:htaccess xmlns:apache="http://apstandard.com/ns/1/apache"/>
+			<php:version min="5.0.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">pdo_mysql</php:extension>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>vamshop</db:default-name>
+				<db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>3.2.3</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>vamshop</default-prefix>
+				<installed-size>13016225</installed-size>
+			    <mapping url="/" path="htdocs" xmlns:php="http://apstandard.com/ns/1/php">
+			        <php:handler><php:extension>php</php:extension></php:handler>
+			        <php:permissions writable="true"/>
+					<mapping url=".htaccess">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="app/.htaccess">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="app/webroot/.htaccess">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="app/tmp">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+			    </mapping>    
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

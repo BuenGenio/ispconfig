@@ -1,0 +1,273 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2">
+    <id>bulletin-oms</id>
+    <name>Bulletin Mobile Messaging</name>
+    <version>1.0</version>
+    <release>11</release>
+
+    <homepage>http://info.bulletin.net/bulletin-for-pa</homepage>
+
+    <vendor>
+        <name>Bulletin</name>
+        <homepage>http://bulletin.net</homepage>
+    </vendor>
+
+    <packager>
+        <name>Bulletin</name>
+        <homepage>http://www.bulletin.net</homepage>
+        <uri>uuid:2cec7c45-4317-4528-92f0-90b01b25616e</uri>
+    </packager>
+
+    <presentation>
+        <summary>Send SMS via the web, email, mobile or API</summary>
+        <description>
+            Bulletin Messenger allows mobile messaging to and from any device globally. Designed to be white-labelled, service providers can quickly and easily integrate the service within Parallels Automation and provide messaging services to their customers.
+
+            Messages can be sent via a state-of-the-art web interface, email, Outlook, mobile devices and a REST API.
+
+            Bulletin - Innovation in Mobile Messaging
+        </description>
+        
+        <icon path="images/icon.png"/>
+        
+        <screenshot path="images/screenshot.png">
+            <description>
+                A SMS message being created in Microsoft Outlook
+            </description>
+        </screenshot>
+
+        <changelog>
+            <version version="1.0" release="11">
+                <entry>Better error handling when failing to provision</entry>
+                <entry>Added global settings to configure the email template</entry>
+            </version>
+            <version version="1.0" release="10">
+                <entry>Add new property to add a logo to welcome email</entry>
+            </version>
+            <version version="1.0" release="9">
+                <entry>Change vendor name, add deployment guide.</entry>
+            </version>
+            <version version="1.0" release="6">
+                <entry>Remove extra https prefix from welcome email link.</entry>
+            </version>
+            <version version="1.0" release="1">
+                <entry>Initial release.</entry>
+            </version>
+        </changelog>
+
+        <categories>
+            <category>Collaboration/Telecommunications</category>
+        </categories>
+
+        <languages>
+            <language>en</language>
+        </languages>
+
+    </presentation>
+    
+    <global-settings>
+        <group>
+            <name>Bulletin Service Connection</name>
+            <setting id="bulletin_url" type="string" default-value="">
+                <name>Bulletin URL</name>
+                <description>The URL provided by bulletin for API access used in creating and maintaining users.</description>
+            </setting>
+            <setting id="bulletin_api_key" type="string" default-value="">
+                <name>Bulletin API Key</name>
+                <description>The API key provided by bulletin for API access</description>
+            </setting>
+            <setting id="bulletin_customer_url" type="string" default-value="">
+                <name>Customer Access URL</name>
+                <description>The URL customers will use to access bulletin's customer control panel</description>
+            </setting>
+            <setting id="welcome_email_address" type="email" default-value="noemail@example.com" optional="true">
+                <name>Welcome Email Address</name>
+                <description>The email address welcome emails will originate from</description>
+            </setting>
+            <setting id="welcome_email_name" type="string" default-value="" optional="true">
+                <name>Welcome Email Name</name>
+                <description>The name the welcome emails will originate from</description>
+            </setting>
+            <setting id="welcome_email_logo" type="string" default-value="" optional="true">
+                <name>Welcome Email Logo URL</name>
+                <description>A url to a logo that will be displayed in welcome emails; will not be used if there is a welcome email template defined.</description>
+            </setting>
+            <setting id="welcome_email_subject" type="string" default-value="" optional="true">
+                <name>Welcome Email Subject</name>
+                <description>Subject of welcome email</description>
+            </setting>
+            <setting id="welcome_email_template" type="string" default-value="" optional="true">
+                <name>Welcome Email Template</name>
+                <description>Template to use for email; {link} will be replaced with the oms specific link.</description>
+            </setting>
+        </group>
+    </global-settings>
+
+    <patch match="/application/version &gt;= '0.1'" />
+
+    <service id="instance" class="service" singular="true">
+        <license must-accept="false"> 
+            <commercial/>
+            <text>
+                <name>Terms of service</name>
+                <url>https://www.bulletin.net/terms.html</url>
+            </text>
+        </license>
+
+        <presentation>
+            <name>Outlook Mobile Service</name>
+            <summary>Send SMS messages using the Outlook Mobile Service in Outlook 2007 or Outlook 2010</summary>
+            <infolinks>
+                <link href="http://www.bulletin.net" class="official">Official Site</link>
+                <link href="http://www.bulletin.net/contact" class="support">Support Site</link>
+                <link href="https://www.bulletin.net/docs/display/MC/Parallels+Automation+Package+User+Guide" class="deployment-guide">Deployment documentation</link>
+            </infolinks>
+            <entry-points>
+                <entry dst="{bulletin_customer_url}/login" method="POST" class="control-panel">
+                    <label>Administration</label>
+                    <description>Customer control panel</description>
+                    <variable name="user" value-of-setting="admin_login"/>
+                    <variable name="password" value-of-setting="admin_password"/>
+                    <variable name="bulletin_company_id" value-of-setting="bulletin_company_id"/>
+                    <variable name="bulletin_customer_url" value-of-setting="bulletin_customer_url"/>
+                </entry>
+            </entry-points>
+        </presentation>
+
+        <settings>
+            <group class="instance">
+                <setting id="subscription_id" type="string" class="subscription_id" visibility="hidden">
+                    <name>Subscription</name>
+                    <description>The customers subscription ID in POA</description>
+                </setting>
+                <setting id="bulletin_company_id" type="string" visibility="hidden" protected="true" default-value="">
+                    <name>Bulletin Customer Company ID</name>
+                    <description>The customers ID in bulletin's control panel</description>
+                </setting>
+                <setting id="bulletin_admin_user_id" type="string" visibility="hidden" protected="true" default-value="">
+                    <name>Bulletin Customer Admin User ID</name>
+                    <description>The customers admin user id in bulletin's control panel</description>
+                </setting>
+            </group>
+            <setting id="sms_limit" type="integer" default-value="0" protected="true">
+                <name>Limit of SMS messages</name>
+            </setting>
+            <group class="authn">
+                <name>Admin Login Information</name>
+                <setting id="admin_login" type="string" class="login" visibility="hidden">
+                    <name>Admin Login</name>
+                    <description>The admin login name that will be used to access bulletin's control panel</description>
+                </setting>
+                <setting id="admin_password" type="password" class="password" visibility="hidden">
+                    <name>Admin Password</name>
+                    <description>The admin password that will be used to access bulletin's control panel</description>
+                </setting>
+            </group>
+
+            <group class="customer-info">
+                <name>Customer Information</name>
+                <group class="fn n">
+                    <setting id="organization-name" type="string" class="organization-name" visibility="hidden" default-value="">
+                        <name>Organization name</name>
+                    </setting>
+                    <setting id="admin-given-name" type="string" class="given-name" visibility="hidden" default-value="">
+                        <name>Admin given name</name>
+                    </setting>
+                    <setting id="admin-family-name" type="string" class="family-name" visibility="hidden" default-value="">
+                        <name>Admin family name</name>
+                    </setting>
+                    <setting id="country-name" type="string" class="country-name" visibility="hidden">
+                        <name>Country Name</name>
+                    </setting>
+                </group>
+            </group>
+        </settings>
+
+        <resources>
+            <resource id="sms_limit" class="item" limiting-setting="sms_limit">
+                <name>Sms Usage</name>
+                <description>Number of sms messages sent</description>
+            </resource>
+        </resources>
+
+        <requirements xmlns:php="http://apstandard.com/ns/1/php">
+            <php:extension>json</php:extension>
+            <php:extension>xml</php:extension>
+            <php:version min="5"/>
+        </requirements>
+
+        <provision>
+            <configuration-script name="configure.php">
+                <script-language>php</script-language>
+                <structured-output/>
+            </configuration-script>
+            <resource-script name="resources.php" poll-interval="5m">
+                <script-language>php</script-language>
+            </resource-script>
+        </provision>
+
+        <service id="account" class="account">
+
+            <presentation>
+                <name>Outlook Mobile Service Account</name>
+                <summary>Outlook mobile service account, allows a user to send and recieve OMS messages</summary>
+                <entry-points>
+                    <entry dst="{bulletin_customer_url}/login" method="POST" class="control-panel">
+                        <label>Admin</label>
+                        <variable name="user" value-of-setting="user_login"/>
+                        <variable name="password" value-of-setting="user_password"/>
+                        <variable name="bulletin_company_id" value-of-setting="bulletin_company_id"/>
+                        <variable name="bulletin_customer_url" value-of-setting="bulletin_customer_url"/>
+                    </entry>
+                </entry-points>
+            </presentation>
+
+            <settings>
+                <group class="authn">
+                    <setting id="user_login" type="string" class="login" visibility="hidden">
+                        <name>User login</name>
+                    </setting>
+                    <setting id="user_password" type="password" class="password" visibility="hidden">
+                        <name>User password</name>
+                    </setting>
+                    <setting id="bulletin_user_id" type="string" protected="true" visibility="hidden" default-value="">
+                        <name>Bulletin User ID</name>
+                    </setting>
+                </group>
+
+                <group class="inherited">
+                    <setting id="bulletin_company_id" type="string" value-of-setting="bulletin_company_id" visibility="hidden">
+                        <name>Bulletin Company ID</name>
+                    </setting>
+                    <setting id="bulletin_admin_user_id" type="string" value-of-setting="bulletin_admin_user_id" visibility="hidden">
+                        <name>Bulletin Admin User ID</name>
+                    </setting>
+                    <setting id="country-name" type="string" value-of-setting="country-name" visibility="hidden">
+                        <name>Country name</name>
+                    </setting>
+                </group>
+
+                <group class="customer-info">
+                    <name>Customer Information</name>
+                    <group class="fn n">
+                        <setting id="user-given-name" type="string" class="given-name" visibility="hidden" default-value="">
+                            <name>User given name</name>
+                        </setting>
+                        <setting id="user-family-name" type="string" class="family-name" visibility="hidden" default-value="">
+                            <name>User family name</name>
+                        </setting>
+                    </group>
+                </group>
+
+            </settings>
+
+            <provision>
+                <configuration-script name="configure-user.php">
+                    <script-language>php</script-language>
+                    <structured-output/>
+                </configuration-script>
+            </provision>
+        </service>
+
+    </service>
+
+</application>

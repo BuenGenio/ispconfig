@@ -1,0 +1,653 @@
+<application packaged="2015-02-25T14:35:01" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>Piwik</id>
+	<name>Piwik</name>
+	<version>2.11.1</version>
+	<release>64</release>
+	<homepage>http://piwik.org/</homepage>
+	<vendor>
+		<name>piwik.org</name>
+		<homepage>http://piwik.org/</homepage>
+		<icon path="images/piwik.png"/>
+	</vendor>
+	<packager>
+		<name>Glowtouch Technologies</name>
+		<homepage>http://glowtouch.com/</homepage>
+		<icon path="images/parrallels-GT6.png"/>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>Open source web analytics</summary>
+		<description>Piwik is a downloadable, open source (GPL licensed) web analytics software program. It provides you with detailed real time reports on your websit visitors: the search engines and keywords they used, the language they speak, your popular pages and so much more.
+		</description>
+		<icon path="images/piwik.png"/>
+		<screenshot path="images/piwik-e280ba-web-analytics-reports7.png">
+			<description>Piwik report and graphs</description>
+		</screenshot>
+		<changelog>
+			<version release="2" version="1.12">
+				<entry>Changes in the App-Meta.xml</entry>
+			</version>
+<version release="1" version="1.12">
+				<entry>Piwik 1.12 Changelog: http://piwik.org/changelog/
+				</entry>
+			</version>
+<version release="1" version="1.11.1">
+				<entry>Piwik 1.11.1. Changelog: http://piwik.org/changelog/
+</entry>
+			</version>
+			<version release="4" version="1.10.1">
+				<entry>Minor changes</entry>
+			</version>
+			<version release="2" version="1.10.1">
+				<entry>
+					Changes in app-meta.xml and upgrade script
+				</entry>
+			</version>
+			<version release="1" version="1.10.1">
+				<entry>
+					Piwik 1.1.1. Changelog: http://piwik.org/changelog/
+				</entry>
+			</version>
+			<version release="1" version="1.1.1">
+				<entry>
+					Piwik 1.1.1. Changelog: http://piwik.org/changelog/
+				</entry>
+			</version>
+			<version release="11" version="1.0">
+				<entry>Preserve old config file on upgrade</entry>
+				<entry>Declare config directory writable</entry>
+			</version>
+			<version release="10" version="1.0">
+				<entry>Icon is added</entry>
+			</version>
+			<version release="9" version="1.0">
+				<entry>
+					Release notes:
+					http://piwik.org/blog/2010/08/piwik-1-0/
+				</entry>
+			</version>
+			<version release="2" version="1.11.1">
+				<entry>Changes in the script</entry>
+			</version>
+			<version release="4" version="1.11.1">
+				<entry>Changes in the test</entry>
+			</version>
+			<version release="5" version="1.11.1">
+				<entry>Upgraded to APS1.2</entry>
+			</version>
+			<version release="3" version="1.12">
+				<entry>Changes in Sevices root id</entry>
+			</version>
+			<version release="4" version="1.12">
+				<entry>Updated</entry>
+			</version>
+			<version release="1" version="2.0.2">
+				<entry>Initial Version</entry>
+			</version>
+			<version release="5" version="2.0.2">
+				<entry>Fixed open basedir restriction in effect</entry>
+			</version>
+			<version release="6" version="2.0.2">
+				<entry>added chmod for root folder</entry>
+			</version>
+			<version release="7" version="2.0.2">
+				<entry>removed chmod for root directory,added remove directory code in remove process</entry>
+			</version>
+			<version release="17" version="2.0.3">
+				<entry>Plugins: support “require” particular Piwik version and/or a minimum PHP version
+Prevent Random error “This report has been reprocessed since your last click. “
+Tracking API reference missing parameters for Ecommerce analytics
+Add geolocation check to system check report
+Users report for All websites in scheduled report
+Remove DoNotTrack and Anonymize plugins and move them to PrivacyManager
+Can’t open Plugins/Themes because my server and client are off the internet
+Exclude from traffic Baidu bot and Yandex bot
+Allow to define the time to look back to define a returning visitor
+Visitor Log: returning visitors: show number of visits
+Add setting to disable LOAD DATA INFILE, for easy Mysql replication in AWS
+Can’t get goals by custom variable values
+Replace jsmin
+Broken sorting in Goals.getItems
+geoip DB automatic update doesn’t respect update period
+Error in visitor Map for region Vaud, Switzerland
+Brazil SVG Map region fix
+Morpheus theme shouldn’t force aspect ratio on custom branding logo
+Browser Detection Internet Explorer 11.0 (IE11)
+setting sites are very wide
+file .git/HEAD doesn’t exist
+Log.php: Assigning the return value of new by reference is deprecated
+Bounce rate column sorts is not working
+Real time visitor count does not refresh automatically
+In Theme.php, file_exists() triggers open_basedir restrictions in Windows PHP if contaning querystring
+”Ranking Query” for better archiving memory consumption
+visits from Google adwords bot should be excluded
+LOAD DATA INFILE in chroot environment
+Theming: some images not overriden by theme images
+Repeated visits reported in Visitor profile
+String data, right truncated: 1406 Data too long for column ‘location_browser_lang’ at row 1
+PHP Fatal error: Call to a member function rewriteAssetsPathToTheme()
+Wrong label for returning visitor in Visitors in Real-time.
+Ignore Do Not Track setting for IE 11 browsers
+Presence of “http://” in the parameters of the archive cron script may cause incompatibility with cPanel
+Goals&gt; Ecommerce log listing, not listing all ecommerce orders and abandoned carts
+Error when downloading pdf-report
+Module ImageGraph.get API ‘graphType=3dPie’ error.
+Weird spacing in “Visits in Real-time” plugin
+Big extra spacing in annotations</entry>
+			</version>
+			<version release="27" version="2.1.0">
+				<entry>Archive.php memory improvements (up to 10 times less memory required!)
+Make Innodb the new default type for all new Piwik installations (VS Myisam)
+New Plugin: Provide HTTP_AUTH Authentication for Piwik – Release in Marketplace
+Add Support for Multiple Superusers
+Introduce new User permission: Super User Access
+Make Archive.php use PHP CLI instead of Web, more reliable and faster
+Various improvements to Devices Detection algorithm
+Implement a Smart App Banner to promote iPhone / iPad App
+Add Segment Editor to the Iframed embed dashboard
+Implement Smart App banner for Android devices
+Allow Super Users to change their alias
+Piwik will now use Semantic Versioning for Piwik core releases and all plugins
+New config setting to disable Creation of real time segments by non Super Users
+CSV format for Scheduled Email Reports
+Tracking API speed improvement: cache parsed yaml in tracker cache (DevicesDetection)
+Remove force_ssl_login setting -&gt; only support force_ssl for security
+Automatically activate/deactivate the ‘Login’ plugin when activating another Login plugin (eg. LdapLogin)</entry>
+			</version>
+			<version release="36" version="2.2.0">
+				<entry>New Release
+Changed update functionality</entry>
+			</version>
+			<version release="37" version="2.2.1">
+				<entry>Persist &amp; Restore all settings from reports, like it is done for Dashboard widgets
+Bundle AngularJS with Piwik
+Tracking API: allow bulk tracking without token_auth
+Customise periods enabled in the API and in calendar, new config setting
+Archiving should trigger limited number of concurrent requests
+Adding widgets to the dashboard not possible on mobile devices
+import_logs.py fail to populate actions/page tables
+Database is sometimes not initialised correctly after a fresh install
+Error: it seems you tried to skip a step of the Installation process
+Install with errors, not tracking
+Installation: when there is already a Super User, skip the installation step
+core:archive doesn’t produce hourly archives
+Implement a default Referrer spam blacklist
+Use autoloader in piwik.php requests
+Use Composer to require PHPUnit
+Deprecate archive.sh script -&gt; use `./console core:archive` instead
+Deprecate Period::factory() -&gt; use Period\Factory::build() instead
+API: Column sort does not always work for processed metrics
+support for filter_sort_order in Live.getLastVisitsDetails API
+IE10/11: calendar date range shows days in white on white
+In UI “Metrics to plot” minor formatting errors
+Bug: Annotations API, “date=today” is not resolved to actual date
+Disable Insights plug-in on Database Usage Graph
+When new annotation created in PIWIK, it proposes wrong date
+All Websites dashboard page title
+API getLastVisitsDetails – sorting a range of data
+VisitorGenerator plugin: Token auth is required for bulk tracking
+All Websites Dashboard doesn’t list websites if one has the group field filled (Piwik 2.2.0)
+procfs needed by process component as of Piwik 2.2
+Incompatibility with PHP 5.5.11 due to bug in this php version
+Invalid FastCGI Check in ProxyHttp.php
+</entry>
+			</version>
+			<version release="38" version="2.2.2">
+				<entry>Initial release</entry>
+			</version>
+			<version release="39" version="2.3.0">
+				<entry>Initial Release</entry>
+			</version>
+			<version release="40" version="2.4.0">
+				<entry>List of tickets fixed
+   #57 Better Data Insights. Show me what’s increased and decreased, movers and shakers (beta)
+    #5222 Remove Zeitgeist theme from Piwik and support only Morpheus
+    #5275 Tracking API: major performance improvements with Transactions, when using Bulk Tracking
+    #5394 Referrers overview: report labels should show more characters before truncation
+    #5314 Log Analytics: several performance improvements
+    #5212 New setting: enable Left Menu mode
+    #3770 LibreJS compatibility for piwik.js: free/libre license notice
+    #5192 Simplify / improve top menu
+    #5329 Enable DevicesDetection plugin by default
+    #5301 Developers: provide a simpler ScheduledTasks API
+    #5331 Developers: new hooks in Login: ‘Login.authenticate’, ‘Login.authenticate.successful’
+    #5360 Developers: new hook Live.makeNewVisitorObject for plugins to customise Visitor object
+    #5303 Switching metrics in row evolution view doesn’t work after changing report timespan
+    #5396 New parameters for the core:archive console command for power users
+    #4455 Change piwik URL to builds.piwik.org/piwik-latest.zip
+    #4363 Row Evolution shows wrong data when directory and file with identical names exist at same level
+    #5291 PiwikTracker PHP client: when bulk tracking, Custom variables are now reset after each request
+    #5306 php console core:update -&gt; issue using Piwik 2.3.0
+    #5320 Calculation All Websites dashboard wrong
+    #5332 DataTable footer drawer does not expand when clicked
+    #5356 When a custom date range is requested, the timezone of the requested website may be ignored
+    #2900 When running piwik proxy php to hide footprint, IP address is not set correctly when the website being tracked is behind proxy
+    #4918 When 10 widgets request the same site + date + segment at once, check it is archived only once
+    #5263 make core:archive command compatibile with HHVM
+    #5266 htaccess should help apache serve HTML files properly with: AddHandler text/html .html
+    #5282 Include Meta tag IE=edge for best security practises
+    #5311 Ensure all directories in plugins/
+    are chmod 755, to serve html/scripts/images
+    #5344 New system check to alert user when session.auto_start = 1
+    #5366 Limits ability of different Piwik instances to cross-match users (privacy)
+    #4017 Detect requests from iTunes
+    #5025 Support for user-agent string from AFNetworking library (iOS)
+    #5343 Cron core:archive: make sure the PHP cli binary is at least 5.3.2
+    #5371 Piwik should work as expected when PHP setting session.hash_function has non default value
+    #5382 Make “Site Search” on “All Websites Dashboard” case-insensitive
+    #5384 piwik.js: new function setCustomRequestProcessing() to let you edit the tracking request before it is sent
+    #5393 Piwik.js: ability to register plugins to execute logic when a request is sent
+    #5387 New config setting: set the Scheduled report emails Reply-to field to Email and Alias name of report creator
+    #4870 Nightingale Media Player not detected correctly
+    #4872 API: get PageUrl returns same results for several day
+    #5007 Error when running cron:archive: Response was ‘Console ToolUsage: [options] command….
+    #5213 Website dropdown no longer appears
+    #5240 German translation incomplete in version 2.3.0
+    #5243 Visitor/locations: Map region selector to narrow
+    #5247 Long Segment names break segment listing layout
+    #5253 Error in “Database Usage” usage …
+    #5254 import_logs give a IOError: [Errno 29] Illegal seek when receiving log from pipe
+    #5255 IIS: web.config should allow to server HTM, HTML and SVG files.
+    #5256 Visitor Generator not working from console
+    #5262 Not well testable php class method URL::redirectToUrl($url)
+    #5268 2.3.0: Visitors in Real-time widget, incorrect page title display
+    #5281 invalidateArchivedReports $dates issue
+    #5297 Remove plugins/Zeitgeist/
+    plugin from filesystem on upgrade
+    #5322 Incorrect domain age reported
+    #5349 Warning: syntax error, unexpected $end, expecting ‘}’ in config.ini.php in libs/upgradephp/upgrade.php
+    #5354 Dropping outdated archives can timeout on huge Piwik instances
+    #5358 Auto archiving: all websites should be archived at least once per day
+    #5370 DBStats: Call to a member function getColumn() on a non-object in core/DataTable/Filter/ColumnCallbackAddColumnQuotient
+    #5383 getVisitorProfilePopup: error on empty data
+    #5388 FatalError – subDay() in API.php
+    #3651 Support user agents of PIM clients (calendar, email) and feed readers (RSS, Atom)
+    #5339 hardcoded user in permission error</entry>
+			</version>
+			<version release="45" version="2.5.0">
+				<entry>new release</entry>
+			</version>
+			<version release="1" version="2.6.1">
+				<entry>    #6089 Reports for today will be processed every 150 seconds instead of previous default 10s (real time reports)
+    #5977 When there are many goals, show them grouped in a selector [by @tsteur]
+    #5982 PiwikDebugger: a new plugin to debug a Piwik instance without FTP access (troubleshooting toolkit).
+    #5989 Let users define a Goal as “Goal is triggered when visitor send an Event” [by @tsteur]
+    #6045 Add hooks to Live plugin and let other plugins extend it [by @tsteur]
+    #6071 Use an event to collect visitor information and made sure UI works even when minimum plugins are enabled [by @tsteur]
+    #5414 Entering Settings doesn’t work after update to 2.4.0 [by @tsteur]
+    #5850 Piwik.js JS tracker: allow developer to pass a ‘callback’ argument [by @Sija, @mattab]
+    #5863 Split core language files into plugins where possible [by @tsteur]
+    #6035 Fix xhprof integration, install xhprof through composer and build xhprof through composer. [by @diosmosis]
+    #6036 Enables code coverage reports using coveralls.io [by @sgiehl]
+    #5924 Let Piwik admins run the `core:archive` through the browser
+    #5952 Error when switching ‘report tables’ view of DBStats plugin to pie chart [by @tsteur]
+    #5970 Unexpected hijacking user after clicking on sparkline and chart [by @tsteur]
+    #5971 Unclear indication of current state of Real-time widget [by @tsteur]
+    #5973 Lack of “Cancel” option when editing users [by @tsteur]
+    #5993 Add FAQ to explain how to configure CORS Cross-origin resource sharing hosts
+    #5990 Duplicated “create new goal” text
+    #5995 Fix XHProf implementation [by @diosmosis, @tsteur, @mattab]
+    #5997 Lacking label in “Create new Goal” view [by @tsteur]
+    #6011 Find only components and settings of activated plugins [by @tsteur]
+    #6012 Make ./console core:archive work on CGI (use case 1&amp;1 hosting/managed server) [by @tsteur]
+    #6013 /misc/cron/archive.php mistake web execution for command line [by @tsteur]
+    #6014 “The string Goals_Ecommerce was not loaded in javascript” … Massive Error message on “Websites Management” [by @tsteur]
+    #6024 Switch to composer for autoloading. [by @diosmosis, @tsteur]
+    #6025 On version 2.5.0 under the “Event Actions” report, the second-level aggregate table is now showing “Unique Visitors”, it used to be “Total Events” [by @tsteur]
+    #6026 Goals condition and examples do not update when creating/editing a goal [by @tsteur]
+    #6028 Field ‘location_browser_lang’ doesn’t have a default value In query [by @tsteur, @mattab]
+    #6030 Object of class Piwik\Plugins\Proxy\Controller could not be converted to string in core/FrontController.php on line 173 [by @mattab]
+    #6038 Theming – changing font variable does not work [by @tsteur]
+    #6043 fixed composer.json to download the same set of vendors as with use of c… [by @mgazdzik, @mattab]
+    #6048 Refactor piwikApi angularjs object to allow aborting individual requests and all requests. [by @diosmosis]
+    #6049 2.5.0 Upgrade – Breaks Visitor Log [by @tsteur]
+    #6057 Bug in JSON renderer renders simple associative array as indexed array containing object. [by @diosmosis]
+    #6059 Move translations from core to plugins and cache all plugin translations for better performance [by @tsteur]
+    #6065 Cache list of Tracker plugins in tracker than config file [by @tsteur]
+    #6066 Move JSON format bug fixes to new JSON2 format so existing clients will not fail. [by @diosmosis]
+    #6067 at installation step 2, warning message: “GET request to piwik.php failed.” [by @mattab]
+    #6070 When a Goal is matching a pattern containing &lt;, &gt;, ‘, ” goal will not match [by @mattab]
+    #6072 dynamically detect tracker plugins and cache them instead of using config [by @tsteur, @mattab]
+    #6084 Removing pre PHP 5.3 checks (SPL ArrayObject) [by @ThaDafinser, @mattab]
+    #6086 2.6b1: API returned an error: Date format.. [by @diosmosis]
+    #6092 After updating to 2.5.0 the plugin page don’t work [by @diosmosis]
+    #6102 Processed report does not add all metrics to columns [by @tsteur]
+    #6107 xhprof removed their composer.json file, adding it to our composer.json file so we can still use composer to manage xhprof [by @diosmosis]
+    #6112 Fix getProcessedReport does not include all metrics in columns [by @tsteur]
+    #6114 Norwegian Bokmål name is written wrong [by @sgiehl]
+    #6117 [automatic translation update] Updated 129 strings in 6 languages (fa, tr, ru, cs, ja, nl) [by @sgiehl]
+</entry>
+			</version>
+			<version release="47" version="2.6.1">
+				<entry>Initial release</entry>
+			</version>
+			<version release="49" version="2.8.0">
+				<entry>Piwik 2.8.0 is a new major release of Piwik. 
+In this release we have focused on reliability, usability and security.
+A css file changed to fix a minor issue.</entry>
+			</version>
+			<version release="51" version="2.8.3">
+				<entry>RFC: Improving discussions and communication with Requests for Comments (RFC)
+RFC: Extract some Piwik Core classes into reusable PHP libraries or reuse 3rd party libraries
+RFC: Dropping IE8 support
+RFC: Extracting the IP class into a standalone “network” component
+Piwik Community survey – we would appreciate if you take 3 minutes to fill our survey!
+
+#6068 Ecommerce orders with double quotes in product name or category name are not tracked [by @diosmosis]
+#6499 ‘superUserWasSet’ as username [by @mattab]</entry>
+			</version>
+			<version release="55" version="2.9.0">
+				<entry>Piwik 2.9.0 is a new major release of Piwik! In this release we have focused on reliability and stability. 58 tickets have been closed by more than 8 contributors!
+
+Last night Piwik was one of the finalists of the New Zealand Open Source Software Awards and to celebrate we name this release NZOSA.
+
+After You Update
+
+Use the forums if you have any question or feedback (free support),
+Please help us spread the word about Piwik! Maybe you can write about the project on your blog, website, twitter, talk about Piwik Analytics at conferences, or let your friends and colleagues know what is Piwik. Already 1,000,000+ websites have liberated their web analytics, and with your help we can grow the community!
+To improve Piwik in your language consider contributing to translations,
+Contact Piwik PRO for any enquiry or to learn more about making the most of Piwik, and discover the Piwik Cloud and our Enterprise packages.
+
+Database upgrade
+
+Note: This release contains a major database upgrade and upgrading your database will take a long time if you have a lot of data in your database. Please make sure you read the Update Piwik guide for high traffic instances.
+
+Platform Changes
+
+Piwik is an open analytics platform. In an effort to help Piwik developers learn about improvements and changes in the core APIs, we document the changes since the last release.
+
+In this 2.9.0 release there are breaking changes, deprecations, and library updates.</entry>
+			</version>
+			<version release="56" version="2.9.1">
+				<entry>Piwik 2.9.1 is a new minor release of Piwik. In this release we have fixed a few minor issues reported in 2.9.0.
+
+32 issues have been closed by 5 contributors!
+
+After You Update
+Use the forums if you have any question or feedback (free support),
+Please help us spread the word about Piwik! Maybe you can write about the project on your blog, website, twitter, talk about Piwik Analytics at conferences, or let your friends and colleagues know what is Piwik. Already 1,000,000+ websites have liberated their web analytics, and with your help we can grow the community!
+To improve Piwik in your language consider contributing to translations,
+Contact Piwik PRO for any enquiry or to learn more about making the most of Piwik, and discover the Piwik Cloud and our Enterprise packages.
+
+Database upgrade
+This release does not contain any major database upgrade.
+
+Platform Changes
+Piwik is an open analytics platform. In an effort to help Piwik developers learn about improvements and changes in the core APIs, we document the changes since the last release.
+In this 2.9.1 release there are breaking changes, New Tracker API feature, and a New console command.</entry>
+			</version>
+			<version release="1" version="2.10.0">
+				<entry>Piwik 2.10.0 is a new major release of Piwik! In this release we have focused on improving performance, adding several features to the Log Analytics tool and fixed dozens of bugs to improve your Piwik experience. More than 110 issues were closed by 11 contributors!</entry>
+			</version>
+			<version release="61" version="2.10.0">
+				<entry>Updated</entry>
+			</version>
+			<version release="63" version="2.11.0">
+				<entry>List of 128 tickets closed in Piwik 2.11.0
+    #5248 Log Analytics: Monitor Bandwidth for each page, download, and measure overall traffic in bytes [by @tsteur, @diosmosis]
+    #4733 Release a Android SDK for Piwik – Mobile App Analytics
+    #4633 New icon in all reports: let me segment by visitors matching this row’s criteria [by @tsteur]
+    #4456 Review guides at developer.piwik.org for official launch
+    #6928 Visitor log may be displayed with many columns [by @sgiehl]
+    #6436 duplicate entries in piwik_log_action leading to pages not visible in segments + provide means to fix duplicates [by @diosmosis]
+    #6989 New User menu now similar to admin menu [by @tsteur]
+    #7206 Add new segment Operating System Version
+    #6945 Splitted referrers overview into “Overview” and “All Referrers” [by @tsteur, @mattab]
+    #6944 Split goals and ecommerce in two menus, and Manage Goals via User menu [by @tsteur, @mattab]
+    #7167 When User ID is used, set the first party cookie UUID to this User ID [by @jantlwoomy, @mattab]
+    #7151 Add option to map API tracking parameter to custom variable in log importer script. [by @diosmosis, @mattab]
+    #7107 Provide a way to specify an alternate whois provider – SEO plugin [by @mnapoli]
+    #7229 For new installs, do not use the Anonymized IP addresses when enriching visits [by @mattab]
+    #7026 when main Menu is focused, display submenu [by @TheCrowsJoker, @mattab]
+    #6988 Make email reports more beautiful [by @mattab, @munro98]
+    #7024 Tweaks to improve accessibility (section around graph, better tooltip, set language in html) [by @itscutekk, @mattab]
+    #7022 Improved accessibility by putting offscreen text in the widget title [by @munro98, @mattab]
+    #7015 Added h3 tags to widget headers (accessibility) [by @TheCrowsJoker, @mattab]
+    #7011 Changed colours for better accessibility for people with sight difficulties [by @flodrwho]
+    #7038 Improved accessibility with off-screen text added on the menu [by @munro98, @mattab]
+    #7037 Piwik Installation now fits with the current piwik style [by @TheCrowsJoker, @mattab]
+    #7035 See the focus of menu items when tabbing through the page (accessibility) [by @TheCrowsJoker, @mattab]
+    #7025 Add “Skip to content” feature when user presses tab key (accessibility) [by @flodrwho, @mattab]
+    #7102 Improve Login Screen Layout – input width. [by @patagonic, @mnapoli]
+    #7094 When development mode is enabled, add a new language that shows raw translation id [by @mnapoli]
+    #7079 As a user I want to configure purging of processed custom ranges [by @mgazdzik]
+    #7074 Improve Login Screen Layout [by @patagonic, @tsteur]
+    #7068 Changes for usage of DeviceDetector 3.0 [by @sgiehl, @tsteur]
+    #7040 Refactored Twig templates using a single base layout [by @mnapoli, @tsteur]
+    #6958 Segment dropdown enhancements [by @Irrational86, @mattab]
+    #6939 New Piwik Ini component [by @mnapoli, @mattab]
+    #6937 Add Administrator link to top menu [by @tsteur]
+    #6935 Move “Anonymous user settings” into a separate page and menu item [by @tsteur]
+    #6915 Rename plugin management commands [by @mnapoli]
+    #6814 include server time (as timestamp) in visitor actions (visitor live API) [by @FelixSchwarz, @mattab]
+    #6490 Add a search field in Visitor settings Browsers [by @sgiehl]
+    #6217 Force new visit after midnight [by @tsteur]
+    #6060 Improve performance by caching all translations in a flat array
+    #4917 Introduce Dependency Injection [by @sabl0r]
+    #7184 add a plugin description to all core plugins [by @mattab]
+    #7153 The SEO widget should be displayed even when a http service calls fail [by @mattab, @mnapoli]
+    #7146 Allow Plugins to register parameters to exclude from the tracking URL [by @peterbo, @mattab]
+    #7111 add Asian search engines [by @sgiehl]
+    #7109 New label for issues: ‘c: New plugin’
+    #7099 Update FAQ ‘how do I enable logging (and / or SQL profiling) in Piwik?’
+    #7041 added possibibility to add more metrics to actions plugin [by @tsteur]
+    #7021 Moved language reports to their own new plugin UserLanguage [by @sgiehl]
+    #6968 import_logs.py and IIS/w3c date format [by @diosmosis, @flodrwho]
+    #6947 Move UI tests into the Piwik repository, the screenshot testing lib into another repository [by @tsteur]
+    #6942 Make Travis CI build status render faster by logging less output during builds [by @mattab]
+    #6940 Allow plugins to test against minimum required Piwik version in travis build. [by @diosmosis]
+    #6938 Document .travis.yml system’s available environment variables
+    #6753 Activate all CronArchive system tests [by @tsteur, @mattab]
+    #6705 Scheduled reports: do not show “Users” metric when value is zero [by @tsteur]
+    #6604 Ixquick not listed as search engine [by @sgiehl]
+    #6542 Automatically refresh every week the last CI build for each of our repository
+    #6022 No options for goal management on the Goal page [by @tsteur]
+    #3962 Deprecate UserSettings plugin -&gt; use DeviceDetection instead! [by @fhemberger, @sabl0r, @sgiehl, @mattab]
+    #7220 piwik.js double encodes the url and referrer when they are detected automatically [by @tsteur]
+    #7218 Segmentation for url-encoded page urls does not work [by @tsteur]
+    #7189 Site Searches metric should include duplicate site searches requests [by @mattab]
+    #7168 include_aggregate_rows export issue [by @mnapoli]
+    #7157 Email reports not working when email SMTP server host contains a space [by @mattab]
+    #7129 Date Picker: Year is not fully visible in Chrome [by @tsteur]
+    #7108 Cannot upload BIG Bustom Logo [by @tsteur]
+    #7103 whois.com rate limit [by @tsteur]
+    #7083 Bad transport method used in certain restricted environments. [by @tsteur]
+    #7075 Content type application/json breaks JSONP [by @tsteur]
+    #7073 Problem with password recovery functionality when Piwik has no sites defined [by @tsteur]
+    #7069 email reports: cannot edit anymore if a address-list contains empty line [by @tsteur]
+    #7064 Some Admin/User menu items cannot be clicked when item is active [by @tsteur]
+    #7057 Bug on ranges using “last” and “previous” [by @mnapoli]
+    #7056 E-commerce bug: orders from registered users creates a new visit [by @tsteur]
+    #7043 Issue with setUserId – setting to null creates error in Url building when tracking [by @tsteur]
+    #7036 Login broken if accessing through “untrusted host” [by @mnapoli]
+    #7034 Referrers Overview, distinct metrics sparklines are always set to one [by @diosmosis]
+    #7031 Slow report website and dashboard in Piwik 2.10.0 [by @tsteur]
+    #7019 Browser Widget Title not Found [by @sgiehl]
+    #7017 Infinite loop when using the DatabaseHandler logger with DEBUG level [by @mnapoli]
+    #6982 When the BulkTracking plugin is disabled, bulk imports succeed, but no data is imported [by @diosmosis]
+    #6980 Array to string conversion in /var/www/piwik/libs/Zend/Session/Exception.php on line 58 [by @mnapoli, @flodrwho]
+    #6979 Key “plugins” for array with keys does not exist in “@Live/getLastVisitsStart.twig” at line 12 [by @sgiehl]
+    #6978 Empty output for archiving using the web cron [by @mnapoli]
+    #6960 Date to load by default does not always work (regression) [by @tsteur]
+    #6959 Segmentation by User ID
+    #6950 All Websites Dashboard: Add new website link is broken [by @tsteur]
+    #6949 Clicking on Evolution graph leads to “The parameter ‘idGoal’ isn’t set in the Request,” [by @sgiehl]
+    #6927 concurrency problem w/ plugin activation [by @diosmosis, @mnapoli]
+    #6926 Error message: array combine: Both parameters should have at least 1 element [by @mnapoli]
+    #6925 SEO Rankings Widget – Bad display format for Domain age [by @sgiehl]
+    #6924 Warning – array_merge(): Argument #2 is not an array [by @mnapoli]
+    #6923 Visits Over Time Graph – Bounce rate percentage mis-calculated [by @diosmosis]
+    #6919 log-analytics &amp; import_logs.py, hosts parameter failing [by @diosmosis]
+    #6918 Click tracker piwik.php?redirect=[params] was not working [by @mnapoli]
+    #6852 Return HTTP Status 500 for PHP errors and fatal errors
+    #6811 Error in widgets when date range before website added. [by @tsteur, @mattab]
+    #6790 Error: specify a value for ‘reportUniqueId’ when exporting Insights reports [by @tsteur]
+    #6700 Minimization of a ”Visitor log” widget will collapse a display. [by @sgiehl]
+    #6194 Wrong dates returned when part of the date parameter is ‘today’ [by @tsteur, @mattab]
+    #5904 When editing a SMS report, hide the row “(optional) Display options” [by @mattab, @tsteur]
+    #5233 CustomEvent in Visitor Profil: Prevent linebreak after event symbol [by @tsteur]
+    #5209 Display + and – icons in Campaign report [by @diosmosis]
+    #7197 Browser versions in “Visitors in realtime” | Enhancement [by @sgiehl]
+    #7188 Visual: Custom Alert overlap
+    #7179 issues updating from 2.8.3 using Composer
+    #7162 Some performance improvements for the all websites dashboard [by @tsteur, @mattab]
+    #7141 added extensions svgz and otf to the STATIC_EXTENSIONS set [by @ledahulevogyre, @mattab]
+    #7127 Move UI specs into Piwik repository and run UI tests in Piwik repo [by @tsteur]
+    #7124 Removed Piwik\Registry and replaced its usage with the container [by @mnapoli, @mattab]
+    #7119 Various performance improvements, especially for Range period and installations with many sites [by @tsteur, @mattab]
+    #7045 Add parameter –title-category-delimiter to log importer [by @BeezyT]
+    #7028 broken jquery path in geoipUpdateRows.php [by @sgiehl]
+    #7002 Reuse the LESS variable for white color across all stylesheets [by @TheCrowsJoker, @mattab, @sgiehl]
+    #6999 add link to changelog in email notification if update is a stable update [by @tsteur, @mattab]
+    #6981 Moved scheduled tasks classes to Scheduler component [by @mnapoli, @mattab]
+    #6961 Currently selected Segment should be displayed in bold
+    #6957 Change the layout of the engagement page [by @tsteur, @mattab]
+    #6955 .git/ files should not be part of integrity check
+    #6916 Pre-merge Code Reviews [by @mattab]
+    #6912 Data files: removed usage of $GLOBALS and manual inclusions [by @mnapoli, @mattab]
+    #6910 Faster bootstrap for PHPUnit tests [by @mnapoli, @mattab]
+    #6909 Refactoring translation handling into a Translation component [by @mnapoli, @mattab]
+    #7123 Add a class uiTest to the html element in all uiTests. [by @tsteur]
+    #7118 Monolog plugin [by @mnapoli]
+    #7117 Plugins can provide their own config files [by @mnapoli, @mattab]
+    #7148 [automatic translation update] Updated 9314 strings in 50 languages (cs, da, el, am, ar, be, bg, bn, bs, ca, cy, de, es, et, eu, fa, fi, fr, gl, he, hi, hr, hu, id, is, it, ja, ka, ko, lt, lv, nb, nl, nn, pl, pt, ro, ru, sk, sl, sq, sr, sv, ta, te, th, tl, tr, uk, vi) [by @sgiehl]
+    #6969 [automatic translation update] Updated 90 strings in 50 languages (nb, de, it, ar, be, bg, bn, bs, ca, cs, cy, da, el, es, et, eu, fa, fi, fr, gl, he, hi, hr, hu, id, is, ja, ka, ko, lt, lv, nl, nn, pl, pt, ro, ru, sk, sl, sq, sr, sv, ta, te, th, tl, tr, uk, vi, am) [by @sgiehl]
+</entry>
+			</version>
+			<version release="64" version="2.11.1">
+				<entry>List of 16 tickets closed in Piwik 2.11.1
+#7195 Mysql process list is clogged with very inefficient updates on the archive blob tables [by @mattab]
+#7247 error in statistics graph, avg_time = 2 [by @diosmosis]
+#7243 Adding segment name in Scheduled email report title [by @ArnY, @mattab]
+#7104 Make widgets load faster on Piwik dashboard, and sparklines load faster on All Websites [by @ThaDafinser, @tsteur, @mattab]
+#7226 Move language report to location reports [by @sgiehl]
+#7216 Adding Toppreise.ch as search engine [by @sgiehl, @tsteur]
+#7121 Allow usernames with 2 letters [by @mattab]
+#6635 Move phpunit.xml.dist to phpunit.xml in PHPUnit bootstrap or when executing tests [by @tsteur]
+#7251 JavaScript Tracking Code: when a checkbox is clicked, make it clear the JS code was updated [by @mattab]
+#7261 Date Range Selector partially hidden in Dashboard
+#7258 DevicesDetection: Warning – array_key_exists() [by @sgiehl]
+#7250 The parameter ‘period’ isn’t set in the Request, and a default value wasn’t provided. when clicking on API link in menu [by @tsteur]
+#7193 When loading URL and not logged in, this should load the login form [by @tsteur]
+#7187 Forced French translation even with English setting [by @tsteur]
+#7185 System check not verifying permissions for LOAD DATA INFILE [by @mattab]
+#7244 Correctly process unique visitors across websites in MetaSite [by @mattab]</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Analytics</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting class="authn" default-value="linuxsharedhosting" id="hosting" type="enum">
+			<name>Shared Hosting</name>
+			<choice id="linuxsharedhosting">
+				<name>Linux Shared Hosting</name>
+			</choice>
+			<choice id="linuxsharedhostingng">
+				<name>Linux Shared Hosting NG</name>
+			</choice>
+		</setting>
+	</global-settings>
+	<upgrade match="/application/version &gt;= '2.0.3' and /application/release &gt;= '1'"/>
+	<service id="root">
+		<license must-accept="true">
+			<text>
+				<name>GNU GENERAL PUBLIC LICENSE</name>
+				<file>scripts/license.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Piwik</name>
+			<summary>Piwik blog engine</summary>
+			<infolinks>
+				<link class="support" href="http://piwik.org/faq/">Piwik Support</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/index.php?form_url=">
+					<label>Piwik Dashboard</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts		with a letter and continues with either numbers,	letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				<setting class="password" id="admin_password" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Main Configuration</name>
+				<group class="email">
+				<setting class="value" default-value="test@test.com" id="admin_email" type="email">
+					<name>Administrator's email</name>
+				</setting>
+</group>
+				</group>
+<group class="org">
+				<name>Site parameters</name>
+				<group class="organization_name">
+					<setting class="organization_name" default-value="PiwikSite" id="site_name" installation-only="true" type="string">
+						<name>Site name</name>
+					</setting>
+</group>
+				<group class="web">
+					<setting class="url" default-value="example.com" id="site_url" installation-only="true" type="string">
+						<name>Site url</name>
+					</setting>
+</group>
+			</group>
+		</settings>
+		<requirements>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<php:version min="5.3.2" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">pdo_mysql</php:extension>
+			<php:memory-limit xmlns:php="http://apstandard.com/ns/1/php">134217728</php:memory-limit>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>piwik</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>4.1.0</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>piwik</default-prefix>
+				<installed-size>38457980</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="config">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="tmp">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="assets">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="cache">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="templates_c">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

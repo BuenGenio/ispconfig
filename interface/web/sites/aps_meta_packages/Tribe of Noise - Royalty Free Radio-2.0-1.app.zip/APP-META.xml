@@ -1,0 +1,100 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-07-12T09:22:37">
+	<id>parallels.tribeofnoise.com</id>
+	<name>Tribe of Noise - Royalty Free Radio</name>
+	<version>2.0</version>
+	<release>1</release>
+	<homepage>http://parallels.tribeofnoise.com</homepage>
+	<vendor>
+		<name>Tribe of Noise</name>
+		<homepage>http://www.tribeofnoise.com</homepage>
+		<icon path="images/icon.png" />
+	</vendor>
+	<packager>
+		<name>Tribe of Noise</name>
+		<homepage>http://www.tribeofnoise.com</homepage>
+		<icon path="images/icon.png" />
+	</packager>
+	<presentation>
+		<summary>FREE DEMO! Streaming music app for small- and medium sized businesses. Quality background music without the need to pay collection societies. We are interested in resellers.</summary>
+		<description>Are your customers small and medium sized businesses like offices, restaurants, retail stores, hotels and supermarkets? Perfect! This free demo will showcase a browser based, royalty free music player for SMBs. The full version will come with 3 different music channels, many hours of quality background music designed and serviced by Tribe of Noise. The look and feel of the player will be customized to your needs. We can even embed the player on your website if that makes sense for you and your customers.
+
+Unique selling proposition? You can resell the full version of our royalty free radio to your SMB clients and instantly save them money. They no longer have to pay the yearly fees to collection societies for broadcasting background music! Our suggested retail price is €15 / US$15 per month per store.
+
+Interested in becoming a reseller? Please contact us for more information.</description>
+		<icon path="images/icon.png" />
+		<screenshot path="images/screen.png">
+			<description>Screenshot of the radio</description>
+		</screenshot>
+		<changelog>
+			<version release="1" version="1.0">
+				<entry>Initial release.</entry>
+			</version>
+			<version release="2" version="1.0">
+				<entry>Connected to demo playlists instead of full playlists</entry>
+				<entry>Updated summary and description</entry>
+			</version>
+			<version release="3" version="1.0">
+				<entry>Updated API URL</entry>
+			</version>
+			<version release="4" version="1.0">
+				<entry>Fixed problems with certification</entry>
+			</version>
+			<version release="1" version="2.0">
+				<entry>New layout radio</entry>
+				<entry>Prevent upgrading from previous versions</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Tools</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<service id="Royalty Free Radio Service">
+		<service id="Account" class="account">
+			<license must-accept="true">
+				<commercial />
+				<text>
+					<name>Terms of Use</name>
+					<url>http://www.tribeofnoise.com/parallels/user-agreement.pdf</url>
+				</text>
+			</license>
+			<presentation>
+				<summary>Browserbased radio service with quality music, multiple genres to choose from. Play/pause option.</summary>
+				<infolinks>
+					<link href="http://www.tribeofnoise.com/" class="official">Official site</link>
+					<link href="http://www.tribeofnoise.com/contact.php" class="support">Contact</link>
+					<link href="file:///manuals/deployment-guide.pdf" class="deployment-guide">Deployment guide</link>
+				</infolinks>
+				<entry-points>
+					<entry dst="http://www.tribeofnoise.com/parallels/index.php" class="login" method="POST">
+						<label>Login</label>
+						<variable name="username" class="login" value-of-setting="username" />
+						<variable name="password" class="password" value-of-setting="password" />
+					</entry>
+				</entry-points>
+			</presentation>
+			<settings>
+				<group class="authn">
+					<setting id="username" type="string" generate="uuid" protected="true" visibility="hidden">
+						<name>Username</name>
+					</setting>
+					<setting id="password" type="string" generate="password" protected="true" visibility="hidden">
+						<name>Password</name>
+					</setting>
+				</group>
+			</settings>
+			<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:l="http://apstandard.com/ns/1/licensing" xmlns:svc="http://apstandard.com/ns/1/service" xmlns:env="http://apstandard.com/ns/1/environment">
+				<php:extension>curl</php:extension>
+				<php:version min="5.0"/>
+			</requirements>
+			<provision>
+				<configuration-script name="configure.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</configuration-script>
+			</provision>
+		</service>
+	</service>
+</application>

@@ -1,0 +1,543 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-03-14T05:51:29">
+    <id>http://apsstandard.org/app/mail2world</id>
+    <name>Mail2World</name>
+    <version>3.0</version>
+    <release>9</release>
+    <homepage>http://mail2world.net</homepage>
+    <vendor>
+    	<name>Mail2World</name>
+    	<name>Mail2World</name>
+    	<homepage>http://mail2world.net</homepage>
+    	<icon path="images/m2w.png" />
+    </vendor>
+    <packager>
+    	<name>Glowtouch Technologies</name>
+    	<homepage>http://www.glowtouch.com/</homepage>
+    	<icon path="images/parrallels-GT6.png" />
+    </packager>
+    <presentation>
+    	<summary>Mail2World application</summary>
+    	<description>Today, Mail2World  continues to be a leader in the shift away from expensive, traditional email systems to cost-effective, flexible Webmail and mobile communications. Through our hosted, multilingual messaging capabilities and collaboration tools, customers are able to seamlessly integrate our flexible architecture into their environment to simplify email operations, ensure continuity and offer their users a host of new capabilities at the lowest possible cost of ownership.</description>
+    	<description xml:lang="es-ES">Servicio de correo electrónico con el dominio de la empresa de fácil uso y rápida implementación que permite a los usuarios enviar y recibir mensajes desde cualquier programa de correo electrónico o vía correo web. Incluye un Panel de Administración de usuarios, filtro Anti-Virus y Filtro Anti-Spam.
+		</description>
+    	<icon path="images/m2w.png" />
+    	<screenshot path="images/Capture.jpg">
+    		<description>User Interface </description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1.3.6" version="1.0">
+    			<entry>First release</entry>
+    		</version>
+    		<version release="1.3.7" version="1.0">
+    			<entry>Resource for organization disk space was removed</entry>
+    		</version>
+    		<version release="1.3.9" version="1.0">
+    			<entry>Test version (change domain list)</entry>
+    		</version>
+    		<version release="1.5.6" version="1.0">
+    			<entry>add fixed resource</entry>
+    		</version>
+    		<version release="1.5.7" version="1.0">
+    			<entry>Added Discription for E-mail Account</entry>
+    		</version>
+    		<version release="1.6" version="1.0">
+    			<entry>Change structure of package. Disk space is included in account service.</entry>
+    		</version>
+    		<version release="1.7" version="1.0">
+    			<entry>Changed tags "Unlimited Storage" for mailbox and domain.</entry>
+    		</version>
+    		<version release="1.7.4" version="1.0">
+    			<entry>Added spanish locale.</entry>
+    		</version>
+    		<version release="2.6" version="1.0">
+    			<entry>new </entry>
+    		</version>
+    		<version release="2.7" version="1.0">
+    			<entry>add SMTP Server settings</entry>
+    		</version>
+    		<version release="2.9" version="1.0">
+    			<entry>Added mail,imap,pop, wap, smtp records</entry>
+    		</version>
+    		<version release="3.0" version="2.0">
+    			<entry>Fixed case status 
+    			Remove settings UnlimitedStorage  for domain
+				Remove setting org_storage</entry>
+    		</version>
+    		<version release="3.0.1" version="2.0">
+    			<entry>Fixed output for error mesage
+Installation only for E-mail Account</entry>
+    		</version>
+    		<version release="3.0.2" version="2.0">
+    			<entry>Fixed output (only one xml)</entry>
+    		</version>
+    		<version release="3.0.3" version="2.0">
+    			<entry>Fixed error-message</entry>
+    		</version>
+    		<version release="3.0.4" version="2.0">
+    			<entry>Added Plan Upgrade Functionality</entry>
+    		</version>
+    		<version release="3.0.5" version="2.0">
+    			<entry>Added new weblogin URL in Global Settings as entry point.
+Added the guides to the package.</entry>
+    		</version>
+    		<version release="3.0.6" version="2.0">
+    			<entry>Modified the Global Settings</entry>
+    		</version>
+    		<version release="1" version="3.0">
+    			<entry>Mailbox upgrade/downgrade and storage upgrade functionality added</entry>
+    		</version>
+    		<version release="2" version="3.0">
+    			<entry>Added Log file to debug the code</entry>
+    		</version>
+    		<version release="3" version="3.0">
+    			<entry>Fixed error</entry>
+    		</version>
+    		<version release="5" version="3.0">
+    			<entry>Updated</entry>
+    		</version>
+    		<version release="6" version="3.0">
+    			<entry>API Error Log Updated</entry>
+    		</version>
+    		<version release="9" version="3.0">
+    			<entry>Deprecated Split is related with Explode and updated log</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Collaboration/Email</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    		<language>es</language>
+    		<language>pt</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<setting type="string" id="poa_host" default-value="">
+    	<name>POA Host IP</name>
+    </setting><setting type="password" id="poa_password" default-value="">
+    	<name>POA Password</name>
+    </setting><setting type="string" id="poa_login" default-value="">
+    	<name>POA Login</name>
+    </setting><setting type="host-name" id="url_api" default-value="http://sandbox.stage.mail2world.com">
+    		<name>Service URL for REST API:</name>
+    		<name xml:lang="es-ES">Acceso a Webmail</name>
+    		<name xml:lang="pt-br">URL de serviço para REST API</name>
+    		<description>This is DNS name of Mail2World , which exposes a management API.</description>
+    		<description xml:lang="pt-br">Este é o nome de DNS do E-mail empresas, que expõe uma API de gerenciamento</description>
+    	</setting>
+    	<setting type="string" id="admin_login" default-value="admin" min-length="1">
+    		<name>Login to mail2world  server </name>
+    		<name xml:lang="pt-br">Login para servidor de E-mail empresas</name>
+    		<description>This is a login to management API.</description>
+    		<description xml:lang="pt-br">Este é um login para API de gerenciamento</description>
+    	</setting>
+    	<setting type="string" id="admin_password" min-length="1" default-value="123">
+    		<name>Password to mail2world  server </name>
+    		<name xml:lang="pt-br">Senha para servidor de E-mail empresas</name>
+    		<description>This is a password to management API.</description>
+    		<description xml:lang="pt-br">Esta é uma senha para API de gerenciamento</description>
+    	</setting>
+    	<setting type="string" id="admin_domain" class="user_domain" min-length="1">
+    		<name>Administration Domain</name>
+    		<name xml:lang="pt-br">Administração de domínio</name>
+    		<description>This is DNS name of Administration Domain.</description>
+    		<description xml:lang="pt-br">Este é um nome de DNS para Administração de Domínio</description>
+    	</setting>
+    	<setting type="string" id="mx_smtp_server" default-value="" min-length="1">
+    		<name>SMTP Server </name>
+    		<name xml:lang="es-ES">Acceso a Webmail</name>
+    		<name xml:lang="pt-br">Servidor SMTP</name>
+    		<description>This is incoming smtp server, source for MX record</description>
+    		<description xml:lang="pt-br">Este é um servidor smtp de aproximação, fonte para registro MX</description>
+<description xml:lang="pt-br"></description>
+    	</setting><setting type="string" id="mail_server" default-value="" min-length="1">
+    		<name>Mail Server </name>
+    		<name xml:lang="es-ES">Acceso a Webmail</name>
+    		<name xml:lang="pt-br">Servidor de e-mail</name>
+    		<description>This is Mail Server for  CNAME DNS records</description>
+    		<description xml:lang="pt-br">Este é um servidor de e-mail para registros CNAME DNS</description>
+    	</setting><setting type="string" id="imap_server" default-value="" min-length="1">
+    		<name>IMAP Server </name>
+    		 <name xml:lang="es-ES">Acceso a Webmail</name>
+    		 <name xml:lang="pt-br">Servidor IMAP</name>
+    		<description>This is IMAP Server for  CNAME DNS records</description>
+    		<description xml:lang="pt-br">Este é um servidor IMAP para registros CNAME DNS</description>
+    	</setting><setting type="string" id="pop_server" default-value="" min-length="1">
+    		<name>POP Server </name>
+    		<name xml:lang="es-ES">Acceso a Webmail</name>
+    		<name xml:lang="pt-br">Servidor POP</name>
+    		<description>This is POP Server for  CNAME DNS records</description>
+    		<description xml:lang="pt-br">Este é um servidor POP para registros CNAME DNS</description>
+    	</setting><setting type="string" id="wap_server" default-value="" min-length="1">
+    		<name>WAP Server </name>
+    		<name xml:lang="es-ES">Acceso a Webmail</name>
+    		<name xml:lang="pt-br">Servidor WAP</name>
+    		<description>This is WAP Server for  CNAME DNS records</description>
+    		<description xml:lang="pt-br">Este é um servidor WAP para registros CNAME DNS</description>
+    	</setting><setting type="string" id="smtp_server" default-value="" min-length="1">
+    		<name>SMTP Server </name>
+    		<name xml:lang="es-ES">Acceso a Webmail</name>
+    		<name xml:lang="pt-br">Servidor SMTP</name>
+    		<description>This is outgoing smtp server</description>
+    		<description xml:lang="pt-br">Este é um servidor smtp de saída</description>
+    	</setting><setting type="string" id="autodiscover_target" default-value="autodiscover.mail2world.com " min-length="1">
+    		<name>Target for autodiscover CNAME DNS records</name>
+    		<name xml:lang="pt-br">Destino para registros autodiscover CNAME DNS</name>
+    	</setting>
+    <setting type="string" id="autoconfig_target" default-value="autoconfig.mail2world.com" min-length="1">
+    		<name>Target for autoconfig CNAME DNS records</name>
+    		<name xml:lang="pt-br">Destino para registros autoconfig CNAME DNS</name>
+    	</setting>
+    <setting type="host-name" id="weblogin_url" default-value="www.mail2world.com">
+    	<name>Web Login URL</name>
+    	<description>Mail2World Web Login URL.</description>
+    </setting>
+     <group>
+			<name>Debug</name>
+			<setting type="enum" id="debug" default-value="1">
+				<name>Debug</name>
+				<choice id="1">
+					<name>true</name>
+				</choice>
+				<choice id="0">
+					<name>False</name>
+				</choice>
+			</setting>
+			<setting type="string" id="log_path" default-value="/var/tmp/">
+                <name>Log File Path</name>
+                <description>Server file path from root with write permission. eg. [/var/tmp/]</description>
+            </setting>
+            <setting type="string" id="log_file" default-value="aps.mail2world">
+                <name>Log File Name</name>
+            </setting>
+		</group>
+    </global-settings>
+    	
+    	<upgrade match="/application/version &gt;= '1.0'"/>
+    	<upgrade match="/application/release &gt;= '3.0.0'" />
+
+    	<service id="context" class="service">
+    	<license must-accept="true">
+    		<free />
+    		<text>
+    			<name>End User policies Agreement</name>
+    			<url>http://www.mail2world.com/s/m2wpublic/policies/conduct.asp</url>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>Mail2World</name>
+    		<name xml:lang="pt-br">E-mail empresas</name>
+    		<name xml:lang="es-ES">Acceso a Usuarios</name>
+    		<summary>Mail organization is a common collaboration space for users.</summary>
+    		<icon path="images/mailbox.png" />
+    		<infolinks>
+    			<link href="http://www.mail2world.net/en/technical-support" class="support">Support</link>
+    			<link href="file:///docs/Providers_guide_Mail2World.doc" class="deployment-guide" xml:lang="en-US">Mail2World-PA-Provider-Deployment-Guide</link>
+    			<link href="file:///docs/Subscribers_guide_Mail2World.doc" class="user-guide" xml:lang="en-US">Mail2World-PA-Subscriber-Guide</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry dst="http://{url}">
+    				<label>Web URL for Login:</label>
+    				<label xml:lang="es-ES">Acceso a Webmail</label>
+    				<label xml:lang="pt-br"></label>
+    				<variable name="url" value-of-setting="weblogin_url"></variable>
+    			</entry>
+    			<entry dst="http://web.amfixed.mail2world.com/help/amx/Parallels_Administrator_Guide_EN_042913.doc">
+    				<label>Parallels Administrator Guide (English) </label>
+    			</entry>
+    			<entry dst="http://web.amfixed.mail2world.com/help/amx/Parallels_Guia_Administrador_ES_042913.doc">
+    				<label>Parallels Administrator Guide (Spanish)</label>
+    			</entry>
+    			<entry dst="http://web.amfixed.mail2world.com/help/amx/Parallels_Guia_Administrador_PT_042913.doc">
+    				<label>Parallels Administrator Guide (Portuguese)</label>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+    		<setting type="password" id="domain_password" min-length="5" max-length="10" class="password" protected="true" visibility="hidden">
+    			<name>Admin password for Application domain</name>
+    			<name xml:lang="pt-br">Senha de Admin para Aplicação de domínio</name>
+    		</setting>
+    		<setting type="string" id="domain_login" default-value="admin" visibility="hidden" protected="true">
+    			<name>Admin login for Application domain</name>
+    			<name xml:lang="pt-br">Login de Admin para Aplicação de domínio</name>
+    		</setting>
+    		<setting type="list" id="user_domain" element-type="domain-name" class="domain-name" visibility="hidden" track-old-value="true" min-items="1" max-items="1">
+    			<name>Application domain</name>
+    			<name xml:lang="pt-br">Domínio de aplicação</name>
+    		</setting>
+    		<setting type="list" id="domain_cname_records"
+    			protected="true" element-type="string" visibility="hidden">
+    			<default-value></default-value>
+    		</setting>
+    		<setting type="list" id="mail_domain_cname_records" protected="true" element-type="string" visibility="hidden">
+    		<default-value></default-value>
+    	</setting>
+    	<setting type="list" id="imap_domain_cname_records" protected="true" element-type="string" visibility="hidden">
+    		<default-value></default-value>
+    	</setting>
+    	<setting type="list" id="pop_domain_cname_records" protected="true" element-type="string" visibility="hidden">
+    		<default-value></default-value>
+    	</setting>
+    	<setting type="list" id="wap_domain_cname_records" protected="true" element-type="string" visibility="hidden">
+    		<default-value></default-value>
+    	</setting>
+    	<setting type="list" id="smtp_wap_domain_cname_records" protected="true" element-type="string" visibility="hidden">
+    		<default-value></default-value>
+    	</setting>
+    	<setting type="list" id="domain_cname_targets" protected="true" element-type="string" visibility="hidden">
+    		<default-value></default-value>
+    	</setting>
+    	<setting type="string" id="last_plan" default-value="" visibility="hidden" protected="true">
+    		<name>Last Plan</name>
+    	</setting>
+    	<setting type="string" id="sub_id" class="subscription_id" visibility="hidden" protected="true" optional="true">
+    	</setting>
+    		<setting type="string" id="subscriptionid" class="subscription_id"
+					protected="true" visibility="hidden">
+					<name>Subscription ID</name>
+				</setting>
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:dns="http://apstandard.com/ns/1/dns">
+    		<dns:record>
+    			<dns:mx>
+    				<dns:src>
+    					<dns:external value-of-setting="user_domain"></dns:external>
+    				</dns:src>
+    				<dns:priority>10</dns:priority>
+    				<dns:dst>
+    					<dns:external value-of-setting="mx_smtp_server"></dns:external>
+    				</dns:dst>
+    			</dns:mx>
+    		</dns:record>
+    		<dns:record>
+    			<dns:cname>
+    				<dns:src>
+    					<dns:external value-of-setting="domain_cname_records"></dns:external>
+    				</dns:src>
+    				<dns:dst>
+    					<dns:external value-of-setting="domain_cname_targets"></dns:external>
+    				</dns:dst>
+    			</dns:cname>
+    		</dns:record>
+    		<dns:record>
+    			<dns:id>mail</dns:id>
+    			<dns:cname>
+    				<dns:src>
+    					<dns:external value-of-setting="mail_domain_cname_records"></dns:external>
+    				</dns:src>
+    				<dns:dst>
+    					<dns:external value-of-setting="mail_server"></dns:external>
+    				</dns:dst>
+    			</dns:cname>
+    		</dns:record>
+    		<dns:record>
+    			<dns:id>imap</dns:id>
+    			<dns:cname>
+    				<dns:src>
+    					<dns:external value-of-setting="imap_domain_cname_records"></dns:external>
+    				</dns:src>
+    				<dns:dst>
+    					<dns:external value-of-setting="imap_server"></dns:external>
+    				</dns:dst>
+    			</dns:cname>
+    		</dns:record>
+    		<dns:record>
+    			<dns:id>pop</dns:id>
+    			<dns:cname>
+    				<dns:src>
+    					<dns:external value-of-setting="pop_domain_cname_records"></dns:external>
+    				</dns:src>
+    				<dns:dst>
+    					<dns:external value-of-setting="pop_server"></dns:external>
+    				</dns:dst>
+    			</dns:cname>
+    		</dns:record>
+    		<dns:record>
+    			<dns:id>wap</dns:id>
+    			<dns:cname>
+    				<dns:src>
+    					<dns:external value-of-setting="wap_domain_cname_records"></dns:external>
+    				</dns:src>
+    				<dns:dst>
+    					<dns:external value-of-setting="wap_server"></dns:external>
+    				</dns:dst>
+    			</dns:cname>
+    		</dns:record>
+    		<dns:record>
+    			<dns:id>smtp</dns:id>
+    			<dns:cname>
+    				<dns:src>
+    					<dns:external value-of-setting="smtp_wap_domain_cname_records"></dns:external>
+    				</dns:src>
+    				<dns:dst>
+    					<dns:external value-of-setting="smtp_server"></dns:external>
+    				</dns:dst>
+    			</dns:cname>
+    		</dns:record>
+    		<php:extension>curl</php:extension>
+    		<php:extension>xml</php:extension>
+    		<php:version min="5.2.0"/>
+    	</requirements>
+    	<provision xmlns:l="http://apstandard.com/ns/1/licensing">
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<status-control />
+    			<structured-output />
+    		</configuration-script>
+    	</provision>
+ 	<service id="account" class="account">
+    		<presentation>
+    			<name>Mailbox</name>
+    			<name xml:lang="es-ES">Cuenta</name>
+    			<name xml:lang="pt-br">Caixa de e-mail</name>
+    			<summary>This section provides general management facilities for your mailboxes. You can view and manage the list of mailboxes, create new and delete existing ones.</summary>
+    			<summary xml:lang="es-ES">Aquí podrás ver, crear o eliminar las cuentas de correo electrónico de tu empresa. No olvides que antes de empezar a crear tus cuentas debes asignar el dominio desde la opción dominios que se encuentra en la pestaña Acceso a Usuarios.</summary>
+    			<summary xml:lang="pt-br">Aquí podrás ver, crear o eliminar las cuentas de correo electrónico de tu empresa.</summary>
+    			<icon path="images/mailbox.png" />
+    			<entry-points>
+    				<entry dst="http://{url}/web/app.asp" method="POST">
+    					<label>Service URL for Login:</label>
+    					<label xml:lang="es-ES">Acceso a Webmail</label>
+    					<label xml:lang="pt-br"></label>
+    					<variable name="url" value-of-setting="url_api"></variable>
+    					<variable name="username" value-of-setting="selected_user"></variable>
+    					<variable name="password" value-of-setting="user_password"></variable>
+    					<variable name="domain" value-of-setting="selected_domain"></variable>
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+    			<setting type="enum" id="mailbox_plan" visibility="hidden" default-value="Basic">
+    				<name>Mailbox Plan</name>
+    				<choice id="Basic">
+    					<name>Basic</name>
+    				</choice><choice id="Premium">
+    					<name>Premium</name>
+    				</choice>
+    			</setting>
+    			<group class="authn">
+    				<setting type="password" id="user_password"
+    					min-length="1" class="password">
+    					<name>Password</name>
+    				</setting>
+    				<setting type="email" id="user_login" class="email-on-application-domain" installation-only="true" uniq="service">
+    					<name>E-mail Account</name>
+    					<error-message>This mailbox exists or please Verify that you are using letters and digits for this field</error-message>
+    				</setting>
+    				<setting type="string" id="admin_user_login" protected="true" visibility="hidden" class="login"></setting></group>
+    			<group class="vcard">
+    				<setting type="string" id="user_first_name" optional="true" class="given-name">
+    					<name>First name</name>
+    					<name xml:lang="es-ES">Nombre(s)</name>
+    					<name xml:lang="pt-br">Primeiro nome</name>
+    				</setting>
+    				<setting type="string" id="user_last_name"
+    					class="family-name" optional="true">
+    					<name>Last name</name>
+    					<name xml:lang="es-ES">Apellido(s)</name>
+    					<name xml:lang="pt-br">Último nome</name>
+    				</setting>
+    				<setting type="list" id="user_domain"
+    					value-of-setting="user_domain"  protected="true"  visibility="hidden" element-type="string">
+    					<name>Application domain</name>
+    					<name xml:lang="pt-br">Administração de domínio</name>
+    				</setting>
+    				<setting type="string" id="domain_login" class="login" visibility="hidden" protected="true" value-of-setting="domain_login">
+    					<name>Admin login for Application domain</name>
+    					<name xml:lang="pt-br">Login de Admin para Aplicação de domínio</name>
+    				</setting><setting type="string" id="domain_password"
+    					class="password" value-of-setting="domain_password" protected="true" visibility="hidden">
+    					<name>Admin password for Application domain	</name>
+    					<name xml:lang="pt-br">Senha de Admin para Aplicação de domínio</name>
+    				</setting>
+    				<setting type="integer" id="user_diskspace"
+    					default-value="0" visibility="hidden">
+    					<name>Diskspace</name>
+    				</setting></group>
+    			<group class="fn n">
+    				<setting type="enum" id="default_language"
+    					class="value" default-value="es-ES">
+    					<name>Language</name>
+    					<name xml:lang="es-ES">Idioma</name>
+    					<name xml:lang="pt-br">Idioma</name>
+    					<choice id="en-GB">
+    						<name>English</name>
+    						<name xml:lang="pt-br">Inglês</name>
+    					</choice>
+    					<choice id="de-DE">
+    						<name>German</name>
+    						<name xml:lang="pt-br">Alemão</name>
+    					</choice>
+    					<choice id="es-ES">
+    						<name>Spanish</name>
+    						<name xml:lang="es-ES">Español</name>
+    						<name xml:lang="pt-br">Espanhol</name>
+    					</choice>
+    					<choice id="fr-Fr">
+    						<name>France</name>
+    						<name xml:lang="pt-br">Francês</name>
+    					</choice>
+    					<choice id="it-IT">
+    						<name>Italian</name>
+    						<name xml:lang="pt-br">Italiano</name>
+    					</choice>
+    					<choice id="pl-PL">
+    						<name>Polish</name>
+    						<name xml:lang="pt-br">Polonês</name>
+    					</choice>
+    					<choice id="pt-PT">
+    						<name>Portuguese</name>
+    						<name xml:lang="pt-br">Português</name>
+    					</choice>
+    					<choice id="da-DK">
+    						<name>Danish</name>
+    						<name xml:lang="pt-br">Dinamarquês</name>
+    					</choice>
+    					<choice id="ja-JP">
+    						<name>Japanese</name>
+    						<name xml:lang="pt-br">Japonês</name>
+    					</choice>
+    					<choice id="nw-NW">
+    						<name>Norwegian</name>
+    						<name xml:lang="pt-br">Norueguês</name>
+    					</choice>
+    					<choice id="sw-SW">
+    						<name>Swedish</name>
+    						<name xml:lang="pt-br">Sueco</name>
+    					</choice>
+    					<choice id="ar-AR">
+    						<name>Arabic</name>
+    						<name xml:lang="pt-br"> Arabic </name>
+    					</choice>
+    				</setting>
+    				</group>
+    			<setting type="string" id="selected_domain" protected="true" visibility="hidden" optional="true">
+    				<name>selected_domain</name>
+    			</setting><setting type="string" id="selected_user" protected="true" visibility="hidden" optional="true">
+    				<name>selected_user</name>
+    			</setting>
+    				<setting type="string" id="subscriptionid" class="subscription_id"
+					protected="true" visibility="hidden">
+					<name>Subscription ID</name>
+				</setting>
+    		</settings>
+    		
+    		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    			<php:extension>curl</php:extension>
+    			<php:version min="5.0" />
+    		</requirements>
+    		<provision>
+    			<configuration-script name="configure-user.php">
+    				<script-language>php</script-language>
+    				<status-control />
+    				<structured-output />
+    			</configuration-script>
+    			<verify-script name="verify.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</verify-script>
+    		</provision>
+    	</service>
+    	</service>
+</application>

@@ -1,0 +1,169 @@
+<application packaged="2014-03-13T12:52:09" version="1.2" xmlns="http://apstandard.com/ns/1">
+ 	<id>PHProjekt</id>
+	<name>PHProjekt</name>
+	<version>6.0.6</version>
+	<release>2</release>
+	<homepage>http://www.phprojekt.com/</homepage>
+	<vendor>
+		<name>www.phprojekt.com</name>
+		<homepage>http://www.parallels.com</homepage>
+		<icon path="images/parallelsLogo.jpg"/>
+	</vendor>
+	<packager>
+		<name>SofcloudIt</name>
+		<homepage>http://www.sofcloudit.com</homepage>
+		<icon path="images/sofcloudit64.png"/>
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+
+	<presentation>
+		<summary>PHProjekt is a free groupware and project management web application written in PHP.</summary>
+		<description> PHProjekt is a modular application for the coordination of group activities and sharing information and documents through the Web. PHProjekt provides the following features: group calendar; project management tools; file management; contact manager; e-mail client; built-in HTML editor; Wiki; forum; export of documents to CSV, XLS, Doc, PDF, XML, RTF; synchronisation with Microsoft Outlook and PDAs; support for 38 languages; support for protocols like LDAP, XML/SOAP, WebDAV; support for 9 types of databases.</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/app_screenshot_1.png">
+			<description>This screen shows the Project management area. Here you can manage projects and view their status (Gantt charts are available).</description>
+		</screenshot>
+		<changelog>
+		 	<version release="2" version="6.0.6">
+      				<entry>Final app version. Several bugfixes.</entry>
+    			</version>
+    			<version release="17" version="6.0.5">
+      				<entry>Require magic_quotes_gpc off</entry>
+      				<entry>Spanish translation added in metadata</entry>
+    			</version>
+    			<version release="16" version="6.0.5">
+      				<entry>PHProjekt 6.0.5</entry>
+    			</version>
+    			<version release="13" version="5.2">
+      				<entry>Collab"APP-META.xml"oration/Portals category removed</entry>
+    			</version>
+    			<version release="12" version="5.2">
+      				<entry>Initial package version</entry>
+    			</version>
+		</changelog>
+		<categories>
+			<category>Collaboration/Portal</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '5.2'"/>
+	<service class="service" id="main">
+		<license must-accept="true">
+			<text>
+				<name>GPLv2</name>
+				<file>htdocs/LICENSE</file>
+			</text>
+		</license>
+		<presentation>
+			<name>PHProjekt</name>
+			<summary>Open source groupware suite</summary>
+			<infolinks>
+				<link class="support" href="http://www.phprojekt.com/">Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/htdocs/index.php/login/login" method="POST">
+					<label>Management Area</label>
+					<description/>
+					<variable class="login" name="username" value-of-setting="admin_name">admin</variable>
+					<variable class="password" name="password" value-of-setting="admin_password">phprojekt</variable>
+					<variable class="" name="keepLogged">1</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" type="string">
+					<name>User</name>
+				</setting>
+				<setting class="password" default-value="admin" id="admin_password" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Default preferences</name>
+				<setting class="locale" default-value="en-US" id="locale" type="enum">
+					<name>Interface language</name>
+					<choice id="en-US">
+          				<name>English</name>
+        			</choice>
+        			<choice id="de-DE">
+          				<name>German</name>
+        			</choice>
+        			<choice id="es-ES">
+          				<name>Spanish</name>
+        			</choice>
+				</setting>
+
+			</group>
+		</settings>
+		<requirements>
+			<php:register-globals xmlns:php="http://apstandard.com/ns/1/php">false</php:register-globals>
+			<php:magic-quotes-gpc xmlns:php="http://apstandard.com/ns/1/php">false</php:magic-quotes-gpc>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mbstring</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">iconv</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">ctype</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">pcre</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">PDO</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">Reflection</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">session</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">SPL</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">zlib</php:extension>
+			
+			<apache:htaccess xmlns:apache="http://apstandard.com/ns/1/apache"/>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>opencart</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0</db:server-min-version>
+			</db:db>
+			<php:version min="5.2.4" xmlns:php="http://apstandard.com/ns/1/php"/>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>phprojekt</default-prefix>
+				<installed-size>46536125</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="private">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="application">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="tmp">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+							<mapping url="zendCache">
+								<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+							</mapping>
+						</mapping>
+						<mapping url="upload">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="logs/debug.log">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="logs/err.log">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+					
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+		</provision>
+	</service>
+
+</application>

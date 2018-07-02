@@ -1,0 +1,518 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-02-15T11:29:35">
+    <id>ZeenCourrier</id>
+    <name>ZeenCourrier</name>
+    <version>1.4</version>
+    <release>49</release>
+    <homepage>http://www.zeendoc.com</homepage>
+    <vendor>
+    	<name>ZeenDoc</name>
+    	<homepage>http://www.zeendoc.com</homepage>
+    	<icon path="images/Logo_ZeenDoc.png" />
+    </vendor>
+    <packager>
+    	<name>Sages Informatique</name>
+    	<name xml:lang="en-US">ZeenDoc</name>
+    	<homepage>http://www.zeendoc.com</homepage>
+    	<homepage xml:lang="en-US">http://www.zeendoc.com</homepage>
+    	<icon path="images/Logo_ZeenDoc.png" />
+    	<uri>http://www.zeendoc.com</uri>
+    </packager>
+    <presentation>
+    	<summary>La gestion du courrier maitrisée</summary>
+    	<summary xml:lang="en-US">La gestion du courrier maitrisée</summary>
+    	<description>ZEENCOURRIER vous permet de centraliser, distribuer, traiter, rechercher rapidement tous le courrier entrant et sortant de votre structure.
+
+Le service vous permet dans un même outil les courriers papiers, les courriers électroniques d'entreprise, les fax...</description>
+    	<description xml:lang="en-US">ZEENCOURRIER allow customers to simplify management of mail documents.
+
+It allows :
+- easy indexing of mail documents
+- centralizing of mail documents
+- searching of mail documents
+- dispatching management of mail documents
+
+It deals with paper or numeric document in the same way.</description>
+    	<icon path="images/Logo_ZeenDoc.png" />
+    	<screenshot path="images/Screenshot_Accueil.png">
+    		<description>Page d'accueil</description>
+    		<description xml:lang="en-US">Home page</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.4">
+    			<entry>Creation du package</entry>
+    		</version>
+    		<version release="2" version="1.4">
+    			<entry>Modification de la manière de gérer les forfaits
+Amélioration de l'intégration avec les WebServices ZeenDoc</entry>
+    		</version>
+    		<version release="3" version="1.4">
+    			<entry>Correction après import dans la sandbox Parallels
+Ajout de la gestion de l'anglais</entry>
+    		</version>
+    		<version release="4" version="1.4">
+    			<entry>Renvoi d'un résultat XML en cas d'erreur de provisioning</entry>
+    		</version>
+    		<version release="5" version="1.4">
+    			<entry>Modification de la manière de gérer le changement de forfait</entry>
+    			<entry xml:lang="en-US">Change for upselling capacities</entry>
+    		</version>
+    		<version release="6" version="1.4">
+    			<entry>Mise à jour suite aux tests au sein de Parallels</entry>
+    			<entry xml:lang="en-US">Update following tests on Parallels sandbox system</entry>
+    		</version>
+    		<version release="7" version="1.4">
+    			<entry>Modification suite aux tests effectués par le support APS.</entry>
+    			<entry xml:lang="en-US">Changes during certification step.</entry>
+    		</version>
+    		<version release="8" version="1.4">
+    			<entry>Mise à jour dans la cadre de la certification</entry>
+    			<entry xml:lang="en-US">Update of the package during certification process</entry>
+    		</version>
+    		<version release="9" version="1.4">
+    			<entry>Correction du package pour permettre la spécification du package lors du provsioning + suppression de la ressource Forfait</entry>
+    			<entry xml:lang="en-US">Update to allow customer to choose the package during provsioning + Removal of Forfait resource.</entry>
+    		</version>
+    		<version release="10" version="1.4">
+    			<entry>Tests pour le changement de forfait</entry>
+    			<entry xml:lang="en-US">Tests for upselling</entry>
+    		</version>
+    		<version release="11" version="1.4">
+    			<entry>Refonte de la manière de gérer les forfaits</entry>
+    			<entry xml:lang="en-US">Rebuild of way of managing subscriptions</entry>
+    		</version>
+    		<version release="12" version="1.4">
+    			<entry>Suppression du sous-service Docs_Supplementaires</entry>
+    			<entry xml:lang="en-US">Removal of &quot;Docs_Supplementaires&quot; subservice</entry>
+    		</version>
+    		<version release="13" version="1.4">
+    			<entry>Modification du nom d'une variable + Récupération des infos d'environnement par les WebServices
+</entry>
+    			<entry xml:lang="en-US">Variable name change + Modification of WebService call</entry>
+    		</version>
+    		<version release="14" version="1.4">
+    			<entry>Correction d'un bogue dans Armoire_Configure.php</entry>
+    			<entry xml:lang="en-US">Correction of a bug in Armoire_Configure.php</entry>
+    		</version>
+    		<version release="15" version="1.4">
+    			<entry>Test</entry>
+    			<entry xml:lang="en-US">Test</entry>
+    		</version>
+    		<version release="16" version="1.4">
+    			<entry>Gestion de la période d'essai + Modification de la manière de gérer les forfaits</entry>
+    			<entry xml:lang="en-US">Subscription management improvment</entry>
+    		</version>
+    		<version release="17" version="1.4">
+    			<entry>Masquage de Quota_Envoi_Postaux</entry>
+    			<entry xml:lang="en-US">Hide of 'Quota_Envoi_Postaux' setting</entry>
+    		</version>
+    		<version release="18" version="1.4">
+    			<entry>Ajout d'une visibilité sur le champ Type de client à l'installation</entry>
+    			<entry xml:lang="en-US">visibility on Client_Type added</entry>
+    		</version>
+    		<version release="19" version="1.4">
+    			<entry>Correction d'un dysfonctionnement dans l'identification du forfait choisi.</entry>
+    			<entry xml:lang="en-US">Bug correction.</entry>
+    		</version>
+    		<version release="20" version="1.4">
+    			<entry>Affichage de volume Pack dans Parallels pour pouvoir spécifier les RTs</entry>
+    			<entry xml:lang="en-US">Unprotection of Volume_Pack</entry>
+    		</version>
+    		<version release="21" version="1.4">
+    			<entry>Correction d'un bouge dans fonctions.php</entry>
+    			<entry xml:lang="en-US">Bug corrected in functions.php</entry>
+    		</version>
+    		<version release="22" version="1.4">
+    			<entry>Ajout d'un service virtuel permettant simplement de faciliter l'accès aux entry points + Ajout de la doc de déploiement</entry>
+    			<entry xml:lang="en-US">Addition of a subservice for prenstation of entry points + integration of deployment guide</entry>
+    		</version>
+    		<version release="30" version="1.4">
+    			<entry>Modification des forfaits</entry>
+    			<entry xml:lang="en-US">Modification of subscription principles</entry>
+    		</version>
+    		<version release="31" version="1.4">
+    			<entry>Mise à jour du lien d'accès à l'armoire. Suppression de l'entry point 'Reset Password'.</entry>
+    			<entry xml:lang="en-US">Correction of bugs after integration of the package into APS sandbox</entry>
+    		</version>
+    		<version release="32" version="1.4">
+    			<entry>Correction de bogues avant certification</entry>
+    			<entry xml:lang="en-US">Updates before begining of certification process</entry>
+    		</version>
+    		<version release="33" version="1.4">
+    			<entry>Correction d'un problème de génération automatique du mot de passe des utilisateurs</entry>
+    			<entry xml:lang="en-US">Correction of generation of user password.</entry>
+    		</version>
+    		<version release="34" version="1.4">
+    			<entry>Modification du type des settings "Mot de passe" : password -> string.</entry>
+    			<entry xml:lang="en-US">Modification of Password settings : type password -&gt; type string.</entry>
+    		</version>
+    		<version release="35" version="1.4">
+    			<entry>Ajout d'infos complémentaires sur le setting Quota_Envoi_Postaux + Ajout d'un script de vérification lors de la creation des utilisateurs.</entry>
+    			<entry xml:lang="en-US">Complementary informations on Quota_Envoi_Postaux setting + Addition of a verification script for user creation.</entry>
+    		</version>
+    		<version release="36" version="1.4">
+    			<entry>Génération automatique du mot de passe Admin</entry>
+    			<entry xml:lang="en-US">Auto-generation of admin password</entry>
+    		</version>
+    		<version release="37" version="1.4">
+    			<entry>Test pour la génération du mot de passe principal</entry>
+    		</version>
+    		<version release="38" version="1.4">
+    			<entry>Test for main user password generation</entry>
+    			<entry xml:lang="en-US">Test for main user password generation</entry>
+    		</version>
+    		<version release="39" version="1.4">
+    			<entry>Suppression des traces de tests + Mise en place d'une expression régulière pour les mots de passe</entry>
+    			<entry xml:lang="en-US">Debug trace romval + regex for password generation</entry>
+    		</version>
+    		<version release="40" version="1.4">
+    			<entry>Suppression de la regex pour les mots de passe</entry>
+    			<entry xml:lang="en-US">Removal of regex for passwords</entry>
+    		</version>
+    		<version release="41" version="1.4">
+    			<entry>Remise en place d'une expression régulière pour les mots de passe</entry>
+    			<entry xml:lang="en-US">Addition of regex for passwords</entry>
+    		</version>
+    		<version release="43" version="1.4">
+    			<entry>xxx</entry>
+    		</version>
+    		<version release="45" version="1.4">
+    			<entry>xxx</entry>
+    		</version>
+    		<version release="46" version="1.4">
+    			<entry>Modification du regex sur les conseils du support.</entry>
+    			<entry xml:lang="en-US">Update of regex following APS support advices.</entry>
+    		</version>
+    		<version release="47" version="1.4">
+    			<entry>Mise à jour de la regex</entry>
+    			<entry xml:lang="en-US">Update of regex</entry>
+    		</version>
+    		<version release="48" version="1.4">
+    			<entry>Ajout d'une taille minimale de 10 caractères pour les mots de passe</entry>
+    			<entry xml:lang="en-US">Minimal password length = 10</entry>
+    		</version>
+    		<version release="49" version="1.4">
+    			<entry>Modification de class pour User_Firstname et User_Lastname + modification de la valeur par défaut</entry>
+    			<entry xml:lang="en-US">Change class for User_Firstname and User_Lastname + change of default value for these settings.</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Back office/Knowledge Management</category>
+    		<category>Back office/Dispatch Management</category>
+    	</categories>
+    	<languages>
+    		<language>fr</language>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<group>
+    		<name>WebService_Access</name>
+    		<setting type="host-name" id="WebService_Host"
+    			default-value="armoires.zeendoc.com"
+    			installation-only="true" visibility="hidden">
+    			<name>Hote hébergeant le WebService</name>
+    			<name xml:lang="en-US">API Host</name>
+    			<description>Serveur hébergant le webservice avec lequel la passerelle du Provider communique</description>
+    		</setting>
+    		<setting type="string" id="WebService_Provider_Key"
+    			installation-only="true" min-length="32" max-length="32"
+    			default-value="___KEY_TO_BE_GIVEN_BY_ZEENDOC___">
+    			<name>Clef d'identification</name>
+    			<name xml:lang="en-US">API Key</name>
+    			<description>Clef permettant au WebService d'identifier le Provider. Cette clef est fournie par ZeenDoc.</description>
+    			<description xml:lang="en-US">The key is provided par ZeenDoc staff.</description>
+    		</setting>
+    	</group>
+    </global-settings>
+    <service id="Armoire">
+    	<license must-accept="true">
+    		<commercial />
+    		<text>
+    			<name>Licence</name>
+    			<file>scripts/license_fr.txt</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<summary>Armoire ZeenDoc</summary>
+    		<summary xml:lang="en-US">Access to ZeenDoc services</summary>
+    		<infolinks>
+    			<link href="http://www.zeendoc.com" class="support">Support</link>
+    			<link href="file:///docs/Deployment.docx" class="deployment-guide">Deployment guide</link>
+    		</infolinks>
+    	</presentation>
+    	<settings>
+    		<group class="vcard">
+    			<name>Identité</name>
+    			<name xml:lang="en-US">Identity</name>
+    			<group class="fn n">
+    				<name>Name</name>
+    				<setting type="string" id="Nom_Client" default-value="...A_Renseigner..." class="given-name" track-old-value="true">
+    					<name>Nom du client</name>
+    					<name xml:lang="en-US">Customer name</name>
+    				</setting>
+    			</group><group class="authn">
+    				<name>Compte principal</name>
+    				<name xml:lang="en-US">Main account</name>
+    				<setting type="email" id="Admin_Email" default-value="mail.principal@abc.com" track-old-value="true" class="value">
+    					<name>Email principal</name>
+    					<name xml:lang="en-US">Admin user email</name>
+    					<description>Adresse email du compte principal. Ce compte disposera par défaut des droits d'administration sur l'armoire numérique.</description>
+    				</setting>
+    				<setting type="string" id="Admin_Password" class="password" protected="true" visibility="hidden" default-value="123" track-old-value="true" generate="password" regex="^[a-zA-Z0-9]*$" max-length="16" min-length="10">
+    					<name>Mot de passe de l'utilisateur principal</name>
+    					<name xml:lang="en-US">Main User Password</name>
+    				</setting><setting type="string" id="Admin_Lastname"
+    					class="family-name" track-old-value="true" default-value="[Nom]">
+    					<name>Nom de l'utilisateur du compte principal</name>
+    					<name xml:lang="en-US">
+    						Main account owner lastname
+    					</name>
+    				</setting>
+    				<setting type="string" id="Admin_Firstname"
+    					class="given-name" track-old-value="true" default-value="[Prenom]">
+    					<name>Prénom de l'utilisateur du compte principal</name>
+    					<name xml:lang="en-US">
+    						Main user account firstname
+    					</name>
+    				</setting>
+    				<setting type="string" id="Admin_User_Id"
+    					class="value" visibility="hidden" protected="true" default-value="[User_Id]">
+    					<name>Identifiant unique du compte principal</name>
+    					<name xml:lang="en-US">Unique main account identifiant</name>
+    				</setting>
+    				</group>
+    			<setting type="string" id="Url_Client"
+    				default-value="[Url_Client]" visibility="hidden"
+    				protected="true">
+    				<name>Repertoire client</name>
+    				<name xml:lang="en-US">
+    					Customer publication directory (provided by
+    					ZeenDoc during provisioning)
+    				</name>
+    				<description>
+    					Ce champ sera renseigné automatiquement
+    				</description>
+    			</setting>
+    			<setting type="enum" id="Type_Client"
+    				installation-only="true" default-value="ENTREPRISE">
+    				<name>Type de client</name>
+    				<name xml:lang="en-US">
+    					Customer type (administration / enterprise)
+    				</name>
+    				<description>Type de client (Entreprise ou Administration)
+    				</description>
+    				<choice id="MAIRIE">
+    					<name>Administration</name>
+    					<name xml:lang="en-US">Administration</name>
+    				</choice>
+    				<choice id="ENTREPRISE">
+    					<name>Entreprise</name>
+    					<name xml:lang="en-US">Enterprise</name>
+    				</choice>
+    			</setting></group>
+    		<group>
+    			<name>Subscription_Limits</name>
+    			<setting type="integer" id="Quota_Mo" visibility="hidden" protected="true" track-old-value="true" default-value="1024"></setting>
+    			</group>
+    	</settings>
+    		<resources>
+    			<resource class="item" id="Usage_Mo" limiting-setting="Quota_Mo">
+    				<name>Volume (en Mo) archivé en ligne</name>
+    				<name xml:lang="en-US">Number of Mo online</name>
+    			</resource>
+    		</resources>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:extension>curl</php:extension>
+    		<php:extension>openssl</php:extension>
+    		<php:version min="5.0"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="Armoire_Configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    		<resource-script name="Armoire_Report_Resources.php">
+    			<script-language>php</script-language>
+    		</resource-script>
+    	</provision>
+		<service id="Main_User" singular="true"><presentation>
+	<name>Utilisateur principal</name>
+	<name xml:lang="en-US">Main user</name>
+	<summary>Utilisateur principal</summary>
+	<summary xml:lang="en-US">Main user</summary>
+	<infolinks><link href="http://www.zeendoc.com" class="support">Support</link></infolinks><entry-points><entry dst="https://armoires.zeendoc.com/_Login/Login.php" class="login" method="POST"><label>Accéder à ZeenCourrier</label>
+	<label xml:lang="en-US">Access to ZeenCourrier</label>
+	<variable name="Login" class="login" value-of-setting="Admin_Email">[login]</variable>
+	<variable name="Password" class="password" value-of-setting="Admin_Password">[password]</variable>
+	<variable name="Enregistrer" class="locale" value-of-setting="Admin_Email">SFR</variable>
+</entry></entry-points></presentation><settings>
+	<group class="authn">
+		<name>Compte principal</name>
+		<name xml:lang="en-US">Main account</name>
+		<setting id="Admin_Email" type="string"
+			value-of-setting="Admin_Email" class="login">
+			<name>Email du compte principal</name>
+			<name xml:lang="en-US">Main account email</name>
+		</setting>
+		<setting type="string" id="Admin_Password" visibility="hidden" protected="true" track-old-value="true" default-value="SYTDCgdjjo3YW546TWgx" value-of-setting="Admin_Password">
+			<name>Mot de passe du compte principal</name>
+			<name xml:lang="en-US">Main user password</name>
+		</setting>
+	</group>
+	</settings></service>
+    	<service id="Envois_Postaux">
+    		<presentation>
+    			<name>Envois postaux</name>
+    			<name xml:lang="en-US">Mail functionalities</name>
+    			<summary>Envois postaux</summary>
+    			<summary xml:lang="en-US">Mail functionalities</summary>
+    		</presentation>
+    		<settings>
+    			<setting type="integer" id="Quota_Envoi_Postaux"
+    				default-value="0" installation-only="true" visibility="hidden">
+    				<name>Volume du pack d'envoi postal</name>
+    				<name xml:lang="en-US">Pack Volume</name>
+    				<description>Valeurs autorisées : 10, 30, 50 ou 100</description>
+    				<description xml:lang="en-US">Allowed values are : 10, 30, 50 or 100</description>
+    			</setting>
+    			<setting type="integer" id="Id_Pack" visibility="hidden" protected="true" default-value="0"></setting>
+    			<setting type="string" id="Url_Client"
+    				value-of-setting="Url_Client" protected="true"
+    				visibility="hidden">
+    				<name>Repertoire client</name>
+    				<name xml:lang="en-US">Customer publication directory (provided by ZeenDoc during provisioning)</name>
+    			</setting>
+    			</settings>
+    		<resources>
+    			<resource class="item" id="Consommation_Envoi_Postaux" limiting-setting="Quota_Envoi_Postaux">
+    				<name>Consommation des envois postaux</name>
+    				<name xml:lang="en-US">Number of mail service unit consumed</name>
+    			</resource>
+    		</resources>
+    		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    			<php:extension>curl</php:extension>
+    			<php:extension>openssl</php:extension>
+    			<php:version min="5.0"/>
+    		</requirements>
+    		<provision>
+    			<configuration-script name="Envois_Postaux_Configure.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</configuration-script>
+    			<resource-script
+    				name="Envois_Postaux_Report_Resources.php">
+    				<script-language>php</script-language>
+    			</resource-script>
+    		</provision>
+    	</service>
+    	<service id="Additional_Users">
+    		<presentation>
+    			<name>Utilisateurs supplémentaires</name>
+    			<name xml:lang="en-US">Additional users</name>
+    			<summary>Utilisateurs supplémentaires</summary>
+    			<summary xml:lang="en-US">Additional users</summary>
+    			<entry-points>
+    				<entry dst="https://armoires.zeendoc.com/_Login/Login.php" class="login" method="POST">
+    					<label>Accéder à ZeenCourrier</label>
+    					<label xml:lang="en-US">Access to ZeenCourrier</label>
+    					<icon path="images/Logo_ZeenDoc.png" />
+    					<variable name="Login" class="login" value-of-setting="User_Email">[Login]</variable>
+    					<variable name="Password" class="password" value-of-setting="User_Password">[Password]</variable>
+    					<variable name="Enregistrer" class="locale" value-of-setting="User_Email">SFR</variable>
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+    			<setting type="string" id="Url_Client"
+    				value-of-setting="Url_Client" visibility="hidden"
+    				protected="true">
+    				<name>Répertoire de publication</name>
+    				<name xml:lang="en-US">Customer publication directory (provided by ZeenDoc during provisioning)</name>
+    			</setting>
+    			<group class="authn">
+    				<name>Paramètres du compte</name>
+    				<name xml:lang="en-US">User account</name>
+    				<setting type="email" id="User_Email" class="login"
+    					default-value="mail.utilisateur@abc.com" track-old-value="true">
+    					<name>Adresse email de l'utilisateur</name>
+    					<name xml:lang="en-US">User Email</name>
+    				</setting>
+    				<setting type="string" id="User_Password"
+    					class="password" protected="true" visibility="hidden" default-value="123" track-old-value="true" generate="password" regex="^[a-zA-Z0-9]*$" max-length="16" min-length="10">
+    					<name>Mot de passe de l'utilisateur</name>
+    					<name xml:lang="en-US">User Password</name>
+    				</setting>
+    				<setting type="string" id="User_Lastname"
+    					class="family-name" track-old-value="true"
+    					default-value="[Nom]">
+    					<name>Nom de l'utilisateur</name>
+    					<name xml:lang="en-US">Account owner lastname</name>
+    				</setting>
+    				<setting type="string" id="User_Firstname"
+    					class="given-name" track-old-value="true"
+    					default-value="[Prenom]">
+    					<name>Prénom de l'utilisateur</name>
+    					<name xml:lang="en-US">User account firstname</name>
+    				</setting>
+    				<setting type="string" id="User_User_Id"
+    					class="value" visibility="hidden" protected="true"
+    					default-value="[User_Id]">
+    					<name>Identifiant unique du compte</name>
+    					<name xml:lang="en-US">Unique user identifiant</name>
+    				</setting>
+    				</group>
+    			<group>
+    				<name>Droits de l'utilisateur</name>
+    				<name xml:lang="en-US">User Rights</name>
+    				<setting type="boolean" id="Read_Right"
+    					default-value="true" track-old-value="true">
+    					<name>Recherche et consultation</name>
+    					<name xml:lang="en-US">Search and read documents right</name>
+    				</setting>
+    				<setting type="boolean" id="Read_Right_Restricted"
+    					track-old-value="true" default-value="false">
+    					<name>Recherche et consultation de ses propres documents uniquement</name>
+    					<name xml:lang="en-US">Right to search and view only its own documents</name>
+    				</setting>
+    				<setting type="boolean" id="Post_Right" default-value="false" track-old-value="true">
+    					<name>Envoi de courriers par voie postale</name>
+    					<name xml:lang="en-US">Send documents through postal service right</name>
+    				</setting><setting type="boolean" id="Modify_Right" track-old-value="true" default-value="false">
+    					<name>Modification des index de classement</name>
+    					<name xml:lang="en-US">Modify index right</name>
+    				</setting>
+    				<setting type="boolean" id="Upload_Right"
+    					track-old-value="true" default-value="false">
+    					<name>Dépôt de courriers</name>
+    					<name xml:lang="en-US">Upload documents right</name>
+    				</setting>
+    				<setting type="boolean" id="Delete_Right"
+    					track-old-value="true" default-value="false">
+    					<name>Suppression des courriers</name>
+    					<name xml:lang="en-US">Delete document right</name>
+    				</setting>
+    				<setting type="boolean" id="Admin_Right"
+    					track-old-value="true" default-value="false">
+    					<name>Administration</name>
+    					<name xml:lang="en-US">Administration right</name>
+    				</setting>
+    			</group>
+    		</settings>
+    		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    			<php:extension>curl</php:extension>
+    			<php:extension>openssl</php:extension>
+    			<php:version min="5.0"/>
+    		</requirements>
+    		<provision>
+    			<configuration-script name="Users_Configure.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</configuration-script>
+    			<verify-script name="Users_Verify.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</verify-script>
+    		</provision>
+    	</service>
+    </service>
+</application>

@@ -1,0 +1,279 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-11-19T16:37:32">
+    <id>http://apsstandard.org/app/OperoBackup</id>
+    <name>BaseBackup</name>
+    <version>0.4</version>
+    <release>2</release>
+    <homepage>http://www.basebackup.com/</homepage>
+    <vendor>
+    	<name>Opero </name>
+    	<homepage>http://www.basebackup.com/</homepage>
+    	<icon path="images/favicon.png" />
+    </vendor>
+    <packager>
+    	<name>Opero</name>
+    	<homepage>http://www.basebackup.com/</homepage>
+    	<icon path="images/favicon.png" />
+    </packager>
+    <presentation>
+    	<summary>Opero Backup System is an innovative and technologically advanced solution for online data backup.</summary>
+    	<description>Opero Backup platform has client-server architecture.
+
+OPERO BACKUP CLIENT
+Application installed on user`s computer, and used to backup user`s data. Data are sent then to backup server were are stored in a secured manner. Application can be installed on workstation, file server, mail server or database server. 
+
+OPERO BACKUP SERVER (OBS)
+Applications and services installed on server/servers that sends data. Main server component is repository service which is responsible for communication with client application also sending and receiving data. Before application connects with repository service it needs to establish a connection with load balancer service, which authorize user and ensure equable load balancing on available repository services.
+Storage is next vital system component, it stores data. It can be done on drives with working services that were mentioned before it can also be NAS type storage.  Other system components can be placed on any operating system.
+</description>
+   	
+    	<icon path="images/favicon.png" />
+    	<screenshot path="images/1.png">
+    		<description>LogIn screen</description>
+    	</screenshot>
+    	<screenshot path="images/6.png">
+    		<description>Main screen</description>
+    	</screenshot>
+    	<screenshot path="images/2.png">
+    		<description>My projects screen</description>
+    	</screenshot>
+    	<screenshot path="images/3.png">
+    		<description>Backup Restore</description>
+    	</screenshot>
+    	<screenshot path="images/4.png">
+    		<description>Briefcase</description>
+    	</screenshot>
+    	<screenshot path="images/5.png">
+    		<description>Log screen</description>
+    	</screenshot>
+    	<screenshot path="images/7.png">
+    		<description>New project wizard</description>
+    	</screenshot>
+    	<screenshot path="images/8.png">
+    		<description>New project wizard</description>
+    	</screenshot>
+    	<screenshot path="images/9.png">
+    		<description>New project wizard</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="0.1">
+    			<entry>Initial</entry>
+    		</version>
+    		<version release="2" version="0.1">
+    			<entry>test</entry>
+    		</version>
+    		<version release="3" version="0.1">
+    			<entry>test</entry>
+    		</version>
+    		<version release="4" version="0.1">
+    			<entry>test</entry>
+    		</version>
+    		<version release="5" version="0.1">
+    			<entry>dasdas</entry>
+    		</version>
+    		<version release="6" version="0.1">
+    			<entry>nowa wersja</entry>
+    		</version>
+    		<version release="7" version="0.1">
+    			<entry>next</entry>
+    		</version>
+    		<version release="1" version="0.2">
+    			<entry>Resources added</entry>
+    			<entry xml:lang="pl-PL">dodane zasoby - monitorowanie</entry>
+    			<entry xml:lang="en-GB">Resources added</entry>
+    		</version>
+    		<version release="2" version="0.2">
+    			<entry>Entry point added</entry>
+    		</version>
+    		<version release="1" version="0.3">
+    			<entry>Reseller resources deleted</entry>
+    		</version>
+    		<version release="2" version="0.3">
+    			<entry>2</entry>
+    		</version>
+    		<version release="3" version="0.3">
+    			<entry>3</entry>
+    		</version>
+    		<version release="4" version="0.3">
+    			<entry>4</entry>
+    		</version>
+    		<version release="5" version="0.3">
+    			<entry>5</entry>
+    		</version>
+    		<version release="6" version="0.3">
+    			<entry>6</entry>
+    		</version>
+    		<version release="1" version="0.4">
+    			<entry>Added Password change and changed trial options.</entry>
+    		</version>
+    		<version release="2" version="0.4">
+    			<entry>Client_type  bug</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+			<category>Infrastructure/Backup</category>
+		</categories>
+ 			<languages>
+ 				<language>pl</language>
+ 				<language>en</language>
+ 			</languages>
+
+
+
+		   			
+    </presentation>
+
+    <global-settings>
+    <setting type="host-name" id="api_url" default-value="operolab.pl">
+    	<name>Api url</name>
+    </setting>
+    <setting type="string" id="api_login" default-value="">
+    	<name>Api admin login</name>
+    </setting>
+    <setting type="password" id="api_password" default-value="">
+    	<name>Api password</name>
+    </setting>
+    <setting type="string" id="api_key" default-value="">
+    	<name>Api key</name>
+    </setting></global-settings>
+    
+    	
+
+    	
+    	
+    	<service id="reseller" class="service">
+		<license must-accept="true">
+    		<commercial />
+    		<text>
+    			<name>License</name>
+    			<file>license.txt</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>Backup reseller</name>
+    		<summary>Backup reseller</summary>
+
+    		<infolinks>
+    			<link class="support"
+    				href="http://www.opero.pl/pomoc">Support
+    			</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry	dst="https://{api_url}/reseller">
+    				<label>Backup Reseller</label>
+    				<variable name="api_url" value-of-setting="api_url" />
+    			</entry>
+    		</entry-points>
+    		
+    		
+    		
+
+    	</presentation>   
+			<settings>
+	    		<setting type="integer" id="brand_id"	default-value="1" installation-only="true" visibility="hidden">
+	    			<name>Reseller brand id</name>
+	    		</setting>
+				<group class="authn"> 
+					<setting id="reseller_login" type="string" class="login" installation-only="true" uniq="global"> 
+						<name>Reseller login</name> 
+					</setting> 
+					<setting id="reseller_password" type="password" class="password" track-old-value="true"> 
+						<name>Reseller password</name> 
+					</setting> 
+				</group>
+				<group class="vcard">
+					<group class="email">
+						<setting id="reseller_email" type="email" class="value" installation-only="true"> 
+							<name>Reseller Email</name> 
+						</setting> 
+					</group>
+				</group>
+			</settings>
+			<requirements xmlns:php="http://apstandard.com/ns/1/php">
+				<php:allow-url-fopen>true</php:allow-url-fopen>
+				<php:extension>curl</php:extension>
+				<php:version min="5.3"/>
+			</requirements>
+    		<provision>
+    			<configuration-script name="reseller.php">
+    				<script-language>php</script-language>
+    				<status-control />
+    				<structured-output />
+    			</configuration-script>
+    		</provision>
+    		<service id="client-standard" class="account">
+    			<presentation>
+    				<name>Backup client</name>
+    				<summary>Backup client</summary>
+    				<entry-points>
+    					<entry dst="https://{api_url}/">
+    						<label>Backup Application</label>
+    						<variable name="api_url" value-of-setting="api_url" />
+    					</entry>
+    				</entry-points>
+    			</presentation>
+    			<settings>
+    				<group class="authn">
+	    				<setting type="string" id="client_login"
+	    					class="login" installation-only="true" uniq="global">
+	    					<name>Client login</name>
+	    				</setting>
+	    				<setting type="password" id="client_password"
+	    					track-old-value="true" class="password">
+	    					<name>Client password</name>
+	    				</setting>
+					</group>	    				
+    				<setting type="email" id="client_email"
+    					installation-only="true" class="vcard">
+    					<name>Client email</name>
+    				</setting>
+    				<setting type="integer" id="client_capacity" default-value="2048" min="1024">
+    					<name>Client capacity limit</name>
+    				</setting>
+    				<setting type="integer" id="client_users" default-value="5">
+    					<name>Client users limit</name>
+    				</setting>
+    				<setting type="integer" id="client_hosts" default-value="10">
+    					<name>Client host limit</name>
+    				</setting>
+    				<setting type="boolean" id="has_briefcase" installation-only="true" default-value="true">
+    					<name>Briefcase enabled</name>
+    				</setting>
+    				<setting type="boolean" id="is_freemium"
+    					default-value="false" installation-only="true">
+    					<name>Is freemium</name>
+    				</setting>
+    				<setting type="enum" id="client_type" default-value="10">
+    					<name>Account type</name>
+						<choice id="10" > <name>Trial</name> </choice>
+						<choice id="20" > <name>Full</name> </choice>						
+    				</setting>
+    				<setting type="string" id="reseller_login" value-of-setting="reseller_login" visibility="hidden" installation-only="true"></setting>
+    				<setting type="boolean" id="is_trial" class="subscription_trial" protected="true" visibility="hidden"></setting>
+    			</settings>
+    			<resources>
+    				<resource class="mb" id="client_capacity" limiting-setting="client_capacity">
+    					<name>Client capacity</name>
+    				</resource>
+    				<resource class="item" id="client_users" limiting-setting="client_users">
+    					<name>Client users</name>
+    				</resource>
+    				<resource class="item" id="client_hosts" limiting-setting="client_hosts">
+    					<name>Client hosts</name>
+    				</resource>
+    			</resources>
+    			<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    				<php:allow-url-fopen>true</php:allow-url-fopen>
+    				<php:extension>curl</php:extension>
+    				<php:version min="5.3"/>
+    			</requirements>
+    			<provision>
+    				<configuration-script name="client-standard.php">
+    					<script-language>php</script-language>
+    					<structured-output />
+    				</configuration-script>
+    				<resource-script name="client-resources.php">
+    					<script-language>php</script-language>
+    				</resource-script>
+    			</provision>
+    		</service>
+    </service></application>

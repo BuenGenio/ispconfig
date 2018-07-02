@@ -1,0 +1,358 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-07-09T14:34:57">
+    <id>http://www.mobidm.com/</id>
+    <name>Mobile Device Manager</name>
+    <version>2.0</version>
+    <release>1</release>
+    <homepage>http://www.mobidm.com/</homepage>
+    <vendor>
+    	<name>VeliQ</name>
+    	<homepage>http://www.veliq.com/</homepage>
+    	<icon path="images/MobiDM 64x64logo.png" />
+    </vendor>
+    <packager>
+    	<name>Mindtree</name>
+    	<homepage>http://www.mindtree.com</homepage>
+    	<icon path="images/Mindtree 64x64logo.png" />
+    </packager>
+    <presentation>
+    	<summary>Mobile Device Manager enables organizations to control and manage the mobile devices (smartphones and tablets) of their employees using a clean and easy-to-use webportal</summary>
+    	<summary xml:lang="nl-NL">Mobile Device Manager stelt organisaties in staat om controle en beheer van de mobiele apparaten (smartphones en tablets) van hun werknemers met een schone en makkelijk te gebruiken webportal</summary>
+    	<summary xml:lang="de-DE">Mobile Device Manager ermöglicht Organisationen die Kontrolle und Verwaltung der mobilen Geräte (Smartphones und Tablets) von ihren Angestellten mit einem sauberen und leicht zu bedienendes Webportal</summary>
+    	<description>Mobile Device Manager provides management and support for the currently available mobile operating systems. It allows you as an organization to regain control over all your mobile assets,
+including the configuration of devices, Apps and specific Enterprise content. MobiDM contains the following functions:
+
+    User authentication;
+    Device enrollment;
+    Device Provisioning;
+    Inventory Management;
+    Device Monitoring;
+    APN configuration;
+    Wi-Fi and VPN configuration;
+    Email configuration;
+    Backup and restore management;
+    (Partial) Remote wipe and
+    Mobile Device Reconfiguration. </description>
+    	<description xml:lang="nl-NL">Mobile Device Manager biedt beheer en de ondersteuning van de momenteel beschikbare mobiele besturingssystemen. Het laat je als organisatie om de controle over al uw mobiele activa te herwinnen,
+waaronder de configuratie van apparaten, applicaties en specifieke Enterprise content. MobiDM bevat de volgende functies:
+
+     Authenticatie van de gebruiker;
+     Apparaat inschrijving;
+     Apparaat Provisioning;
+     Voorraadbeheer;
+     Device Monitoring;
+     APN configuratie;
+     Wi-Fi en VPN-configuratie;
+     E-mail configuratie;
+     Back-up en het beheer van het herstel;
+     (Gedeeltelijke) Remote wipe en
+     Mobile Device Herindeling.</description>
+    	<description xml:lang="de-DE">Mobile Device Manager bietet Management und Unterstützung für die derzeit verfügbaren mobilen Betriebssystemen. Es ermöglicht Ihnen, als eine Organisation, die Kontrolle über alle Ihre mobilen Vermögenswerte wieder zu erlangen,
+einschließlich der Konfiguration von Geräten, Apps und spezifische Enterprise Content. MobiDM enthält die folgenden Funktionen:
+
+     Benutzerauthentifizierung;
+     Gerät Einschreibung;
+     Geräte-Provisioning;
+     Inventory Management;
+     Device Monitoring;
+     APN-Konfiguration;
+     Wi-Fi-und VPN-Konfiguration;
+     E-Mail-Konfiguration;
+     Backup-und Restore-Management;
+     (Teil-) Remote Wipe und
+     Mobile Device Rekonfiguration.</description>
+    	<icon path="images/MobiDM 64x64logo.png" />
+    	<screenshot path="images/Mobi_SC1.png">
+    		<description>Main Screen</description>
+    		<description xml:lang="nl-NL">Hoofdscherm</description>
+    		<description xml:lang="de-DE">Hauptbildschirm</description>
+    	</screenshot>
+    	<screenshot path="images/Mobi_SC2.png">
+    		<description>Device Details</description>
+    		<description xml:lang="nl-NL">Apparaat Details</description>
+    		<description xml:lang="de-DE">Apparat Details</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.0">
+    			<entry>New Package using APS 1.2</entry>
+    		</version>
+    		<version release="1" version="2.0">
+    			<entry>1. RegEx and Error Messge for Mobile Number field has been added.
+2. Password description has been modified.
+</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Web/Tools</category>
+    		<category>Web/Content management</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    		<language>de</language>
+    		<language>nl</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<setting type="string" id="MobiDM_WebApiUrl" protected="true" installation-only="true" default-value="https://sdk.mobidm.com/mobidmws.asmx?WSDL">
+    		<name>Web Api Url for MobiDM Service</name>
+    		<name xml:lang="nl-NL">Web Api Url voor de MobiDM dienst</name>
+    		<name xml:lang="de-DE">Web Api URL für MobiDM-Dienst</name>
+    		<description>It is an URL to access the MobiDM service
+</description>
+    		<description xml:lang="nl-NL">Dit is de URL om toegang te krijgen tot de MobiDM dienst</description>
+    		<description xml:lang="de-DE">Dies ist eine URL für den Zugriff auf den MobiDM-Dienst</description>
+    	</setting>
+    	<setting type="string" id="MobiDM_Admin_Id" protected="true" default-value="-" visibility="hidden">
+    		<name>Administrator UserId for MobiDM</name>
+    		<name xml:lang="nl-NL">Administrator gebruikersnaam voor MobiDM</name>
+    		<name xml:lang="de-DE">Administrator-Benutzerkennung für MobiDM</name>
+    		<description>This is Administrator user login name.
+</description>
+    		<description xml:lang="nl-NL">Dit is Administrator user login naam.</description>
+    		<description xml:lang="de-DE">Dies ist Administrator Benutzeranmeldenamen.</description>
+    	</setting>
+    	<setting type="password" id="MobiDM_Admin_Pwd" protected="true" default-value="-" visibility="hidden">
+    		<name>Administrator Password for MobiDM</name>
+    		<name xml:lang="nl-NL">Administrator wachtwoord voor MobiDM</name>
+    		<name xml:lang="de-DE">Administrator-Passwort für MobiDM</name>
+    		<description>This is Administrator user password.
+</description>
+    		<description xml:lang="nl-NL">Dit is Administrator wachtwoord.</description>
+    		<description xml:lang="de-DE">Dies ist Administrator Benutzer-Passwort.</description>
+    	</setting>
+    	<setting type="string" id="MobiDM_PortalUrl" default-value="https://demosdkmic.mobidm.com/index.cfm" installation-only="true">
+    		<name>Portal Url for MobiDM </name>
+    		<name xml:lang="nl-NL">Portal Url voor MobiDM</name>
+    		<name xml:lang="de-DE">Portal URL für MobiDM</name>
+    	</setting>
+    </global-settings>
+    <service id="Organization " class="service">
+    	<license must-accept="false">
+    		<commercial />
+    		<text>
+    			<name>Licence</name>
+    			<file>docs/License_Agreement_English.pdf</file>
+    		</text>
+    		<text xml:lang="nl-NL">
+    			<name>License</name>
+    			<file>docs/License_Agreement_Dutch.pdf</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>Mobile Device Manager Organization and Administrator Account</name>
+    		<name xml:lang="nl-NL">Mobile Device Manager Organisatie en Administrator-account</name>
+    		<name xml:lang="de-DE">Mobile Device Manager-Organisation und Administrator-Konto
+</name>
+    		<summary>Customer Organization and its Mobile Device Manager Administrator Account</summary>
+    		<summary xml:lang="nl-NL">Klant Organisatie en haar Mobile Device Manager Administrator account</summary>
+    		<summary xml:lang="de-DE">Kunden-Organisation und Mobile Device Manager-Administrator-Konto des Kunden</summary>
+    		<infolinks>
+    			<link href="mobility.servicedesk@kpn.com " class="support">Help Desk Support</link>
+    			<link href="http://wiki.mobidm.com/wiki/Manuals" class="howto">Documentation</link>
+    			<link href="file:///docs/Mobile Device Manager Service Providers Guide.docx" class="deployment-guide">Mobile Device Manager Service Provider Guide</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry dst="{portal_url}" class="login" method="POST">
+    				<label>Mobile Device Manager Portal</label>
+    				<description>It is the gateway for AdminUser to login in to the MobiDM Service
+</description>
+    				<description xml:lang="nl-NL">Het is de toegangsportaal voor de administrator om in te loggen op de MobiDM dienst</description>
+    				<description xml:lang="de-DE">Dies ist das Zugangsportal für den Administrator, in dem er sich beim MobiDM-Dienst anmeldet</description>
+    				<variable name="portal_url" value-of-setting="MobiDM_PortalUrl"></variable>
+    				<variable name="autologin">true</variable>
+    				<variable name="language">en_US</variable>
+    				<variable name="invalidcredentialsurl" value-of-setting="MobiDM_PortalUrl"></variable>
+    				<variable name="username" value-of-setting="admin_login" class=""></variable>
+    				<variable name="password" value-of-setting="admin_password"></variable>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+    		<group class="vcard">
+    			<name>Organization Details</name>
+    			<name xml:lang="nl-NL">Organisatie Details</name>
+    			<name xml:lang="de-DE">Organisationsdaten</name>
+    			<setting type="string" id="customer_name" default-value="-" class="organization-name" uniq="global" min-length="1" max-length="255">
+    				<name>Customer Name</name>
+    				<name xml:lang="nl-NL">Naam van de klant</name>
+    				<name xml:lang="de-DE">Name des Kunden</name>
+    			</setting>
+    			<setting type="string" id="customer_street" class="street-address" default-value="-" min-length="1" max-length="45">
+    				<name>Customer Street</name>
+    				<name xml:lang="nl-NL">Straatnaam van de klant</name>
+    				<name xml:lang="de-DE">Anschrift des Kunden</name>
+    			</setting>
+    			<setting type="string" id="customer_city" class="locality" default-value="-" min-length="1" max-length="45">
+    				<name>Customer City</name>
+    				<name xml:lang="nl-NL">Plaats van de klant</name>
+    				<name xml:lang="de-DE">Plaats van de klant</name>
+    			</setting>
+    			<setting type="string" id="customer_country" class="country-name" default-value="-" min-length="1" max-length="45">
+    				<name>Customer Country</name>
+    				<name xml:lang="nl-NL">Land van de klant</name>
+    				<name xml:lang="de-DE">Land des Kunden</name>
+    			</setting>
+    			<setting type="string" id="customer_zipcode" class="postal-code" default-value="-" min-length="1" max-length="10">
+    				<name>Customer Zipcode</name>
+    				<name xml:lang="nl-NL">Postcode van de klant</name>
+    				<name xml:lang="de-DE">PLZ des Kunden</name>
+    			</setting>
+    			<setting type="string" id="customer_unique_id"
+    				uniq="global" generate="uuid" visibility="hidden">
+    			</setting>
+    		</group>
+    		<group class="authn">
+    			<name>Administrator Credentials</name>
+    			<setting type="string" id="admin_login" class="value" uniq="global" installation-only="true">
+    				<name>Admin Login</name>
+    				<name xml:lang="nl-NL">Admin Login</name>
+    				<name xml:lang="de-DE">Admin Login</name>
+    				<description>Admin Username used to login to portal
+</description>
+    				<description xml:lang="nl-NL">Admin Gebruikersnaam gebruikt om in te loggen om portal</description>
+    				<description xml:lang="de-DE">Admin Benutzername verwendet, um Portal anmelden</description>
+    			</setting>
+    			<setting type="password" id="admin_password" class="password" min-length="8" regex="^.*(?=.{8,})(?=.*[A-Z])(?=.*[0-9]).*$" max-length="32">
+    				<name>Admin Password</name>
+    				<name xml:lang="nl-NL">Admin wachtwoord
+</name>
+    				<name xml:lang="de-DE">Passwort Admin</name>
+    				<description>Password must not contain the entire Login Name (Account Name) value or entire display Name (Full Name) value.</description>
+    				<description xml:lang="nl-NL">Wachtwoord mag niet bevatten het gehele Inloggen Name (Account naam) waarde of volledige display Name (Volledige naam) waarde.</description>
+    				<description xml:lang="de-DE">Passwort darf nicht die gesamte Login Name (Account Name)-Wert oder das ganze Display Name (vollständiger Name) Wert.</description>
+    				<error-message>Password must contain Minimum of 8 characters with 1 UPPERCASE 1, lowercase, 1 number</error-message>
+    				<error-message xml:lang="nl-NL">Wachtwoord moet minimaal 8 tekens bevatten, waaronder 1 hoofdletter 1, kleine letters en 1 cijfer.</error-message>
+    				<error-message xml:lang="de-DE">Das Passwort muss mindestens 8 Zeichen lang sein und 1 GROSSBUCHSTABEN, 1 kleinen Buchstaben und 1 Ziffer enthalten.</error-message>
+    			</setting>
+    		</group>
+    		<group class="vcard">
+    			<name>Administrator Details</name>
+    			<group class="email">
+    				<setting type="email" id="admin_email" class="value">
+    					<name>Admin Email</name>
+    					<name xml:lang="nl-NL">Admin E-mail</name>
+    					<name xml:lang="de-DE">E-Mail Admin</name>
+    				</setting>
+    			</group>
+    			<group class="fn n">
+    				<setting type="string" id="admin_first_name" class="given-name" default-value="-" min-length="1" max-length="255">
+    					<name>Admin FirstName</name>
+    					<name xml:lang="nl-NL">Admin Voornaam</name>
+    					<name xml:lang="de-DE">Vorname Admin</name>
+    				</setting>
+    				<setting type="string" id="admin_last_name" class="family-name" default-value="-" min-length="1" max-length="255">
+    					<name>Admin LastName</name>
+    					<name xml:lang="nl-NL">Admin Achternaam</name>
+    					<name xml:lang="de-DE">Nachname Admin</name>
+    				</setting>
+    			</group>
+    			<group class="tel">
+    				<setting type="string" id="admin_mobile_number" class="work" min-length="7" max-length="20" regex="^(\+|00)([0-9]){7,20}$">
+    					<name>Admin Mobile Number</name>
+    					<name xml:lang="nl-NL">Admin Mobielnummer</name>
+    					<name xml:lang="de-DE">Mobilnummer Admin</name>
+    					<error-message>Mobile number should start with eaither 00 or + sign and of minimum of length 7.</error-message>
+    					<error-message xml:lang="de-DE">Mobilnummer sollte mit eaither 00 oder + Zeichen und der Länge von mindestens 7 zu starten.</error-message>
+    					<error-message xml:lang="nl-NL">Mobiel nummer moet beginnen met eaither 00 of + teken en van de minimale lengte van 7.</error-message>
+    				</setting>
+    			</group>
+    		</group>
+    	</settings>
+    	<provision>
+    		<configuration-script name="service_organization.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    	</provision>
+    	<service id="Device" class="service">
+    		<presentation>
+    			<name>Mobile Device Manager Device Account</name>
+    			<name xml:lang="nl-NL">Mobile Device Manager apparaataccount</name>
+    			<name xml:lang="de-DE">Mobile Device Manager Geräteaccount</name>
+    			<summary>It is singular device/user under the organization</summary>
+    			<summary xml:lang="de-DE">Het is enkel apparaat / gebruiker onder de organisatie</summary>
+    			<summary xml:lang="nl-NL">Es ist einziges Gerät / Benutzer innerhalb der Organisation</summary>
+    			<infolinks>
+    				<link href="mobility.servicedesk@kpn.com " class="support">Help Desk Support</link>
+    				<link href="http://wiki.mobidm.com/wiki/Manuals" class="howto">Documentation</link>
+    			</infolinks>
+    			<entry-points>
+    				<entry dst="{portal_url}" class="login" method="POST">
+    					<label>Mobile Device Manager Portal</label>
+    					<description>It is the gateway for End User to login in to the MobiDM Service</description>
+    					<description xml:lang="nl-NL">Het is de toegangsportaal voor de eindgebruiker om in te loggen op de MobiDM dienst</description>
+    					<description xml:lang="de-DE">Dies ist das Zugangsportal für den Endanwender, in dem er sich beim MobiDM-Dienst anmeldet</description>
+    					<variable name="portal_url" value-of-setting="MobiDM_PortalUrl"></variable>
+    					<variable name="autologin">true</variable>
+    					<variable name="language">en_US</variable>
+    					<variable name="invalidcredentialsurl" value-of-setting="MobiDM_PortalUrl" class=""></variable>
+    					<variable name="username" value-of-setting="user_login"></variable>
+    					<variable name="password" value-of-setting="user_password"></variable>
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+    			<setting type="string" id="customer_unique_id" value-of-setting="customer_unique_id" visibility="hidden">
+    			</setting>
+    			<group class="authn">
+    				<name>User Credentials</name>
+    				<setting type="string" id="user_login" class="value" uniq="global" installation-only="true">
+    					<name>User Login</name>
+    					<name xml:lang="nl-NL">Gebruikers login</name>
+    					<name xml:lang="de-DE">Benutzerkennung Benutzer</name>
+    					<description>User Device Login Name used to login to portal.</description>
+    					<description xml:lang="de-DE">User Device Login Name verwendet wird, um Portal anmelden</description>
+    					<description xml:lang="nl-NL">Gebruiker Apparaat loginnaam gebruikt om in te loggen om portal</description>
+    				</setting>
+    				<setting type="password" id="user_password" class="password" regex="^.*(?=.{8,})(?=.*[A-Z])(?=.*[0-9]).*$" min-length="8" max-length="32">
+    					<name>User Password</name>
+    					<name xml:lang="nl-NL">Gebruiker Wachtwoord</name>
+    					<name xml:lang="de-DE">Passwort Benutzer</name>
+    					<description>Password must not contain the entire Login Name (Account Name) value or entire display Name (Full Name) value.</description>
+    					<description xml:lang="nl-NL">Wachtwoord mag niet bevatten het gehele Inloggen Name (Accountnaam) waarde of volledige display Name (Volledige naam) waarde.</description>
+    					<description xml:lang="de-DE">Passwort darf nicht die gesamte Login Name (Account Name)-Wert oder das ganze Display Name (vollständiger Name) Wert.</description>
+    					<error-message>Password must contain Minimum of 8 characters with 1 UPPERCASE 1, lowercase, 1 number</error-message>
+    				</setting>
+    			</group>
+    			<group class="vcard">
+    				<name>User Details</name>
+    				<group class="email">
+    					<setting type="email" id="user_email" class="value">
+    						<name>User Email</name>
+    						<name xml:lang="nl-NL">Gebruiker E-mail</name>
+    						<name xml:lang="de-DE">E-Mail Benutzer</name>
+    					</setting>
+    				</group>
+    				<group class="fn n">
+    					<setting type="string" id="user_first_name" class="given-name" default-value="-" min-length="1" max-length="255">
+    						<name>User FirstName</name>
+    						<name xml:lang="nl-NL">Gebruiker Voornaam</name>
+    						<name xml:lang="de-DE">Vorname Benutzer</name>
+    					</setting>
+    					<setting type="string" id="user_last_name" class="family-name" default-value="-" min-length="1" max-length="255">
+    						<name>User LastName</name>
+    						<name xml:lang="nl-NL">Gebruiker Achternaam</name>
+    						<name xml:lang="de-DE">Nachname Benutzer</name>
+    					</setting>
+    				</group>
+    				<group class="tel">
+    					<setting type="string"
+    						id="user_mobile_number" class="work" min-length="7" max-length="20" regex='^(\+|00)([0-9]){7,20}$'>
+    						<name>User MobileNumber</name>
+    						<name xml:lang="nl-NL">Gebruiker Mobielnummer</name>
+    						<name xml:lang="de-DE">Mobilnummer Benutzer</name>
+    						<error-message>Mobile number should start with eaither 00 or + sign and of minimum of length 7.</error-message>
+    						<error-message xml:lang="de-DE">Mobilnummer sollte mit eaither 00 oder + Zeichen beginnen</error-message>
+    						<error-message xml:lang="nl-NL">Mobilnummer sollte mit eaither 00 oder + Zeichen und der Länge von mindestens 7 zu starten.</error-message>
+    					</setting>
+    				</group>
+    			</group>
+    			</settings>
+    		<provision>
+    			<configuration-script name="service_device.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</configuration-script>
+    		</provision>
+    	</service>
+    </service>
+</application>

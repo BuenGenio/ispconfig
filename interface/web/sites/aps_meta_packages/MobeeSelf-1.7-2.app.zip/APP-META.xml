@@ -1,0 +1,313 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2"
+	packaged="2010-06-16T14:03:48">
+	<id>http://www.mobeeart.com/mobeeself.html</id>
+	<name>MobeeSelf</name>
+	<version>1.7</version>
+	<release>2</release>
+
+	<homepage>http://www.mobeeart.com/mobeeself.html</homepage>
+
+	<vendor>
+		<name>MobeeArt</name>
+		<homepage>http://www.mobeeart.com/</homepage>
+		<icon path="images/Mobeeself frame_64x64.png" />
+	</vendor>
+
+	<packager>
+		<name>Cloud Base Integration ltd</name>
+		<homepage>http://www.comlinegroup.co.il/</homepage>
+		<icon path="images/cloudbase.png" />
+		<uri>uuid:0b6cd094-8801-4d2d-ad2b-0a2d77b54c0c</uri>
+	</packager>
+
+	<presentation>
+		<summary>MobeeSelf is a web-based, self-service (Do-It-Yourself) tool for creating Mobile Sites.</summary>
+		<description>MobeeSelf is a web-based, self-service (Do-It-Yourself) tool for creating Mobile Sites.
+Mobilizing a typical web-site can be accomplished in less than 5 minutes and can be done by anyone! 
+In real-time, the platform assures the best functionality and visualization on ALL mobile devices.</description>
+
+		<icon path="images/Mobeeself frame_64x64.png" />
+		<screenshot path="images/MobeeSelfScreenShot.png">
+			<description>MobeeSelf mobile site designer</description>
+		</screenshot>
+
+
+		<changelog>
+			<version version="1.0" release="1">
+				<entry>Packaged in APS 1.2</entry>
+			</version>
+			<version release="1" version="1.5">
+				<entry>Packaged in APS 1.2</entry>
+			</version>
+			<version release="2" version="1.6">
+				<entry>Packaged in APS 1.2</entry>
+			</version>
+			<version release="3" version="1.6">
+				<entry>Packaged in APS 1.2</entry>
+			</version>
+			<version release="1" version="1.7">
+				<entry>Username Prefix parameter added</entry>
+			</version>
+			<version release="2" version="1.7">
+				<entry>Extended script logging</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Web/Site editing</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<group class="authn">
+			<name>MobeeSelf Administrator Preferences</name>
+			<setting type="string" id="o" class="login" default-value=""
+				min-length="1" max-length="32">
+				<name>MobeeSelf Partner Username</name>
+			</setting>
+			<setting type="password" id="op" class="password" min-length="6">
+				<name>MobeeSelf Partner Password</name>
+			</setting>
+			<setting type="string" id="d" default-value="">
+				<name>MobeeSelf Domain</name>
+			</setting>
+			<setting type="host-name" id="apiurl" default-value="">
+				<name>MobeeSelf API Base URL</name>
+			</setting>
+			<setting type="string" id="usr_prefix" default-value="">
+				<name>Username Prefix</name>
+			</setting>
+		</group>
+	</global-settings>
+
+	<patch match="/application/version &gt;= '1.0'" />
+
+
+
+	<service id="account">
+		<license must-accept="true">
+			<commercial />
+			<text>
+				<name>Terms and Agreement</name>
+				<url>http://www.mobeeart.com/mobeeself-terms-of-use.html</url>
+			</text>
+		</license>
+		<presentation>
+			<name>MobeeSelf</name>
+			<summary>MobeeSelf User Account</summary>
+			<infolinks>
+				<link href="http://www.mobeeart.com/mobeeself.html" class="official">MobeeSelf Info</link>
+				<link href="http://support.mobeeart.com/" class="support">MobeeSelf Support</link>
+				<link href="http://www.mobeeart.com/faq.html" class="howto">MobeeSelf FAQ</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="http://{ApiHome}/mobeeapi/mobeeapi.ashx" class="control-panel"
+					method="POST">
+					<label>MobeeSelf User Control Panel </label>
+					<icon path="images/Mobeeself frame_64x64.png" />
+					<variable name="ApiHome" class="" value-of-setting="apiurl">1</variable>
+					<variable name="d" class="login" value-of-setting="d"></variable>
+					<variable name="a" class="login">login</variable>
+					<variable name="o" class="login" value-of-setting="o"></variable>
+					<variable name="op" class="login" value-of-setting="op"></variable>
+					<variable name="u" class="login" value-of-setting="u"></variable>
+					<variable name="up" class="login" value-of-setting="up"></variable>
+					<variable name="mode" class="login">diy</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				
+				<setting type="string" id="u" class="login"
+					default-value="" min-length="1" max-length="50"
+					installation-only="true" uniq="global" uuid="23ad4390-5861-440f-9160-b6e321d21d5e">
+					<name>User login name</name>
+					<description>New user login name</description>
+					<error-message>The username you entered exists in MobeeStudio system please enter a different one.
+					</error-message>
+				</setting>
+				<setting type="password" id="up" class="password"
+					min-length="6" track-old-value="true">
+					<name>User password</name>
+					<description>New user password</description>
+				</setting>
+				<setting type="enum" id="terms_flag" default-value="true" installation-only="true">
+					<name>Mobeeself terms and agreement</name>
+					<description>Refers to: http://www.mobeeart.com/studio-terms-of-use.html</description>
+					<choice id="true">
+						<name>true</name>
+					</choice>
+					<choice id="false">
+						<name>false</name>
+					</choice>
+</setting>
+			</group>
+			<group class="authn">
+				<name>Preferences</name>
+				<setting type="enum" id="promotion_flag"
+					default-value="true" installation-only="true">
+					<name>Mobeeself newsletter</name>
+					<description>Would you like to recieve Mobeeself newsletter ?</description>
+					<choice id="true">
+						<name>true</name>
+					</choice>
+					<choice id="false">
+						<name>false</name>
+					</choice>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Account Details</name>
+				<group class="email">
+					<setting type="email" id="email"
+						default-value="email@mail.com" installation-only="true" class="value">
+						<name>Email</name>
+					</setting></group>
+				<group class="fn n">
+				<setting type="string" id="firstname" installation-only="true" optional="true" class="given-name">
+					<name>First name</name>
+					<description>Optional</description>
+				</setting>
+				<setting type="string" id="lastname" installation-only="true" optional="true" class="family-name">
+					<name>Last name</name>
+					<description>Optional</description>
+				</setting></group>
+				<setting type="enum" id="gender" default-value="M" installation-only="true" optional="true">
+					<name>Gender</name>
+					<choice id="M">
+						<name>Male</name>
+					</choice>
+					<choice id="F">
+						<name>Female</name>
+					</choice>
+				</setting>
+				<setting type="enum" id="personal_title"
+					default-value="Mr." installation-only="true" optional="true">
+					<name>Title</name>
+					<choice id="Mr.">
+						<name>Mr.</name>
+					</choice>
+					<choice id="Miss.">
+						<name>Miss.</name>
+					</choice>
+					<choice id="Mrs.">
+						<name>Mrs.</name>
+					</choice>
+					<choice id="Ms.">
+						<name>Ms.</name>
+					</choice>
+				</setting>
+				<setting type="enum" id="language" default-value="en"
+					class="locale" visibility="hidden" protected="true" installation-only="true">
+					<name>Language</name>
+					<choice id="en">
+						<name>English</name>
+					</choice>
+				</setting>
+				<group class="adr">
+				<setting type="string" id="address"
+					installation-only="true" optional="true" class="street-address">
+					<name>Postal address</name>
+					<description>Optional</description>
+				</setting>
+				<setting type="string" id="city"
+					installation-only="true" optional="true" class="locality">
+					<name>City</name>
+					<description>Optional</description>
+				</setting>
+				<setting type="string" id="state"
+					installation-only="true" optional="true" class="region">
+					<name>State</name>
+					<description>Optional</description>
+				</setting>
+				<setting type="string" id="post_code"
+					installation-only="true" optional="true" class="postal-code">
+					<name>Postal code</name>
+					<description>Optional</description>
+				</setting></group>
+				<group class="org">
+				<setting type="string" id="company"
+					installation-only="true" optional="true"
+					class="organization-name">
+					<name>Company</name>
+					<description>Optional</description>
+				</setting></group>
+			</group>
+			<group class="authn">
+				<name>Terms Confirmation</name>
+				<setting type="boolean" id="auto_confirm_flag" visibility="hidden" default-value="true" protected="true">
+					<name>Profile confirmation flag</name>
+				</setting>
+			</group>
+			<group class="authn">
+				<name>Service And User Authentification</name>
+				<setting type="string" id="suid" visibility="hidden"
+					protected="true" default-value="default">
+					<name>Subscription id</name>
+				</setting>
+			</group>
+		</settings>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:dns="http://apstandard.com/ns/1/dns">
+			<php:version min="5.0" />
+		</requirements>
+		
+		<provision>
+			<configuration-script name="configure-user.php">
+				<script-language>php</script-language>
+				<status-control />
+				<structured-output />
+			</configuration-script>
+		</provision>
+
+
+		
+		<service id="unbinded_subscription">
+			<presentation>
+				<name>MobeeSelf Mobile Site</name>
+				<summary>MobeeSelf Mobile Site</summary>
+			</presentation>
+	
+			<settings>
+				<group class="authn">
+					<name>Subscription details</name>
+					<setting type="string" id="subscription_id" visibility="hidden" protected="true" value-of-setting="suid">
+						<name>User subscription id</name>
+					</setting>
+				</group>
+
+				<group>
+					<name>Limits</name>
+					<setting type="integer" id="num_of_sites" visibility="hidden" default-value="1" installation-only="true">
+						<name>Number of new mobile sites</name>
+					</setting>
+				</group>
+
+
+			</settings>
+			<resources>
+				<resource class="item" id="MobeeStudio Additional Mobile Sites">
+					<name>MobeeStudio Additional Mobile Sites</name>
+				</resource>
+			</resources>
+
+			<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:dns="http://apstandard.com/ns/1/dns">
+				<php:version min="5.0" />
+			</requirements>
+			
+			<provision>
+				<configuration-script name="configure-num-of-sites.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</configuration-script>
+				<verify-script name="verify-num-of-sites.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</verify-script>
+			</provision>
+		</service>
+	</service>
+</application>

@@ -1,0 +1,113 @@
+<application packaged="2016-04-20T10:40:51" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>EC-CUBE</id>
+    <name>EC-CUBE</name>
+    <version>3.0.9</version>
+    <release>2</release>
+    <homepage>http://www.ec-cube.net/</homepage>
+    <vendor>
+        <name>www.ec-cube.net</name>
+        <homepage>http://www.ec-cube.net/</homepage>
+        <icon path="images/logo.png"/>
+    </vendor>
+    <packager>
+        <name>Plesk</name>
+        <homepage>http://plesk.com</homepage>
+        <icon path="images/packager.png"/>
+        <uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+    </packager>
+    <presentation>
+        <summary>EC-CUBE</summary>
+        <description>EC-CUBE</description>
+        <icon path="images/logo.png"/>
+        <screenshot path="images/screenshot.png">
+            <description>Admin page.</description>
+        </screenshot>
+        <changelog>
+            <version release="2" version="3.0.9">
+                <entry>Initial APS package EC-CUBE 3.0.x</entry>
+            </version>
+        </changelog>
+        <categories>
+            <category>Web/E-commerce</category>
+        </categories>
+        <languages>
+            <language>ja</language>
+            <language>en</language>
+        </languages>
+    </presentation>
+    <global-settings/>
+    <upgrade match="/application/version &gt;= '3.0.9'"/>
+    <service id="instance">
+        <license must-accept="true">
+            <text>
+                <name>GNU GENERAL PUBLIC LICENSE Version 2</name>
+                <file>htdocs/COPYING</file>
+            </text>
+        </license>
+        <presentation>
+            <name>EC-CUBE</name>
+            <summary>EC-CUBE</summary>
+            <infolinks>
+                <link class="support" href="http://www.ec-cube.net/guide/">Guide</link>
+            </infolinks>
+            <entry-points>
+                <entry class="control-panel" dst="/html/admin/" method="POST">
+                    <label>Administrative interface</label>
+                    <variable class="" name="login" value-of-setting="ADMIN_LOGIN">admin</variable>
+                    <variable name="password" value-of-setting="ADMIN_PASSWORD">password</variable>
+                </entry>
+                <entry dst="/html/" method="GET">
+                    <label>Site</label>
+                </entry>
+            </entry-points>
+        </presentation>
+        <settings>
+            <group class="authn">
+                <name>Administrator's preferences</name>
+                <setting class="login" default-value="admin" id="ADMIN_LOGIN" max-length="50" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" track-old-value="true" type="string">
+                    <name>Administrator's login</name>
+                </setting>
+                <setting class="password" id="ADMIN_PASSWORD" min-length="1" type="password">
+                    <name>Password</name>
+                </setting>
+            </group>
+            <group class="vcard">
+                <name>Installation preferences</name>
+                <setting class="email" id="SHOP_EMAIL" installation-only="true" type="email">
+                    <name>Shop e-mail</name>
+                </setting>
+                <group class="org">
+                    <setting class="organization-name" default-value="EC-CUBE SHOP" id="SHOP_NAME" installation-only="true" type="string">
+                        <name>Shop name</name>
+                    </setting>
+                </group>
+            </group>
+        </settings>
+        <requirements>
+            <php:version max-not-including="7.0" min="5.3.9" xmlns:php="http://apstandard.com/ns/1/php"/>
+            <php:extension xmlns:php="http://apstandard.com/ns/1/php">pdo_mysql</php:extension>
+            <php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+            <db:db xmlns:db="http://apstandard.com/ns/1/db">
+                <db:id>main</db:id>
+                <db:default-name>eccube</db:default-name>
+                <db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+                <db:server-type>mysql</db:server-type>
+                <db:server-min-version>5.1</db:server-min-version>
+            </db:db>
+        </requirements>
+        <provision>
+            <configuration-script name="configure">
+                <script-language>php</script-language>
+            </configuration-script>
+            <url-mapping>
+                <default-prefix>eccube</default-prefix>
+                <installed-size>48194553</installed-size>
+                <mapping path="htdocs" url="/">
+                    <php:handler xmlns:php="http://apstandard.com/ns/1/php">
+                        <php:extension>php</php:extension>
+                    </php:handler>
+                </mapping>
+            </url-mapping>
+        </provision>
+    </service>
+</application>

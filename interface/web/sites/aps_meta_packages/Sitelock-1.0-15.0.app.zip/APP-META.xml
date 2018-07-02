@@ -1,0 +1,204 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2011-12-19T15:02:36">
+    <id>sitelock-version-14</id>
+    <name>Sitelock</name>
+    <version>1.0</version>
+    <release>15.0</release>
+    <homepage>http://www.sitelock.com/</homepage>
+    <vendor>
+    	<name>Sitelock</name>
+    	<homepage>http://www.sitelock.com/</homepage>
+    	<icon path="images/logo.png" />
+    </vendor>
+    <packager>
+    	<name>iSynergy</name>
+    	<homepage>http://isynergysys.com</homepage>
+    	<icon path="images/isynergy_logo.png" />
+    </packager>
+    <presentation>
+    	<summary>SiteLock is a leader in website security services for online businesses.</summary>
+    	<description>Earn money and your customer’s trust by providing them an easy way to protect their websites against hackers, blacklisting and other online threats with SiteLock.  SiteLock’s Deep 360-degree website scanning easily identifies threats to websites and visitors, such as new and existing malware, SQL injections, cross-site scripting, virus, and vulnerabilities effecting user web applications and the external network.  SiteLock serves and protects over 400,000 websites.  Another huge benefit to our customers is the SiteLock Trust Seal, which is proven through independent testing to drastically increase sales and conversion rates by displaying the badge.  SiteLock provides 3rd party verification with every subscription, including up to the business’s domain validity, business phone and address, and SSL certificate verification.  SiteLock protects more than just your customer’s website; it can protect their business and investment.  If your customers fall victim to any vulnerability, SiteLock can help them recover.   
+
+
+</description>
+    	<icon path="images/logo.png" />
+    	<screenshot path="images/screen_shot.png">
+    		<description>Screen shot</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1.0" version="1.0">
+    			<entry>First version on 13/10/2011 @ 16.56</entry>
+    		</version>
+    		<version release="2.0" version="1.0">
+    			<entry>New release on 3-11-2011 @ 10.47</entry>
+    		</version>
+    		<version release="3.0" version="1.0">
+    			<entry>New build on 6-12-11</entry>
+    		</version>
+    		<version release="4.0" version="1.0">
+    			<entry>New version on 7-12-11 @18.18</entry>
+    		</version>
+    		<version release="5.0" version="1.0">
+    			<entry>New version on 8-12-11 @ 10.47</entry>
+    		</version>
+    		<version release="6.0" version="1.0">
+    			<entry>New version added on 8-12-11 @ 11.42</entry>
+    		</version>
+    		<version release="10.0" version="1.0">
+    			<entry>Sub-service 'Installation status' is added</entry>
+    		</version>
+    		<version release="11.0" version="1.0">
+    			<entry>New entry on 22-12-11. Unique element added to domains</entry>
+    		</version>
+    		<version release="12.0" version="1.0">
+    			<entry>New version on 22-12-11@ 17.59</entry>
+    		</version>
+    		<version release="14.0" version="1.0">
+    			<entry>New release on 23-12-11 @ 12.20</entry>
+    		</version>
+    		<version release="15.0" version="1.0">
+    			<entry>Making status list field, combined from all domains statuses</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Infrastructure/Security</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<setting type="string" id="user" class="title" default-value="user" min-length="1">
+    		<name>Username</name>
+    		<description>This is username for Partner's information.</description>
+    		<error-message>This filed is mandatory</error-message>
+    	</setting>
+    	
+    	<setting type="string" id="password" min-length="5" default-value="password">
+    		<name>Password</name>
+    		<error-message>This filed is mandatory</error-message>
+    	</setting>
+    	<setting type="string" id="partner" min-length="4" default-value="Partner">
+    		<name>Partner</name>
+    		<description>This is Partner's name</description>
+    	</setting>
+    	<setting type="float" id="amount" default-value="1.0">
+    		<name>Amount</name>
+    		<error-message>Enter resource amount</error-message>
+    	</setting>
+    	<setting type="enum" id="subscription" default-value="224">
+    		<name>Subscription</name>
+    		<error-message>Please select Subscription plan</error-message>
+    		<choice id="224">
+    				<name>Basic plan for 1 month</name>
+    			</choice>
+    			<choice id="225">
+    				<name>Basic plan for 12 months</name>
+    			</choice>
+    	</setting>
+    </global-settings>
+    <service id="context" class="service">
+    	<license must-accept="true">
+    		<text>
+    			<name>GPLv2</name>
+    			<file>htdocs/license.txt</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>Sitelock service</name>
+    		<summary>Sitelock service for websites</summary>
+    		<infolinks>
+    			<link href="http://tempuri.org" class="support">support</link>
+    		</infolinks>
+    		<entry-points>
+				<entry dst="{token}" method="GET"> 
+					<label>Log into SiteLock Dashboard</label> 
+					<variable name="token" value-of-setting="token" />
+				</entry> 
+			</entry-points>
+
+    	</presentation>
+    	<settings>
+    		<group class="vcard">
+    			<group class="email">
+    				<setting type="email" id="admin_email"
+    					class="value" installation-only="true" uniq="global">
+    					<name>Administrator primary email address</name>
+    				</setting>
+    			</group>
+    			<group class="fn n">
+    				<setting type="string" id="user_display_name"
+    					class="display-name" installation-only="true">
+    					<name>Full Name</name>
+    				</setting>
+    			</group>
+    			<setting id="street" class="street-address" type="string" installation-only="true">
+					<name>Street</name>
+				</setting>
+				<setting id="city" class="locality" type="string" installation-only="true">
+					<name>City</name>
+				</setting>
+				<setting id="state" class="region" type="string" installation-only="true">
+					<name>State/Province</name>
+				</setting>
+				<setting id="country" class="country-name" type="string" installation-only="true">
+					<name>Country</name>
+				</setting>
+				<setting id="postal_code" class="postal-code" type="string" installation-only="true">
+					<name>Postal Code</name>
+				</setting>
+				<group class="tel">
+					<name>work</name>
+						<setting id="telephone_business1" class="work" type="string" installation-only="true">
+							<name>Work Phone Number</name>
+						</setting>
+				</group>
+				<setting id="initial_sub" type="integer" default-value="224" installation-only="true" protected="true">
+					<name>Initial Subscription</name>
+				</setting>
+    		</group>
+    		<group class="vcard">
+    			<name>Site Configuration</name>
+    			<setting type="list" id="domains" class="domain-name" element-type="domain-name" track-old-value="true" protected="true" min-items="1" uniq="global">
+    				<name>Domain Name</name>
+    				<error-message>Please uninstall the product if you want to delete all domains.</error-message>
+    			</setting>
+    			<setting id="domainEmail" type="email" installation-only="true" class="email-on-application-domain">
+					<name>Domain Email</name>
+					<description>Provide an e-mail address at the domain you are purchasing SiteLock for</description>
+					<error-message>Invalid Email address.</error-message>
+    			</setting>
+    		</group>
+    		<group class="vcard">
+    			<name>Result</name>
+    			<setting id="application_status" type="list" optional="true" element-type="string" protected="true">
+					<name>Application Status Message</name>
+				</setting>
+    			<setting id="account_id" type="string" default-value="1" installation-only="true" visibility="hidden" protected="true">
+					<name>Account Id</name>
+				</setting>
+    			<setting id="site_id" type="string" default-value="1" installation-only="true" protected="true" visibility="hidden">
+					<name>Site Id</name>
+    			</setting>
+    			<setting type="string" id="token" visibility="hidden" default-value="blank"></setting>
+    		</group>
+    	</settings>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<status-control />
+    			<structured-output />
+    		</configuration-script>
+    	</provision>
+    	<service id="operation-status" singular="true">
+    		<presentation>
+    			<name>Service status</name>
+    			<summary>Service Installation status</summary>
+    		</presentation>
+    		<settings>
+    			<setting type="list" id="status" element-type="string" value-of-setting="application_status" protected="true">
+    				<name>Last operation status</name>
+    			</setting>
+    		</settings>
+    	</service>
+    </service>
+</application>

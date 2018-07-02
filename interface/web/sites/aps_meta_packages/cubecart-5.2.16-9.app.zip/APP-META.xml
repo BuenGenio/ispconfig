@@ -1,0 +1,151 @@
+<application packaged="2015-01-19T10:46:19" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>cubecart</id>
+	<name>cubecart</name>
+	<version>5.2.16</version>
+	<release>9</release>
+	<homepage>http://www.cubecart.com/</homepage>
+	<vendor>
+		<name>cubecart.com</name>
+		<homepage>http://www.cubecart.com/</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Glowtouch Technologies</name>
+		<homepage>http://www.glowtouch.com/</homepage>
+		<icon path="images/parrallels-GT6.png"/>
+		<uri>uuid:37767d7e-bbd5-43e7-8a32-c8c535e11585</uri>
+	</packager>
+	<presentation>
+		<summary>CubeCart is an eCommerce script written with PHP and MySQL.</summary>
+		<description>CubeCart is an eCommerce script written with PHP and MySQL.
+Features:100% Source Code ,Technical Support ,Unlimited Customers ,Unlimited Orders ,Unlimited Products ,Unlimited Categories
+Sales Reporting with Spreadsheet Export ,Statistics 	,Gift Certificates ,Coupons / Vouchers,</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/app_screenshot_1.png">
+			<description>Screenshot 1.</description>
+		</screenshot>
+		<changelog>
+			<version release="1" version="5.2.2">
+				<entry>Updated Version</entry>
+			</version>
+			<version release="2" version="5.2.2">
+				<entry>Changes in Upgrade-app.php</entry>
+			</version>
+			<version release="3" version="5.2.2">
+				<entry>Changes in Upgrade.sql</entry>
+			</version>
+			<version release="1" version="5.2.15">
+				<entry>This release removes the requirement for software/copyright keys, ioncube and any calls home.</entry>
+			</version>
+			<version release="9" version="5.2.16">
+				<entry>CubeCart 5.2.16 overcomes a critical bug in 5.2.15 concerning the display of product options.
+Below bugs are fixed
+Product options not working correctly
+Install shows ioncube still
+Distinct Logo for Customer Receipt
+Extra Word bug
+CSS Syntax bug</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/E-commerce</category>
+		</categories>
+		<languages>
+			<language>en</language>
+			<language>de</language>
+			<language>es</language>
+			<language>fi</language>
+			<language>fr</language>
+			<language>it</language>
+			<language>nl</language>
+			<language>no</language>
+			<language>pl</language>
+			<language>pt</language>
+			<language>sk</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '3.0.1' and /application/release &gt;= '1'"/>
+	<service id="Cubecart">
+		<license must-accept="true">
+			<text>
+				<name>Custom license</name>
+				<file>scripts/license.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<summary>CubeCart is a free, feature rich ecommerce script with all the functionality required to sell on line plus a great deal more</summary>
+			<infolinks>
+				<link class="support" href="https://support.cubecart.com/">Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/admin.php" method="POST">
+					<label>Administrative interface</label>
+					<variable class="login" name="username" value-of-setting="admin_name"/>
+					<variable class="password" name="password" value-of-setting="admin_password"/>
+					<variable name="APS">ON</variable>
+				</entry>
+				<entry dst="/">
+					<label>User</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>
+						Please make sure the text you entered starts
+						with a letter and continues with either numbers,
+						letters, underscores or hyphens.
+					</error-message>
+				</setting>
+				<setting class="password" id="admin_password" max-length="250" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Main Configuration</name>
+				<group class="email">
+					<setting class="value" id="admin_email" type="email">
+						<name>Administrator's email</name>
+					</setting>
+</group>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.2.3" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">ionCube Loader</php:extension>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>cubecart</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>4.1</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>cubecart</default-prefix>
+				<installed-size>20390103</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					<mapping url="images/uploads">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="thumbs">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

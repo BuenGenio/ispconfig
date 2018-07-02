@@ -1,0 +1,1284 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2010-07-27T17:49:12">
+<!-- Copyright (c) 2000-2010 Parallels. All rights reserved.-->
+	<id>http://apsstandard.org/app/BackupAgent</id>
+	<name>BackupAgent</name>
+	<version>1.2</version>
+	<release>4</release>
+
+	<homepage>http://www.backupagent.com/product/product-demo</homepage>
+
+	<vendor>
+		<name>BackupAgent</name>
+		<homepage>http://www.backupagent.com/</homepage>
+		<icon path="images/Logo_Lock_RBG.png"/>
+	</vendor>
+
+	<packager>
+		<name>BackupAgent</name>
+		<homepage>http://www.backupagent.com/</homepage>
+		<uri>uuid:c9fa49b2-ba47-11dd-9fed-00155882361a</uri>
+	</packager>
+
+	<presentation>
+		<summary>BackupAgent – Cloud Backup for (Hosting) Service Providers, Telcos and Cloud Service Brokers</summary>
+		<description>Service providers have the opportunity to add a profitable service to their portfolio: cloud backup, powered by BackupAgent. This cloud backup platform offers all that (hosting) service providers, telcos and cloud service brokers long for; private labeled, multitenant and extremely scalable. SMB companies can backup their data, databases and documents from their desktops, laptops and (database) servers to your private cloud. The package is available since 2009 and is currently deployed at most Parallels Automation platforms around the globe. Check www.backupagent.com for more information.
+
+</description>
+
+		<icon path="images/Logo_Lock_RBG.png" ></icon>
+
+		<screenshot path="images/screenshot-aps-client.png">
+			<description>BackupAgent Client for Windows home window.</description>
+		</screenshot>
+		<changelog>
+			<version version="1.0" release="1">
+				<entry>Initial release.</entry>
+			</version>
+			<version version="1.0" release="2">
+				<entry>Dropped unnecessary visibility="hidden" attributes.</entry>
+			</version>
+			<version version="1.0" release="3">
+				<entry>Added login parameters with colon separated names (newer versions of BackupAgent expect this).</entry>
+			</version>
+			<version version="1.0" release="4">
+				<entry>Extended error messages (suggestion to look into BA logs) in case of unknown error without message.</entry>
+			</version>
+			<version version="1.0" release="5">
+				<entry>Fixed password change logic. Now it is chacked that old value is not empty.</entry>
+			</version>
+			<version version="1.0" release="6">
+				<entry>Added processing of different structure retunred by GetUsersMC BA API method. Added additional country mapping for Russian Federation.</entry>
+			</version>
+			<version version="1.0" release="7">
+				<entry>Few fixes for Windows Gateway Host support.</entry>
+			</version>
+			<version version="1.0" release="8">
+				<entry>New public key.</entry>
+			</version>
+			<version version="1.0" release="9">
+				<entry>Private key updated too.</entry>
+			</version>
+			<version version="1.0" release="10">
+				<entry>Support EULA added.</entry>
+			</version>
+			<version version="1.0" release="11">
+				<entry>Debugging, hiding some settings to user/customer in POA</entry>
+			</version>
+			<version release="23" version="1.0">
+				<entry>account_type setting was added to support trial accounts.</entry>
+			</version>
+			<version release="24" version="1.0">
+				<entry>Hiding some settings for users and adding newly supported languages</entry>
+			</version>
+			<version release="3" version="1.1">
+				<entry>Use different way for allocating storage</entry>
+			</version>
+			<version release="4" version="1.1">
+				<entry>Bug fix for compatibility with BackupAgent 4.1.6 Server. Please make sure your BackupAgent server(s) are running on version 4.1.6 or newer.</entry>
+			</version>
+			<version release="1" version="1.2">
+				<entry>This new version of the package supports new reseller branding in BackupAgent server v4.2.1.
+
+Other improvements:
+- Viewstate hash is loaded dynamically
+- Resources are reported
+- Php exit codes are always 0 in case of success
+- Loading free accounts is easier, you can now enter type 3 and it will find and provision the free account
+</entry>
+			</version>
+			<version release="2" version="1.2">
+				<entry>small bug fix in resource reporting</entry>
+			</version>
+			<version release="3" version="1.2">
+				<entry>Changed ba_viewstate and entry point settings, based on feedback from Parallels ISV support</entry>
+			</version>
+			<version release="4" version="1.2">
+				<entry>Fixed bug in resource reporting and changed description of download suffixes</entry>
+			</version>
+
+		</changelog>
+
+		<categories>
+			<category>Infrastructure/Backup</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+
+	</presentation>
+
+	<global-settings>
+		<setting id="ba_internal_host" type="host-name" default-value="" >
+			<name>BA internal host</name>
+			<description>
+				This is DNS name or IP address of BackupAgent installation, used for provisioning access.
+			</description>
+		</setting>
+
+
+		<setting id="ba_admin_login" type="string" default-value="Administrator">
+			<name>BA administrator login</name>
+		</setting>
+
+		<setting id="ba_admin_password" type="password" default-value="">
+			<name>BA administrator password</name>
+		</setting>
+
+		<setting id="ba_protocol" type="enum" default-value="http">
+			<name>BA Management Console protocol</name>
+			<choice id="http">
+				<name>HTTP protocol</name>
+			</choice>
+			<choice id="https">
+				<name>HTTPS protocol</name>
+			</choice>
+		</setting>
+		<setting type="boolean" id="use_branding" default-value="false">
+			<name>Activates branding features of APS package</name>
+			<description>
+				If true, branding settings must be defined. If false, they will be ignored
+			</description>
+		</setting>
+		<group class="branding">
+			<name>branding</name>
+			<setting type="string" id="ba_brand_name" default-value="BackupAgent">
+				<name>Name of the (rebranded) service</name>
+			</setting>
+			<setting id="ba_win_client_download_url_suffix" type="string"
+				default-value="setup.exe"  >
+				<name>BA Client for Windows download URL suffix</name>
+			</setting>
+			<setting id="ba_mac_client_download_url_suffix" type="string"
+				default-value="setup.dmg"  >
+				<name>BA CLient for MacOS download URL suffix</name>
+			</setting>
+			<setting id="ba_lin_client_download_url_suffix" type="string"
+				default-value="setup.tar.gz"  >
+				<name>BA CLient for Linux download UR suffix</name>
+			</setting>
+			<setting id="ba_storage_id" type="string" min-length="4" default-value="1002"
+				installation-only="true" visibility="hidden">
+				<name>BA storage ID (for newly created groups)</name>
+				<description>
+					Storage ID can be taken from BackupAgent Management Console.
+				</description>
+			</setting>
+			<setting id="reseller_login" type="string" uniq="global" default-value="">
+				<name>Reseller login</name>
+			</setting>
+			<setting id="reseller_password" class="password"
+				type="password" track-old-value="true">
+				<name>Reseller password</name>
+			</setting>
+			<setting id="ba_public_url" type="string" class="access_point"
+				default-value="https://backuppanel.provider.com">
+				<name>BA public url</name>
+				<description>This is url of BackupAgent server, used for external communications. Usually it is the same as the internal host name
+				</description>
+			</setting>
+			<setting type="string" default-value="http://" regex="^https?://.*$" id="support_url">
+				<name>Support website</name>
+				<description>
+					This is the URL customers can visit to obtain support (also used in emails)
+				</description>
+				<error-message>
+					Please make sure the text you entered starts with either http:// or https://.
+				</error-message>
+			</setting>
+			<setting type="string" default-value="http://" regex="^https?://.*$" id="terms_url">
+				<name>Terms and conditions</name>
+				<description>
+					This is the URL customers can visit to read terms of service (also used in emails)
+				</description>
+				<error-message>
+					Please make sure the text you entered starts with
+					either http:// or https://.
+				</error-message>
+			</setting>
+			<setting type="string" default-value="http://" regex="^https?://.*$" id="registration_url">
+				<name>Public registration page</name>
+				<description>
+					This is the public URL customers can visit to register (also used BackupAgent login page)
+				</description>
+				<error-message>
+					Please make sure the text you entered starts with
+					either http:// or https://.
+				</error-message>
+			</setting>
+			<setting type="string" default-value="http://" regex="^https?://.*$" id="upgrade_url">
+				<name>Upgrade URL</name>
+				<description>
+					This is the public URL customers can visit to upgrade their plan (also used email)
+				</description>
+				<error-message>
+					Please make sure the text you entered starts with
+					either http:// or https://.
+				</error-message>
+			</setting>
+			<setting type="email" id="reseller_email" default-value="support@backupagent.com">
+				<name>Reseller email address</name>
+				<description>
+					Reseller email address, used for automatic emails sent to customers
+				</description>
+			</setting>
+		</group>
+	</global-settings>
+
+	<patch match="/application/version &gt;= '1.0'"/>
+
+	<service id="group" class="service">
+
+		<presentation>
+			<name>BackupAgent group</name>
+			<summary>Service users created within subscription belong to BackupAgent group that defines common settings.</summary>
+			<infolinks>
+				<link class="official" href="http://www.backupagent.com/">Official site</link>
+				<link class="support"
+					href="http://www.backupagent.com/en/support">Support</link>
+				<link class="demo"
+					href="http://www.backupagent.com/en/downloads/product_demo">Online-Demo</link>
+			</infolinks>
+			<entry-points>
+				<!-- BA Management Console -->
+				<entry dst="{ba_public_url}/ManagementConsole/Login.aspx" method="POST">
+					<label>Login to BackupAgent Management Console</label>
+					<variable name="ba_public_url" value-of-setting="ba_public_url"/>
+					<variable name="LoginForm1$txtUsername" value-of-setting="group_login"/>
+					<variable name="LoginForm1$txtPassword" value-of-setting="group_password"/>
+					<variable name="LoginForm1$btnLogin">Login</variable>
+					<variable name="LoginForm1:txtUsername" value-of-setting="group_login"/>
+					<variable name="LoginForm1:txtPassword" value-of-setting="group_password"/>
+					<variable name="LoginForm1:btnLogin">Login</variable>
+					<variable name="__VIEWSTATE" value-of-setting="ba_viewstate_hash"/>
+					<variable name="redirect">_BASE_</variable>
+				</entry>
+
+			</entry-points>
+		</presentation>
+
+		<settings>
+			<!-- Configured by provider -->
+			<setting id="ba_user_bandwidth" type="enum" default-value="0" visibility="hidden">
+				<name>Maximum bandwidth per BA user</name>
+				<choice id="0">
+					<name>Unlimited</name>
+				</choice>
+				<choice id="128">
+					<name>128 KB/s</name>
+				</choice>
+				<choice id="256">
+					<name>256 KB/s</name>
+				</choice>
+				<choice id="512">
+					<name>512 KB/s</name>
+				</choice>
+				<choice id="1024">
+					<name>1024 KB/s</name>
+				</choice>
+				<choice id="2048">
+					<name>2048 KB/s</name>
+				</choice>
+				<choice id="5120">
+					<name>5120 KB/s</name>
+				</choice>
+			</setting>
+
+			<!-- Rest of -->
+			<group class="authn">
+				<setting id="group_login" class="login" type="string" installation-only="true" uniq="global">
+					<name>Administrator login</name>
+				</setting>
+				<setting id="group_password" class="password" type="password" track-old-value="true">
+					<name>Administrator password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<setting id="admin_email" class="email" type="email">
+					<name>Admnistrator email</name>
+				</setting>
+				<setting id="admin_given_name" class="given-name" type="string">
+					<name>Administrator given Name</name>
+				</setting>
+				<setting id="admin_surname" class="family-name" type="string">
+					<name>Administrator surname</name>
+				</setting>
+				<setting id="admin_company" class="organization-name" type="string">
+					<name>Company</name>
+				</setting>
+				<setting id="admin_address" class="street-address" type="string">
+					<name>Address</name>
+				</setting>
+				<setting id="admin_zipcode" class="postal-code" type="string">
+					<name>Zip code</name>
+				</setting>
+				<setting id="admin_city" class="locality" type="string">
+					<name>City</name>
+				</setting>
+				<setting id="admin_state" class="region" type="string">
+					<name>State</name>
+				</setting>
+				<setting id="admin_country" class="country-name" type="enum">
+					<name>Country</name>
+					<choice id="af">
+						<name>Afghanistan</name>
+					</choice>
+					<choice id="al">
+						<name>Albania</name>
+					</choice>
+					<choice id="dz">
+						<name>Algeria</name>
+					</choice>
+					<choice id="as">
+						<name>American Samoa</name>
+					</choice>
+					<choice id="ad">
+						<name>Andorra</name>
+					</choice>
+					<choice id="ao">
+						<name>Angola</name>
+					</choice>
+					<choice id="ai">
+						<name>Anguilla</name>
+					</choice>
+					<choice id="aq">
+						<name>Antarctica</name>
+					</choice>
+					<choice id="ag">
+						<name>Antigua and Barbuda</name>
+					</choice>
+					<choice id="ar">
+						<name>Argentina</name>
+					</choice>
+					<choice id="am">
+						<name>Armenia</name>
+					</choice>
+					<choice id="aw">
+						<name>Aruba</name>
+					</choice>
+					<choice id="ac">
+						<name>Ascension Island</name>
+					</choice>
+					<choice id="au">
+						<name>Australia</name>
+					</choice>
+					<choice id="at">
+						<name>Austria</name>
+					</choice>
+					<choice id="az">
+						<name>Azerbaijan</name>
+					</choice>
+					<choice id="bs">
+						<name>Bahamas</name>
+					</choice>
+					<choice id="bh">
+						<name>Bahrain</name>
+					</choice>
+					<choice id="bd">
+						<name>Bangladesh</name>
+					</choice>
+					<choice id="bb">
+						<name>Barbados</name>
+					</choice>
+					<choice id="by">
+						<name>Belarus</name>
+					</choice>
+					<choice id="be">
+						<name>Belgium</name>
+					</choice>
+					<choice id="bz">
+						<name>Belize</name>
+					</choice>
+					<choice id="bj">
+						<name>Benin</name>
+					</choice>
+					<choice id="bm">
+						<name>Bermuda</name>
+					</choice>
+					<choice id="bt">
+						<name>Bhutan</name>
+					</choice>
+					<choice id="bo">
+						<name>Bolivia</name>
+					</choice>
+					<choice id="ba">
+						<name>Bosnia and Herzegovina</name>
+					</choice>
+					<choice id="bv">
+						<name>Bouvet Island</name>
+					</choice>
+					<choice id="br">
+						<name>Brazil</name>
+					</choice>
+					<choice id="io">
+						<name>British Indian Ocean Territory</name>
+					</choice>
+					<choice id="bn">
+						<name>Brunei</name>
+					</choice>
+					<choice id="bg">
+						<name>Bulgaria</name>
+					</choice>
+					<choice id="bf">
+						<name>Burkina Faso</name>
+					</choice>
+					<choice id="bi">
+						<name>Burundi</name>
+					</choice>
+					<choice id="kh">
+						<name>Cambodia</name>
+					</choice>
+					<choice id="cm">
+						<name>Cameroon</name>
+					</choice>
+					<choice id="ca">
+						<name>Canada</name>
+					</choice>
+					<choice id="cv">
+						<name>Cape Verde</name>
+					</choice>
+					<choice id="ky">
+						<name>Cayman Islands</name>
+					</choice>
+					<choice id="cf">
+						<name>Central African Republic</name>
+					</choice>
+					<choice id="td">
+						<name>Chad</name>
+					</choice>
+					<choice id="cl">
+						<name>Chile</name>
+					</choice>
+					<choice id="cn">
+						<name>China</name>
+					</choice>
+					<choice id="cx">
+						<name>Christmas Island</name>
+					</choice>
+					<choice id="cc">
+						<name>Cocos (Keeling) Islands</name>
+					</choice>
+					<choice id="co">
+						<name>Colombia</name>
+					</choice>
+					<choice id="km">
+						<name>Comoros</name>
+					</choice>
+					<choice id="cg">
+						<name>Congo</name>
+					</choice>
+					<choice id="cd">
+						<name>Congo (drc)</name>
+					</choice>
+					<choice id="ck">
+						<name>Cook Islands</name>
+					</choice>
+					<choice id="cr">
+						<name>Costa Rica</name>
+					</choice>
+					<choice id="bw">
+						<name>Cotswana</name>
+					</choice>
+					<choice id="hr">
+						<name>Croatia</name>
+					</choice>
+					<choice id="cu">
+						<name>Cuba</name>
+					</choice>
+					<choice id="cy">
+						<name>Cyprus</name>
+					</choice>
+					<choice id="cz">
+						<name>Czech Republic</name>
+					</choice>
+					<choice id="dk">
+						<name>Denmark</name>
+					</choice>
+					<choice id="dj">
+						<name>Djibouti</name>
+					</choice>
+					<choice id="dm">
+						<name>Dominica</name>
+					</choice>
+					<choice id="do">
+						<name>Dominican Republic</name>
+					</choice>
+					<choice id="ec">
+						<name>Ecuador</name>
+					</choice>
+					<choice id="eg">
+						<name>Egypt</name>
+					</choice>
+					<choice id="sv">
+						<name>El Salvador</name>
+					</choice>
+					<choice id="gq">
+						<name>Equatorial Guinea</name>
+					</choice>
+					<choice id="er">
+						<name>Eritrea</name>
+					</choice>
+					<choice id="ee">
+						<name>Estonia</name>
+					</choice>
+					<choice id="et">
+						<name>Ethiopia</name>
+					</choice>
+					<choice id="fk">
+						<name>Falkland Islands (Islas Malvinas)</name>
+					</choice>
+					<choice id="fo">
+						<name>Faroe Islands</name>
+					</choice>
+					<choice id="fj">
+						<name>Fiji Islands</name>
+					</choice>
+					<choice id="fi">
+						<name>Finland</name>
+					</choice>
+					<choice id="fr">
+						<name>France</name>
+					</choice>
+					<choice id="gf">
+						<name>French Guiana</name>
+					</choice>
+					<choice id="pf">
+						<name>French Polynesia</name>
+					</choice>
+					<choice id="tf">
+						<name>French Southern and Antarctic Lands</name>
+					</choice>
+					<choice id="ga">
+						<name>Gabon</name>
+					</choice>
+					<choice id="gm">
+						<name>Gambia, the</name>
+					</choice>
+					<choice id="ge">
+						<name>Georgia</name>
+					</choice>
+					<choice id="de">
+						<name>Germany</name>
+					</choice>
+					<choice id="gh">
+						<name>Ghana</name>
+					</choice>
+					<choice id="gi">
+						<name>Gibraltar</name>
+					</choice>
+					<choice id="gr">
+						<name>Greece</name>
+					</choice>
+					<choice id="gl">
+						<name>Greenland</name>
+					</choice>
+					<choice id="gd">
+						<name>Grenada</name>
+					</choice>
+					<choice id="gp">
+						<name>Guadeloupe</name>
+					</choice>
+					<choice id="gu">
+						<name>Guam</name>
+					</choice>
+					<choice id="gt">
+						<name>Guatemala</name>
+					</choice>
+					<choice id="gg">
+						<name>Guernsey</name>
+					</choice>
+					<choice id="gn">
+						<name>Guinea</name>
+					</choice>
+					<choice id="gw">
+						<name>Guinea-Bissau</name>
+					</choice>
+					<choice id="gy">
+						<name>Guyana</name>
+					</choice>
+					<choice id="ht">
+						<name>Haiti</name>
+					</choice>
+					<choice id="hm">
+						<name>Heard Island and Mcdonald Islands</name>
+					</choice>
+					<choice id="hn">
+						<name>Honduras</name>
+					</choice>
+					<choice id="hk">
+						<name>Hong Kong Sar</name>
+					</choice>
+					<choice id="hu">
+						<name>Hungary</name>
+					</choice>
+					<choice id="is">
+						<name>Iceland</name>
+					</choice>
+					<choice id="in">
+						<name>India</name>
+					</choice>
+					<choice id="id">
+						<name>Indonesia</name>
+					</choice>
+					<choice id="ir">
+						<name>Iran</name>
+					</choice>
+					<choice id="iq">
+						<name>Iraq</name>
+					</choice>
+					<choice id="ie">
+						<name>Ireland</name>
+					</choice>
+					<choice id="im">
+						<name>Isle of Man</name>
+					</choice>
+					<choice id="il">
+						<name>Israel</name>
+					</choice>
+					<choice id="it">
+						<name>Italy</name>
+					</choice>
+					<choice id="ci">
+						<name>Ivoire</name>
+					</choice>
+					<choice id="jm">
+						<name>Jamaica</name>
+					</choice>
+					<choice id="jp">
+						<name>Japan</name>
+					</choice>
+					<choice id="je">
+						<name>Jersey</name>
+					</choice>
+					<choice id="jo">
+						<name>Jordan</name>
+					</choice>
+					<choice id="kz">
+						<name>Kazakhstan</name>
+					</choice>
+					<choice id="ke">
+						<name>Kenya</name>
+					</choice>
+					<choice id="ki">
+						<name>Kiribati</name>
+					</choice>
+					<choice id="kr">
+						<name>Korea</name>
+					</choice>
+					<choice id="kw">
+						<name>Kuwait</name>
+					</choice>
+					<choice id="kg">
+						<name>Kyrgyzstan</name>
+					</choice>
+					<choice id="la">
+						<name>Laos</name>
+					</choice>
+					<choice id="lv">
+						<name>Latvia</name>
+					</choice>
+					<choice id="lb">
+						<name>Lebanon</name>
+					</choice>
+					<choice id="ls">
+						<name>Lesotho</name>
+					</choice>
+					<choice id="lr">
+						<name>Liberia</name>
+					</choice>
+					<choice id="ly">
+						<name>Libya</name>
+					</choice>
+					<choice id="li">
+						<name>Liechtenstein</name>
+					</choice>
+					<choice id="lt">
+						<name>Lithuania</name>
+					</choice>
+					<choice id="lu">
+						<name>Luxembourg</name>
+					</choice>
+					<choice id="mo">
+						<name>Macao Sar</name>
+					</choice>
+					<choice id="mk">
+						<name>Macedonia, former Yugoslav Republic of</name>
+					</choice>
+					<choice id="mg">
+						<name>Madagascar</name>
+					</choice>
+					<choice id="mw">
+						<name>Malawi</name>
+					</choice>
+					<choice id="my">
+						<name>Malaysia</name>
+					</choice>
+					<choice id="mv">
+						<name>Maldives</name>
+					</choice>
+					<choice id="ml">
+						<name>Mali</name>
+					</choice>
+					<choice id="mt">
+						<name>Malta</name>
+					</choice>
+					<choice id="mh">
+						<name>Marshall Islands</name>
+					</choice>
+					<choice id="mq">
+						<name>Martinique</name>
+					</choice>
+					<choice id="mr">
+						<name>Mauritania</name>
+					</choice>
+					<choice id="mu">
+						<name>Mauritius</name>
+					</choice>
+					<choice id="yt">
+						<name>Mayotte</name>
+					</choice>
+					<choice id="mx">
+						<name>Mexico</name>
+					</choice>
+					<choice id="fm">
+						<name>Micronesia</name>
+					</choice>
+					<choice id="md">
+						<name>Moldova</name>
+					</choice>
+					<choice id="mc">
+						<name>Monaco</name>
+					</choice>
+					<choice id="mn">
+						<name>Mongolia</name>
+					</choice>
+					<choice id="ms">
+						<name>Montserrat</name>
+					</choice>
+					<choice id="ma">
+						<name>Morocco</name>
+					</choice>
+					<choice id="mz">
+						<name>Mozambique</name>
+					</choice>
+					<choice id="mm">
+						<name>Myanmar</name>
+					</choice>
+					<choice id="na">
+						<name>Namibia</name>
+					</choice>
+					<choice id="nr">
+						<name>Nauru</name>
+					</choice>
+					<choice id="np">
+						<name>Nepal</name>
+					</choice>
+					<choice id="nl">
+						<name>Netherlands</name>
+					</choice>
+					<choice id="an">
+						<name>Netherlands Antilles</name>
+					</choice>
+					<choice id="nc">
+						<name>New Caledonia</name>
+					</choice>
+					<choice id="nz">
+						<name>New Zealand</name>
+					</choice>
+					<choice id="ni">
+						<name>Nicaragua</name>
+					</choice>
+					<choice id="ne">
+						<name>Niger</name>
+					</choice>
+					<choice id="ng">
+						<name>Nigeria</name>
+					</choice>
+					<choice id="nu">
+						<name>Niue</name>
+					</choice>
+					<choice id="nf">
+						<name>Norfolk Island</name>
+					</choice>
+					<choice id="kp">
+						<name>North Korea</name>
+					</choice>
+					<choice id="mp">
+						<name>Northern Mariana Islands</name>
+					</choice>
+					<choice id="no">
+						<name>Norway</name>
+					</choice>
+					<choice id="om">
+						<name>Oman</name>
+					</choice>
+					<choice id="pk">
+						<name>Pakistan</name>
+					</choice>
+					<choice id="pw">
+						<name>Palau</name>
+					</choice>
+					<choice id="ps">
+						<name>Palestinian Authority</name>
+					</choice>
+					<choice id="pa">
+						<name>Panama</name>
+					</choice>
+					<choice id="pg">
+						<name>Papua New Guinea</name>
+					</choice>
+					<choice id="py">
+						<name>Paraguay</name>
+					</choice>
+					<choice id="pe">
+						<name>Peru</name>
+					</choice>
+					<choice id="ph">
+						<name>Philippines</name>
+					</choice>
+					<choice id="pn">
+						<name>Pitcairn Islands</name>
+					</choice>
+					<choice id="pl">
+						<name>Poland</name>
+					</choice>
+					<choice id="pt">
+						<name>Portugal</name>
+					</choice>
+					<choice id="pr">
+						<name>Puerto Rico</name>
+					</choice>
+					<choice id="qa">
+						<name>Qatar</name>
+					</choice>
+					<choice id="re">
+						<name>Reunion</name>
+					</choice>
+					<choice id="ro">
+						<name>Romania</name>
+					</choice>
+					<choice id="ru">
+						<name>Russian Federation</name>
+					</choice>
+					<choice id="rw">
+						<name>Rwanda</name>
+					</choice>
+					<choice id="ws">
+						<name>Samoa</name>
+					</choice>
+					<choice id="sm">
+						<name>San Marino</name>
+					</choice>
+					<choice id="sa">
+						<name>Saudi Arabia</name>
+					</choice>
+					<choice id="sn">
+						<name>Senegal</name>
+					</choice>
+					<choice id="yu">
+						<name>Serbia and Montenegro</name>
+					</choice>
+					<choice id="sc">
+						<name>Seychelles</name>
+					</choice>
+					<choice id="sl">
+						<name>Sierra Leone</name>
+					</choice>
+					<choice id="sg">
+						<name>Singapore</name>
+					</choice>
+					<choice id="sk">
+						<name>Slovakia</name>
+					</choice>
+					<choice id="si">
+						<name>Slovenia</name>
+					</choice>
+					<choice id="sb">
+						<name>Solomon Islands</name>
+					</choice>
+					<choice id="so">
+						<name>Somalia</name>
+					</choice>
+					<choice id="za">
+						<name>South Africa</name>
+					</choice>
+					<choice id="gs">
+						<name>South Georgia and The South Sandwich Islands</name>
+					</choice>
+					<choice id="es">
+						<name>Spain</name>
+					</choice>
+					<choice id="lk">
+						<name>Sri Lanka</name>
+					</choice>
+					<choice id="sh">
+						<name>St. Helena</name>
+					</choice>
+					<choice id="kn">
+						<name>St. Kitts and Nevis</name>
+					</choice>
+					<choice id="lc">
+						<name>St. Lucia</name>
+					</choice>
+					<choice id="pm">
+						<name>St. Pierre and Miquelon</name>
+					</choice>
+					<choice id="vc">
+						<name>St. Vincent and The Grenadines</name>
+					</choice>
+					<choice id="sd">
+						<name>Sudan</name>
+					</choice>
+					<choice id="sr">
+						<name>Suriname</name>
+					</choice>
+					<choice id="sj">
+						<name>Svalbard and Jan Mayen</name>
+					</choice>
+					<choice id="sz">
+						<name>Swaziland</name>
+					</choice>
+					<choice id="se">
+						<name>Sweden</name>
+					</choice>
+					<choice id="ch">
+						<name>Switzerland</name>
+					</choice>
+					<choice id="sy">
+						<name>Syria</name>
+					</choice>
+					<choice id="st">
+						<name>São Tomé and Príncipe</name>
+					</choice>
+					<choice id="tw">
+						<name>Taiwan</name>
+					</choice>
+					<choice id="tj">
+						<name>Tajikistan</name>
+					</choice>
+					<choice id="tz">
+						<name>Tanzania</name>
+					</choice>
+					<choice id="th">
+						<name>Thailand</name>
+					</choice>
+					<choice id="tp">
+						<name>Timor-leste</name>
+					</choice>
+					<choice id="tg">
+						<name>Togo</name>
+					</choice>
+					<choice id="tk">
+						<name>Tokelau</name>
+					</choice>
+					<choice id="to">
+						<name>Tonga</name>
+					</choice>
+					<choice id="tt">
+						<name>Trinidad and Tobago</name>
+					</choice>
+					<choice id="ta">
+						<name>Tristan da Cunha</name>
+					</choice>
+					<choice id="tn">
+						<name>Tunisia</name>
+					</choice>
+					<choice id="tr">
+						<name>Turkey</name>
+					</choice>
+					<choice id="tm">
+						<name>Turkmenistan</name>
+					</choice>
+					<choice id="tc">
+						<name>Turks and Caicos Islands</name>
+					</choice>
+					<choice id="tv">
+						<name>Tuvalu</name>
+					</choice>
+					<choice id="ug">
+						<name>Uganda</name>
+					</choice>
+					<choice id="ua">
+						<name>Ukraine</name>
+					</choice>
+					<choice id="ae">
+						<name>United Arab Emirates</name>
+					</choice>
+					<choice id="gb">
+						<name>United Kingdom</name>
+					</choice>
+					<choice id="us">
+						<name>United States</name>
+					</choice>
+					<choice id="um">
+						<name>United States Minor Outlying Islands</name>
+					</choice>
+					<choice id="uy">
+						<name>Uruguay</name>
+					</choice>
+					<choice id="uz">
+						<name>Uzbekistan</name>
+					</choice>
+					<choice id="vu">
+						<name>Vanuatu</name>
+					</choice>
+					<choice id="va">
+						<name>Vatican City</name>
+					</choice>
+					<choice id="ve">
+						<name>Venezuela</name>
+					</choice>
+					<choice id="vn">
+						<name>Vietnam</name>
+					</choice>
+					<choice id="vg">
+						<name>Virgin Islands, British</name>
+					</choice>
+					<choice id="vg">
+						<name>Virgin Islands, British</name>
+					</choice>
+					<choice id="wf">
+						<name>Wallis and Futuna</name>
+					</choice>
+					<choice id="ye">
+						<name>Yemen</name>
+					</choice>
+					<choice id="zm">
+						<name>Zambia</name>
+					</choice>
+					<choice id="zw">
+						<name>Zimbabwe</name>
+					</choice>
+				</setting>
+				<setting id="admin_phone" class="work" type="string">
+					<name>Phone</name>
+				</setting>
+			</group>
+			<group class="web">
+				<setting id="default_language" class="locale" type="enum" default-value="en-GB">
+					<name>Interface language</name>
+					<choice id="en-GB">
+						<name>English</name>
+					</choice>
+					<choice id="de-DE">
+						<name>German</name>
+					</choice>
+					<choice id="es-ES">
+						<name>Spanish</name>
+					</choice>
+					<choice id="fr-FR">
+						<name>France</name>
+					</choice>
+					<choice id="it-IT">
+						<name>Italian</name>
+					</choice>
+					<choice id="nl-NL">
+						<name>Dutch</name>
+					</choice>
+					<choice id="pl-PL">
+						<name>Polish</name>
+					</choice>
+					<choice id="tr-TR">
+						<name>Turkish</name>
+					</choice>
+					<choice id="pt-PT">
+						<name>Portuguese</name>
+					</choice>
+					<choice id="da-DK">
+						<name>Danish</name>
+					</choice>
+					<choice id="hu-HU">
+						<name>Hungarian</name>
+					</choice>
+					<choice id="ro-RO">
+						<name>Romanian</name>
+					</choice>
+					<choice id="ru-RU">
+						<name>Russian</name>
+					</choice>
+					<choice id="ja-JP">
+						<name>Japanese</name>
+					</choice>
+				</setting>
+			</group>
+			<setting id="warning_limit" type="enum" default-value="80">
+				<name>Max. account usage to send warning mail (%)</name>
+				<choice id="50">
+					<name>50</name>
+				</choice>
+				<choice id="60">
+					<name>60</name>
+				</choice>
+				<choice id="70">
+					<name>70</name>
+				</choice>
+				<choice id="80">
+					<name>80</name>
+				</choice>
+				<choice id="90">
+					<name>90</name>
+				</choice>
+				<choice id="100">
+					<name>100</name>
+				</choice>
+			</setting>
+			<setting id="warning_days" type="integer" default-value="30" min="0">
+				<name>Days without backup before warning mail</name>
+			</setting>
+			<setting id="subscription_id" class="subscription_id" protected="true" type="string">
+				<name>Subscription ID</name>
+			</setting>
+			<setting id="ba_viewstate_hash" type="string" default-value="" visibility="hidden">
+				<name>Viewstate hash required for auto-login</name>
+				<description>
+				This value is required for auto-login ability.
+				</description>
+			</setting>
+		</settings>
+
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="5.0"/>
+			<php:extension>soap</php:extension>
+		</requirements>
+
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<status-control/>
+			</configuration-script>
+		</provision>
+
+		<service id="account" class="account">
+			<presentation>
+				<name>BackupAgent</name>
+				<summary>BackupAgent service</summary>
+				<entry-points>
+					<!-- BA Management Console -->
+					<entry dst="{ba_public_url}/ManagementConsole/Login.aspx" method="POST">
+						<label>Login to BackupAgent Management Console</label>
+						<variable name="ba_public_url" value-of-setting="ba_public_url"/>
+						<variable name="LoginForm1$txtUsername" value-of-setting="user_login"/>
+						<variable name="LoginForm1$txtPassword" value-of-setting="user_password"/>
+						<variable name="LoginForm1$btnLogin">Login</variable>
+						<variable name="LoginForm1:txtUsername" value-of-setting="user_login"/>
+						<variable name="LoginForm1:txtPassword" value-of-setting="user_password"/>
+						<variable name="LoginForm1:btnLogin">Login</variable>
+						<variable name="__VIEWSTATE" value-of-setting="ba_viewstate_hash" />
+						<variable name="redirect">_BASE_</variable>
+					</entry>
+
+					<!-- BA Client download links -->
+					<entry dst="{ba_public_url}/{download_url_suffix}">
+						<label>Download BackupAgent client for Windows</label>
+						<variable name="ba_public_url" value-of-setting="ba_public_url"/>
+						<variable name="download_url_suffix" value-of-setting="ba_win_client_download_url_suffix"/>
+					</entry>
+					<entry dst="{ba_public_url}/{download_url_suffix}">
+						<label>Download BackupAgent client for Mac OS</label>
+						<variable name="ba_public_url" value-of-setting="ba_public_url"/>
+						<variable name="download_url_suffix" value-of-setting="ba_mac_client_download_url_suffix"/>
+					</entry>
+					<entry dst="{ba_public_url}/{download_url_suffix}">
+						<label>Download BackupAgent client for Linux</label>
+						<variable name="ba_public_url" value-of-setting="ba_public_url"/>
+						<variable name="download_url_suffix" value-of-setting="ba_lin_client_download_url_suffix"/>
+					</entry>
+				</entry-points>
+			</presentation>
+
+			<settings>
+				<group class="authn">
+					<setting id="user_login" class="login" type="email" installation-only="true" uniq="global">
+						<name>Login</name>
+					</setting>
+					<setting id="user_password" class="password" type="password" track-old-value="true">
+						<name>Password</name>
+					</setting>
+				</group>
+				<group class="vcard">
+					<setting id="user_email" class="email" type="email" optional="true">
+						<name>Email</name>
+					</setting>
+					<setting id="user_given_name" class="given-name" type="string">
+						<name>Given name</name>
+					</setting>
+					<setting id="user_surname" class="family-name" type="string">
+						<name>Surname</name>
+					</setting>
+					<setting id="user_company" class="organization-name" type="string">
+						<name>Company</name>
+					</setting>
+					<setting id="user_address" class="street-address" type="string">
+						<name>Address</name>
+					</setting>
+					<setting id="user_zipcode" class="postal-code" type="string">
+						<name>Zip code</name>
+					</setting>
+					<setting id="user_city" class="locality" type="string">
+						<name>City</name>
+					</setting>
+					<setting id="user_state" class="region" type="string">
+						<name>State</name>
+					</setting>
+					<setting id="user_country" class="country-name" type="string">
+						<name>Country</name>
+					</setting>
+					<setting id="user_phone" class="work" type="string">
+						<name>Phone</name>
+					</setting>
+				</group>
+				<group class="web">
+					<setting id="default_language" type="string" value-of-setting="default_language" visibility="hidden"/>
+				</group>
+				<setting id="group_login" type="string" installation-only="true" value-of-setting="group_login" visibility="hidden"/>
+				<setting id="group_password" type="string" value-of-setting="group_password" visibility="hidden"/>
+
+				<setting id="user_quota" type="string" default-value="10" >
+					<name>BA user quota (GB)</name>
+				</setting>
+				<setting id="account_type" type="integer" default-value="1" visibility="hidden">
+					<name>Type of account (1=normal, 2=trial)</name>
+				</setting>
+				<setting id="ba_user_bandwidth" type="string" value-of-setting="ba_user_bandwidth" visibility="hidden"/>		
+				<setting id="subscription_id" type="string" value-of-setting="subscription_id" visibility="hidden"/>
+				<setting id="ba_viewstate_hash" type="string" value-of-setting="ba_viewstate_hash" visibility="hidden" />
+			</settings>
+			<resources>
+				<resource class="gb" id="user_quota" limiting-setting="user_quota">
+					<name>Disk quota of user for backup</name>
+				</resource>
+			</resources>
+
+			<provision>
+				<configuration-script name="configure-user.php">
+					<script-language>php</script-language>
+					<status-control/>
+				</configuration-script>
+				<resource-script name="report-resource.php">
+            		<script-language>php</script-language>
+				</resource-script>
+			</provision>
+
+			<!-- When enabled Professional profile is set for BA user -->
+			<service id="professional" singular="true">
+				<presentation>
+					<name>Professional</name>
+					<summary>Professional BackupAgent profile</summary>
+				</presentation>
+
+				<settings>
+					<setting id="user_login" type="string" visibility="hidden" value-of-setting="user_login"/>
+				</settings>
+
+				<provision>
+					<configuration-script name="configure-user-professional.php">
+						<script-language>php</script-language>
+					</configuration-script>
+				</provision>
+
+			</service>
+
+		</service>
+	</service>
+
+</application>

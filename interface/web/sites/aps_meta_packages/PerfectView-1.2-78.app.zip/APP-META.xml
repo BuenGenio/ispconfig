@@ -1,0 +1,691 @@
+<application packaged="2015-02-01T23:39:10" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>http://perfectviewcrm.com/1.0</id>
+    <name>PerfectView</name>
+    <version>1.2</version>
+    <release>78</release>
+
+
+    <homepage>http://www.perfectviewcrm.com</homepage>
+
+    <vendor>
+        <name>PerfectView</name>
+        <homepage>http://www.perfectviewcrm.com/</homepage>
+        <homepage xml:lang="en-GB">http://www.perfectviewcrm.com</homepage>
+        <homepage xml:lang="nl-NL">http://www.perfectviewcrm.nl</homepage>
+        <homepage xml:lang="de-DE">http://www.perfectviewcrm.de</homepage>
+        <icon path="images/PV_icon_64x64.png"/>
+    </vendor>
+
+    <packager>
+        <name>Cloudcompanyon B.V.</name>
+        <homepage>http://cloudcompanyon.com</homepage>
+        <icon path="images/CloudCompanyon.png"/>
+        <uri>uuid:packager_uri</uri>
+    </packager>
+
+    <presentation>
+        <summary>PerfectView. Your own CRM Cloud</summary>
+        <summary xml:lang="en-GB">PerfectView. Your own CRM Cloud</summary>
+        <summary xml:lang="nl-NL">PerfectView. Uw eigen CRM Cloud</summary>
+        <summary xml:lang="de-DE">PerfectView. Ihre eigene CRM Cloud</summary>
+        <description>PerfectView CRM Online is a powerful Windows- or Mac-solution to support your Relationship Management, Marketing &amp; Sales (e-mail), and Customer Support that you can use immediately without additional implementation.
+
+Why PerfectView?
+·         Independent Organization
+·         Free Helpdesk
+·         No Implementation
+·         Your data in Europe
+·         Free Unlimited storage</description>
+        <description xml:lang="en-GB">PerfectView CRM Online is a powerful Windows- or Mac-solution to support your Relationship Management, Marketing &amp;amp; Sales (e-mail), and Customer Support that you can use immediately without additional implementation.
+
+Why PerfectView?
+·         Independent Organization
+·         Free Helpdesk
+·         No Implementation
+·         Your data in Europe
+·         Free Unlimited storage</description>
+        <description xml:lang="de-DE">Beziehungverwaltung, Kundepflege, Vertrieb und Kundenservice. Skalierbar, individuell konfigurierbar und sicher</description>
+        <description xml:lang="nl-NL">PerfectView is krachtige en gebruiksvriendelijke Windows- en / of Mac-software voor online relatiebeheer, CRM, sales, marketing, facturatie en e-mailingen. Gratis ondersteuning en zonder implementatie direct in gebruik te nemen in het Nederlands, Engels en / of Duits.
+
+Waarom PerfectView?
+-       Nederlands én zelfstandig
+-       Gratis onbeperkte dataopslag
+-       Gratis helpdeskondersteuning
+-       Uw data in Nederland
+-       Geen implementatie
+-       Bijna 3.000 klanten</description>
+
+        <icon path="images/PV_icon_64x64.png"/>
+
+        <screenshot path="images/screenshot1.jpg">
+            <description>Todo list</description>
+            <description xml:lang="nl-NL">Takenlijst</description>
+            <description xml:lang="en-GB">Todo list</description>
+        </screenshot>
+        <screenshot path="images/screenshot2.jpg">
+            <description>Sales opportunity</description>
+            <description xml:lang="nl-NL">Verkoopkans</description>
+            <description xml:lang="de-DE">Verkaufschance
+            </description>
+            <description xml:lang="en-GB">Sales opportunity
+            </description>
+        </screenshot>
+
+        <changelog>
+            <version release="1" version="1.2">
+                <entry>Packaged in APS 1.2</entry>
+            </version>
+            <version release="28" version="1.2">
+                <entry>Initial aps package </entry>
+            </version>
+            <version release="29" version="1.2">
+                <entry>PER-1, PER-4, PER-5, PER-5, PER-6, PER-7, PER-9, PER-11, PER-13</entry>
+            </version>
+            <version release="30" version="1.2">
+                <entry>PER-14 login link as global</entry>
+                <entry>PER-10 username and fist user with same emailaddress</entry>
+            </version>
+            <version release="31" version="1.2">
+                <entry>I18N of error messages</entry>
+            </version>
+            <version release="32" version="1.2">
+                <entry>More translations and better error message</entry>
+            </version>
+            <version release="34" version="1.2">
+                <entry>Metadata</entry>
+            </version>
+            <version release="40" version="1.2">
+                <entry>Better error handling.
+
+Known issue: it's not possible to verify if a user will be allowed to be created by perfectview. So, parallels will accept a user to be (re)created that's deleted from parallels, but not yet from perfectview. The script will fail.</entry>
+            </version>
+            <version release="41" version="1.2">
+             	<entry>PER-17 Translation</entry>
+             </version>
+            <version release="42" version="1.2">
+            	<entry>PER-16 new account procedure</entry>
+            </version>
+            <version release="71" version="1.2">
+            	<entry>extra tests</entry>
+            	<entry>culturecode multidim array problem solved</entry>
+            </version>
+            <version release="72" version="1.2">
+            	<entry>Default values for mandatory settings</entry>
+            </version>
+            <version release="73" version="1.2">
+            	<entry>Translations</entry>
+	</version>
+	<version release="74" version="1.2">
+		<entry>Company name bug</entry>
+	</version>
+	<version release="75" version="1.2">
+		<entry>Documentation link</entry>
+	</version>
+	<version release="76" version="1.2">
+		<entry>Fixed bug preventing user removal</entry>
+	</version>
+	<version release="77" version="1.2">
+		<entry>Debugcode removed.</entry>
+	</version>
+	<version release="78" version="1.2">
+		<entry>API change broke APS package. Fixed now.</entry>
+	</version>
+        </changelog>
+
+        <categories>
+            <category>Back office/Customer Relationship Management</category>
+        </categories>
+
+        <languages>
+            <language>en</language>
+            <language>de</language>
+            <language>nl</language>
+        </languages>
+    </presentation>
+    <global-settings>
+        <setting id="LoginUrl" type="string">
+            <name>login page URL</name>
+            <description>For example https://online-test.perfectview.nl/</description>
+        </setting>
+        <group>
+            <name>API</name>
+            <setting default-value="" id="apiKey" regex="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" type="string">
+                <name>API Key</name>
+                <error-message>API Key must be a GUID. For example:
+                    AA11BB22-CC33-DD44-EE55-FF66AA77BB88</error-message>
+            </setting>
+            <setting default-value="test" id="apiType" type="enum">
+                <name>Production or Test</name>
+                <choice id="production">
+                    <name>Production</name>
+                </choice>
+                <choice id="test">
+                    <name>Test</name>
+                </choice>
+            </setting>
+
+            <setting id="productionUrl" type="string">
+                <name>Production API Url</name>
+                <error-message>Production API Url must be a full URL to
+                    the API</error-message>
+            </setting>
+            <setting default-value="https://partnerapi-test.perfectview.nl/perfectview.asmx?wsdl" id="testUrl" type="string">
+                <name>Test API Url</name>
+                <error-message>Test API Url must be a full URL to the
+                    API</error-message>
+            </setting>
+        </group>
+        <group class="branding">
+            <name>Branding</name>
+            <setting default-value="" id="resellerApiKey" type="string">
+                <name>Reseller ApiKey</name>
+            </setting>
+        </group>
+    </global-settings>
+
+    <patch match="/application/version &gt;= '1.0'"/>
+
+    <service id="PerfectView" singular="true">
+        <license must-accept="true">
+            <commercial/>
+            <text>
+                <name>Terms and Conditions</name>
+                <url>https://resources.perfectview.nl/Documents/en-GB/Agreement%20-%20PerfectView.pdf</url>
+            </text>
+            <text xml:lang="en-GB">
+                <name>Terms and Conditions</name>
+                <url>https://resources.perfectview.nl/Documents/en-GB/Agreement%20-%20PerfectView.pdf</url>
+            </text>
+            <text xml:lang="nl-NL">
+                <name>Gebruiksvoorwaarden</name>
+                <url>https://resources.perfectview.nl/Documents/nl-NL/Overeenkomst%20-%20PerfectView.pdf</url>
+            </text>
+            <text xml:lang="de-DE">
+                <name>Nutzungsdebingungen</name>
+                <url>https://resources.perfectview.nl/Documents/de-DE/Vereinbarung%20-%20PerfectView.pdf</url>
+            </text>
+
+        </license>
+
+        <presentation>
+            <name>PerfectView</name>
+            <summary>PerfectView</summary>
+            <icon path="images/PV_icon_64x64.png"/>
+
+            <infolinks>
+                <link class="support" href="http://www.perfectviewcrm.nl/cloudsupport">
+                    Support Link
+                </link>
+                <link class="deployment-guide" href="http://www.cloudcompanyon.com/aps/perfectview-deployment-12.aps">Installation guide</link>
+                <link class="" href="http://www.cloudcompanyon.com/aps/perfectview-techdoc-12.pdf">technical documentation</link>
+            </infolinks>
+            <entry-points>
+                <entry class="frontpage" dst="{URL}">
+                    <label>Login page</label>
+                    <label xml:lang="nl-NL">Inlogpagina</label>
+                    <variable name="URL" value-of-setting="LoginUrl"/>
+                </entry>
+            </entry-points>
+
+        </presentation>
+        
+
+
+
+        <provision>
+            <configuration-script name="subscription.php">
+                <script-language>php</script-language>
+                <structured-output/>
+            </configuration-script>
+
+        </provision>
+        <service id="database" singular="true">
+            <presentation>
+                <name>PerfectView Database</name>
+                <summary>PerfectView Database</summary>
+            </presentation>
+                        
+            <settings>
+            <group>
+                <name>generated</name>
+                <setting default-value="" id="databaseId" type="string" visibility="hidden">
+                    <name>Database Id</name>
+                </setting>
+                <setting default-value="" id="userId" type="string" visibility="hidden">
+                    <name>user Id</name>
+                </setting>
+            </group>
+
+            <group class="vcard">
+                <name class="type">General contact data</name>
+                <name xml:lang="nl-NL">Algemene contact gegevens</name>
+                <group class="fn n">
+                    <name>Employee data</name>
+                    <name xml:lang="en-GB">Employee data</name>
+                    <name xml:lang="nl-NL">Werkenemersgegevens</name>
+                    <setting class="given-name" id="generalFirstName" optional="true" type="string">
+                        <name>First Name</name>
+                        <name xml:lang="en-GB">First name</name>
+                        <name xml:lang="nl-NL">Voornaam</name>
+                    </setting>
+                    <setting class="additional-name" id="generalMiddleName" optional="true" type="string">
+                        <name>Middle name</name>
+                        <name xml:lang="nl-NL">Tussenvoegsel</name>
+                        <name xml:lang="en-GB">Middle name</name>
+                    </setting>
+                    <setting class="family-name" default-value="" id="generalName" min-length="1" type="string">
+                        <name>Name*</name>
+                        <name xml:lang="nl-NL">Achternaam*</name>
+                        <name xml:lang="en-GB">Name*</name>
+                        <error-message>Please enter the name of this
+                            contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul de naam van deze contact in</error-message>
+                    </setting>
+                    <setting default-value="" id="generalInitials" min-length="1" type="string">
+                        <name>Initials*</name>
+                        <name xml:lang="nl-NL">Initialen*</name>
+                        <name xml:lang="en-GB">Initials*</name>
+                        <error-message>Please enter the initials of this
+                            contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul de initialen van deze contact in</error-message>
+                    </setting>
+                    <setting class="email" default-value="mail@domain.com" id="generalEmail" type="email">
+                        <name>Email*</name>
+                        <error-message>Please enter the emailaddress for
+                            this contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul het emailaddress van deze contact in</error-message>
+                    </setting>
+                    <setting id="generalFunction" optional="true" type="string">
+                        <name>Function</name>
+                        <name xml:lang="nl-NL">Functie</name>
+                    </setting>
+                    <setting class="work" id="generalTelephone" optional="true" type="string">
+                        <name>Telephone</name>
+                        <name xml:lang="nl-NL">Telefoonnummer</name>
+                    </setting>
+                    <setting class="value" default-value="2" id="generalGenderCode" type="enum">
+                        <name>Gender</name>
+                        <name xml:lang="nl-NL">Geslacht</name>
+                        <error-message>Please select the gender for this
+                            contact</error-message>
+                            <choice id="2">
+                            <name>male</name>
+                            <name xml:lang="en-GB">male</name>
+                            <name xml:lang="nl-NL">mannelijk</name>
+                            <name xml:lang="de-DE">männlich</name>
+                        </choice>
+                        <choice id="3">
+                            <name>female</name>
+                            <name xml:lang="en-GB">female</name>
+                            <name xml:lang="de-DE">weiblich</name>
+                            <name xml:lang="nl-NL">vrouw</name>
+                        </choice>
+                    </setting>
+                </group>
+            </group>
+            <group class="vcard">
+                <name>Financial contact data</name>
+                <name xml:lang="nl-NL">Financiele contact gegevens</name>
+                
+                <group class="fn n">
+                    <name>Employee data</name>
+                    <setting class="given-name" id="FinancialFirstName" optional="true" type="string">
+                        <name>First Name</name>
+                        <name xml:lang="nl-NL">Voornaam</name>
+                    </setting>
+                    <setting class="additional-name" id="financialMiddleName" optional="true" type="string">
+                        <name>Middle name</name>
+                        <name xml:lang="nl-NL">Tussenvoegsel</name>
+                    </setting>
+                    <setting class="family-name" default-value="" id="financialName" type="string">
+                        <name>Name*</name>
+                        <name xml:lang="nl-NL">Achternaam*
+</name>
+                        <error-message>Please enter the Name of this
+                            contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul de naam van deze contact in</error-message>
+                    </setting>
+                    <setting default-value="" id="financialInitials" min-length="1" type="string">
+                        <name>Initials*</name>
+                        <name xml:lang="nl-NL">Initialen*</name>
+                        <error-message>Please enter the initials of this
+                            contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul de initialen van deze contact in</error-message>
+                    </setting>
+                    <setting class="email" id="financialEmail" type="email">
+                        <name>Email*</name>
+                        <error-message>Please enter the emailaddress for
+                            this contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul het emailaddress van deze contact in</error-message>
+                    </setting>
+                    <setting id="financialFunction" optional="true" type="string">
+                        <name>Function</name>
+                        <name xml:lang="nl-NL">Functie</name>
+                    </setting>
+                    <setting class="work" id="financialTelephone" optional="true" type="string">
+                        <name>Telephone</name>
+                        <name xml:lang="nl-NL">Telefoonnummer</name>
+                    </setting>
+                    <setting class="value" default-value="2" id="financialGenderCode" type="enum">
+                        <name>Gender</name>
+                        <name xml:lang="nl-NL">Geslacht</name>
+                        <error-message>Please select the gender for this
+                            contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul het geslacht van deze contact in</error-message>
+                        <choice id="2">
+                            <name>male</name>
+                            <name xml:lang="en-GB">male</name>
+                            <name xml:lang="nl-NL">mannelijk</name>
+                            <name xml:lang="de-DE">männlich</name>
+                        </choice>
+                        <choice id="3">
+                            <name>female</name>
+                            <name xml:lang="en-GB">female</name>
+                            <name xml:lang="de-DE">weiblich</name>
+                            <name xml:lang="nl-NL">vrouw</name>
+                        </choice>
+                    </setting>
+                </group>
+            </group>
+            <group class="vcard">
+                <name>Technical contact data</name>
+                <name xml:lang="nl-NL">Technisch contact gegevens</name>
+                
+                <group class="fn n">
+                    <name>Employee data</name>
+                    <setting class="given-name" id="technicalFirstName" optional="true" type="string">
+                        <name>First Name</name>
+                        <name xml:lang="nl-NL">Voornaam*</name>
+                    </setting>
+                    <setting class="additional-name" id="technicalMiddleName" optional="true" type="string">
+                        <name>Middle name</name>
+                        <name xml:lang="nl-NL">Tussenvoegsel</name>
+                    </setting>
+                    <setting class="family-name" default-value="" id="technicalName" type="string">
+                        <name>Name*</name>
+                        <name xml:lang="nl-NL">Achternaam*</name>
+                        <error-message>Please enter the Name of this
+                            contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul de naam van deze contact in</error-message>
+                    </setting>
+                    <setting default-value="" id="technicalInitials" min-length="1" type="string">
+                        <name>Initials*</name>
+                        <name xml:lang="nl-NL">Initialen*</name>
+                        <error-message>Please enter the initials of this
+                            contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul de initialen van deze contact in</error-message>
+                    </setting>
+                    <setting class="email" id="technicalEmail" type="email">
+                        <name>Email*</name>
+                        <error-message>Please enter the emailaddress for
+                            this contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul het emailaddress van deze contact in</error-message>
+                    </setting>
+                    <setting id="technicalFunction" optional="true" type="string">
+                        <name>Function</name>
+                        <name xml:lang="nl-NL">Functie</name>
+                    </setting>
+                    <setting class="work" id="technicalTelephone" optional="true" type="string">
+                        <name>Telephone</name>
+                        <name xml:lang="nl-NL">Telefoonnummer</name>
+                    </setting>
+                    <setting class="value" default-value="2" id="technicalGenderCode" type="enum">
+                        <name>Gender</name>
+                        <name xml:lang="nl-NL">Geslacht</name>
+                        <error-message>Please select the gender for this
+                            contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul het geslacht van deze contact in</error-message>
+                        <choice id="2">
+                            <name>male</name>
+                            <name xml:lang="en-GB">male</name>
+                            <name xml:lang="nl-NL">mannelijk</name>
+                            <name xml:lang="de-DE">männlich</name>
+                        </choice>
+                        <choice id="3">
+                            <name>female</name>
+                            <name xml:lang="en-GB">female</name>
+                            <name xml:lang="de-DE">weiblich</name>
+                            <name xml:lang="nl-NL">vrouw</name>
+                        </choice>
+                    </setting>
+                </group>
+            </group>
+            <group class="vcard">
+                <name>First user</name>
+                <name xml:lang="nl-NL">Eerste gebruiker</name>
+                <group class="fn n">
+                    <name>Employee data</name>
+                    <setting class="given-name" id="FirstName" type="string">
+                        <name>First Name*</name>
+                        <name xml:lang="nl-NL">Voornaam*</name>
+                    </setting>
+                    <setting class="additional-name" id="MiddleName" optional="true" type="string">
+                        <name>Middle name</name>
+                        <name xml:lang="nl-NL">Tussenvoegsel</name>
+                    </setting>
+                    <setting class="family-name" default-value="" id="Name" type="string">
+                        <name>Name*</name>
+                        <name xml:lang="nl-NL">Achternaam*</name>
+                        <error-message>Please enter the Name of this
+                            contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul de naam van deze contact in</error-message>
+                    </setting>
+                    <setting default-value="" id="Initials" min-length="1" type="string">
+                        <name>Initials*</name>
+                        <name xml:lang="nl-NL">Initialen*</name>
+                        <error-message>Please enter the initials of this
+                            contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul de initialen van deze contact in</error-message>
+                    </setting>
+                    <setting class="email" id="Email" type="email">
+                        <name>Email*</name>
+                        <error-message>Please enter the emailaddress for
+                            this contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul het emailaddress van deze contact in</error-message>
+                    </setting>
+                    <setting default-value="" id="Password" installation-only="true" min-length="6" type="password">
+                    	<name>Password*</name>
+                    	<name xml:lang="nl-NL">Wachtwoord*</name>
+                    	<error-message>Password is too short. Minimal length is six characters.</error-message>
+                    	<error-message xml:lang="nl-NL">Wachtwoord is te kort. Minimale lengte is zes karakters.</error-message>
+                    </setting>
+                    <setting class="organization-unit" id="Function" optional="true" type="string">
+                        <name>Function</name>
+                        <name xml:lang="nl-NL">Functie</name>
+                    </setting>
+                    <setting class="work" id="Telephone" optional="true" type="string">
+                        <name>Telephone</name>
+                        <name xml:lang="nl-NL">Telefoonnummer</name>
+                    </setting>
+                    <setting class="value" default-value="2" id="genderCode" type="enum">
+                        <name>Gender</name>
+                        <name xml:lang="nl-NL">Geslacht</name>
+                        <error-message>Please select the gender for this
+                            contact</error-message>
+                        <error-message xml:lang="nl-NL">Vul het geslacht van deze contact in</error-message>
+                        <choice id="2">
+                            <name>male</name>
+                            <name xml:lang="en-GB">male</name>
+                            <name xml:lang="nl-NL">mannelijk</name>
+                            <name xml:lang="de-DE">männlich</name>
+                        </choice>
+                        <choice id="3">
+                            <name>female</name>
+                            <name xml:lang="en-GB">female</name>
+                            <name xml:lang="de-DE">weiblich</name>
+                            <name xml:lang="nl-NL">vrouw</name>
+                        </choice>
+                    </setting>
+                </group>
+            </group>
+            <group class="vcard">
+                <name>Organization data</name>
+                <name xml:lang="nl-NL">Organisatie gegevens</name>
+                
+                <group>
+                    <name>org</name>
+                    <setting class="organization-name" id="OrgName" type="string">
+                        <name>Company Name*</name>
+                        <name xml:lang="nl-NL">Bedrijfsnaam*</name>
+                    </setting>
+                </group>
+                <group class="addr">
+                    <name>Organisation Data</name>
+                    <setting class="street-address" id="Street" type="string">
+                        <name>Street*</name>
+                        <name xml:lang="nl-NL">Straat*</name>
+                    </setting>
+                    <setting class="street-number" default-value="" id="StreetNumber" min-length="1" type="string">
+                        <name>Street Number*</name>
+                        <name xml:lang="nl-NL">Huisnummer*</name>
+                        <error-message>Please enter the street number for this address</error-message>
+                        <error-message xml:lang="nl-NL">Vul het huisnummer van dit adres in</error-message>
+                    </setting>
+                    <setting id="StreetSuffix" optional="true" type="string">
+                        <name>Street suffix</name>
+                    </setting>
+                    <setting class="postal-code" id="PostalCode" type="string">
+                        <name>Postal code*</name>
+                        <name xml:lang="nl-NL">Postcode*</name>
+                    </setting>
+                    <setting class="locality" default-value="" id="City" type="string">
+                        <name>City*</name>
+                        <name xml:lang="nl-NL">Stad*</name>
+                    </setting>
+                    <setting default-value="dda99368-8a05-43f0-8b8a-b1860cf0a0b8" id="country" installation-only="true" type="string">
+                        <name>Country</name>
+                    </setting>
+                    <setting default-value="1" id="language" installation-only="true" type="string">
+                        <name>Language*</name>
+                        <name xml:lang="nl-NL">Taal</name>
+                    </setting>
+                    <setting class="locale" id="locale" installation-only="true" type="string" visibility="hidden"/>
+                </group>
+            </group>
+        </settings>
+            <provision>
+                <configuration-script name="database.php">
+                    <script-language>php</script-language>
+                    <structured-output/>
+                </configuration-script>
+                <verify-script name="verifyDatabase.php">
+                    <script-language>php</script-language>
+                    <structured-output/>
+                </verify-script>
+            </provision>
+
+      
+
+            <service class="account" id="user">
+                <presentation>
+                    <name>PerfectView Account</name>
+                    <summary>PerfectView Account</summary>
+                    <icon path="images/user.png"/>
+                </presentation>
+                <settings>
+                    <group>
+                        <name>generated</name>
+                        <setting default-value="" id="userId" type="string" visibility="hidden">
+                            <name>user Id</name>
+                        </setting>
+                        <setting id="databaseIdUser" type="string" value-of-setting="databaseId" visibility="hidden">
+                        </setting>
+                        <setting id="locale" type="string" value-of-setting="locale" visibility="hidden">
+                        </setting>
+                    <setting id="databaseId" type="string" value-of-setting="databaseId" visibility="hidden">
+                        </setting>
+                    <setting id="firstUserEmail" type="email" value-of-setting="Email" visibility="hidden"/>
+</group>
+                    <group class="vcard">
+                        <name>User</name>
+                        <group class="fn n">
+                            <name>Employee data</name>
+                            <setting class="given-name" id="employeeFirstName" optional="true" type="string">
+                                <name>First Name*</name>
+                                <name xml:lang="nl-NL">Voornaam*</name>
+                            </setting>
+                            <setting class="additional-name" id="employeeMiddleName" type="string">
+                                <name>Middle name</name>
+                                <name xml:lang="nl-NL">
+                                    Tussenvoegsel
+                                </name>
+                            </setting>
+                            <setting class="family-name" default-value="" id="employeeName" type="string">
+                                <name>Name*</name>
+                                <name xml:lang="nl-NL">Achternaam*</name>
+                                <error-message>
+                                    Please enter the name of this
+                                    employee
+                                </error-message>
+                                <error-message xml:lang="nl-NL">Vul de naam van deze contact in</error-message>
+                            </setting>
+                            <setting default-value="" id="employeeInitials" min-length="1" type="string">
+                                <name>Initials*</name>
+                                <name xml:lang="nl-NL">Initialen*</name>
+                                <error-message>
+                                    Please enter the initials of this
+                                    employee
+                                </error-message>
+                                <error-message xml:lang="nl-NL">Vul de initialen van deze contact in</error-message>
+                            </setting>
+                            <setting default-value="user@domain.com" id="employeeEmail" type="email" uniq="service">
+                                <name>Email*</name>
+                                <error-message>Please enter a unique emailaddress for this employee.                                </error-message>
+                                <error-message xml:lang="nl-NL">Vul de uniek emailadres van deze contact in</error-message>
+                            </setting>
+                            <setting default-value="" id="employeePassword" installation-only="true" min-length="6" type="password">
+		                    	<name>Password*</name>
+								<name xml:lang="nl-NL">Wachtwoord*</name>
+        		             	<error-message>Password is too short. Minimal length is six characters.</error-message>
+                		     	<error-message xml:lang="nl-NL">Wachtwoord is te kort. Minimale lengte is zes karakters.</error-message>
+                     		</setting>
+                            <setting class="organization-unit" id="employeeFunction" optional="true" type="string">
+                                <name>Function</name>
+                                <name xml:lang="nl-NL">Functie</name>
+                            </setting>
+                            <setting class="work" id="employeeTelephone" min-length="2" type="string">
+                                <name>Telephone*</name>
+                                <name xml:lang="nl-NL">Telefoonnummer*
+                                </name>
+                                <error-message>Please enter a phone number for this employee.                                </error-message>
+                                <error-message xml:lang="nl-NL">Vul een telefoonnummer van deze contact in</error-message>
+                            </setting>
+                            <setting class="value" default-value="2" id="employeegenderCode" type="enum">
+                                <name>Gender</name>
+                                <name xml:lang="nl-NL">Geslacht</name>
+                                <error-message>
+                                    Please select the gender for this
+                                    employee
+                                </error-message>
+                                <choice id="2">
+                            <name>male</name>
+                            <name xml:lang="en-GB">male</name>
+                            <name xml:lang="nl-NL">mannelijk</name>
+                            <name xml:lang="de-DE">männlich</name>
+                        </choice>
+                        <choice id="3">
+                            <name>female</name>
+                            <name xml:lang="en-GB">female</name>
+                            <name xml:lang="de-DE">weiblich</name>
+                            <name xml:lang="nl-NL">vrouw</name>
+                        </choice>
+                            </setting>
+                        </group>
+                    </group>
+                </settings>
+   
+                <provision>
+                    <configuration-script name="account.php">
+                        <script-language>php</script-language>
+                        <structured-output/>
+                    </configuration-script>
+                    <verify-script name="verifyUser.php">
+                        <script-language>php</script-language>
+                        <structured-output/>
+                    </verify-script>
+                </provision>
+            </service>
+</service>
+    </service>
+
+</application>

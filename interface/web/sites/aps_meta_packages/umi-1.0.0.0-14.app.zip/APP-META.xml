@@ -1,0 +1,176 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2">
+	<id>http://apsstandard.org/app/umi/umi</id>
+	<name>umi</name>
+	<version>1.0.0.0</version>
+	<release>14</release>
+	<homepage>http://umi.ru/</homepage>
+	
+	<!-- application and package vendors -->
+	<vendor>
+		<name>UMI</name>
+		<homepage>http://www.umi.ru/</homepage>
+		<icon path="images/umi_logo64.png"/>
+	</vendor>
+	
+	<packager>
+		<name>ASoft Packaging</name>
+		<homepage>http://www.asoft.ru/</homepage>
+		<icon path="images/ASoftLogoP.png"/>
+		<uri>uuid:fc89aa70-5433-11df-9879-0800200c9a10</uri>
+	</packager>
+	
+	<!-- application description -->	
+	<presentation>
+		<summary>UMI - система с готовыми сайтами для всех типов бизнеса.</summary>
+		<description>Более 300 профессиональных готовых сайтов и магазинов, идеально подходящих вашему бизнесу!
+Удобная система управления и хостинг вашего сайта, регистрация доменов, e-mail в вашем домене, автоматизация создания рекламных объявлений на Яндекс.Директ, автоматическое продвижение сайтов в поисковых системах и уникальная возможность вывода сайта в один клик на ваш хостинг.
+		</description>
+		<icon path="images/umi_logo64.png" />
+		<screenshot path="images/1.png">
+			<description>Готовый сайт специалиста, сайт компании и Интернет-магазин сервиса UMI.ru</description>
+		</screenshot>
+		<screenshot path="images/2.png">
+			<description>UMI.ru - сервис сайтов для бизнеса предоставляет готовый сайт, домен, почтовый ящик в домене клиента, автоматизированную контекстную рекламу в Я.Директ и продвижение.</description>
+		</screenshot>
+		<screenshot path="images/3.png">
+			<description>Интернет магазин</description>
+		</screenshot>
+		<screenshot path="images/4.png">
+			<description>Готовые сайты для любой сферы деятельности - сайты визитки, посадочные страницы, готовые сайты компании и Интернет магазины.</description>
+		</screenshot>
+		<changelog>
+			<version version="1.0.0.0" release="14">
+				<entry>Начальная версия</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Site editing</category>
+			<category>Web/E-commerce</category>
+			<category>Collaboration/Portal</category>
+		</categories>
+		<languages>
+			<language>ru</language>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting id="ServerLocation" type="host-name" visibility="hidden" default-value="umi.ru">
+			<name>Server location</name>
+			<name xml:lang='ru'>Адрес сервера</name>
+		</setting>
+		<setting id="APIUrl" type="host-name" visibility="hidden" default-value="gate.umi.ru">
+			<name>API url</name>
+			<name xml:lang='ru'>Url для доступа к API</name>
+		</setting>
+		<setting id="AdminLogin" visibility="hidden" type="string" default-value="edyson">
+			<name>Administrator's login</name>
+			<name xml:lang='ru'>Логин администратора площадки</name>
+		</setting>
+		<setting id="AdminPasswd" visibility="hidden" type="string" default-value="AC248a56">
+			<name>Administrator's password</name>
+			<name xml:lang='ru'>Пароль администратора площадки</name>
+		</setting>
+		<setting id="AdminAPIPasswd" visibility="hidden" type="string" default-value="af7faf0c2ce4ddb48da43b325b520c10">
+			<name>Administrator's API password</name>
+			<name xml:lang='ru'>Пароль для доступа к API администратора площадки</name>
+		</setting>
+	</global-settings>
+	<service id="umi" class="service">
+		<license must-accept="true">
+			<commercial/>
+			<text>
+				<name>License Agreement UMI</name>
+				<file>licenses/license_eng.txt</file>
+			</text>
+			<text>
+				<name>Лицензионное соглашение UMI</name>
+				<file>licenses/license_ru.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>UMI</name>
+			<summary>UMI - система с готовыми сайтами для всех типов бизнеса.</summary>
+			<icon path="images/umi_logo64.png"/>
+			<infolinks>
+				<link class="official" href="http://umi.ru/">
+					Официальный сайт
+				</link>
+				<link class="support" href="http://umi.ru/feedback/">
+					Техническая поддержка
+				</link>
+			</infolinks>
+
+			<entry-points>
+				<!--entry dst="http://{sitename}.{ServerLocation}/adminzone?login={login}&amp;password={password}" method="GET"-->
+				<entry dst="http://{sitename}.{ServerLocation}/adminzone" method="GET">
+					<label>Site editing</label>
+					<label xml:lang='ru'>Редактирование сайта</label>
+					<variable name="login" value-of-setting="sitename"/>
+					<variable name="password" value-of-setting="pass"/>
+					<variable name="sitename" value-of-setting="sitename"/>
+					<variable name="ServerLocation" value-of-setting="ServerLocation"/>
+				</entry>
+				<entry dst="http://{sitename}.{ServerLocation}" method="GET">
+					<label>Site</label>
+					<label xml:lang='ru'>Сайт</label>
+					<variable name="ServerLocation" value-of-setting="ServerLocation"/>
+					<variable name="sitename" value-of-setting="sitename"/>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="instance">
+				<setting id="tarif" type="integer" protected="true" default-value="1">
+					<name>Tarif</name>
+					<name xml:lang='ru'>Идентификатор тарифа</name>
+				</setting>
+				<setting id="product" type="integer" protected="true" default-value="27">
+					<name>Product id</name>
+					<name xml:lang='ru'>Идентификатор товара</name>
+				</setting>
+				<setting id="email" type="email"  class="email">
+					<name>email</name>
+					<name xml:lang='ru'>email администратора</name>
+				</setting>
+				<group class="authn">
+					<setting id="sitename" type="string" uniq="global" regex="^[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?$" installation-only="true" default-value="test">
+						<name>sitename</name>
+						<name xml:lang='ru'>Полное имя сайта</name>
+					</setting>
+					<setting id="pass" type="password" installation-only="true" min-length="1" regex="^[^\s%`?#&amp;\\]+$" default-value="test">
+						<name>Administrator's password</name>
+						<name xml:lang='ru'>Пароль администратора</name>
+					</setting>
+				</group>
+			</group>
+		</settings>
+		<resources>
+			<resource id="tarif" class="item" limiting-setting="tarif">
+				<name>Tarif</name>
+				<name xml:lang='ru'>Идентификатор тарифа</name>
+				<description>Tarif</description>
+				<description xml:lang='ru'>Идентификатор тарифа</description>
+			</resource>
+			<resource id="product" class="item" limiting-setting="product">
+				<name>Product id</name>
+				<name xml:lang='ru'>Идентификатор товара</name>
+				<description>Product id</description>
+				<description xml:lang='ru'>Идентификатор товара</description>
+			</resource>
+		</resources>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="5.0" />
+			<php:extension>curl</php:extension>
+		</requirements>
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<status-control/>
+			</configuration-script>
+			<verify-script name="verification.php">
+				<script-language>php</script-language>
+				<structured-output/>
+			</verify-script>
+		</provision>
+	</service>
+</application>

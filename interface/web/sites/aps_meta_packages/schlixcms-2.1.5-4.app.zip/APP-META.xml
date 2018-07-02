@@ -1,0 +1,1738 @@
+<application packaged="2017-08-03T12:35:15" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>schlixcms</id>
+    <name>schlixcms</name>
+    <version>2.1.5</version>
+    <release>4</release>
+    <homepage>https://www.schlix.com</homepage>
+    <vendor>
+    	<name>SCHLIX</name>
+    	<homepage>https://www.schlix.com</homepage>
+    	<icon path="images/icon.png"/>
+    </vendor>
+    <packager>
+    	<name>SCHLIX</name>
+    	<homepage>https://www.schlix.com</homepage>
+    	<icon path="images/icon.png"/>
+    </packager>
+	<presentation>
+		<summary>Content management system</summary>
+		<description>SCHLIX CMS is a lightweight, extensible content management system for publishing websites and blogs with friendly user interface. It also features multisite, versioning for easy backup and restore of articles, multi-site, XML sitemap for search engine submission. with Bootstrap and Font Awesome built-in.</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/schlix_ss1.png">
+			<description>Screenshot</description>
+		</screenshot>
+		<changelog>
+			<version release="1" version="2.0.7">
+				<entry>SCHLIX CMS 2.0.7 - fixed ISPConfig and Plesk issues</entry>
+			</version>
+			<version release="1" version="2.0.8">
+				<entry>Provisioning for Plesk/Odin</entry>
+			</version>
+			<version release="2" version="2.0.8">
+				<entry>fix schlix-cms and schlix-ui .htaccess javascript file bug as per alexander</entry>
+			</version>
+			<version release="1" version="2.1.0">
+				<entry>Major change: blog component is now improved, with intro/detail image options available
+New: multi-category for blog
+New: blog intro (summary) and detail (description) image
+New: samplemagazine theme
+New: blog archive block
+New: menu divider and submenu placeholder
+New app: tag application
+New app: landing page
+New: better sample data
+Update: TinyMCE 4.5.0 to 4.5.4
+Update: TinyMCE default configuration media_dimensions set to false because it keeps interfering with responsive images
+Fixed automated installer gk_menu_item path as suggested by Softaculous tester.
+Tiny Fix - UTF-8 filename in SEO URL parsing</entry>
+			</version>
+			<version release="1" version="2.1.2">
+				<entry>v2.1.2-1 (May 15, 2017)
+- Fixed: General drag and drop
+- Fixed: Menu item could not be dragged (Menus)
+- Fixed: Menu status could not be changed (Menus)
+- Fixed: Macro config was not returned correctly and thus saved macro config was not executed
+- Fixed: Search button in /search was not coded properly
+- Fixed: Double notification after extension installation was fixed
+- Fixed: Backend datatable rows per page Javascript event was not firing properly
+- Fixed: PHP7 only - preg_match_all PREG_JIT_STACKLIMIT_ERROR while loading config file
+- Updated: TinyMCE to v4.6.1
+- Enhancement: File upload now detects max server upload size (Media Manager, Bootstrap Slideshow) before the files are sent
+- Enhancement: Media manager will sort by directory first
+- Enhancement: Backend search function in all applications
+</entry>
+			</version>
+			<version release="3" version="2.1.2">
+				<entry>v2.1.2-3 (May 15, 2017)
+- Fixed: slideshow bug
+- Fixed: General drag and drop
+- Fixed: Menu item could not be dragged (Menus)
+- Fixed: Menu status could not be changed (Menus)
+- Fixed: Macro config was not returned correctly and thus saved macro config was not executed
+- Fixed: Search button in /search was not coded properly
+- Fixed: Double notification after extension installation was fixed
+- Fixed: Backend datatable rows per page Javascript event was not firing properly
+- Fixed: PHP7 only - preg_match_all PREG_JIT_STACKLIMIT_ERROR while loading config file
+- Updated: TinyMCE to v4.6.1
+- Enhancement: File upload now detects max server upload size (Media Manager, Bootstrap Slideshow) before the files are sent
+- Enhancement: Media manager will sort by directory first
+- Enhancement: Backend search function in all applications
+</entry>
+			</version>
+			<version release="4" version="2.1.5">
+				<entry>Added OpenSearch and JSON Feed
+Bug fixes</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+
+	<service id="schlixcms">
+		<license must-accept="true">
+			<free/>
+			<text>
+				<name>SCHLIX Shared Source license</name>
+				<file>htdocs/license.html</file>
+			</text>
+		</license>
+		<presentation>
+			<name>SCHLIX CMS</name>
+			<summary>SCHLIX CMS</summary>
+			<infolinks>
+				<link class="support" href="https://www.schlix.com/forum/">SCHLIX Forum</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/admin/" method="GET">
+					<label>Backend Admin</label>
+				</entry>
+				<entry class="frontpage" dst="/" method="GET">
+					<label>Main website</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator</name>
+				<setting class="login" default-value="admin" id="admin_username" installation-only="true" max-length="64" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_.\-@]*" type="string">
+					<name>Username</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting class="password" id="admin_password" installation-only="true" min-length="7" type="password">
+					<name>Password</name>
+					<description>Minimum 7 characters</description>
+				</setting>
+			</group>
+            
+			<group class="vcard">
+				<name>Website configuration</name>
+					<setting class="organization-name" default-value="My Website" id="site_name" installation-only="true" min-length="2" type="string">
+						<name>Site name</name>
+					</setting>
+				<setting default-value="Webmaster" id="default_sender_name" installation-only="true" type="string">
+					<name>Default Sender</name>
+				</setting>                                
+				<setting default-value="info@your-website.com" id="admin_email" installation-only="true" type="email">
+					<name>Default e-mail address</name>
+					<error-message>Please provide an e-mail address (e.g. info@domain-name.com)</error-message>
+				</setting>
+					
+                    <setting default-value="1" id="install_sample_data" installation-only="true" type="enum">
+                        <name>Install Sample Data</name>
+                        <description>Recommended if this is your first time</description>
+                        <choice id="0">
+                        	<name>No</name>
+                        </choice>
+                        <choice id="1">
+                        	<name>Yes</name>
+                        </choice>
+                    </setting>
+                    <setting default-value="UTC" id="timezone" installation-only="true" type="enum">
+                        <name>Your timezone</name>
+                        <description>The timestamp will be set to this timezone</description>
+                        <choice id="GMT">
+<name>GMT</name>
+</choice>
+                        <choice id="UCT">
+<name>UCT</name>
+</choice>
+                        <choice id="UTC">
+<name>UTC</name>
+</choice>
+                        <choice id="WET">
+<name>WET</name>
+</choice>
+                        <choice id="Europe/London">
+<name>Europe/London</name>
+</choice>                        
+                        <choice id="Africa/Abidjan">
+<name>Africa/Abidjan</name>
+</choice>
+                        <choice id="Africa/Accra">
+<name>Africa/Accra</name>
+</choice>
+                        <choice id="Africa/Bamako">
+<name>Africa/Bamako</name>
+</choice>
+                        <choice id="Africa/Banjul">
+<name>Africa/Banjul</name>
+</choice>
+                        <choice id="Africa/Bissau">
+<name>Africa/Bissau</name>
+</choice>
+                        <choice id="Africa/Casablanca">
+<name>Africa/Casablanca</name>
+</choice>
+                        <choice id="Africa/Conakry">
+<name>Africa/Conakry</name>
+</choice>
+                        <choice id="Africa/Dakar">
+<name>Africa/Dakar</name>
+</choice>
+                        <choice id="Africa/El_Aaiun">
+<name>Africa/El_Aaiun</name>
+</choice>
+                        <choice id="Africa/Freetown">
+<name>Africa/Freetown</name>
+</choice>
+                        <choice id="Africa/Lome">
+<name>Africa/Lome</name>
+</choice>
+                        <choice id="Africa/Monrovia">
+<name>Africa/Monrovia</name>
+</choice>
+                        <choice id="Africa/Nouakchott">
+<name>Africa/Nouakchott</name>
+</choice>
+                        <choice id="Africa/Ouagadougou">
+<name>Africa/Ouagadougou</name>
+</choice>
+                        <choice id="Africa/Sao_Tome">
+<name>Africa/Sao_Tome</name>
+</choice>
+                        <choice id="Africa/Timbuktu">
+<name>Africa/Timbuktu</name>
+</choice>
+                        <choice id="America/Danmarkshavn">
+<name>America/Danmarkshavn</name>
+</choice>
+                        <choice id="Antarctica/Troll">
+<name>Antarctica/Troll</name>
+</choice>
+                        <choice id="Atlantic/Canary">
+<name>Atlantic/Canary</name>
+</choice>
+                        <choice id="Atlantic/Faeroe">
+<name>Atlantic/Faeroe</name>
+</choice>
+                        <choice id="Atlantic/Faroe">
+<name>Atlantic/Faroe</name>
+</choice>
+                        <choice id="Atlantic/Madeira">
+<name>Atlantic/Madeira</name>
+</choice>
+                        <choice id="Atlantic/Reykjavik">
+<name>Atlantic/Reykjavik</name>
+</choice>
+                        <choice id="Atlantic/St_Helena">
+<name>Atlantic/St_Helena</name>
+</choice>
+                        <choice id="Etc/GMT">
+<name>Etc/GMT</name>
+</choice>
+                        <choice id="Etc/Greenwich">
+<name>Etc/Greenwich</name>
+</choice>
+                        <choice id="Etc/UCT">
+<name>Etc/UCT</name>
+</choice>
+                        <choice id="Etc/UTC">
+<name>Etc/UTC</name>
+</choice>
+                        <choice id="Etc/Universal">
+<name>Etc/Universal</name>
+</choice>
+                        <choice id="Etc/Zulu">
+<name>Etc/Zulu</name>
+</choice>
+                        <choice id="Europe/Belfast">
+<name>Europe/Belfast</name>
+</choice>
+                        <choice id="Europe/Dublin">
+<name>Europe/Dublin</name>
+</choice>
+                        <choice id="Europe/Guernsey">
+<name>Europe/Guernsey</name>
+</choice>
+                        <choice id="Europe/Isle_of_Man">
+<name>Europe/Isle_of_Man</name>
+</choice>
+                        <choice id="Europe/Jersey">
+<name>Europe/Jersey</name>
+</choice>
+                        <choice id="Europe/Lisbon">
+<name>Europe/Lisbon</name>
+</choice>
+                        <choice id="Africa/Algiers">
+<name>Africa/Algiers</name>
+</choice>
+                        <choice id="Africa/Bangui">
+<name>Africa/Bangui</name>
+</choice>
+                        <choice id="Africa/Brazzaville">
+<name>Africa/Brazzaville</name>
+</choice>
+                        <choice id="Africa/Ceuta">
+<name>Africa/Ceuta</name>
+</choice>
+                        <choice id="Africa/Douala">
+<name>Africa/Douala</name>
+</choice>
+                        <choice id="Africa/Kinshasa">
+<name>Africa/Kinshasa</name>
+</choice>
+                        <choice id="Africa/Lagos">
+<name>Africa/Lagos</name>
+</choice>
+                        <choice id="Africa/Libreville">
+<name>Africa/Libreville</name>
+</choice>
+                        <choice id="Africa/Luanda">
+<name>Africa/Luanda</name>
+</choice>
+                        <choice id="Africa/Malabo">
+<name>Africa/Malabo</name>
+</choice>
+                        <choice id="Africa/Ndjamena">
+<name>Africa/Ndjamena</name>
+</choice>
+                        <choice id="Africa/Niamey">
+<name>Africa/Niamey</name>
+</choice>
+                        <choice id="Africa/Porto-Novo">
+<name>Africa/Porto-Novo</name>
+</choice>
+                        <choice id="Africa/Tunis">
+<name>Africa/Tunis</name>
+</choice>
+                        <choice id="Arctic/Longyearbyen">
+<name>Arctic/Longyearbyen</name>
+</choice>
+                        <choice id="Atlantic/Jan_Mayen">
+<name>Atlantic/Jan_Mayen</name>
+</choice>
+                        <choice id="CET">
+<name>CET</name>
+</choice>
+                        <choice id="Europe/Amsterdam">
+<name>Europe/Amsterdam</name>
+</choice>
+                        <choice id="Europe/Andorra">
+<name>Europe/Andorra</name>
+</choice>
+                        <choice id="Europe/Belgrade">
+<name>Europe/Belgrade</name>
+</choice>
+                        <choice id="Europe/Berlin">
+<name>Europe/Berlin</name>
+</choice>
+                        <choice id="Europe/Bratislava">
+<name>Europe/Bratislava</name>
+</choice>
+                        <choice id="Europe/Brussels">
+<name>Europe/Brussels</name>
+</choice>
+                        <choice id="Europe/Budapest">
+<name>Europe/Budapest</name>
+</choice>
+                        <choice id="Europe/Busingen">
+<name>Europe/Busingen</name>
+</choice>
+                        <choice id="Europe/Copenhagen">
+<name>Europe/Copenhagen</name>
+</choice>
+                        <choice id="Europe/Gibraltar">
+<name>Europe/Gibraltar</name>
+</choice>
+                        <choice id="Europe/Ljubljana">
+<name>Europe/Ljubljana</name>
+</choice>
+                        <choice id="Europe/Luxembourg">
+<name>Europe/Luxembourg</name>
+</choice>
+                        <choice id="Europe/Madrid">
+<name>Europe/Madrid</name>
+</choice>
+                        <choice id="Europe/Malta">
+<name>Europe/Malta</name>
+</choice>
+                        <choice id="Europe/Monaco">
+<name>Europe/Monaco</name>
+</choice>
+                        <choice id="Europe/Oslo">
+<name>Europe/Oslo</name>
+</choice>
+                        <choice id="Europe/Paris">
+<name>Europe/Paris</name>
+</choice>
+                        <choice id="Europe/Podgorica">
+<name>Europe/Podgorica</name>
+</choice>
+                        <choice id="Europe/Prague">
+<name>Europe/Prague</name>
+</choice>
+                        <choice id="Europe/Rome">
+<name>Europe/Rome</name>
+</choice>
+                        <choice id="Europe/San_Marino">
+<name>Europe/San_Marino</name>
+</choice>
+                        <choice id="Europe/Sarajevo">
+<name>Europe/Sarajevo</name>
+</choice>
+                        <choice id="Europe/Skopje">
+<name>Europe/Skopje</name>
+</choice>
+                        <choice id="Europe/Stockholm">
+<name>Europe/Stockholm</name>
+</choice>
+                        <choice id="Europe/Tirane">
+<name>Europe/Tirane</name>
+</choice>
+                        <choice id="Europe/Vaduz">
+<name>Europe/Vaduz</name>
+</choice>
+                        <choice id="Europe/Vatican">
+<name>Europe/Vatican</name>
+</choice>
+                        <choice id="Europe/Vienna">
+<name>Europe/Vienna</name>
+</choice>
+                        <choice id="Europe/Warsaw">
+<name>Europe/Warsaw</name>
+</choice>
+                        <choice id="Europe/Zagreb">
+<name>Europe/Zagreb</name>
+</choice>
+                        <choice id="Europe/Zurich">
+<name>Europe/Zurich</name>
+</choice>
+                        <choice id="GB">
+<name>GB</name>
+</choice>
+                        <choice id="MET">
+<name>MET</name>
+</choice>
+                        <choice id="Africa/Blantyre">
+<name>Africa/Blantyre</name>
+</choice>
+                        <choice id="Africa/Bujumbura">
+<name>Africa/Bujumbura</name>
+</choice>
+                        <choice id="Africa/Cairo">
+<name>Africa/Cairo</name>
+</choice>
+                        <choice id="Africa/Gaborone">
+<name>Africa/Gaborone</name>
+</choice>
+                        <choice id="Africa/Harare">
+<name>Africa/Harare</name>
+</choice>
+                        <choice id="Africa/Johannesburg">
+<name>Africa/Johannesburg</name>
+</choice>
+                        <choice id="Africa/Kigali">
+<name>Africa/Kigali</name>
+</choice>
+                        <choice id="Africa/Lubumbashi">
+<name>Africa/Lubumbashi</name>
+</choice>
+                        <choice id="Africa/Lusaka">
+<name>Africa/Lusaka</name>
+</choice>
+                        <choice id="Africa/Maputo">
+<name>Africa/Maputo</name>
+</choice>
+                        <choice id="Africa/Maseru">
+<name>Africa/Maseru</name>
+</choice>
+                        <choice id="Africa/Mbabane">
+<name>Africa/Mbabane</name>
+</choice>
+                        <choice id="Africa/Tripoli">
+<name>Africa/Tripoli</name>
+</choice>
+                        <choice id="Africa/Windhoek">
+<name>Africa/Windhoek</name>
+</choice>
+                        <choice id="Asia/Amman">
+<name>Asia/Amman</name>
+</choice>
+                        <choice id="Asia/Beirut">
+<name>Asia/Beirut</name>
+</choice>
+                        <choice id="Asia/Damascus">
+<name>Asia/Damascus</name>
+</choice>
+                        <choice id="Asia/Gaza">
+<name>Asia/Gaza</name>
+</choice>
+                        <choice id="Asia/Hebron">
+<name>Asia/Hebron</name>
+</choice>
+                        <choice id="Asia/Jerusalem">
+<name>Asia/Jerusalem</name>
+</choice>
+                        <choice id="Asia/Nicosia">
+<name>Asia/Nicosia</name>
+</choice>
+                        <choice id="Asia/Tel_Aviv">
+<name>Asia/Tel_Aviv</name>
+</choice>
+                        <choice id="EET">
+<name>EET</name>
+</choice>
+                        <choice id="Europe/Athens">
+<name>Europe/Athens</name>
+</choice>
+                        <choice id="Europe/Bucharest">
+<name>Europe/Bucharest</name>
+</choice>
+                        <choice id="Europe/Chisinau">
+<name>Europe/Chisinau</name>
+</choice>
+                        <choice id="Europe/Helsinki">
+<name>Europe/Helsinki</name>
+</choice>
+                        <choice id="Europe/Kaliningrad">
+<name>Europe/Kaliningrad</name>
+</choice>
+                        <choice id="Europe/Kiev">
+<name>Europe/Kiev</name>
+</choice>
+                        <choice id="Europe/Mariehamn">
+<name>Europe/Mariehamn</name>
+</choice>
+                        <choice id="Europe/Nicosia">
+<name>Europe/Nicosia</name>
+</choice>
+                        <choice id="Europe/Riga">
+<name>Europe/Riga</name>
+</choice>
+                        <choice id="Europe/Sofia">
+<name>Europe/Sofia</name>
+</choice>
+                        <choice id="Europe/Tallinn">
+<name>Europe/Tallinn</name>
+</choice>
+                        <choice id="Europe/Tiraspol">
+<name>Europe/Tiraspol</name>
+</choice>
+                        <choice id="Europe/Uzhgorod">
+<name>Europe/Uzhgorod</name>
+</choice>
+                        <choice id="Europe/Vilnius">
+<name>Europe/Vilnius</name>
+</choice>
+                        <choice id="Europe/Zaporozhye">
+<name>Europe/Zaporozhye</name>
+</choice>
+                        <choice id="Africa/Addis_Ababa">
+<name>Africa/Addis_Ababa</name>
+</choice>
+                        <choice id="Africa/Asmara">
+<name>Africa/Asmara</name>
+</choice>
+                        <choice id="Africa/Asmera">
+<name>Africa/Asmera</name>
+</choice>
+                        <choice id="Africa/Dar_es_Salaam">
+<name>Africa/Dar_es_Salaam</name>
+</choice>
+                        <choice id="Africa/Djibouti">
+<name>Africa/Djibouti</name>
+</choice>
+                        <choice id="Africa/Juba">
+<name>Africa/Juba</name>
+</choice>
+                        <choice id="Africa/Kampala">
+<name>Africa/Kampala</name>
+</choice>
+                        <choice id="Africa/Khartoum">
+<name>Africa/Khartoum</name>
+</choice>
+                        <choice id="Africa/Mogadishu">
+<name>Africa/Mogadishu</name>
+</choice>
+                        <choice id="Africa/Nairobi">
+<name>Africa/Nairobi</name>
+</choice>
+                        <choice id="Antarctica/Syowa">
+<name>Antarctica/Syowa</name>
+</choice>
+                        <choice id="Asia/Aden">
+<name>Asia/Aden</name>
+</choice>
+                        <choice id="Asia/Baghdad">
+<name>Asia/Baghdad</name>
+</choice>
+                        <choice id="Asia/Bahrain">
+<name>Asia/Bahrain</name>
+</choice>
+                        <choice id="Asia/Istanbul">
+<name>Asia/Istanbul</name>
+</choice>
+                        <choice id="Asia/Kuwait">
+<name>Asia/Kuwait</name>
+</choice>
+                        <choice id="Asia/Qatar">
+<name>Asia/Qatar</name>
+</choice>
+                        <choice id="Asia/Riyadh">
+<name>Asia/Riyadh</name>
+</choice>
+                        <choice id="Europe/Istanbul">
+<name>Europe/Istanbul</name>
+</choice>
+                        <choice id="Europe/Minsk">
+<name>Europe/Minsk</name>
+</choice>
+                        <choice id="Europe/Moscow">
+<name>Europe/Moscow</name>
+</choice>
+                        <choice id="Europe/Simferopol">
+<name>Europe/Simferopol</name>
+</choice>
+                        <choice id="Europe/Volgograd">
+<name>Europe/Volgograd</name>
+</choice>
+                        <choice id="Indian/Antananarivo">
+<name>Indian/Antananarivo</name>
+</choice>
+                        <choice id="Indian/Comoro">
+<name>Indian/Comoro</name>
+</choice>
+                        <choice id="Indian/Mayotte">
+<name>Indian/Mayotte</name>
+</choice>
+                        <choice id="Asia/Tehran">
+<name>Asia/Tehran</name>
+</choice>
+                        <choice id="Asia/Baku">
+<name>Asia/Baku</name>
+</choice>
+                        <choice id="Asia/Dubai">
+<name>Asia/Dubai</name>
+</choice>
+                        <choice id="Asia/Muscat">
+<name>Asia/Muscat</name>
+</choice>
+                        <choice id="Asia/Tbilisi">
+<name>Asia/Tbilisi</name>
+</choice>
+                        <choice id="Asia/Yerevan">
+<name>Asia/Yerevan</name>
+</choice>
+                        <choice id="Europe/Samara">
+<name>Europe/Samara</name>
+</choice>
+                        <choice id="Indian/Mahe">
+<name>Indian/Mahe</name>
+</choice>
+                        <choice id="Indian/Mauritius">
+<name>Indian/Mauritius</name>
+</choice>
+                        <choice id="Indian/Reunion">
+<name>Indian/Reunion</name>
+</choice>
+                        <choice id="Asia/Kabul">
+<name>Asia/Kabul</name>
+</choice>
+                        <choice id="Antarctica/Mawson">
+<name>Antarctica/Mawson</name>
+</choice>
+                        <choice id="Asia/Aqtau">
+<name>Asia/Aqtau</name>
+</choice>
+                        <choice id="Asia/Aqtobe">
+<name>Asia/Aqtobe</name>
+</choice>
+                        <choice id="Asia/Ashgabat">
+<name>Asia/Ashgabat</name>
+</choice>
+                        <choice id="Asia/Ashkhabad">
+<name>Asia/Ashkhabad</name>
+</choice>
+                        <choice id="Asia/Dushanbe">
+<name>Asia/Dushanbe</name>
+</choice>
+                        <choice id="Asia/Karachi">
+<name>Asia/Karachi</name>
+</choice>
+                        <choice id="Asia/Oral">
+<name>Asia/Oral</name>
+</choice>
+                        <choice id="Asia/Samarkand">
+<name>Asia/Samarkand</name>
+</choice>
+                        <choice id="Asia/Tashkent">
+<name>Asia/Tashkent</name>
+</choice>
+                        <choice id="Asia/Yekaterinburg">
+<name>Asia/Yekaterinburg</name>
+</choice>
+                        <choice id="Indian/Kerguelen">
+<name>Indian/Kerguelen</name>
+</choice>
+                        <choice id="Indian/Maldives">
+<name>Indian/Maldives</name>
+</choice>
+                        <choice id="Asia/Calcutta">
+<name>Asia/Calcutta</name>
+</choice>
+                        <choice id="Asia/Colombo">
+<name>Asia/Colombo</name>
+</choice>
+                        <choice id="Asia/Kolkata">
+<name>Asia/Kolkata</name>
+</choice>
+                        <choice id="Asia/Kathmandu">
+<name>Asia/Kathmandu</name>
+</choice>
+                        <choice id="Asia/Katmandu">
+<name>Asia/Katmandu</name>
+</choice>
+                        <choice id="Antarctica/Vostok">
+<name>Antarctica/Vostok</name>
+</choice>
+                        <choice id="Asia/Almaty">
+<name>Asia/Almaty</name>
+</choice>
+                        <choice id="Asia/Bishkek">
+<name>Asia/Bishkek</name>
+</choice>
+                        <choice id="Asia/Dacca">
+<name>Asia/Dacca</name>
+</choice>
+                        <choice id="Asia/Dhaka">
+<name>Asia/Dhaka</name>
+</choice>
+                        <choice id="Asia/Kashgar">
+<name>Asia/Kashgar</name>
+</choice>
+                        <choice id="Asia/Omsk">
+<name>Asia/Omsk</name>
+</choice>
+                        <choice id="Asia/Qyzylorda">
+<name>Asia/Qyzylorda</name>
+</choice>
+                        <choice id="Asia/Thimbu">
+<name>Asia/Thimbu</name>
+</choice>
+                        <choice id="Asia/Thimphu">
+<name>Asia/Thimphu</name>
+</choice>
+                        <choice id="Asia/Urumqi">
+<name>Asia/Urumqi</name>
+</choice>
+                        <choice id="Indian/Chagos">
+<name>Indian/Chagos</name>
+</choice>
+                        <choice id="Asia/Rangoon">
+<name>Asia/Rangoon</name>
+</choice>
+                        <choice id="Indian/Cocos">
+<name>Indian/Cocos</name>
+</choice>
+                        <choice id="Antarctica/Davis">
+<name>Antarctica/Davis</name>
+</choice>
+                        <choice id="Asia/Bangkok">
+<name>Asia/Bangkok</name>
+</choice>
+                        <choice id="Asia/Ho_Chi_Minh">
+<name>Asia/Ho_Chi_Minh</name>
+</choice>
+                        <choice id="Asia/Hovd">
+<name>Asia/Hovd</name>
+</choice>
+                        <choice id="Asia/Jakarta">
+<name>Asia/Jakarta</name>
+</choice>
+                        <choice id="Asia/Krasnoyarsk">
+<name>Asia/Krasnoyarsk</name>
+</choice>
+                        <choice id="Asia/Novokuznetsk">
+<name>Asia/Novokuznetsk</name>
+</choice>
+                        <choice id="Asia/Novosibirsk">
+<name>Asia/Novosibirsk</name>
+</choice>
+                        <choice id="Asia/Phnom_Penh">
+<name>Asia/Phnom_Penh</name>
+</choice>
+                        <choice id="Asia/Pontianak">
+<name>Asia/Pontianak</name>
+</choice>
+                        <choice id="Asia/Saigon">
+<name>Asia/Saigon</name>
+</choice>
+                        <choice id="Asia/Vientiane">
+<name>Asia/Vientiane</name>
+</choice>
+                        <choice id="Indian/Christmas">
+<name>Indian/Christmas</name>
+</choice>
+                        <choice id="Asia/Brunei">
+<name>Asia/Brunei</name>
+</choice>
+                        <choice id="Asia/Choibalsan">
+<name>Asia/Choibalsan</name>
+</choice>
+                        <choice id="Asia/Chongqing">
+<name>Asia/Chongqing</name>
+</choice>
+                        <choice id="Asia/Chungking">
+<name>Asia/Chungking</name>
+</choice>
+                        <choice id="Asia/Harbin">
+<name>Asia/Harbin</name>
+</choice>
+                        <choice id="Asia/Hong_Kong">
+<name>Asia/Hong_Kong</name>
+</choice>
+                        <choice id="Asia/Irkutsk">
+<name>Asia/Irkutsk</name>
+</choice>
+                        <choice id="Asia/Kuala_Lumpur">
+<name>Asia/Kuala_Lumpur</name>
+</choice>
+                        <choice id="Asia/Kuching">
+<name>Asia/Kuching</name>
+</choice>
+                        <choice id="Asia/Macao">
+<name>Asia/Macao</name>
+</choice>
+                        <choice id="Asia/Macau">
+<name>Asia/Macau</name>
+</choice>
+                        <choice id="Asia/Makassar">
+<name>Asia/Makassar</name>
+</choice>
+                        <choice id="Asia/Manila">
+<name>Asia/Manila</name>
+</choice>
+                        <choice id="Asia/Shanghai">
+<name>Asia/Shanghai</name>
+</choice>
+                        <choice id="Asia/Singapore">
+<name>Asia/Singapore</name>
+</choice>
+                        <choice id="Asia/Taipei">
+<name>Asia/Taipei</name>
+</choice>
+                        <choice id="Asia/Ujung_Pandang">
+<name>Asia/Ujung_Pandang</name>
+</choice>
+                        <choice id="Asia/Ulaanbaatar">
+<name>Asia/Ulaanbaatar</name>
+</choice>
+                        <choice id="Asia/Ulan_Bator">
+<name>Asia/Ulan_Bator</name>
+</choice>
+                        <choice id="Australia/Perth">
+<name>Australia/Perth</name>
+</choice>
+                        <choice id="Australia/West">
+<name>Australia/West</name>
+</choice>
+                        <choice id="PRC">
+<name>PRC</name>
+</choice>
+                        <choice id="ROC">
+<name>ROC</name>
+</choice>
+                        <choice id="Asia/Pyongyang">
+<name>Asia/Pyongyang</name>
+</choice>
+                        <choice id="Australia/Eucla">
+<name>Australia/Eucla</name>
+</choice>
+                        <choice id="Asia/Chita">
+<name>Asia/Chita</name>
+</choice>
+                        <choice id="Asia/Dili">
+<name>Asia/Dili</name>
+</choice>
+                        <choice id="Asia/Jayapura">
+<name>Asia/Jayapura</name>
+</choice>
+                        <choice id="Asia/Khandyga">
+<name>Asia/Khandyga</name>
+</choice>
+                        <choice id="Asia/Seoul">
+<name>Asia/Seoul</name>
+</choice>
+                        <choice id="Asia/Tokyo">
+<name>Asia/Tokyo</name>
+</choice>
+                        <choice id="Asia/Yakutsk">
+<name>Asia/Yakutsk</name>
+</choice>
+                        <choice id="Pacific/Palau">
+<name>Pacific/Palau</name>
+</choice>
+                        <choice id="ROK">
+<name>ROK</name>
+</choice>
+                        <choice id="Australia/Darwin">
+<name>Australia/Darwin</name>
+</choice>
+                        <choice id="Australia/North">
+<name>Australia/North</name>
+</choice>
+                        <choice id="Antarctica/DumontDUrville">
+<name>Antarctica/DumontDUrville</name>
+</choice>
+                        <choice id="Asia/Ust-Nera">
+<name>Asia/Ust-Nera</name>
+</choice>
+                        <choice id="Asia/Vladivostok">
+<name>Asia/Vladivostok</name>
+</choice>
+                        <choice id="Australia/Brisbane">
+<name>Australia/Brisbane</name>
+</choice>
+                        <choice id="Australia/Lindeman">
+<name>Australia/Lindeman</name>
+</choice>
+                        <choice id="Australia/Queensland">
+<name>Australia/Queensland</name>
+</choice>
+                        <choice id="Pacific/Chuuk">
+<name>Pacific/Chuuk</name>
+</choice>
+                        <choice id="Pacific/Guam">
+<name>Pacific/Guam</name>
+</choice>
+                        <choice id="Pacific/Port_Moresby">
+<name>Pacific/Port_Moresby</name>
+</choice>
+                        <choice id="Pacific/Saipan">
+<name>Pacific/Saipan</name>
+</choice>
+                        <choice id="Pacific/Truk">
+<name>Pacific/Truk</name>
+</choice>
+                        <choice id="Pacific/Yap">
+<name>Pacific/Yap</name>
+</choice>
+                        <choice id="Australia/Adelaide">
+<name>Australia/Adelaide</name>
+</choice>
+                        <choice id="Australia/Broken_Hill">
+<name>Australia/Broken_Hill</name>
+</choice>
+                        <choice id="Australia/South">
+<name>Australia/South</name>
+</choice>
+                        <choice id="Australia/Yancowinna">
+<name>Australia/Yancowinna</name>
+</choice>
+                        <choice id="Antarctica/Casey">
+<name>Antarctica/Casey</name>
+</choice>
+                        <choice id="Antarctica/Macquarie">
+<name>Antarctica/Macquarie</name>
+</choice>
+                        <choice id="Asia/Magadan">
+<name>Asia/Magadan</name>
+</choice>
+                        <choice id="Asia/Sakhalin">
+<name>Asia/Sakhalin</name>
+</choice>
+                        <choice id="Asia/Srednekolymsk">
+<name>Asia/Srednekolymsk</name>
+</choice>
+                        <choice id="Australia/ACT">
+<name>Australia/ACT</name>
+</choice>
+                        <choice id="Australia/Canberra">
+<name>Australia/Canberra</name>
+</choice>
+                        <choice id="Australia/Currie">
+<name>Australia/Currie</name>
+</choice>
+                        <choice id="Australia/Hobart">
+<name>Australia/Hobart</name>
+</choice>
+                        <choice id="Australia/LHI">
+<name>Australia/LHI</name>
+</choice>
+                        <choice id="Australia/Lord_Howe">
+<name>Australia/Lord_Howe</name>
+</choice>
+                        <choice id="Australia/Melbourne">
+<name>Australia/Melbourne</name>
+</choice>
+                        <choice id="Australia/NSW">
+<name>Australia/NSW</name>
+</choice>
+                        <choice id="Australia/Sydney">
+<name>Australia/Sydney</name>
+</choice>
+                        <choice id="Australia/Tasmania">
+<name>Australia/Tasmania</name>
+</choice>
+                        <choice id="Australia/Victoria">
+<name>Australia/Victoria</name>
+</choice>
+                        <choice id="Pacific/Efate">
+<name>Pacific/Efate</name>
+</choice>
+                        <choice id="Pacific/Guadalcanal">
+<name>Pacific/Guadalcanal</name>
+</choice>
+                        <choice id="Pacific/Kosrae">
+<name>Pacific/Kosrae</name>
+</choice>
+                        <choice id="Pacific/Norfolk">
+<name>Pacific/Norfolk</name>
+</choice>
+                        <choice id="Pacific/Noumea">
+<name>Pacific/Noumea</name>
+</choice>
+                        <choice id="Pacific/Pohnpei">
+<name>Pacific/Pohnpei</name>
+</choice>
+                        <choice id="Pacific/Ponape">
+<name>Pacific/Ponape</name>
+</choice>
+                        <choice id="Asia/Anadyr">
+<name>Asia/Anadyr</name>
+</choice>
+                        <choice id="Asia/Kamchatka">
+<name>Asia/Kamchatka</name>
+</choice>
+                        <choice id="NZ">
+<name>NZ</name>
+</choice>
+                        <choice id="Pacific/Funafuti">
+<name>Pacific/Funafuti</name>
+</choice>
+                        <choice id="Pacific/Kwajalein">
+<name>Pacific/Kwajalein</name>
+</choice>
+                        <choice id="Pacific/Majuro">
+<name>Pacific/Majuro</name>
+</choice>
+                        <choice id="Pacific/Nauru">
+<name>Pacific/Nauru</name>
+</choice>
+                        <choice id="Pacific/Tarawa">
+<name>Pacific/Tarawa</name>
+</choice>
+                        <choice id="Pacific/Wake">
+<name>Pacific/Wake</name>
+</choice>
+                        <choice id="Pacific/Wallis">
+<name>Pacific/Wallis</name>
+</choice>
+                        <choice id="Antarctica/McMurdo">
+<name>Antarctica/McMurdo</name>
+</choice>
+                        <choice id="Antarctica/South_Pole">
+<name>Antarctica/South_Pole</name>
+</choice>
+                        <choice id="Pacific/Auckland">
+<name>Pacific/Auckland</name>
+</choice>
+                        <choice id="Pacific/Enderbury">
+<name>Pacific/Enderbury</name>
+</choice>
+                        <choice id="Pacific/Fakaofo">
+<name>Pacific/Fakaofo</name>
+</choice>
+                        <choice id="Pacific/Fiji">
+<name>Pacific/Fiji</name>
+</choice>
+                        <choice id="Pacific/Chatham">
+<name>Pacific/Chatham</name>
+</choice>
+                        <choice id="Pacific/Apia">
+<name>Pacific/Apia</name>
+</choice>
+                        <choice id="Pacific/Kiritimati">
+<name>Pacific/Kiritimati</name>
+</choice>
+                        <choice id="Pacific/Tongatapu">
+<name>Pacific/Tongatapu</name>
+</choice>
+                        <choice id="America/Scoresbysund">
+<name>America/Scoresbysund</name>
+</choice>
+                        <choice id="Atlantic/Azores">
+<name>Atlantic/Azores</name>
+</choice>
+                        <choice id="Atlantic/Cape_Verde">
+<name>Atlantic/Cape_Verde</name>
+</choice>
+                        <choice id="America/Noronha">
+<name>America/Noronha</name>
+</choice>
+                        <choice id="America/Sao_Paulo">
+<name>America/Sao_Paulo</name>
+</choice>
+                        <choice id="Atlantic/South_Georgia">
+<name>Atlantic/South_Georgia</name>
+</choice>
+                        <choice id="Brazil/DeNoronha">
+<name>Brazil/DeNoronha</name>
+</choice>
+                        <choice id="Brazil/East">
+<name>Brazil/East</name>
+</choice>
+                        <choice id="America/Araguaina">
+<name>America/Araguaina</name>
+</choice>
+                        <choice id="America/Argentina/Buenos_Aires">
+<name>America/Argentina/Buenos_Aires</name>
+</choice>
+                        <choice id="America/Argentina/Catamarca">
+<name>America/Argentina/Catamarca</name>
+</choice>
+                        <choice id="America/Argentina/ComodRivadavia">
+<name>America/Argentina/ComodRivadavia</name>
+</choice>
+                        <choice id="America/Argentina/Cordoba">
+<name>America/Argentina/Cordoba</name>
+</choice>
+                        <choice id="America/Argentina/Jujuy">
+<name>America/Argentina/Jujuy</name>
+</choice>
+                        <choice id="America/Argentina/La_Rioja">
+<name>America/Argentina/La_Rioja</name>
+</choice>
+                        <choice id="America/Argentina/Mendoza">
+<name>America/Argentina/Mendoza</name>
+</choice>
+                        <choice id="America/Argentina/Rio_Gallegos">
+<name>America/Argentina/Rio_Gallegos</name>
+</choice>
+                        <choice id="America/Argentina/Salta">
+<name>America/Argentina/Salta</name>
+</choice>
+                        <choice id="America/Argentina/San_Juan">
+<name>America/Argentina/San_Juan</name>
+</choice>
+                        <choice id="America/Argentina/San_Luis">
+<name>America/Argentina/San_Luis</name>
+</choice>
+                        <choice id="America/Argentina/Tucuman">
+<name>America/Argentina/Tucuman</name>
+</choice>
+                        <choice id="America/Argentina/Ushuaia">
+<name>America/Argentina/Ushuaia</name>
+</choice>
+                        <choice id="America/Asuncion">
+<name>America/Asuncion</name>
+</choice>
+                        <choice id="America/Bahia">
+<name>America/Bahia</name>
+</choice>
+                        <choice id="America/Belem">
+<name>America/Belem</name>
+</choice>
+                        <choice id="America/Buenos_Aires">
+<name>America/Buenos_Aires</name>
+</choice>
+                        <choice id="America/Campo_Grande">
+<name>America/Campo_Grande</name>
+</choice>
+                        <choice id="America/Catamarca">
+<name>America/Catamarca</name>
+</choice>
+                        <choice id="America/Cayenne">
+<name>America/Cayenne</name>
+</choice>
+                        <choice id="America/Cordoba">
+<name>America/Cordoba</name>
+</choice>
+                        <choice id="America/Cuiaba">
+<name>America/Cuiaba</name>
+</choice>
+                        <choice id="America/Fortaleza">
+<name>America/Fortaleza</name>
+</choice>
+                        <choice id="America/Godthab">
+<name>America/Godthab</name>
+</choice>
+                        <choice id="America/Jujuy">
+<name>America/Jujuy</name>
+</choice>
+                        <choice id="America/Maceio">
+<name>America/Maceio</name>
+</choice>
+                        <choice id="America/Mendoza">
+<name>America/Mendoza</name>
+</choice>
+                        <choice id="America/Miquelon">
+<name>America/Miquelon</name>
+</choice>
+                        <choice id="America/Montevideo">
+<name>America/Montevideo</name>
+</choice>
+                        <choice id="America/Paramaribo">
+<name>America/Paramaribo</name>
+</choice>
+                        <choice id="America/Recife">
+<name>America/Recife</name>
+</choice>
+                        <choice id="America/Rosario">
+<name>America/Rosario</name>
+</choice>
+                        <choice id="America/Santarem">
+<name>America/Santarem</name>
+</choice>
+                        <choice id="America/Santiago">
+<name>America/Santiago</name>
+</choice>
+                        <choice id="Antarctica/Palmer">
+<name>Antarctica/Palmer</name>
+</choice>
+                        <choice id="Antarctica/Rothera">
+<name>Antarctica/Rothera</name>
+</choice>
+                        <choice id="Atlantic/Stanley">
+<name>Atlantic/Stanley</name>
+</choice>
+                        <choice id="Chile/Continental">
+<name>Chile/Continental</name>
+</choice>
+                        <choice id="America/St_Johns">
+<name>America/St_Johns</name>
+</choice>
+                        <choice id="Canada/Newfoundland">
+<name>Canada/Newfoundland</name>
+</choice>
+                        <choice id="America/Anguilla">
+<name>America/Anguilla</name>
+</choice>
+                        <choice id="America/Antigua">
+<name>America/Antigua</name>
+</choice>
+                        <choice id="America/Aruba">
+<name>America/Aruba</name>
+</choice>
+                        <choice id="America/Barbados">
+<name>America/Barbados</name>
+</choice>
+                        <choice id="America/Blanc-Sablon">
+<name>America/Blanc-Sablon</name>
+</choice>
+                        <choice id="America/Boa_Vista">
+<name>America/Boa_Vista</name>
+</choice>
+                        <choice id="America/Caracas">
+<name>America/Caracas</name>
+</choice>
+                        <choice id="America/Curacao">
+<name>America/Curacao</name>
+</choice>
+                        <choice id="America/Dominica">
+<name>America/Dominica</name>
+</choice>
+                        <choice id="America/Glace_Bay">
+<name>America/Glace_Bay</name>
+</choice>
+                        <choice id="America/Goose_Bay">
+<name>America/Goose_Bay</name>
+</choice>
+                        <choice id="America/Grand_Turk">
+<name>America/Grand_Turk</name>
+</choice>
+                        <choice id="America/Grenada">
+<name>America/Grenada</name>
+</choice>
+                        <choice id="America/Guadeloupe">
+<name>America/Guadeloupe</name>
+</choice>
+                        <choice id="America/Guyana">
+<name>America/Guyana</name>
+</choice>
+                        <choice id="America/Halifax">
+<name>America/Halifax</name>
+</choice>
+                        <choice id="America/Kralendijk">
+<name>America/Kralendijk</name>
+</choice>
+                        <choice id="America/La_Paz">
+<name>America/La_Paz</name>
+</choice>
+                        <choice id="America/Lower_Princes">
+<name>America/Lower_Princes</name>
+</choice>
+                        <choice id="America/Manaus">
+<name>America/Manaus</name>
+</choice>
+                        <choice id="America/Marigot">
+<name>America/Marigot</name>
+</choice>
+                        <choice id="America/Martinique">
+<name>America/Martinique</name>
+</choice>
+                        <choice id="America/Moncton">
+<name>America/Moncton</name>
+</choice>
+                        <choice id="America/Montserrat">
+<name>America/Montserrat</name>
+</choice>
+                        <choice id="America/Port_of_Spain">
+<name>America/Port_of_Spain</name>
+</choice>
+                        <choice id="America/Porto_Velho">
+<name>America/Porto_Velho</name>
+</choice>
+                        <choice id="America/Puerto_Rico">
+<name>America/Puerto_Rico</name>
+</choice>
+                        <choice id="America/Santo_Domingo">
+<name>America/Santo_Domingo</name>
+</choice>
+                        <choice id="America/St_Barthelemy">
+<name>America/St_Barthelemy</name>
+</choice>
+                        <choice id="America/St_Kitts">
+<name>America/St_Kitts</name>
+</choice>
+                        <choice id="America/St_Lucia">
+<name>America/St_Lucia</name>
+</choice>
+                        <choice id="America/St_Thomas">
+<name>America/St_Thomas</name>
+</choice>
+                        <choice id="America/St_Vincent">
+<name>America/St_Vincent</name>
+</choice>
+                        <choice id="America/Thule">
+<name>America/Thule</name>
+</choice>
+                        <choice id="America/Tortola">
+<name>America/Tortola</name>
+</choice>
+                        <choice id="America/Virgin">
+<name>America/Virgin</name>
+</choice>
+                        <choice id="Atlantic/Bermuda">
+<name>Atlantic/Bermuda</name>
+</choice>
+                        <choice id="Brazil/West">
+<name>Brazil/West</name>
+</choice>
+                        <choice id="Canada/Atlantic">
+<name>Canada/Atlantic</name>
+</choice>
+                        <choice id="America/Atikokan">
+<name>America/Atikokan</name>
+</choice>
+                        <choice id="America/Bogota">
+<name>America/Bogota</name>
+</choice>
+                        <choice id="America/Cancun">
+<name>America/Cancun</name>
+</choice>
+                        <choice id="America/Cayman">
+<name>America/Cayman</name>
+</choice>
+                        <choice id="America/Coral_Harbour">
+<name>America/Coral_Harbour</name>
+</choice>
+                        <choice id="America/Detroit">
+<name>America/Detroit</name>
+</choice>
+                        <choice id="America/Eirunepe">
+<name>America/Eirunepe</name>
+</choice>
+                        <choice id="America/Fort_Wayne">
+<name>America/Fort_Wayne</name>
+</choice>
+                        <choice id="America/Guayaquil">
+<name>America/Guayaquil</name>
+</choice>
+                        <choice id="America/Havana">
+<name>America/Havana</name>
+</choice>
+                        <choice id="America/Indiana/Indianapolis">
+<name>America/Indiana/Indianapolis</name>
+</choice>
+                        <choice id="America/Indiana/Marengo">
+<name>America/Indiana/Marengo</name>
+</choice>
+                        <choice id="America/Indiana/Petersburg">
+<name>America/Indiana/Petersburg</name>
+</choice>
+                        <choice id="America/Indiana/Vevay">
+<name>America/Indiana/Vevay</name>
+</choice>
+                        <choice id="America/Indiana/Vincennes">
+<name>America/Indiana/Vincennes</name>
+</choice>
+                        <choice id="America/Indiana/Winamac">
+<name>America/Indiana/Winamac</name>
+</choice>
+                        <choice id="America/Indianapolis">
+<name>America/Indianapolis</name>
+</choice>
+                        <choice id="America/Iqaluit">
+<name>America/Iqaluit</name>
+</choice>
+                        <choice id="America/Jamaica">
+<name>America/Jamaica</name>
+</choice>
+                        <choice id="America/Kentucky/Louisville">
+<name>America/Kentucky/Louisville</name>
+</choice>
+                        <choice id="America/Kentucky/Monticello">
+<name>America/Kentucky/Monticello</name>
+</choice>
+                        <choice id="America/Lima">
+<name>America/Lima</name>
+</choice>
+                        <choice id="America/Louisville">
+<name>America/Louisville</name>
+</choice>
+                        <choice id="America/Montreal">
+<name>America/Montreal</name>
+</choice>
+                        <choice id="America/Nassau">
+<name>America/Nassau</name>
+</choice>
+                        <choice id="America/New_York">
+<name>America/New_York</name>
+</choice>
+                        <choice id="America/Nipigon">
+<name>America/Nipigon</name>
+</choice>
+                        <choice id="America/Panama">
+<name>America/Panama</name>
+</choice>
+                        <choice id="America/Pangnirtung">
+<name>America/Pangnirtung</name>
+</choice>
+                        <choice id="America/Port-au-Prince">
+<name>America/Port-au-Prince</name>
+</choice>
+                        <choice id="America/Porto_Acre">
+<name>America/Porto_Acre</name>
+</choice>
+                        <choice id="America/Rio_Branco">
+<name>America/Rio_Branco</name>
+</choice>
+                        <choice id="America/Thunder_Bay">
+<name>America/Thunder_Bay</name>
+</choice>
+                        <choice id="America/Toronto">
+<name>America/Toronto</name>
+</choice>
+                        <choice id="Brazil/Acre">
+<name>Brazil/Acre</name>
+</choice>
+                        <choice id="Canada/Eastern">
+<name>Canada/Eastern</name>
+</choice>
+                        <choice id="Chile/EasterIsland">
+<name>Chile/EasterIsland</name>
+</choice>
+                        <choice id="EST">
+<name>EST</name>
+</choice>
+                        <choice id="Pacific/Easter">
+<name>Pacific/Easter</name>
+</choice>
+                        <choice id="America/Bahia_Banderas">
+<name>America/Bahia_Banderas</name>
+</choice>
+                        <choice id="America/Belize">
+<name>America/Belize</name>
+</choice>
+                        <choice id="America/Chicago">
+<name>America/Chicago</name>
+</choice>
+                        <choice id="America/Costa_Rica">
+<name>America/Costa_Rica</name>
+</choice>
+                        <choice id="America/El_Salvador">
+<name>America/El_Salvador</name>
+</choice>
+                        <choice id="America/Guatemala">
+<name>America/Guatemala</name>
+</choice>
+                        <choice id="America/Indiana/Knox">
+<name>America/Indiana/Knox</name>
+</choice>
+                        <choice id="America/Indiana/Tell_City">
+<name>America/Indiana/Tell_City</name>
+</choice>
+                        <choice id="America/Knox_IN">
+<name>America/Knox_IN</name>
+</choice>
+                        <choice id="America/Managua">
+<name>America/Managua</name>
+</choice>
+                        <choice id="America/Matamoros">
+<name>America/Matamoros</name>
+</choice>
+                        <choice id="America/Menominee">
+<name>America/Menominee</name>
+</choice>
+                        <choice id="America/Merida">
+<name>America/Merida</name>
+</choice>
+                        <choice id="America/Mexico_City">
+<name>America/Mexico_City</name>
+</choice>
+                        <choice id="America/Monterrey">
+<name>America/Monterrey</name>
+</choice>
+                        <choice id="America/North_Dakota/Beulah">
+<name>America/North_Dakota/Beulah</name>
+</choice>
+                        <choice id="America/North_Dakota/Center">
+<name>America/North_Dakota/Center</name>
+</choice>
+                        <choice id="America/North_Dakota/New_Salem">
+<name>America/North_Dakota/New_Salem</name>
+</choice>
+                        <choice id="America/Rainy_River">
+<name>America/Rainy_River</name>
+</choice>
+                        <choice id="America/Rankin_Inlet">
+<name>America/Rankin_Inlet</name>
+</choice>
+                        <choice id="America/Regina">
+<name>America/Regina</name>
+</choice>
+                        <choice id="America/Resolute">
+<name>America/Resolute</name>
+</choice>
+                        <choice id="America/Swift_Current">
+<name>America/Swift_Current</name>
+</choice>
+                        <choice id="America/Tegucigalpa">
+<name>America/Tegucigalpa</name>
+</choice>
+                        <choice id="America/Winnipeg">
+<name>America/Winnipeg</name>
+</choice>
+                        <choice id="Canada/Central">
+<name>Canada/Central</name>
+</choice>
+                        <choice id="Canada/East-Saskatchewan">
+<name>Canada/East-Saskatchewan</name>
+</choice>
+                        <choice id="Canada/Saskatchewan">
+<name>Canada/Saskatchewan</name>
+</choice>
+                        <choice id="Mexico/General">
+<name>Mexico/General</name>
+</choice>
+                        <choice id="Pacific/Galapagos">
+<name>Pacific/Galapagos</name>
+</choice>
+                        <choice id="America/Boise">
+<name>America/Boise</name>
+</choice>
+                        <choice id="America/Cambridge_Bay">
+<name>America/Cambridge_Bay</name>
+</choice>
+                        <choice id="America/Chihuahua">
+<name>America/Chihuahua</name>
+</choice>
+                        <choice id="America/Creston">
+<name>America/Creston</name>
+</choice>
+                        <choice id="America/Dawson_Creek">
+<name>America/Dawson_Creek</name>
+</choice>
+                        <choice id="America/Denver">
+<name>America/Denver</name>
+</choice>
+                        <choice id="America/Edmonton">
+<name>America/Edmonton</name>
+</choice>
+                        <choice id="America/Hermosillo">
+<name>America/Hermosillo</name>
+</choice>
+                        <choice id="America/Inuvik">
+<name>America/Inuvik</name>
+</choice>
+                        <choice id="America/Mazatlan">
+<name>America/Mazatlan</name>
+</choice>
+                        <choice id="America/Ojinaga">
+<name>America/Ojinaga</name>
+</choice>
+                        <choice id="America/Phoenix">
+<name>America/Phoenix</name>
+</choice>
+                        <choice id="America/Shiprock">
+<name>America/Shiprock</name>
+</choice>
+                        <choice id="America/Yellowknife">
+<name>America/Yellowknife</name>
+</choice>
+                        <choice id="Canada/Mountain">
+<name>Canada/Mountain</name>
+</choice>
+                        <choice id="MST">
+<name>MST</name>
+</choice>
+                        <choice id="Mexico/BajaSur">
+<name>Mexico/BajaSur</name>
+</choice>
+                        <choice id="America/Dawson">
+<name>America/Dawson</name>
+</choice>
+                        <choice id="America/Ensenada">
+<name>America/Ensenada</name>
+</choice>
+                        <choice id="America/Los_Angeles">
+<name>America/Los_Angeles</name>
+</choice>
+                        <choice id="America/Santa_Isabel">
+<name>America/Santa_Isabel</name>
+</choice>
+                        <choice id="America/Tijuana">
+<name>America/Tijuana</name>
+</choice>
+                        <choice id="America/Vancouver">
+<name>America/Vancouver</name>
+</choice>
+                        <choice id="America/Whitehorse">
+<name>America/Whitehorse</name>
+</choice>
+                        <choice id="Canada/Pacific">
+<name>Canada/Pacific</name>
+</choice>
+                        <choice id="Canada/Yukon">
+<name>Canada/Yukon</name>
+</choice>
+                        <choice id="Mexico/BajaNorte">
+<name>Mexico/BajaNorte</name>
+</choice>
+                        <choice id="Pacific/Pitcairn">
+<name>Pacific/Pitcairn</name>
+</choice>
+                        <choice id="America/Anchorage">
+<name>America/Anchorage</name>
+</choice>
+                        <choice id="America/Juneau">
+<name>America/Juneau</name>
+</choice>
+                        <choice id="America/Metlakatla">
+<name>America/Metlakatla</name>
+</choice>
+                        <choice id="America/Nome">
+<name>America/Nome</name>
+</choice>
+                        <choice id="America/Sitka">
+<name>America/Sitka</name>
+</choice>
+                        <choice id="America/Yakutat">
+<name>America/Yakutat</name>
+</choice>
+                        <choice id="Pacific/Gambier">
+<name>Pacific/Gambier</name>
+</choice>
+                        <choice id="Pacific/Marquesas">
+<name>Pacific/Marquesas</name>
+</choice>
+                        <choice id="America/Adak">
+<name>America/Adak</name>
+</choice>
+                        <choice id="America/Atka">
+<name>America/Atka</name>
+</choice>
+                        <choice id="HST">
+<name>HST</name>
+</choice>
+                        <choice id="Pacific/Honolulu">
+<name>Pacific/Honolulu</name>
+</choice>
+                        <choice id="Pacific/Johnston">
+<name>Pacific/Johnston</name>
+</choice>
+                        <choice id="Pacific/Rarotonga">
+<name>Pacific/Rarotonga</name>
+</choice>
+                        <choice id="Pacific/Tahiti">
+<name>Pacific/Tahiti</name>
+</choice>
+                        <choice id="Pacific/Midway">
+<name>Pacific/Midway</name>
+</choice>
+                        <choice id="Pacific/Niue">
+<name>Pacific/Niue</name>
+</choice>
+                        <choice id="Pacific/Pago_Pago">
+<name>Pacific/Pago_Pago</name>
+</choice>
+                        <choice id="Pacific/Samoa">
+<name>Pacific/Samoa</name>
+</choice>
+
+                    </setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:short-open-tag xmlns:php="http://apstandard.com/ns/1/php">true</php:short-open-tag>
+			<apache:htaccess xmlns:apache="http://apstandard.com/ns/1/apache"/>
+			<php:version min="5.5.30" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">dom</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">filter</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">hash</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">pcre</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">session</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">SimpleXML</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">SPL</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">tokenizer</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">xml</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mbstring</php:extension>
+
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<php:file-uploads xmlns:php="http://apstandard.com/ns/1/php">true</php:file-uploads>
+			<php:register-globals xmlns:php="http://apstandard.com/ns/1/php">false</php:register-globals>
+			<php:magic-quotes-gpc xmlns:php="http://apstandard.com/ns/1/php">false</php:magic-quotes-gpc>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>schlixcms</db:default-name>
+				<db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.5</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+			<url-mapping>
+				<default-prefix>site</default-prefix>
+				<installed-size>25224275</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+				</mapping>
+			</url-mapping>
+		</provision>
+	</service>
+    
+</application>

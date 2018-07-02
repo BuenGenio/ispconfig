@@ -1,0 +1,68 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2">
+	<id>http://joomlacode.org/gf/project/mambot_google1/</id>
+	<name>Googlemap plug-in for Joomla</name>
+	<version>25.2.18</version>
+	<release>2</release>
+
+	<homepage>http://www.joomla.fr/</homepage>
+
+        <master-package>
+                <package id="http://www.joomla.org/" match="version = '2.5.2' or version = '2.5.3' or version = '2.5.4' or version = '2.5.5' or version = '2.5.6' or version = '2.5.7' or version = '2.5.8' or version = '2.5.9' or version = '2.5.10'" />
+        </master-package>
+
+	<vendor>
+		<name>Mike Reumer</name>
+		<homepage>http://tech.reumer.net</homepage>
+	</vendor>
+
+	<packager>
+		<name>Parallels</name>
+		<homepage>http://parallels.com/</homepage>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+
+	<presentation>
+		<summary>Joomla Googlemap plug-in</summary>
+		<description>
+			This plugin is version 2.18 of the google map mambot for Joomla 1.6x, 1.7x or Joomla 2.5+ native.
+		</description>
+
+		<icon path="images/icon.png"/>
+	
+		<changelog>
+			<version version="25.2.18" release="2">
+				<entry>Googlemap plug-in package 25.2.18</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Customization/Localization</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+
+<upgrade match="/application/version &gt; '2.12l'"/>
+
+	<service id="googlemap">
+		<presentation>
+			<name>Joomla Googlemap plug-in</name>
+			<summary>This plugin is version 2.18 of the google map mambot for Joomla 1.6x, 1.7x or Joomla 2.5+ native.</summary>
+		</presentation>
+
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+			</configuration-script>
+
+			<url-mapping>
+				<installed-size>844</installed-size>
+
+				<mapping url="/" path="htdocs" xmlns:php="http://apstandard.com/ns/1/php" />
+			</url-mapping>
+		</provision>
+	</service>
+	
+</application>

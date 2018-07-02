@@ -1,0 +1,135 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://apstandard.com/ns/1" version="1.2">
+	<id>http://insales.ru/1</id>
+	<name>InSales</name>
+	<version>1.0</version>
+	<release>2</release>
+	<homepage>http://www.insales.ru/</homepage>
+	<vendor>
+		<name>InSales</name>
+		<homepage>http://www.insales.ru/</homepage>
+		<icon path="images/logo.png" />
+	</vendor>
+	<packager>
+		<name>InSales</name>
+		<homepage>http://www.insales.ru/</homepage>
+	</packager>
+	<presentation>
+		<summary>InSales - разработка, аренда и создание интернет магазина</summary>
+		<description>С помощью платформы InSales Вы сможете:
+- Организовать удобную навигацию в магазине, подводящую к покупке
+- Принимать заказы и оплату за них, рассчитывать стоимость доставки
+- Создать дизайн магазина, привлекательный для покупателей
+- Использовать продвинутые карточки товаров
+- Управлять ценами, остатками. Синхронизироваться с учётом
+- Вести историю заказов покупателей, назначать скидки и повышать лояльность
+- Использовать инструменты продвижения и SEO-оптимизации
+</description>
+		<icon path="images/logo.png" />
+		<screenshot path="images/screen1.png">
+			<description>Fixme: описание скриншота</description>
+		</screenshot>
+		<changelog>
+			<version release="2" version="1.0">
+				<entry>Fix package remove procedure</entry>
+			</version>
+			<version release="1" version="1.0">
+				<entry>Initial package release</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/E-commerce</category>
+		</categories>
+		<languages>
+			<language>ru</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting type="password" id="api_key"
+			default-value="bc8006ffdc4da3dea1bf4f399a9c1551ed6bf576">
+			<name>Ключ для доступа к API</name>
+		</setting>
+	</global-settings>
+	<service id="InSales">
+		<license must-accept="true">
+			<commercial />
+			<text>
+				<name>EULA</name>
+				<url>http://www.insales.ru/terms</url>
+			</text>
+		</license>
+		<presentation>
+			<summary>InSales - разработка, аренда и создание интернет магазина</summary>
+			<infolinks>
+				<link href="http://www.insales.ru/kak-sozdat-i-otkryt-internet-magazin"
+					class="howto">Как открыть интернет-магазин</link>
+				<link href="http://www.insales.ru/support" class="support">Поддержка
+				</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="http://{subdomain}.myinsales.ru/admin/session" method="POST" class="login">
+					<label>Вход в магазин</label>
+                    <variable name="subdomain" value-of-setting="subdomain"/>
+					<variable name="email" value-of-setting="email" class="login"/>
+					<variable name="password" value-of-setting="password" class="password"/>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="instance">
+				<setting type="string" id="subdomain" optional="true"
+					installation-only="true">
+					<name>Внутренний адрес магазина</name>
+					<description>Для управления магазином, пока не настроен домен
+						верхнего уровня, будет использоваться адрес
+						http://&lt;subdomain&gt;.myinsales.ru</description>
+				</setting>
+				<setting type="email" id="email" installation-only="true"
+					class="email">
+					<name>Ваш e-mail</name>
+				</setting>
+				<setting type="string" id="password" class="password" installation-only="true">
+					<name>Пароль</name>
+				</setting>
+				<setting type="enum" id="plan" track-old-value="true" installation-only="true"
+					default-value="standard">
+					<name>Тарифный план</name>
+					<choice id="start">
+						<name>Стартовый</name>
+					</choice>
+					<choice id="standard">
+						<name>Стандартный</name>
+					</choice>
+					<choice id="promotion">
+						<name>Продвигающий</name>
+					</choice>
+					<choice id="business">
+						<name>Бизнес</name>
+					</choice>
+					<choice id="premium">
+						<name>Премиум</name>
+					</choice>
+				</setting>
+				<setting type="string" id="user_name" class="display-name">
+					<name>Контактное лицо</name>
+				</setting>
+				<setting type="boolean" id="trial_flag" class="subscription_trial"
+					visibility="hidden"></setting>
+			</group>
+		</settings>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php"
+			xmlns:svc="http://apstandard.com/ns/1/service">
+			<php:version min="5.2" />
+		</requirements>
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</configuration-script>
+			<verify-script name="verify.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</verify-script>
+		</provision>
+	</service>
+</application>

@@ -1,0 +1,1176 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-12-24T15:52:47">
+    <id>cisco_webex_basic</id>
+    <name>Cisco WebEx Basic</name>
+    <version>1.2</version>
+    <release>34</release>
+    <homepage>http://www.webex.com/</homepage>
+    <vendor>
+    	<name>Cisco</name>
+    	<homepage>http://www.webex.com/</homepage>
+    	<icon path="images/webexlogo.png" />
+    </vendor>
+    <packager>
+    	<name>Glowtouch Technologies</name>
+    	<homepage>http://www.glowtouch.com</homepage>
+    	<icon path="images/parrallels-GT6.png" />
+    </packager>
+ <presentation>
+    	<summary>Web conferencing lets you connect with anyone, anywhere, in real time. </summary>
+    	<summary xml:lang="es-ES">La conferencia web permite conectar con cualquier persona, en cualquier lugar, en tiempo real.</summary>
+    	<description>WebEx combines desktop sharing through a web browser with phone conferencing and video, so everyone sees the same thing while you talk. Save time and money in travel. Easily collaborate with distant colleagues and clients. Eliminate the hassle of emailing files and following up by phone. Make your meetings more productive and successful.</description>
+    	<description xml:lang="es-ES">Hoy más que nunca existe la necesidad de compartir documentos, presentaciones y aplicaciones en cualquier momento y en cualquier lugar. Conferencia WEB Negocios (Cisco WebEx Meeting Center ®) le ayudara a ser más productivo, más rápido en sus decisiones, brindándole a su fuerza de trabajo mayor autonomía con este servicio de la colaboración en línea.</description>
+    	<icon path="images/webexlogo.png" />
+    	<screenshot path="images/webex1.PNG">
+    		<description>Global settings</description>
+    	</screenshot>
+    	<screenshot path="images/webex2.PNG">
+    		<description>Service Settings</description>
+    	</screenshot>
+
+    	<changelog>
+    		<version release="34" version="1.2">
+    			<entry>Share whatever you're viewing on your computer with everyone in the meeting – they don't need a WebEx account to see what you're seeing</entry>
+    			<entry xml:lang="es-ES">Licenciamiento para realizar reuniones virtuales con Audio y Video; comparta presentaciones en tiempo real.</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Collaboration/Web conferencing</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    		<language>es</language>
+    	</languages>
+    </presentation>
+      <global-settings>
+    	<group>
+    		<name>WEBEX API SETTINGS</name>
+    		<setting type="string" id="WebExusername" uniq="global" min-length="1" class="login">
+    			<name>WebEx Site Admin Username</name>
+    			<name xml:lang="es-ES">Nombre del Administrador del Microsito</name>
+    			<description>Username supplied  by WebEx for calling the provisioning API</description>
+    			<description xml:lang="es-ES">Usuario proporcionado por WebEx para la llamada del aprovisionamiento del API</description>
+    			<error-message>Please enter the WebEx username</error-message>
+    			<error-message xml:lang="es-ES">Por favor ingrese su nombre de usuario</error-message>
+    		</setting>
+    		<setting type="password" id="WebExpassword" uniq="global" min-length="1" class="password">
+    			<name>WebEx Site Admin Password</name>
+    			<name xml:lang="es-ES">Contraseña del Administrador del Microsito</name>
+    			<description>Password supplied  by WebEx for calling the provisioning API</description>
+    			<description xml:lang="es-ES">Contraseña proporcionada por WebEx para la llamada del aprovisionamiento del API</description>
+    			<error-message>Please enter the WebEx password</error-message>
+    			<error-message xml:lang="es-ES">Por favor ingrese su contraseña</error-message>
+    		</setting>
+    		<setting type="string" id="WebExSiteUrl" uniq="global" min-length="1" class="value">
+    			<name>WebEx Site URL</name>
+    			<name xml:lang="es-ES">URL del Microsito</name>
+    			<description>BaseUrl supplied to partner by WebEx</description>
+    			<description xml:lang="es-ES">BaseUrl supplied to partner by WebEx</description>
+    			<error-message>Please enter the Site URL</error-message>
+    			<error-message xml:lang="es-ES">Por favor ingrese el URL deseado para su Micrositio</error-message>
+    		</setting>
+    		<setting type="string" id="WebExport" uniq="global" min-length="2" default-value="">
+    			<name>WebEx Port</name>
+    			<name xml:lang="es-ES">WebEx Port</name>
+    			<description>WebEx Port Number supplied by WebEx</description>
+    			<description xml:lang="es-ES">Numero del Puerto de Webex</description>
+    			<error-message>Please enter the WebEx port number</error-message>
+    			<error-message xml:lang="es-ES">Por favor ingrese el WebEX port number</error-message>
+    		</setting>
+    		<setting type="string" id="WebExSiteId" uniq="global" min-length="1" default-value="">
+    			<name>WebEx SiteId</name>
+    			<name xml:lang="es-ES">Id del sitio</name>
+    			<description>WebEx Site Id supplied by WebEx</description>
+    			<description xml:lang="es-ES">Ingresa el Id del Micrositio</description>
+    			<error-message>Please enter the Site Id</error-message>
+    			<error-message xml:lang="es-ES">Por favor ingrese el código del sitio</error-message>
+    		</setting>
+    		<setting type="string" id="WebExPartnerId" uniq="global" min-length="1" default-value="">
+    			<name>WebEx PartnerId</name>
+    			<name xml:lang="es-ES">WebEx PartnerId</name>
+    			<description>WebEx Partner Id supplied by WebEx</description>
+    			<description xml:lang="es-ES">Ingresa el Id del Socio</description>
+    			<error-message>Please enter the Parnter Id</error-message>
+    			<error-message xml:lang="es-ES">Por favor ingrese el código del socio</error-message>
+    		</setting>
+    	</group>
+    </global-settings>
+      <upgrade match="/application/release&gt;'1'" />
+      <service id="WebEx">
+    	<license must-accept="false">
+    		<text>
+    			<name>License</name>
+    			<file>scripts/license.txt</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>Configuration</name>
+    		<name xml:lang="es-ES">Información del Servicio</name>
+    		<summary>WebEx Configuration Service</summary>
+    		<summary xml:lang="es-ES">Configuración del servicio WebEx</summary>
+    		<infolinks>
+    			<link href="file:///scripts/docs/PA-Cisco-WebEx-Provider-Deployment-guide.doc" class="deployment-guide">Providers Guide</link>
+    			<link href="file:///scripts/docs/PA-Cisco-WebEx-Subscriber-guide.doc" class="user-guide">Subscribers Guide</link>
+    		</infolinks>
+    	</presentation>
+    	<!-- <service id="Create User" class="account"> -->
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    		<verify-script name="verifyconfig.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</verify-script>
+    	</provision>
+    	<service id="Create User" class="account">
+    		<presentation>
+    			<name>User Info</name>
+    			<!--<name xml:lang="es-ES">Información del usuario</name>-->
+    			<name xml:lang="es-ES">Información del Organizador</name>
+    			<summary>Create User Account Information</summary>
+    			<summary xml:lang="es-ES">Generar Usuarios Conferencia WEB Negocios</summary>
+    			<infolinks>
+					<link href="http://www.cisco.com/en/US/products/ps10412/index.html" class="support">Support</link>
+    			</infolinks>
+    			<!-- <entry-points>
+    				<entry dst="http://parallels-dev.webex.com/{site_url_first_part}/meet/{userName}">
+    					<label>Login</label>
+    					<variable name="userName" value-of-setting="usr_webExId"></variable>
+    					<variable name="site_url_first_part" value-of-setting="site_url_first_part"></variable>
+    				</entry>
+    			</entry-points> -->
+    			<entry-points>
+    				<entry dst="https://{WebExSiteUrl}/{webex_url_path}/p.php?AT=LI&amp;WID={userName}&amp;PW={password}" method="POST" class="login">
+    					<label>Login</label>
+    					<variable name="userName" class="" value-of-setting="usr_webExId"></variable>
+    					<variable name="password" class="password" value-of-setting="usr_password"></variable>
+    					<variable name="WebExSiteUrl" value-of-setting="WebExSiteUrl" class=""></variable>
+    					<variable name="webex_url_path" value-of-setting="webex_url_path"></variable>
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+    			 <setting type="string" id="usr_webExId"
+    					min-length="3" max-length="60" regex="^[a-zA-Z][0-9a-zA-Z_@\-\.]*" installation-only="true" default-value="">
+    					<name>WebEx Host Id *</name>
+    					<name xml:lang="es-ES">ID de Organizador *</name>
+    					<!-- <name xml:lang="es-ES">Id del anfitrión </name> -->
+    					<description>WebEx user credentials used to log into the conferencing service</description>
+    					<description xml:lang="es-ES">Credenciales que utilizara el usuario para firmarse al servicio de Conferencia WEB Negocios</description>
+    					<error-message>WebEx Id should start with letter and include only
+
+letters, digits, and strings @ . – _</error-message>
+    					<error-message xml:lang="es-ES">Los Usuarios del servicio Conferencia WEB Negocios inician siempre con una letra (mayúscula o minúscula); el usuario podrá incluir solo letras, números y caracteres especiales como @ . - _</error-message>
+    				</setting>
+    				<setting type="password" id="usr_password" min-length="1" default-value="">
+    					<name>WebEx Host Password *</name>
+    					<name xml:lang="es-ES">Contraseña *</name>
+    					<error-message>Password is required field</error-message>
+    					<error-message xml:lang="es-ES">Contraseña, es un campo obligatorio</error-message>
+    				</setting>
+					<group class="vcard">
+					<group class="fn n">
+							<setting type="string" id="usr_first_name"
+								regex="^(?=\s*\S).*$" max-length="30" class="given-name">
+								<name>First Name *</name>
+								<name xml:lang="es-ES">Nombre *</name>
+								<error-message>First Name is required field</error-message>
+								<error-message xml:lang="es-ES">Nombre, es un campo obligatorio</error-message>
+							</setting>
+							<setting type="string" id="usr_last_name"
+								regex="^(?=\s*\S).*$" max-length="30" class="family-name">
+								<name>Last Name *</name>
+								<name xml:lang="es-ES">Apellido *</name>
+								<error-message>Last Name is required field</error-message>
+								<error-message xml:lang="es-ES">Apellido, es un campo obligatorio</error-message>
+							</setting>
+					</group>
+					<group class="email">
+    					<setting type="email" id="usr_email" class="value" installation-only="true">
+    						<name>Email *</name>
+    						<name xml:lang="es-ES">Correo electrónico *</name>
+    						<error-message>Please enter correct email address with @ for further reference</error-message>
+    						<error-message xml:lang="es-ES">La dirección de correo electrónico que ha escrito no es válida debe incluir un @</error-message>
+    					</setting>
+					</group>
+					<group class="adr">
+    					<setting type="string" id="usr_address1"
+    						optional="true" class="street-address">
+    						<name>Address-1</name>
+    						<name xml:lang="es-ES">Dirección-1</name>
+    					</setting>
+    					<setting type="string" id="usr_address2" class="extended-address"
+    						optional="true">
+    						<name>Address-2</name>
+    						<name xml:lang="es-ES">Dirección-2</name>
+    					</setting>
+    					<setting type="string" id="usr_city"
+    						optional="true" class="locality">
+    						<name>City</name>
+    						<name xml:lang="es-ES">Ciudad</name>
+    					</setting>
+    					<setting type="string" id="usr_state" class="region"
+    						optional="true">
+    						<name>State</name>
+    						<name xml:lang="es-ES">Estado</name>
+    					</setting>
+
+    					<setting type="enum" id="usr_country"
+    						optional="true" class="country-name">
+    						<name>Country</name>
+							<name xml:lang="es-ES">País</name>
+    						<choice id="select">
+    							<name>Select</name>
+    							<name xml:lang="es-ES">Seleccionar</name>
+    						</choice><choice id="af">
+    							<name>Afghanistan</name>
+    							<name xml:lang="es-ES">Afganistán</name>
+    						</choice>
+    						<choice id="al">
+    							<name>Albania</name>
+    							<name xml:lang="es-ES">Albania</name>
+    						</choice>
+    						<choice id="dz">
+    							<name>Algeria</name>
+    							<name xml:lang="es-ES">Argelia</name>
+    						</choice>
+    						<choice id="as">
+    							<name>American Samoa</name>
+    							<name xml:lang="es-ES">Samoa Americana</name>
+    						</choice>
+    						<choice id="ad">
+    							<name>Andorra</name>
+    							<name xml:lang="es-ES">Andorra</name>
+    						</choice>
+    						<choice id="ao">
+    							<name>Angola</name>
+    							<name xml:lang="es-ES">Angola</name>
+    						</choice>
+    						<choice id="ai">
+    							<name>Anguilla</name>
+    							<name xml:lang="es-ES">Anguila</name>
+    						</choice>
+    						<choice id="aq">
+    							<name>Antarctica</name>
+    							<name xml:lang="es-ES">Antártida</name>
+    						</choice>
+    						<choice id="ag">
+    							<name>Antigua and Barbuda</name>
+    							<name xml:lang="es-ES">Antigua y Barbuda</name>
+    						</choice>
+    						<choice id="ar">
+    							<name>Argentina</name>
+    							<name xml:lang="es-ES">Argentina</name>
+    						</choice>
+    						<choice id="am">
+    							<name>Armenia</name>
+    							<name xml:lang="es-ES">Armenia</name>
+    						</choice>
+    						<choice id="aw">
+    							<name>Aruba</name>
+    							<name xml:lang="es-ES">Aruba</name>
+    						</choice>
+    						<choice id="au">
+    							<name>Australia</name>
+    							<name xml:lang="es-ES">Australia</name>
+    						</choice>
+    						<choice id="at">
+    							<name>Austria</name>
+    							<name xml:lang="es-ES">Austria</name>
+    						</choice>
+    						<choice id="az">
+    							<name>Azerbaijan</name>
+    							<name xml:lang="es-ES">Azerbaiyán</name>
+    						</choice>
+    						<choice id="bs">
+    							<name>Bahamas</name>
+    							<name xml:lang="es-ES">Bahamas</name>
+    						</choice>
+    						<choice id="bh">
+    							<name>Bahrain</name>
+    							<name xml:lang="es-ES">Bahrein</name>
+    						</choice>
+    						<choice id="bd">
+    							<name>Bangladesh</name>
+    							<name xml:lang="es-ES">Bangladesh</name>
+    						</choice>
+    						<choice id="bb">
+    							<name>Barbados</name>
+    							<name xml:lang="es-ES">Barbados</name>
+    						</choice>
+    						<choice id="by">
+    							<name>Belarus</name>
+    							<name xml:lang="es-ES">Belarús</name>
+    						</choice>
+    						<choice id="be">
+    							<name>Belgium</name>
+    							<name xml:lang="es-ES">Bélgica</name>
+    						</choice>
+    						<choice id="bz">
+    							<name>Belize</name>
+    							<name xml:lang="es-ES">Belice</name>
+    						</choice>
+    						<choice id="bj">
+    							<name>Benin</name>
+    							<name xml:lang="es-ES">Benin</name>
+    						</choice>
+    						<choice id="bm">
+    							<name>Bermuda</name>
+    							<name xml:lang="es-ES">Bermudas</name>
+    						</choice>
+    						<choice id="bt">
+    							<name>Bhutan</name>
+    							<name xml:lang="es-ES">Bhután</name>
+    						</choice>
+    						<choice id="bo">
+    							<name>Bolivia</name>
+    							<name xml:lang="es-ES">Bolivia</name>
+    						</choice>
+    						
+    						<choice id="bw">
+    							<name>Botswana</name>
+    							<name xml:lang="es-ES">Botswana</name>
+    						</choice>
+    						<choice id="bv">
+    							<name>Bouvet Island</name>
+    							<name xml:lang="es-ES">Isla Bouvet</name>
+    						</choice>
+    						<choice id="br">
+    							<name>Brazil</name>
+    							<name xml:lang="es-ES">Brasil</name>
+    						</choice>
+    						<choice id="bn">
+    							<name>Brunei Darussalam</name>
+    							<name xml:lang="es-ES">Brunei Darussalam</name>
+    						</choice>
+    						<choice id="bg">
+    							<name>Bulgaria</name>
+    							<name xml:lang="es-ES">Bulgaria</name>
+    						</choice>
+    						<choice id="bf">
+    							<name>Burkina Faso</name>
+    							<name xml:lang="es-ES">Burkina Faso</name>
+    						</choice>
+    						<choice id="bi">
+    							<name>Burundi</name>
+    							<name xml:lang="es-ES">Burundi</name>
+    						</choice>
+    						<choice id="kh">
+    							<name>Cambodia</name>
+    							<name xml:lang="es-ES">Camboya</name>
+    						</choice>
+    						<choice id="cm">
+    							<name>Cameroon</name>
+    							<name xml:lang="es-ES">Camerún</name>
+    						</choice>
+    						<choice id="ca">
+    							<name>Canada</name>
+    							<name xml:lang="es-ES">Canadá</name>
+    						</choice>
+    						<choice id="cv">
+    							<name>Cape Verde</name>
+    							<name xml:lang="es-ES">Cabo Verde</name>
+    						</choice>
+    						<choice id="ky">
+    							<name>Cayman Islands</name>
+    							<name xml:lang="es-ES">Islas Caimán</name>
+    						</choice>
+    						<choice id="cf">
+    							<name>Central African Republic</name>
+    							<name xml:lang="es-ES">República Centroafricana</name>
+    						</choice>
+    						<choice id="td">
+    							<name>Chad</name>
+    							<name xml:lang="es-ES">Chad</name>
+    						</choice>
+    						<choice id="cl">
+    							<name>Chile</name>
+    							<name xml:lang="es-ES">Chile</name>
+    						</choice>
+    						<choice id="cn">
+    							<name>China</name>
+    							<name xml:lang="es-ES">China</name>
+    						</choice>
+    						<choice id="cx">
+    							<name>Christmas Island</name>
+    							<name xml:lang="es-ES">Isla de Navidad</name>
+    						</choice>
+    						<choice id="cc">
+    							<name>Cocos (Keeling) Islands</name>
+    							<name xml:lang="es-ES">Islas Cocos (Keeling)</name>
+    						</choice>
+    						<choice id="co">
+    							<name>Colombia</name>
+    							<name xml:lang="es-ES">Colombia</name>
+    						</choice>
+    						<choice id="km">
+    							<name>Comoros</name>
+    							<name xml:lang="es-ES">Comoras</name>
+    						</choice>
+    						<choice id="cg">
+    							<name>Congo</name>
+    							<name xml:lang="es-ES">Congo</name>
+    						</choice>
+    						<choice id="ck">
+    							<name>Cook Islands</name>
+    							<name xml:lang="es-ES">Islas Cook</name>
+    						</choice>
+    						<choice id="cr">
+    							<name>Costa Rica</name>
+    							<name xml:lang="es-ES">Costa Rica</name>
+    						</choice>
+    					
+    						<choice id="hr">
+    							<name>Croatia</name>
+    							<name xml:lang="es-ES">Croacia</name>
+    						</choice>
+    						<choice id="cu">
+    							<name>Cuba</name>
+    							<name xml:lang="es-ES">Cuba</name>
+    						</choice>
+    						<choice id="cy">
+    							<name>Cyprus</name>
+    							<name xml:lang="es-ES">Chipre</name>
+    						</choice>
+    						<choice id="cz">
+    							<name>Czech Republic</name>
+    							<name xml:lang="es-ES">República Checa</name>
+    						</choice>
+    						<choice id="dk">
+    							<name>Denmark</name>
+    							<name xml:lang="es-ES">Dinamarca</name>
+    						</choice>
+    						<choice id="dj">
+    							<name>Djibouti</name>
+    							<name xml:lang="es-ES">Djibouti</name>
+    						</choice>
+    						<choice id="dm">
+    							<name>Dominica</name>
+    							<name xml:lang="es-ES">Dominica</name>
+    						</choice>
+    						<choice id="do">
+    							<name>Dominican Republic</name>
+    							<name xml:lang="es-ES">República Dominicana</name>
+    						</choice>
+    						<choice id="ec">
+    							<name>Ecuador</name>
+    							<name xml:lang="es-ES">Ecuador</name>
+    						</choice>
+    						<choice id="eg">
+    							<name>Egypt</name>
+    							<name xml:lang="es-ES">Egipto</name>
+    						</choice>
+    						<choice id="sv">
+    							<name>El Salvador</name>
+    							<name xml:lang="es-ES">El Salvador</name>
+    						</choice>
+    						<choice id="gq">
+    							<name>Equatorial Guinea</name>
+    							<name xml:lang="es-ES">Guinea Ecuatorial</name>
+    						</choice>
+    						<choice id="er">
+    							<name>Eritrea</name>
+    							<name xml:lang="es-ES">Eritrea</name>
+    						</choice>
+    						<choice id="ee">
+    							<name>Estonia</name>
+    							<name xml:lang="es-ES">Estonia</name>
+    						</choice>
+    						<choice id="et">
+    							<name>Ethiopia</name>
+    							<name xml:lang="es-ES">Etiopía</name>
+    						</choice>
+    						<choice id="fk">
+    							<name>Falkland Islands (Malvinas)</name>
+    							<name xml:lang="es-ES">Islas Falkland (Malvinas)</name>
+    						</choice>
+    						<choice id="fo">
+    							<name>Faroe Islands</name>
+    							<name xml:lang="es-ES">Islas Feroe</name>
+    						</choice>
+    						<choice id="fj">
+    							<name>Fiji</name>
+    							<name xml:lang="es-ES">Fiji</name>
+    						</choice>
+    						<choice id="fi">
+    							<name>Finland</name>
+    							<name xml:lang="es-ES">Finlandia</name>
+    						</choice>
+    						<choice id="fr">
+    							<name>France</name>
+    							<name xml:lang="es-ES">Francia</name>
+    						</choice>
+    						<choice id="gf">
+    							<name>French Guiana</name>
+    							<name xml:lang="es-ES">Guayana Francesa</name>
+    						</choice>
+    						<choice id="pf">
+    							<name>French Polynesia</name>
+    							<name xml:lang="es-ES">Polinesia Francesa</name>
+    						</choice>
+    						<choice id="ga">
+    							<name>Gabon</name>
+    							<name xml:lang="es-ES">Gabón</name>
+    						</choice>
+    						<choice id="gm">
+    							<name>Gambia</name>
+    							<name xml:lang="es-ES">Gambia</name>
+    						</choice>
+    						<choice id="ge">
+    							<name>Georgia</name>
+    							<name xml:lang="es-ES">Georgia</name>
+    						</choice>
+    						<choice id="de">
+    							<name>Germany</name>
+    							<name xml:lang="es-ES">Alemania</name>
+    						</choice>
+    						<choice id="gh">
+    							<name>Ghana</name>
+    							<name xml:lang="es-ES">Ghana</name>
+    						</choice>
+    						<choice id="gi">
+    							<name>Gibraltar</name>
+    							<name xml:lang="es-ES">Gibraltar</name>
+    						</choice>
+    						<choice id="gr">
+    							<name>Greece</name>
+    							<name xml:lang="es-ES">Grecia</name>
+    						</choice>
+    						<choice id="gl">
+    							<name>Greenland</name>
+    							<name xml:lang="es-ES">Groenlandia</name>
+    						</choice>
+    						<choice id="gd">
+    							<name>Grenada</name>
+    							<name xml:lang="es-ES">Granada</name>
+    						</choice>
+    						<choice id="gp">
+    							<name>Guadeloupe</name>
+    							<name xml:lang="es-ES">Guadalupe</name>
+    						</choice>
+    						<choice id="gu">
+    							<name>Guam</name>
+    							<name xml:lang="es-ES">Guam</name>
+    						</choice>
+    						<choice id="gt">
+    							<name>Guatemala</name>
+    							<name xml:lang="es-ES">Guatemala</name>
+    						</choice>
+    						<choice id="gn">
+    							<name>Guinea</name>
+    							<name xml:lang="es-ES">Guinea</name>
+    						</choice>
+    						<choice id="gw">
+    							<name>Guinea-Bissau</name>
+    							<name xml:lang="es-ES">Guinea-Bissau</name>
+    						</choice>
+    						<choice id="gy">
+    							<name>Guyana</name>
+    							<name xml:lang="es-ES">Guyana</name>
+    						</choice>
+    						<choice id="ht">
+    							<name>Haiti</name>
+    							<name xml:lang="es-ES">Haití</name>
+    						</choice>
+    						<choice id="hm">
+    							<name>Heard and Mc Donald Islands</name>
+    							<name xml:lang="es-ES">Islas de Heard y McDonald </name>
+    						</choice>
+    						<choice id="hn">
+    							<name>Honduras</name>
+    							<name xml:lang="es-ES">Honduras</name>
+    						</choice>
+    						<choice id="hk">
+    							<name>Hong Kong</name>
+    							<name xml:lang="es-ES">Hong Kong</name>
+    						</choice>
+    						<choice id="hu">
+    							<name>Hungary</name>
+    							<name xml:lang="es-ES">Hungría</name>
+    						</choice>
+    						<choice id="is">
+    							<name>Iceland</name>
+    							<name xml:lang="es-ES">Islandia</name>
+    						</choice>
+    						<choice id="in">
+    							<name>India</name>
+    							<name xml:lang="es-ES">India</name>
+    						</choice>
+    						<choice id="id">
+    							<name>Indonesia</name>
+    							<name xml:lang="es-ES">Indonesia</name>
+    						</choice>
+    						<choice id="ir">
+    							<name>Iran (Islamic Republic of)</name>
+    							<name xml:lang="es-ES">Irán, República Islámica del</name>
+    						</choice>
+    						<choice id="ia">
+    							<name>Iraq</name>
+    							<name xml:lang="es-ES">Iraq</name>
+    						</choice>
+    						<choice id="ie">
+    							<name>Ireland</name>
+    							<name xml:lang="es-ES">Irlanda</name>
+    						</choice>
+    						<choice id="il">
+    							<name>Israel</name>
+    							<name xml:lang="es-ES">Israel</name>
+    						</choice>
+    						<choice id="it">
+    							<name>Italy</name>
+    							<name xml:lang="es-ES">Italia</name>
+    						</choice>
+    						<choice id="jm">
+    							<name>Jamaica</name>
+    							<name xml:lang="es-ES">Jamaica</name>
+    						</choice>
+    						<choice id="jp">
+    							<name>Japan</name>
+    							<name xml:lang="es-ES">Japón</name>
+    						</choice>
+    						<choice id="jo">
+    							<name>Jordan</name>
+    							<name xml:lang="es-ES">Jordania</name>
+    						</choice>
+    						<choice id="kz">
+    							<name>Kazakhstan</name>
+    							<name xml:lang="es-ES">Kazajstán</name>
+    						</choice>
+    						<choice id="ke">
+    							<name>Kenya</name>
+    							<name xml:lang="es-ES">Kenya</name>
+    						</choice>
+    						<choice id="ki">
+    							<name>Kiribati</name>
+    							<name xml:lang="es-ES">Kiribati</name>
+    						</choice>
+    						<choice id="kw">
+    							<name>Kuwait</name>
+    							<name xml:lang="es-ES">Kuwait</name>
+    						</choice>
+    						<choice id="kg">
+    							<name>Kyrgyzstan</name>
+    							<name xml:lang="es-ES">Kirguistán</name>
+    						</choice>
+    						<choice id="lv">
+    							<name>Latvia</name>
+    							<name xml:lang="es-ES">Letonia</name>
+    						</choice>
+    						<choice id="lb">
+    							<name>Lebanon</name>
+    							<name xml:lang="es-ES">Líbano</name>
+    						</choice>
+    						<choice id="ls">
+    							<name>Lesotho</name>
+    							<name xml:lang="es-ES">Lesotho</name>
+    						</choice>
+    						<choice id="lr">
+    							<name>Liberia</name>
+    							<name xml:lang="es-ES">Liberia</name>
+    						</choice>
+    						<choice id="ly">
+    							<name>Libya</name>
+    							<name xml:lang="es-ES">Libia</name>
+    						</choice>
+    						<choice id="li">
+    							<name>Liechtenstein</name>
+    							<name xml:lang="es-ES">Liechtenstein</name>
+    						</choice>
+    						<choice id="lt">
+    							<name>Lithuania</name>
+    							<name xml:lang="es-ES">Lituania</name>
+    						</choice>
+    						<choice id="lu">
+    							<name>Luxembourg</name>
+    							<name xml:lang="es-ES">Luxemburgo</name>
+    						</choice>
+    						<choice id="mo">
+    							<name>Macao</name>
+    							<name xml:lang="es-ES">Macao</name>
+    						</choice>
+    						<choice id="mg">
+    							<name>Madagascar</name>
+    							<name xml:lang="es-ES">Madagascar</name>
+    						</choice>
+    						<choice id="mw">
+    							<name>Malawi</name>
+    							<name xml:lang="es-ES">Malawi</name>
+    						</choice>
+    						<choice id="my">
+    							<name>Malaysia</name>
+    							<name xml:lang="es-ES">Malasia</name>
+    						</choice>
+    						<choice id="mv">
+    							<name>Maldives</name>
+    							<name xml:lang="es-ES">Maldivas</name>
+    						</choice>
+    						<choice id="ml">
+    							<name>Mali</name>
+    							<name xml:lang="es-ES">Malí</name>
+    						</choice>
+    						<choice id="mt">
+    							<name>Malta</name>
+    							<name xml:lang="es-ES">Malta</name>
+    						</choice>
+    						<choice id="mh">
+    							<name>Marshall Islands</name>
+    							<name xml:lang="es-ES">Islas Marshall</name>
+    						</choice>
+    						<choice id="mq">
+    							<name>Martinique</name>
+    							<name xml:lang="es-ES">Martinica</name>
+    						</choice>
+    						<choice id="mr">
+    							<name>Mauritania</name>
+    							<name xml:lang="es-ES">Mauritania</name>
+    						</choice>
+    						<choice id="mu">
+    							<name>Mauritius</name>
+    							<name xml:lang="es-ES">Mauricio</name>
+    						</choice>
+    						<choice id="yt">
+    							<name>Mayotte</name>
+    							<name xml:lang="es-ES">Mayotte</name>
+    						</choice>
+    						<choice id="mx">
+    							<name>Mexico</name>
+    							<name xml:lang="es-ES">México</name>
+    						</choice>
+    						<choice id="md">
+    							<name>Moldova, Republic of</name>
+    							<name xml:lang="es-ES">Moldavia</name>
+    						</choice>
+    						<choice id="mc">
+    							<name>Monaco</name>
+    							<name xml:lang="es-ES">Mónaco</name>
+    						</choice>
+    						<choice id="mn">
+    							<name>Mongolia</name>
+    							<name xml:lang="es-ES">Mongolia</name>
+    						</choice>
+    						<choice id="ms">
+    							<name>Montserrat</name>
+    							<name xml:lang="es-ES">Montserrat</name>
+    						</choice>
+    						<choice id="ma">
+    							<name>Morocco</name>
+    							<name xml:lang="es-ES">Marruecos</name>
+    						</choice>
+    						<choice id="mz">
+    							<name>Mozambique</name>
+    							<name xml:lang="es-ES">Mozambique</name>
+    						</choice>
+    						<choice id="mm">
+    							<name>Myanmar</name>
+    							<name xml:lang="es-ES">Myanmar</name>
+    						</choice>
+    						<choice id="na">
+    							<name>Namibia</name>
+    							<name xml:lang="es-ES">Namibia</name>
+    						</choice>
+    						<choice id="nr">
+    							<name>Nauru</name>
+    							<name xml:lang="es-ES">Nauru</name>
+    						</choice>
+    						<choice id="np">
+    							<name>Nepal</name>
+    							<name xml:lang="es-ES">Nepal</name>
+    						</choice>
+    						<choice id="nl">
+    							<name>Netherlands</name>
+    							<name xml:lang="es-ES">Países Bajos</name>
+    						</choice>
+    						<choice id="an">
+    							<name>Netherlands Antilles</name>
+    							<name xml:lang="es-ES">Antillas Holandesas</name>
+    						</choice>
+    						<choice id="nc">
+    							<name>New Caledonia</name>
+    							<name xml:lang="es-ES">Nueva Caledonia</name>
+    						</choice>
+    						<choice id="nz">
+    							<name>New Zealand</name>
+    							<name xml:lang="es-ES">Nueva Zelandia</name>
+    						</choice>
+    						<choice id="ni">
+    							<name>Nicaragua</name>
+    							<name xml:lang="es-ES">Nicaragua</name>
+    						</choice>
+    						<choice id="ne">
+    							<name>Niger</name>
+    							<name xml:lang="es-ES">Niger</name>
+    						</choice>
+    						<choice id="ng">
+    							<name>Nigeria</name>
+    							<name xml:lang="es-ES">Nigeria</name>
+    						</choice>
+    						<choice id="nu">
+    							<name>Niue</name>
+    							<name xml:lang="es-ES">Niue</name>
+    						</choice>
+    						<choice id="nf">
+    							<name>Norfolk Island</name>
+    							<name xml:lang="es-ES">Norfolk Island</name>
+    						</choice>
+    						<choice id="mp">
+    							<name>Northern Mariana Islands</name>
+    							<name xml:lang="es-ES">Marianas del Norte</name>
+    						</choice>
+    						<choice id="no">
+    							<name>Norway</name>
+    							<name xml:lang="es-ES">Noruega</name>
+    						</choice>
+    						<choice id="om">
+    							<name>Oman</name>
+    							<name xml:lang="es-ES">Omán</name>
+    						</choice>
+    						<choice id="pk">
+    							<name>Pakistan</name>
+    							<name xml:lang="es-ES">Pakistán</name>
+    						</choice>
+    						<choice id="pw">
+    							<name>Palau</name>
+    							<name xml:lang="es-ES">Palau</name>
+    						</choice>
+    						<choice id="pa">
+    							<name>Panama</name>
+    							<name xml:lang="es-ES">Panamá</name>
+    						</choice>
+    						<choice id="pg">
+    							<name>Papua New Guinea</name>
+    							<name xml:lang="es-ES">Papua Nueva Guinea</name>
+    						</choice>
+    						<choice id="py">
+    							<name>Paraguay</name>
+    							<name xml:lang="es-ES">Paraguay</name>
+    						</choice>
+    						<choice id="pe">
+    							<name>Peru</name>
+    							<name xml:lang="es-ES">Perú</name>
+    						</choice>
+    						<choice id="ph">
+    							<name>Philippines</name>
+    							<name xml:lang="es-ES">Filipinas</name>
+    						</choice>
+    						<choice id="pn">
+    							<name>Pitcairn</name>
+    							<name xml:lang="es-ES">Pitcairn</name>
+    						</choice>
+    						<choice id="pl">
+    							<name>Poland</name>
+    							<name xml:lang="es-ES">Polonia</name>
+    						</choice>
+    						<choice id="pt">
+    							<name>Portugal</name>
+    							<name xml:lang="es-ES">Portugal</name>
+    						</choice>
+    						<choice id="pr">
+    							<name>Puerto Rico</name>
+    							<name xml:lang="es-ES">Puerto Rico</name>
+    						</choice>
+    						<choice id="qa">
+    							<name>Qatar</name>
+    							<name xml:lang="es-ES">Qatar</name>
+    						</choice>
+    						<choice id="re">
+    							<name>Reunion</name>
+    							<name xml:lang="es-ES">Reunión</name>
+    						</choice>
+    						<choice id="ro">
+    							<name>Romania</name>
+    							<name xml:lang="es-ES">Rumanía</name>
+    						</choice>
+    						<choice id="ru">
+    							<name>Russian Federation</name>
+    							<name xml:lang="es-ES">Federación Rusa</name>
+    						</choice>
+    						<choice id="rw">
+    							<name>Rwanda</name>
+    							<name xml:lang="es-ES">Ruanda</name>
+    						</choice>
+    						<choice id="kn">
+    							<name>Saint Kitts and Nevis</name>
+    							<name xml:lang="es-ES">San Cristobal y Nevis</name>
+    						</choice>
+    						<choice id="lc">
+    							<name>Saint LUCIA</name>
+    							<name xml:lang="es-ES">Santa Lucía</name>
+    						</choice>
+    						<choice id="ws">
+    							<name>Samoa</name>
+    							<name xml:lang="es-ES">Samoa</name>
+    						</choice>
+    						<choice id="sm">
+    							<name>San Marino</name>
+    							<name xml:lang="es-ES">San Marino</name>
+    						</choice>
+    						<choice id="st">
+    							<name>Sao Tome and Principe</name>
+    							<name xml:lang="es-ES">San Tomé y Príncipe</name>
+    						</choice>
+    						<choice id="sa">
+    							<name>Saudi Arabia</name>
+    							<name xml:lang="es-ES">Arabia Saudita</name>
+    						</choice>
+    						<choice id="sn">
+    							<name>Senegal</name>
+    							<name xml:lang="es-ES">Senegal</name>
+    						</choice>
+    						<choice id="sc">
+    							<name>Seychelles</name>
+    							<name xml:lang="es-ES">Seychelles</name>
+    						</choice>
+    						<choice id="sl">
+    							<name>Sierra Leone</name>
+    							<name xml:lang="es-ES">Sierra Leone</name>
+    						</choice>
+    						<choice id="sg">
+    							<name>Singapore</name>
+    							<name xml:lang="es-ES">Singapur</name>
+    						</choice>
+    						<choice id="sk">
+    							<name>Slovakia (Slovak Republic)</name>
+    							<name xml:lang="es-ES">Eslovaquia</name>
+    						</choice>
+    						<choice id="si">
+    							<name>Slovenia</name>
+    							<name xml:lang="es-ES">Eslovenia</name>
+    						</choice>
+    						<choice id="sb">
+    							<name>Solomon Islands</name>
+    							<name xml:lang="es-ES">Islas Salomón</name>
+    						</choice>
+    						<choice id="so">
+    							<name>Somalia</name>
+    							<name xml:lang="es-ES">Somalia</name>
+    						</choice>
+    						<choice id="za">
+    							<name>South Africa</name>
+    							<name xml:lang="es-ES">Sudáfrica</name>
+    						</choice>
+    						<choice id="es">
+    							<name>Spain</name>
+    							<name xml:lang="es-ES">España</name>
+    						</choice>
+    						<choice id="lk">
+    							<name>Sri Lanka</name>
+    							<name xml:lang="es-ES">Sri Lanka</name>
+    						</choice>
+    						<choice id="sh">
+    							<name>Saint Helena</name>
+    							<name xml:lang="es-ES">Santa Elena</name>
+    						</choice>
+    						<choice id="pm">
+    							<name>St. Pierre and Miquelon</name>
+    							<name xml:lang="es-ES">San Pedro y Miquelón</name>
+    						</choice>
+    						<choice id="sd">
+    							<name>Sudan</name>
+    							<name xml:lang="es-ES">Sudán</name>
+    						</choice>
+    						<choice id="sr">
+    							<name>Suriname</name>
+    							<name xml:lang="es-ES">Suriname</name>
+    						</choice>
+    						<choice id="sz">
+    							<name>Swaziland</name>
+    							<name xml:lang="es-ES">Swazilandia</name>
+    						</choice>
+    						<choice id="se">
+    							<name>Sweden</name>
+    							<name xml:lang="es-ES">Suecia</name>
+    						</choice>
+    						<choice id="ch">
+    							<name>Switzerland</name>
+    							<name xml:lang="es-ES">Suiza</name>
+    						</choice>
+    						<choice id="sy">
+    							<name>Syrian Arab Republic</name>
+    							<name xml:lang="es-ES">Siria</name>
+    						</choice>
+    						<choice id="tw">
+    							<name>Taiwan, Province of China</name>
+    							<name xml:lang="es-ES">Taiwan</name>
+    						</choice>
+    						<choice id="tj">
+    							<name>Tajikistan</name>
+    							<name xml:lang="es-ES">Tadjikistan</name>
+    						</choice>
+    						<choice id="tz">
+    							<name>Tanzania</name>
+    							<name xml:lang="es-ES">Tanzania</name>
+    						</choice>
+    						<choice id="th">
+    							<name>Thailand</name>
+    							<name xml:lang="es-ES">Tailandia</name>
+    						</choice>
+    						<choice id="tg">
+    							<name>Togo</name>
+    							<name xml:lang="es-ES">Togo</name>
+    						</choice>
+    						<choice id="tk">
+    							<name>Tokelau</name>
+    							<name xml:lang="es-ES">Tokelau</name>
+    						</choice>
+    						<choice id="to">
+    							<name>Tonga</name>
+    							<name xml:lang="es-ES">Tonga</name>
+    						</choice>
+    						<choice id="tt">
+    							<name>Trinidad and Tobago</name>
+    							<name xml:lang="es-ES">Trinidad y Tobago</name>
+    						</choice>
+    						<choice id="tn">
+    							<name>Tunisia</name>
+    							<name xml:lang="es-ES">Túnez</name>
+    						</choice>
+    						<choice id="tr">
+    							<name>Turkey</name>
+    							<name xml:lang="es-ES">Turquía</name>
+    						</choice>
+    						<choice id="tm">
+    							<name>Turkmenistan</name>
+    							<name xml:lang="es-ES">Turkmenistan</name>
+    						</choice>
+    						<choice id="tc">
+    							<name>Turks and Caicos Islands</name>
+    							<name xml:lang="es-ES">Islas Turcas y Caicos</name>
+    						</choice>
+    						<choice id="tv">
+    							<name>Tuvalu</name>
+    							<name xml:lang="es-ES">Tuvalu</name>
+    						</choice>
+    						<choice id="ug">
+    							<name>Uganda</name>
+    							<name xml:lang="es-ES">Uganda</name>
+    						</choice>
+    						<choice id="ua">
+    							<name>Ukraine</name>
+    							<name xml:lang="es-ES">Ucrania</name>
+    						</choice>
+    						<choice id="ae">
+    							<name>United Arab Emirates</name>
+    							<name xml:lang="es-ES">Emiratos Árabes Unidos</name>
+    						</choice>
+    						<choice id="gb">
+    							<name>United Kingdom</name>
+    							<name xml:lang="es-ES">Reino Unido</name>
+    						</choice>
+    						<choice id="us">
+    							<name>United States</name>
+    							<name xml:lang="es-ES">Estados Unidos</name>
+    						</choice>
+    						<choice id="uy">
+    							<name>Uruguay</name>
+    							<name xml:lang="es-ES">Uruguay</name>
+    						</choice>
+    						<choice id="uz">
+    							<name>Uzbekistan</name>
+    							<name xml:lang="es-ES">Uzbekistán</name>
+    						</choice>
+    						<choice id="vu">
+    							<name>Vanuatu</name>
+    							<name xml:lang="es-ES">Vanuatu</name>
+    						</choice>
+    						<choice id="ve">
+    							<name>Venezuela</name>
+    							<name xml:lang="es-ES">Venezuela</name>
+    						</choice>
+    						<choice id="vn">
+    							<name>Vietnam</name>
+    							<name xml:lang="es-ES">Vietnam</name>
+    						</choice>
+    						<choice id="vg">
+    							<name>Virgin Islands (British)</name>
+    							<name xml:lang="es-ES">Islas Virgenes Británicas</name>
+    						</choice>
+    						<choice id="vi">
+    							<name>Virgin Islands (U.S.)</name>
+    							<name xml:lang="es-ES">Islas Virgenes Americanas</name>
+    						</choice>
+    						<choice id="wf">
+    							<name>Wallis and Futuna Islands</name>
+    							<name xml:lang="es-ES">Wallis y Futuna</name>
+    						</choice>
+    						<choice id="eh">
+    							<name>Western Sahara</name>
+    							<name xml:lang="es-ES">Sáhara Occidental</name>
+    						</choice>
+    						<choice id="ye">
+    							<name>Yemen</name>
+    							<name xml:lang="es-ES">Yemen</name>
+    						</choice>
+    						<choice id="zm">
+    							<name>Zambia</name>
+    							<name xml:lang="es-ES">Zambia</name>
+    						</choice>
+    						<choice id="zw">
+    							<name>Zimbabwe</name>
+    							<name xml:lang="es-ES">Zimbabwe</name>
+    						</choice>
+    					</setting>
+    					<setting type="string" id="usr_zipCode"
+    						regex="^\d{5}$|^\d{5}-\d{4}$" optional="true" class="postal-code">
+    						<name>Zip Code</name>
+    						<name xml:lang="es-ES">Código Postal</name>
+    						<error-message>Please enter correct zip code or zip code format</error-message>
+    						<error-message xml:lang="es-ES">Ingrese un Código Postal valido</error-message>
+    					</setting>
+					</group>
+					<group class="tel">
+    					<setting type="string" id="usr_phones"
+    						optional="true"
+    						regex="^\D{0,2}[0]{0,3}[1]{0,1}\D{0,2}([2-9])(\d{2})\D{0,2}(\d{3})\D{0,2}(\d{3})\D{0,2}(\d{1})\D{0,2}$" class="work">
+    						<name>Phone</name>
+    						<name xml:lang="es-ES">Teléfono</name>
+    						<error-message>Please enter valid phone number</error-message>
+    						<error-message xml:lang="es-ES">Ingrese un teléfono valido</error-message>
+    					</setting>
+    				
+    					<setting type="string" id="usr_mobilePhone" 
+    						regex="^\D{0,2}[0]{0,3}[1]{0,1}\D{0,2}([2-9])(\d{2})\D{0,2}(\d{3})\D{0,2}(\d{3})\D{0,2}(\d{1})\D{0,2}$"
+    						optional="true" class="cell">
+    						<name>Mobile Phone</name>
+    						<name xml:lang="es-ES">Celular</name>
+    						<error-message>Enter Valid Mobile Phone Number</error-message>
+    						<error-message xml:lang="es-ES">Ingrese un celular valido</error-message>
+    					</setting>
+    				
+    					<setting type="string" id="usr_fax"
+    						regex="^\D{0,2}[0]{0,3}[1]{0,1}\D{0,2}([2-9])(\d{2})\D{0,2}(\d{3})\D{0,2}(\d{3})\D{0,2}(\d{1})\D{0,2}$"
+    						optional="true" class="fax">
+    						<name>Fax</name>
+    						<name xml:lang="es-ES">Fax</name>
+    						<error-message>Enter Valid Fax Number</error-message>
+    						<error-message xml:lang="es-ES">Ingrese un Fax valido</error-message>
+    					</setting>
+					</group>
+					</group>
+    					<setting type="string" id="subscriptionid" class="subscription_id" optional="true" protected="true" visibility="hidden">
+    						<name>subscription ID</name>
+    					</setting>
+    					<setting type="string" id="user_id" protected="true" default-value="" visibility="hidden">
+    				<name>User ID</name>
+    				<name xml:lang="es-ES">ID de usuario</name>
+    			</setting>
+    					<setting type="string" id="webex_url_path"
+    						protected="true" default-value="" visibility="hidden">
+    						<name>webex url path</name>
+    					</setting>
+    			
+    		</settings>
+    		<provision>
+    			<configuration-script name="create_user.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</configuration-script>
+    			<verify-script name="verify_user.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</verify-script>
+    		</provision>
+    	</service>
+    </service>
+</application>
+    	

@@ -1,0 +1,68 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-09-07T20:14:02">
+	<id>http://extplorer.sourceforge.net/</id>
+	<name>eXtplorer plug-in for Joomla</name>
+	<version>2.1.1.0</version>
+	<release>1</release>
+
+	<homepage>http://www.joomla.fr/</homepage>
+
+        <master-package>
+                <package id="http://www.joomla.org/" match="version = '2.5.2' or version = '2.5.3' or version = '2.5.4' or version = '2.5.5' or version = '2.5.6' or version = '2.5.7'" />
+        </master-package>
+
+	<vendor>
+		<name>soeren, QuiX Project</name>
+		<homepage>http://joomlacode.org/gf/project/joomlaxplorer/</homepage>
+	</vendor>
+
+	<packager>
+		<name>Parallels</name>
+		<homepage>http://parallels.com/</homepage>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+
+	<presentation>
+		<summary>Joomla eXtplorer plug-in</summary>
+		<description>
+			eXtplorer is a powerful File- and FTP/WebDAV Manager script.
+		</description>
+
+		<icon path="images/icon.png"/>
+	
+		<changelog>
+			<version version="2.1.0" release="7">
+				<entry>eXtplorer plug-in package 2.1.0</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Customization/Localization</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+
+<upgrade match="/application/version &gt; '2.0.1'"/>
+
+	<service id="com_extplorer">
+		<presentation>
+			<name>Joomla eXtplorer plug-in</name>
+			<summary>eXtplorer is a powerful File- and FTP/WebDAV Manager script.</summary>
+		</presentation>
+
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+			</configuration-script>
+
+			<url-mapping>
+				<installed-size>5496</installed-size>
+
+				<mapping url="/" path="htdocs" xmlns:php="http://apstandard.com/ns/1/php" />
+			</url-mapping>
+		</provision>
+	</service>
+	
+</application>

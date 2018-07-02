@@ -1,0 +1,171 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-10-30T16:37:16">
+	<id>http://apsstandard.org/zeendo/devManagedDNS/1.2</id>
+    <name>Zeendo website builder (management domain)</name>
+	<version>0.1</version>
+	<release>0.6</release>
+
+	<homepage>http://zeendo.com/es/</homepage>
+
+	<vendor>
+		<name>zeendo.com</name>
+		<homepage>http://zeendo.com</homepage>
+		<icon path="images/logo.png" />
+	</vendor>
+
+	<packager>
+		<name>SofcloudIT</name>
+		<homepage>http://www.sofcloudit.com/</homepage>
+		<icon path="images/sofcloudit64.png" />
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+
+	<presentation>
+		<summary>Zeendo, website builder</summary>
+		<description>Zeendo is a cloud platform (PaaS) that allows you to create websites using a technology that adapts the contents of your website to all the devices (mobile, PC and tablets) . It has been conceived for all kinds of users without programming knowledge and given its technological environment for being a cloud service, there is no need for end users to install or download anything to their computers. Once the website is created, you can publish it under a subdomain of the platform or buying a new domain through the platform.</description>
+
+		<icon path="images/logo.png"/>
+	
+		<screenshot path="images/templates.png">
+			<description>Backend - Template selector</description>
+		</screenshot>
+		<screenshot path="images/editor.png">
+			<description>Backend - Editor</description>
+		</screenshot>
+		<screenshot path="images/preview.png">
+			<description>Backend - Preview</description>
+		</screenshot>
+	
+		<changelog>
+			<version version="0.1" release="0.6">
+				<entry>Leftover link removed</entry>
+			</version>
+			<version version="0.1" release="0.5">
+				<entry>An error message to configure script output included.</entry>
+			</version>
+			<version version="0.1" release="0.4">
+				<entry>Avoid time zone server configuration problems</entry>
+			</version>
+			<version version="0.1" release="0.3">
+				<entry>Homepage vendor fixed</entry>
+			</version>
+			<version version="0.1" release="0.2">
+				<entry>Provider's guide link fixed'</entry>
+			</version>
+			<version version="0.1" release="0.1">
+				<entry>Packaged in APS 1.2</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting type="enum" id="package_log" default-value="false">
+   			<name>Activates log file</name>
+   			<choice id="true">
+   				<name>Yes</name>
+   			</choice>
+   			<choice id="false">
+   				<name>No</name>
+   			</choice>
+   		</setting>
+		<group>
+			<name>Service</name>
+			<setting type="string" id="service_ip" default-value="">
+				<name>Service Server IP</name>
+			</setting>
+		</group>
+		<group>
+			<name>API</name>
+			<setting type="string" id="api_url" default-value="">
+				<name>API Url</name>
+			</setting>
+			<setting type="string" id="api_user" default-value="">
+				<name>API User</name>
+			</setting>
+			<setting type="password" id="api_password" default-value="">
+				<name>API Password</name>
+			</setting>
+		</group>
+		<group>
+			<name>SSO</name>
+			<setting type="string" id="sso_url" default-value="">
+				<name>SSO Url</name>
+			</setting>
+		</group>
+		<group>
+			<name>Domain Name Validation</name>
+			<setting type="string" id="err_message" default-value="The domain name already exists in Zeendo platform. Please, contact with soporte@zeendo.com in order to solve this issue.">
+				<name>Domain error message</name>
+			</setting>
+		</group>
+	</global-settings>
+
+	<patch match="/application/version &gt;= '1.0'"/>
+
+	<service id="zeendo Service">
+		<license must-accept="true">
+			<text>
+				<name>Service Terms</name>
+				<url>http://zeendo.com/terms-of-service</url>
+			</text>
+		</license>
+
+		<presentation>
+			<name>Zeendo, website builder</name>
+			<summary>Zeendo, website builder</summary>
+
+			<infolinks>
+				<link href="http://zeendo.com/support/help" class="howto">Help</link>
+				<link class="support" href="http://zeendo.com/support/tutorials">Support</link>
+				<link href="file:///docs/FOCAOP03-3 PROVIDERS GUIDE.docx" class="deployment-guide">Zeendo - PA - Service Providers - Guide</link>
+				<link href="file:///docs/FOCAOP03-2 SUBSCRIBERS GUIDE.docx" class="user-guide">Zeendo - PA - Subscribers - Guide</link>
+			</infolinks>
+
+			<entry-points>
+				<entry class="control-panel" dst="{sso_url}" method="POST">
+					<label>Control Panel</label>
+					<variable name="sso_url" value-of-setting="sso_url"></variable>
+					<variable name="subscription_id" value-of-setting="subscription_id"></variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<setting type="string" id="subscription_id" class="subscription_id" visibility="hidden" protected="true"></setting>
+			<group class="web">
+				<name>Domain</name>
+				<setting class="domain-name" id="domain" protected="true" type="domain-name">
+					<name>Domain</name>
+				</setting>
+			</group>
+		</settings>
+
+		<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:db="http://apstandard.com/ns/1/db" xmlns:dns="http://apstandard.com/ns/1/dns">
+			<php:version min="5.0"/>
+			<dns:record>
+				<dns:a>
+					<dns:src>
+						<dns:current />
+					</dns:src>
+					<dns:ip value-of-setting="service_ip"></dns:ip>
+				</dns:a>
+			</dns:record>
+		</requirements>
+
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</configuration-script>
+			<verify-script name="verify.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</verify-script>
+		</provision>
+	</service>
+	</application>

@@ -1,0 +1,679 @@
+<application packaged="2014-07-09T11:02:35" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>247Techies</id>
+	<name>247Techies</name>
+	<version>1.0</version>
+	<release>1.0</release>
+	<homepage>http://tech.247techies.com/</homepage>
+	<vendor>
+		<name>247 Techies LLC</name>
+		<homepage>http://tech.247tehies.com/</homepage>
+		<icon path="images/24_7-biz.png"/>
+	</vendor>
+	<packager>
+		<name>iSynergy TechSys Pvt. Ltd.</name>
+		<homepage>http://www.isynergytech.com</homepage>
+		<icon path="images/isynergy_logo.png"/>
+	</packager>
+	<presentation>
+		<summary>Your Small Business is Our BIG Business</summary>
+		<description>24/7 Techies specializes in delivering tech support to
+			SMBs globally. We have delivered cost-effective IT services and cloud
+			apps support to thousands of satisfied customers. Our tech teams have
+			helped businesses like yours for over 15 years with a Net Promoter
+			Score in the 90’s.
+
+			Our systems, support processes and our training are
+			built with the needs
+			of small businesses in mind. You will have access
+			to world class
+			onboarding and tech support 24/7, 365 days of the year
+			similar to
+			large enterprises. Getting support is as simple as clicking
+			on a
+			button, it's seamless and it's like having our techs right beside
+			you
+			around the clock.
+
+			24/7 Techies is a Microsoft® Certified Gold
+			Partner and a Microsoft®
+			Certified Small Business Support Specialist.
+			We deliver world class
+			IT solutions to SMBs which only the FORTUNE 500
+			companies had access
+			to before.
+</description>
+		<icon path="images/24_7-biz.png"/>
+		<changelog>
+			<version release="1.0" version="1.0">
+				<entry>Initial Build</entry>
+			</version>
+			<version release="1.3" version="1.0">
+				<entry>Test</entry>
+			</version>
+			<version release="1.4" version="1.0">
+				<entry>Test</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Back office/Professional Services Automation</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<group>
+			<name>Global Variables</name>
+			<setting default-value="" id="reseller_user_id" type="string">
+				<name>Reseller User ID</name>
+				<description>Please enter your Reseller User ID</description>
+			</setting>
+			<setting class="password" default-value="" id="reseller_password" type="password">
+				<name>Reseller Password</name>
+				<error-message>Please enter your Reseller User Password
+				</error-message>
+			</setting>
+			<setting default-value="http://1.2.3.4:8088/24x7TechiesScheduler" id="web_service_url" type="string">
+				<name>Web Service URL</name>
+			</setting>
+		</group>
+	</global-settings>
+	<service class="service" id="CustomerProfile" singular="true">
+		<license must-accept="true">
+			<commercial/>
+			<text>
+				<name>24/7 Techies License</name>
+				<file>htdocs/license.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Customer Profile</name>
+			<summary>24/7 Techies Customer Profile</summary>
+			<infolinks>
+				<link class="support" href="http://tempuri.org">support</link>
+			</infolinks>
+		</presentation>
+		<settings>
+
+			<group class="vcard">
+				<name>Customer Information</name>
+				<setting class="organization-name" default-value="" id="customer_name" track-old-value="true" type="string">
+					<name>Company name</name>
+				</setting>
+				<setting class="street-address" default-value="" id="customer_street" track-old-value="true" type="string">
+					<name>Street</name>
+				</setting>
+				<setting class="locality" default-value="" id="customer_city" track-old-value="true" type="string">
+					<name>City</name>
+				</setting>
+				<setting class="region" default-value="" id="customer_state" track-old-value="true" type="string">
+					<name>State</name>
+				</setting>
+				<group class="adr">
+					<setting class="country-name" default-value="" id="customer_country" track-old-value="true" type="string">
+						<name>Country</name>
+					</setting>
+				</group>
+				<setting class="postal-code" default-value="" id="customer_zipcode" track-old-value="true" type="string">
+					<name>Zip code</name>
+				</setting>
+				<group class="tel">
+					<setting class="work" default-value="" id="customer_phone_work" installation-only="true" type="string">
+						<name>Work phone number</name>
+					</setting>
+					<setting class="work" default-value="" id="customer_phone_mobile" installation-only="true" type="string">
+						<name>Mobile phone number</name>
+					</setting>
+				</group>
+			</group>
+			<group class="vcard">
+				<name>Contact Person</name>
+				<group class="fn n">
+					<setting class="display-name" default-value="" id="customer_admin_name" installation-only="true" type="string">
+						<name>Administrator's name</name>
+					</setting>
+				</group>
+				<group class="email">
+					<setting class="value" default-value="admin@some-domain.com" id="customer_admin_email_address" installation-only="true" type="email">
+						<name>Administrator's email address</name>
+					</setting>
+				</group>
+			</group>
+			<group class="vcard">
+				<name>Result</name>
+				<setting default-value="Processing" id="customer_application_status" optional="true" protected="true" type="string">
+					<name>Last operation status</name>
+				</setting>
+				<setting default-value="" id="customer_id" installation-only="true" type="string" visibility="hidden">
+					<name>Account ID</name>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+		</requirements>
+		<provision>
+			<configuration-script name="configure-customer.php">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+			<verify-script name="verification-customer.php">
+				<script-language>php</script-language>
+				<structured-output/>
+			</verify-script>
+		</provision>
+		<service class="service" id="StandardServerSupport" singular="true">
+			<presentation>
+				<name>Standard Server Support</name>
+				<summary>Standard Server Support</summary>
+			</presentation>
+			<requirements>
+				<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			</requirements>
+			<provision>
+				<configuration-script name="configure-std-server-support.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+			</provision>
+			<service class="service" id="MicrosoftGeneralServerSupport" singular="true">
+				<presentation>
+					<name>Microsoft General Server Support</name>
+					<summary>Microsoft General Server Support</summary>
+					<entry-points>
+						<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+							<label>Appointment Scheduler</label>
+							<variable class="" name="token" value-of-setting="customer_token"/>
+							<variable class="" name="productCode" value-of-setting="product_code">
+							</variable>
+						</entry>
+					</entry-points>
+				</presentation>
+				<settings>
+					<group>
+						<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+						</setting>
+					</group>
+					<group>
+						<setting default-value="" id="product_code" type="string" visibility="hidden">
+						</setting>
+					</group>
+					<group class="vcard">
+						<name>Result</name>
+						<setting default-value="Processing..." id="service_provision_status" optional="true" protected="true" type="string">
+							<name>Last operation status</name>
+						</setting>
+					</group>
+				</settings>
+				<requirements>
+					<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+				</requirements>
+				<provision>
+					<configuration-script name="configure-ms-general-server-support.php">
+						<script-language>php</script-language>
+						<structured-output/>
+					</configuration-script>
+				</provision>
+			</service>
+			<service class="service" id="MicrosoftBssServerSupport" singular="true">
+				<presentation>
+					<name>Microsoft BSS Server Support</name>
+					<summary>Microsoft BSS Server Support</summary>
+					<entry-points>
+						<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+							<label>Appointment Scheduler</label>
+							<variable class="" name="token" value-of-setting="customer_token"/>
+							<variable class="" name="productCode" value-of-setting="product_code">
+							</variable>
+						</entry>
+					</entry-points>
+				</presentation>
+				<settings>
+					<group>
+						<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+						</setting>
+					</group>
+					<group>
+						<setting default-value="" id="product_code" type="string" visibility="hidden">
+						</setting>
+					</group>
+					<group class="vcard">
+						<name>Result</name>
+						<setting default-value="Processing..." id="service_provision_status" optional="true" protected="true" type="string">
+							<name>Last operation status</name>
+						</setting>
+					</group>
+				</settings>
+				<requirements>
+					<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+				</requirements>
+				<provision>
+					<configuration-script name="configure-ms-bss-server-support.php">
+						<script-language>php</script-language>
+						<structured-output/>
+					</configuration-script>
+				</provision>
+			</service>
+			<service class="service" id="MicrosoftExchangeServerSupport" singular="true">
+				<presentation>
+					<name>Microsoft Exchange Server Support</name>
+					<summary>Microsoft Exchange Server Support</summary>
+					<entry-points>
+						<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+							<label>Appointment Scheduler</label>
+							<variable class="" name="token" value-of-setting="customer_token"/>
+							<variable class="" name="productCode" value-of-setting="product_code">
+							</variable>
+						</entry>
+					</entry-points>
+				</presentation>
+				<settings>
+					<group>
+						<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+						</setting>
+					</group>
+					<group>
+						<setting default-value="" id="product_code" type="string" visibility="hidden">
+						</setting>
+					</group>
+					<group class="vcard">
+						<name>Result</name>
+						<setting default-value="Processing..." id="service_provision_status" optional="true" protected="true" type="string">
+							<name>Last operation status</name>
+						</setting>
+					</group>
+				</settings>
+				<requirements>
+					<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+				</requirements>
+				<provision>
+					<configuration-script name="configure-ms-exch-server-support.php">
+						<script-language>php</script-language>
+						<structured-output/>
+					</configuration-script>
+				</provision>
+			</service>
+			<service class="service" id="MicrosoftSharepointServerSupport" singular="true">
+				<presentation>
+					<name>Microsoft Sharepoint Server Support</name>
+					<summary>Microsoft Sharepoint Server Support</summary>
+					<entry-points>
+						<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+							<label>Appointment Scheduler</label>
+							<variable class="" name="token" value-of-setting="customer_token"/>
+							<variable class="" name="productCode" value-of-setting="product_code">
+							</variable>
+						</entry>
+					</entry-points>
+				</presentation>
+				<settings>
+					<group>
+						<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+						</setting>
+					</group>
+					<group>
+						<setting default-value="" id="product_code" type="string" visibility="hidden">
+						</setting>
+					</group>
+					<group class="vcard">
+						<name>Result</name>
+						<setting default-value="Processing..." id="service_provision_status" optional="true" protected="true" type="string">
+							<name>Last operation status</name>
+						</setting>
+					</group>
+				</settings>
+				<requirements>
+					<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+				</requirements>
+				<provision>
+					<configuration-script name="configure-ms-sharepoint-server-support.php">
+						<script-language>php</script-language>
+						<structured-output/>
+					</configuration-script>
+				</provision>
+			</service>
+		</service>
+		<service class="service" id="CloudEmailService" singular="true">
+			<presentation>
+				<name>Cloud Email Service</name>
+				<summary>Cloud Email Service</summary>
+			</presentation>
+			<requirements>
+				<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			</requirements>
+			<provision>
+				<configuration-script name="configure-cloud-email.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+			</provision>
+			<service class="service" id="MicrosoftOffice365" singular="true">
+				<presentation>
+					<name>Microsoft Office 365</name>
+					<summary>Microsoft Office 365</summary>
+					<entry-points>
+						<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+							<label>Appointment Scheduler</label>
+							<variable class="" name="token" value-of-setting="customer_token"/>
+							<variable class="" name="productCode" value-of-setting="product_code">
+							</variable>
+						</entry>
+					</entry-points>
+				</presentation>
+				<settings>
+					<group>
+						<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+						</setting>
+					</group>
+					<group>
+						<setting default-value="" id="product_code" type="string" visibility="hidden">
+						</setting>
+					</group>
+					<group class="vcard">
+						<name>Result</name>
+						<setting default-value="Processing..." id="service_provision_status" optional="true" protected="true" type="string">
+							<name>Last operation status</name>
+						</setting>
+					</group>
+				</settings>
+				<requirements>
+					<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+				</requirements>
+				<provision>
+					<configuration-script name="configure-ms-office-365.php">
+						<script-language>php</script-language>
+						<structured-output/>
+					</configuration-script>
+				</provision>
+			</service>
+			<service class="service" id="GoogleApps" singular="true">
+				<presentation>
+					<name>Google Apps</name>
+					<summary>Google Apps</summary>
+					<entry-points>
+						<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+							<label>Appointment Scheduler</label>
+							<variable class="" name="token" value-of-setting="customer_token"/>
+							<variable class="" name="productCode" value-of-setting="product_code">
+							</variable>
+						</entry>
+					</entry-points>
+				</presentation>
+				<settings>
+					<group>
+						<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+						</setting>
+					</group>
+					<group>
+						<setting default-value="" id="product_code" type="string" visibility="hidden">
+						</setting>
+					</group>
+					<group class="vcard">
+						<name>Result</name>
+						<setting default-value="Processing..." id="service_provision_status" optional="true" protected="true" type="string">
+							<name>Last operation status</name>
+						</setting>
+					</group>
+				</settings>
+				<requirements>
+					<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+				</requirements>
+				<provision>
+					<configuration-script name="configure-google-apps.php">
+						<script-language>php</script-language>
+						<structured-output/>
+					</configuration-script>
+				</provision>
+			</service>
+		</service>
+		<service class="service" id="BackupAndStorage" singular="true">
+			<presentation>
+				<name>Backup and Storage</name>
+				<summary>Backup and Storage</summary>
+				<entry-points>
+					<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+						<label>Appointment Scheduler</label>
+						<variable class="" name="token" value-of-setting="customer_token"/>
+						<variable class="" name="productCode" value-of-setting="product_code">
+						</variable>
+					</entry>
+				</entry-points>
+			</presentation>
+			<settings>
+				<group>
+					<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+					</setting>
+				</group>
+				<group>
+					<setting default-value="" id="product_code" type="string" visibility="hidden">
+					</setting>
+				</group>
+				<group class="vcard">
+					<name>Result</name>
+					<setting default-value="Processing" id="service_provision_status" optional="true" protected="true" type="string">
+						<name>Last operation status</name>
+					</setting>
+				</group>
+			</settings>
+			<requirements>
+				<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			</requirements>
+			<provision>
+				<configuration-script name="configure-backup-storage.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+			</provision>
+		</service>
+		<service class="service" id="CRM" singular="true">
+			<presentation>
+				<name>CRM</name>
+				<summary>Customer Relationship Management</summary>
+				<entry-points>
+					<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+						<label>Appointment Scheduler</label>
+						<variable class="" name="token" value-of-setting="customer_token"/>
+						<variable class="" name="productCode" value-of-setting="product_code">
+						</variable>
+					</entry>
+				</entry-points>
+			</presentation>
+			<settings>
+				<group>
+					<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+					</setting>
+				</group>
+				<group>
+					<setting default-value="" id="product_code" type="string" visibility="hidden">
+					</setting>
+				</group>
+				<group class="vcard">
+					<name>Result</name>
+					<setting default-value="Processing" id="service_provision_status" optional="true" protected="true" type="string">
+						<name>Last operation status</name>
+					</setting>
+				</group>
+			</settings>
+			<requirements>
+				<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			</requirements>
+			<provision>
+				<configuration-script name="configure-crm.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+			</provision>
+		</service>
+		<service class="service" id="Security" singular="true">
+			<presentation>
+				<name>Security</name>
+				<summary>Security</summary>
+				<entry-points>
+					<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+						<label>Appointment Scheduler</label>
+						<variable class="" name="token" value-of-setting="customer_token"/>
+						<variable class="" name="productCode" value-of-setting="product_code">
+						</variable>
+					</entry>
+				</entry-points>
+			</presentation>
+			<settings>
+				<group>
+					<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+					</setting>
+				</group>
+				<group>
+					<setting default-value="" id="product_code" type="string" visibility="hidden">
+					</setting>
+				</group>
+				<group class="vcard">
+					<name>Result</name>
+					<setting default-value="Processing" id="service_provision_status" optional="true" protected="true" type="string">
+						<name>Last operation status</name>
+					</setting>
+				</group>
+			</settings>
+			<requirements>
+				<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			</requirements>
+			<provision>
+				<configuration-script name="configure-security.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+			</provision>
+		</service>
+		<service class="service" id="VideoWeb" singular="true">
+			<presentation>
+				<name>Video WEB</name>
+				<summary>Video WEB</summary>
+				<entry-points>
+					<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+						<label>Appointment Scheduler</label>
+						<variable class="" name="token" value-of-setting="customer_token"/>
+						<variable class="" name="productCode" value-of-setting="product_code">
+						</variable>
+					</entry>
+				</entry-points>
+			</presentation>
+			<settings>
+				<group>
+					<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+					</setting>
+				</group>
+				<group>
+					<setting default-value="" id="product_code" type="string" visibility="hidden">
+					</setting>
+				</group>
+				<group class="vcard">
+					<name>Result</name>
+					<setting default-value="Processing" id="service_provision_status" optional="true" protected="true" type="string">
+						<name>Last operation status</name>
+					</setting>
+				</group>
+			</settings>
+			<requirements>
+				<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			</requirements>
+			<provision>
+				<configuration-script name="configure-video-web.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+			</provision>
+		</service>
+		<service class="service" id="OnlineMarketing" singular="true">
+			<presentation>
+				<name>Online Marketing</name>
+				<summary>Online Marketing</summary>
+			</presentation>
+			<requirements>
+				<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			</requirements>
+			<provision>
+				<configuration-script name="configure-online-marketing.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+			</provision>
+			<service class="service" id="PayPerClick" singular="true">
+				<presentation>
+					<name>Pay Per Click</name>
+					<summary>Pay Per Click</summary>
+					<entry-points>
+						<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+							<label>Appointment Scheduler</label>
+							<variable class="" name="token" value-of-setting="customer_token"/>
+							<variable class="" name="productCode" value-of-setting="product_code">
+							</variable>
+						</entry>
+					</entry-points>
+				</presentation>
+				<settings>
+					<group>
+						<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+						</setting>
+					</group>
+					<group>
+						<setting default-value="" id="product_code" type="string" visibility="hidden">
+						</setting>
+					</group>
+					<group class="vcard">
+						<name>Result</name>
+						<setting default-value="Processing..." id="service_provision_status" optional="true" protected="true" type="string">
+							<name>Last operation status</name>
+						</setting>
+					</group>
+				</settings>
+				<requirements>
+					<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+				</requirements>
+				<provision>
+					<configuration-script name="configure-pay-per-click.php">
+						<script-language>php</script-language>
+						<structured-output/>
+					</configuration-script>
+				</provision>
+			</service>
+		<service class="service" id="SEO" singular="true">
+				<presentation>
+					<name>SEO</name>
+					<summary>SEO</summary>
+					<entry-points>
+						<entry class="multi-step-login" dst="http://192.168.1.12:8080/24x7TechiesScheduler/login" method="POST">
+							<label>Appointment Scheduler</label>
+							<variable class="" name="token" value-of-setting="customer_token"/>
+							<variable class="" name="productCode" value-of-setting="product_code">
+							</variable>
+						</entry>
+					</entry-points>
+				</presentation>
+				<settings>
+					<group>
+						<setting id="customer_token" type="string" value-of-setting="customer_id" visibility="hidden">
+						</setting>
+					</group>
+					<group>
+						<setting default-value="" id="product_code" type="string" visibility="hidden">
+						</setting>
+					</group>
+					<group class="vcard">
+						<name>Result</name>
+						<setting default-value="Processing..." id="service_provision_status" optional="true" protected="true" type="string">
+							<name>Last operation status</name>
+						</setting>
+					</group>
+				</settings>
+				<requirements>
+					<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+				</requirements>
+				<provision>
+					<configuration-script name="configure-seo.php">
+						<script-language>php</script-language>
+						<structured-output/>
+					</configuration-script>
+				</provision>
+			</service>
+</service>
+	</service>
+</application>

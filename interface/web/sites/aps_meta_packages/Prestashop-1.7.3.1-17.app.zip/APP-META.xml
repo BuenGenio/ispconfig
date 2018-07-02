@@ -1,0 +1,301 @@
+<application packaged="2018-04-11T04:05:40" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>Prestashop</id>
+	<name>Prestashop</name>
+	<version>1.7.3.1</version>
+	<release>17</release>
+	<homepage>http://www.prestashop.com</homepage>
+	<vendor>
+		<name>Prestashop</name>
+		<homepage>http://www.prestashop.com/</homepage>
+		<icon path="images/prestashop_logo64.jpg"/>
+	</vendor>
+	<packager>
+		<name>Plesk</name>
+		<homepage>http://plesk.com</homepage>
+		<icon path="images/packager.png"/>
+		<uri>uuid:04b3876b-87f1-474a-8d7b-e7da1bf1c543</uri>
+	</packager>
+	<presentation>
+		<summary>PrestaShop is the fastest, the lightest, and the most progressive Open Source e-commerce software.</summary>
+		<description>Download the No.1 Open-Source software in France and in Europe now, join more than 275,000 members in the Community, and experience the ease of use and management of this innovative solution, for a profitable e-commerce business ! Prestashop had numerous outstanding accomplishments and developments throught the years.</description>
+		<icon path="images/prestashop_logo64.jpg"/>
+		<screenshot path="images/Prestashop-Home.jpg">
+			<description>Homepage</description>
+		</screenshot>
+		<screenshot path="images/prestashop-backoffice.jpg">
+			<description>Backoffice page</description>
+		</screenshot>
+		<changelog>
+			<version release="17" version="1.7.3.1">
+				<entry>CHANGELOG: https://assets.prestashop2.com/en/system/files/ps_releases/changelog_1.7.3.1.txt</entry>
+			</version>
+			<version release="1" version="1.7.3.0">
+				<entry>CHANGELOG: https://assets.prestashop2.com/en/system/files/ps_releases/changelog_1.7.3.0.txt</entry>
+			</version>
+			<version release="1" version="1.7.2.5">
+				<entry>CHANGELOG: https://assets.prestashop2.com/en/system/files/ps_releases/changelog_1.7.2.5.txt</entry>
+			</version>
+			<version release="1" version="1.7.2.4">
+				<entry>CHANGELOG: https://assets.prestashop2.com/en/system/files/ps_releases/changelog_1.7.2.4.txt</entry>
+			</version>
+			<version release="1" version="1.7.2.3">
+				<entry>CHANGELOG: https://assets.prestashop2.com/en/system/files/ps_releases/changelog_1.7.2.3.txt</entry>
+			</version>
+			<version release="1" version="1.7.2.2">
+				<entry>CHANGELOG: https://assets.prestashop2.com/en/system/files/ps_releases/changelog_1.7.2.2.txt</entry>
+			</version>
+			<version release="1" version="1.7.2.1">
+				<entry>CHANGELOG: https://assets.prestashop2.com/en/system/files/ps_releases/changelog_1.7.2.1.txt</entry>
+			</version>
+			<version release="1" version="1.7.2.0">
+				<entry>CHANGELOG: https://assets.prestashop2.com/en/system/files/ps_releases/changelog_1.7.2.0.txt</entry>
+			</version>
+			<version release="1" version="1.7.1.2">
+				<entry>CHANGELOG: https://assets.prestashop2.com/en/system/files/ps_releases/changelog_1.7.1.2.txt</entry>
+			</version>
+			<version release="1" version="1.7.1.0">
+				<entry>CHANGELOG: https://assets.prestashop2.com/en/system/files/ps_releases/changelog_1.7.1.0.txt</entry>
+			</version>
+			<version release="1" version="1.7.0.6">
+				<entry>CHANGELOG: https://assets.prestashop2.com/en/system/files/ps_releases/changelog_1.7.0.6.txt</entry>
+			</version>
+			<version release="1" version="1.7.0.4">
+				<entry>CHANGELOG: https://www.prestashop.com/en/developers-versions/changelog/1.7.0.4-stable</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/E-commerce</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<upgrade match="/application/version &gt;= '1.7'"/>
+	<service id="Prestashop">
+		<license must-accept="true">
+			<free/>
+			<text>
+				<name>Open Software License v. 3.0</name>
+				<file>htdocs/docs/licences/LICENSE.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Prestashop</name>
+			<summary>PrestaShop is the fastest, the lightest, and the most progressive Open Source e-commerce software.</summary>
+			<infolinks>
+				<link class="support" href="https://www.prestashop.com/en/support">Prestashop Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/Backoffice/index.php?" method="POST">
+					<label>Backoffice Page</label>
+					<description/>
+					<variable class="login" name="email" value-of-setting="ADMINEMAIL"/>
+					<variable class="password" name="passwd" value-of-setting="ADMINPASSWORD"/>
+					<variable class="login" name="controller">AdminLogin</variable>
+					<variable class="login" name="submitLogin">1</variable>
+					<variable class="login" name="redirect">index.php?controller=&amp;token=a7f48ed2a52677da093d531d58edf878</variable>
+				</entry>
+				<entry class="frontpage" dst="/index.php">
+					<label>Index page</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="vcard">
+				<group class="email">
+					<setting class="value" id="ADMINEMAIL" type="email">
+						<name>Administrator's mail</name>
+						<error-message>Must contain a valid email.</error-message>
+					</setting>
+				</group>
+				<group class="fn n">
+					<setting class="given-name" default-value="Z" id="FIRSTNAME" installation-only="true" min-length="1" regex="^[^0-9!&lt;&gt;,;?=+()@#&quot;{}_$%:]*$" type="string">
+						<name>Administrator's firstname</name>
+						<error-message>The firstname field is invalid.</error-message>
+					</setting>
+					<setting class="family-name" default-value="A" id="LASTNAME" installation-only="true" min-length="1" regex="^[^0-9!&lt;&gt;,;?=+()@#&quot;{}_$%:]*$" type="string">
+						<name>Administrator's lastname</name>
+						<error-message>The lastname field is invalid.</error-message>
+					</setting>
+				</group>
+			</group>
+			<group class="vcard">
+				<name>Shop's preferences</name>
+				<group class="org">
+					<setting class="organization-name" id="SHOPNAME" installation-only="true" min-length="1" type="string">
+						<name>Shop name</name>
+						<error-message>Must contain at least one character.</error-message>
+					</setting>
+				</group>
+			</group>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="password" id="ADMINPASSWORD" max-length="32" min-length="8" type="password">
+					<name>Administrator's password</name>
+					<error-message>Must contain at least eight character.</error-message>
+				</setting>
+			</group>
+			<group class="web">
+				<setting class="locale" default-value="en-US" id="locale" installation-only="true" type="enum">
+					<name>Interface language</name>
+					<name xml:lang="en-US">Interface language</name>
+					<name xml:lang="da-DK">Grænsefladesprog</name>
+					<name xml:lang="de-DE">Sprache der Benutzeroberfläche</name>
+					<name xml:lang="el-GR">Γλώσσα περιβάλλοντος εργασίας</name>
+					<name xml:lang="es-ES">Idioma del interfaz</name>
+					<name xml:lang="fi-FI">Käyttöliittymän kieli</name>
+					<name xml:lang="fr-FR">Langue de l'interface</name>
+					<name xml:lang="it-IT">Lingua dell'interfaccia</name>
+					<name xml:lang="ja-JP">インターフェース言語</name>
+					<name xml:lang="ko-KR">인터페이스 언어</name>
+					<name xml:lang="nb-NO">Grensesnitt språk</name>
+					<name xml:lang="nl-NL">Schermtaal</name>
+					<name xml:lang="pt-BR">Idioma da interface</name>
+					<name xml:lang="pt-PT">Língua da interface</name>
+					<name xml:lang="pl-PL">Język interfejsu</name>
+					<name xml:lang="ru-RU">Язык интерфейса</name>
+					<name xml:lang="sv-SE">Gränssnittsspråk</name>
+					<name xml:lang="tr-TR">Arayüz Dili</name>
+					<name xml:lang="uk-UA">Мова інтерфейсу</name>
+					<name xml:lang="zh-CN">界面语言</name>
+					<name xml:lang="zh-TW">介面語言</name>
+					<choice id="zh-CN">
+						<name>Chinese Simplified</name>
+					</choice>
+					<choice id="zh-TW">
+						<name>Chinese Traditional</name>
+					</choice>
+					<choice id="da-DK">
+						<name>Danish</name>
+					</choice>
+					<choice id="nl-NL">
+						<name>Dutch</name>
+					</choice>
+					<choice id="de-DE">
+						<name>German</name>
+					</choice>
+					<choice id="en-US">
+						<name>English</name>
+					</choice>
+					<choice id="fr-FR">
+						<name>French</name>
+					</choice>
+					<choice id="it-IT">
+						<name>Italian</name>
+					</choice>
+					<choice id="ja-JP">
+						<name>Japanese</name>
+					</choice>
+					<choice id="ru-RU">
+						<name>Russian</name>
+					</choice>
+					<choice id="pl-PL">
+						<name>Polish</name>
+					</choice>
+					<choice id="es-ES">
+						<name>Spanish</name>
+					</choice>
+					<choice id="tr-TR">
+						<name>Turkish</name>
+					</choice>
+					<choice id="pt-BR">
+						<name>Portuguese</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.4" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:memory-limit xmlns:php="http://apstandard.com/ns/1/php">268435456</php:memory-limit>
+			<php:file-uploads xmlns:php="http://apstandard.com/ns/1/php">true</php:file-uploads>
+			<php:allow-url-fopen xmlns:php="http://apstandard.com/ns/1/php">true</php:allow-url-fopen>
+			<php:register-globals xmlns:php="http://apstandard.com/ns/1/php">false</php:register-globals>
+			<php:magic-quotes-gpc xmlns:php="http://apstandard.com/ns/1/php">false</php:magic-quotes-gpc>
+			<php:max-execution-time xmlns:php="http://apstandard.com/ns/1/php">120</php:max-execution-time>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">dom</php:extension>
+
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">PDO</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">gd</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mcrypt</php:extension>
+			
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqlnd</php:extension>
+
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">zip</php:extension>
+
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">openssl</php:extension>
+
+                        <php:extension xmlns:php="http://apstandard.com/ns/1/php">pdo_mysql</php:extension>
+
+                        <php:extension xmlns:php="http://apstandard.com/ns/1/php">fileinfo</php:extension>
+
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>prestashop</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>prestashop</default-prefix>
+				<installed-size>161300309</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="config">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="tools">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="smarty">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+					<mapping url="log">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="sitemap.xml">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping path="htdocs/img" url="img">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="tmp">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+					<mapping url="mails">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="modules">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="themes">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="default-bootstrap">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+					<mapping url="translations">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="upload">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="download">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

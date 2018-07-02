@@ -1,0 +1,284 @@
+<application packaged="2016-05-18T10:28:13" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>ZenCart</id>
+	<name>Zen Cart</name>
+	<version>1.5.5</version>
+	<release>55</release>
+	<homepage>http://www.zen-cart.com/</homepage>
+	<vendor>
+		<name>zen-cart.com</name>
+		<homepage>http://www.zen-cart.com</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Plesk</name>
+		<homepage>http://plesk.com/</homepage>
+		<icon path="images/packager.png"/>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+	<presentation>
+		<summary>Shopping cart software</summary>
+		<description>
+			Zen Cart truly is the art of e-commerce. It is built for
+			entrepreneurs by entrepreneurs. The program is built by
+			programmers and designers who understand the online selling
+			process from start to finish. Zen Cart has included all the
+			necessary tools required to build a successful online store
+			and we are constantly improving and upgrading the software
+			based on our users requirements.
+		</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/screenshot.jpg">
+			<description>Newly installed Zen Cart</description>
+		</screenshot>
+		<changelog>
+			<version release="55" version="1.5.5">
+				<entry>https://www.zen-cart.com/showthread.php?219730-Zen-Cart-v1-5-5-released!</entry>
+			</version>
+			<version release="19" version="1.5.4">
+				<entry>Package updated to avoid crashing if PHP7 is selected</entry>
+			</version>
+			<version release="18" version="1.5.4">
+				<entry>Updated</entry>
+			</version>
+			<version release="17" version="1.5.4">
+				<entry>Improvements include:
+					CHANGE-714 - Add progressive-enhancement to checkout flow for PCI compliance when card details collected onsite (added ajax infrastructure, and jQuery)
+					Fix #209 - POODLE protection - Remove SSLv3 mode, to allow autonegotiation
+
+					Bugfixes and feature updates include:
+					CHANGE-724 - Fix init_cache_key_check.php redirect loop which occurred when the user deletes the /cache/ folder
+					CHANGE-423 - PayPal Express Checkout - recover funding failure (10486) with "retry" if card is declined
+					CHANGE-725 - Authorizenet SIM module now hashes x_currency_code
+					CHANGE-730 - Linkpoint CURL SSL bug triggers PHP Warning: Illegal string offset
+					CHANGE-731 - Update Authorize.net SIM and AIM to add support for AUD,NZD currencies (now supports USD CAD GBP EUR AUD NZD)
+					CHANGE-732 - Update Authorize.net SIM and AIM to set defaults for merchant accounts capable of doing POS and Web transactions in one account
+					CHANGE-733 - Store-pickup module not activating properly for zone restrictions
+					CHANGE-311 - Data sanity check in admin/customers.php
+					CHANGE-709 - Refactor logging infrastructure
+					CHANGE-735 - Fix CSRF in admin profiles for action=delete
+					CHANGE-736 - Fix CSRF in layout_controllers for action=reset_defaults
+					CHANGE-737 - Replace hard-coded language text in /admin/orders.php
+					Fix #136 - Error in html syntax in admin_activity and CSS comment syntax in who's online
+					Fix #152 - Page not found when incorrect EZPage link remove status
+					Fix #188 - Remove code comment causing false-positive in security scan
+					Fix #210 - Fix code dealing with apostrophes in filenames
+					Fix #215 - Added additional common destinations to curltester script
+					Fix #221 - Fix Discount Coupon and Shipping Cost
+					Fix #246 - Fix errors about passwords during zc_install upgrade
+					ISSUE-82 - (continuation of) Fix odd PHP quirk which triggers fatal error "Allowed memory size of --- bytes exhausted" when accessing SID constant
+					Optimizations and improvements to various database queries
+					Fix queries in class.phpbb.php
+					Fix fmod_round and shopping_cart using (int) on quantity
+					Backported a PHP 5.4 fix to attributes_controller
+					zc_install - Fix email validation in zc_install to allow for new domain name TLDs
+					Fix override of mexico addresses with paypal pro
+					Substitute gethostname for shell_exec since some hosts disable shell_exec
+				</entry>
+			</version>
+			<version release="13" version="1.5.3.1">
+				<entry>Hotfix 1 (07192014);</entry>
+				<entry>Autologin security issue fixed</entry>
+			</version>
+			<version release="2" version="1.5.3">
+				<entry>Added autologin</entry>
+			</version>
+			<version release="1" version="1.5.3">
+				<entry>1.5.3 release</entry>
+			</version>
+			<version release="11" version="1.5.1">
+				<entry>Added new language plugins in the language folder</entry>
+			</version>
+			<version release="10" version="1.5.1">
+				<entry>Layout Box Controller menu item fixed</entry>
+			</version>
+			<version release="9" version="1.5.1">
+				<entry>Copy custom languages from admin directory on upgrade;</entry>
+				<entry>Language uploader fixed to place files in new zen_admin directory;</entry>
+				<entry>French is moved back, for upgrade sake.</entry>
+			</version>
+			<version release="7" version="1.5.1">
+				<entry>Changes in htdocs files</entry>
+			</version>
+			<version release="5" version="1.5.1">
+				<entry>Spanish and Norwagian added, French outdated, removed</entry>
+			</version>
+			<version release="1" version="1.5.1">
+				<entry>http://www.zen-cart.com/showthread.php?200259-Zen-Cart-v1-5-1-Released!-**-Performance-Improvements-Bug-Fixes-etc</entry>
+			</version>
+			<version release="5" version="1.5.0">
+				<entry>Modified the test scripts for Locale uploader</entry>
+			</version>
+			<version release="4" version="1.5.0">
+				<entry>Modified to block the password reset.</entry>
+			</version>
+			<version release="3" version="1.5.0">
+				<entry>Changes done in Test Scripts.</entry>
+			</version>
+			<version release="2" version="1.5.0">
+				<entry>Added the POA Installation Document "Zen Cart Installation Manual_V1.0.doc" in the docs folder.</entry>
+			</version>
+			<version release="1" version="1.5.0">
+				<entry>http://www.zen-cart.com/showthread.php?190424-v1-5-0-Release-Available</entry>
+			</version>
+			<version release="3" version="1.3.9h">
+				<entry>Release notes: http://www.zen-cart.com/forum/showthread.php?t=166875</entry>
+			</version>
+			<version release="12" version="1.3.9d">
+				<entry>German language correction</entry>
+				<entry>Database prefix fixed, setting for db prefix is added</entry>
+			</version>
+			<version release="9" version="1.3.9d">
+				<entry>Theme and Locale uploader: correct redirection after login</entry>
+			</version>
+			<version release="8" version="1.3.9d">
+				<entry>Menu for locale upload is added</entry>
+			</version>
+			<version release="7" version="1.3.9d">
+				<entry>Upgrade to version 1.3.9d</entry>
+			</version>
+			<version release="4" version="1.3.8">
+				<entry/>
+			</version>
+			<version release="3" version="1.3.8">
+				<entry>Repackaged to conform new standard</entry>
+			</version>
+			<version release="31" version="1.2.6">
+				<entry>Initial package version</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/E-commerce</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '1.3.8' and /application/release &gt;= '1'"/>
+	<service id="Zen Cart">
+		<license must-accept="true">
+			<text>
+				<name>GNU GENERAL PUBLIC LICENSE</name>
+				<file>htdocs/license.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Zen Cart</name>
+			<summary>Shopping cart software</summary>
+			<infolinks>
+				<link class="support" href="http://www.zen-cart.com/content.php?337-support">Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/zen_admin/customlogin.php" method="POST">
+					<label>Administrative interface</label>
+					<variable class="login" name="admin_name" value-of-setting="admin_name"/>
+					<variable class="password" name="admin_pass" value-of-setting="admin_password"/>
+				</entry>
+				<entry dst="/">
+					<label>Online Catalog</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" type="string">
+					<name>Administrator's name</name>
+				</setting>
+				<setting class="password" id="admin_password" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<group class="email">
+					<setting class="value" id="admin_email" type="email">
+						<name>Administrator's email</name>
+					</setting>
+				</group>
+			</group>
+			<group class="web">
+				<name>Other preferences</name>
+				<setting class="locale" default-value="en-US" id="locale" type="enum">
+					<choice id="en-US">
+						<name>English</name>
+					</choice>
+				</setting>
+			</group>
+			<group class="web">
+				<name>Configuration</name>
+				<setting class="vcard" default-value="database" id="sql_cache_method" type="enum">
+					<name>Cache method</name>
+					<choice id="database">
+						<name>Database</name>
+					</choice>
+					<choice id="file">
+						<name>File</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.2.10" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+			<php:memory-limit xmlns:php="http://apstandard.com/ns/1/php">134217728</php:memory-limit>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>zencart</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.1</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>/zencart/</default-prefix>
+				<installed-size>17495810</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="images">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="zen_admin">
+						<mapping url="includes/languages">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="includes/classes">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="images/graphs">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="backups">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+					<mapping url="cache">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="includes/templates">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="includes/languages">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="media">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="pub">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="editors">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

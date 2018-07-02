@@ -1,0 +1,184 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-11-27T15:59:53">
+    <id>https://business365.ru</id>
+    <name>Unicloud Business 365</name>
+    <version>1</version>
+    <release>32</release>
+    <homepage>http://www.business365.ru</homepage>
+    <vendor>
+    	<name>Unicloud Business 365</name>
+    	<homepage>https://business365.ru</homepage>
+    	<icon path="images/business365_logo.jpg" />
+    </vendor>
+    <packager>
+    	<name>LLC UnicloudLabs</name>
+    	<homepage>https://business365.ru</homepage>
+    	<icon path="images/business365_logo.jpg" />
+    	<uri>https://business365.ru</uri>
+    </packager>
+    <presentation>
+    	<summary>Unicloud Business 365 - организация совместной работы и ведение электронного документооборота</summary>
+    	<description>Облачная система позволяет эффективно автоматизировать основные процессы
+малого и среднего бизнеса и организовывать совместную работу между
+компаниями прямо в рамках системы. Компании могут вести совместные проекты,
+задачи, обсуждения, обмениваться файлами и даже подписывать договоры, акты,
+счета-фактуры с помощью электронной подписи.
+
+http://www.youtube.com/watch?v=bTr5KBqHCVE</description>
+    	<icon path="images/business365_logo.jpg" />
+    	<screenshot path="images/business365_01.jpg">
+    		<description>Возможности
+
+Business 365 позволяет легко ставить задачи перед
+командой и контролировать ход их выполнения. Система
+несет полную ответственность за все ваши проекты и
+позволит вам легко наверстать то, что вы пропустили.
+
+Business 365 является центральным местом для хранения
+всех заметок о партнерах и клиентах. Система упрощает
+процесс ведения сделок и позволяет делиться их
+статусом внутри компании, отдела и команды.
+
+Загружайте документы любого формата или создавайте
+их из шаблонов, отправляйте и принимайте электронную
+корреспонденцию от ваших партнеров.</description>
+    	</screenshot>
+    	<screenshot path="images/business365_02.jpg">
+    		<description>Преимущества
+
+− Интерфейс системы един как на настольном
+компьютере или ноутбуке, так и на планшете, а
+сама система работает из любого современного
+браузера без необходимости установки на
+локальные компьютеры.
+
+− Все формы, с которыми работает пользователь,
+максимально упрощены и зачастую имеют не
+более одного обязательного поля. Например,
+чтобы завести клиента, достаточно ввести только
+его наименование.
+
+− В интерфейсе применена новейшая концепция
+слоев, которая позволяет увидеть всю картину
+целиком, погрузиться в необходимые детали, а
+затем мгновенно вернуться к исходной точке. Это
+невероятно повышает эффективность работы
+обычного сотрудника и делает процесс работы с
+системой приятным и удобным.
+
+− В любом месте системы присутствует единая
+командная строка, в которую можно ввести
+текст, например «Предоставить отчет Петр
+послезавтра», нажать на «Создать задачу» и
+получить задачу с текстом «Предоставить отчет»,
+назначенную на сотрудника Петра со сроком
+выполнения послезавтра.</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="32" version="1">
+    			<entry>CertificationRelease</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Back office/Customer Relationship Management</category>
+    		<category>Collaboration/Project management</category>
+    	</categories>
+    	<languages>
+    		<language>ru</language>
+    	</languages>
+    </presentation>
+	<global-settings>
+		<setting id="aid" type="password" default-value="system">
+			<name>ID для доступа к тенант-хосту</name>
+		</setting>
+		<setting id="key" type="password" default-value="">
+			<name>Ключ для доступа к тенант-хосту</name>
+		</setting>		
+		<setting id="defaultApiDomain" type="string" default-value="https://api.business365.ru">
+			<name>адрес API</name>
+		</setting>
+		<setting id="defaultSystemDomain" type="string" default-value="https://business365.ru">
+			<name>Адрес системы</name>
+		</setting>
+		<setting type="string" id="OwnerBillingUrl" default-value="">
+			<name>Владелец APS пакета</name>
+			<description>Поле необходимо заполнить чтобы система понимала от кого к нам пришел клиент, чтобы в случае блокировки отправлять на правильный сайт, в идеале это url вашего биллинга</description>
+		</setting>
+
+	</global-settings>
+
+    <service id="Unicloud Business 365" class="service">
+    	<license must-accept="false">
+    		<free />
+    		<text>
+    			<name>License</name>
+    			<url>http://www.business365.ru/sites/default/files/ld050613.pdf</url>
+    		</text>
+    	</license>
+    	<presentation>
+    	<summary>Unicloud Business 365 - организация совместной работы и ведение электронного документооборота</summary>
+    		<infolinks>
+    			<link href="http://business365.copiny.com/" class="community">Сообщество</link>
+    			<link href="mailto:support@business365.ru" class="support">Техническая поддержка</link>
+    			<link href="http://www.business365.ru" class="official">Официальный сайт</link>
+    			<link href="https://business365.ru/doc/Deployment-guide.docx" class="deployment-guide">Документация по размещению</link>
+    		</infolinks>
+			<entry-points>
+				<entry dst="{defaultSystemDomain}/account/LoginByDaSreda" method="POST" class="login">
+					<label>Вход в приложение</label>
+					<variable name="email" value-of-setting="email"></variable>
+					<variable name="code" value-of-setting="code"></variable>
+					<variable name="defaultSystemDomain" value-of-setting="defaultSystemDomain"></variable>
+				</entry>
+			</entry-points>
+    	</presentation>
+    	<settings>
+    		<group >
+    			<name>login</name>
+    			<setting type="email" id="email"
+    				default-value="email@email.ru" class="email">
+    				<name>email</name>
+    			</setting>
+    			<setting type="string" id="code" default-value="" visibility="hidden">
+    				<name>code</name>
+    			</setting>
+    		</group>
+    		<group>
+    			<name>Options</name>
+    			<setting type="string" id="name" class="given-name" default-value="Tester">
+    				<name>name</name>
+    			</setting>
+    			<setting type="string" id="surname" class="family-name" default-value="Tester">
+    				<name>surname</name>
+    			</setting>
+    			<setting type="string" id="patronymic" class="presentation" default-value="Default">
+    				<name>patronymic</name>
+    			</setting>
+    			<setting type="boolean" id="isMale" class="presentation" default-value="true">
+    				<name>isMale</name>
+    			</setting>
+    			<setting type="integer" id="licenceCount"
+    				default-value="1">
+    				<name>LicenceCount</name>
+    			</setting>
+    		</group>
+    	</settings>
+    	<resources>
+    		<resource class="item" id="licenceCount" limiting-setting="licenceCount">
+    			<name>Количество лицензий</name>
+    		</resource>
+    	</resources>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:extension>curl</php:extension>
+    		<php:version min="5.0"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="api.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    		<resource-script name="resource.php" poll-interval="1d">
+    			<script-language>php</script-language>
+    		</resource-script>
+    	</provision>
+    </service>
+</application>

@@ -1,0 +1,1416 @@
+<application packaged="2014-12-12T09:32:36" version="1.2" xmlns="http://apstandard.com/ns/1">
+	
+	<id>http://aps.cloudwork.nl/package/VoiceworksAPS</id>
+	<name>Hosted Voice</name>
+	<version>1.5</version>
+	<release>49</release>
+	<homepage>https://hosted-voice.allisp.eu</homepage>
+	
+	<vendor>
+		<name>Voiceworks</name>
+		<homepage>http://www.voiceworks.com</homepage>
+		<icon path="images/phone_256.png"/>
+	</vendor>
+	
+	<packager>
+		<name>CloudCompanyon B.V.</name>
+		<homepage>http://www.cloudcompanyon.com</homepage>
+		<icon path="images/CloudCompanyon.png"/>
+		<uri>http://aps.cloudcompanyon.com</uri>
+	</packager>
+
+	<presentation>
+		<summary>Voice services</summary>
+		<description>This state-of-the-art managed voice platform enables a fast and reliable enrollment of VoIP telephony in a way that enables users to be ready for new online technologies. It even integrates with your on-site switchboard.</description>
+		<description xml:lang="nl-NL">Dit state-of-the-art managed voice platform faciliteert een snelle en betrouwbare uitrol van VoIP telefonie zodanig dat gebruikers klaar zijn voor nieuwe online technologieën. Het integreert tevens met uw bestaande PBX.</description>
+		<icon path="images/phone_256.png"/>
+		<screenshot path="images/screenshot_website.png">
+			<description>Standard Hosted Voice Website</description>
+		</screenshot>
+		
+		<changelog>
+			<version release="1" version="1.0">
+				<entry>Initial test release</entry>
+			</version>			
+			<version release="2" version="1.0">
+				<entry>Fixed auto-fill fields for seam-less install of account. </entry>
+				<entry>Fixed naming errors in documentation.</entry>
+			</version>
+			<version release="3" version="1.0">
+				<entry>SSO mandatory fields are filled.</entry>
+				<entry>Split logging and tracing for verification and for configuration scripts.</entry>
+				<entry>Added Managed Voice.</entry>
+			</version>
+			<version release="4" version="1.0">
+				<entry>Added Managed Voice structure.</entry>
+				<entry>Added Number structure.</entry>
+				<entry>Added NumberPorting structure</entry>
+			</version>				
+			<version release="5" version="1.0">
+				<entry>Added Line product structure</entry>
+				<entry>Added stubs for Mobile</entry>
+				<entry>Cleanup of comments</entry>
+			</version>				
+			<version release="6" version="1.0">
+				<entry>Removed mobile services (will be part of plug-in)</entry>
+				<entry>Subscription ID now part of all the Services (VWAPS-20)</entry>
+				<entry>Detection of business/personal account (VWAPS-21)</entry>
+				<entry>Managed Voice service flow complete (VWAPS-15)</entry>
+			</version>
+			<version release="7" version="1.0">
+				<entry>Cleanup of services scripts and generalization.</entry>
+				<entry>Added IVR (VWAPS-18) and Queue (VWAPS-17) under Managed Voice</entry>
+				<entry>Finalized Channel service implementation (VWAPS-3)</entry>
+				<entry>Delegated authentication for the API added.</entry>
+				<entry>Separate feedback mechanism for debugging must be possible (VWAPS-42)</entry>
+			</version>
+			<version release="8" version="1.0">
+				<entry>Number service finalized (VWAPS-4).</entry>
+				<entry>Lookup function for the Numbers via verify script added.</entry>
+				<entry>Numbers restricted to blocks of maximum size of 1.</entry>
+			</version>
+			<version release="9" version="1.0">
+				<entry>Separate feedback mechanism for debugging must be possible (VWAPS-42).</entry>
+				<entry>Error_log shows up in the end user screens (VWAPS-41).</entry>
+				<entry>XSL files moving to a location where they can be loaded (VWAPS-40).</entry>
+				<entry>Naming of Number blocking entries incorrect (VWAPS-43).</entry>
+				<entry>Logging structure leads to errors on demo platform (VWAPS-22)</entry>
+				<entry>Finalize Manage Voice flow (VWAPS-13)</entry>
+			</version>
+
+			<version release="1" version="1.1">
+				<entry>Bugfixes found in 1.0 fixed.</entry>
+				<entry>Path error in Number scripts fixed.</entry>
+			</version>
+			<version release="2" version="1.1">
+				<entry>Added new Services for Hardware and for CallRecording</entry>
+				<entry>Porting resource script added for status feedback (VWAPS-12).</entry>
+			</version>						
+			<version release="3" version="1.1">
+				<entry>Porting service finalized (VWAPS-11).</entry>
+				<entry>Finalized Porting implementation (VWAPS-1)</entry>
+			</version>
+			<version release="4" version="1.1">
+				<entry>Autofill of user login field by login value to fix unique username.</entry>
+				<entry>Cleanup of structure for Call Recording.</entry>
+			</version>				
+			<version release="5" version="1.1">
+				<entry>Empty fields check in verify scripts for excluding service execution (VWAPS-47)</entry>
+				<entry>Empty response message handling (VWAPS-46)</entry>
+				<entry>Managed Voice extension number cannot be changed (VWAPS-50)</entry>
+				<entry>Queue and IVR strategy 5 requires optional fields from the XSD (VWAPS-45)</entry>
+			</version>		
+			
+			<version release="1" version="1.2">
+				<entry>Outcommented incomplete EWAN services, to plugin package.</entry>
+				<entry>Porting adjustments for billing.</entry>
+			</version>														
+			<version release="2" version="1.2">
+				<entry>International numbers added in APS.</entry>
+				<entry>Cleanup of unneeded settings from APS.</entry>
+				<entry>Duplicate message returned (VWAPS-66)</entry>
+				<entry>Phone number fields must be numeric only (VWAPS-69)</entry>
+				<entry>VWAPS-1 Add Porting scripts and settings to APS (VWAPS-11)</entry>						
+			</version>	
+			<version release="3" version="1.2">			
+				<entry>Billing Gateway Initial Release (VWAPS-5)</entry>
+				<entry>Empty response or incorrect XML responses from API must be handled (VWAPS-71)</entry>
+				<entry>Enable PLATFORM ID from global settings as prefix for the unique references (VWAPS-44)</entry>
+				<entry>Gespreksopname service in APS (VWAPS-54)</entry>
+			</version>	
+			<version release="4" version="1.2">					
+				<entry>Hardware service added to the Account (VWAPS-55)</entry>
+				<entry>Porting flow testcase setup (VWAPS-10)</entry>
+			</version>		
+			<version release="5" version="1.2">				
+				<entry>Split up services for Number ordering (VWAPS-60)</entry>
+				<entry>User service should be capable of handling an alternative e-mail address (VWAPS-64)</entry>
+				<entry>Porting pricing as a minor resource instead of via Billing Gateway (VWAPS-12)</entry>
+			</version>	
+			
+			<version release="1" version="1.3">	
+				<entry>Incorrect areacode handling (VWAPS-70)</entry>
+				<entry>Empty response for IVR and Queue services for certain combinations (VWAPS-65)</entry>
+				<entry>Update Queue leads to error (VWAPS-76)</entry>
+			</version>		
+			<version release="2" version="1.3">	
+				<entry>International Number order webservice (VWAPS-61)</entry>
+				<entry>List of areacodes in Channel autofill (VWAPS-53)</entry>
+				<entry>International Number order webservice (VWAPS-58)</entry>
+			</version>	
+			<version release="3" version="1.3">	 				
+				<entry>NumberBlock order service (VWAPS-62)</entry>
+				<entry>Service implementation for XMLAPI (VWAPS-67)</entry>
+				<entry>Webservice implementation of CallRecording service (VWAPS-59)</entry>
+				<entry>Variable user is encoded email address and is not recognized by BGW (VWAPS-83)</entry>
+				<entry>Number ranges in porting disappear (VWAPS-77)</entry>
+				<entry>Porting of 090x numbers fails on send (VWAPS-79)</entry>
+			</version>							
+			<version release="4" version="1.3">			
+				<entry>Exclusion Mapping for billing fields that are handled in Parallels (VWAPS-7)</entry>
+				<entry>Internationalisation support (VWAPS-25)</entry>
+				<entry>Maintenance mode - block execution (VWAPS-52) </entry>
+				<entry>Numbers services need icons attached (VWAPS-74)</entry>
+			</version>													
+			<version release="5" version="1.3">			
+				<entry>Fix making Regex values for input checking better substituting [0-9] by \d</entry>
+			</version>	
+			<version release="6" version="1.3">			
+				<entry>Account subscription after provisioning does not fail, but stops (VWAPS-86)</entry>
+				<entry>Added extra error responses for porting</entry>
+				<entry>Updated generic response class to always respond with a generic response value</entry>
+			</version>					
+			<version release="7" version="1.3">			
+				<entry>Account creation can be duplicate when automatically provision (VWAPS-87)</entry>
+				<entry>Missing required 'id' attribute for choice element (VWAPS-88)</entry>
+				<entry>List number request has errors if areacode is not good (VWAPS-89)</entry>
+				<entry>Porting number entry hidden fields do not need regex (VWAPS-93)</entry>
+				<entry>FaxIn/FaxOut validation can be called without the correct variable (VWAPS-95)</entry>
+				<entry>Error during creation of Managed Voice using non existent areacode (VWAPS-90)</entry>
+				<entry>Porting status visible in order form (VWAPS-92)</entry>
+				<entry>Error creating VoiceConnect (VWAPS-94)</entry>
+			</version>					
+			<version release="8" version="1.3">			
+				<entry>Hashcheck error in previous release was not detected by Eclipse. Always clean build before.</entry>
+			</version>
+			<version release="9" version="1.3">			
+				<entry>Verify call on numberblock request is incomplete (VWAPS-99)</entry>
+				<entry>Invalid date field returned for Porting (VWAPS-96)</entry>
+				<entry>Handle extension already in use in configure (VWAPS-98)</entry>
+				<entry>Invalid channel user name (VWAPS-102)</entry>
+			</version>
+			<version release="10" version="1.3">			
+				<entry>Missing country number pricing for some countries (VWAPS-85)</entry>
+				<entry>Numberblock ordering error message on incorrect element (VWAPS-100)</entry>
+				<entry>User login credentials are not filled for the login (VWAPS-103)</entry>
+				<entry>Added latest XSD sets (VWAPS-106)</entry>
+				<entry>International number areacode choices are not updated (VWAPS-91)</entry>
+				<entry>Error response for createivr (VWAPS-97)</entry>
+				<entry>Verify update on account on API gives XSD validation error (VWAPS-105)</entry>
+				<entry>User login credentials are not filled for the login (VWAPS-103)</entry>
+				<entry>Platform name should be part of the unique reference for identification (VWAPS-49)</entry>
+				<entry>Reopened : Error during creation of Managed Voice using non existent areacode (VWAPS-90)</entry>
+				<entry>Wishdate for porting is mandatory now since empty fill is ambigious</entry>
+			</version>	
+			<version release="11" version="1.3">
+				<entry>International number inputs are filled but type not accepted (VWAPS-104)</entry>
+				<entry>Empty choice element with retrieval of areacodes in Numbers (VWAPS-108)</entry>
+				<entry>Voiceworks_User object not created (VWAPS-110)</entry>
+				<entry>Porting block request in the configuration call has no block (VWAPS-111)</entry>
+			</version>
+			<version release="12" version="1.3">
+				<entry>Did not package updated NumberRangeUtil.php file in release 1.3-11 (VWAPS-113)</entry>
+				<entry>Login link for user is incorrect (VWAPS-114)</entry>
+				<entry>Update name in APS package to Voiceworks instead of VoiceworksAPS (VWAPS-115)</entry>
+				<entry>Remove default values in ServiceManager (VWAPS-116)</entry>
+				<entry>Upgrade path introduction in APS (VWAPS-117)</entry>
+			</version>
+			<version release="13" version="1.3">
+				<entry>Found PHP compile error pushed thru build script</entry>
+			</version>
+			<version release="14" version="1.3">
+				<entry>Refactored the 3 numbers services to 1 that can be reconfigured</entry>
+			</version>
+			<version release="15" version="1.3">
+				<entry>Verify function does not detect error for Call recording (VWAPS-118)</entry>
+				<entry>Adjustments to ENUM fields for numbers (VWAPS-121)</entry>
+				<entry>User settings Alternative Email address is automatically selected (VWAPS-119)</entry>
+			</version>
+			<version release="16" version="1.3">
+				<entry>Dropdown values implementation (VWAPS-120)</entry>
+				<entry>Made number selection field protected for test</entry>
+			</version>
+			<version release="17" version="1.3">
+				<entry>Updated scripts to return field error messages after filling data (VWAPS-120)</entry>
+				<entry>Dropdowns should be of type string instead of enum (VWAPS-121)</entry>
+				<entry>User change username implementation (VWAPS-122)</entry>
+			</version>
+			<version release="18" version="1.3">
+				<entry>Error handling input for numberblocks (VWAPS-123)</entry>
+				<entry>Updated scripts to return field error messages after filling data (VWAPS-120)</entry>
+				<entry>In certain cases error data is returned twice</entry>
+			</version>	
+			<version release="19" version="1.3">
+				<entry>Updated resources-list for updating</entry>
+				<entry>COC number and VAT can be hidden (VWAPS-131)</entry>
+				<entry>Naming inconsistency for numberranges (VWAPS-101)</entry>
+			</version>		
+			<version release="20" version="1.3">
+				<entry>Updated resources-list for updating</entry>
+				<entry>Porting number in progress does no blocks (VWAPS-125)</entry>
+				<entry>User change username implementation (fix on VWAPS-122)</entry>
+			</version>
+			<version release="21" version="1.3">
+				<entry>Added test for protected item in dropdown that will be filled automatically</entry>
+				<entry>International locations with one areacode and number may proceed directly (VWAPS-135)</entry>
+				<entry>Faxnumbers allow entering of phone numbers starting with + (VWAPS-139)</entry>
+				<entry>Queue can accept an illegal extension number (VWAPS-138)</entry>
+				<entry>First and lastname can be prefilled automatically for user created (VWAPS-137)</entry>
+				<entry>Number related interaction needs to be described better for enduser (VWAPS-140)</entry>
+			</version>
+			<version release="22" version="1.3">
+				<entry>Removed test for protected item in dropdown that will be filled automatically</entry>
+				<entry>Script error introduced in VWAPS-135</entry>
+				<entry>Check if numberblock is numeric (VWAPS-144)</entry>
+				<entry>No permission to make request (VWAPS-145)</entry>
+			</version>
+			<version release="23" version="1.3">
+				<entry>Cleanup data from earlier tests</entry>
+				<entry>Check on status of VWAPS-137. Fields first and lastname are hidden now.</entry>
+				<entry>Incorrect password is sent for resource call to BGW (VWAPS-133)</entry>			
+			</version>	
+			<version release="24" version="1.3">
+				<entry>Updated naming of billing resources to be consistent and added Dutch translations</entry>
+				<entry>Decoding of uuid for customernumber in the script</entry>
+			</version>	
+			<version release="25" version="1.3">
+				<entry>Cleanup</entry>
+			</version>
+			<version release="26" version="1.3">
+				<entry>Bug in International numbers with multiple areacodes but one number only</entry>
+				<entry>Protected the International number selection from viewing</entry>
+			</version>		
+			<version release="27" version="1.3">
+				<entry>Porting status not updated (VWAPS-158)</entry>
+				<entry>Error ordering international numbers (VWAPS-152)</entry>
+				<entry>Change earlier selected areacode leads to errors (VWAPS-149)</entry>
+			</version>
+			<version release="28" version="1.3">
+				<entry>Split up International numbers (VWAPS-157)</entry>
+			</version>
+			<version release="29" version="1.3">
+				<entry>Script test for more flexibility for operator (VWAPS-157)</entry>
+			</version>
+			<version release="30" version="1.3">
+				<entry>Refactoring for stability (VWAPS-157)</entry>
+			</version>	
+			<version release="31" version="1.3">
+				<entry>Handling of countries that do not exist (VWAPS-157)</entry>
+			</version>																																
+			<version release="32" version="1.3">
+				<entry>Exception in entering another areacode (VWAPS-149)</entry>
+			</version>
+			<version release="33" version="1.3">
+				<entry>Cleanup</entry>
+			</version>	
+			<version release="34" version="1.3">
+				<entry>Error cleaning up and testing</entry>
+			</version>
+			<version release="35" version="1.3">
+				<entry>Deleting Numberblocks by sending delete messages per number</entry>
+			</version>									
+			<version release="36" version="1.3">
+				<entry>Deleting Numberblocks adds a script error</entry>
+			</version>
+			<version release="37" version="1.3">
+				<entry>Cleanup of deleting xml transformations and testcases</entry>
+			</version>
+			<version release="38" version="1.3">
+				<entry>Checking for incorrectly formatted accountnumbers</entry>
+			</version>
+			<version release="1" version="1.4">
+				<entry>Splitup release in core and addon packages. (VWAPS-164)</entry>
+				<entry>Cleanup of unneeded scripts and services</entry>
+			</version>
+			<version release="2" version="1.4">
+				<entry>Fax related services back</entry>
+				<entry>Hidden language setting for a new webuser because of duplicate</entry>
+			</version>
+			<version release="3" version="1.4">
+				<entry>Patch level adjusted to support 1.4</entry>
+			</version>	
+			<version release="4" version="1.4">
+				<entry>LocalNumber back into the project</entry>
+			</version>
+			<version release="5" version="1.4">
+				<entry>Verification script for local number updated</entry>
+			</version>										
+			<version release="6" version="1.4">
+				<entry>Update APS structure local number updated</entry>
+			</version>
+			<version release="7" version="1.4">
+				<entry>Duplicate name in Channels was Error but could be done</entry>
+			</version>
+			<version release="8" version="1.4">
+				<entry>Naming clash in Channels</entry>
+			</version>
+			<version release="9" version="1.4">
+				<entry>FaxIn is simplified</entry>
+				<entry>FaxOut and FaxIn get a list of numbers to choose from</entry>
+				<entry>Naming extended</entry>
+			</version>
+			<version release="10" version="1.4">
+				<entry>Mapping back to fields for numberlists where filled as areacode</entry>
+			</version>									
+			<version release="11" version="1.4">
+				<entry>Fix on faxout XSLT</entry>
+			</version>	
+			<version release="1" version="1.5">
+				<entry>Updated version with changed call resources</entry>
+				<entry>Dynamic resources for Voice Connect allowing payment for overuse</entry>
+				<entry>Optional fields added in global settings</entry>
+				<entry>Global setting for Billing Gateway supports an fixed URL to override it for testing</entry>
+			</version>
+			<version release="2" version="1.5">
+				<entry>Fix removing bug from create script</entry>
+			</version>	
+			<version release="3" version="1.5">
+				<entry>Hard fix of country in Account to NL since it is the only country supported at the moment</entry>
+				<entry>Number selection from list removed for the first step for user interaction optimization</entry>
+			</version>	
+			<version release="4" version="1.5">
+				<entry>Added fill for dropdown list in Numbers</entry>
+				<entry>Option for converting resource usage values in seconds to minutes</entry>
+			</version>									
+			<version release="5" version="1.5">
+				<entry>Support for S3 feedback for sample billing reporting</entry>
+			</version>
+			<version release="6" version="1.5">
+				<entry>Wholeseller account not part of branding information due to change in 1.5-4</entry>
+				<entry>Allow for empty username and password on mailserver without crashing SwitftMailer</entry>
+			</version>	
+			<version release="7" version="1.5">
+				<entry>APSMailer using one big Exception handler making mail sending all or nothing (and else ignore)</entry>
+			</version>
+			<version release="10" version="1.5">
+				<entry>Fixed wholesale branding bug</entry>
+			</version>
+			<version release="11" version="1.5">
+				<entry>Improved web-user configuration</entry>
+			</version>
+			<version release="12" version="1.5">
+				<entry>Wholesaler URL added to branding</entry>
+			</version>
+			<version release="13" version="1.5">
+				<entry>Branding fix</entry>
+				<entry>Entry points fixes</entry>
+			</version>
+			<version release="14" version="1.5">
+				<entry>Reconfiguration not supported for Numbers</entry>
+			</version>
+			<version release="22" version="1.5">
+				<entry>Name, Surname fixes</entry>
+			</version>
+			<version release="24" version="1.5">
+				<entry>Removed api user. Only wholeseller user allowed</entry>
+			</version>
+			<version release="37" version="1.5">
+				<entry>Branding</entry>
+			</version>
+			<version release="41" version="1.5">
+			    <entry>Resources script</entry>
+			</version>
+			<version release="42" version="1.5">
+				<entry>Whitelabeling</entry>
+			</version>
+			<version release="43" version="1.5">
+				<entry/>
+			</version>
+			<version release="44" version="1.5">
+				<entry>Resource script cleanup</entry>
+			</version>
+			<version release="48" version="1.5">
+				<entry>CSL call added to resource script</entry>
+			</version>
+			<version release="49" version="1.5">
+				<entry>Updated documentation</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Collaboration/IP Telephony</category>
+			<category>Collaboration/Telecommunications</category>
+		</categories>
+		<languages>
+			<language>en</language>  
+			<language>nl</language>
+		</languages>
+	</presentation>
+
+	<global-settings>
+		<group class="branding">
+            <name>Branding</name>
+            <setting default-value="true" id="use_branding" type="boolean" visibility="hidden">
+            <name>Enable branding</name>
+            <description>Branding enabled. Don't disable.</description>
+            </setting>
+            
+		</group>
+        <group>
+        
+			<name>Voiceworks Operator API settings</name>
+			<setting default-value="DEMO" id="platform_identifier" max-length="6" type="string">
+				<name>Identifier for the Platform owner for traceability and control.</name>
+				<description>During APS embarkment this unique value should be supplied by Voiceworks.</description>
+				<error-message>Please provide a valid identifyer as supplied by Voiceworks.</error-message>
+			</setting>
+			<setting default-value="" id="operator_apihostname" type="host-name">
+				<name>Hostname of the Operator API</name>
+				<description>Define the host name of the API only without http:// or https://</description>
+				<error-message>Please provide a valid hostname for the Voiceworks Operator</error-message>
+			</setting>
+			<setting default-value="" id="billing_gateway_hostname" type="host-name">
+				<name>Hostname of the Billing Gateway</name>
+				<description>Define the host name of the API only without http:// or https://</description>
+				<error-message>Please provide a valid hostname for the Voiceworks Operator</error-message>
+			</setting>
+			
+			
+		</group>	
+		<group>
+			<name>Billing</name>
+			<setting default-value="true" id="convert_seconds_to_minutes" type="boolean">
+				<name>Convert seconds into minutes</name>
+				<description>Allows for using minute pricing in POA. Entry values in seconds are converted to minutes</description>
+			</setting>	
+		</group>
+		
+	
+		
+		<group>
+			<name class="type">Logging settings</name>
+			<setting default-value="ERROR" id="log_level" type="enum">
+				<name>Log-level</name>
+				<description>The level that the log output should have.</description>
+				<choice id="FATAL">
+<name>FATAL</name>
+</choice>
+				<choice id="ERROR">
+<name>ERROR</name>
+</choice>
+				<choice id="WARN">
+<name>WARN</name>
+</choice>
+				<choice id="INFO">
+<name>INFO</name>
+</choice>
+				<choice id="DEBUG">
+<name>DEBUG</name>
+</choice>
+				<choice id="TRACE">
+<name>TRACE</name>
+</choice>
+			</setting>
+			<setting default-value="false" id="log_email_enable" type="boolean">
+				<name>E-mail log delivery</name>
+				<description>When logging information is supplied a mail will be sent</description>
+			</setting>
+			<setting default-value="apsdeveloper@cloudwork.nl" id="log_email_from" optional="true" type="email">
+				<name>Email from</name>
+				<description>The sender in case of email logging</description>
+				<error-message>An e-mail address is expected here</error-message>
+				<error-message>Vul een email adres in</error-message>
+			</setting>
+			<setting default-value="apsdeveloper@cloudwork.nl" id="log_email_to" optional="true" type="email">
+				<name>Email to</name>
+				<description>The recipient in case of email logging</description>
+				<error-message>An e-mail address is expected here</error-message>
+				<error-message>Vul een email adres in</error-message>
+			</setting>
+			<setting default-value="false" id="log_file_enable" type="boolean">
+				<name>File log delivery</name>
+				<description>When logging information is dumped to a file</description>
+			</setting>
+			<setting default-value="/tmp/voice_aps.txt" id="log_file_filename" optional="true" type="string">
+				<name>File log destination</name>
+				<description>Full name and path where the log-file needs to be placed when used</description>
+				<error-message>Please fill in a correct file path</error-message>
+			</setting>
+			<setting default-value="false" id="log_console_enable" type="boolean">
+				<name>Console log delivery</name>
+				<description>Logging information is dumped to the console. For development use only!</description>
+			</setting>
+		</group>
+		<group>
+			<name class="type">Email</name>
+			<setting default-value="smtp.gmail.com" id="email_host" optional="true" type="host-name">
+				<name>SMTP server name</name>
+				<description>The mail server name in case of sending email, i.e. logging</description>
+				<error-message>Please fill in a correct host name</error-message>
+			</setting>
+			<setting default-value="465" id="email_port" optional="true" type="integer">
+				<name>SMTP server port</name>
+				<description>The mail server port in case of sending email, i.e. logging</description>	
+				<error-message>Please fill in a valid port number</error-message>		
+			</setting>
+			<setting default-value="true" id="email_secure" type="boolean">
+				<name>Mail secure</name>
+				<description>Determining if the connection must be secure in case of email logging</description>
+			</setting>
+			<setting default-value="apsdeveloper@cloudwork.nl" id="email_username" optional="true" type="string">
+				<name>SMTP user-name</name>
+				<description>The user-name for sending in case of sending email, i.e. logging</description>
+				<error-message>Please fill in a correct user-name</error-message>
+			</setting>
+			<setting default-value="secret" id="email_password" optional="true" type="password">
+				<name>SMTP password</name>
+				<description>The password for sending in case of sending email, ie logging</description>
+				<error-message>Please fill in a correct password</error-message>
+			</setting>
+		</group>
+		<group>
+			<name class="type">Maintenance settings</name>
+			<setting default-value="false" id="util_block_execution" type="boolean">
+				<name>Block execution</name>
+				<description>This setting blocks execution of calls to the Voiceworks API</description>
+			</setting>
+		</group>
+		<group>
+			<name>VWE</name>
+			<setting id="vwe_address" optional="true" type="string">
+				<name>vwe address</name>
+				<description>full url of the csl location</description>
+			</setting>
+			<setting default-value="false" id="VWE-available" type="boolean">
+				<name>VW endpoint available.</name>
+				<description>Leave this setting to false, unless a VW endpoint is available on your system.</description>
+			</setting>
+			<setting id="vw_csl_admin_user" optional="true" type="string">
+				<name>VWE cloud service layer admin user</name>
+			</setting>
+			<setting id="vw_csl_admin_password" optional="true" type="string">
+				<name>VWE cloud service layer admin user</name>
+			</setting>
+		</group>
+
+	</global-settings>
+
+	<patch match="(/application/version = '1.3' and /application/release &gt; '16')" recommended="true"/>
+	<patch match="(/application/version = '1.4' and /application/release &gt; '0')"/>
+	<patch match="(/application/version = '1.5' and /application/release &gt; '0')"/>
+
+	
+	<service class="service" id="Voiceworks_Account" singular="true">
+	
+		<license must-accept="false">
+			<commercial/>
+			<text>
+				<name>Hosted voice products</name>
+				
+				<url>http://www.voiceworks.nl/algemenevoorwaarden</url>
+			</text>
+		</license>
+
+		<presentation>
+			<name>Customer</name>
+			<name xml:lang="en-US">Customer</name>
+			<name xml:lang="nl-NL">Klant</name>
+			<summary>Registration on the online switchboard</summary>
+			<summary xml:lang="nl-NL">Registreert de gebruiker bij Hosted voice als gebruiker.</summary>
+			<summary xml:lang="en-US">Registers the account with Hosted voice as a customer.</summary>
+			<icon path="images/voiceworks_logo.png"/>
+			<infolinks>
+				<link class="official" href="http://www.voiceworks.com">Voiceworks home</link>
+				<link class="support" href="http://www.voiceworks.nl">Voiceworks</link>
+				<link class="deployment-guide" href="file:///docs/Voiceworks_APS_Provider_guide.pdf">Providers guide</link>
+				<link class="user-guide" href="file:///docs/Voiceworks-Subscriber-guide_1.5-12.pdf">Subscribers guide</link>
+			</infolinks>
+		</presentation>
+		
+		<settings>
+		<group class="branding">
+			<name>Branding</name>
+            
+			
+			<setting default-value="" id="wholeseller_uname" type="string" visibility="hidden">
+				<name>Wholeseller Username</name>
+				<description>Must be filled by wholeseller</description>
+			</setting>
+			<setting default-value="" id="wholeseller_pword" type="string" visibility="hidden">
+				<name>Wholeseller Password</name>
+				<description>Must be filled by wholeseller</description>
+			</setting>
+		</group>
+			
+			<setting class="subscription_id" default-value="" id="account_subscriptionid" type="string" visibility="hidden">
+				<name>Subscription ID</name>
+			</setting>
+			<group class="authn">
+			   <setting class="login" default-value="" id="reseller_username" type="string" visibility="hidden">
+				   <name>Reseller Username</name>
+			   </setting>
+			   <setting class="password" default-value="" id="reseller_password" type="string" visibility="hidden">
+				   <name>Reseller Password</name>
+			   </setting>
+			</group>
+		    			
+			<group>
+				<name class="type">Company</name>
+				<group class="vcard">
+					<group class="fn n">
+						<setting class="organization-name" default-value="" id="account_companyname" type="string">
+							<name>Company Name</name>
+						</setting>
+						<setting class="display-name" default-value="" id="account_displayname" type="string" visibility="hidden">
+							<name>Display name</name>
+							<description>Needed to detect business or personal account</description>
+						</setting>
+					</group>							
+				</group>
+				<setting class="value" default-value="" generate="uuid" id="account_accountnumber" type="string" uniq="global" visibility="hidden">
+					<name>Unique company identifier</name>
+				</setting>
+				<setting class="value" default-value="" id="account_accountid" protected="true" type="string" visibility="hidden">
+					<name>Voice system company identifier</name>
+				</setting>
+				<setting class="value" default-value="unknown" id="account_cocnumber" max-length="64" type="string" visibility="hidden">
+					<name>Chamber of Commerce</name>
+				</setting>
+				<setting class="value" default-value="unknown" id="account_vatnumber" max-length="64" type="string" visibility="hidden">
+					<name>VAT number</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name class="type">Address</name>
+				<group class="fn n">
+					<setting class="street-address" default-value="standardstreet" id="account_address_street" type="string">
+						<name>Street</name>
+					</setting>
+					<setting class="street-number" default-value="4" id="account_address_streetnumber" type="integer">
+						<name>Street number</name>
+					</setting>
+					<setting class="street-number-ext" id="account_address_streetnumberext" optional="true" type="string">
+						<name>Street number extension</name>
+					</setting>
+					<setting class="postal-code" default-value="1234AA" id="account_address_postcode" type="string">
+						<name>Postal Code</name>
+					</setting>
+					<setting class="locality" default-value="Nowhere" id="account_address_city" type="string">
+						<name>City</name>
+					</setting>
+					<setting class="region" id="account_address_state" optional="true" type="string">
+						<name>State</name>
+					</setting>
+					<setting class="country-name" default-value="nl" id="account_address_country" max-length="2" type="string">
+						<name>Country</name>
+					</setting>	
+				</group>
+			</group>
+			<group class="vcard">
+				<name>Technical contact</name>	
+				<group class="fn n">			
+					<setting class="title" id="account_technicalcontact_title" max-length="30" optional="true" type="string">
+						<name>Title</name>
+					</setting>	
+					<setting class="initials" id="account_technicalcontact_initials" max-length="30" optional="true" type="string">
+						<name>Initials</name>
+					</setting>				
+					<setting class="given-name" id="account_technicalcontact_firstname" max-length="30" type="string">
+						<name>First Name</name>
+					</setting>
+					<setting class="prefix" id="account_technicalcontact_prefix" max-length="30" optional="true" type="string">
+						<name>Prefix</name>
+					</setting>
+					<setting class="family-name" id="account_technicalcontact_lastname" max-length="30" type="string">
+						<name>Last Name</name>
+					</setting>
+					<setting class="phonenumber" default-value="0123456789" id="account_technicalcontact_phonenumber" type="string">
+						<name>Phone Number</name>
+					</setting>
+					<setting class="faxnumber" id="account_technicalcontact_faxnumber" optional="true" type="string">
+						<name>Fax Number</name>
+					</setting>
+					<setting class="mobilenumber" id="account_technicalcontact_mobilenumber" optional="true" type="string">
+						<name>Mobile Number</name>
+					</setting>
+					<group class="email">
+						<setting class="value" default-value="user@provider.com" id="account_technicalcontact_emailaddress" type="email">
+							<name>E-mail</name>	
+						</setting>
+					</group>
+				</group>
+			</group>	
+		</settings>
+
+		<resources>
+			
+			<resource class="item" id="callcosts-National_Seconds">
+				<name>National call time</name>
+				<name xml:lang="en-US">National call time</name>
+				<name xml:lang="nl-NL">Nationaal : beltijd</name>
+				<description>National calls to same network</description>
+				<description xml:lang="en-US">National calls to same network</description>
+				<description xml:lang="nl-NL">Totale gesprektijd naar het zelfde netwerk</description>
+			</resource>
+			<resource class="item" id="callcosts-National_Units">
+				<name>National amount of calls</name>
+				<name xml:lang="en-US">National amount of calls</name>
+				<name xml:lang="nl-NL">Nationaal : aantal gesprekken</name>				
+				<description>Total amount of calls to the same network</description>
+				<description xml:lang="en-US">Total amount of calls to the same network</description>
+				<description xml:lang="nl-NL">Totaal aantal gesprekken naar het zelfde netwerk</description>				
+			</resource>		
+			<resource class="item" id="callcosts-Mobile_Seconds">
+				<name>Mobile call time</name>
+				<name xml:lang="en-US">Mobile call time</name>
+				<name xml:lang="nl-NL">Mobiel : beltijd</name>
+				<description>Total time of national calls to a mobile phone</description>
+				<description xml:lang="en-US">Total time of national calls to a mobile phone</description>
+				<description xml:lang="nl-NL">Totale gesprekstijd naar een mobiele telefoon</description>
+			</resource>
+			<resource class="item" id="callcosts-Mobile_Units">
+				<name>Mobile amount of calls</name>
+				<name xml:lang="en-US">Mobile amount of calls</name>
+				<name xml:lang="nl-NL">Mobiel : aantal gesprekken</name>
+				<description>Total time of calls to a mobile phone</description>
+				<description xml:lang="en-US">Total amount of calls to a mobile phone</description>
+				<description xml:lang="nl-NL">Totaal aantal gesprekken naar een mobiele telefoon</description>	
+			</resource>	
+			<resource class="item" id="callcosts-Mobile_OnNet_Seconds">
+				<name>Mobile (Other licensed operators) call time</name>
+				<name xml:lang="en-US">Mobile (Other licensed operators) call time</name>
+				<name xml:lang="nl-NL">Mobiel (Other licensed operators) : beltijd</name>
+				<description>Total time of calls to a mobile phone on another network</description>
+				<description xml:lang="en-US">Total time of calls to a mobile phone on another network</description>
+				<description xml:lang="nl-NL">Totale gesprekstijd naar een mobiele telefoon op een ander netwerk</description>
+			</resource>
+			<resource class="item" id="callcosts-Mobile_OnNet_Units">
+				<name>Mobile (Other licensed operators) amount of calls</name>
+				<name xml:lang="en-US">Mobile (Other licensed operators) amount of calls</name>
+				<name xml:lang="nl-NL">Mobiel (Other licensed operators) : aantal gesprekken</name>
+				<description>Total time of calls to a mobile phone on another network</description>
+				<description xml:lang="en-US">Total amount of calls to a mobile phone on another network</description>
+				<description xml:lang="nl-NL">Totaal aantal gesprekken naar een mobiele telefoon op een ander netwerk</description>	
+			</resource>	
+			<resource class="item" id="callcosts-International_Costs">
+				<name>International total</name>
+				<name xml:lang="en-US">International total</name>
+				<name xml:lang="nl-NL">Internationaal totaal</name>
+				<description>International total call costs</description>
+				<description xml:lang="en-US">International total call costs</description>
+				<description xml:lang="nl-NL">Internationaal totale gesprekskosten</description>
+			</resource>						
+			<resource class="item" id="callcosts-Servicenumbers_Costs">
+				<name>Servicenumbers total</name>
+				<name xml:lang="en-US">Servicenumbers total</name>
+				<name xml:lang="nl-NL">Servicenummers totaal</name>
+				<description>Servicenumbers total call costs</description>
+				<description xml:lang="en-US">Servicenumbers total call costs</description>
+				<description xml:lang="nl-NL">Servicenummers totale gesprekskosten</description>
+			</resource>	
+			<resource class="item" id="callcosts-Servicenumbers_Inbound_Costs">
+				<name>Servicenumbers total</name>
+				<name xml:lang="en-US">Servicenumbers total</name>
+				<name xml:lang="nl-NL">Servicenummers totaal</name>
+				<description>Servicenumbers total call costs</description>
+				<description xml:lang="en-US">Servicenumbers total call costs</description>
+				<description xml:lang="nl-NL">Servicenummers totale gesprekskosten</description>
+			</resource>
+			<resource class="item" id="callcosts-Conferencing_Seconds">
+				<name>Conference Room seconds</name>
+				<name xml:lang="en-US">Conference Room seconds</name>
+				<name xml:lang="nl-NL">Conference Room seconden</name>
+				<description>Total time of calls in a conference room</description>
+				<description xml:lang="en-US">Total time of calls in a conference room</description>
+				<description xml:lang="nl-NL">Aantal seconden gebeld in een conference room</description>
+			</resource>
+			<resource class="item" id="callcosts-Conferencing_Units">
+				<name>Conference Room calls</name>
+				<name xml:lang="en-US">Conference Room calls</name>
+				<name xml:lang="nl-NL">Conference Room gesprekken</name>
+				<description>Total amount of calls initiated by applications</description>
+				<description xml:lang="en-US">Total amount of calls initiated by applications</description>
+				<description xml:lang="nl-NL">Aantal gesprekken naar een conference room</description>
+			</resource>
+			<resource class="item" id="callcosts-Correction_Costs">
+				<name>Correction of callcosts</name>
+				<name xml:lang="en-US">Correction of callcosts</name>
+				<name xml:lang="nl-NL">Correctie van belkosten</name>
+			</resource>																	
+		
+
+		
+		<resource class="item" id="callcosts-mobile_fixed_and_mobile_Costs">
+		<name>Mobiel Bellen naar vaste en mobiele nummers</name>
+			<name>Mobiel Bellen naar vaste en mobiele nummers</name>
+			<name xml:lang="nl-NL">Mobiel Bellen naar vaste en mobiele nummers</name>
+			<description xml:lang="nl-NL">Mobiel Bellen naar vaste en mobiele nummers</description>
+		</resource>
+		
+		
+		<resource class="item" id="callcosts-mobile_Servicenumbers_Costs">
+			<name>Mobiel Bellen naar servicenummers</name>
+			<name xml:lang="nl-NL">Mobiel Bellen naar servicenummers</name>
+			<description xml:lang="nl-NL">Mobiel Bellen naar servicenummers</description>
+		</resource>
+		
+		
+		<resource class="item" id="callcosts-mobile_International_Calls_Costs">
+			<name>Mobiel bellen naar het buitenland</name>
+			<name xml:lang="nl-NL">Mobiel bellen naar het buitenland</name>
+			<description xml:lang="nl-NL">Mobiel bellen naar het buitenland</description>
+		</resource>
+		
+		
+		<resource class="item" id="callcosts-mobile_SMS_Costs">
+			<name>SMS berichten</name>
+			<name xml:lang="nl-NL">SMS berichten</name>
+			<description xml:lang="nl-NL">SMS berichten</description>
+		</resource>
+		
+		
+		<resource class="item" id="callcosts-mobile_International_SMS_Costs">
+			<name>SMS berichten versturen en ontvangen in het buitenland</name>
+			<name xml:lang="nl-NL">SMS berichten versturen en ontvangen in het buitenland</name>
+			<description xml:lang="nl-NL">SMS berichten versturen en ontvangen in het buitenland</description>
+		</resource>
+		
+		
+		<resource class="item" id="callcosts-mobile_Data_Costs">
+			<name>Mobiel Dataverbruik</name>
+			<name xml:lang="nl-NL">Mobiel Dataverbruik</name>
+			<description xml:lang="nl-NL">Mobiel Dataverbruik</description>
+		</resource>
+		
+		
+		<resource class="item" id="callcosts-mobile_International_Data_Costs">
+			<name>Mobiel Dataverbruik in het buitenland</name>
+			<name xml:lang="nl-NL">Mobiel Dataverbruik in het buitenland</name>
+			<description xml:lang="nl-NL">Mobiel Dataverbruik in het buitenland</description>
+		</resource>
+		
+		
+		<resource class="item" id="callcosts-mobile_Mobile_International_Costs">
+			<name xml:lang="nl-NL">Mobiel bellen en gebeld worden in het buitenland</name>
+			<name>Mobiel bellen en gebeld worden in het buitenland</name>
+			<description xml:lang="nl-NL">Mobiel bellen en gebeld worden in het buitenland</description>
+		</resource>
+		
+		
+		<resource class="item" id="callcosts-mobile_EU_Pack_Costs">
+			<name>Verbruik EU Pack</name>
+			<name xml:lang="nl-NL">Verbruik EU Pack</name>
+			<description xml:lang="nl-NL">Verbruik EU Pack</description>
+		</resource>
+		
+		
+		<resource class="item" id="callcosts-mobile_SMS_Servicenumbers_Costs">
+			<name>SMS naar servicenummers</name>
+			<name xml:lang="nl-NL">SMS naar servicenummers</name>
+			<description xml:lang="nl-NL">SMS naar servicenummers</description>
+		</resource>
+		</resources>
+		<requirements>
+			<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+		</requirements>
+
+		<provision>
+			<configuration-script name="configureAccount.php">
+				<script-language>php</script-language>
+				<status-control/>
+				<structured-output/>
+			</configuration-script>
+			<verify-script name="verifyAccount.php">
+				<script-language>php</script-language>
+				<structured-output/>
+			</verify-script>
+			<resource-script name="resource.php" poll-interval="1h">
+				<script-language>php</script-language>
+			</resource-script>
+		</provision>
+		
+		
+		<service class="service" id="Voiceworks_LocalNumber">
+		
+			<presentation>
+				<name>Number</name>
+				<name xml:lang="en-US">Number</name>
+				<name xml:lang="nl-NL">Nummer</name>
+				<summary>National phone numbers can be ordered here.</summary>
+				<summary xml:lang="en-US">National phone numbers can be ordered here.</summary>
+				<summary xml:lang="nl-NL">Nationale telefoonnummers aanvragen.</summary>
+				<icon path="images/icons/number.png"/>
+ 			</presentation>
+ 			
+			<settings>
+			<setting id="wholeseller_uname" type="string" value-of-setting="wholeseller_uname" visibility="hidden"/>
+			<setting id="wholeseller_pword" type="string" value-of-setting="wholeseller_pword" visibility="hidden"/>
+                
+				
+				<setting class="value" id="accountnumber" type="string" value-of-setting="account_accountnumber" visibility="hidden">
+					<name>Unique company identifier</name>
+				</setting>
+				<setting class="subscription_id" id="subscription_id" type="string" value-of-setting="account_subscriptionid" visibility="hidden">
+					<name>Subscription ID</name>
+				</setting>
+				<setting class="value" id="reseller_username" type="string" value-of-setting="reseller_username" visibility="hidden">
+					<name>Username of reseller</name>
+				</setting>	
+				<setting class="value" id="reseller_password" type="string" value-of-setting="reseller_password" visibility="hidden">
+					<name>Password of reseller</name>
+				</setting>
+								
+				<setting class="value" id="numberlistrequestid" type="string" visibility="hidden">
+					<name>Numberlist Request ID</name>
+				</setting>
+									
+						
+				<setting class="value" default-value="nl" id="countrycode" max-length="2" type="string" visibility="hidden">
+					<name>Countrycode</name>
+				</setting>
+
+				
+				<group class="areacode">
+					<name>Areacode selection</name>
+					<setting class="value" id="areacode" installation-only="true" type="string">
+						<name>Areacode</name>
+						<name xml:lang="en-US">Areacode</name>
+						<name xml:lang="nl-NL">Netnummer</name>
+						<description>Select an areacode first and click Next</description>
+						<description xml:lang="en-US">Please select an areacode first and click Next</description>
+						<description xml:lang="nl-NL">Selecteer eerst een netnummer en klik dan op Volgende</description>
+						<error-message>Please select an areacode first</error-message>
+						<error-message xml:lang="en-US">Please select an areacode first</error-message>
+						<error-message xml:lang="nl-NL">Selecteer eerst een netnummer</error-message>
+					</setting>
+				</group>
+				<group class="number">
+					<name>Number selection</name>
+						<setting class="value" id="phonenumber" installation-only="true" type="string">
+						<name>Phone number</name>
+						<name xml:lang="en-US">Phone number</name>
+						<name xml:lang="nl-NL">Telefoonnummer</name>
+						<description>
+							When numbers are available you can choose a
+							number here
+						</description>
+						<description xml:lang="en-US">
+							When numbers are available you can choose a
+							number here
+						</description>
+						<description xml:lang="nl-NL">
+							Als nummers beschikbaar komen dan kan hier
+							een nummer gekozen worden
+						</description>
+						<error-message>
+							Please select a number from the list
+						</error-message>
+						<error-message xml:lang="nl-NL">Selecteer een nummer uit de lijst</error-message>
+					</setting>
+</group>
+			</settings>
+  
+  			<requirements>
+				<php:version min="5.2" xmlns:php="http://apstandard.com/ns/1/php"/>
+				<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+			</requirements>
+  
+			<provision>
+				<configuration-script name="configureNumber.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+
+				<verify-script name="verifyNumber.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</verify-script>
+			</provision>	
+		</service>
+		
+		<service class="service" id="Voiceworks_ManagedVoice">
+		
+			<presentation>
+				<name>Managed Voice</name>
+				<summary xml:lang="en-US">Managed Voice allows you to make use of a state-of-the-art telephone switchboard and facilities hosted by Voiceworks at a secure central location.</summary>
+				<summary xml:lang="nl-NL">Managed Voice geeft u toegang tot een state-of-the-art telefooncentrale en faciliteiten bij Voiceworks op een beveiligde locatie.</summary>
+				<icon path="images/icons/managedvoice.png"/>
+			</presentation>
+ 			
+			<settings>
+				
+				<setting class="value" id="accountnumber" type="string" value-of-setting="account_accountnumber" visibility="hidden">
+					<name>Unique company identifier</name>
+				</setting>			
+				<setting class="subscription_id" id="subscription_id" type="string" value-of-setting="account_subscriptionid" visibility="hidden">
+					<name>Subscription ID</name>
+				</setting>
+				<setting class="value" id="reseller_username" type="string" value-of-setting="reseller_username" visibility="hidden">
+					<name>Username of reseller</name>
+				</setting>	
+				<setting class="value" id="reseller_password" type="string" value-of-setting="reseller_password" visibility="hidden">
+					<name>Password of reseller</name>
+				</setting>				
+								
+				<setting class="value" id="extension" installation-only="true" max="899" min="100" type="integer" uniq="service">
+					<name>Extension number</name>
+					<name xml:lang="en-US">Extension number</name>
+					<name xml:lang="nl-NL">Extensie nummer</name>
+					<description>Choose a numeric code between 100 and 899. 112 and 114 are not allowed</description>
+					<description xml:lang="en-US">Choose a numeric code between 100 and 899. 112 and 114 are not allowed</description>
+					<description xml:lang="nl-NL">Kies een getal tusen 100 en 899. 112 en 144 zijn niet toegestaan.</description>
+				</setting>
+				<setting class="value" id="name" type="string" uniq="service">
+					<name>Name</name>
+					<name xml:lang="en-US">Name</name>
+					<name xml:lang="nl-NL">Naam</name>
+					<description>Name for the Managed Voice connection.</description>
+					<description xml:lang="en-US">Name for the Managed Voice connection.</description>
+					<description xml:lang="nl-NL">Naam voor de Managed Voice verbinding.</description>
+				</setting>
+				<setting class="value" id="pincode" regex="\d{4}?" type="string">
+					<name>Pincode</name>
+					<name xml:lang="en-US">Pincode</name>
+					<name xml:lang="nl-NL">Pincode</name>
+					<description>Unique pincode of four digits.</description>
+					<description xml:lang="en-US">Unique pincode of four digits.</description>
+					<description xml:lang="nl-NL">Unieke pincode van 4 cijfers.</description>
+					<error-message>Error in pincode, should be four digits only.</error-message>
+					<error-message xml:lang="en-US">Error in pincode, should be four digits only.</error-message>
+					<error-message xml:lang="nl-NL">Fout in pincode. Mag alleen 4 cijfers bevatten.</error-message>
+				</setting>
+				<setting class="value" id="areacode" max-length="4" regex="\d{2,4}?" type="string">
+					<name>Areacode</name>
+					<name xml:lang="en-US">Areacode</name>
+					<name xml:lang="nl-NL">Netnummer</name>
+					<description>Areacode is used for 112 routing.</description>
+					<description xml:lang="en-US">Areacode is used for 112 routing.</description>
+					<description xml:lang="nl-NL">Netnummer wordt gebruikt voor de correcte routering van 112 meldingen</description>
+					<error-message>Areacode incorrect, must be numeric and maximal 4 digits</error-message>
+					<error-message xml:lang="en-US">Areacode incorrect, must be numeric and maximal 4 digits</error-message>
+					<error-message xml:lang="nl-NL">Netnummer fout, moet maximaal 4 cijfers zijn</error-message>
+				</setting>
+				<setting id="wholeseller_uname" type="string" value-of-setting="wholeseller_uname" visibility="hidden"/>
+				<setting id="wholeseller_pword" type="string" value-of-setting="wholeseller_pword" visibility="hidden"/>
+			</settings>
+  
+  			<requirements>
+				<php:version min="5.2" xmlns:php="http://apstandard.com/ns/1/php"/>
+				<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+			</requirements>
+  
+			<provision>
+				<configuration-script name="configureGeneric.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+
+				<verify-script name="verifyManagedVoice.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</verify-script>
+			</provision>
+		</service>
+		
+		<service class="service" id="Voiceworks_Channel">
+		
+			<presentation>
+				<name>Voice Connect</name>
+				<summary>Voice Connect integrates your switchboard with the facilities hosted by hosted voice at a secure central location.</summary>
+				<summary xml:lang="en-US">Voice Connect integrates your switchboard with the facilities hosted by Hosted voice at a secure central location.</summary>
+				<summary xml:lang="nl-NL">Voice Connect koppelt de online diensten van Hosted voice met uw eigen telefooncentrale.</summary>
+				<icon path="images/icons/voiceconnect.png"/>
+			</presentation>
+ 			
+			<settings>
+			<setting id="wholeseller_uname" type="string" value-of-setting="wholeseller_uname" visibility="hidden"/>
+				<setting id="wholeseller_pword" type="string" value-of-setting="wholeseller_pword" visibility="hidden"/>
+				
+				<setting class="value" id="accountnumber" type="string" value-of-setting="account_accountnumber" visibility="hidden">
+					<name>Unique company identifier</name>
+				</setting>
+				<setting class="subscription_id" id="subscription_id" type="string" value-of-setting="account_subscriptionid" visibility="hidden">
+					<name>Subscription ID</name>
+				</setting>	
+				<setting class="value" id="reseller_username" type="string" value-of-setting="reseller_username" visibility="hidden">
+					<name>Username of reseller</name>
+				</setting>	
+				<setting class="value" id="reseller_password" type="string" value-of-setting="reseller_password" visibility="hidden">
+					<name>Password of reseller</name>
+				</setting>				
+							
+				
+				<setting class="value" id="channelusername" installation-only="true" max-length="24" min-length="4" type="string">
+					<name>Username</name>
+					<name xml:lang="en-US">Username</name>
+					<name xml:lang="nl-NL">Gebruikersnaam</name>
+					<error-message>Username incorrect</error-message>
+					<error-message xml:lang="nl-NL">Username incorrect</error-message>
+				</setting>
+				
+				<setting class="value" default-value="true" id="showcallerid" type="boolean" visibility="hidden">
+					<name>Caller ID</name>
+				</setting>
+				<setting class="value" default-value="020" id="areacode" max-length="4" regex="\d{2,4}?" type="string">
+					<name>Areacode</name>
+					<name xml:lang="en-US">Areacode</name>
+					<name xml:lang="nl-NL">Netnummer</name>
+					<error-message>Areacode incorrect, must be numeric and maximal 4 digits</error-message>
+					<error-message xml:lang="en-US">Areacode incorrect, must be numeric and maximal 4 digits</error-message>
+					<error-message xml:lang="nl-NL">Netnummer fout, moet maximaal 4 cijfers zijn</error-message>
+				</setting>
+				
+				<setting class="value" default-value="2" id="calllimit" type="integer" visibility="hidden">
+					<name>Call limit</name>
+				</setting>
+				</settings>
+  
+  			<resources>
+  				<resource class="" id="voiceconnect_call-limit">
+	  				<name>Voice Connect call-limit usage</name>
+					<name xml:lang="en-US">Voice Connect call-limit usage</name>
+					<name xml:lang="nl-NL">Voice Connect: ingestelde verbindingen</name>				
+					<description>Call limit amount used in the system</description>
+					<description xml:lang="en-US">Call limit amount used in the system</description>
+					<description xml:lang="nl-NL">Aantal verbindingen ingesteld in het systeem</description>				
+  				</resource>
+  			</resources>
+  
+  			<requirements>
+				<php:version min="5.2" xmlns:php="http://apstandard.com/ns/1/php"/>
+				<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+			</requirements>
+  
+			<provision>
+				<configuration-script name="configureGeneric.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+
+				<verify-script name="verifyChannels.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</verify-script>
+				
+				<resource-script name="resourceVoiceConnect.php">
+					<script-language>php</script-language>			
+				</resource-script>
+			</provision>	
+		</service>			
+			
+		
+		
+		
+
+		
+
+		<service class="account" id="Voiceworks_User">
+			<presentation>
+				<name>User</name>
+				<name xml:lang="en-US">User</name>
+				<name xml:lang="nl-NL">Webgebruiker</name>
+				<summary>These are accounts that may access the management environment or web-users.</summary>
+				<summary xml:lang="en-US">These are accounts that may access the management environment or web-users.</summary>
+				<summary xml:lang="nl-NL">Gebruikers die online toegang hebben tot de Voice portal.</summary>
+			
+				<icon path="images/icons/user.png"/>
+			
+				<entry-points>
+					<entry class="control-panel" dst="https://{host}/site/dologin" method="POST">
+						<label>User Control Panel</label>
+						<variable name="host" value-of-setting="operator_apihostname"/>
+						<variable class="login" name="form[username]" value-of-setting="username"/>
+						<variable class="password" name="form[password]" value-of-setting="password"/>
+						<variable name="form[sso_originator]" value-of-setting="platform_identifier"/>
+						<variable class="locale" name="form[sso_lang]"/>
+						
+					</entry>
+			    </entry-points>
+ 			</presentation>
+ 			
+			<settings>
+            <setting id="wholeseller_uname" type="string" value-of-setting="wholeseller_uname" visibility="hidden"/>
+				<setting id="wholeseller_pword" type="string" value-of-setting="wholeseller_pword" visibility="hidden"/>
+				
+				<setting class="subscription_id" id="subscription_id" type="string" value-of-setting="account_subscriptionid" visibility="hidden">
+					<name>Subscription ID</name>
+				</setting>
+				<setting class="value" id="accountnumber" type="string" value-of-setting="account_accountnumber" visibility="hidden">
+					<name>Unique company identifier</name>
+				</setting>
+				<setting class="value" id="reseller_username" type="string" value-of-setting="reseller_username" visibility="hidden">
+					<name>Username of reseller</name>
+				</setting>	
+				<setting class="value" id="reseller_password" type="string" value-of-setting="reseller_password" visibility="hidden">
+					<name>Password of reseller</name>
+				</setting>											
+				
+				<setting id="company" protected="true" type="string" value-of-setting="account_companyname"/>
+				<group class="vcard">
+					<group class="fn n">
+						<setting class="given-name" id="firstname" max-length="64" optional="true" type="string" visibility="hidden">
+							<name>First name</name>
+							<name xml:lang="en-US">First name</name>
+							<name xml:lang="nl-NL">Voornaam</name>
+						</setting>
+						<setting class="family-name" id="lastname" max-length="64" type="string" visibility="hidden">
+							<name>Last name</name>
+							<name xml:lang="en-US">Last name</name>
+							<name xml:lang="nl-NL">Achternaam</name>
+						</setting>
+</group>
+					</group>
+				
+				<group class="authn">
+				<setting class="login" id="username" max-length="128" track-old-value="true" type="string">
+					<name>Username</name>
+					<name xml:lang="en-US">Username</name>
+					<name xml:lang="nl-NL">Gebruikersnaam</name>
+				</setting>
+				<setting class="password" id="password" max-length="48" min-length="1" type="password">
+					<name>Password</name>
+					<name xml:lang="en-US">Password</name>
+					<name xml:lang="nl-NL">Wachtwoord</name>
+					<error-message>Incorrect password</error-message>
+					<error-message xml:lang="en-US">
+						Password incorrectly formatted
+					</error-message>
+					<error-message xml:lang="nl-NL">
+						Wachtwoord heeft een verkeerd formaat
+					</error-message>
+				</setting>
+</group>
+				</settings>
+  
+  			<requirements>
+				<php:version min="5.2" xmlns:php="http://apstandard.com/ns/1/php"/>
+				<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+			</requirements>
+  
+			<provision>
+				<configuration-script name="configureUser.php">
+					<script-language>php</script-language>
+					<status-control/>
+					<structured-output/>
+				</configuration-script>
+				<verify-script name="verifyUser.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</verify-script>
+			</provision>	
+		</service>
+		
+		<service class="service" id="Voiceworks_FaxIn">
+		
+			<presentation>
+				<name>Fax to Email</name>
+				<name xml:lang="en-US">Fax to Email</name>
+				<name xml:lang="nl-NL">Fax to Email</name>
+				<summary>Create a faxnumber and receive the faxes in your mail.</summary>
+				<summary xml:lang="en-US">Create a faxnumber and receive the faxes in your mail.</summary>
+				<summary xml:lang="nl-NL">Aanmaken van een faxnummer waarvan de ontvangen berichten naar een vast e-mail adres worden verstuurd.</summary>
+				<icon path="images/icons/faxin.png"/>
+			</presentation>
+				
+			<settings>
+			<setting id="wholeseller_uname" type="string" value-of-setting="wholeseller_uname" visibility="hidden"/>
+				<setting id="wholeseller_pword" type="string" value-of-setting="wholeseller_pword" visibility="hidden"/>
+				
+				<setting class="value" id="accountnumber" type="string" value-of-setting="account_accountnumber" visibility="hidden">
+					<name>Unique company identifier</name>
+				</setting>
+				<setting class="subscription_id" id="subscription_id" type="string" value-of-setting="account_subscriptionid" visibility="hidden">
+					<name>Subscription ID</name>
+				</setting>	
+				<setting class="value" id="reseller_username" type="string" value-of-setting="reseller_username" visibility="hidden">
+					<name>Username of reseller</name>
+				</setting>	
+				<setting class="value" id="reseller_password" type="string" value-of-setting="reseller_password" visibility="hidden">
+					<name>Password of reseller</name>
+				</setting>
+														
+				
+				<setting class="value" id="emailaddress" type="email">
+					<name>E-mail address</name>
+					<name xml:lang="en-US">E-mail address</name>
+					<name xml:lang="nl-NL">E-mail adres</name>
+					<description>Enter a valid e-mail address</description>
+					<description xml:lang="en-US">Enter a valid e-mail address</description>
+					<description xml:lang="nl-NL">Voer een e-mail adres in</description>
+					<error-message>Incorrect e-mail address</error-message>
+				</setting>
+				<setting class="value" id="phonenumber" type="string">
+					<name>Phonenumber</name>
+					<name xml:lang="en-US">Phonenumber</name>
+					<name xml:lang="nl-NL">Telefoonnummer</name>
+					<description>Enter the numeric value of a unused number only</description>
+					<description xml:lang="en-US">Enter the numeric value a unused number only</description>
+					<description xml:lang="nl-NL">Voer alleen de cijfers van een vrij telefoonnummer in</description>
+					<error-message>Incorrect phone number</error-message>
+					<error-message xml:lang="en-US">Incorrect phone number</error-message>
+					<error-message xml:lang="nl-NL">Incorrect telefoonnummer</error-message>
+				</setting>
+				</settings>
+	 
+			<requirements>
+				<php:version min="5.2" xmlns:php="http://apstandard.com/ns/1/php"/>
+				<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+			</requirements>
+	 
+			<provision>
+				<configuration-script name="configureGeneric.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+	
+				<verify-script name="verifyFaxIn.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</verify-script>
+			</provision>	
+		</service>
+		
+		<service class="service" id="Voiceworks_FaxOut">
+		
+			<presentation>
+				<name>Email to Fax</name>
+				<name xml:lang="en-US">Email to Fax</name>
+				<name xml:lang="nl-NL">Email to Fax</name>
+				<summary>Send out your faxes per e-mail.</summary>
+				<summary xml:lang="en-US">Send out your faxes per e-mail.</summary>
+				<summary xml:lang="nl-NL">Verstuur faxen per e-mail.</summary>
+				<icon path="images/icons/faxout.png"/>
+			</presentation>
+				
+			<settings>
+			<setting id="wholeseller_uname" type="string" value-of-setting="wholeseller_uname" visibility="hidden"/>
+				<setting id="wholeseller_pword" type="string" value-of-setting="wholeseller_pword" visibility="hidden"/>
+				 
+				<setting class="value" id="accountnumber" type="string" value-of-setting="account_accountnumber" visibility="hidden">
+					<name>Unique company identifier</name>
+				</setting>
+				<setting class="subscription_id" id="subscription_id" type="string" value-of-setting="account_subscriptionid" visibility="hidden">
+					<name>Subscription ID</name>
+				</setting>	
+				<setting class="value" id="reseller_username" type="string" value-of-setting="reseller_username" visibility="hidden">
+					<name>Username of reseller</name>
+				</setting>	
+				<setting class="value" id="reseller_password" type="string" value-of-setting="reseller_password" visibility="hidden">
+					<name>Password of reseller</name>
+				</setting>				
+										
+				
+				<setting class="value" id="phonenumber" type="string">
+					<name>Phonenumber</name>
+					<name xml:lang="en-US">Phonenumber</name>
+					<name xml:lang="nl-NL">Telefoonnummer</name>
+					<description>Enter the numeric value of a unused number only</description>
+					<description xml:lang="en-US">Enter the numeric value a unused number only</description>
+					<description xml:lang="nl-NL">Voer alleen de cijfers van een vrij telefoonnummer in</description>
+					<error-message>Incorrect phone number</error-message>
+					<error-message xml:lang="en-US">Incorrect phone number</error-message>
+					<error-message xml:lang="nl-NL">Incorrect telefoonnummer</error-message>
+				</setting>
+				</settings>
+	 
+			<requirements>
+				<php:version min="5.2" xmlns:php="http://apstandard.com/ns/1/php"/>
+				<php:extension xmlns:php="http://apstandard.com/ns/1/php">curl</php:extension>
+			</requirements>
+	 
+			<provision>
+				<configuration-script name="configureGeneric.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</configuration-script>
+	
+				<verify-script name="verifyFaxOut.php">
+					<script-language>php</script-language>
+					<structured-output/>
+				</verify-script>
+			</provision>	
+		</service>	
+
+			
+	</service>
+</application>

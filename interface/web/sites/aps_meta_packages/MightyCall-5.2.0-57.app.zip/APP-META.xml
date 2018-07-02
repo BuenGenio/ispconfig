@@ -1,0 +1,538 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2">
+    <id>http://apsstandard.org/app/InfraCloudReceptionist</id>
+    <name>MightyCall</name>
+    <version>5.2.0</version>
+    <release>57</release>
+
+    <homepage>http://www.infratel.com</homepage>
+		
+    <vendor>
+        <name>INFRATEL Inc.</name>
+        <homepage>http://www.infratel.com</homepage>
+    </vendor>
+
+    <packager>
+        <name>INFRATEL Inc.</name>
+        <homepage>http://www.infratel.com</homepage>
+        <uri>http://www.infratel.com</uri>
+    </packager>
+
+    <presentation>
+        <summary>MightyCall virtual phone services</summary>
+        <description>
+		Manage your MightyCall virtual phone services
+        </description>
+        
+        <icon path="images/icon.png" />
+
+        <screenshot path="images/Screen1.png">
+            <description>Sample system screen</description>
+        </screenshot>
+        
+		<changelog>
+            <version version="5.0.0" release="1">
+                <entry>First release</entry>
+            </version>
+            <version version="5.0.0" release="7">
+                <entry>Creating administrator's account during customer creation</entry>
+            </version>
+            <version version="5.0.0" release="8">
+                <entry>New icons, headers and descriptions</entry>
+            </version>
+            <version version="5.0.0" release="9">
+                <entry>Changed settings set</entry>
+            </version>
+            <version version="5.0.0" release="10">
+                <entry>Changed settings set</entry>
+            </version>
+            <version version="5.0.0" release="11">
+                <entry>Updated configuration scripts</entry>
+            </version>
+            <version version="5.0.0" release="12">
+                <entry>Updated configuration scripts</entry>
+            </version>
+            <version version="5.0.0" release="13">
+                <entry>Updated configuration scripts</entry>
+            </version>
+            <version version="5.0.0" release="14">
+                <entry>Added unvalidate passwords</entry>
+            </version>
+            <version version="5.0.0" release="15">
+                <entry>Fixed single logon</entry>
+            </version>
+            <version version="5.0.0" release="16">
+                <entry>Fixed user login validation</entry>
+            </version>
+            <version version="5.0.0" release="17">
+                <entry>Removed email uniquness</entry>
+            </version>
+            <version version="5.0.0" release="18">
+                <entry>Fills subscription start</entry>
+            </version>
+            <version version="5.0.0" release="19">
+                <entry>Removed service users</entry>
+            </version>
+            <version version="5.0.0" release="20">
+                <entry>Changed method to GET</entry>
+            </version>
+            <version version="5.0.0" release="21">
+                <entry>Safari comp</entry>
+            </version>
+            <version version="5.0.0" release="22">
+                <entry>Safari comp</entry>
+            </version>
+            <version version="5.0.0" release="23">
+                <entry>2 URL fields</entry>
+            </version>
+            <version version="5.0.0" release="24">
+                <entry>Fills WebUiUrl</entry>
+            </version>
+            <version version="5.0.0" release="25">
+                <entry>Back to POST authentication</entry>
+            </version>
+            <version version="5.0.0" release="26">
+                <entry>Test</entry>
+            </version>
+            <version version="5.0.0" release="27">
+                <entry>WSDL cache->off</entry>
+            </version>
+            <version version="5.0.0" release="28">
+                <entry>Update for new Welcome e-mail</entry>
+            </version>
+            <version version="5.0.0" release="29">
+                <entry>WSDL cache turned off</entry>
+            </version>
+            <version version="5.0.0" release="30">
+                <entry>Added no new number email</entry>
+            </version>
+            <version version="5.0.0" release="31">
+                <entry>Allow toll free numbers</entry>
+            </version>
+            <version version="5.0.0" release="32">
+                <entry>Allow toll free numbers</entry>
+            </version>
+            <version version="5.0.0" release="33">
+                <entry>Additional URLs</entry>
+            </version>
+            <version version="5.0.0" release="34">
+                <entry>Toll free passed to MightyCall</entry>
+            </version>
+            <version version="5.0.0" release="35">
+                <entry>Area + country codes</entry>
+            </version>
+            <version version="5.0.0" release="36">
+                <entry>Tollfree resource</entry>
+            </version>
+            <version version="5.0.0" release="37">
+                <entry>Tollfree resource</entry>
+            </version>
+            <version version="5.0.0" release="38">
+                <entry>Tollfree resource</entry>
+            </version>
+            <version version="5.0.0" release="39">
+                <entry>Telephony domain</entry>
+            </version>
+            <version version="5.0.0" release="40">
+                <entry>Telephony domain</entry>
+            </version>
+            <version version="5.0.0" release="41">
+                <entry>Phones limit</entry>
+            </version>
+            <version version="5.0.0" release="42">
+                <entry>Unsuccessful attempts detection</entry>
+            </version>
+            <version version="5.0.0" release="43">
+                <entry>Unsuccessful attempts detection</entry>
+            </version>
+            <version version="5.0.0" release="44">
+                <entry>Fixed toll free numbers</entry>
+            </version>
+            <version version="5.0.0" release="45">
+                <entry>Removed help path</entry>
+            </version>
+            <version version="5.0.0" release="46">
+                <entry>Additional RTC params</entry>
+            </version>
+            <version version="5.0.0" release="47">
+                <entry>Logout, WSDL caching, Getting web-button code through ConfigWS (instead direct connection), Password length check</entry>
+            </version>
+			<version version="5.0.0" release="48">
+				<entry>Logon errors fixed</entry>
+			</version>
+			<version version="5.0.0" release="49">
+				<entry>Instance Disable and Delete will not generate error if instance is not found (in case it was deleted manually)</entry>
+			</version>
+			<version version="5.2.0" release="50">
+				<entry>Changes for integration with 5.2</entry>
+			</version>
+			<version version="5.2.0" release="51">
+				<entry>Changes for integration with 5.2</entry>
+			</version>		
+			<version version="5.2.0" release="52">
+				<entry>Changes for integration with 5.2</entry>
+			</version>				
+            <version version="5.2.0" release="53">
+                <entry>Rebranding from ICR to MightyCall</entry>
+            </version>
+            <version version="5.2.0" release="54">
+                <entry>Updated icon and description</entry>
+            </version>
+            <version version="5.2.0" release="55">
+                <entry>CallScreeningMode field was added for user</entry>
+            </version>
+            <version release="56" version="5.2.0">
+            	<entry>Adapted to changes in service configuration API</entry>
+            </version>
+            <version release="57" version="5.2.0">
+            	<entry>Replaced the screenshot with native .png</entry>
+            </version>
+		</changelog>
+        <categories>
+            <category>Collaboration/IP Telephony</category>
+        </categories>
+
+        <languages>
+            <language>en</language>
+        </languages>
+
+    </presentation>
+
+    <global-settings>
+      <group class="authn">
+        <setting id="infraHPBX_web" type="string" default-value="https://" regex="^https?:\/\/.+[^\/]$">
+            <name>URL of MightyCall Control panel</name>
+            <description>For example https://panel.sitename.com</description>
+            <error-message>Please provide a valid URL address starting with http:// or https://. Don't include trailing slash (/).</error-message>
+        </setting>
+        <setting id="infraHPBX_phoneMarket" type="string" default-value="" regex="^https?:\/\/.+[^\/]$">
+            <name>URL of MightyCall Config Phone Market Service</name>
+            <description>For example https://panel.sitename.com/PhoneMarket</description>
+            <error-message>Please provide a valid URL address starting with http:// or https://. Don't include trailing slash (/).</error-message>
+        </setting>
+        <setting id="infraHPBX_host" type="string" default-value="" regex="^https?:\/\/.+[^\/]$">
+            <name>URL of MightyCall Config Web Service</name>
+            <description>For example https://panel.sitename.com/ConfigWS</description>
+            <error-message>Please provide a valid URL address starting with http:// or https://. Don't include trailing slash (/).</error-message>
+        </setting>
+        <setting id="infraHPBX_billing" type="string" default-value="" regex="^https?:\/\/.+[^\/]$">
+            <name>URL of Billing (PA) control panel</name>
+            <description>For example https://sitename.com/cp</description>
+            <error-message>Please provide a valid URL address starting with http:// or https://. Don't include trailing slash (/).</error-message>
+        </setting>
+
+        <setting id="infraHPBX_login" class="login" type="string" uniq="global" regex="^([a-zA-Z0-9\\\!@#$%\^\*\(\)_\.\+={}~`\[;:|,>\?-]|\])*$">
+          <name>Administrator login</name>
+          <description>Login of administrator for MightyCall</description>
+          <error-message>Please provide a valid login</error-message>
+        </setting>
+
+        <setting id="infraHPBX_password" class="password" type="password" min-length="4" regex="^([a-zA-Z0-9\\\!@#$%\^\*\(\)_\.\+={}~`\[;:|,>\?-]|\])*$" default-value="amazeme">
+            <name>Administrator password</name>
+            <description>Password of administrator</description>
+            <error-message>Password contains invalid characters</error-message>
+        </setting>
+        <setting id="infraHPBX_check_password_strength" type="boolean" optional="true">
+            <name>Check for password complexity</name>
+            <description>If set, package will verify that user passwords satisfy standard Windows requirements. Otherwise you'll need to adjust security settings on MightyCall host.</description>
+        </setting>
+      </group>
+    </global-settings>
+
+    <patch match="/application/version >= '5.0.0'" recommended="true" />
+
+    <service id="context" class="service">
+    
+<!--
+        <license must-accept="true">
+            <text>
+                <name>Commercial license</name>
+                <url>http://www.infratel.com</url>
+            </text>
+        </license>
+-->
+        <presentation>
+            <name>MightyCall</name>
+            <summary>Use this section to manage call routing rules, upload greetings and setup menus</summary>
+            <infolinks>
+                <link class="official" href="http://www.infratel.com">Official site</link>
+                <link class="support" href="http://www.infratel.com">Support</link>
+                <link class="demo" href="http://www.infratel.com">Online-Demo</link>
+            </infolinks>
+            <entry-points>
+              <entry dst="{host}/Default.aspx" method="GET">
+                <label>Manage telephony</label>
+                <variable name="host" value-of-setting="infraHPBX_web" />
+              </entry>
+            </entry-points>
+        </presentation>
+              
+        <settings>
+          
+          <group class="vcard">
+            <group class="email">
+              <setting id="admin_email" class="value" type="email" track-old-value="true">
+                <name>Administrator primary email address</name>
+                <description>This address will be used to send voicemail notifications</description>
+              </setting>
+            </group>
+            <group class="fn n">
+              <setting id="admin_display_name" class="display-name" type="string" protected="true" track-old-value="true">
+                <name>Administrator's display name</name>
+                <description></description>
+                <error-message>Display name should consist of at least two words - first and last name</error-message>
+              </setting>
+              <setting id="admin_first_name" class="given-name" type="string" protected="true" track-old-value="true">
+                <name>Administrator's given name</name>
+              </setting>
+              <setting id="admin_last_name" class="family-name" type="string" protected="true" track-old-value="true">
+                <name>Administrator's family name</name>
+              </setting>
+            </group>
+            <setting id="organization_name" class="organization-name" type="string" min-length="1" max-length="100" track-old-value="true">
+              <name>Customer name</name>
+              <description>Unique name that will identify your hosted PBX instance</description>
+            </setting>
+			<group class="tel">
+	            <setting id="admin_forwarding_number" class="work" type="string" min-length="3" installation-only="true" max-length="255" track-old-value="true" default-value="">
+    	          <name>Forward calls to</name>
+        	      <description>Phone number of administrator in international format x-xxx-xxx-xxxx</description>
+            	  <error-message></error-message>
+	            </setting>
+			</group>
+      	</group>
+            <setting id="admin_ext_number" type="string" min-length="1" max-length="5" track-old-value="true" default-value="0">
+              <name>Administrator's extension</name>
+              <description>Extension number assigned to administrator of instance</description>
+              <error-message>Length of number should be between 1 and 5 chars</error-message>
+            </setting>
+			<group class="authn">
+				<setting id="admin_login" class="login" type="string" uniq="global" regex="^([a-zA-Z0-9\!@#$%\^\*\(\)_\.\+={}~`\[;:\|,\?-]|\])*$" installation-only="true" track-old-value="true">
+					<name>Administrator login</name>
+					<description>Required field, used while logging in.</description>
+					<error-message>Please provide a login</error-message>
+				</setting>
+				<!--
+				    We do not provide admin password in 5.2 
+				    It is generated inside MightyCall. 
+				    Need to think of how to pass it back to POA.  
+				<setting id="admin_password" track-old-value="true" class="password" type="password" min-length="6" regex="^([a-zA-Z0-9\\\!@#$%\^\*\(\)_\.\+={}~`\[;:\|,\?-]|\])*$">
+					<name>Password</name>
+					<description>Required field</description>
+					<error-message>Minimum length for password is 6, you must have a strong password, with letters, special characters and numbers.</error-message>
+				</setting>
+				 -->
+			</group>
+
+
+          <setting id="instance_id" type="string" visibility="hidden" protected="true" optional="true" installation-only="true">
+            <name>Unique number to be used as instance ID in Infratel server</name>
+          </setting>
+          <setting id="instance_external_id" track-old-value="true" generate="uuid" type="string" visibility="hidden" protected="true" installation-only="true">
+            <name>Number that Plesk will assign to instance to identify it</name>
+          </setting>
+
+        <setting id="allowTollFree" type="integer" visibility="hidden" optional="true" default-value="1">
+            <name>Allow toll free numbers</name>
+            <description>Set 1 to allow customer to subscribe to toll free numbers, 0 to prohibit.</description>
+        </setting>
+        <setting id="phone_numbers_limit" type="integer" visibility="hidden" optional="true" default-value="1">
+            <name>Public Phones Limit</name>
+            <description>Set 0 for unlimited phone numbers per customer</description>
+        </setting>
+
+			<setting id="voicemails" track-old-value="true" default-value="50" visibility="hidden" type="integer">
+				<name>Maximum number of voicemails per user</name>
+			</setting>
+			<setting type="integer" id="incoming_minutes_limit" track-old-value="true"
+				optional="true" visibility="hidden">
+				<name>Incoming minutes limit per subscription period</name>
+			</setting>
+			<setting type="integer" id="outgoing_minutes_limit" track-old-value="true"
+				optional="true" visibility="hidden">
+				<name>Outgoing minutes limit per subscription period</name>
+			</setting>
+			<setting type="integer" id="total_minutes_limit" track-old-value="true"
+				optional="true" visibility="hidden">
+				<name>Total minutes limit per subscription period</name>
+			</setting>
+			<setting id="incoming_overusage_action" type="enum" track-old-value="true"
+				optional="true" visibility="hidden">
+				<name>Action on incoming minutes overusage</name>
+		        <choice id="Ignore">
+        		  <name>None</name>
+		        </choice>
+        		<choice id="DisableService">
+		          <name>Suspend subscription</name>
+        		</choice>
+        		<choice id="DisableOutgoing">
+		          <name>Disable outgoing calls</name>
+        		</choice>
+			</setting>
+			<setting id="outgoing_overusage_action" type="enum" track-old-value="true"
+				optional="true" visibility="hidden">
+				<name>Action on outgoing minutes overusage</name>
+		        <choice id="Ignore">
+        		  <name>None</name>
+		        </choice>
+        		<choice id="DisableService">
+		          <name>Suspend subscription</name>
+        		</choice>
+        		<choice id="DisableOutgoing">
+		          <name>Disable outgoing calls</name>
+        		</choice>
+			</setting>
+			<setting id="total_overusage_action" type="enum" track-old-value="true"
+				optional="true" visibility="hidden">
+				<name>Action on total minutes overusage</name>
+		        <choice id="Ignore">
+        		  <name>None</name>
+		        </choice>
+        		<choice id="DisableService">
+		          <name>Suspend subscription</name>
+        		</choice>
+        		<choice id="DisableOutgoing">
+		          <name>Disable outgoing calls</name>
+        		</choice>
+			</setting>
+			<setting type="integer" id="subscription_period" track-old-value="true"
+				optional="true" visibility="hidden" default-value="1">
+				<name>Length of subscription period</name>
+                <description>Amount of months/years (set by Period type) in subscription period</description>
+			</setting>
+			<setting id="subscription_period_type" type="enum" track-old-value="true"
+				optional="true" visibility="hidden" default-value="Month">
+				<name>Subscription period type</name>
+                <description>Time interval used to measure subscription period</description>
+		        <choice id="Month">
+        		  <name>Month</name>
+		        </choice>
+        		<choice id="Year">
+		          <name>Year</name>
+        		</choice>
+			</setting>
+
+<!--
+          <setting id="filestore_quota" type="integer" visibility="hidden" default-value="1024">
+            <name>Instance filestore quota (in MB)</name>
+          </setting>
+-->
+        </settings>
+		
+		<resources>
+<!--
+			<resource id="users" class="item" limiting-setting="users">
+				<name>User accounts</name>
+			</resource>
+      <resource id="filestore_diskusage" class="mb" limiting-setting="filestore_quota">
+        <name>Disk space used by instance files.</name>
+      </resource>
+-->
+			<resource id="used_incoming_minutes" class="item" limiting-setting="incoming_minutes_limit">
+				<name>Incoming minutes usage per subscription period</name>
+			</resource>
+			<resource id="used_outgoing_minutes" class="item" limiting-setting="outgoing_minutes_limit">
+				<name>Outgoing minutes usage per subscription period</name>
+			</resource>
+			<resource id="used_total_minutes" class="item" limiting-setting="total_minutes_limit">
+				<name>Total minutes usage per subscription period</name>
+			</resource>
+			<resource id="allowTollFree" class="item" limiting-setting="allowTollFree">
+				<name>Allow tollfree numbers</name>
+			</resource>
+			<resource id="phone_numbers" class="item" limiting-setting="phone_numbers_limit">
+				<name>Public Phones On Subscription</name>
+			</resource>
+    </resources> 
+        
+     	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+	        <php:version min="5.0" />
+	        <php:extension>soap</php:extension>
+	    </requirements>
+
+	    <provision>
+        <configuration-script name="configure.php">
+          <script-language>php</script-language>
+          <status-control/>
+          <structured-output/>
+        </configuration-script>
+        <resource-script name="report-resources.php">
+          <script-language>php</script-language>
+        </resource-script> 
+        <verify-script name="verify.php">
+          <script-language>php</script-language>
+        </verify-script>
+      </provision>
+<!--
+      <service id="account" class="account">
+          <presentation>
+            <name>User Account</name>
+            <summary>Use this section to manage MightyCall user accounts (extension numbers)</summary>
+            <entry-points>
+              <entry dst="http://{host}/Parallels/Default.aspx" method="POST">
+                <label>User account</label>
+                <variable name="host" value-of-setting="infraHPBX_host" />
+                <variable name="login" value-of-setting="user_login" />
+                <variable name="password" value-of-setting="user_password" />
+              </entry>
+            </entry-points>
+          </presentation>
+
+        <settings>
+
+          <group class="vcard">
+            <group class="email">
+              <setting id="user_email" class="value" type="email" track-old-value="true" optional="true">
+                <name>User primary email address</name>
+                <description>This address will be used to send voicemail notifications</description>
+              </setting>
+            </group>
+            <group class="fn n">
+              <setting id="user_display_name" class="display-name" type="string" protected="true">
+                <name>Display name</name>
+                <description>Must be unique inside instance</description>
+              </setting>
+            </group>
+          </group>
+          <setting id="user_ext_number" type="string" min-length="1" max-length="7" default-value="">
+            <name>Extension number</name>
+            <description>Extension number assigned to user</description>
+            <error-message>Length of number should be between 1 and 7 chars</error-message>
+          </setting>
+          <setting id="user_is_admin" type="boolean" optional="true">
+            <name>Is administrator</name>
+            <description>Administrator user can manage call routing rules</description>
+          </setting>
+          <group class="authn">
+            <setting id="user_login" class="login" type="string" installation-only="true" uniq="global" regex="^([a-zA-Z0-9\!@#$%\^\*\(\)_\.\+={}~`\[;:\|,\?-]|\])*$" track-old-value="true">
+              <name>Login</name>
+              <error-message>Login contains invalid characters</error-message>
+            </setting>
+            <setting id="user_password" class="password" type="password" min-length="7" regex="^([a-zA-Z0-9\!@#$%\^\*\(\)_\.\+={}~`\[;:\|,\?-]|\])*$" >
+              <name>Password</name>
+              <error-message>Password contains invalid characters</error-message>
+            </setting>
+          </group>
+          
+          <setting id="user_id" type="string" visibility="hidden" protected="true" optional="true" installation-only="true">
+            <name>Infratel user Guid</name>
+          </setting>
+          <setting id="instance_id" type="string" visibility="hidden" value-of-setting="instance_id"/>
+          <setting id="instance_external_id" type="string" visibility="hidden" value-of-setting="instance_external_id"/>
+
+        </settings>
+
+        <provision>
+          <configuration-script name="configure-user.php">
+            <script-language>php</script-language>
+            <status-control/>
+            <structured-output/>
+          </configuration-script>
+          <verify-script name="verify-user.php">
+            <script-language>php</script-language>
+          </verify-script>
+        </provision>
+
+      </service>
+-->
+      </service>
+</application>

@@ -1,0 +1,124 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2011-09-22T12:06:32">
+	<id>StopTheHacker_Blacklist_Monitoring</id>
+	<name>StopTheHacker_Blacklist_Monitoring</name>
+	<version>1</version>
+	<release>2</release>
+	<homepage>http://www.stopthehacker.com/</homepage>
+	<vendor>
+		<name>StopTheHacker</name>
+		<homepage>http://www.stopthehacker.com/</homepage>
+		<icon path="images/icon.png" />
+	</vendor>
+	<packager>
+		<name>Softec Internet</name>
+		<homepage>http://www.softec-internet.com</homepage>
+		<icon path="images/logo_softec.png" />
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+	<presentation>
+		<summary>Blacklist Monitoring</summary>		
+		<description>Blacklist Monitoring is a daily check on the status of your website on the Google Safe Browsing List. We notify you so that you can take action before your visitors are hurt and to remove your site from the search engine blacklist.
+
+The Benefits
+
+    We tell you if your site appears on the Google’s Safe Browsing List.
+    You’ll receive an email alert with your status if you have been blacklisted.
+</description>
+		<icon path="images/icon.png" />
+		<screenshot path="images/screen.jpg">
+			<description>Sample screen 
+			</description>
+		</screenshot>	
+		<changelog>					
+			<version version="1" release="2">
+				<entry>Test api account removed</entry>
+			</version>
+			<version version="1" release="1">
+				<entry>Initial package version</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Infrastructure/Security</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>		
+		<group>
+			<name>General</name>
+			<setting type="string" id="api_user" default-value=""><name>Api user:</name></setting>
+			<setting type="string" id="api_key" default-value=""><name>Api Key:</name></setting>
+			<setting type="string" id="api_entry_point" default-value="https://panel.stopthehacker.com/reseller/api"><name>Api url</name></setting>		
+		</group>
+		<group class="presentation">
+			<name>Service Ids</name>
+			<setting type="string" id="service_id"
+				default-value="146">
+				<name>Daily blacklist monitoring service id:</name>
+			</setting>
+		</group>		
+	</global-settings>
+	<service id="context" singular="true" class="">
+		<license must-accept="true">
+			<commercial />
+			<text xml:lang="en-US">
+				<name>License terms and conditions</name>
+				<file>htdocs/license.txt</file>
+			</text>
+			<text>
+				<name>License terms and conditions</name>
+				<file>htdocs/license.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Stopthehackers Blacklist Monitoring Service</name>
+			<summary>Stopthehackers Blacklist Monitoring Service</summary>
+			<infolinks>
+				<link class="support" href="http://www.stopthehacker.com/faq/">FAQ</link>
+			</infolinks>
+			<entry-points>
+      			<entry  dst="/" method="POST">
+                	<label>Report</label>
+                	<variable name="api_url" value-of-setting="api_entry_point"></variable>
+                	<variable name="api_user" value-of-setting="api_user"></variable>
+                	<variable name="api_key" value-of-setting="api_key"></variable>
+                	<variable name="mail" value-of-setting="mail"></variable>
+                	<variable name="target" value-of-setting="domain" class=""></variable>
+      			</entry>      			
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="presentation">
+				<setting id="domain" default-value="" class="domain-name"  type="string" installation-only="true">
+					<name>Domain:</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<setting id="mail" class="value" type="email"  default-value="" track-old-value="true">					
+					<name>Mail:</name>
+				</setting>
+			</group>
+		</settings>
+		<requirements xmlns:db="http://apstandard.com/ns/1/db" xmlns:php="http://apstandard.com/ns/1/php" xmlns:l="http://apstandard.com/ns/1/licensing">
+			<php:version min="5.0"/>
+			<php:extension>curl</php:extension>
+			<php:safe-mode>false</php:safe-mode>
+			<php:register-globals>false</php:register-globals>			
+		</requirements>
+		<provision xmlns:php="http://apstandard.com/ns/1/php" xmlns:l="http://apstandard.com/ns/1/licensing">
+			<url-mapping>
+        		<default-prefix>sth</default-prefix>
+        		<installed-size>30976</installed-size>
+        		<mapping url="/" path="htdocs">
+        			<php:handler><php:extension>php</php:extension></php:handler>
+        		</mapping>
+        	</url-mapping>        	
+        	<configuration-script name="configure.php">
+            	<script-language>php</script-language>      
+            	<status-control/>          
+                <structured-output/>                              
+			</configuration-script>
+		</provision>				
+	</service>
+	</application>

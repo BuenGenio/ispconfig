@@ -1,0 +1,585 @@
+<application packaged="2016-10-05T08:40:32" version="1.2" xmlns="http://apstandard.com/ns/1">
+    <id>http://www.iasobackup.com</id>
+    <name>IASO Backup</name>
+    <version>16.10.0</version>
+    <release>53</release>
+    <homepage>https://www.iaso.com/</homepage>
+    
+    <vendor>
+        <name>IASO Backup</name>
+        <homepage>https://www.iaso.com/</homepage>
+        <icon path="images/icon.png"/>
+    </vendor>
+    
+    <packager>
+        <name>IASO Backup</name>
+        <homepage>https://www.iaso.com/</homepage>
+        <icon path="images/icon.png"/>
+    </packager>
+    
+    <presentation>
+        <summary>IASO 2014 is online backup software which is designed to provide a safe and secure backup for business.</summary>
+        <description>IASO is one of the leading brands in online backup software and storage for consumers, SMBs and enterprises. The IASO backup solution is designed for MSPs to provide their customers with an affordable, reliable, easy and automated backup solution offering a full feature set. We are introducing up-to-date features that will enhance and improve your backup processes dramatically. IASO 2014 is developed in a way to minimize the usage of resources and to maximize the efficiency of your business.</description>
+        <icon path="images/icon.png"/>
+        <screenshot path="images/backup.jpg">
+            <description>Backup Page</description>
+        </screenshot>
+        <changelog>
+            <version release="49" version="14.2.23">
+            	<entry>Fixed bug with trial/production subscriptions.</entry>
+            	<entry>Fixed bug with user creation for the end-customer.</entry>
+            </version>
+            <version release="44" version="14.2.23">
+            	<entry>Fixed bug with inability to create customer under reseller.</entry>
+            	<entry>Fixed bug with incorrect cloud Exception codes.</entry>
+            </version>
+            <version release="19" version="14.2.23">
+            	<entry>Fixed bug with inability to create a partner.</entry>
+            </version>
+            <version release="18" version="14.2.23">
+            	<entry>Added the possibility to bind a service plan with a certain product</entry>
+                <entry>Added the possibility to automatically generate device names and passwords of 12 symbols</entry>
+                <entry>Added the possibility to select Workstation or Server partners</entry>
+            </version>
+            <version release="5" version="14.0.0">
+                <entry>Added possibility to create end customers with reporter user rights.</entry>
+            </version>
+            <version release="4" version="14.0.0">
+                <entry>Fixed bug with enable/disable account.</entry>
+            </version>
+            <version release="58" version="12.4.18">
+                <entry>Fixed bug with creation reseller in the cloud.</entry>
+            </version>
+            <version release="56" version="12.4.18">
+                <entry>Fixed bug with wrong user rights.</entry>
+            </version>
+            <version release="55" version="12.4.18">
+                <entry>Changed 'MirrorResellersHierarchy' settings. If it's unchecked and end customer have resellers then the last reseller will be created at the cloud and end-customer will be below him.</entry>
+                <entry>Added new settings for the mail to reseller about his login and password to the CMC under creation.</entry>
+                <entry>Set '0' limit by default during creation of the IASO account.</entry>
+            </version>
+            <version release="53" version="12.4.18">
+                <entry>Added a global setting 'CloudAddress'. IMPORTANT!!! After the update you should fill this setting with a valid cloud address. Please use 'https://cloud.iaso.com/manserv' by default.</entry>
+                <entry>Added a global setting 'UseResellerId'. If 'MirrorResellersHierarchy' checkbox is marked you can switch resellers connection from subscription id to reseller id. This option allows creating customers of an APS reseller under the same reseller in the cloud.</entry>
+            </version>
+            <version release="51" version="12.4.18">
+                <entry>Fixed issue with moving partner from trial to production subscription.</entry>
+            </version>
+            <version release="49" version="12.4.18">
+                <entry>Fixed issue with non-ASCII characters.</entry>
+            </version>
+            <version release="48" version="12.4.18">
+                <entry>Fixed disabling mirroring resellers hierarchy to the cloud.</entry>
+                <entry>Fixed turn off emailing.</entry>
+                <entry>Fixed disabling a subscription reached the limit.</entry>
+                <entry>Added a trial mode support.</entry>
+                <entry>Added a configurable limit per account.</entry>
+            </version>
+            <version release="39" version="12.4.18">
+                <entry>When IASO partner creation fails, add partner name to error message.</entry>
+                <entry>Added possibility to disable mirroring resellers hierarchy to the cloud.</entry>
+            </version>
+            <version release="35" version="12.4.18">
+                <entry>Move IASO end-customers and resellers to production right after creation.</entry>
+            </version>
+            <version release="33" version="12.4.18">
+                <entry>Correct end customer (account manager) login when partner name contains subscription ID.</entry>
+                <entry>IASO management service SOAP client now tries to create WSDL cache file in script directory if temporary directory is not write-accessible.</entry>
+                <entry>System error message in configiration script output now contains error message itself in addition to backtrace.</entry>
+            </version>
+            <version release="31" version="12.4.18">
+                <entry>Correct IASO partner creation when POA account has no parent resellers.</entry>
+            </version>
+            <version release="29" version="12.4.18">
+                <entry>Changed IASO SOAP client to support both old and new service WSDLs.</entry>
+                <entry>Extended mailing support with 'enabled' flag and 'subject' text customizable for each specific mail.</entry>
+                <entry>Changed mail templates processing so that placeholders should now be escaped with @-signs (X becomes @@X@@). Mail subjects are now also searched for placeholders.</entry>
+                <entry>Account login is now being used as service user e-mail address for mail notifications.</entry>
+            </version>
+            <version release="27" version="12.4.18">
+                <entry>Added "upgrade" action support to configuration script.</entry>
+                <entry>Changed account service "subscription_id" setting to use value-of-setting instead of "subscription_id" class (should now work on older POA versions).</entry>
+            </version>
+            <version release="25" version="12.4.18">
+                <entry>When POA subscription is removed, associated cloud partner is renamed to "&lt;original name&gt; [removed &lt;date &amp; time&gt;]".</entry>
+                <entry>When storage limit is reached, POA subscription is disabled, which in turn calls configuration script.</entry>
+                <entry>When storage limit is reached, POA subscription is disabled right away.</entry>
+                <entry>POA subscription ID is used when trying to generate unique cloud partner name.</entry>
+                <entry>When account is disabled, mail is sent to account email address.</entry>
+                <entry>Correct handling of cloud partners with names containing POA subscription ID and out-of-scope partner.</entry>
+                <entry>Correct POA XML-RPC responses handling.</entry>
+                <entry>Valid structured output from configuration script.</entry>
+            </version>
+            <version release="32" version="14.0.4">
+                <entry>Add service plans. Realize workstation\server division.</entry>
+            </version>
+            <version release="50" version="16.6.0">
+            	<entry>Remove min-length for DashboardEmail</entry>
+            </version>
+            <version release="51" version="16.6.0">
+            	<entry>Add account MaximumUsedStorage limitation to devices on cloud</entry>
+            </version>
+            <version release="53" version="16.10.0">
+            	<entry>Fixed bug with '-' character on the username and password.</entry>
+            </version>
+        </changelog>
+        <categories>
+            <category>Infrastructure/Backup</category>
+        </categories>
+        <languages>
+            <language>en</language>
+        </languages>
+    </presentation>
+    
+    <global-settings>
+        <setting id="CloudAddress" installation-only="true" type="string">
+            <name>Cloud address</name>
+        </setting>
+        <setting default-value="All-In" id="ProductName" installation-only="true" type="string">
+            <name>Default product name</name>
+        </setting>
+        <group class="branding">
+            <name>Branding</name>
+            <setting default-value="PartnerName" id="PartnerName" installation-only="true" type="string">
+                <name>Admin partner name</name>
+            </setting>
+            <setting default-value="" id="aadminuser" installation-only="true" type="string">
+                <name>Admin username</name>
+            </setting>
+            <setting class="password" default-value="" id="adminpwd" installation-only="true" type="password">
+                <name>Admin password</name>
+            </setting>
+            <setting default-value="" id="WorkstationPartnerName" installation-only="true" type="string">
+                <name>Workstations partner name</name>
+            </setting>
+            <setting default-value="" id="ServerPartnerName" installation-only="true" type="string">
+                <name>Servers partner name</name>
+            </setting>
+            <setting default-value="false" id="EndCustomerAsReporter" type="boolean">
+                <name>Create end customer with reporter user rights instead of super user</name>
+            </setting>
+            <setting default-value="false" id="UseResellerId" type="boolean">
+                <name>Use reseller ID instead of Subscription Id to create a unique reseller name</name>
+            </setting>
+            <setting default-value="true" id="MirrorResellersHierarchy" type="boolean">
+                <name>Mirror resellers hierarchy to the cloud</name>
+            </setting>
+            <setting default-value="false" id="generatePasswordAndLogin" type="boolean">
+            	<name>Create a 12-character device name and password</name>
+            </setting>
+            <setting default-value="" id="product-name-1" installation-only="true" type="string">
+                <name>Product name 1:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-1" installation-only="true" type="string">
+                <name>Service plan ID 1:</name>
+            </setting>
+            <setting default-value="" id="product-name-2" installation-only="true" type="string">
+                <name>Product name 2:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-2" installation-only="true" type="string">
+                <name>Service plan ID 2:</name>
+            </setting>
+            <setting default-value="" id="product-name-3" installation-only="true" type="string">
+                <name>Product name 3:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-3" installation-only="true" type="string">
+                <name>Service plan ID 3:</name>
+            </setting>
+            <setting default-value="" id="product-name-4" installation-only="true" type="string">
+                <name>Product name 4:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-4" installation-only="true" type="string">
+                <name>Service plan ID 4:</name>
+            </setting>
+            <setting default-value="" id="product-name-5" installation-only="true" type="string">
+                <name>Product name 5:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-5" installation-only="true" type="string">
+                <name>Service plan ID 5:</name>
+            </setting>
+            <setting default-value="" id="product-name-6" installation-only="true" type="string">
+                <name>Product name 6:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-6" installation-only="true" type="string">
+                <name>Service plan ID 6:</name>
+            </setting>
+            <setting default-value="" id="product-name-7" installation-only="true" type="string">
+                <name>Product name 7:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-7" installation-only="true" type="string">
+                <name>Service plan ID 7:</name>
+            </setting>
+            <setting default-value="" id="product-name-8" installation-only="true" type="string">
+                <name>Product name 8:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-8" installation-only="true" type="string">
+                <name>Service plan ID 8:</name>
+            </setting>
+            <setting default-value="" id="product-name-9" installation-only="true" type="string">
+                <name>Product name 9:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-9" installation-only="true" type="string">
+                <name>Service plan ID 9:</name>
+            </setting>
+            <setting default-value="" id="product-name-10" installation-only="true" type="string">
+                <name>Product name 10:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-10" installation-only="true" type="string">
+                <name>Service plan ID 10:</name>
+            </setting>
+            <setting default-value="" id="product-name-11" installation-only="true" type="string">
+                <name>Product name 11:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-11" installation-only="true" type="string">
+                <name>Service plan ID 11:</name>
+            </setting>
+            <setting default-value="" id="product-name-12" installation-only="true" type="string">
+                <name>Product name 12:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-12" installation-only="true" type="string">
+                <name>Service plan ID 12:</name>
+            </setting>
+            <setting default-value="" id="product-name-13" installation-only="true" type="string">
+                <name>Product name 13:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-13" installation-only="true" type="string">
+                <name>Service plan ID 13:</name>
+            </setting>
+            <setting default-value="" id="product-name-14" installation-only="true" type="string">
+                <name>Product name 14:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-14" installation-only="true" type="string">
+                <name>Service plan ID 14:</name>
+            </setting>
+            <setting default-value="" id="product-name-15" installation-only="true" type="string">
+                <name>Product name 15:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-15" installation-only="true" type="string">
+                <name>Service plan ID 15:</name>
+            </setting>
+            <setting default-value="" id="product-name-16" installation-only="true" type="string">
+                <name>Product name 16:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-16" installation-only="true" type="string">
+                <name>Service plan ID 16:</name>
+            </setting>
+            <setting default-value="" id="product-name-17" installation-only="true" type="string">
+                <name>Product name 17:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-17" installation-only="true" type="string">
+                <name>Service plan ID 17:</name>
+            </setting>
+            <setting default-value="" id="product-name-18" installation-only="true" type="string">
+                <name>Product name 18:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-18" installation-only="true" type="string">
+                <name>Service plan ID 18:</name>
+            </setting>
+            <setting default-value="" id="product-name-19" installation-only="true" type="string">
+                <name>Product name 19:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-19" installation-only="true" type="string">
+                <name>Service plan ID 19:</name>
+            </setting>
+            <setting default-value="" id="product-name-20" installation-only="true" type="string">
+                <name>Product name 20:</name>
+            </setting>
+            <setting default-value="" id="service-plan-id-20" installation-only="true" type="string">
+                <name>Service plan ID 20:</name>
+            </setting>
+            <setting default-value="sales@example.com" id="zfromemail" installation-only="true" type="string">
+                <name>E-mail from</name>
+            </setting>
+            <setting default-value="admin@example.com" id="zfromemail2" installation-only="true" type="string">
+                <name>Admin e-mail</name>
+            </setting>
+            <group class="branding">
+                <setting default-value="true" id="EndCustomer_PartnerInstall_MailEnabled" type="boolean">
+                    <name>Notify end-customer about created partner</name>
+                    <description/>
+                </setting>
+                <setting default-value="" id="zzmailasubject" installation-only="true" type="string">
+                    <name>Mail subject</name>
+                </setting>
+                <setting class="description" id="zzmailbody" max-length="20000" type="string">
+                    <name>Mail body</name>
+                </setting>
+            </group>
+            <group class="branding">
+                <setting default-value="true" id="EndCustomer_PartnerOverQuota_MailEnabled" type="boolean">
+                    <name>Notify end-customer about partner over-quota</name>
+                </setting>
+                <setting default-value="" id="EndCustomer_PartnerOverQuota_MailSubject" type="string">
+                    <name>Mail subject</name>
+                </setting>
+                <setting class="description" id="zzmailbody3" max-length="20000" type="string">
+                    <name>Mail body</name>
+                </setting>
+            </group>
+            <group class="branding">
+                <setting default-value="false" id="EndCustomer_AccountInstall_MailEnabled" type="boolean">
+                    <name>Notify end-customer about created account</name>
+                </setting>
+                <setting default-value="" id="EndCustomer_AccountInstall_MailSubject" type="string">
+                    <name>Mail subject</name>
+                </setting>
+                <setting class="description" id="EndCustomer_AccountInstall_MailBody" max-length="20000" type="string">
+                    <name>Mail body</name>
+                </setting>
+            </group>
+            <group class="branding">
+                <setting default-value="true" id="ServiceUser_AccountInstall_MailEnabled" type="boolean">
+                    <name>Notify service user about created account</name>
+                </setting>
+                <setting default-value="" id="ServiceUser_AccountInstall_MailSubject" type="string">
+                    <name>Mail subject</name>
+                </setting>
+                <setting class="description" id="zzmailbody2" max-length="20000" type="string">
+                    <name>Mail body</name>
+                </setting>
+            </group>
+            <group class="branding">
+                <setting default-value="false" id="ServiceUser_AccountRemove_MailEnabled" type="boolean">
+                    <name>Notify service user about removed account</name>
+                </setting>
+                <setting default-value="" id="ServiceUser_AccountRemove_MailSubject" type="string">
+                    <name>Mail subject</name>
+                </setting>
+                <setting class="description" id="ServiceUser_AccountRemove_MailBody" max-length="20000" type="string">
+                    <name>Mail body</name>
+                </setting>
+            </group>
+            <group class="branding">
+                <setting default-value="false" id="ServiceUser_AccountEnable_MailEnabled" type="boolean">
+                    <name>Notify service user about enabled account</name>
+                </setting>
+                <setting default-value="" id="ServiceUser_AccountEnable_MailSubject" type="string">
+                    <name>Mail subject</name>
+                </setting>
+                <setting class="description" id="ServiceUser_AccountEnable_MailBody" max-length="20000" type="string">
+                    <name>Mail body</name>
+                </setting>
+            </group>
+            <group class="branding">
+                <setting default-value="false" id="ServiceUser_AccountDisable_MailEnabled" type="boolean">
+                    <name>Notify service user about disabled account</name>
+                </setting>
+                <setting default-value="" id="ServiceUser_AccountDisable_MailSubject" type="string">
+                    <name>Mail subject</name>
+                </setting>
+                <setting class="description" id="ServiceUser_AccountDisable_MailBody" max-length="20000" type="string">
+                    <name>Mail body</name>
+                </setting>
+            </group>
+        </group>
+        <group class="branding">
+            <setting default-value="false" id="Reseller_ResellerInstall_MailEnabled" type="boolean">
+                <name>Notify reseller about his password</name>
+            </setting>
+            <setting default-value="" id="Reseller_ResellerInstall_MailSubject" type="string">
+                <name>Mail subject</name>
+            </setting>
+            <setting class="description" id="Reseller_ResellerInstall_MailBody" max-length="20000" type="string">
+                <name>Mail body</name>
+            </setting>
+        </group>
+        <setting default-value="http://demo.server.com:8440" id="apiaddress" installation-only="true" type="string">
+            <name>API POA server address</name>
+        </setting>
+        <setting default-value="" id="apiuser" installation-only="true" type="string">
+            <name>API POA username</name>
+        </setting>
+        <setting default-value="" id="apipasswd" installation-only="true" type="string">
+            <name>API POA password</name>
+        </setting>
+        <setting default-value="http://demo.server.com:5224" id="apipbaaddress" installation-only="true" type="string">
+            <name>API PBA server address</name>
+        </setting>
+        <setting default-value="" id="apipbauser" installation-only="true" type="string">
+            <name>API PBA username</name>
+        </setting>
+        <setting default-value="" id="apipbapasswd" installation-only="true" type="string">
+            <name>API PBA password</name>
+        </setting>
+    </global-settings>
+    <patch match="/application/version &gt;= '12.4.17'"/>
+    <upgrade match="/application/version &gt;= '12.4.17'"/>
+    
+    <service class="service" id="IASO" singular="true">
+        <license must-accept="true">
+            <text>
+                <name>End User IASO Backup License Agreement</name>
+                <file>License.txt</file>
+            </text>
+        </license>
+        <presentation>
+            <name>IASO Backup Management</name>
+            <summary>IASO Backup Application</summary>
+            <infolinks>
+                <link class="official" href="https://www.iaso.com/">Official site</link>
+                <link class="support" href="https://www.iaso.com/support">Support</link>
+                <link class="deployment-guide" href="https://www.iaso.com/kb/article.php?url=IASOARTICLE40">Deployment guide</link>
+            </infolinks>
+            <entry-points>
+                <entry dst="https://www.iaso.com/downloads">
+                    <label>Download IASO Backup Client</label>
+                </entry>
+                <entry dst="https://www.iaso.com/">
+                    <label>Information service</label>
+                </entry>
+                <entry dst="https://www.iaso.com/technical-support/">
+                    <label>Support</label>
+                    <icon path="images/icon.png"/>
+                </entry>
+            </entry-points>
+        </presentation>
+        
+        <settings>
+            <group class="vcard">
+                <group class="fn n">
+                    <setting class="login" id="GroupAccountName" installation-only="true" type="string" uniq="global">
+                        <name>Group Account Name</name>
+                        <description>Group Account Name</description>
+                    </setting>
+                </group>
+                <setting class="password" default-value="password" id="GroupAccountPwd" installation-only="true" type="password">
+                    <name>Group Account Password</name>
+                    <description>Password</description>
+                </setting>
+                <setting class="email" id="groupemail" installation-only="true" type="string">
+                    <name>E-mail</name>
+                    <description>Should be a real e-mail address to receive notifications</description>
+                </setting>
+            </group>
+            <group class="company">
+                <setting class="dbsize" default-value="1" id="dbsize" type="integer" visibility="hidden"/>
+            </group>
+            <setting class="subscription_id" default-value="" id="subscription_id" protected="true" type="string" visibility="hidden">
+                <name>Subscription ID</name>
+            </setting>
+            <setting class="subscription_trial" default-value="true" id="subscription_trial" protected="true" type="string" visibility="hidden">
+                <name>Subscription Trial</name>
+            </setting>
+        </settings>
+        <resources>
+            <resource class="mb" id="dbsize" limiting-setting="dbsize">
+                <name>Used Storage resource</name>
+                <description>Total storage size resource</description>
+            </resource>
+        </resources>
+        
+        <requirements>
+            <php:version min="5.1.2" xmlns:php="http://apstandard.com/ns/1/php"/>
+            <php:extension xmlns:php="http://apstandard.com/ns/1/php">libxml</php:extension>
+            <php:extension xmlns:php="http://apstandard.com/ns/1/php">SOAP</php:extension>
+            <php:extension xmlns:php="http://apstandard.com/ns/1/php">XMLWriter</php:extension>
+        </requirements>
+        
+        <provision>
+            <configuration-script name="configure.php">
+                <script-language>php</script-language>
+                <status-control/>
+                <structured-output/>
+            </configuration-script>
+            <resource-script name="resources.php" poll-interval="60m">
+                <script-language>php</script-language>
+            </resource-script>
+        </provision>
+        <service class="account" id="account">
+            <presentation>
+                <name>IASO Backup Account</name>
+                <summary>IASO Backup Application</summary>
+                <infolinks>
+                    <link class="official" href="https://www.iaso.com/">Official site</link>
+                    <link class="support" href="https://www.iaso.com/technical-support/">Support</link>
+                </infolinks>
+                <entry-points>
+                    <entry class="Download" dst="https://www.iaso.com/downloads" method="GET">
+                        <label>Download IASO Backup Client</label>
+                    </entry>
+                    <entry dst="https://www.iaso.com/">
+                        <label>Information service</label>
+                    </entry>
+                    <entry dst="https://www.iaso.com/technical-support/">
+                        <label>Support</label>
+                        <icon path="images/icon.png"/>
+                    </entry>
+                </entry-points>
+            </presentation>
+            <settings>
+                <setting id="subscription_id2" protected="true" type="string" value-of-setting="subscription_id" visibility="hidden"/>
+                <setting id="groupemail" protected="true" type="string" value-of-setting="groupemail" visibility="hidden"/>
+                <group class="vcard">
+                    <setting id="GroupAccountName2" type="string" value-of-setting="GroupAccountName" visibility="hidden">
+                        <name>Group Account Name</name>
+                        <description>Group Account Name</description>
+                    </setting>
+                    <setting id="GroupAccountPwd2" type="string" value-of-setting="GroupAccountPwd" visibility="hidden">
+                        <name>Group Account Password</name>
+                        <description>Group Account Password</description>
+                    </setting>
+                    <setting class="login" id="AccountName" installation-only="true" min-length="1" regex="^[a-zA-Z0-9_@\.-]*$" type="string" visibility="hidden">
+                        <name>Account login</name>
+                        <description>Should be a real e-mail address to receive
+                            notifications</description>
+                        <error-message>The following characters may be used: [a-z] or
+                            [A-Z] or [0-9] or '-' or '.' or '_'or '@'. A point is a
+                            prohibited symbol at the end of the account name</error-message>
+                    </setting>
+                    <setting class="password" id="AccountPwd" regex="^[^\s,:;'&quot;/|\\]{1,251}$" type="string">
+                        <name>Password</name>
+                        <description>Password</description>
+                        <error-message>The following characters are invalid: 
+                            spaces or quotes or ':' or ',' or ';' or '\'or '|' or '/'.</error-message>
+                    </setting>
+                    <setting default-value="" id="License-Code" protected="true" type="string">
+                        <name>License code</name>
+                        <description>You'll get this value after provisioning.
+                        </description>
+                    </setting>
+                    <setting default-value="" id="LicenseCode" protected="true" type="string" visibility="hidden">
+                        <name>License code</name>
+                    </setting>
+                    <setting default-value="" id="DashboardEmail" regex="^[a-zA-Z0-9_@\.-]*$" type="string">
+                        <name>Dashboard Email</name>
+                        <description/>
+                        <error-message>The following characters may be used: [a-z] or
+                            [A-Z] or [0-9] or '-' or '.' or '_'or '@'.</error-message>
+                    </setting>
+                    <setting default-value="0" id="AccountLimit" type="integer">
+                        <name>Account Limit</name>
+                        <description>Enter value in GB. Use '0' value for unlimited
+                            storage.</description>
+                    </setting>
+                    <setting default-value="" id="HiddenPassword" installation-only="true" protected="true" type="string">
+                        <name>Password</name>
+                        <description>Password</description>
+                    </setting>
+                    <setting default-value="Server" id="MachineType" type="enum">
+                        <name>Machine Type</name>
+                        <choice id="Workstation">
+                            <name>Workstation</name>
+                        </choice>
+                        <choice id="Server">
+                            <name>Server</name>
+                        </choice>
+                    </setting>
+                </group>
+            </settings>
+            <requirements>
+                <php:version min="5.1.2" xmlns:php="http://apstandard.com/ns/1/php"/>
+                <php:extension xmlns:php="http://apstandard.com/ns/1/php">libxml</php:extension>
+                <php:extension xmlns:php="http://apstandard.com/ns/1/php">SOAP</php:extension>
+                <php:extension xmlns:php="http://apstandard.com/ns/1/php">XMLWriter</php:extension>
+            </requirements>
+            
+            <provision>
+                <configuration-script name="configure.php">
+                    <script-language>php</script-language>
+                    <status-control/>
+                    <structured-output/>
+                </configuration-script>
+            </provision>
+        </service>
+    </service>
+</application>

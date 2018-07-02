@@ -1,0 +1,913 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-02-19T17:29:34">
+	<id>http://apsstandard.org/app/MozyPro</id>
+	<name>MozyPro</name>
+	<version>1.2</version>
+	<release>26</release>
+	<homepage>http://www.mozy.com/pro/</homepage>
+	<vendor>
+		<name>Mozy</name>
+		<homepage>http://www.mozy.com/pro/</homepage>
+		<icon path="images/Mozy-Logo-64x64.png" />
+	</vendor>
+	<packager>
+		<name>Mozy</name>
+		<homepage>http://www.mozy.com</homepage>
+		<icon path="images/Mozy-Logo-64x64.png" />
+		<uri></uri>
+	</packager>
+	<presentation>
+		<summary>MozyPro</summary>
+		<summary xml:lang="es-ES">MozyPro</summary>
+		<summary xml:lang="fr-FR">MozyPro</summary>
+		<summary xml:lang="it-IT">MozyPro</summary>
+		<summary xml:lang="de-DE">MozyPro</summary>
+		<summary xml:lang="nl-NL">MozyPro</summary>
+		<summary xml:lang="pt-PT">MozyPro</summary>
+		<summary xml:lang="jp-JP">MozyPro</summary>
+		<description>Mozy is the world’s most trusted online backup service with more than 3 million customers and 80,000 business customers backing up over 90 petabytes of information to multiple data centers around the globe. MozyPro offers cost-effective, easy-to-use and secure online data backup and access for small businesses to large enterprises. Protect your information in the cloud, and be able to access it wherever you need it.</description>
+		<description xml:lang="es-ES">Mozy es el servicio de backup mas	confiable del mundo con mas de 3 millones de clientes y con 80.000 clientes empresariales haciendo copias de seguridad dando lugar a 90 petabytes de información almacenada en múltiples centros de datos alrededor del mundo. MozyPro ofrece un servicio online de copias de	seguridad rentable, fácil de usar y seguro accesible para pequeñas y grandes empresas. Proteja su información en la nube y disponga de ella siempre que lo necesite.</description>
+		<description xml:lang="fr-FR">Mozy est plus grand fournisseur mondial de services de sauvegarde en ligne avec plus de 3 millions de clients et 80.000 clients entreprises sauvegardez plus de 90 pétaoctets d'informations à de multiples centres de données à travers le monde. MozyPro offre rentable, facile à utiliser et sécurisée de sauvegarde en ligne des données et l'accès pour les petites entreprises aux grandes entreprises. Protégez vos informations dans le nuage, et être en mesure d'y accéder où que vous soyez.</description>
+		<description xml:lang="it-IT">Mozy è il servizio più grande al mondo di backup online con più di 3 milioni di clienti e 80.000 clienti aziendali il backup di oltre 90 petabyte di informazioni da più data center in tutto il mondo. MozyPro offre conveniente, facile da usare e sicuro backup online dei dati e l'accesso delle piccole imprese alle grandi imprese. Proteggi i tuoi dati nella nuvola, ed essere in grado di accedervi ovunque ne abbiate bisogno.</description>
+		<description xml:lang="de-DE">Mozy ist der weltweit größte Online-Backup-Service mit mehr als 3 Millionen Kunden und 80.000 Geschäftskunden Backups über 90 Petabyte an Informationen, um mehrere Rechenzentren rund um den Globus. MozyPro bietet kostengünstige, einfach zu bedienende und sichere Online-Daten-Backup und den Zugang für kleine Unternehmen und große Unternehmen. Schützen Sie Ihre Daten in der Cloud und in der Lage sein, darauf zuzugreifen, wo Sie es brauchen.</description>
+		<description xml:lang="nl-NL">Mozy is 's werelds meest betrouwbare online backup dienst met meer dan 3 miljoen klanten en 80.000 zakelijke klanten tot meer dan 90 petabytes aan informatie aan meerdere datacenters over de hele wereld beweegt. MozyPro biedt kosteneffectieve, eenvoudig te gebruiken en veilig online data back-up en toegang voor kleine bedrijven tot grote ondernemingen. Bescherm uw gegevens in de cloud, en in staat zijn om toegang te krijgen waar u het nodig hebt.</description>
+		<description xml:lang="pt-PT">Mozy é o serviço de backup mais confiável do mundo com mais de 3 milhões de clientes e com 80.000 clientes empresariais fazendo backups dando lugar a 90 petabytes de informação armazenada em vários centros de dados ao redor do mundo. MozyPro oferece um serviço online de backups rentáveis, fáceis de usar e seguros acessíveis a pequenas e grandes empresas. Proteja sua informação na nuvem e faça uso dela sempre que precisar.</description>
+		<description xml:lang="jp-JP">Mozyは、世界中の複数のデータセンターへの情報の90ペタバイトを介してバックアップを300万人以上の顧客と80,000の企業顧客を持つ世界で最も信頼されているオンラインバックアップサービスです。 MozyProは提供しています費用対効果の高い、使いやすいし、オンラインでデータのバックアップや大企業への中小企業のためのアクセスを確保する。雲の中にあなたの情報を保護し、あなたがそれを必要な場所にアクセスできる必要があります。</description>
+		<icon path="images/Mozy-Logo-64x64.png" />
+		<screenshot path="images/mozyProCap640.PNG">
+			<description>Screenshot of the Mozy Portal.</description>
+		</screenshot>
+		<changelog>
+			<version version="1" release="1">
+				<entry>Initial QA Release</entry>
+			</version>
+			<version release="1" version="1.1">
+				<entry>Rebaselined.</entry>
+			</version>
+			<version release="2" version="1.1">
+				<entry>Changed some display names.</entry>
+			</version>
+			<version release="3" version="1.1">
+				<entry>Added Spanish language to the package.</entry>
+			</version>
+			<version release="4" version="1.1">
+				<entry>Including changes in the texts in Spanish.</entry>
+			</version>
+			<version release="5" version="1.1">
+				<entry>Including new changes in the texts in Spanish.</entry>
+			</version>
+			<version release="6" version="1.1">
+				<entry>Including new changes in the texts in Spanish.</entry>
+			</version>
+			<version release="7" version="1.1">
+				<entry>Including new changes in the texts in Spanish and new logo.
+				</entry>
+			</version>
+			<version release="8" version="1.1">
+				<entry>Including new changes in the texts in Spanish.</entry>
+			</version>
+			<version release="9" version="1.1">
+				<entry>Including new changes in the texts in Spanish.</entry>
+			</version>
+			<version release="10" version="1.1">
+				<entry>Including new changes in the texts in Spanish.</entry>
+			</version>
+			<version release="11" version="1.1">
+				<entry>added hidden locale_id setting set to es, added another API call to send emails in that locale insead of the default english email generated by UpdateLicenses</entry>
+			</version>
+			<version release="12" version="1.1">
+				<entry>change to localization email call to add keystring</entry>
+			</version>
+			<version release="14" version="1.1">
+				<entry>Split the remove license flow to null the email account before removing the license from the account</entry>
+			</version>
+			<version release="18" version="1.1">
+				<entry>Replace update license with transfer</entry>
+			</version>
+			<version release="19" version="1.1">
+				<entry>debug on remove call</entry>
+			</version>
+			<version release="20" version="1.1">
+				<entry>Added another parnter_id setting for scope.</entry>
+			</version>
+			<version release="32" version="1.1">
+				<entry>added setting copy user_group_id for scope, added delete license logic to account for different activation scenarios.</entry>
+			</version>
+			<version release="33" version="1.1">
+				<entry>Added META strings for FR, IT, DE, NL, PT, JP.</entry>
+			</version>
+			<version release="34" version="1.1">
+				<entry>added email and password class designations for admin-level settings</entry>
+			</version>
+			<version release="35" version="1.1">
+				<entry>Replaced mozy-logo with Embartel Logo	
+Updated "pt-PT" strings as per Embartel request
+Replaced Home Page URL
+Removed Apptix Logo
+Hard coded the Locale to "PT" in handeler.php
+Updated Package Description: Mozy Stats  - (80k Customers 90pb)</entry>
+			</version>
+			<version release="5" version="1.2">
+				<entry>Branding updates, add the ability to update the service user full name</entry>
+			</version>
+			<version release="26" version="1.2">
+				<entry>Added SSO at the SMB level</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Infrastructure/Backup</category>
+		</categories>
+		<languages>
+			<language>en</language>
+			<language>es</language>
+			<language>fr</language>
+			<language>it</language>
+			<language>de</language>
+			<language>nl</language>
+			<language>pt</language>
+			<language>jp</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting type="string" id="ws_user_api"
+			default-value="https://api.mozypro.com/api/0.1.48/user/service.wsdl">
+			<name>Mozy User API WSDL</name>
+			<name xml:lang="es-ES">API WSDL de Usuario de Mozy</name>
+			<name xml:lang="fr-FR">Mozy utilisateur API WSDL</name>
+			<name xml:lang="it-IT">Mozy Utente API WSDL</name>
+			<name xml:lang="de-DE">Mozy Benutzer-API WSDL</name>
+			<name xml:lang="nl-NL">Mozy Gebruiker API WSDL</name>
+			<name xml:lang="pt-PT">API WSDL de Usuário de Mozy</name>
+			<name xml:lang="jp-JP">MozyのユーザーAPIのWSDL</name>
+			<description>This is URL address of the Mozy Webservice API for User Operations</description>
+			<description xml:lang="es-ES">Dirección URL de la API - WebService de Mozy para las operaciones del usuario</description>
+			<description xml:lang="fr-FR">Ceci est l'adresse URL de l'API Webservice Mozy pour l'utilisateur Opérations</description>
+			<description xml:lang="it-IT">Questo è l'indirizzo URL del servizio Web API Mozy per le operazioni utente</description>
+			<description xml:lang="de-DE">Dies ist URL-Adresse der Mozy Webservice-API für User Operations</description>
+			<description xml:lang="nl-NL">Dit is URL-adres van de Mozy Webservice API voor handelingen van de gebruiker</description>
+			<description xml:lang="pt-PT">Endereço URL da API - WebService de Mozy para as operações do usuário</description>
+			<description xml:lang="jp-JP">これは、ユーザー操作のMozyのWebサービスAPIのURLアドレスです</description>
+			<error-message>Please make sure the text you entered starts with either http:// or https://.</error-message>
+			<error-message xml:lang="es-ES">Por favor asegurese de que el texto incluye en su inicio http:// o https://</error-message>
+			<error-message xml:lang="fr-FR">S'il vous plaît assurez-vous que le texte que vous avez entré commence par http:// ou https://.</error-message>
+			<error-message xml:lang="it-IT">Si prega di assicurarsi che il testo immesso inizia con http:// o https://.</error-message>
+			<error-message xml:lang="de-DE">Bitte stellen Sie sicher, dass der von Ihnen eingegebene Text beginnt entweder mit http:// oder https://.</error-message>
+			<error-message xml:lang="nl-NL">Zorg ervoor dat de tekst die u hebt ingevoerd begint met http:// of https://.</error-message>
+			<error-message xml:lang="pt-PT">Por favor, assegure-se de que o texto inclui em seu início http:// ou https://</error-message>
+			<error-message xml:lang="jp-JP">あなたが入力したテキストがhttp://またはhttps://で始まっていることを確認してください。</error-message>
+		</setting>
+		<setting type="string" id="ws_partner_api"
+			default-value="https://api.mozypro.com/api/0.1.48/partner/service.wsdl">
+			<name>Mozy Partner API WSDL</name>
+			<name xml:lang="es-ES">API WSDL de Partner de Mozy</name>
+			<name xml:lang="fr-FR">Mozy partenaire API WSDL</name>
+			<name xml:lang="it-IT">Mozy Partner API WSDL</name>
+			<name xml:lang="de-DE">Mozy Partner API WSDL</name>
+			<name xml:lang="nl-NL">Mozy Partner API WSDL</name>
+			<name xml:lang="pt-PT">API WSDL de Associado da Mozy</name>
+			<name xml:lang="jp-JP">MozyのパートナーAPIのWSDL</name>
+			<description>This is URL address of the Mozy Webservice API for Partner Operations</description>
+			<description xml:lang="es-ES">Esta es dirección URL del WebService API de Mozy para las operaciones del Partner</description>
+			<description xml:lang="fr-FR">Ceci est l'adresse URL de l'API Webservice Mozy pour les opérations des partenaires</description>
+			<description xml:lang="it-IT">Questo è l'indirizzo URL del servizio Web API Mozy per le operazioni di Partner</description>
+			<description xml:lang="de-DE">Dies ist URL-Adresse der Mozy Webservice-API für Partner Operationen</description>
+			<description xml:lang="nl-NL">Dit is URL-adres van de Mozy Webservice API voor partners Operations</description>
+			<description xml:lang="pt-PT">Este é o endereço URL do WebService API da Mozy para as operações do associado</description>
+			<description xml:lang="jp-JP">これは、パートナーオペレーションのためのMozyのWebサービスAPIのURLアドレスです</description>
+		</setting>
+		<setting type="string" id="ws_admin_api"
+			default-value="https://api.mozypro.com/api/0.1.48/admin/service.wsdl">
+			<name>Mozy Admin API WSDL</name>
+			<name xml:lang="es-ES">API WSDL de Admin de Mozy</name>
+			<name xml:lang="fr-FR">Mozy partenaire API WSDL</name>
+			<name xml:lang="it-IT">Mozy Admin API WSDL</name>
+			<name xml:lang="de-DE">Mozy Admin API WSDL</name>
+			<name xml:lang="nl-NL">Mozy Admin API WSDL</name>
+			<name xml:lang="pt-PT">API WSDL de Associado da Mozy</name>
+			<name xml:lang="jp-JP">MozyのパートナーAPIのWSDL</name>
+			<description>This is URL address of the Mozy Webservice API for Admin Operations</description>
+			<description xml:lang="es-ES">Esta es dirección URL del WebService API de Mozy para las operaciones del Partner</description>
+			<description xml:lang="fr-FR">Ceci est l'adresse URL de l'API Webservice Mozy pour les opérations des partenaires</description>
+			<description xml:lang="it-IT">Questo è l'indirizzo URL del servizio Web API Mozy per le operazioni di Partner</description>
+			<description xml:lang="de-DE">Dies ist URL-Adresse der Mozy Webservice-API für Partner Operationen</description>
+			<description xml:lang="nl-NL">Dit is URL-adres van de Mozy Webservice API voor partners Operations</description>
+			<description xml:lang="pt-PT">Este é o endereço URL do WebService API da Mozy para as operações do associado</description>
+			<description xml:lang="jp-JP">これは、パートナーオペレーションのためのMozyのWebサービスAPIのURLアドレスです</description>
+		</setting>
+		<setting type="string" id="ws_user_group_api"
+			default-value="https://api.mozypro.com/api/0.1.48/user_group/service.wsdl">
+			<name>Mozy User Group API WSDL</name>
+			<name xml:lang="es-ES">API WSDL de Grupos de Usuarios de Mozy</name>
+			<name xml:lang="fr-FR">Mozy User Group API WSDL</name>
+			<name xml:lang="it-IT">Mozy User Group API WSDL</name>
+			<name xml:lang="de-DE">Mozy User Group API WSDL</name>
+			<name xml:lang="nl-NL">Mozy User Group API WSDL</name>
+			<name xml:lang="pt-PT">API WSDL de Grupos de Usuários da Mozy</name>
+			<name xml:lang="jp-JP">MozyのユーザグループAPI WSDL</name>
+			<description>This is URL address of the Mozy Webservice API for User Group Operations</description>
+			<description xml:lang="es-ES">Esta es la dirección URL del WebService API de Mozy para las operaciones de Grupos de Usuarios</description>
+			<description xml:lang="fr-FR">Ceci est l'adresse URL de l'API Webservice Mozy pour les opérations du groupe d'utilisateurs</description>
+			<description xml:lang="it-IT">Questo è l'indirizzo URL del servizio Web API Mozy per le operazioni di gruppo utenti</description>
+			<description xml:lang="de-DE">Dies ist URL-Adresse der Mozy Webservice API für User Group Operations</description>
+			<description xml:lang="nl-NL">Dit is URL-adres van de Mozy Webservice API voor User Group Operations</description>
+			<description xml:lang="pt-PT">Este é o endereço URL do WebService API da Mozy para as operações de Grupos de Usuários</description>
+			<description xml:lang="jp-JP">これは、ユーザグループの操作のためのMozyのWebサービスAPIのURLアドレスです</description>
+		</setting>
+		<setting type="string" id="ws_resource_api"
+			default-value="https://api.mozypro.com/api/0.1.48/resource/service.wsdl">
+			<name>Mozy Resource API WSDL</name>
+			<name xml:lang="es-ES">API WDSL de Recursos de Mozy</name>
+			<name xml:lang="fr-FR">Mozy ressources API WSDL</name>
+			<name xml:lang="it-IT">Mozy risorse API WSDL</name>
+			<name xml:lang="de-DE">Mozy Ressourcen API WSDL</name>
+			<name xml:lang="nl-NL">Mozy Resource API WSDL</name>
+			<name xml:lang="pt-PT">API WDSL de Recursos da Mozy</name>
+			<name xml:lang="jp-JP">MozyのリソースAPIのWSDL</name>
+			<description>This is URL address of the Mozy Webservice API for Resource Operations</description>
+			<description xml:lang="es-ES">Esta es la dirección URL del WebService API de Mozi para las operaciones de Recursos</description>
+			<description xml:lang="fr-FR">Ceci est l'adresse URL de l'API Webservice Mozy pour les opérations de ressources</description>
+			<description xml:lang="it-IT">Questo è l'indirizzo URL del servizio Web API Mozy per le operazioni di risorse</description>
+			<description xml:lang="de-DE">Dies ist URL-Adresse der Mozy Webservice API für Resource Operationen</description>
+			<description xml:lang="nl-NL">Dit is URL-adres van de Mozy Webservice API voor Resource Operations</description>
+			<description xml:lang="pt-PT">Este é o endereço URL do WebService API da Mozi para as operações de Recursos</description>
+			<description xml:lang="jp-JP">これは、リソース操作のためのMozyのWebサービスAPIのURLアドレスです</description>
+		</setting>
+		<setting type="string" id="ws_machine_api"
+			default-value="https://api.mozypro.com/api/0.1.48/machine/service.wsdl">
+			<name>Mozy Machine API WSDL</name>
+			<name xml:lang="es-ES">API WDSL de Máquina de Mozy</name>
+			<name xml:lang="fr-FR">Mozy machine API WSDL</name>
+			<name xml:lang="it-IT">Mozy macchina API WSDL</name>
+			<name xml:lang="de-DE">Mozy Maschine API WSDL</name>
+			<name xml:lang="nl-NL">Mozy Machine API WSDL</name>
+			<name xml:lang="pt-PT">API WDSL de Máquina da Mozy</name>
+			<name xml:lang="jp-JP">MozyのマシンAPI WSDL</name>
+			<description>This is URL address of the Mozy Webservice API for Machine Operations</description>
+			<description xml:lang="es-ES">Esta dirección URL del Webservice	API de Mozy para las operaciones con las Máquinas</description>
+			<description xml:lang="fr-FR">Ceci est l'adresse URL de l'API Webservice Mozy pour les opérations de machines</description>
+			<description xml:lang="it-IT">Questo è l'indirizzo URL del servizio Web API Mozy per Operazioni di</description>
+			<description xml:lang="de-DE">Dies ist URL-Adresse der Mozy Webservice-API für Maschinensteuerung</description>
+			<description xml:lang="nl-NL">Dit is URL-adres van de Mozy Webservice API voor Machine Operations</description>
+			<description xml:lang="pt-PT">Este é o endereço URL do Webservice API da Mozy para as operações com as máquinas</description>
+			<description xml:lang="jp-JP">これは、機械操作のためのMozyのWebサービスAPIのURLアドレスです</description>
+		</setting>
+		<setting type="string" id="ws_email_api"
+			default-value="https://api.mozypro.com/api/0.1.48/email/service.wsdl">
+			<name>Mozy Email API WSDL</name>
+			<name xml:lang="es-ES">API WDSL de Máquina de Mozy</name>
+			<name xml:lang="fr-FR">Mozy Email API WSDL</name>
+			<name xml:lang="it-IT">Mozy Email API WSDL</name>
+			<name xml:lang="de-DE">Mozy Email API WSDL</name>
+			<name xml:lang="nl-NL">Mozy E-mail API WSDL</name>
+			<name xml:lang="pt-PT">Mozy-mail API WSDL</name>
+			<name xml:lang="jp-JP">MozyのメールAPI WSDL</name>
+			<description>This is URL address of the Mozy Webservice API for Email Operations</description>
+			<description xml:lang="es-ES">Esta dirección URL del Webservice API de Mozy para las operaciones con las Email</description>
+			<description xml:lang="fr-FR">Ceci est l'adresse URL de l'API Webservice Mozy pour les opérations de courriel</description>
+			<description xml:lang="it-IT">Questo è l'indirizzo URL del servizio Web API Mozy per le operazioni di e-mail</description>
+			<description xml:lang="de-DE">Dies ist URL-Adresse der Mozy Webservice-API für Email Operationen</description>
+			<description xml:lang="nl-NL">Dit is URL-adres van de Mozy Webservice API voor e-mail Operations</description>
+			<description xml:lang="pt-PT">Este é o endereço URL da API Webservice Mozy para Operações de E-mail</description>
+			<description xml:lang="jp-JP">これは、電子メール操作用のMozyのWebサービスAPIのURLアドレスです</description>
+		</setting>
+		<setting type="string" id="api_key" default-value="">
+			<name>Mozy Webservice API Key</name>
+			<name xml:lang="es-ES">Clave de acceso del Webservice API de Mozy</name>
+			<name xml:lang="fr-FR">Mozy Webservice clé API</name>
+			<name xml:lang="it-IT">Mozy Webservice API chiave</name>
+			<name xml:lang="de-DE">Mozy Webservice API-Schlüssel</name>
+			<name xml:lang="nl-NL">Mozy Webservice API-sleutel</name>
+			<name xml:lang="pt-PT">Código de acesso do Webservice API da Mozy</name>
+			<name xml:lang="jp-JP">MozyのWebサービスAPIキー</name>
+			<description>This is API key will be supplied by Mozy</description>
+			<description xml:lang="es-ES">Mozy proporcionará esta clave de acceso</description>
+			<description xml:lang="fr-FR">Ceci est clé pour l'API sera fourni par Mozy</description>
+			<description xml:lang="it-IT">Ciò è chiave API saranno forniti da Mozy</description>
+			<description xml:lang="de-DE">Dies wird API-Schlüssel wird von Mozy geliefert werden</description>
+			<description xml:lang="nl-NL">Dit is API-sleutel wordt geleverd door Mozy</description>
+			<description xml:lang="pt-PT">Mozy fornecerá este código de acesso</description>
+			<description xml:lang="jp-JP">これは、APIキーは、Mozyのによって供給されている</description>
+		</setting>
+		<setting type="integer" id="root_partner_id" default-value="0">
+			<name>Root / Parent Partner ID</name>
+			<name xml:lang="es-ES">Identificador Raiz / Padre del Partner</name>
+			<name xml:lang="fr-FR">Root / ID partenaire Parent</name>
+			<name xml:lang="it-IT">Root / ID partner Parent</name>
+			<name xml:lang="de-DE">Root / Eltern Partner-ID</name>
+			<name xml:lang="nl-NL">Root / Parent partner ID</name>
+			<name xml:lang="pt-PT">Identificador Raiz/Pai do Associado</name>
+			<name xml:lang="jp-JP">ルート/親パートナーID</name>
+			<description>This will be supplied by Mozy</description>
+			<description xml:lang="es-ES">Este valor será proporcionado por Mozy</description>
+			<description xml:lang="fr-FR">Ce sera fourni par Mozy</description>
+			<description xml:lang="it-IT">Questo sarà fornito da Mozy</description>
+			<description xml:lang="de-DE">Dies wird durch Mozy zugeführt werden</description>
+			<description xml:lang="nl-NL">Deze worden geleverd door Mozy</description>
+			<description xml:lang="pt-PT">Este valor será fornecido pela Mozy</description>
+			<description xml:lang="jp-JP">これは、Mozyのによって供給される</description>
+		</setting>
+		<setting type="integer" id="root_role_id" default-value="0">
+			<name>Sub-Partner Role ID</name>
+			<name xml:lang="es-ES">Identificador del Rol de Sub-partner</name>
+			<name xml:lang="fr-FR">ID Rôle Sous-Partner</name>
+			<name xml:lang="it-IT">Sub-Partner Ruolo ID</name>
+			<name xml:lang="de-DE">Sub-Partner Role ID</name>
+			<name xml:lang="nl-NL">Sub-Partner Rol ID</name>
+			<name xml:lang="pt-PT">Identificador da Função de Sub-associado</name>
+			<name xml:lang="jp-JP">サブパートナー·ロールID</name>
+			<description>This will be supplied by Mozy</description>
+			<description xml:lang="es-ES">Este valor será proporcionado por Mozy</description>
+			<description xml:lang="fr-FR">Ce sera fourni par Mozy</description>
+			<description xml:lang="it-IT">Questo sarà fornito da Mozy</description>
+			<description xml:lang="de-DE">Dies wird durch Mozy zugeführt werden</description>
+			<description xml:lang="nl-NL">Deze worden geleverd door Mozy</description>
+			<description xml:lang="pt-PT">Este valor será fornecido pela Mozy</description>
+			<description xml:lang="jp-JP">これは、Mozyのによって供給される</description>
+		</setting>
+		<setting type="string" id="mozypro_adminpanel_login"
+			default-value="https://secure.mozy.com/login/admin">
+			<name>MozyPro Admin Panel Access</name>
+			<name xml:lang="es-ES">Acceso al panel de administración de MozyPro</name>
+			<name xml:lang="fr-FR">Accès MozyPro panneau d'administration</name>
+			<name xml:lang="it-IT">MozyPro accesso pannello di amministrazione</name>
+			<name xml:lang="de-DE">MozyPro Admin Panel Access</name>
+			<name xml:lang="nl-NL">MozyPro Admin Panel Access</name>
+			<name xml:lang="pt-PT">MozyPro Acesso Painel de Administração</name>
+			<name xml:lang="jp-JP">MozyPro管理者パネルへのアクセス</name>
+			<description>This is the URL address to access the MozyPro Web Admin Console</description>
+			<description xml:lang="es-ES">Esta dirección URL permite el	acceso al panel de administración de MozyPro</description>
+			<description xml:lang="fr-FR">Ceci est l'adresse URL pour accéder à la console d'administration Web MozyPro</description>
+			<description xml:lang="it-IT">Questo è l'indirizzo URL per accedere alla MozyPro Web Admin Console</description>
+			<description xml:lang="de-DE">Dies ist die URL-Adresse, um die MozyPro Web Admin Console zugreifen</description>
+			<description xml:lang="nl-NL">Dit is de URL-adres aan de MozyPro Web Beheerdersconsole</description>
+			<description xml:lang="pt-PT">Acesso ao painel de administração da MozyPro</description>
+			<description xml:lang="jp-JP">これはMozyPro Web管理コンソールにアクセスするためのURLアドレスです</description>
+		</setting>
+		<setting type="string" id="mozypro_user_portal_url"
+			default-value="https://secure.mozy.com/login/user">
+			<name>MozyPro User Portal</name>
+			<name xml:lang="es-ES">Portal del usuario de MozyPro</name>
+			<name xml:lang="fr-FR">MozyPro utilisateur du portail</name>
+			<name xml:lang="it-IT">MozyPro portale utente</name>
+			<name xml:lang="de-DE">MozyPro User Portal</name>
+			<name xml:lang="nl-NL">MozyPro User Portal</name>
+			<name xml:lang="pt-PT">Portal do usuário da MozyPro</name>
+			<name xml:lang="jp-JP">MozyProユーザポータル</name>
+			<description>This is the URL address to access the MozyPro Web Access Portal</description>
+			<description xml:lang="es-ES">Esta dirección URL permite el acceso al Portal del Usuario de MozyPro</description>
+			<description xml:lang="fr-FR">Ceci est l'adresse URL pour accéder à la MozyPro Web Access Portal</description>
+			<description xml:lang="it-IT">Questo è l'indirizzo URL per accedere alla MozyPro Web Access Portal</description>
+			<description xml:lang="de-DE">Dies ist die URL-Adresse, um die MozyPro Web Access Portal zugreifen</description>
+			<description xml:lang="nl-NL">Dit is de URL-adres aan de MozyPro Web Access Portal toegang</description>
+			<description xml:lang="pt-PT">Este endereço URL permite o acesso ao painel de administração da MozyPro</description>
+			<description xml:lang="jp-JP">これはMozyPro WebアクセスポータルにアクセスするためのURLアドレスです</description>
+		</setting>
+	</global-settings>
+	<patch match="/application/version >= '0.1'" />
+	<service id="MozyProSMB" class="service" singular="true">
+		<presentation>
+			<name>MozyPro Account</name>
+			<name xml:lang="es-ES">Cuenta de Respaldo en Linea</name>
+			<name xml:lang="fr-FR">compte MozyPro</name>
+			<name xml:lang="it-IT">MozyPro account</name>
+			<name xml:lang="de-DE">MozyPro Konto</name>
+			<name xml:lang="nl-NL">MozyPro account</name>
+			<name xml:lang="pt-PT">Conta de Suporte On-line </name>
+			<name xml:lang="jp-JP">MozyProアカウント</name>
+			<summary>MozyPro Account</summary>
+			<summary xml:lang="es-ES">Crear cuenta de Administrador de Respaldo	en Línea</summary>
+			<summary xml:lang="fr-FR">compte MozyPro</summary>
+			<summary xml:lang="it-IT">MozyPro account</summary>
+			<summary xml:lang="de-DE">MozyPro Konto</summary>
+			<summary xml:lang="nl-NL">MozyPro account</summary>
+			<summary xml:lang="pt-PT">Criar conta de administrador de suporte on-line</summary>
+			<summary xml:lang="jp-JP">MozyProアカウント</summary>
+			<infolinks>
+				<link class="support" href="http://support.mozy.com/support/mozyprogettingstarted">Getting Started with MozyPro.</link>
+			</infolinks>
+			<entry-points>
+				<entry class="multi-step-login" dst="{loginurl}" method="GET">
+					<label>MozyPro Admin Panel Access</label>
+					<label xml:lang="es-ES">Acceso al panel de administración de MozyPro</label>
+					<label xml:lang="fr-FR">Accès MozyPro panneau d'administration</label>
+					<label xml:lang="it-IT">MozyPro accesso pannello di amministrazione</label>
+					<label xml:lang="de-DE">MozyPro Admin Panel Access</label>
+					<label xml:lang="nl-NL">MozyPro Admin Panel Access</label>
+					<label xml:lang="pt-PT">MozyPro Acesso Painel de Administração</label>
+					<label xml:lang="jp-JP">MozyPro管理者パネルへのアクセス</label>
+					<icon path="images/Mozy-Logo-64x64.png" />
+					<variable name="loginurl" value-of-setting="smbuser_login" class=""/>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<setting id="subscription_id" type="string" protected="true"
+				class="subscription_id" visibility="hidden">
+				<name>ID of subscription in source system</name>
+				<name xml:lang="es-ES">Identificador de la subscripción en el sistema origen</name>
+				<name xml:lang="fr-FR">Identification de souscription dans le système de source</name>
+				<name xml:lang="it-IT">ID di sottoscrizione nel sistema di origine</name>
+				<name xml:lang="de-DE">ID des Bezugsrechts im Quellsystem</name>
+				<name xml:lang="nl-NL">ID van de inschrijving in het bronsysteem</name>
+				<name xml:lang="pt-PT">Identificador da assinatura no sistema origem </name>
+				<name xml:lang="jp-JP">ソース·システムのサブスクリプションのID</name>
+			</setting>
+			<setting id="smb_company_name" type="string" default-value=""
+				installation-only="true" uniq="global" class="organization-name">
+				<name>Company Name</name>
+				<name xml:lang="es-ES">Nombre de la Organización</name>
+				<name xml:lang="fr-FR">Nom de la société</name>
+				<name xml:lang="it-IT">Nome della ditta</name>
+				<name xml:lang="de-DE">Firmenname</name>
+				<name xml:lang="nl-NL">Bedrijfsnaam</name>
+				<name xml:lang="pt-PT">Nome da Organização</name>
+				<name xml:lang="jp-JP">会社名</name>
+			</setting>
+			<setting id="admin_user_name" type="email" default-value=""
+				installation-only="true" uniq="global" class="email">
+				<name>Admin Username</name>
+				<name xml:lang="es-ES">Usuario Administrador</name>
+				<name xml:lang="fr-FR">Nom d'utilisateur admin</name>
+				<name xml:lang="it-IT">Nome utente Admin</name>
+				<name xml:lang="de-DE">Admin Benutzername</name>
+				<name xml:lang="nl-NL">Admin Gebruikersnaam</name>
+				<name xml:lang="pt-PT">Nome de usuário administrador</name>
+				<name xml:lang="jp-JP">管理ユーザー名</name>
+				<description>A Valid email address must be used for Admin Username</description>
+				<description xml:lang="es-ES">El nombre de usuario debe estar en formato de correo por ejemplo usuario@dominio.com</description>
+				<description xml:lang="fr-FR">Une adresse électronique valide doit être utilisé pour Admin Nom d'utilisateur</description>
+				<description xml:lang="it-IT">Un indirizzo email valido deve essere utilizzata per Nome utente Admin</description>
+				<description xml:lang="de-DE">Eine gültige E-Mail-Adresse muss für Admin Benutzername verwendet werden</description>
+				<description xml:lang="nl-NL">Een geldig e-mailadres moet worden gebruikt voor Admin Gebruikersnaam</description>
+				<description xml:lang="pt-PT">O nome de usuário deve estar em formato de e-mail, por exemplo, usuario@dominio.com</description>
+				<description xml:lang="jp-JP">有効なメールアドレスが管理ユーザー名を使用しなければなりません</description>
+			</setting>
+			<setting id="admin_password" type="password" default-value=""
+				installation-only="true" min-length="8" class="password">
+				<name>Administrator Password</name>
+				<name xml:lang="es-ES">Contraseña del Administrador</name>
+				<name xml:lang="fr-FR">Mot de passe administrateur</name>
+				<name xml:lang="it-IT">password amministratore</name>
+				<name xml:lang="de-DE">Administrator-Passwort</name>
+				<name xml:lang="nl-NL">Administrator-wachtwoord</name>
+				<name xml:lang="pt-PT">Senha do Administrador</name>
+				<name xml:lang="jp-JP">管理者パスワード</name>
+				<description>Feel free to change this. The initially-displayed password is automatically generated.</description>
+				<description xml:lang="es-ES">Ingrese la contraseña deseada.</description>
+				<description xml:lang="fr-FR">N'hésitez pas à changer cette situation. Le mot de passe initialement affichée est automatiquement généré.</description>
+				<description xml:lang="it-IT">Sentitevi liberi di cambiare questo atteggiamento. La password inizialmente-visualizzata viene generato automaticamente.</description>
+				<description xml:lang="de-DE">Fühlen Sie sich frei, dies zu ändern. Die anfänglich angezeigte Passwort wird automatisch generiert.</description>
+				<description xml:lang="nl-NL">Voel je vrij om dit te veranderen. De in eerste instantie-display wachtwoord wordt automatisch gegenereerd.</description>
+				<description xml:lang="pt-PT">Insira a senha desejada.</description>
+				<description xml:lang="jp-JP">これを自由に変更してください。最初に表示されてパスワードが自動的に生成されます。</description>
+			</setting>
+			<setting id="admin_full_name" type="string" class="display-name"
+				installation-only="true" default-value="" min-length="1">
+				<name>Administrator Full Name</name>
+				<name xml:lang="es-ES">Nombre del Administrador</name>
+				<name xml:lang="fr-FR">Nom de l'administrateur complet</name>
+				<name xml:lang="it-IT">Amministratore Nome e Cognome</name>
+				<name xml:lang="de-DE">Administrator Vollständiger Name</name>
+				<name xml:lang="nl-NL">Administrator Volledige naam</name>
+				<name xml:lang="pt-PT">Nome do Administrador</name>
+				<name xml:lang="jp-JP">管理者フルネーム</name>
+			</setting>
+			<setting id="partner_id" type="integer" default-value="0"
+				visibility="hidden">
+				<name>Returned Partner ID</name>
+				<name xml:lang="es-ES">Identificador de Partner retornado</name>
+				<name xml:lang="fr-FR">ID retourné</name>
+				<name xml:lang="it-IT">Partner ID restituito</name>
+				<name xml:lang="de-DE">Kehrte Partner ID</name>
+				<name xml:lang="nl-NL">Geretourneerde Partner ID</name>
+				<name xml:lang="pt-PT">Identificador de Associado retornado</name>
+				<name xml:lang="jp-JP">返されたパートナーID</name>
+			</setting>
+			<setting id="user_group_id" type="integer" default-value="0"
+				visibility="hidden">
+				<name>Returned User Group ID</name>
+				<name xml:lang="es-ES">Identificador de Grupo de Usuario retornado </name>
+				<name xml:lang="fr-FR">ID retourné User Group</name>
+				<name xml:lang="it-IT">Tornato ID utente Gruppo</name>
+				<name xml:lang="de-DE">Returned User Group ID</name>
+				<name xml:lang="nl-NL">Geretourneerde User Group ID</name>
+				<name xml:lang="pt-PT">Identificador de Grupo de Usuário retornado</name>
+				<name xml:lang="jp-JP">返されたユーザのグループID</name>
+			</setting>
+			<setting type="string" id="smbuser_login">
+				<description>SSO URL returned by Mozy API</description>
+			</setting>
+		</settings>
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<status-control />
+				<structured-output />
+			</configuration-script>
+			<verify-script name="verify.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</verify-script>
+		</provision>
+		<service id="ProUser" class="account">
+			<presentation>
+				<name>User</name>
+				<name xml:lang="es-ES">Usuario</name>
+				<name xml:lang="fr-FR">utilisateur</name>
+				<name xml:lang="it-IT">utente</name>
+				<name xml:lang="de-DE">Benutzer</name>
+				<name xml:lang="nl-NL">gebruiker</name>
+				<name xml:lang="pt-PT">Usuário</name>
+				<name xml:lang="jp-JP">ユーザー</name>
+				<summary>Pro Backup User</summary>
+				<summary xml:lang="es-ES">Usuario</summary>
+				<summary xml:lang="fr-FR">Utilisateur de sauvegarde Pro</summary>
+				<summary xml:lang="it-IT">Backup dell'utente Pro</summary>
+				<summary xml:lang="de-DE">Pro Backup-Benutzer</summary>
+				<summary xml:lang="nl-NL">Pro backup gebruiker</summary>
+				<summary xml:lang="pt-PT">Usuário</summary>
+				<summary xml:lang="jp-JP">Proのバックアップのユーザー</summary>
+				<infolinks>
+					<link href="http://support.mozy.com/support/mozyprogettingstarted">Getting Started with MozyPro.</link>
+				</infolinks>
+				<entry-points>
+					<entry class="frontpage" dst="{mozypro_user_portal_url}">
+						<label>User Web Access Portal Link</label>
+						<label xml:lang="es-ES">Enlace al portal de usuario</label>
+						<label xml:lang="fr-FR">Utilisateur du portail Web Link Access</label>
+						<label xml:lang="it-IT">Utente Web Link Access Portal</label>
+						<label xml:lang="de-DE">Benutzer Web Access Portal Link</label>
+						<label xml:lang="nl-NL">Gebruiker Web Access Portal Link</label>
+						<label xml:lang="pt-PT">Usuário Web Link Portal de Acesso</label>
+						<label xml:lang="jp-JP">ユーザのWebアクセスポータルリンク</label>
+						<variable name="mozypro_user_portal_url"
+							value-of-setting="mozypro_user_portal_url"></variable>
+					</entry>
+				</entry-points>
+			</presentation>
+			<settings>
+				<setting id="partner_id" type="integer" value-of-setting="partner_id"
+					visibility="hidden">
+					<name>Returned Partner ID</name>
+					<name xml:lang="es-ES">Identificador de Partner retornado</name>
+					<name xml:lang="fr-FR">ID retourné</name>
+					<name xml:lang="it-IT">Partner ID restituito</name>
+					<name xml:lang="de-DE">Kehrte Partner ID</name>
+					<name xml:lang="nl-NL">Geretourneerde Partner ID</name>
+					<name xml:lang="pt-PT">Identificador de Associado retornado</name>
+					<name xml:lang="jp-JP">返されたパートナーID</name>
+				</setting>
+				<setting id="user_group_id" type="integer" value-of-setting="user_group_id"
+					visibility="hidden">
+					<name>Returned User Group ID</name>
+					<name xml:lang="es-ES">Identificador de Grupo de Usuario retornado</name>
+					<name xml:lang="fr-FR">ID retourné User Group</name>
+					<name xml:lang="it-IT">Tornato ID utente Gruppo</name>
+					<name xml:lang="de-DE">Returned User Group ID</name>
+					<name xml:lang="nl-NL">Geretourneerde User Group ID</name>
+					<name xml:lang="pt-PT">Identificador de Grupo de Usuário retornado</name>
+					<name xml:lang="jp-JP">返されたユーザのグループID</name>
+				</setting>
+				<setting id="user_name" type="email" default-value=""
+					installation-only="true" uniq="service" class="login">
+					<name>Username</name>
+					<name xml:lang="es-ES">Nombre de usuario</name>
+					<name xml:lang="fr-FR">Nom d'utilisateur</name>
+					<name xml:lang="it-IT">nome utente</name>
+					<name xml:lang="de-DE">Benutzername</name>
+					<name xml:lang="nl-NL">Gebruikersnaam</name>
+					<name xml:lang="pt-PT">Nome de Usuário</name>
+					<name xml:lang="jp-JP">ユーザー名</name>
+					<description>A Valid email address must be used for Username. User will receive license key email at this address.</description>
+					<description xml:lang="es-ES">El nombre de usuario debe ser una	dirección de correo válida. El usuario recibirá la clave de licencia en esta dirección.</description>
+					<description xml:lang="fr-FR">Une adresse électronique valide doit être utilisée pour de passe. Utilisateur recevrez un courriel de clé de licence à cette adresse.</description>
+					<description xml:lang="it-IT">Un indirizzo email valido è necessario utilizzare per la Community. Utente riceverà email chiave di licenza a questo indirizzo.</description>
+					<description xml:lang="de-DE">Eine gültige E-Mail-Adresse muss für Benutzername verwendet werden. Benutzer Lizenzschlüssel E-Mail an diese Adresse.</description>
+					<description xml:lang="nl-NL">Een geldig e-mailadres moet worden gebruikt voor gebruikersnaam. Gebruiker ontvangt licentiesleutel e-mail op dit adres.</description>
+					<description xml:lang="pt-PT">O nome de usuário deve ser um endereço de e-mail válido. O usuário receberá o código de licença neste endereço.</description>
+					<description xml:lang="jp-JP">有効なメールアドレスがユーザー名を使用する必要があります。ユーザは、このアドレスにライセンスキーのメールが届きます。</description>
+				</setting>
+				<setting id="password" type="password" default-value=""
+					min-length="8" class="password" track-old-value="true">
+					<name>Password</name>
+					<name xml:lang="es-ES">Contraseña</name>
+					<name xml:lang="fr-FR">mot de passe</name>
+					<name xml:lang="it-IT">password</name>
+					<name xml:lang="de-DE">Kennwort</name>
+					<name xml:lang="nl-NL">wachtwoord</name>
+					<name xml:lang="pt-PT">Senha</name>
+					<name xml:lang="jp-JP">パスワード</name>
+				</setting>
+				<setting id="full_name" type="string" min-length="1" class="display-name">
+					<name>Full Name</name>
+					<name xml:lang="es-ES">Nombre para Mostrar</name>
+					<name xml:lang="fr-FR">Nom et Prénom</name>
+					<name xml:lang="it-IT">Nome e Cognome</name>
+					<name xml:lang="de-DE">Vollständiger Name</name>
+					<name xml:lang="nl-NL">volledige naam</name>
+					<name xml:lang="pt-PT">Nome para Mostrar</name>
+					<name xml:lang="jp-JP">フルネーム</name>
+				</setting>
+				<setting id="user_id" type="integer" default-value="0"
+					visibility="hidden">
+					<name>Returned User ID</name>
+					<name xml:lang="es-ES">Identificador de Usuario retornado</name>
+					<name xml:lang="fr-FR">ID utilisateur retourné</name>
+					<name xml:lang="it-IT">ID utente restituiti</name>
+					<name xml:lang="de-DE">Returned User ID</name>
+					<name xml:lang="nl-NL">Geretourneerde gebruikers-ID</name>
+					<name xml:lang="pt-PT">Identificador de Usuário retornado</name>
+					<name xml:lang="jp-JP">返されたユーザーID</name>
+				</setting>
+				<setting id="subscription_id" type="string" protected="true"
+					class="subscription_id" visibility="hidden">
+					<name>ID of subscription in source system</name>
+					<name xml:lang="es-ES">Identificador de subscripción del sistema origen</name>
+					<name xml:lang="fr-FR">Identification de souscription dans le système de source</name>
+					<name xml:lang="it-IT">ID di sottoscrizione nel sistema di origine</name>
+					<name xml:lang="de-DE">ID des Bezugsrechts im Quellsystem</name>
+					<name xml:lang="nl-NL">ID van de inschrijving in het bronsysteem</name>
+					<name xml:lang="pt-PT">Identificador de subscrição do sistema origem</name>
+					<name xml:lang="jp-JP">ソース·システムのサブスクリプションのID</name>
+				</setting>
+				<setting type="enum" id="locale_id" class="locale"
+					default-value="pt-PT" visibility="hidden">
+					<choice id="pt-PT">
+						<name>PT</name>
+					</choice>
+					<choice id="es-ES">
+						<name>PT</name>
+					</choice>
+					<choice id="fr-FR">
+						<name>PT</name>
+					</choice>
+					<choice id="it-IT">
+						<name>PT</name>
+					</choice>
+					<choice id="de-DE">
+						<name>PT</name>
+					</choice>
+					<choice id="nl-NL">
+						<name>PT</name>
+					</choice>
+					<choice id="jp-JP">
+						<name>PT</name>
+					</choice>
+					<choice id="en-EN">
+						<name>PT</name>
+					</choice>
+				</setting>
+			</settings>
+			<provision>
+				<configuration-script name="configure.php">
+					<script-language>php</script-language>
+					<status-control />
+					<structured-output />
+				</configuration-script>
+				<verify-script name="verify.php">
+					<script-language>php</script-language>
+					<structured-output />
+				</verify-script>
+			</provision>
+			<service id="SMBUserLicense" class="service">
+				<presentation>
+					<name>User License</name>
+					<name xml:lang="es-ES">Licencia de Usuario</name>
+					<name xml:lang="fr-FR">Licence utilisateur</name>
+					<name xml:lang="it-IT">licenza con l'utente</name>
+					<name xml:lang="de-DE">User License</name>
+					<name xml:lang="nl-NL">user License</name>
+					<name xml:lang="pt-PT">Licença de Usuário</name>
+					<name xml:lang="jp-JP">ユーザーライセンス</name>
+					<summary>Pro User License</summary>
+					<summary xml:lang="es-ES">Licencia de Usuario</summary>
+				<summary xml:lang="fr-FR">Licence d'utilisateur Pro</summary>
+				<summary xml:lang="it-IT">Licenza d'uso Pro</summary>
+				<summary xml:lang="de-DE">Pro User Lizenz</summary>
+				<summary xml:lang="nl-NL">Pro-gebruiker licentie</summary>
+				<summary xml:lang="pt-PT">Licença de Usuário</summary>
+				<summary xml:lang="jp-JP">Proのユーザーライセンス</summary>
+					<infolinks>
+						<link href="http://support.mozy.com/support/mozyprogettingstarted">Getting Started with MozyPro.</link>
+					</infolinks>
+				</presentation>
+				<settings>
+					<setting id="subscription_id" type="string" protected="true"
+						class="subscription_id" visibility="hidden">
+						<name>ID of subscription in source system</name>
+						<name xml:lang="es-ES">Identificador de subscripción en el sistema origen</name>
+						<name xml:lang="fr-FR">Identification de souscription dans le système de source</name>
+						<name xml:lang="it-IT">ID di sottoscrizione nel sistema di origine</name>
+						<name xml:lang="de-DE">ID des Bezugsrechts im Quellsystem</name>
+						<name xml:lang="nl-NL">ID van de inschrijving in het bronsysteem</name>
+						<name xml:lang="pt-PT">Identificador de assinatura no sistema origem</name>
+						<name xml:lang="jp-JP">ソース·システムのサブスクリプションのID</name>
+					</setting>
+				<setting id="partner_id" type="integer" value-of-setting="partner_id"
+					visibility="hidden">
+					<name>Returned Partner ID</name>
+					<name xml:lang="es-ES">Identificador de Partner retornado</name>
+					<name xml:lang="fr-FR">ID retourné</name>
+					<name xml:lang="it-IT">Partner ID restituito</name>
+					<name xml:lang="de-DE">Kehrte Partner ID</name>
+					<name xml:lang="nl-NL">Geretourneerde Partner ID</name>
+					<name xml:lang="pt-PT">Identificador de Usuário retornado</name>
+					<name xml:lang="jp-JP">返されたパートナーID</name>
+				</setting>					
+				<setting id="user_id" type="integer" value-of-setting="user_id"
+					visibility="hidden">
+					<name>Returned User ID</name>
+					<name xml:lang="es-ES">Identificador de usuario retornado</name>
+					<name xml:lang="fr-FR">ID utilisateur retourné</name>
+					<name xml:lang="it-IT">ID utente restituiti</name>
+					<name xml:lang="de-DE">Returned User ID</name>
+					<name xml:lang="nl-NL">Geretourneerde gebruikers-ID</name>
+					<name xml:lang="pt-PT">Identificador de Usuário retornado</name>
+					<name xml:lang="jp-JP">返されたユーザーID</name>
+				</setting>
+				<setting id="user_group_id" type="integer" value-of-setting="user_group_id"
+					visibility="hidden">
+					<name>Returned User Group ID</name>
+					<name xml:lang="es-ES">Identificador de Grupo de Usuario retornado</name>
+					<name xml:lang="fr-FR">ID retourné User Group</name>
+					<name xml:lang="it-IT">Tornato ID utente Gruppo</name>
+					<name xml:lang="de-DE">Returned User Group ID</name>
+					<name xml:lang="nl-NL">Geretourneerde User Group ID</name>
+					<name xml:lang="pt-PT">Identificador de Grupo de Usuário retornado</name>
+					<name xml:lang="jp-JP">返されたユーザのグループID</name>
+				</setting>
+					<group class="presentation">
+						<setting id="license_type" type="enum" default-value="Server"
+							visibility="hidden" installation-only="true">
+							<name>License Type</name>
+							<name xml:lang="es-ES">Tipo de licencia</name>
+							<name xml:lang="fr-FR">type de licence</name>
+							<name xml:lang="it-IT">Tipo di licenza</name>
+							<name xml:lang="de-DE">Lizenz-Typ</name>
+							<name xml:lang="nl-NL">Licentietype</name>
+							<name xml:lang="pt-PT">Tipo de Licença</name>
+							<name xml:lang="jp-JP">ライセンスの種類</name>														
+								<choice id="Desktop">
+									<name>Desktop</name>
+									<name xml:lang="es-ES">Licencia para PC</name>
+									<name xml:lang="fr-FR">PC de bureau</name>
+									<name xml:lang="it-IT">Desktop PC</name>
+									<name xml:lang="de-DE">desktop PC</name>
+									<name xml:lang="nl-NL">Desktop PC</name>
+									<name xml:lang="pt-PT">Licença para PC</name>
+									<name xml:lang="jp-JP">デスクトップPC</name>
+								</choice>
+								<choice id="Server">
+									<name>Server</name>
+									<name xml:lang="es-ES">Licencia para Servidor</name>
+									<name xml:lang="fr-FR">PC serveur</name>
+									<name xml:lang="it-IT">PC Server</name>
+									<name xml:lang="de-DE">Server PC</name>
+									<name xml:lang="nl-NL">server-PC</name>
+									<name xml:lang="pt-PT">Licença para Servidor</name>
+									<name xml:lang="jp-JP">サーバPC</name>
+								</choice>
+						</setting>
+						<setting id="keystring" type="string" default-value="0"
+							protected="true">
+							<name>Keystring for this license</name>
+							<name xml:lang="es-ES">Clave de Activación</name>
+							<name xml:lang="fr-FR">Chaîne de clé pour cette licence</name>
+							<name xml:lang="it-IT">Stringa chiave per questa licenza</name>
+							<name xml:lang="de-DE">Key String für diese Lizenz</name>
+							<name xml:lang="nl-NL">Key string voor deze licentie</name>
+							<name xml:lang="pt-PT">Código de Ativação</name>
+							<name xml:lang="jp-JP">このライセンスキーの文字列</name>
+						</setting>
+					</group>
+				</settings>
+				<provision>
+					<configuration-script name="configure.php">
+						<script-language>php</script-language>
+						<structured-output />
+					</configuration-script>
+				</provision>
+				<service id="SMBUserQuota" class="service">
+					<presentation>
+						<name>User Quota</name>
+						<name xml:lang="es-ES">Bloque de almacenamiento</name>
+						<name xml:lang="fr-FR">Quota utilisateur</name>
+						<name xml:lang="it-IT">utente Quota</name>
+						<name xml:lang="de-DE">Benutzer Quota</name>
+						<name xml:lang="nl-NL">Gebruiker Quota</name>
+						<name xml:lang="pt-PT">Bloco de armazenamento</name>
+						<name xml:lang="jp-JP">ユーザークォータ</name>
+						<summary>User Quota</summary>
+						<summary xml:lang="es-ES">Almacenamiento</summary>
+						<summary xml:lang="fr-FR">Quota utilisateur</summary>
+						<summary xml:lang="it-IT">utente Quota</summary>
+						<summary xml:lang="de-DE">Benutzer Quota</summary>
+						<summary xml:lang="nl-NL">Gebruiker Quota</summary>
+						<summary xml:lang="pt-PT">Bloco de armazenamento</summary>
+						<summary xml:lang="jp-JP">ユーザークォータ</summary>
+						<infolinks>
+							<link href="http://support.mozy.com/support/mozyprogettingstarted">Getting Started with MozyPro.</link>
+						</infolinks>
+					</presentation>
+					<settings>
+						<setting id="subscription_id" type="string" protected="true"
+							class="subscription_id" visibility="hidden">
+							<name>ID of subscription in source system</name>
+							<name xml:lang="es-ES">Identificador de subscripción en el sistema origen</name>
+							<name xml:lang="fr-FR">Identification de souscription dans le système de source</name>
+							<name xml:lang="it-IT">ID di sottoscrizione nel sistema di origine</name>
+							<name xml:lang="de-DE">ID des Bezugsrechts im Quellsystem</name>
+							<name xml:lang="nl-NL">ID van de inschrijving in het bronsysteem</name>
+							<name xml:lang="pt-PT">Identificador de assinatura no sistema origem</name>
+							<name xml:lang="jp-JP">ソース·システムのサブスクリプションのID</name>
+						</setting>
+						<setting id="license_type" type="enum" value-of-setting="license_type"
+							visibility="hidden">
+							<name>Storage for license type</name>
+							<name xml:lang="es-ES">Almacenamiento para el tipo de licencia</name>
+							<name xml:lang="fr-FR">De stockage pour le type de licence</name>
+							<name xml:lang="it-IT">Archiviazione per tipo di licenza</name>
+							<name xml:lang="de-DE">Storage für Lizenz-Typ</name>
+							<name xml:lang="nl-NL">Opslag voor soort licentie</name>
+							<name xml:lang="pt-PT">Armazenamento para o tipo de licença</name>
+							<name xml:lang="jp-JP">ライセンスタイプのストレージ</name>
+								<choice id="Desktop">
+									<name>Desktop</name>
+									<name xml:lang="es-ES">Escritorio</name>
+									<name xml:lang="fr-FR">PC de bureau</name>
+									<name xml:lang="it-IT">Desktop PC</name>
+									<name xml:lang="de-DE">desktop PC</name>
+									<name xml:lang="nl-NL">Desktop PC</name>
+									<name xml:lang="pt-PT">Escrivaninha</name>
+									<name xml:lang="jp-JP">デスクトップPC</name>
+								</choice>
+								<choice id="Server">
+									<name>Server</name>
+									<name xml:lang="es-ES">Servidor</name>
+									<name xml:lang="fr-FR">PC serveur</name>
+									<name xml:lang="it-IT">PC Server</name>
+									<name xml:lang="de-DE">Server PC</name>
+									<name xml:lang="nl-NL">server-PC</name>
+									<name xml:lang="pt-PT">Servidor</name>
+									<name xml:lang="jp-JP">サーバPC</name>
+								</choice>
+						</setting>
+						<setting id="user_id" type="integer" value-of-setting="user_id"
+							visibility="hidden">
+							<name>Returned User ID</name>
+							<name xml:lang="es-ES">Identificador de Usuario retornado</name>
+							<name xml:lang="fr-FR">ID utilisateur retourné</name>
+							<name xml:lang="it-IT">ID utente restituiti</name>
+							<name xml:lang="de-DE">Returned User ID</name>
+							<name xml:lang="nl-NL">Geretourneerde gebruikers-ID</name>
+							<name xml:lang="pt-PT">Identificador de Usuário retornado</name>
+							<name xml:lang="jp-JP">返されたユーザーID</name>
+						</setting>				
+						<setting id="partner_id" type="integer" value-of-setting="partner_id"
+							visibility="hidden">
+							<name>Returned Partner ID</name>
+							<name xml:lang="es-ES">Identificador de Partner retornado</name>
+							<name xml:lang="fr-FR">ID retourné</name>
+							<name xml:lang="it-IT">Partner ID restituito</name>
+							<name xml:lang="de-DE">Kehrte Partner ID</name>
+							<name xml:lang="nl-NL">Geretourneerde Partner ID</name>
+							<name xml:lang="pt-PT">ID de Parceiro voltou</name>
+							<name xml:lang="jp-JP">返されたパートナーID</name>
+						</setting>					
+						<group class="instance-list">
+							<setting id="keystring" type="string" value-of-setting="keystring"
+								visibility="hidden">
+								<name>Keystring for this license.</name>
+								<name xml:lang="es-ES">Clave de Activación</name>
+								<name xml:lang="fr-FR">Chaîne de clé pour cette licence</name>
+								<name xml:lang="it-IT">Stringa chiave per questa licenza</name>
+								<name xml:lang="de-DE">Key String für diese Lizenz</name>
+								<name xml:lang="nl-NL">Key string voor deze licentie</name>
+								<name xml:lang="pt-PT">Código de Ativação</name>
+								<name xml:lang="jp-JP">このライセンスキーの文字列</name>
+							</setting>
+							<setting id="storage_in_gb" type="integer" default-value="50"
+								visibility="hidden" installation-only="true">
+								<name>GB Storage</name>
+								<name xml:lang="es-ES">GB de almacenamiento</name>
+								<name xml:lang="fr-FR">Go Stockage</name>
+								<name xml:lang="it-IT">GB di archiviazione</name>
+								<name xml:lang="de-DE">GB Speicher</name>
+								<name xml:lang="nl-NL">GB opslag</name>
+								<name xml:lang="pt-PT">GB de armazenamento</name>
+								<name xml:lang="jp-JP">GBストレージ</name>
+							</setting>
+						</group>
+					</settings>
+					<provision>
+						<configuration-script name="configure.php">
+							<script-language>php</script-language>
+							<structured-output />
+						</configuration-script>
+					</provision>
+				</service>
+			</service>
+		</service>
+	</service>
+</application>
+

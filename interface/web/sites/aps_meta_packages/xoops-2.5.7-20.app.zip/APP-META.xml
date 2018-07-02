@@ -1,0 +1,179 @@
+<application packaged="2014-10-25T21:55:15" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>xoops</id>
+	<name>xoops</name>
+	<version>2.5.7</version>
+	<release>20</release>
+	<homepage>http://www.xoops.org/</homepage>
+	<vendor>
+		<name>www.xoops.org</name>
+		<homepage>http://www.xoops.org/</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Sofcloudit</name>
+		<homepage>http://www.sofcloudit.com</homepage>
+		<icon path="images/sofcloudit64.png"/>
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+	<presentation>
+		<summary>Open source content management system</summary>
+		<description>XOOPS is a web application platform written in PHP for the MySQL database. Its object orientation makes it an ideal tool for developing small or large community websites, intra company and corporate portals, weblogs and much more. XOOPS is an acronym of eXtensible Object Oriented Portal System. Though started as a portal system, XOOPS is in fact striving steadily on the track of Content Management System. It can serve as a web framework for use by small, medium and large sites.</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/app_screenshot_1.png">
+			<description>This screen shows the administrator's control panel. Here you can manage all aspects of your Web site.</description>
+		</screenshot>
+		<changelog>
+			<version release="20" version="2.5.7">
+				<entry>http://xoops.org/modules/news/article.php?storyid=6658</entry>
+				<entry>This release is focused on making XOOPS 2.5.7 fully compatible with PHP 5.5.x, on security enhancements, bug fixing, and on updating external libraries to their latest versions:
+					- jQuery to 1.11.0
+					- jQuery UI 1.10.4
+					- jQuery Lightbox to 1.2.3
+					- jQuery Form to 3.50.0
+					- jQuery Tablesorter to 2.15.11
+					- jGrowl to 1.2.14
+					- TinyMCE to 3.5.11
+				</entry>
+			</version>
+			<version release="9" version="2.5.6">
+				<entry>SSO functionality added</entry>
+			</version>
+			<version release="1" version="2.5.6">
+				<entry>Initial package version</entry>
+			</version>
+			<version release="4" version="2.5.5">
+				<entry>PHP and mysql requirements corrected</entry>
+			</version>
+			<version release="6" version="2.3.2b">
+				<entry>Fix issue with CAPTCHA referrer</entry>
+			</version>
+			<version release="5" version="2.3.2b">
+				<entry>Initial package version</entry>
+			</version>
+			<version release="49" version="2.2">
+				<entry>Initial package version</entry>
+			</version>
+			<version release="42" version="2.2">
+				<entry>Fix bug 120756</entry>
+			</version>
+			<version release="1" version="2.5.5">
+				<entry>Initial package</entry>
+			</version>
+			<version release="2" version="2.5.5">
+				<entry>Changes in config file</entry>
+			</version>
+			<version release="3" version="2.5.5">
+				<entry>Changes in test</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '2.3.1'"/>
+	<service id="instance">
+		<license must-accept="true">
+			<text>
+				<name>GNU LESSER GENERAL PUBLIC LICENSE Version 2.1</name>
+				<file>htdocs/class/mail/phpmailer/LICENSE</file>
+			</text>
+		</license>
+		<presentation>
+			<name>XOOPS</name>
+			<summary>XOOPS Content Management System</summary>
+			<infolinks>
+				<link class="support" href="http://xoops.org/modules/newbb/">XOOPS Support Forums</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/user.php" method="POST">
+					<label>Application entry</label>
+					<description/>
+					<variable class="" name="uname" value-of-setting="admin_name">admin</variable>
+					<variable name="pass" value-of-setting="admin_password">xoops</variable>
+					<variable class="" name="op">login</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting class="password" id="admin_password" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Administrator's email</name>
+				<setting class="email" id="admin_email" type="email">
+					<name>Administrator's email</name>
+				</setting>
+			</group>
+			<group>
+				<name>Language preferences</name>
+				<setting class="locale" default-value="en-US" id="locale" type="enum">
+					<name>Interface language</name>
+					<choice id="en-US">
+						<name>English</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.3.7" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>xoops</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+			<url-mapping>
+				<default-prefix>xoops</default-prefix>
+				<installed-size>15473731</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="uploads">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="cache">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="templates_c">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="xoops_data">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="caches">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+							<mapping url="xoops_cache">
+								<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+							</mapping>
+							<mapping url="smarty_cache">
+								<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+							</mapping>
+							<mapping url="smarty_compile">
+								<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+							</mapping>
+						</mapping>
+					</mapping>
+				</mapping>
+			</url-mapping>
+		</provision>
+	</service>
+</application>

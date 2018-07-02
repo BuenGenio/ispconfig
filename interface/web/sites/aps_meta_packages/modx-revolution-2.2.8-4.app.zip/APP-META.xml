@@ -1,0 +1,226 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-06-27T12:20:52">
+	<id>modx-revolution</id>
+	<name>modx-revolution</name>
+	<version>2.2.8</version>
+	<release>4</release>
+	<homepage>http://modxcms.com</homepage>
+	<vendor>
+		<name>modxcms.com</name>
+		<homepage>http://modx.com/</homepage>
+		<icon path="images/icon.jpg" />
+	</vendor>
+	<packager>
+		<name>Glowtouch Technologies</name>
+		<homepage>http://www.glowtouch.com/</homepage>
+		<icon path="images/parrallels-GT6.png" />
+		<uri>uuid:0a584641-6a8a-4810-a69d-7ef8d5fd29b9</uri>
+	</packager>
+	<presentation>
+	<summary xml:lang='ru-RU'>Система управления контентом MODx.</summary>
+    <summary xml:lang='en-US'>MODx - content managment system.</summary>
+		<summary>MODx is an Open Source PHP web application framework with a capable built-in Content Management System(CMS).</summary>
+
+    <description>MODx Revolution is a powerful PHP Content Management Framework that plays nicely with custom code and helps you build sites faster and maintain them with ease. With Revolution you'll leverage the best things to come around since MVC and Active Record.Voted as Critic’s Choice for Best Open Source CMS of 2012, MODX is a powerful and flexible content management system that molds itself to your design.
+  </description>
+		
+		<description xml:lang="ru-RU">
+			MODx — это профессиональный инструмент разработки сайтов,
+			позволяющий управлять контентом. В отличие от большинства
+			бесплатных CMS — на MODx вы можете построить сайт любой
+			сложности, практически с любым набором функций, при этом
+			система не будет никоим образом влиять на ваш html-код.
+		</description>
+		<description xml:lang="en-US">MODx Revolution is a powerful PHP Content Management Framework that plays nicely with custom code and helps you build sites faster and maintain them with ease. With Revolution you'll leverage the best things to come around since MVC and Active Record.Voted as Critic’s Choice for Best Open Source CMS of 2012, MODX is a powerful and flexible content management system that molds itself to your design.
+  </description>
+		
+		<icon path="images/icon.jpg" />
+		<screenshot path="images/modx1.jpg">
+			<description xml:lang="ru-RU">
+				Административная часть.
+			</description>
+			<description xml:lang="en-US">Admin panel.</description>
+			<description>Typical view</description>
+		</screenshot>
+		<changelog>
+			<version release="3" version="2.0.0">
+				<entry xml:lang="ru-RU">
+					Изначальная версия пакета.
+				</entry>
+				<entry xml:lang="en-US">Initial package version.</entry>
+			</version>
+			<version release="1" version="2.2.8">
+				<entry>Creating Initial package</entry>
+			</version>
+			<version release="2" version="2.2.8">
+				<entry>Updated</entry>
+			</version>
+			<version release="3" version="2.2.8">
+				<entry>Updated</entry>
+			</version>
+			<version release="4" version="2.2.8">
+				<entry>Updated</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+		<languages>
+			<language>ru</language>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings></global-settings>
+	<upgrade
+		match="/application/version &gt;= '2.0.0'" />
+	<service id="modx-revolution">
+		<license must-accept="true">
+			<text xml:lang="en-US">
+				<name>GPLv2</name>
+				<url>http://modxcms.com/about/license.html</url>
+			</text>
+			<text xml:lang="ru-RU">
+				<name>GPLv2</name>
+				<url>http://modxcms.com/about/license.html</url>
+			</text>
+			<text>
+				<name>GPLv2</name>
+				<url>http://modxcms.com/about/license.html</url>
+			</text>
+		</license>
+		<presentation>
+			<name>Modx-Revolution</name>
+			<summary>Modx-Revolution Web/Content management blog</summary>
+			<infolinks>
+				<link href="http://modx.com/support/" class="support">Modx-Revolution Support</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/">
+					<label>Blog</label>
+				</entry>
+				<entry dst="/manager/" class="control-panel" method="POST">
+					<label>Administrative interface</label>
+					<variable name="username" value-of-setting="admin_name"></variable>
+					<variable name="password" value-of-setting="admin_password"></variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting id="admin_name" type="string"
+					default-value="admin" min-length="1" max-length="32"
+					regex="^[a-zA-Z][0-9a-zA-Z_\-]*" class="login">
+					<name xml:lang="ru-RU">Имя администратора</name>
+					<name xml:lang="en-US">Admin name</name>
+					<name>Administrator's login</name>
+				</setting>
+				<setting id="admin_password" type="password" class="password" min-length="1">
+					<name xml:lang="ru-RU">Пароль</name>
+					<name xml:lang="en-US">Password</name>
+					<name>Password</name>
+				</setting></group><group class="vcard">
+				<name xml:lang="ru-RU">Настройки</name>
+				<name xml:lang="en-US">Settings</name>
+				<name>Main configuration</name>
+				<group class="email">
+				<setting id="admin_email" type="email" class="value">
+					<name xml:lang="ru-RU">Email администратора</name>
+					<name xml:lang="en-US">Admin email</name>
+				</setting>
+				</group>
+				<group class="preferences">
+				<setting id="title" type="string" default-value="Modx"
+					min-length="1" class="organization-name">
+					<name xml:lang="ru-RU">Имя сайта</name>
+					<name xml:lang="en-US">Site Name</name>
+					<name>Blog</name>
+				</setting>
+				</group>
+			</group>
+			<group class="web">
+				<name>Other preferences</name>
+				<setting id="demodata" type="enum" default-value="true"
+					installation-only="true">
+					<name xml:lang="ru-RU">Установить демо-данные</name>
+					<name xml:lang="en-US">Install demo data</name>
+					<choice id="true">
+						<name>Yes</name>
+						<name xml:lang="ru-RU">Да</name>
+						<name xml:lang="en-US">Yes</name>
+					</choice>
+					<choice id="false">
+						<name>No</name>
+						<name xml:lang="ru-RU">Нет</name>
+						<name xml:lang="en-US">No</name>
+					</choice>
+				</setting>
+				<setting id="locale" type="enum"
+					default-value="en-US">
+					<name>Interface language</name>
+					<name xml:lang="ru-RU">Язык интерфейса</name>
+					<name xml:lang="en-US">Interface language</name>
+					<choice id="en-US">
+						<name xml:lang="ru-RU">Английский</name>
+						<name xml:lang="en-US">English</name>
+					</choice>
+					<choice id="ru-RU">
+						<name xml:lang="ru-RU">Русский</name>
+						<name xml:lang="en-US">Russian</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+		<requirements xmlns:db="http://apstandard.com/ns/1/db"
+			xmlns:php="http://apstandard.com/ns/1/php">
+			<php:safe-mode>false</php:safe-mode>
+			<php:extension>mysql</php:extension>
+			<php:extension>gd</php:extension>
+			<php:extension>zlib</php:extension>
+			<php:extension>json</php:extension>
+			<php:extension>pdo_mysql</php:extension>
+			<php:memory-limit>25165824</php:memory-limit>
+			<php:version min="5.1.1" />
+			<db:db>
+				<db:id>main</db:id>
+				<db:default-name>modx</db:default-name>
+				<db:can-use-tables-prefix>
+					false
+				</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>4.1.20</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision xmlns:php="http://apstandard.com/ns/1/php">
+			<url-mapping>
+				<default-prefix>modx</default-prefix>
+				<installed-size>25519796</installed-size>
+				<mapping url="/" path="htdocs"
+					xmlns:php="http://apstandard.com/ns/1/php">
+					<php:handler>
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="core">
+						<mapping url="cache">
+							<php:permissions writable="true" />
+						</mapping>
+						<mapping url="components">
+							<php:permissions writable="true" />
+						</mapping>
+						<mapping url="packages">
+							<php:permissions writable="true" />
+						</mapping>
+						<mapping url="export">
+							<php:permissions writable="true" />
+						</mapping>
+						<mapping url="import">
+							<php:permissions writable="true"/>
+						</mapping>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

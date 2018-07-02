@@ -1,0 +1,122 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-04-04T18:20:51">
+	<id>https://codeguard.com/plesk</id>
+	<name>CodeGuard-Plesk</name>
+	<version>1.0</version>
+	<release>4</release>
+	<homepage>https://codeguard.com/</homepage>
+	<vendor>
+		<name>CodeGuard</name>
+		<homepage>https://codeguard.com/</homepage>
+		<icon path="images/shield.png" />
+	</vendor>
+	<packager>
+		<name>Glowtouch Technologies</name>
+		<homepage>http://www.glowtouch.com/</homepage>
+		<icon path="images/parrallels-GT6.png" />
+	</packager>
+	<presentation>
+		<summary>CodeGuard is the world's leading automatic daily off-site website backup service that also notifies you when your website changes.</summary>
+		<description>FREE Backup Service that protects your site! Backup is a fundamental need for all websites, and CodeGuard does it with a single click!  In addition to taking automatic daily backups, CodeGuard will send you a ChangeAlert email any time that it finds your files have changed. This way, you can stay on top of everything that is happening to your website and know if your site has been hacked!
+
+ If you ever need an old file, or if you overwrite a file, delete something, or just mess up your site - don't worry - CodeGuard has you covered with one-click undo power.</description>
+		<icon path="images/shield.png" />
+		<screenshot path="images/1 - Dashboard.jpg">
+			<description>Dashboard Screenshot</description>
+		</screenshot>
+		<changelog>
+			<version release="1" version="1.0">
+				<entry>Initial package</entry>
+			</version>
+			<version release="2" version="1.0">
+				<entry>Added code for domain exist or not</entry>
+			</version>
+			<version release="3" version="1.0">
+				<entry>Updated //codeguard to /codeguard in package</entry>
+			</version>
+			<version release="4" version="1.0">
+				<entry>KA issue Corrected</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Infrastructure/Security</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<service id="main" class="service" singular="true">
+		<license must-accept="true">
+			<commercial />
+			<text>
+				<name>License</name>
+				<file>htdocs/license.html</file>
+			</text>
+
+		</license>
+		<presentation>
+			<name>CodeGuard</name>
+			<summary>CodeGuard</summary>
+			<infolinks>
+				<link href="https://codeguard.com/pages/how-it-works" class="support">How
+ It Works</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/siglesignin.php" class="control-panel">
+					<label>Go to CodeGuard</label>
+					<description>To get started, log into</description>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+			<name>User preferences</name>
+			<setting id="user_login" type="string" default-value="" min-length="5" max-length="60" regex="^[a-zA-Z][0-9a-zA-Z_@\.\-]*" class="login" track-old-value="true" visibility="hidden" optional="true" protected="true">
+			<name>User name</name>
+			<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+			</setting>
+			<setting id="user_password" type="password" class="password" min-length="4" max-length="32" optional="true" protected="true">
+			<name>User Password</name>
+			</setting>
+			</group>
+			<group class="vcard">
+				<name>Users Details</name>
+				<group class="fn n">
+					<setting id="full_name" class="given-name" type="string"
+						max-length="40" min-length="1" default-value="">
+						<name>Name</name>
+					</setting>
+				</group>
+				<group class="email">
+					<setting id="user_email" class="value" type="email">
+						<name>Email Address</name>
+					</setting>
+				</group>
+
+			</group>
+			</settings>
+
+		<requirements xmlns:php="http://apstandard.com/ns/1/php"
+			xmlns:db="http://apstandard.com/ns/1/db" xmlns:mysql="http://apstandard.com/ns/1/db/mysql" xmlns:l="http://apstandard.com/ns/1/licensing" xmlns:ftp="http://apstandard.com/ns/1/ftp">
+			<l:license type="urn:pla:codeguard:1" id="cgdata">
+				<l:need-query />
+			</l:license>
+			<php:extension>curl</php:extension>
+			<php:version min="5.0" />
+		</requirements>
+		<provision xmlns:l="http://apstandard.com/ns/1/licensing">
+			<url-mapping>
+				<default-prefix>codeguard</default-prefix>
+				<installed-size>15212</installed-size>
+				<mapping url="/" path="htdocs"></mapping>
+			</url-mapping>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<structured-output />
+			</configuration-script>
+			<l:license-script name="cglicense.php">
+				<script-language>php</script-language>
+			</l:license-script>
+		</provision>
+	</service>
+</application>

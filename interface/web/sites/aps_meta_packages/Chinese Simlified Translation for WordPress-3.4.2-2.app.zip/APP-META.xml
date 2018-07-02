@@ -1,0 +1,71 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2">
+	<id>http://cn.wordpress.org/</id>
+	<name>Chinese Simlified Translation for WordPress</name>
+	<version>3.4.2</version>
+	<release>2</release>
+
+	<homepage>http://cn.wordpress.org/</homepage>
+
+	<master-package>
+		<package id="http://wordpress.org/"/>
+	</master-package>
+
+	<vendor>
+		<name>wordpress</name>
+		<homepage>http://cn.wordpress.org/</homepage>
+	</vendor>
+
+	<packager>
+		<name>Parallels</name>
+		<homepage>http://parallels.com/</homepage>
+		<uri>uuid:714f0a7b-85d6-4eb8-b68e-40f9acbb3103</uri>
+	</packager>
+
+	<presentation>
+		<summary>Chinese Simlified translation for WordPress</summary>
+
+		<icon path="images/icon.png"/>
+
+		<changelog>
+			<version version="3.4.2" release="2">
+				<entry>Chinese Simlified translation for WordPress</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Web/Blog</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+
+	<patch match="/application/version &gt; 2.9"/>
+
+	<service id="cn-lang">
+
+		<presentation>
+			<name>Chinese Simlified translation</name>
+			<summary>Chinese Simlified localization package for Wordpress</summary>
+		</presentation>
+
+        <settings>
+            <setting id="replace_current_lang" type="boolean" default-value="true">
+                <name>Activate language</name>
+            </setting>
+        </settings>
+
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+			</configuration-script>
+
+			<url-mapping>
+				<installed-size>1794048</installed-size>
+				<mapping url="/" path="htdocs" xmlns:php="http://apstandard.com/ns/1/php">
+				</mapping>
+			</url-mapping>
+		</provision>
+	</service>
+</application>
+

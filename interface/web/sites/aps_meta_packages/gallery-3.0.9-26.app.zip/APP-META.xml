@@ -1,0 +1,264 @@
+<application packaged="2015-11-16T07:18:39" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>gallery</id>
+	<name>gallery</name>
+	<version>3.0.9</version>
+	<release>26</release>
+	<homepage>http://gallery.menalto.com/</homepage>
+	<vendor>
+		<name>www.gallery.menalto.com</name>
+		<homepage>http://www.gallery.menalto.com</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Odin</name>
+		<homepage>http://www.sofcloudit.com</homepage>
+		<icon path="images/packager.png"/>
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+	<presentation>
+		<summary>Gallery is a powerful photo gallery.</summary>
+		<description>Gallery is a web-based software which helps you manage the images on your homepage. Gallery makes it easy to create and manage your photo albums using an intuitive user interface. Image management includes the following features: automatic creation of thumbnail images; size adjustment; alignment, sorting, labelling of and searching through images and much more. For albums and images it is also possible to assign access, editing and deleting rights for each authorized user. The ideal way to create group projects - create accounts for your friends and family so they can upload and manage their own images on their website.</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/app_screenshot_1.png">
+			<description>The main page of Gallery.</description>
+		</screenshot>
+		<screenshot path="images/app_screenshot_2.png">
+			<description>Administrator page.</description>
+		</screenshot>
+		<changelog>
+			<version release="26" version="3.0.9">
+				<entry>Package updated to avoid crashing if PHP7 is selected</entry>
+			</version>
+			<version release="5" version="3.0.9">
+				<entry>Vendor name changed</entry>
+			</version>
+			<version release="4" version="3.0.9">
+				<entry>Packaged in aps 1.2 and compatiblity with poa 5.5 added</entry>
+			</version>
+			<version release="3" version="3.0.9">
+				<entry>New modules and themes included</entry>
+			</version>
+			<version release="2" version="3.0.9">
+				<entry>New Version. http://galleryproject.org/gallery_3_0_9</entry>
+			</version>
+  	  		<version release="2" version="3.0.8">
+				<entry>New Version</entry>
+			</version>
+			<version release="2" version="3.0.7">
+				<entry>translation corrections</entry>
+			</version>
+			<version release="1" version="3.0.7">
+				<entry>Gallery 3.0.7 Security Release http://galleryproject.org/gallery_3_0_7</entry>
+			</version>
+		  	<version release="2" version="3.0.6">
+				<entry>Parse error fixed</entry>
+			</version>
+  	  		<version release="1" version="3.0.6">
+				<entry>Gallery 3.0.6 Security Release http://galleryproject.org/gallery_3_0_6</entry>
+			</version>
+			<version release="2" version="3.0.5">
+				<entry>PHP requirements set to 5.3</entry>
+			</version>
+			<version release="1" version="3.0.5">
+				<entry>Gallery 3.0.5 Security Release http://galleryproject.org/gallery_3_0_5</entry>
+			</version>
+			<version release="2" version="3.0.4">
+				<entry>Gallery 3.0.4 Security Release http://gallery.menalto.com/gallery_3_0_4</entry>
+			</version>
+			<version release="8" version="3.0.2">
+				<entry>Required memory limit decreased</entry>
+			</version>
+			<version release="7" version="3.0.2">
+				<entry>Entry point defined</entry>
+			</version>
+			<version release="6" version="3.0.2">
+				<entry>Release notes: http://gallery.menalto.com/gallery_3.0.2_released</entry>
+			</version>
+			<version release="21" version="3.0.1">
+				<entry>Ignoring gallery2 cache removal errors on upgrade</entry>
+				<entry>Recreate .htaccess on reconfiguration to update RewriteBase</entry>
+			</version>
+			<version release="20" version="3.0.1">
+				<entry>3.0 version package. Migration from Gallery 2.3.1 is included</entry>
+			</version>
+			<version release="4" version="2.3.1">
+				<entry>Improve compatibility with PHP 5.3</entry>
+			</version>
+			<version release="1" version="2.3">
+				<entry>New version of the slideshow module now uses PicLens  to provide a rich, full screen slideshow.</entry>
+				<entry> Comment module now offers moderation and Akismet support to help weed out spam comments.</entry>
+				<entry> New email notification module allowing users to configure events they wish to get notified for. You can watch albums for changes, items for new comments, etc.</entry>
+				<entry> New Jpegtran module to support rotation and cropping of jpeg images with no loss in image quality.</entry>
+				<entry> New SnapGalaxy module for prints from snapgalaxy.com.</entry>
+				<entry> Registration module can now send a welcome email to new users upon account activation.</entry>
+				<entry> EXIF block now uses AJAX to switch between summary and detail display.</entry>
+				<entry> External image block now has a "rawImage" mode to return a single binary image instead of HTML output.</entry>
+				<entry> Support in RSS module for Media RSS format and random RSS streams.</entry>
+				<entry> Remote module now bundles the Gallery Remote client and makes it available via Java Web Start. Users with a Java enabled browser can then launch Gallery Remote with a single click instead of manually downloading and installing.</entry>
+				<entry> Hybrid theme now uses automatic navigation between pages in its image viewer and slideshow. This means the slideshow will show all images in the album, moving between album pages as needed. Requesting the next/previous image in the image viewer will also load a new album page as needed.</entry>
+				<entry> Webcam module now accepts file:// URLs to retrieve image from local filesystem.</entry>
+				<entry> Dcraw module now supports Adobe Digital Negative (dng) files, when used with dcraw v7.0 or newer.</entry>
+				<entry> Added support for Windows Vista in PublishXP module.</entry>
+				<entry> New database backup feature. Backup at start of upgrade, or anytime from Site Admin / Maintenance. Restore a backup from lib/support interface.</entry>
+				<entry> Can now put Gallery into maintenance mode from Site Admin / Maintenance. Setting in config.php file is still available too.</entry>
+				<entry> New event logging system records Gallery errors, viewable in the Site Admin interface.</entry>
+				<entry> Themes can now override module template files, allowing a themed look to more aspects of the application.</entry>
+				<entry> New Language Manager that allows the addition or removal of translations.</entry>
+				<entry> User interface changes.</entry>
+				<entry> Use AJAX to speed up deleting comments(spam) on items/albums.</entry>
+				<entry> Use quick DHTML confirm dialog for deleting single items. Dialog offers link to bulk delete several items from an album.</entry>
+				<entry> Use YUI ItemTree instead of plain select box to select target album when moving items, creating replicas or link items.</entry>
+				<entry> Performance and stability improvements.</entry>
+				<entry> Smarty templates now permanently cached by default. Turn this off in Site Admin / Performance when working on tpl files, so changes take effect immediately during development.</entry>
+				<entry> Avoid reading EXIF data multiple times in Carbon theme.</entry>
+				<entry> Some added caching in GalleryUrlGenerator.</entry>
+				<entry> Use progress bar when adding items to avoid server or browser timeouts. Particularly helpful when adding many items from local server.</entry>
+				<entry> Restructuring to greatly reduce the number of directories for language files.</entry>
+				<entry> Refactor of translator hints to avoid some processing when translations are not used (en_US).</entry>
+				<entry> Faster plugin and language package downloads.</entry>
+				<entry> Refactor of event system working towards a performance improvement in the next release.</entry>
+			</version>
+			<version release="7" version="2.2.5">
+				<entry>Automatically detect graphics plugin on installation</entry>
+			</version>
+			<version release="5" version="2.2.5">
+				<entry>Initial package version</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/E-commerce</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '3.0.1'"/>
+	<service class="service" id="main">
+		<license must-accept="true">
+			<text>
+				<name>GPL</name>
+				<file>htdocs/LICENSE</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Gallery</name>
+			<summary>Photo Gallery Package</summary>
+			<infolinks>
+				<link class="support" href="http://codex.galleryproject.org/Getting_Help">Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/" method="POST">
+					<label>Administrative interface</label>
+					<description/>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrative Interface</name>
+				<setting class="login" default-value="admin" id="admin_name" type="string">
+					<name>Administrator's login</name>
+				</setting>
+				<setting class="password" default-value="admin" id="admin_password" type="password">
+					<name>Password</name>
+				</setting>
+				<setting class="value" default-value="admin@gallery.com" id="admin_email" type="email">
+					<name>Email</name>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version max-not-including="7.0" min="5.3" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:register-globals xmlns:php="http://apstandard.com/ns/1/php">false</php:register-globals>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">iconv</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">filter</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mbstring</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">SimpleXML</php:extension>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<php:file-uploads xmlns:php="http://apstandard.com/ns/1/php">true</php:file-uploads>
+			<php:short-open-tag xmlns:php="http://apstandard.com/ns/1/php">true</php:short-open-tag>
+			<php:memory-limit xmlns:php="http://apstandard.com/ns/1/php">67108864</php:memory-limit>
+			<apache:htaccess xmlns:apache="http://apstandard.com/ns/1/apache"/>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>gallery</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0.0</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>gallery</default-prefix>
+				<installed-size>9293881</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="g2data">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="var">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="modules">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="themes">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="thumbs">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="logs">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="albums">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="resizes">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="uploads">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="locale">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="locks">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="cache">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="plugins_data">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+							<mapping url="modules">
+								<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+							</mapping>
+							<mapping url="themes">
+								<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+							</mapping>
+						</mapping>
+						<mapping url="smarty">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+							<mapping url="templates_c">
+								<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+							</mapping>
+						</mapping>
+						<mapping url="tmp">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+  					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

@@ -1,0 +1,172 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-06-25T11:42:28">
+    <id>http://orderino.com/1</id>
+    <name>orderino</name>
+    <version>1.0</version>
+    <release>1</release>
+    <homepage>http://orderino.com</homepage>
+    <vendor>
+    	<name>orderino.com</name>
+    	<homepage>http://orderino.com</homepage>
+    	<icon path="images/logo.png" />
+    </vendor>
+    <packager>
+    	<name>Orderino</name>
+    	<homepage>http://orderino.com</homepage>
+    </packager>
+    <presentation>
+    	<summary>Ордерино - учет продаж и заказов клиентов онлайн</summary>
+		<summary xml:lang="en">Orderino - Manage Orders, Sales and Customers online</summary>
+		<description>C Ордерино можно:
+			- вести учет заказов и заявок клиентов с любого компьютера, подключенного к сети Интернет;
+			- планировать работу и загрузку сотрудников в удобном календаре заказов;
+			- передавать заявки и заказы на исполнение сотрудникам компании: курьерам, исполнителям, водителям, мастерам и т.п.;
+			- объединить в одной системе несколько удаленных офисов или точек продаж;
+			- встроить формы заказа на сайт компании и обрабатывать их в Ордерино с минимумом затрат;
+			- встроить кабинет клиента на сайт, чтобы клиент мог самостоятельно создавать заказ, выбирая товары или услуги из списка, а также просамтривать историю и статусы своих предыдущих заказов;
+			- получать и отправлять SMS и Email уведомления клиентам, сотрудникам с информацией об их заказе.
+		</description>
+		<description xml:lang="en">Orderino as SaaS allows you to:
+			- track and manage orders and requests of your customers online;
+			- plan and schedule work of your employees in calendar;
+			- assign orders to your company staff: couriers, performers, drivers, masters, teams etc.;
+			- integrate into one system any numbers of remote offices and point of sales;
+			- embed orders forms into company web-site and get and manage customers requests faster;
+			- embed customer dashboard into web site where he can create and schedule new orders, view history and statuses of previous orders;
+			- get and send sms and email notification to customers, company staff about orders and their changes.
+		</description>
+		<icon path="images/logo.png" />
+		<screenshot path="images/screen_1.png">
+			<description xml:lang="en">List of customers requests and orders</description>
+			<description>Список заказов клиентов</description>
+		</screenshot>
+		<screenshot path="images/screen_2.png">
+			<description xml:lang="en">Edit customer order</description>
+			<description>Редактирование заказа клиента</description>
+		</screenshot>
+		<screenshot path="images/screen_3.png">
+			<description xml:lang="en">Orders Сalendar</description>
+			<description>Календарь заказов по исполнителям</description>
+		</screenshot>
+		<screenshot path="images/screen_4.png">
+			<description xml:lang="en">Сustomer Dashboard - History of orders</description>
+			<description>История заказов клиента в виджете "Кабинет клиента"</description>
+		</screenshot>
+		<screenshot path="images/screen_5.png">
+			<description xml:lang="en">Order Form Sample</description>
+			<description>Пример формы заказа, встроенной в сайт компании</description>
+		</screenshot>
+		<screenshot path="images/screen_6.png">
+			<description xml:lang="en">Сustomers List</description>
+			<description>Поиск и сортировка по клиентам</description>
+		</screenshot>
+    	<changelog>
+    		<version release="1" version="1.0">
+    			<entry>Initial Version</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Customer Relationship Management</category>
+    		<category>Work Order Management</category>
+    		<category>E-commerce</category>
+    		<category>Calendaring</category>    		
+    		<category>Supply Chain Management</category>
+    		<category>Accounting and Financial</category>
+    		<category>Survey Solutions</category>
+    		<category>Accounting and Financial</category>
+    	</categories>
+    	<languages>
+    		<language>ru</language>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+		<setting id="ms_host" type="string" class="title" installation-only="true" regex="^https?://.*$">
+			<name>Адрес сервиса</name>
+			<name xml:lang="en">Orderino address</name>
+			<description>Адрес сервиса Ордерино</description>
+			<description xml:lang="en">Orderino address</description>
+            <error-message>Формат адреса: 'http://domain.name' or https://domain.name</error-message>
+            <error-message xml:lang="en">Address format 'http://domain.name' or https://domain.name</error-message>
+		</setting>
+        <setting id="api_key" type="string">
+            <name>Ключ API</name>
+            <name xml:lang="en">API Key</name>
+            <description>Ключ для доступа к API</description>
+            <description xml:lang="en">Partner API Key</description>
+        </setting>
+	</global-settings>
+    <service id="orderino" class="service">
+     	<license must-accept="true">
+            <commercial />
+            <text>
+                <name>Orderino License</name>
+                <file>licenses/License_English.txt</file>
+            </text>
+            <text xml:lang="ru">
+                <name>Лицензия Ордерино</name>
+                <file>licenses/License_Russian.txt</file>
+            </text>
+        </license>
+    	<presentation>
+    		<name>Ордерино</name>
+			<name xml:lang="en">Orderino</name>
+			<summary>Учет заказов и клиентов онлайн</summary>
+			<summary xml:lang="en">Manage orders and customers online</summary>
+			<infolinks>
+    			<link class="support" href="https://orderino.com/support.html">Support</link>				
+    			<link class="deployment-guide" href="https://orderino.com/aps-partners.html">Support</link>				    			
+    		</infolinks>
+			<entry-points>
+				<entry dst="{ms_host}/user/login.html" method="POST" class="frontpage">
+					<label>Вход в сервис</label>
+					<label xml:lang="en">Login page</label>
+                    <variable name="ms_host" value-of-setting="ms_host" />
+					<variable name="password" class="password"/> 
+					<variable name="email" class="value"/>
+				</entry>
+			</entry-points>    		    		
+    	</presentation>
+    	<settings>
+    		<group class="authn">
+    		<setting type="email" id="email" installation-only="true"
+    			class="email">
+    			<name>E-mail адрес:</name>
+    			<name xml:lang="en">Your Email</name>
+    			<description>Ваш адрес электронной почты будет логином. На него мы вышлем пароль для доступа к сервису</description>
+    			<description xml:lang="en">We will send your account details on your email</description>
+    		</setting>
+    		<setting type="enum" id="plan" installation-only="true" default-value="2">
+    			<name>Тарифный план</name>
+				<name xml:lang="en">Plan</name>
+				<description>Тарифные планы</description>
+				<description xml:lang="en">Orderino Plans</description>
+					    <choice id="1">
+							<name>Старт</name>
+							<name xml:lang="en">Basic</name>
+					    </choice>
+					    <choice id="2">
+					    	<name>Стандарт</name>
+					    	<name xml:lang="en">Team</name>
+					    </choice>
+					    <choice id="3">
+					    	<name>Премиум</name>
+					    	<name xml:lang="en">Company</name>
+					    </choice>
+    		</setting>
+    		</group>    		
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:version min="5.2"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    		<verify-script name="verify.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</verify-script>
+    	</provision>
+    </service>
+</application>

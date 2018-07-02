@@ -1,0 +1,490 @@
+<application packaged="2018-04-19T03:57:49" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>http://www.joomla.org/</id>
+	<name>joomla</name>
+	<version>3.8.7</version>
+	<release>51</release>
+	<homepage>http://www.joomla.org/</homepage>
+	<vendor>
+		<name>www.joomla.org</name>
+		<homepage>http://www.joomla.org/</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Plesk</name>
+		<homepage>http://plesk.com</homepage>
+		<icon path="images/packager.png"/>
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+	<presentation>
+		<summary>Content management system and Web application framework</summary>
+		<summary xml:lang="de-DE">Webbasiertes Content Management System (CMS)...</summary>
+		<summary xml:lang="en-CA">Content management system and Web application framework</summary>
+		<summary xml:lang="en-GB">Content management system and Web application framework</summary>
+		<summary xml:lang="en-US">Content management system and Web application framework</summary>
+		<summary xml:lang="es-ES">Sistema de gestión de contenidos y entorno de aplicaciones web...</summary>
+		<summary xml:lang="fr-FR">Système de gestion de contenu et application Web...</summary>
+		<summary xml:lang="pl-PL">Jommla! to zaawansowany system open source do zarzśdzania treścią...</summary>
+		<description>
+			Joomla! is a powerful open source content management system. It is used for managing
+			simple Web sites and complex corporate applications. Joomla! is easy to install, simple
+			to manage, and reliable. Once Joomla! is installed and running, it is simple for even
+			non-technical users to add or edit content, update images, and to manage critical data.
+			Anybody with basic word processing skills can easily learn to manage a Joomla! site.
+		</description>
+		<description xml:lang="de-DE">Bei Joomla! handelt es sich um ein leistungsfähiges Open Source CMS. Es wird für die Verwaltung einfacher Websites und komplexer Unternehmensanwendungen verwendet. Joomla! ist einfach zu installieren, leicht zu verwalten und zuverlässig. Sobald Joomla! installiert ist und ausgeführt wird, ist es selbst für nicht professionelle Benutzer ein Leichtes, Inhalt hinzuzufügen oder zu bearbeiten, Bilder zu aktualisieren und kritische Daten zu verwalten. Alle, die über grundlegende Word-Verarbeitungsfähigkeiten verfügen, können das Verwalten einer Joomla!-Website einfach erlernen.</description>
+		<description xml:lang="en-CA">Joomla! is a powerful open source content management system. It is used for managing simple websites and complex corporate applications. Joomla! is easy to install, simple to manage, and reliable. Once Joomla! is installed and running, it is easy for even non-technical users to add or edit content, update images, and manage critical data. Anybody with basic word processing skills can easily learn to manage a Joomla! site.</description>
+		<description xml:lang="en-GB">Joomla! is a powerful open source content management system. It is used for managing simple websites and complex corporate applications. Joomla! is easy to install, simple to manage, and reliable. Once Joomla! is installed and running, it is easy for even non-technical users to add or edit content, update images, and manage critical data. Anybody with basic word processing skills can easily learn to manage a Joomla! site.</description>
+		<description xml:lang="en-US">Joomla! is a powerful open source content management system. It is used for managing simple websites and complex corporate applications. Joomla! is easy to install, simple to manage, and reliable. Once Joomla! is installed and running, it is easy for even non-technical users to add or edit content, update images, and manage critical data. Anybody with basic word processing skills can easily learn to manage a Joomla! site.</description>
+		<description xml:lang="es-ES">Joomla! es un potente sistema de gestión de contenidos de código abierto. Se usa para gestionar páginas web simples y complejas aplicaciones corporativas. Joomla! es fácil de instalar, de gestionar y fiable. Una vez se ha instalado y funciona, Joomla! se maneja de manera sencilla. De esta forma, cualquiera será capaz de añadir o editar contenidos, actualizar imágenes y gestionar datos críticos. Cualquiera con conocimientos básicos de procesamiento de textos podrá aprender a gestionar fácilmente su sitio con Joomla! </description>
+		<description xml:lang="pl-PL">Joomla! to zaawansowany system open source do zarządzania treścią. Jest wykorzystywany do zarządzania prostymi stronami internetowymi oraz złożonymi aplikacjami biznesowymi.
+		System Joomla! jest łatwy w instalacji, prosty w zarządzaniu i niezawodny w obsłudze.
+		Po zainstalowaniu i uruchomieniu Joomla! nawet użytkownicy bez umiejętności technicznych mogą dodawać lub edytować treści, aktualizować zdjęcia i zarządzać ważnymi danymi.
+		Każdy użytkownik posiadający podstawowe umiejętności w zakresie edycji tekstu może łatwo nauczyć się zarządzania stroną Joomla!</description>
+		<description xml:lang="fr-FR">Joomla! est un système open source de gestion des contenus. Il est utilisé pour la gestion de simples de sites Web et d'applications d'entreprise complexes. Joomla! est facile à installer, simple d'emploi et fiable. Une fois que Joomla! est installé et fonctionnel, il est simple d'ajouter ou d'éditer des contenus, de charger des images et de gérer des données critiques, même pour des utilisateurs inexpérimentés. Quiconque ayant des compétences de traitement de texte classique peut facilement apprendre à gérer un site Joomla!.</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/main_screenshot.jpg">
+			<description>Main screenshot.</description>
+		</screenshot>
+		<screenshot path="images/admin_screenshot.jpg">
+			<description>Admin screenshot.</description>
+		</screenshot>
+		<changelog>
+			<version release="51" version="3.8.7">
+				<entry>Joomla 3.8.7 Release notes: https://www.joomla.org/announcements/release-news/5728-joomla-3-8-7-release.html</entry>
+			</version>
+			<version release="1" version="3.8.6">
+				<entry>Joomla 3.8.6 Release notes: https://www.joomla.org/announcements/release-news/5725-joomla-3-8-6-release.html</entry>
+			</version>
+			<version release="1" version="3.8.5">
+				<entry>Joomla 3.8.5 Release notes: https://www.joomla.org/announcements/release-news/5724-joomla-3-8-5-release.html</entry>
+			</version>
+			<version release="1" version="3.8.4">
+				<entry>Joomla 3.8.4 Release notes: https://www.joomla.org/announcements/release-news/5723-joomla-3-8-4-release.html</entry>
+			</version>
+			<version release="1" version="3.8.3">
+				<entry>Joomla 3.8.3 Release notes: https://www.joomla.org/announcements/release-news/5717-joomla-3-8-3-release.html</entry>
+			</version>
+			<version release="1" version="3.8.2">
+				<entry>Joomla 3.8.2 Release notes: https://www.joomla.org/announcements/release-news/5716-joomla-3-8-2-release.html</entry>
+			</version>
+			<version release="1" version="3.8.1">
+				<entry>Joomla 3.8.1 Release notes: https://www.joomla.org/announcements/release-news/5715-joomla-3-8-1-release.html</entry>
+			</version>
+                        <version release="1" version="3.8.0">
+                                <entry>Joomla 3.8.0 Release notes: https://www.joomla.org/announcements/release-news/5713-joomla-3-8-0-release.html</entry>
+                        </version>
+			<version release="1" version="3.7.5">
+				<entry>Joomla 3.7.5 Release notes: https://www.joomla.org/announcements/release-news/5711-joomla-3-7-5-release.html</entry>
+			</version>
+			<version release="1" version="3.7.4">
+				<entry>Joomla 3.7.4 Release notes: https://www.joomla.org/announcements/release-news/5710-joomla-3-7-4-release.html</entry>
+			</version>
+			<version release="1" version="3.7.3">
+				<entry>Joomla 3.7.3 Release notes: https://www.joomla.org/announcements/release-news/5709-joomla-3-7-3-release.html</entry>
+			</version>
+			<version release="1" version="3.7.2">
+				<entry>Joomla 3.7.2 Release notes: https://www.joomla.org/announcements/release-news/5706-joomla-3-7-2-release.html</entry>
+			</version>
+			<version release="1" version="3.7.1">
+				<entry>Joomla 3.7.1 Release notes: https://www.joomla.org/announcements/release-news/5705-joomla-3-7-1-release.html</entry>
+			</version>
+			<version release="1" version="3.7.0">
+				<entry>Joomla 3.7.0 Release notes: https://www.joomla.org/announcements/release-news/5703-joomla-3-7-is-here.html</entry>
+			</version>
+			<version release="29" version="3.7.0">
+				<entry>Joomla 3.7.0 Release notes: https://www.joomla.org/announcements/release-news/5703-joomla-3-7-is-here.html</entry>
+			</version>
+			<version release="1" version="3.6.5">
+				<entry>Joomla 3.6.5 Release notes: https://www.joomla.org/announcements/release-news/5693-joomla-3-6-5-released.html</entry>
+			</version>
+			<version release="1" version="3.6.4">
+				<entry>Joomla 3.6.4 Release notes: https://www.joomla.org/announcements/release-news/5678-joomla-3-6-4-released.html</entry>
+			</version>
+			<version release="1" version="3.6.3">
+				<entry>Joomla 3.6.3 Release notes: https://www.joomla.org/announcements/release-news/5676-joomla-3-6-3-released.html</entry>
+			</version>
+			<version release="24" version="3.6.2">
+				<entry>Joomla 3.6.2 some win-instance upgrade fixed</entry>
+			</version>
+			<version release="23" version="3.6.2">
+				<entry>Joomla 3.6.2 Release notes: https://www.joomla.org/announcements/release-news/5667-joomla-3-6-2-released.html</entry>
+			</version>
+			<version release="1" version="3.6.0">
+				<entry>Joomla 3.6.0 Release notes: https://www.joomla.org/announcements/release-news/5664-joomla-3-6-is-here.html</entry>
+			</version>
+			<version release="1" version="3.5.1">
+				<entry>Joomla 3.5.1 Release notes: https://www.joomla.org/announcements/release-news/5655-joomla-3-5-1-released.html</entry>
+			</version>
+			<version release="1" version="3.5.0">
+				<entry>Joomla 3.5.0 Release notes: https://www.joomla.org/announcements/release-news/5654-joomla-3-5-is-here.html</entry>
+			</version>
+			<version release="1" version="3.4.8">
+				<entry>Joomla 3.4.8 Release notes: https://www.joomla.org/announcements/release-news/5644-joomla-3-4-8-released.html</entry>
+			</version>
+			<version release="1" version="3.4.7">
+				<entry>Joomla 3.4.7 Release notes: https://www.joomla.org/announcements/release-news/5643-joomla-3-4-7.html</entry>
+			</version>
+			<version release="2" version="3.4.6">
+				<entry>Joomla 3.4.6 Release notes: https://www.joomla.org/announcements/release-news/5641-joomla-3-4-6-released.html</entry>
+			</version>
+			<version release="4" version="3.4.5">
+				<entry>Functions to be deprecated in php7 have been replaced in configuration scripts with allowed functions.</entry>
+			</version>
+			<version release="1" version="3.4.5">
+				<entry>Joomla 3.4.5 Release notes: https://www.joomla.org/announcements/release-news/5634-joomla-3-4-5-released.html</entry>
+			</version>
+			<version release="1" version="3.4.4">
+				<entry>Joomla 3.4.4 Release notes: http://www.joomla.org/announcements/release-news/5590-joomla-3-4-4-released.html</entry>
+			</version>
+			<version release="1" version="3.4.3">
+				<entry>Joomla 3.4.3 Release notes: http://www.joomla.org/announcements/release-news/5590-joomla-3-4-3-released.html</entry>
+			</version>
+			<version release="1" version="3.4.2">
+				<entry>Joomla 3.4.2 Release notes: http://www.joomla.org/announcements/release-news/5589-joomla-3-4-2-released.html</entry>
+			</version>
+			<version release="1" version="3.4.1">
+				<entry>Joomla 3.4.1. Release notes: http://www.joomla.org/announcements/release-news/5587-joomla-3-4-1-released.html</entry>
+			</version>
+			<version release="3" version="3.4.0">
+				<entry>Joomla 3.4.0. Release notes: http://www.joomla.org/announcements/release-news/5586-joomla-3-4-is-here.html</entry>
+			</version>
+			<version release="43" version="3.3.6">
+				<entry>Joomla 3.3.6. Release notes: http://www.joomla.org/announcements/release-news/5569-joomla-3-3-6-released.html</entry>
+			</version>
+			<version release="1" version="3.3.5">
+				<entry>Joomla 3.3.5. Release notes: http://www.joomla.org/announcements/release-news/5567-joomla-3-3-5-released.html</entry>
+			</version>
+			<version release="1" version="3.3.4">
+				<entry>Joomla 3.3.4. Release notes: http://www.joomla.org/announcements/release-news/5564-joomla-3-3-4-released.html</entry>
+			</version>
+			<version release="2" version="3.3.3">
+				<entry>Preserve custom db prefix on configure operation</entry>
+			</version>
+			<version release="1" version="3.3.3">
+				<entry>Joomla 3.3.3. Release notes: http://www.joomla.org/announcements/release-news/5557-joomla-3-3-3-released.html</entry>
+			</version>
+			<version release="2" version="3.3.1">
+				<entry>Joomla 3.3.1. Release notes: http://www.joomla.org/announcements/release-news/5551-joomla-3-3-1-released.html</entry>
+			</version>
+			<version release="2" version="3.3.0">
+				<entry>Joomla 3.3.0. Release notes: http://www.joomla.org/announcements/release-news/5546-joomla-3-3-0-released.html</entry>
+			</version>
+			<version release="6" version="3.2.3">
+				<entry>Fix for 'Internal error' while adding new menu item on Windows</entry>
+			</version>
+			<version release="4" version="3.2.3">
+				<entry>Install sample data bug fixed</entry>
+			</version>
+			<version release="2" version="3.2.3">
+				<entry>Joomla 3.2.3. Release notes: http://www.joomla.org/announcements/release-news/5538-joomla-3-2-3-released.html</entry>
+			</version>
+			<version release="2" version="3.2.2">
+				<entry>Joomla 3.2.1. Release notes: http://www.joomla.org/announcements/release-news/5531-joomla-3-2-2-released.html</entry>
+			</version>
+			<version release="2" version="3.2.1">
+				<entry>Joomla 3.2.1. Release notes: http://www.joomla.org/announcements/release-news/5523-joomla-3-2-1-released.html</entry>
+			</version>
+			<version release="8" version="3.2.0">
+				<entry>New Selenium test added</entry>
+			</version>
+			<version release="6" version="3.2.0">
+				<entry>Upgrade bug fixed (sql upgrade files were not ordered by default)</entry>
+			</version>
+			<version release="4" version="3.2.0">
+				<entry>Application test updated</entry>
+			</version>
+			<version release="2" version="3.2.0">
+				<entry>Joomla 3.2.0. Release notes: http://www.joomla.org/announcements/release-news/5516-joomla-3-2-0-stable-released.html</entry>
+			</version>
+			<version release="6" version="3.1.5">
+				<entry>Default tags menu link bug fixed</entry>
+			</version>
+			<version release="4" version="3.1.5">
+				<entry>Default data install bug fixed</entry>
+			</version>
+			<version release="2" version="3.1.5">
+				<entry>Joomla 3.1.5. Release notes: http://www.joomla.org/announcements/release-news/5505-joomla-3-1-5-stable-released.html</entry>
+			</version>
+			<version release="2" version="3.1.4">
+				<entry>Joomla 3.1.4. Release notes: http://www.joomla.org/announcements/release-news/5504-joomla-3-1-4-stable-released.html</entry>
+			</version>
+			<version release="6" version="3.1.1">
+				<entry>Uninstall bug fixed</entry>
+			</version>
+			<version release="4" version="3.1.1">
+				<entry>php-cgi bug fixed</entry>
+			</version>
+			<version release="2" version="3.1.1">
+				<entry>Joomla 3.1.1. Release notes: http://www.joomla.org/announcements/release-news/5499-joomla-3-1-1-stable-released.html</entry>
+			</version>
+			<version release="2" version="3.1.0">
+				<entry>Joomla 3.1.0. Release notes: http://www.joomla.org/announcements/release-news/5494-joomla-3-1-0-stable-released.html</entry>
+			</version>
+			<version release="10" version="3.0.3">
+				<entry>manifest_cache added</entry>
+			</version>
+			<version release="8" version="3.0.3">
+				<entry>Schema error fixed</entry>
+			</version>
+			<version release="6" version="3.0.3">
+				<entry>php min version and db server min version bug fixed</entry>
+			</version>
+			<version release="4" version="3.0.3">
+				<entry>APS version fix solved</entry>
+			</version>
+			<version release="12" version="3.0.2">
+				<entry>New Joomla 3.0.2. Release notes: http://www.joomla.org/announcements/release-news/5471-joomla-3-0-2-released.html</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+		<languages>
+			<language>en</language>
+			<language>de</language>
+			<language>es</language>
+			<language>fr</language>
+			<language>pl</language>
+		</languages>
+	</presentation>
+	<upgrade match="/application/version &gt;= '3.0.2'"/>
+	<service id="instance">
+		<license must-accept="true">
+			<free/>
+			<text>
+				<name>GPLv2</name>
+				<file>htdocs/LICENSE.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>Joomla</name>
+			<summary>Joomla CMS</summary>
+			<infolinks>
+				<link class="support" href="http://forum.joomla.org/">Joomla! Discussion Forums</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/administrator/index.php" method="POST">
+					<label>Administrative interface</label>
+				</entry>
+				<entry dst="/" method="GET">
+					<label>Site</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" installation-only="true" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<name xml:lang="de-DE">Administratoranmeldung</name>
+					<name xml:lang="en-GB">Administrator's login</name>
+					<name xml:lang="en-US">Administrator's login</name>
+					<name xml:lang="es-ES">Inicio de sesión del administrador</name>
+					<name xml:lang="fr-FR">Mot de passe administrateur</name>
+					<name xml:lang="pl-PL">Logowanie administratora</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+					<error-message xml:lang="de-DE">Der von Ihnen eingegebene Text muss mit einem Buchstaben beginnen, gefolgt von Zahlen, Buchstaben, Unterstreichungen oder Bindestrichen.</error-message>
+					<error-message xml:lang="en-GB">Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+					<error-message xml:lang="en-US">Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+					<error-message xml:lang="es-ES">Asegúrese de que el texto que ha introducido comienza con una letra y continúa con números, letras, guiones bajos o guiones.</error-message>
+					<error-message xml:lang="fr-FR">Vérifiez que le texte saisi commence par une lettre et contient uniquement des chiffres, lettres, caractères de soulignement ou traits-d'union.</error-message>
+					<error-message xml:lang="pl-PL">Upewnij się, że wprowadzony tekst rozpoczyna się od litery, po której następują cyfry, litery, znaki podkreślenia lub myślniki.</error-message>
+				</setting>
+				<setting class="password" id="admin_password" min-length="1" type="password">
+					<name>Password</name>
+					<name xml:lang="de-DE">Kennwort</name>
+					<name xml:lang="en-GB">Password</name>
+					<name xml:lang="en-US">Password</name>
+					<name xml:lang="es-ES">Contraseña</name>
+					<name xml:lang="fr-FR">Mot de passe</name>
+					<name xml:lang="pl-PL">Hasło</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Main configuration</name>
+				<group class="email">
+					<setting class="value" id="admin_email" installation-only="true" type="email">
+						<name>Administrator's email</name>
+						<name xml:lang="de-DE">Administrator-E-Mail-Adresse</name>
+						<name xml:lang="en-GB">Administrator's email</name>
+						<name xml:lang="en-US">Administrator's email</name>
+						<name xml:lang="es-ES">Correo electrónico del administrador</name>
+						<name xml:lang="fr-FR">Courrier électronique de l'administrateur</name>
+						<name xml:lang="pl-PL">Adres e-mail administratora</name>
+					</setting>
+				</group>
+				<group class="fn n">
+					<setting class="organization-name" default-value="My CMS" id="title" installation-only="true" min-length="1" type="string">
+						<name>Site name</name>
+						<name xml:lang="de-DE">Name der Website</name>
+						<name xml:lang="en-GB">Site name</name>
+						<name xml:lang="en-US">Site name</name>
+						<name xml:lang="es-ES">Nombre del sitio</name>
+						<name xml:lang="fr-FR">Nom du site</name>
+						<name xml:lang="pl-PL">Nazwa witryny</name>
+					</setting>
+				</group>
+			</group>
+			<group class="web">
+				<setting default-value="1" id="install_sample_data" installation-only="true" type="enum">
+					<name>Install Sample Data</name>
+					<choice id="1">
+						<name>yes</name>
+					</choice>
+					<choice id="0">
+						<name>no</name>
+					</choice>
+				</setting>
+				<setting class="locale" default-value="en-GB" id="locale" installation-only="true" type="enum">
+					<name>Default site language</name>
+					<name xml:lang="de-DE">Standardsprache der Website</name>
+					<name xml:lang="en-GB">Default site language</name>
+					<name xml:lang="en-US">Default site language</name>
+					<name xml:lang="es-ES">Idioma predeterminado del sitio</name>
+					<name xml:lang="fr-FR">Langue du site par défaut</name>
+					<name xml:lang="pl-PL">Język domyślny witryny</name>
+					<choice id="zh-CN">
+						<name>Chinese (Simplified)</name>
+					</choice>
+					<choice id="zh-TW">
+						<name>Chinese (Traditional)</name>
+					</choice>
+					<choice id="da-DK">
+						<name>Danish</name>
+					</choice>
+					<choice id="nl-NL">
+						<name>Dutch</name>
+					</choice>
+					<choice id="en-GB">
+						<name>English</name>
+					</choice>
+					<choice id="fr-FR">
+						<name>French</name>
+					</choice>
+					<choice id="de-DE">
+						<name>German</name>
+					</choice>
+					<choice id="it-IT">
+						<name>Italian</name>
+					</choice>
+					<choice id="ja-JP">
+						<name>Japanese</name>
+					</choice>
+					<choice id="nb-NO">
+						<name>Norwegian</name>
+					</choice>
+					<choice id="pl-PL">
+						<name>Polish</name>
+					</choice>
+					<choice id="ru-RU">
+						<name>Russian</name>
+					</choice>
+					<choice id="es-ES">
+						<name>Spanish</name>
+					</choice>
+				</setting>
+				
+					
+					
+					
+					
+					
+					
+					
+				
+				
+					
+					
+					
+					
+					
+					
+					
+				
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.3.10" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">zlib</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">xml</php:extension>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<php:file-uploads xmlns:php="http://apstandard.com/ns/1/php">true</php:file-uploads>
+			<php:register-globals xmlns:php="http://apstandard.com/ns/1/php">false</php:register-globals>
+			<php:magic-quotes-gpc xmlns:php="http://apstandard.com/ns/1/php">false</php:magic-quotes-gpc>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>joomla</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.1</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+			<url-mapping>
+				<default-prefix>joomla</default-prefix>
+				<installed-size>48508717</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="administrator">
+						<mapping url="components">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="language">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="modules">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="templates">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="cache">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+						<mapping url="logs">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+					<mapping url="cache">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="components">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="images">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						<mapping url="banners">
+							<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+						</mapping>
+					</mapping>
+					<mapping url="language">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="modules">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="media">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="plugins">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="templates">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="tmp">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+		</provision>
+	</service>
+</application>

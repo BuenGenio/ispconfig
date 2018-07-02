@@ -1,0 +1,176 @@
+<application packaged="2014-10-23T06:02:16" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>movabletype</id>
+	<name>movabletype</name>
+	<version>5.2.10</version>
+	<release>11</release>
+	<homepage>http://www.movabletype.org</homepage>
+	<vendor>
+		<name>www.movabletype.org</name>
+		<homepage>http://www.movabletype.org</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	
+	<packager>
+		<name>Sofcloudit</name>
+		<homepage>http://www.sofcloudit.com</homepage>
+		<icon path="images/sofcloudit64.png"/>
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+	<presentation>
+		<summary>Content Management System, Blog Software and Publishing Platform</summary>
+		<description>Movable Type 5 takes a new approach to social publishing by starting with a website and adding blogs. This is in response to an increasing number of customers who've added their Movable Type blogs to existing websites, or who've used the Page feature to assemble a full website with blogs to quickly and easily update their content.
+
+Movable Type 5 is designed to make it easier than ever to build an integrated social presence on the web, complete with an all-in-one social website.
+
+The goal of Movable Type 5 is to give businesses, organizations and individuals a single, unified software package with integrated website and blog capabilities. It's been enhanced for the easy creation, administration and management of websites and blogs - all from a single user dashboard.
+
+Perl requirements and more info: http://movabletype.org/documentation/mt5/installation/system.html
+The full list of optional modules see at the Movable Type System Check page (@@application-root@@/cgi-bin/mt-check.cgi)</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/screenshot_0.jpg">
+<description>Dashboard</description>
+</screenshot>
+		<screenshot path="images/screenshot_1.jpg">
+<description>Compose Screen</description>
+</screenshot>
+		<screenshot path="images/screenshot_2.jpg">
+<description>Manage Members</description>
+</screenshot>
+		<screenshot path="images/screenshot_3.jpg">
+<description>Template Editing</description>
+</screenshot>
+		<screenshot path="images/screenshot_4.jpg">
+<description>Reply to Comment</description>
+</screenshot>
+		<screenshot path="images/admin_screenshot.jpg">
+<description>Admin page screenshot</description>
+</screenshot>
+		<changelog>
+			<version release="11" version="5.2.10">
+				<entry>https://movabletype.org/documentation/appendices/release-notes/6.0.3.html</entry>
+			</version>
+			<version release="7" version="5.2.9">
+				<entry>Release notes: http://movabletype.org/documentation/appendices/release-notes/</entry>
+			</version>
+			<version release="11" version="5.2">
+				<entry>Release notes: http://www.movabletype.org/documentation/appendices/release-notes/movable-type-502.html</entry>
+			</version>
+			<version release="3" version="4.2">
+				<entry>Personal/Blog category removed</entry>
+			</version>
+			<version release="2" version="4.2">
+				<entry>Initial package version</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/Blog</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '4.2' and /application/release &gt;= '1'"/>
+	<service id="instance">
+		<license must-accept="true">
+			<free/>
+			<text>
+				<name>GNU General Public License (GPL) version 2</name>
+				<url>http://www.gnu.org/licenses/gpl-2.0.html</url>
+			</text>
+		</license>
+		<presentation>
+			<name>movabletype</name>
+			<summary>Movable Type Open Source: The Professional Publishing Platform</summary>
+			<infolinks>
+				<link class="howto" href="http://movabletype.org/documentation/mt5/">Documentation</link>
+				<link class="community" href="http://forums.movabletype.org/">Forums</link>
+				<link class="support" href="http://movabletype.org/support/">Support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/cgi-bin/mt.cgi" method="POST">
+					<label>Administrator Management Area</label>
+					<variable class="locale" name="__lang" value-of-setting="locale">en_US</variable>
+					<variable class="login" name="username" value-of-setting="admin_name">admin</variable>
+					<variable class="password" name="password" value-of-setting="admin_password">password</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group>
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting class="password" id="admin_password" max-length="32" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+				<setting class="value" id="admin_email" type="email">
+					<name>Administrator's email</name>
+				</setting>
+			</group>
+			<group>
+				<name>Blog's preferences</name>
+				<setting default-value="Movable Type" id="blog_name" min-length="1" type="string">
+					<name>Blog name</name>
+				</setting>
+				<setting default-value="en-US" id="locale" type="enum">
+					<name>Default user language</name>
+					<choice id="en-US">
+						<name>English (US)</name>
+					</choice>
+					<choice id="fr">
+						<name>French</name>
+					</choice>
+					<choice id="de">
+						<name>German</name>
+					</choice>
+					<choice id="nl">
+						<name>Dutch</name>
+					</choice>
+					<choice id="ja">
+						<name>Japanese</name>
+					</choice>
+					<choice id="es">
+						<name>Spanish</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<apache:htaccess xmlns:apache="http://apstandard.com/ns/1/apache"/>
+			<php:version min="5.0" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>movabletype</db:default-name>
+				<db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>movabletype</default-prefix>
+				<installed-size>7288786</installed-size>
+				<mapping path="htdocs" url="/">
+					<mapping path="cgi-bin" url="cgi-bin">
+						<cgi:handler xmlns:cgi="http://apstandard.com/ns/1/cgi">
+							<cgi:extension xmlns:h="http://apstandard.com/ns/1/cgi/handlers" h:handler-type="perl">cgi</cgi:extension>
+						</cgi:handler>
+					</mapping>
+					<mapping url="public">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+					<mapping url="mt-static">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

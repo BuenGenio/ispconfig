@@ -1,0 +1,323 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-04-08T09:43:01">
+    <id>http://www.f-secure.com</id>
+    <name>PSB</name>
+    <version>1.0.1</version>
+    <release>9</release>
+    <homepage>http://www.f-secure.com</homepage>
+    <vendor>
+    	<name>F-Secure</name>
+    	<homepage>http://www.f-secure.com</homepage>
+    	<icon path="images/F-secure-application-icon-256.png" />
+    </vendor>
+    <packager>
+    	<name>F-Secure</name>
+    	<homepage>http://www.f-secure.com</homepage>
+    	<icon path="images/F-secure-application-icon-256.png" />
+    	<uri>http://www.f-secure.com</uri>
+    </packager>
+    <presentation>
+    	<summary >F-Secure Protection Service for Business is an SMB-focused security solution that combines security software and a management portal for efficient protection against all online threats.</summary>
+    	<summary xml:lang="en-GB">F-Secure Protection Service for Business is an SMB-focused security solution that combines security software and a management portal for efficient protection against all online threats.</summary>
+    	<summary xml:lang="nl-NL">F-Secure Protection Service for Business is een internet beveiligingsoplossing voor het MKB. Het bestaat uit beveiligingssoftware en een beheer portal voor de efficiënte bescherming tegen online bedreigingen.</summary>
+    	<description >F-Secure Protection Service for Business is a complete security solution designed for SMBs. It protects laptops, desktops, file servers and Microsoft Exchange servers against online threats. An online management portal makes security information easily available and also enables the effective management of remote PCs from anywhere with an Internet connection.</description>
+    	<description xml:lang="en-GB">F-Secure Protection Service for Business is a complete security solution designed for SMBs. It protects laptops, desktops, file servers and Microsoft Exchange servers against online threats. An online management portal makes security information easily available and also enables the effective management of remote PCs from anywhere with an Internet connection.</description>
+    	<description xml:lang="nl-NL">F-Secure Protection Service for Business is een internet beveiligingsoplossing voor het MKB. Het biedt de mogelijkheid tot bescherming van laptops, desktops, servers en Microsoft Exchange servers tegen online bedreigingen. Een online beheer portal zorgt voor toegankelijke beveiligingsinformatie en effectief management van de systemen via Internet.</description>
+    	<icon path="images/F-secure-application-icon-256.png" />
+    	<screenshot path="images/screenshot.png">
+    	<description>PSB Screenshot</description>
+		</screenshot>
+    	<changelog>
+    		<version release="9" version="1.0.1">
+    			<entry>Additional bugfixes related to presentation of settings under the "PSB Portal Account" -service.</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Infrastructure/Security</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    		<language>nl</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<setting type="string" id="smi_username" class="login">
+            <name>SMI username</name>
+        </setting>
+    	<setting type="string" id="smi_password" class="password">
+            <name>SMI password</name>
+        </setting>
+    	<setting type="integer" id="operator_id" default-value="123456">
+            <name>Operator ID on F-Secure backends</name>
+        </setting>
+    	<setting type="string" id="msmi_username" class="login">
+            <name>mSMI username</name>
+        </setting>
+    	<setting type="string" id="msmi_password" class="password">
+            <name>mSMI password</name>
+        </setting>
+    	<setting type="string" id="mobile_download_url" default-value="http://mobile.f-secure.com/downloads/trial">
+            <name>Mobile Security client download url</name>
+        </setting>
+    	<setting type="string" id="psbmobile_download_url" default-value="http://mobile.f-secure.com/downloads/trial">
+            <name>PSBMobile Security client download url</name>
+        </setting>
+    	<setting type="string" id="pc_download_url" default-value="http://oom.kpn-is.nl/ivp/KPNInternetveiligheidspakket.exe">
+            <name>PC Security client download url</name>
+        </setting>
+    	<setting type="string" id="mac_download_url" default-value="http://oom.kpn-is.nl/ivp/KPNInternetveiligheidspakket.exe">
+            <name>MAC OSX Security client download url</name>
+        </setting>
+    	<setting type="string" id="server_download_url" default-value="http://oom.kpn-is.nl/ivp/KPNInternetveiligheidspakket-server.exe">
+            <name>Windows Server Security client download url</name>
+        </setting>
+    	<setting type="string" id="server_download_url_linux" default-value="http://oom.kpn-is.nl/ivp/KPNInternetveiligheidspakket-server.exe">
+            <name>Linux Server Security client download url</name>
+        </setting>
+    	<setting type="string" id="psb_portal_url" default-value="https://psb-live.sp.f-secure.com/">
+            <name>PSB portal url</name>
+        </setting>
+    	</global-settings>
+	<patch match="(/application/version = '1.0.1' and /application/release $lt; '9')" recommended="true" />
+    <upgrade match="/application/version &lt; '1.0.1'" />
+    
+    <service id="Company account">
+    	<presentation>
+    		<summary >a PSB company account represents a real-world company.</summary>
+    		<summary xml:lang="en-GB">a PSB company account represents a real-world company.</summary>
+    		<summary xml:lang="nl-NL">Een PSB Bedrijfsaccount vertegenwoordigt het bedrijf dat als klant account opereert in deze dienst.</summary>
+    		<infolinks>
+    			<link href="http://www.f-secure.com" class="support">F-Secure</link>
+    			<link href="http://download.sp.f-secure.com/APS/psb_aps_guide.pdf" class="deployment-guide">Deployment guide</link>
+    		</infolinks>
+    	</presentation>
+    	<settings>
+    		<setting type="string" id="psb_account_name"
+    			uniq="global" generate="uuid" protected="true">
+    			<name>PSB Company Account name</name>
+    		</setting>
+    		<setting type="list" id="suspended_subscriptions" element-type="string" visibility="hidden" optional="true">
+    			<name>List of suspended subscriptions (used when disabling the company account)</name>
+    		</setting>
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    	<php:version min="5.0"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="company_account.php">
+    			<script-language>php</script-language>
+    			<status-control />
+    			<structured-output />
+    		</configuration-script>
+    	</provision>
+    	<service id="Mobile subscription" class="service">
+    		<presentation>
+    			<summary >A mobile license gives the possibility to protect a Smartphone or Tablet if the operating system is supported by F-Secure.</summary>
+    			<summary xml:lang="en-GB">A mobile license gives the possibility to protect a Smartphone or Tablet if the operating system is supported by F-Secure.</summary>
+    			<summary xml:lang="nl-NL">Een mobiele licentie geeft u de mogelijkheid om een Smartphone of Tablet met een door F-Secure ondersteund besturingssysteem te beveiligen.</summary>
+    			<entry-points>
+    				<entry dst="{mobile_url}">
+    					<label>Installer</label>
+    					<variable name="mobile_url"
+    						value-of-setting="mobile_download_url" />
+    				</entry>
+    			</entry-points>                  
+    		</presentation>
+    		<settings>
+    			<setting type="string" id="subscription_key"
+    				installation-only="true" class="presentation" protected="true"><name>Subscription key</name>
+    			</setting>
+    			<setting type="integer" id="license_size"
+    				default-value="1" visibility="hidden"><name>License size</name>
+    			</setting>
+    		</settings>
+    		<provision>
+    			<configuration-script name="mobile_subscription.php">
+    				<script-language>php</script-language>
+    				<status-control />
+    				<structured-output />
+    			</configuration-script>
+    		</provision>
+    	</service>
+    	<service id="Workstation subscription" class="service">
+    		<presentation>
+    			<summary xml:lang="en-GB">With a workstation license you can activate a PSB workstation product for Windows PC and Mac OS X devices.</summary>
+    			<summary >With a workstation license you can activate a PSB workstation product for Windows PC and Mac OS X devices.</summary>
+    			<summary xml:lang="nl-NL">Met een PC licentie kunt u een PSB werkstation product activeren. Per licentie code kunt u een vooraf gedefinieerd aantal installaties uitvoeren.</summary>
+    			<entry-points>
+    				<entry dst="{pc_url}">
+    					<label>PC Installer</label>
+    					
+    					<variable name="pc_url"
+    						value-of-setting="pc_download_url" />
+    				</entry>
+    				<entry dst="{mac_url}">
+    					<label>Mac Installer</label>
+    					<variable name="mac_url"
+    						value-of-setting="mac_download_url" />
+    				</entry>
+    			</entry-points>
+    			
+    		</presentation>
+    		<settings>
+    			<setting type="string" id="subscription_key"
+    				installation-only="true" class="presentation" protected="true">
+    				<name>Subscription key</name>
+    			</setting>
+    			<setting type="integer" id="license_size"
+    				default-value="1" visibility="hidden">
+    				<name>License size</name>
+    			</setting>
+    			<setting type="string" id="psb_parent_account_name"
+    				value-of-setting="psb_account_name" visibility="hidden">
+    				<name>PSB Account name</name>
+    			</setting>
+    		</settings>
+
+    		<provision>
+    			<configuration-script name="pc_subscription.php">
+    				<script-language>php</script-language>
+    				<status-control />
+    				<structured-output />
+    			</configuration-script>
+    		</provision>
+    	</service>
+		<service id="PSB Mobile subscription" class="service">
+    		<presentation>
+    			<summary >A mobile license gives the possibility to protect a Smartphone or Tablet if the operating system is supported by F-Secure.</summary>
+    			<summary xml:lang="en-GB">A mobile license gives the possibility to protect a Smartphone or Tablet if the operating system is supported by F-Secure.</summary>
+    			<summary xml:lang="nl-NL">Een mobiele licentie geeft u de mogelijkheid om een Smartphone of Tablet met een door F-Secure ondersteund besturingssysteem te beveiligen.</summary>
+    			<entry-points>
+    				<entry dst="{psbm_url}">
+    					<label>Installer</label>
+    					
+    					<variable name="psbm_url"
+    						value-of-setting="psbmobile_download_url" />
+    				</entry>
+    			</entry-points>
+    			
+    		</presentation>
+    		<settings>
+    			<setting type="string" id="subscription_key"
+    				installation-only="true" class="presentation" protected="true">
+    				<name>Subscription key</name>
+    			</setting>
+    			<setting type="integer" id="license_size"
+    				default-value="1" visibility="hidden">
+    				<name>License size</name>
+    			</setting>
+    			<setting type="string" id="psb_parent_account_name"
+    				value-of-setting="psb_account_name" visibility="hidden">
+    				<name>PSB Account name</name>
+    			</setting>
+    		</settings>
+
+    		<provision>
+    			<configuration-script name="psbmobile_subscription.php">
+    				<script-language>php</script-language>
+    				<status-control />
+    				<structured-output />
+    			</configuration-script>
+    		</provision>
+    	</service>
+    	
+    	<service id="PSB Portal account" class="service">
+    		<presentation>
+    			<summary xml:lang="en-GB">A PSB portal user represents an employee of the Company and gives access, by personal credentials, to the PSB portal.</summary>
+    			<summary >A PSB portal user represents an employee of the Company and gives access, by personal credentials, to the PSB portal.</summary>
+    			<summary xml:lang="nl-NL">Een PSB portal gebruiker representeert een medewerker van het Bedrijf, welke toegang heeft tot het portal middels een wachtwoord.</summary>
+    			<entry-points>
+    				<entry
+    					dst="{psb_portal_url}spe/session/j_security_check" method="POST">
+    					<label>Access the PSB portal</label>
+    					<variable name="psb_portal_url"
+    						value-of-setting="psb_portal_url" />
+    					<variable name="j_username"
+    						value-of-setting="portal_username" />
+    					<variable name="j_password"
+    						value-of-setting="portal_password" />
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+    			<setting type="string" id="portal_username" class="presentation" uniq="application">
+    				<name>PSB Portal username</name>
+    			</setting>
+    			<setting type="password" id="portal_password"
+    				class="password" regex="(?=^.{8,12}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^*()_+}{:;'?/&gt;.&lt;,])(?!.*\s).*$">
+    				<name>PSB Portal password (must include at least one small letter, capital letter, number and special character)</name>
+    			</setting>
+    			<group class="vcard">
+    			<setting type="email" id="portal_email" class="email">
+    			<name>email address</name>
+    			</setting>
+    			</group>
+    			<setting type="enum" id="psb_lang" default-value="en">
+    			<name>Language</name>
+    				<choice id="en">
+    					<name>English</name></choice>
+    				<choice id="de">
+    					<name>German</name>
+    				</choice>
+    				<choice id="es">
+    				<name>Spanish</name>
+    				</choice>
+    				<choice id="fi">
+    				<name>Finnish</name>
+    				</choice>
+    				<choice id="nl">
+    				<name>Dutch</name>
+    				</choice>
+    			</setting>
+    			<setting type="string" id="psb_parent_account_name"
+    				value-of-setting="psb_account_name" visibility="hidden">
+    				<name>PSB Account name</name>
+    			</setting>
+    			</settings>
+    		<provision>
+    			<configuration-script name="user_account.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</configuration-script>
+    		</provision>
+    	</service>
+    	<service id="Server subscription" class="service">
+    		<presentation>
+    			<summary >With a Server License you can activate a PSB Server product. </summary>
+    			<summary xml:lang="en-GB">With a Server License you can activate a PSB Server product. </summary>
+    			<summary xml:lang="nl-NL">Met een Server licentie kunt u een PSB server product activeren. </summary>
+    			<entry-points>
+    				<entry dst="{server_url}">
+    					<label>Windows installer</label>
+    					<variable name="server_url"
+    						value-of-setting="server_download_url" />
+    				</entry>
+    				<entry dst="{server_url_linux}">
+    					<label>Linux installer</label>
+    					<variable name="server_url_linux"
+    						value-of-setting="server_download_url_linux" />
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+    			<setting type="string" id="subscription_key"
+    				installation-only="true" class="presentation" protected="true">
+    				<name>Subscription key</name>
+    			</setting>
+    			<setting type="integer" id="license_size"
+    				default-value="1" visibility="hidden">
+    				<name>License size</name>
+    			</setting>
+    			<setting type="string" id="psb_parent_account_name"
+    				value-of-setting="psb_account_name" visibility="hidden">
+    				<name>PSB Account name</name>
+    			</setting>
+    		</settings>
+    		<provision>
+    			<configuration-script name="server_subscription.php">
+    				<script-language>php</script-language>
+    				<status-control />
+    				<structured-output />
+    			</configuration-script>
+    		</provision>
+    	</service></service>
+</application>

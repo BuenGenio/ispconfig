@@ -1,0 +1,224 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2">
+	<id>http://apsstandard.org/app/ASoft/crm</id>
+	<name>ASoft CRM</name>
+	<version>3.20.1.1</version>
+	<release>5</release>
+	<homepage>http://www.asoft.ru/</homepage>
+	
+	<!-- application and package vendors -->
+	<vendor>
+		<name>ASoft</name>
+		<homepage>http://www.asoft.ru/</homepage>
+		<icon path="images/ASoftLogo.png"/>
+	</vendor>
+	
+	<packager>
+		<name>ASoft Packaging</name>
+		<homepage>http://www.asoft.ru/</homepage>
+		<icon path="images/ASoftLogo.png"/>
+		<uri>uuid:fc89aa70-5433-11df-9879-0800200c9aa1</uri>
+	</packager>
+	
+	<!-- application description -->	
+	<presentation>
+		<summary>ASoft CRM targets three main business directions: marketing, sales and services.</summary>
+		<summary xml:lang="ru-RU">Автоматизированная система управления, затрагивающая три основных направления деятельности компании: маркетинг, продажи и сервис</summary>
+		
+		<description>
+			ASoft Customer Relationship Management system, or ASoft CRM targets three main business directions: marketing, sales and services. ASoft CRM focuses on establishing interactions among main business divisions of your company and between your company and your customers. It helps you arrange your everyday tasks.
+		</description>
+		<description xml:lang="ru-RU">CRM (customer relationship management) программа компании ASoft - это автоматизированная система управления процессами, содержащая модули обеспечивающие: управление продажами, управление маркетингом, управление послепродажным обслуживанием, документооборот и управление складом.
+	Управление продажами с помощью ASoft CRM Professional позволяет сократить цикл продаж, сделать объемы сбыта прогнозируемыми, свести к минимуму организационные проблемы, не потерять потенциальных и, что не менее важно, удержать существующих клиентов.
+	CRM программа от ASoft — это бизнес приложение с интуитивно понятным интерфейсом, легкое в настройке, использовании и поддержке. Поэтому обучение сотрудников работе с ней не займет много времени, а чаще всего не требуется.
+
+ASoft CRM Professional дает возможность вести полную историю взаимодействия со всеми контрагентами:
+    -Реквизиты, контактная информация, координаты контрагентов;
+    -Сделки, заключенные договора, этапы заключения сделок, платежная история;
+    -Взаимодействие в области маркетинга;
+    -Встречи, телефонные переговоры, обмен электронной корреспонденцией и другие события;
+    -Активность компаний-конкурентов;
+    -Документооборот по сделкам с контрагентами;
+    -История отгрузок и доставок.
+
+CRM программа от компании ASoft помогает наладить эффективное взаимодействие с партнерами по бизнесу:
+    -Каждое входящее событие, касающееся контрагента, будет зарегистрировано и обработано, ответ на него будет находиться на контроле у соответствующего руководителя;
+    -Использование встроенных инструментов, которые оптимизируют управление продажами, позволяет планировать и контролировать деятельность персонала и ставит сделки на поток;
+    -Взаимодействие с партнерами по бизнесу и клиентами будут осуществляться согласно заранее определенным бизнес-процессам.
+
+ASoft CRM Professional обеспечивает управление процессами и контроль деятельности сотрудников Вашей компании и реализует:
+    -Оптимизацию распределения персонала, мониторинг загруженности работников;
+    -Настройку и оптимизацию любых бизнес-процессов;
+    -Индивидуальное и групповое планирование деятельности персонала, получение отчетов о выполнении запланированных мероприятий;
+    -Контроль выполнения планов в режиме реального времени, получение достоверной информации о деятельности сотрудников Вашей организации, оценка личного вклада каждого сотрудника;
+    -Эффективное и прозрачное взаимодействие различных подразделений, входящих в состав Вашей компании;
+    -Контроль оплат, отгрузок со склада и доставок.
+
+Наша CRM программа успела превосходно зарекомендовать себя в различных отраслях бизнеса, обеспечивая гибкое управление процессами.</description>
+		<icon path="images/ASoftCRMLogo.png" />
+		<screenshot path="images/2.ASoftCRMOrganizer.png">
+			<description>Organizer</description>
+			<description xml:lang="ru-RU">Ежедневник</description>
+		</screenshot>
+		<screenshot path="images/3.ASoftCRMOrganizationList.png">
+			<description>Company list</description>
+			<description xml:lang="ru-RU">Список организаций</description>
+		</screenshot>
+		<screenshot path="images/4.ASoftCRMOrganizationRecord.png">
+			<description>Company record</description>
+			<description xml:lang="ru-RU">Карточка организации</description>
+		</screenshot>
+		<screenshot path="images/5.ASoftCRMDealTemplate.png">
+			<description>Deal template</description>
+			<description xml:lang="ru-RU">Шаблон сделки с этапами (Управление процессами)</description>
+		</screenshot>
+		<screenshot path="images/6.ASoftCRMMailingList.png">
+			<description>Mailing list</description>
+			<description xml:lang="ru-RU">Рассылки</description>
+		</screenshot>
+		<screenshot path="images/7.ASoftCRMSalesPipeline.png">
+			<description>Sales Pipeline</description>
+			<description xml:lang="ru-RU">Воронка продаж</description>
+		</screenshot>
+		<changelog>
+			<version version="3.20.1.1" release="5">
+				<entry>Undefined variable error fixed in configure.php script</entry>
+			</version>
+      <version version="3.20.1.1" release="3">
+        <entry>Improvements in verification.php script</entry>
+      </version>
+			<version version="3.20.1.1" release="1">
+				<entry>New russian description and some changes in entry points</entry>
+			</version>
+			<version version="3.14.1.1" release="17">
+				<entry>Good loking entry point in POA</entry>
+			</version>
+			<version version="3.14.1.1" release="12">
+				<entry>Initial tenant version</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Back office/Customer Relationship Management</category>
+		</categories>
+		<languages>
+			<language>ru</language>
+			<language>en</language>
+		</languages>
+	</presentation>
+	
+	<global-settings>
+		<setting id="ServerLocation" type="host-name" class="server-name" default-value="localhost" protected="true">
+			<name>Application server location</name>
+			<name xml:lang="ru">Адрес сервера</name>
+		</setting>
+		<setting id="Port" type="integer" class="integer" min="80" max="9999" default-value="80" protected="true">
+			<name>Port</name>
+			<name xml:lang="ru">Порт</name>
+		</setting>
+		<group class="authn">
+			<setting id="SuperAdminLogin" type="string" class="login" default-value="Admin">
+				<name>Tenant administrator's login</name>
+				<name xml:lang="ru">Логин администратора площадок</name>
+			</setting>
+			<setting id="SuperAdminPassword" type="password" class="password" default-value="12345678" min-length="6" max-length="20">
+				<name>Tenant administrator's password</name>
+				<name xml:lang="ru">Пароль администратора площадок</name>
+			</setting>
+		</group>
+	</global-settings>
+	<upgrade match="/application/version &gt;= '1'" />
+	<service id="CRM" class="service">
+		<license must-accept="true">
+			<commercial/>
+			<text>
+				<name>ASoft CRM licence</name>
+				<file>licenses/LICENSE.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>CRM</name>
+			<summary>ASoft CRM targets three main business directions: marketing, sales and services.</summary>
+			<icon path="images/ASoftCRMLogo.png"/>
+			<infolinks>
+				<link class="official" href="http://asoftcrm.com/">
+					Официальный сайт
+				</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="http://{server}:{port}/act/_login"  method="POST">
+					<label>Service entry</label>
+					<label xml:lang='ru'>Страница сервиса</label>
+					<description>Login</description>
+					<description xml:lang='ru'>Вход в систему</description>
+					<variable name="login_url">%2Ferror_login_crm.html</variable>
+					<variable name="entry_point">%2Fsrv%2FCRM%2FMainPage</variable>
+					<variable name="logname" value-of-setting="AdminLogin">nouser</variable>
+					<variable name="password" value-of-setting="AdminPassword">nopassword</variable>
+					<variable name="lang">ru</variable>
+					<variable name="ctlid2752307">Login</variable>
+					
+					<variable name="server" class="server-name" value-of-setting="ServerLocation">localhost</variable>
+					<variable name="port" value-of-setting="Port">80</variable>
+				</entry>
+				<entry dst="https://{server}" method="GET">
+					<label>https entry</label>
+					<label xml:lang='ru'>https вход</label>
+					<variable name="server" class="server-name" value-of-setting="ServerLocation">localhost</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="instance">
+				<setting id="TenantGUID" type="string" generate="uuid" uniq="global" visibility="hidden" >
+					<name>GUID</name>
+				</setting>
+				<setting id="CompanyName" type="string" uniq="global" installation-only="true" class="organization-name">
+					<name>Company</name>
+					<name xml:lang="ru">Компания</name>
+				</setting>
+				<group class="authn">
+					<setting id="AdminLogin" type="string" installation-only="true" class="login" default-value="Admin"  min-length="3" uniq="global">
+						<name>Administrator's login</name>
+						<name xml:lang="ru">Логин администратора</name>
+					</setting>
+					<setting id="AdminPassword" type="password" installation-only="true"  class="password" default-value="12345678" min-length="6" max-length="20">
+						<name>Administrator's password</name>
+						<name xml:lang="ru">Пароль администратора</name>
+					</setting>
+				</group>
+				<setting id="FullName" type="string" installation-only="true" class="display-name">
+					<name>Administrator's name</name>
+					<name xml:lang="ru">Имя администратора</name>
+				</setting>
+				<setting id="MaxUsers" type="integer" min="0" default-value="1" protected="true">
+					<name>Number of users</name>
+					<name xml:lang="ru">Количество пользователей</name>
+				</setting>
+			</group>
+		</settings>
+
+		<resources>
+			<resource id="MaxUsers" class="item" limiting-setting="MaxUsers">
+				<name>Maximum number of accounts</name>
+				<name xml:lang='ru'>Максимальное количество пользователей</name>
+				<description>Maximum number of accounts</description>
+				<description xml:lang='ru'>Максимальное количество пользователей</description>
+			</resource>
+		</resources>
+		
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="5.0" />
+			<php:extension>curl</php:extension>
+		</requirements>
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<status-control/>
+			</configuration-script>
+			<verify-script name="verification.php">
+				<script-language>php</script-language>
+				<structured-output/>
+			</verify-script>
+		</provision>
+	</service>
+</application>

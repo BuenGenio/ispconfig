@@ -1,0 +1,135 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2"
+	packaged="2010-06-16T14:03:48">
+	<id>tinycms.designskate.com</id>
+	<name>TinyCMS</name>
+	<version>1.4</version>
+	<release>1</release>
+
+	<homepage>http://tinycms.designskate.com/</homepage>
+	<vendor>
+		<name>DesignSkate</name>
+		<homepage>http://designskate.com/</homepage>
+		<icon path="images/tinycms_icon.png" />
+	</vendor>
+	<packager>
+		<name>Devtech</name>
+		<homepage>http://devtech.rs/</homepage>
+		<homepage xml:lang="es-ES">http://devtech.rs/es/index.html</homepage>
+		<icon path="images/devtech_icon.png" />
+	</packager>
+
+	<presentation>
+		<summary>TinyCMS APS</summary>
+		<summary xml:lang="es-ES">TinyCMS APS</summary>
+		<description>TinyCMS is an open source, lightweight PHP CMS script.
+			Upload to your website, edit the script URL and you're ready to roll.
+			TinyCMS doesn't use a database which means set-up is effortless.
+			TinyCMS also includes a simple administration panel to manage pages
+			and settings easily. You can create, modify and rename pages from the
+			admin panel, and modify the settings file directly.</description>
+		<description xml:lang="es-ES">TinyCMS es open source, fácil y
+			sencillo PHP CMS script. Súbalo a su website, modifique el URL del
+			scripta, y todo listo. TinyCMS no utiliza base de datos lo que se
+			traduce en mínimo esfuerzo de instalación. TinyCMS también incluye un
+			panel de administración sencillo para manejar las páginas y la
+			configuración de manera fácil. Se pueden crear, modificar y renombrar
+			las páginas desde el panel de administración, y modificar
+			directamente el archivo de configuración.</description>
+
+		<icon path="images/tinycms_icon.png" />
+
+		<screenshot path="images/main_screenshot.jpg">
+			<description>Home page</description>
+			<description xml:lang="es-ES">Página de inicio</description>
+		</screenshot>
+		<changelog>
+			<version release="1" version="1.4">
+				<entry>Initial version to implement packaging of TinyCMS  </entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Web/Content management</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+			<language>es</language>
+		</languages>
+	</presentation>
+
+
+	<service id="TinyCMS">
+		<presentation>
+			<summary>Root application service</summary>
+			<summary xml:lang="es-ES">Servicio de raíz</summary>
+			<infolinks>
+				<link href="http://tinycms.designskate.com/?page=blog" class="support">Blog
+				</link>
+				<link href="file:///pdf/PA-template-Subscriber-guide.pdf"
+					class="user-guide">Subscriber's Guide</link>
+				<link href="file:///pdf/PA-template-Provider-Deployment-guide.pdf"
+					class="deployment-guide">Deployment Guide</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/" class='frontpage'>
+					<label>Home</label>
+					<label xml:lang="es-ES">Inicio</label>
+					<description>TinyCMS created content</description>
+					<description xml:lang="es-ES">Contenido creado por TinyCMS
+					</description>
+					<icon path="images/tinycms_icon.png" />
+				</entry>
+				<entry dst="/login.php" method="POST" class='control-panel'>
+					<label>Admin</label>
+					<description>Log into TinyCMS web page to create content
+					</description>
+					<description xml:lang="es-ES">Entra a la página de TinyCMS para
+						crear contenido</description>
+					<icon path="images/tinycms_icon.png" />
+					<variable name="username" value-of-setting="admin_login" />
+					<variable name="password" value-of-setting="admin_password" />
+				</entry>
+			</entry-points>
+		</presentation>
+
+		<settings>
+			<group class="authn">
+				<setting id="admin_login" class="login" type="string"
+					track-old-value="true">
+					<name>Admin Login</name>
+				</setting>
+				<setting id="admin_password" class="password" type="password"
+					min-length="1">
+					<name>Admin Password</name>
+				</setting>
+			</group>
+			<setting id="title" class="title" type="string"
+				track-old-value="true">
+				<name>Site Title</name>
+				<name xml:lang="es-ES">Título del Sitio</name>
+			</setting>
+		</settings>
+
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="4.0" />
+		</requirements>
+
+		<provision xmlns:php="http://apstandard.com/ns/1/php">
+			<url-mapping>
+				<default-prefix>tinycms</default-prefix>
+				<installed-size>2036929</installed-size>
+				<mapping url="/" path="htdocs">
+					<php:permissions writable="true" />
+					<php:handler>
+						<php:extension>php</php:extension>
+					</php:handler>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+
+</application>

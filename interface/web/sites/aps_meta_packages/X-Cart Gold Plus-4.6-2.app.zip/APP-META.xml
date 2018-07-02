@@ -1,0 +1,148 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-07-30T12:01:28">
+	<id>X-Cart</id>
+	<name>X-Cart Gold Plus</name>
+	<version>4.6</version>
+	<release>2</release>
+	<homepage>http://www.x-cart.com/aff/?aff_id=8VN0BG&amp;url=http://www.x-cart.com/</homepage>
+	<vendor>
+		<name>www.x-cart.com</name>
+		<homepage>http://www.x-cart.com/aff/?aff_id=8VN0BG&amp;url=http://www.x-cart.com/</homepage>
+		<icon path="images/icon.png" />
+	</vendor>
+	<packager>
+		<name>www.x-cart.com</name>
+		<homepage>http://www.x-cart.com/aff/?aff_id=8VN0BG&amp;url=http://www.x-cart.com/</homepage>
+		<icon path="images/icon.png" />
+		<uri>uuid:3d14c47a-c6dd-4648-9223-5e2f766c8e32</uri>
+	</packager>
+	<presentation>
+		<summary>X-Cart Gold Plus - solid eCommerce software</summary>
+		<description>I think X-Cart is the best. For most online stores, it got 200% of what is needed. You just focus on growth and can count on X-Cart keeping up.
+
+To make buyers remember your store there are hundreds of templates by X-Cart and third party designers. If you need a custom feature - X-Cart source code is open, so you can change anything.
+
+Very stable, nearly no bugs. PCI DSS compliance and the best security - naturally.
+
+You can test run it as long as you like. When ready to go live - it’s one time license fee. Highly cost efficient.
+
+If you’re a hosting, mail to sales@x-cart.com and we’ll pay you commission on referred sales.</description>
+		<icon path="images/icon.png" />
+		<screenshot path="images/home-page.png">
+			<description>Home page</description>
+		</screenshot>
+		<screenshot path="images/product-details.png">
+			<description>Product details page</description>
+		</screenshot>
+		<screenshot path="images/cart.png">
+			<description>Cart page</description>
+		</screenshot>
+		<screenshot path="images/admin-dashboard.png">
+			<description>Admin area</description>
+		</screenshot>
+		<changelog>
+			<version version="4.6" release="1">
+				<entry>Initial package version</entry>
+			</version>
+			<version release="2" version="4.6">
+				<entry>Issues fixed:
+1) SQL error in reconfigure.sql file. Fixed.
+2) last_login was not updated for admin account after installation is completed. Fixed.</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Web/E-commerce</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings></global-settings>
+	<service id="ShoppingCart" class="ecommerce">
+		<license must-accept="true">
+			<commercial />
+			<text>
+				<name>X-Cart Software license agreement</name>
+				<url>http://www.x-cart.com/aff/?aff_id=8VN0BG&amp;url=http://www.x-cart.com/license-agreement.html</url>
+			</text>
+		</license>
+		<presentation>
+			<name>X-Cart Gold Plus</name>
+			<summary>PHP/MySQL shopping cart software</summary>
+			<icon path="images/icon.png" />
+			<infolinks>
+				<link href="http://www.x-cart.com/aff/?aff_id=8VN0BG&amp;url=http://www.x-cart.com" class="official">Web-site</link>
+				<link href="http://demo.x-cart.com/demo/home.php?aff_id=8VN0BG" class="demo">Demo Store</link>
+				<link href="http://www.x-cart.com/aff/?aff_id=8VN0BG&amp;url=http://www.x-cart.com/technical-support.html" class="support">Technical Support</link>
+				<link href="http://forum.x-cart.com/?aff_id=8VN0BG" class="community">Community Forums</link>
+				<link href="http://help.x-cart.com/?aff_id=8VN0BG" class="howto">Knowledge Base</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/admin" class="control-panel">
+					<label>Administrative back-end</label>
+				</entry>
+				<entry dst="/" class="frontpage">
+					<label>Customer front-end</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="vcard">
+				<name>X-Cart Administrator Account Settings</name>
+					<group class="email">
+						<setting id="admin_email" type="email" installation-only="true" class="value">
+							<name>E-mail</name>
+						</setting>
+					</group>
+			</group>
+			<group class="authn">
+				<setting id="admin_password" type="password" min-length="7" installation-only="true" class="password">
+					<name>Password</name>
+				</setting>
+			</group>
+		</settings>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:db="http://apstandard.com/ns/1/db" xmlns:mysql="http://apstandard.com/ns/1/db/mysql">
+			<php:version min="5.2.0" />
+			<php:extension>mysql</php:extension>
+			<php:safe-mode>false</php:safe-mode>
+			<db:db>
+				<db:id>main</db:id>
+				<db:default-name>xcart</db:default-name>
+				<db:can-use-tables-prefix>
+					false
+				</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>4.1.2</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>xcart</default-prefix>
+				<installed-size>41735956</installed-size>
+				<mapping url="/" path="xcart"
+					xmlns:php="http://apstandard.com/ns/1/php">
+					<php:handler>
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="var">
+						<php:permissions writable="true" />
+					</mapping>
+					<mapping url="images">
+						<php:permissions writable="true" />
+					</mapping>
+					<mapping url="catalog">
+						<php:permissions writable="true" />
+					</mapping>
+					<mapping url="files">
+						<php:permissions writable="true" />
+					</mapping>
+					<mapping url="skin">
+						<php:permissions writable="true" />
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

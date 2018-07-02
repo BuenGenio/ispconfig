@@ -1,0 +1,157 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-01-11T10:51:16">
+    <id>mobincube</id>
+	<name>Mobincube Smartphone App Builder</name>
+	<version>1</version>
+	<release>4</release>
+    
+	<homepage>http://www.mobincube.com/es/</homepage>
+
+	<vendor>
+		<name>Mobimento Mobile SL</name>
+    	<homepage>http://www.mobincube.com/</homepage>
+    	<icon path="images/mobincube.jpg" />
+	</vendor>
+
+	<packager>
+		<name>SofcloudIT</name>
+		<homepage>http://www.sofcloudit.com</homepage>
+		<icon path="images/sofcloudit64.png" />
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+
+	<presentation>
+		<summary>Mobincube is a website that allows anyone with no technical knowledge to create advanced applications for mobiles and smartphones due to its visual interfaces. And also enables anyone to design these applications in a simple way.</summary>
+		<description>Mobincube is the best web based tool that allows any Internet user to create compelling mobile Apps without the need of having any idea about software development. It has a visual interface that makes it really easy to edit the structure, the content and the design of a mobile.
+
+Mobincube offers a huge flexibility and the best functionality to build mobile apps. Once someone has created his own app, the technology of MOBINCUBE automatically generates different versions of the same native mobile app, each one compatible with a different mobile platform: Android, iPhone, iPad, WindowsPhone, etc. It also generates equivalent mobile web sites. 
+
+With MOBINCUBE you can publish your apps on Google Play, Apple's App Store, Microsoft Phone Store, in order to reach millions of users worldwide.
+
+Thanks to MOBINCUBE, creating mobile apps could not be easier.
+		</description>
+
+		<icon path="images/mobincube.jpg"/>
+		
+		<screenshot path="images/screenshot.png">
+			<description>Mobincube</description>
+		</screenshot>
+			
+		<changelog>
+			<version version="1" release="0">
+				<entry>Initial product package</entry>
+			</version>
+			<version release="2" version="1">
+				<entry>How to obtain account with your company and email contact support added</entry>
+			</version>
+			<version release="3" version="1">
+				<entry>Mobincube SSO instalation guide added into Mobincube - PA - Service Providers - Guide</entry>
+			</version>
+			<version release="4" version="1">
+				<entry>Application name changed</entry>
+			</version>
+		</changelog>
+
+		<categories>
+			<category>Web/Site editing</category>
+		</categories>
+
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting type="string" id="clientID" default-value="">
+			<name>Client ID</name>
+		</setting><setting type="string" id="privateKey" default-value="" max-length="3000">
+			<name>Private Key</name>
+		</setting><setting type="string" id="APIURL" default-value="">
+			<name>Url API</name>
+		</setting>
+		<setting type="string" id="SSOURL" default-value="">
+			<name>Url SSO</name>
+		</setting>
+		<setting type="string" id="ServiceURL"
+			default-value="http://v1dev.mobincube.com/projects/parallels/login.php">
+			<name>Service URL</name>
+		</setting>
+	</global-settings>
+
+	<service id="subscription" singular="true">
+		<license must-accept="true">
+			<text>
+				<name>Mobincube</name>
+				<url>http://www.mobincube.com/</url>
+			</text>
+		</license>
+
+		<presentation>
+			<name>Mobincube</name>
+			<summary>Mobincube is a website that allows anyone with no technical knowledge to create advanced applications for mobiles and smartphones due to its visual interfaces. And also enables anyone to design these applications in a simple way.</summary>
+
+			<infolinks>
+				<link class="support" href="http://www.mobincube.com/">Mobincube home page</link>
+				<link href="file:///docs/Mobincube - PA - Service Providers - Guide 22.01.2013.docx" class="deployment-guide">Mobincube Service Provider Guide</link>
+				<link href="file:///docs/Mobincube - PA - Subscribers - Guide 22.01.2013.docx" class="user-guide">Mobincube Subscribers Guide</link>
+			</infolinks>
+
+			<entry-points>
+				<entry class="frontpage" dst="{SSOURL}/sso.php" method="POST">
+					<label>Mobincube App Builder SSO</label>
+					<variable name="subscriptionID" value-of-setting="subscriptionID">	</variable>
+					<variable name="password" 		value-of-setting="password">		</variable>
+					<variable name="SSOURL" 		value-of-setting="SSOURL">			</variable>
+					<variable name="apiUrl" value-of-setting="APIURL"></variable>
+					<variable name="privateKey" value-of-setting="privateKey"></variable>
+					<variable name="serviceURL" value-of-setting="ServiceURL"></variable>
+				</entry>
+			</entry-points>
+		</presentation>
+
+		<settings>
+			<setting type="string" id="planID" visibility="hidden" default-value="" track-old-value="true"></setting>
+			<group class="authn">
+				<name>ACCOUNT PREFERENCES</name>
+				<setting id="username" class="login" type="string" visibility="hidden">		<name>Account's Login</name>	</setting>
+				<setting id="password" type="password" visibility="hidden" default-value="" class="password" installation-only="true">			<name>Account's Password</name>			</setting>
+			</group>
+		
+		    <group class="vcard">
+		        <name>Customer Settings</name>
+		        <setting type="string" id="subscriptionID"		default-value="-" max-length="50" visibility="hidden"><name>subscription ID</name></setting>
+				<setting type="string" id="country" 			class="country-name" 			default-value="" visibility="hidden"><name>Country</name></setting>
+				<setting type="string" id="language" 			class="locale" 			default-value="" visibility="hidden"><name>Language</name></setting>
+				<group class="email">
+						<setting id="email" class="value" type="email" default-value="user@provider.com" visibility="hidden"><name>mail</name></setting>
+				</group>
+		    </group>
+    	</settings>
+
+   
+		
+		<resources>
+			<resource id="PlanID" class="item" limiting-setting="planID"><name>PlanID</name></resource>
+		</resources>
+
+		<!-- 
+		<service id="remoteContentManager" singular="true">
+			<presentation>
+				<name>Remote Content Manager</name>
+				<summary>With the Mobincube content management system, you will be able to update your apps after publishing on markets. This way, users will not have to download it again.</summary>
+			</presentation>
+		</service>
+		 -->
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:extension>curl</php:extension>
+			<php:function>openssl</php:function>
+			<php:version min="5.0"/>
+		</requirements>
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<structured-output />
+
+			</configuration-script>
+		</provision>
+
+	</service>
+</application>

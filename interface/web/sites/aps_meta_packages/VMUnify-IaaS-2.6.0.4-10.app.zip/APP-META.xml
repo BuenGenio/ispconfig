@@ -1,0 +1,337 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-03-04T12:34:27">
+	<id>VMUnify-IaaS</id>
+	<name>VMUnify-IaaS</name>
+	<version>2.6.0.4</version>
+	<release>10</release>
+	<homepage>http://vmunify.mindtree.com/</homepage>
+	<vendor>
+		<name>Mindtree</name>
+		<homepage>http://vmunify.mindtree.com/</homepage>
+		<icon path="images/vmunifylogo.png" />
+	</vendor>
+	<packager>
+		<name>Mindtree</name>
+		<homepage>http://vmunify.mindtree.com/</homepage>
+		<icon path="images/vmunifylogo.png" />
+		<uri>uuid:04c34310-b650-11e1-afa6-0800200c9a66</uri>
+	</packager>
+	<presentation>
+		<summary>VMUnify enables organizations to deliver Infrastructure as a Service (IaaS) with Secure Virtual Data Centers and Unified Cloud Environments</summary>
+		<description>VMUnify enables organizations to deliver Infrastructure as a Service (IaaS) with Secure Virtual Data Centers and Unified Cloud Environments. The Cloud Infrastructure Management solution provides fully automated Virtual Machine Life Cycle Management in a cloud infrastructure that ensures the security of virtual machines (VMs) both inside and outside the tenant boundaries using unique tenant identities. VMUnify’s Identity based approach is built on a patent pending framework that provides Secure Multi-Tenancy in unified way with VMware, Hyper-V, Citrix-Xen, Amazon EC2, and Azure.</description>
+		<icon path="images/vmunifylogo.png" />
+		<screenshot path="images/screenshot.png">
+			<description>This is the vmUnify Demo screenshot</description>
+		</screenshot>
+		<changelog>
+			<version release="1" version="2.6.0.4">
+				<entry>changes in the service settings and resources changes in action links</entry>
+			</version>
+			<version release="2" version="2.6.0.4">
+				<entry>change in configure script</entry>
+			</version>
+			<version release="3" version="2.6.0.4">
+				<entry>change in settings definition</entry>
+			</version>
+			<version release="4" version="2.6.0.4">
+				<entry>added the code for action links</entry>
+			</version>
+			<version release="5" version="2.6.0.4">
+				<entry>change in configuration script</entry>
+			</version>
+			<version release="6" version="2.6.0.4">
+				<entry>change in configuration script for post methods</entry>
+			</version>
+			<version release="7" version="2.6.0.4">
+				<entry>added the functionality of console</entry>
+			</version>
+			<version release="8" version="2.6.0.4">
+				<entry>change in implementation of console functionality</entry>
+			</version>
+			<version release="9" version="2.6.0.4">
+				<entry>change in console url.</entry>
+			</version>
+			<version release="10" version="2.6.0.4">
+				<entry>added hidden settings</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Infrastructure/Management</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting type="string" id="portal_url" class="web">
+			<name>VMUnifyDemo Manager URL</name>
+			<description>PA instance-specific URL for VMUnify Application
+			</description>
+		</setting>
+	</global-settings>
+	<service id="vmunifydemo" class="service" singular="true">
+		<license must-accept="true">
+			<commercial />
+			<text>
+				<name>License</name>
+				<file>VMUnifyEULA.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>VMUnifyDemo Manager Service</name>
+			<summary>A cloud-based application </summary>
+			<infolinks>
+				<link href="http://vmunify.mindtree.com/" class="support">VMUnifyDemo
+					HomePage</link>
+				<link href="file:///doc/Deployment.pdf" class="deployment-guide">Deployment Guide
+				</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="http://vmunify.mindtree.com/" class="frontpage">
+					<label>VMUnifyDemo Manager Site</label>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<setting type="string" id="subscription_id" class="subscription_id"
+				visibility="hidden" protected="true">
+				<name>Subscription ID</name>
+			</setting>
+			<setting type="enum" id="goldenImage" default-value="Windows2k3STD X32-2CPU-MEM-4GB-HDD-100GB" visibility="hidden">
+				<name>Golden Image Template</name>
+				<description>Golden Image for VM</description>
+				<choice id="Windows2k8STD X64-2CPU-MEM-4GB-HDD-100GB">
+					<name>Windows2k8STD X64-2CPU-MEM-4GB-HDD-100GB</name>
+				</choice>
+				<choice id="Windows2k3STD X32-2CPU-MEM-4GB-HDD-100GB">
+					<name>Windows2k3STD X32-2CPU-MEM-4GB-HDD-100GB</name>
+				</choice>
+				<choice id="Windows2k8ENT X64-2CPU-MEM-4GB-HDD-100GB">
+					<name>Windows2k8ENT X64-2CPU-MEM-4GB-HDD-100GB</name>
+				</choice>
+				<choice id="Windows2k3ENT X32-2CPU-MEM-4GB-HDD-100GB">
+					<name>Windows2k3ENT X32-2CPU-MEM-4GB-HDD-100GB</name>
+				</choice>
+				<choice id="Linux-Suse-1CPU-MEM-16GB-HDD-50GB">
+					<name>Linux-Suse-1CPU-MEM-16GB-HDD-50GB</name>
+				</choice>
+			</setting>
+			<setting type="enum" id="resourceType" default-value="shared" visibility="hidden">
+				<name>Resource Type</name>
+				<description>Resource Type for VM</description>
+				<choice id="shared">
+					<name>Shared</name>
+				</choice>
+				<choice id="dedicated">
+					<name>Dedicated</name>
+				</choice>
+			</setting>
+			<setting type="integer" id="cpu" default-value="1" min="1" visibility="hidden">
+				<name>CPU</name>
+				<description>CPU Allocated to VM</description>
+			</setting>
+			<setting type="integer" id="ram" default-value="1" min="1" visibility="hidden">
+				<name>RAM</name>
+				<description>RAM allocated for VM</description>
+			</setting>
+			<setting type="integer" id="disk" default-value="0" visibility="hidden">
+				<name>HardDisk</name>
+				<description>HardDisk for VM</description>
+			</setting>
+			<setting type="enum" id="storagetier" default-value="10IOsec" visibility="hidden">
+				<name>Storage Tier</name>
+				<description>Storage Tier for VM</description>
+				<choice id="10IOsec">
+					<name>10IOsec</name>
+				</choice>
+				<choice id="30IOsec">
+					<name>30IOsec</name>
+				</choice>
+				<choice id="100IOsec">
+					<name>100IOsec</name>
+				</choice>
+			</setting>
+			<group class="vcard">
+				<group class="email">
+					<setting id="user_email" class="value" type="email" visibility="hidden" protected="true">
+						<name>Primary email address</name>
+					</setting>
+				</group>
+				<group class="fn n">
+					<setting id="user_display_name" class="display-name" type="string"
+						protected="true" visibility="hidden">
+						<name>Display name</name>
+						<description>Must be unique and consist of at least two words
+						</description>
+						<error-message>Display name should consist of at least two words -
+							first and last name </error-message>
+					</setting>
+					<setting id="user_given_name" class="given-name" type="string" visibility="hidden" protected="true">
+						<name>Given name</name>
+					</setting>
+					<setting id="user_surname" class="family-name" type="string" visibility="hidden" protected="true">
+						<name>Surname</name>
+					</setting>
+					<setting id="user_company" class="organization-name" type="string" visibility="hidden" protected="true">
+						<name>Company</name>
+					</setting>
+				</group>
+			</group>
+		</settings>
+		<resources>
+			<resource class="gb" id="ram" limiting-setting="ram">
+				<name>VmUnify RAM</name>
+			</resource>
+			<resource class="item" id="cpu" limiting-setting="cpu">
+				<name>VmUnify CPU</name>
+			</resource>
+			<resource class="gb" id="disk" limiting-setting="disk">
+				<name>VmUnify HardDisk</name>
+			</resource>
+		</resources>
+		<provision>
+			<configuration-script name="configure-parent.php">
+				<script-language>php</script-language>
+				<status-control />
+				<structured-output />
+			</configuration-script>
+		</provision>
+		<service id="virtualmachine" singular="true">
+			<presentation>
+				<name>Virtual Machine</name>
+				<summary>This service displays the virtual machine and helps to perform power/off operations</summary>
+				<infolinks>
+					<link href="http://vmunify.mindtree.com/" class="support">Info</link>
+				</infolinks>
+				<entry-points>
+					<entry class="action" dst=""> <!-- Action class signifies that this entry point is an action link. -->
+					<label>Start</label> <!-- Action link text displayed in the customer UI. -->
+					<description>Start VM</description>
+					<icon path="images/start.gif" /> <!-- Icon displayed to the left of the link text. -->
+					<variable name="servicestatus" class="action">Start</variable>
+					<variable name="var1" class="status">Starting</variable>
+					<variable name="var2" class="status_condition">PowerOff</variable>
+				</entry>
+				<entry class="action" dst=""> <!-- Action class signifies that this entry point is an action link. -->
+					<label>Stop</label> <!-- Action link text displayed in the customer UI. -->
+					<description>Stop VM</description>
+					<icon path="images/stop.gif" /> <!-- Icon displayed to the left of the link text. -->
+					<variable name="servicestatus" class="action">Stop</variable>
+					<variable name="var1" class="status">PoweringOff</variable>
+					<variable name="var2" class="status_condition">Running</variable>
+				</entry>
+				<entry class="control-panel" dst="http://{portal_url}:8080/SecureVMProject/rest/solnServerServices/GET_CONFIG_FILE/{subscription_id}" method="POST">
+					<label>Console</label>
+					<icon path="images/terminal.png" />
+					<variable name="portal_url" value-of-setting="portal_url"></variable>
+					<variable name="subscription_id" value-of-setting="subscription_id"></variable>
+				</entry>
+				</entry-points>
+			</presentation>
+			<settings>
+			<setting type="string" id="subscription_id" class="subscription_id"
+				visibility="hidden" protected="true">
+				<name>Subscription ID</name>
+			</setting>
+			<setting type="enum" id="goldenImage" protected="true" value-of-setting="goldenImage">
+				<name>Golden Image Template</name>
+				<choice id="Windows2k8STD X64-2CPU-MEM-4GB-HDD-100GB">
+					<name>Windows2k8STD X64-2CPU-MEM-4GB-HDD-100GB</name>
+				</choice>
+				<choice id="Windows2k3STD X32-2CPU-MEM-4GB-HDD-100GB">
+					<name>Windows2k3STD X32-2CPU-MEM-4GB-HDD-100GB</name>
+				</choice>
+				<choice id="Windows2k8ENT X64-2CPU-MEM-4GB-HDD-100GB">
+					<name>Windows2k8ENT X64-2CPU-MEM-4GB-HDD-100GB</name>
+				</choice>
+				<choice id="Windows2k3ENT X32-2CPU-MEM-4GB-HDD-100GB">
+					<name>Windows2k3ENT X32-2CPU-MEM-4GB-HDD-100GB</name>
+				</choice>
+				<choice id="Linux-Suse-1CPU-MEM-16GB-HDD-50GB">
+					<name>Linux-Suse-1CPU-MEM-16GB-HDD-50GB</name>
+				</choice>
+			</setting>
+			<setting type="enum" id="resourceType" protected="true" value-of-setting="resourceType">
+				<name>Resource Type</name>
+				<choice id="shared">
+					<name>Shared</name>
+				</choice>
+				<choice id="dedicated">
+					<name>Dedicated</name>
+				</choice>
+			</setting>
+			<setting type="integer" id="cpu" protected="true" value-of-setting="cpu">
+				<name>CPU</name>
+			</setting>
+			<setting type="integer" id="ram" protected="true" value-of-setting="ram">
+				<name>RAM</name>
+			</setting>
+			<setting type="integer" id="disk" value-of-setting="disk" protected="true">
+				<name>HardDisk</name>
+			</setting>
+			<setting type="enum" id="storagetier" protected="true" value-of-setting="storagetier">
+				<name>Storage Tier</name>
+				<choice id="10IOsec">
+					<name>10IOsec</name>
+				</choice>
+				<choice id="30IOsec">
+					<name>30IOsec</name>
+				</choice>
+				<choice id="100IOsec">
+					<name>100IOsec</name>
+				</choice>
+			</setting>
+			<setting type="enum" id="servicestatus" class="status" protected="true" default-value="Creating">
+					<name>Virtual Machine Status</name>
+					<choice id="Running">
+						<name>Running{color:green}</name>
+					</choice>
+					<choice id="PowerOff">
+						<name>PowerOff{color:red}</name>
+					</choice>
+					<choice id="Creating">
+						<name>Creating{color:yellow}</name>
+					</choice>
+					<choice id="Starting">
+						<name>Starting{color:yellow}</name>
+					</choice>
+					<choice id="PoweringOff">
+						<name>PoweringOff{color:yellow}</name>
+					</choice>
+			</setting><group class="vcard">
+				<group class="email">
+					<setting id="user_email" class="value" type="email" visibility="hidden" protected="true">
+						<name>Primary email address</name>
+					</setting>
+				</group>
+				<group class="fn n">
+					<setting id="user_display_name" class="display-name" type="string"
+						protected="true" visibility="hidden">
+						<name>Display name</name>
+						<description>Must be unique and consist of at least two words
+						</description>
+						<error-message>Display name should consist of at least two words -
+							first and last name </error-message>
+					</setting>
+					<setting id="user_given_name" class="given-name" type="string" visibility="hidden" protected="true">
+						<name>Given name</name>
+					</setting>
+					<setting id="user_surname" class="family-name" type="string" visibility="hidden" protected="true">
+						<name>Surname</name>
+					</setting>
+					<setting id="user_company" class="organization-name" type="string" visibility="hidden" protected="true">
+						<name>Company</name>
+					</setting>
+				</group>
+			</group>
+				</settings>
+			<provision>
+				<configuration-script name="configure.php">
+					<script-language>php</script-language>
+					<status-control />
+					<structured-output />
+				</configuration-script>
+			</provision>
+		</service>
+	</service>
+</application>

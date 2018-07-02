@@ -1,0 +1,407 @@
+<application packaged="2014-10-09T14:17:17" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>SugarCRM</id>
+	<name>SugarCRM</name>
+	<version>6.5.18</version>
+	<release>36</release>
+	<homepage>http://www.sugarcrm.com/crm/</homepage>
+	<vendor>
+		<name>www.sugarcrm.com</name>
+		<homepage>http://www.sugarcrm.com/crm/about/about-sugarcrm.html</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>SofCloudIT</name>
+		<homepage>http://www.sofcloudit.com</homepage>
+		<icon path="images/sofcloudit64.png"/>
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+	<presentation>
+		<summary>Sugar CRM Community Edition</summary>
+		<description>
+			Sugar CRM Community Edition enables organizations to efficiently organize, populate, and maintain information on all aspects of their customer relationships. It provides integrated management of corporate information on customer accounts and contacts, sales leads and opportunities, plus activities such as calls, meetings, and assigned tasks. The system seamlessly blends all of the functionality required to manage information on many aspects of your business into an intuitive and user-friendly graphical interface.
+        </description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/screen_home.png">
+<description>Home Screen</description>
+</screenshot>
+		<screenshot path="images/screen_admin.png">
+<description>Admin Screen</description>
+</screenshot>
+		<screenshot path="images/screen_dashboard.png">
+<description>Dashboard View</description>
+</screenshot>
+		<screenshot path="images/screen_accounts.png">
+<description>Account Details</description>
+</screenshot>
+		<screenshot path="images/screen_campaigns.png">
+<description>Marketing Campaigns</description>
+</screenshot>
+		<screenshot path="images/screen_bug_tracker.png">
+<description>Bug Tracker</description>
+</screenshot>
+		<screenshot path="images/screen_calendar.png">
+<description>Calendar</description>
+</screenshot>
+		<screenshot path="images/screen_documents.png">
+<description>Documents</description>
+</screenshot>
+<changelog>
+	<version release="36" version="6.5.18">
+				<entry>Release notes: http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.18</entry>
+		</version>
+	<version release="33" version="6.5.17">
+				<entry>Configuration Bug fixed.</entry>
+		</version>
+		<version release="1" version="6.5.17">
+				<entry>Release notes: http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.17</entry>
+		</version>
+		
+		<version release="4" version="6.5.16">
+				<entry>Send Anonymous Usage Statistics bug fixed</entry>
+		</version>
+<version release="25" version="6.5.16">
+				<entry>6.5.16 Update. Release notes: 
+http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.16</entry>
+		</version>
+<version release="20" version="6.5.15">
+			<entry>Upgrade bug fixed</entry>
+		</version>
+		<version release="2" version="6.5.15">
+			<entry>6.5.15 Update. Release notes: 
+http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.15</entry>
+		</version>
+		<version release="3" version="6.5.13">
+			<entry>User adding error solved</entry>
+		</version>
+		<version release="2" version="6.5.13">
+			<entry>6.5.13 Update. Release notes: 
+http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.13</entry>
+		</version>
+		<version release="2" version="6.5.12">
+				<entry>6.5.12 Update. Release notes:
+http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.12</entry>
+			</version>
+<version release="3" version="6.5.11">
+				<entry>6.5.11 Update. Release notes: 
+http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.11</entry>
+			</version>
+			<version release="4" version="6.5.10">
+				<entry>6.5.10 Update. Release notes: 
+http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.10</entry>
+			</version>
+<version release="2" version="6.5.9">
+				<entry>6.5.9 Update. Release notes: http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.9</entry>
+			</version>
+<version release="2" version="6.5.8">
+				<entry>6.5.8 Update. Release notes: http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.8</entry>
+			</version>
+			<version release="2" version="6.5.6">
+				<entry>6.5.6 Update. Release notes: http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.6</entry>
+			</version>
+			<version release="4" version="6.5.5">
+				<entry>Writable folders added into htdocs</entry>
+			</version>
+			<version release="2" version="6.5.5">
+				<entry>6.5.5 Update. Release notes: http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.5</entry>
+			</version>
+			<version release="4" version="6.5.4">
+				<entry>Application version to check changed</entry>
+			</version>
+			<version release="2" version="6.5.4">
+				<entry>6.5.4 Update. Release notes: http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.4</entry>
+			</version>
+			<version release="3" version="6.5.2">
+				<entry>6.5.2 Update. Release notes: http://support.sugarcrm.com/02_Documentation/01_Sugar_Editions/05_Sugar_Community_Edition/Sugar_Community_Edition_6.5/Sugar_Community_Edition_Release_Notes_6.5.2</entry>
+			</version>
+			<version release="6" version="6.4.2">
+				<entry>6.4.2 Update. Release notes: http://www.sugarcrm.com/crm/support/documentation/SugarCommunityEdition/6.0/-docs-Release_Notes-Sugar_CommunityEdition_ReleaseNotes_6.0-RN_Title_HTML.html</entry>
+			</version>
+			<version release="10" version="5.5.4">
+				<entry>Fixing file permissions in CGI mode</entry>
+			</version>
+			<version release="9" version="5.5.4">
+				<entry>Own domain name added to allowed referrers list</entry>
+			</version>
+			<version release="5" version="5.5.4">
+				<entry>Release notes: http://developers.sugarcrm.com/docs/OS/5.5/n/-docs-Release_Notes-Sugar_CommunityEdition_ReleaseNotes_5.5.3-RN_Title_HTML.html</entry>
+			</version>
+			<version release="10" version="5.5.1">
+				<entry>Release notes: http://developers.sugarcrm.com/docs/OS/5.5/n/-docs-Release_Notes-Sugar_CommunityEdition_ReleaseNotes_5.5.1-RN_Title_HTML.html</entry>
+			</version>
+			<version release="22" version="5.2.0j">
+				<entry>Release notes: http://developers.sugarcrm.com/docs/OS/5.2/-docs-Release_Notes-Sugar_CommunityEdition_ReleaseNotes_5.2.0j-Sugar_Release_Notes_5.2.0j.2.1.html#1209468</entry>
+			</version>
+			<version release="10" version="5.2.0a">
+				<entry>Tests added</entry>
+			</version>
+			<version release="7" version="5.2.0a">
+				<entry>User removal improvement</entry>
+			</version>
+			<version release="6" version="5.2.0a">
+				<entry>Metadata corrected</entry>
+			</version>
+			<version release="4" version="5.2.0a">
+				<entry>Memory limit requirement is added</entry>
+			</version>
+			<version release="2" version="5.2.0a">
+				<entry>Packaged as APS 1.1</entry>
+			</version>
+
+</changelog>
+
+		<categories>
+			<category>Back office/Customer Relationship Management</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+
+	<upgrade match="/application/version &gt;= '5.5.1'"/>
+
+	<service id="instance">
+		<license must-accept="true">
+			<free/>
+			<text>
+				<name>GPLv3</name>
+				<file>htdocs/LICENSE.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>SugarCRM Instance</name>
+			<summary>Basic services</summary>
+			<infolinks>
+				<link class="support" href="https://community.sugarcrm.com/sugarcrm">SugarCRM CE support</link>
+			</infolinks>
+			<entry-points>
+				<entry class="control-panel" dst="/index.php" method="POST">
+					<label>Application entry point</label>
+					<variable name="module">Users</variable>
+					<variable name="action">Authenticate</variable>
+					<variable name="return_module">Users</variable>
+					<variable name="return_action">Login</variable>
+					<variable name="cant_login"/>
+					<variable name="login_module"/>
+					<variable name="login_action"/>
+					<variable name="login_record"/>
+					<variable class="login" name="user_name" value-of-setting="admin_name"/>
+					<variable class="password" name="user_password" value-of-setting="admin_password"/>
+					<variable name="login_theme">Sugar</variable>
+					<variable name="login_language">en_us</variable>
+					<variable name="Login">++Login++</variable>
+				</entry>
+			</entry-points>
+		</presentation>
+
+		<settings>
+			<group class="authn">
+				<name>Administrator's Account</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_@\-]*" type="string">
+					<name>Administrator's Login</name>
+					<error-message>Please make sure the text you entered starts with a letter and continues with either numbers, letters, underscores or hyphens.</error-message>
+				</setting>
+				<setting class="password" id="admin_password" type="password">
+					<name>Administrator's Password</name>
+				</setting>
+				<setting class="email" id="admin_email" installation-only="true" type="string">
+					<name>Administrator's email</name>
+				</setting>
+				<setting default-value="" id="admin_fname" type="string">
+					<name>Administrator's First Name</name>
+				</setting>
+				<setting default-value="" id="admin_lname" type="string">
+					<name>Administrator's Last Name</name>
+				</setting>
+			</group>
+			<group class="web">
+				<setting class="title" default-value="SugarCRM" id="title" type="string">
+					<name>System Name</name>
+					<description>This name will be displayed in the browser title bar when users visit the Sugar application.</description>
+				</setting>
+				<setting default-value="true" id="send_usage_statistics" installation-only="true" type="enum">
+					<name>Send Anonymous Usage Statistics</name>
+					<description>If selected 'Yes', Sugar will send anonymous statistics about your installation to SugarCRM Inc. every time your system checks for new versions.</description>
+					<choice id="true">
+						<name>Yes</name>
+					</choice>
+					<choice id="false">
+						<name>No</name>
+					</choice>
+				</setting>
+				<setting default-value="manual" id="check_for_updates" type="enum">
+					<name>Check For Updates</name>
+					<description>How the system will check for updated versions of the application.</description>
+					<choice id="automatic">
+						<name>Automatic</name>
+					</choice>
+					<choice id="manual">
+						<name>Manual</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+
+		<requirements>
+			<php:version min="5.2.1" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysql</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mbstring</php:extension>
+		    <php:memory-limit xmlns:php="http://apstandard.com/ns/1/php">41943040</php:memory-limit>
+
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>sugarce</db:default-name>
+				<db:can-use-tables-prefix>false</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.0</db:server-min-version>
+			</db:db>
+		</requirements>
+
+		<provision>
+			<url-mapping>
+				<default-prefix>sugarcrm</default-prefix>
+				<installed-size>128711009</installed-size>
+
+				<mapping path="htdocs" url="/">
+					<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+
+		<mapping url="cache">
+			<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+		</mapping>
+		<mapping url="custom">
+			<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+		</mapping>
+		<mapping url="data">
+			<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+		</mapping>
+		<mapping url="modules">
+		<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+		</mapping>
+		<mapping url="tmp">
+		<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<mapping url="sessions">
+				<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+			</mapping>
+		</mapping>
+		<mapping url="upload">
+			<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+		</mapping>
+				</mapping>
+			</url-mapping>
+
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+		</provision>
+
+		<service class="account" id="account">
+			<presentation>
+				<name>SugarCRM Account</name>
+				<summary>SugarCRM Account Service</summary>
+				<entry-points>
+					<entry class="control-panel" dst="/index.php" method="POST">
+						<label>Account entry point</label>
+						<variable name="module">Users</variable>
+						<variable name="action">Authenticate</variable>
+						<variable name="return_module">Users</variable>
+						<variable name="return_action">Login</variable>
+						<variable name="cant_login"/>
+						<variable name="login_module"/>
+						<variable name="login_action"/>
+						<variable name="login_record"/>
+						<variable class="login" name="user_name" value-of-setting="user_login"/>
+						<variable class="password" name="user_password" value-of-setting="user_password"/>
+						<variable name="login_theme">Sugar</variable>
+						<variable name="login_language">en_us</variable>
+						<variable name="Login">++Login++</variable>
+					</entry>
+				</entry-points>
+			</presentation>
+
+			<settings>
+				<group class="authn">
+					<name>Account Preferences</name>
+					<setting class="login" id="user_login" max-length="60" min-length="3" regex="^[a-zA-Z][0-9a-zA-Z_@\-\.]*" track-old-value="true" type="string">
+						<name>Account's Login</name>
+					</setting>
+					<setting class="password" id="user_password" min-length="4" type="password">
+						<name>Account's Password</name>
+					</setting>
+				</group>
+				<group class="vcard">
+					<group class="fn n">
+						<setting class="given-name" id="first_name" max-length="30" type="string">
+							<name>First Name</name>
+						</setting>
+						<setting class="family-name" id="last_name" max-length="30" type="string">
+							<name>Last Name</name>
+						</setting>
+					</group>
+					<group class="email">
+						<setting class="email" id="user_email" type="string">
+							<name>Email</name>
+						</setting>
+					</group>
+					<setting class="title" id="title" type="string">
+						<name>Title</name>
+					</setting>
+					<setting class="organization-unit" id="department" type="string">
+						<name>Department</name>
+					</setting>
+					<group class="tel">
+						<name>work</name>
+						<setting class="value" id="phone_work" type="string">
+							<name>Work Phone Number</name>
+						</setting>
+					</group>
+					<group class="tel">
+						<name>cell</name>
+						<setting class="value" id="phone_mobile" type="string">
+							<name>Mobile Phone Number</name>
+						</setting>
+					</group>
+					<group class="tel">
+						<name>fax</name>
+						<setting class="value" id="phone_fax" type="string">
+							<name>Fax Number</name>
+						</setting>
+					</group>
+					<group class="tel">
+						<name>home</name>
+						<setting class="value" id="phone_home" type="string">
+							<name>Home Phone Number</name>
+						</setting>
+					</group>
+					<setting class="street-address" id="address_street" type="string">
+						<name>Street</name>
+					</setting>
+					<setting class="locality" id="address_city" type="string">
+						<name>City</name>
+					</setting>
+					<setting class="region" id="address_state" type="string">
+						<name>Region</name>
+					</setting>
+					<setting class="country-name" id="address_country" type="string">
+						<name>Country</name>
+					</setting>
+					<setting class="postal-code" id="address_postalcode" type="string">
+						<name>Postal Code</name>
+					</setting>
+					<setting class="note" id="description" type="string">
+						<name>Description</name>
+					</setting>
+				</group>
+			</settings>
+
+			<provision>
+				<configuration-script name="configure">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+			</provision>
+		</service>
+	</service>
+</application>

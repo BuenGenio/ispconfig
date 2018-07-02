@@ -1,0 +1,406 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-04-08T15:17:36">
+    <id>APS_ClicAndTag_Pro</id>
+    <name>APS ClicAndTag Pro</name>
+    <version>5.1.1</version>
+    <release>3</release>
+    <homepage>http://www.clicandtag.fr</homepage>
+    <vendor>
+    	<name>clicandtag</name>
+    	<homepage>http://www.clicandtag.fr</homepage>
+    	<icon path="images/logo_clicandtag.png" />
+    </vendor>
+    <packager>
+    	<name>clicandtag</name>
+    	<homepage>http://www.clicandtag.fr</homepage>
+    	<icon path="images/logo_clicandtag.png" />
+    </packager>
+    <presentation>
+    	<summary>Cloud and Mobile Platform for Business Management</summary>
+    	<summary xml:lang="fr-FR">Plateforme de Gestion Cloud et Mobile pour les Pros</summary>
+    	<description>ClicAndTag, Cloud and Mobile Platform for Business Management
+
+A complete Platform
+•	Mange all your business in one place
+	-	Accounting
+	-	Quotation and Invoices
+	-	Collaborative agenda
+	-	Time Management
+	-	Digital safe
+	-	Expenses
+•	And for any support!
+	-	Computer, tablet, smartphone...
+	-	Free dedicated apps available for smartphones 
+
+A clever Platform
+•	Synthetic dashboards: access to relevant statistics and quickly visualize the health of your business
+•	Mobility: additional applications for your smartphone
+•	Work in a collaborative way with your employees, partners and accountant
+•	Alerts and regulatory schedules 
+
+A unique platform to improve your business reactivity and productivity!
+</description>
+    	<description xml:lang="fr-FR">ClicAndTag, la Plateforme de Gestion Cloud et Mobile pour les Pros
+
+Une Plateforme complète
+•	Enfin la gestion de votre entreprise dans un seul endroit !
+	o	RoboCompta
+	o	Devis et Factures
+	o	Agenda
+	o	Gestion des temps
+	o	Coffre-fort électronique 
+	o	Notes de Frais
+•	Et depuis n’importe quel support !
+	o	Ordinateur, tablette, smartphone...
+	o	Le + : applications dédiées offertes pour les smartphones : « RoboCompta Mobile » et « Notes de Frais Mobile » 
+
+Une Plateforme astucieuse 
+•	Tableaux de bord synthétiques : accédez à des statistiques pertinentes et visualisez rapidement l’état de santé de votre entreprise
+•	Mobilité : disposez d’applications complémentaires pour votre smartphone
+•	Travail en mode collaboratif avec vos collaborateurs, partenaires et votre expert-comptable
+•	Alertes et échéanciers réglementaires 
+
+
+Enfin une plateforme unique de gestion pour gagner en réactivité et productivité !
+</description>
+    	<icon path="images/logo_clicandtag.png" />
+    	<screenshot path="images/packpro.jpg">
+    		<description>Pack Pro</description>
+    		<description xml:lang="fr-FR">Les packs Pro</description>
+    	</screenshot>
+    	<screenshot path="images/devisfactures.jpg">
+    		<description>Invoices</description>
+    		<description xml:lang="fr-FR">Devis et Factures</description>
+    	</screenshot>
+    	<screenshot path="images/notesdefrais.jpg">
+    		<description>Expenses</description>
+    		<description xml:lang="fr-FR">Notes de Frais</description>
+    	</screenshot>
+    	<screenshot path="images/robocompta.jpg">
+    		<description>Accounting Robocompta</description>
+    		<description xml:lang="fr-FR">Robo Compta</description>
+    	</screenshot>
+    	<screenshot path="images/coffrefort.jpg">
+    		<description>Documents</description>
+    		<description xml:lang="fr-FR">Coffre-fort électronique</description>
+    	</screenshot>
+    	<screenshot path="images/agenda.jpg">
+    		<description>Calendar</description>
+    		<description xml:lang="fr-FR">Agenda</description>
+    	</screenshot>
+    	<screenshot path="images/gestiondestemps.jpg">
+    		<description>Time management</description>
+    		<description xml:lang="fr-FR">Gestion de temps</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="5.1.1">
+    			<entry>Initial application version</entry>
+    			<entry xml:lang="fr-FR">Version initiale</entry>
+    		</version>
+    		<version release="2" version="5.1.1">
+    			<entry>Update to service metadata structure. User language and company name added.</entry>
+    			<entry xml:lang="fr-FR">Les échanges dans la configuration de fichier méta-structure. Le nom de la société et la langue préférée, ont été ajoutés.. </entry>
+    		</version>
+    		<version release="3" version="5.1.1">
+    			<entry>Update to service metadata structure. Resources reporting functions was added.</entry>
+    			<entry xml:lang="fr-FR">Les échanges dans la configuration de fichier méta-structure. Les fonctions de mises a jour de ressources, ont été ajoutés.</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Collaboration/Project management</category>
+    		<category>Collaboration/Calendaring</category><category>Back office/Customer Relationship Management</category>
+    		<category>Back office/Sales Force Automation</category><category>Back office/Business Process Management</category>
+    		<category>Back office/Accounting and Financial</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    		<language>fr</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<setting type="string" id="api_host" default-value="portail.e-tag.fr" protected="true">
+    		<name>API Host</name>
+    		<name xml:lang="fr-FR">Hôte API</name>
+    		<description>This is DNS name or IP address of ClicAndTag installation, used for provisioning access.
+				</description>
+    		<description xml:lang="fr-FR">C’est un nom DNS ou l’adresse IP d’installation ClicAndTag , utilisé pour l’accès de provisionnement. 		</description>
+    	</setting>
+    	<setting id="site_url" type="string" default-value="https://portail.e-tag.fr" regex="^https?://.*$" protected="true">
+				<name>ClicAndTag public site URL</name>
+				<name xml:lang="fr-FR">URL du site publique ClicAndTag</name>
+				<description>
+This is URL address of ClicAndTag public site address.
+				</description>
+				<description xml:lang="fr-FR">C'est un adresse URL du site publique ClicAndTag</description>
+				<error-message>
+Please make sure the text you entered starts with either http:// or https://.
+				</error-message>
+				<error-message xml:lang="fr-FR">Veillez vérifier si le texte entré se commence par http:// ou https://. 	
+				</error-message>
+    	</setting>
+    	 <setting type="enum" id="debug" default-value="off" visibility="hidden" protected="true">
+    			<name>Debug mode</name>
+    			<name xml:lang="fr-FR">Mode de débogage</name>
+    			<choice id="on">
+    				<name>On</name>
+    			</choice>
+    			<choice id="off">
+    				<name>Off</name>
+    			</choice>
+    		</setting>
+    </global-settings>
+    <service id="context" class="service">
+    	<license must-accept="true">
+    		<commercial />
+    		<text>
+    			<url>http://clicandtag.fr/documents/cgv-clicandtag-etag.pdf</url>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>ClicAndTag Pro company context</name>
+    		<name xml:lang="fr-FR">ClicAndTag Pro contexte de la société </name>
+    		<summary>ClicAndTag Pro context for many company users</summary>
+    		<summary xml:lang="fr-FR">ClicAndTag Pro contexte pour quelques utilisateurs de la société </summary>
+    		<infolinks>
+    			<link href="http://www.clicandtag.fr" class="official">ClicAndTag site</link>
+    			<link href="http://www.clicandtag.fr/fr/aide-logiciels" class="howto">ClicAndTag HowTo page</link>
+    			<link href="http://www.clicandtag.fr/fr/contact" class="support">ClicAndTag support page</link>
+    			<link href="file:///docs/ClicAndTagInstallationManual_V1_1.pdf" class="deployment-guide">Deployment</link>
+    		</infolinks>
+    		<entry-points>
+    			<entry method="POST" dst="{site_url}/DesktopModules/MultiRegister/Login.aspx">
+    				<label>Administrative interface</label>
+    				<label xml:lang="fr-FR">Interface d’administration </label>
+    				<variable name="site_url" class="" value-of-setting="site_url"></variable>
+    				<variable name="log" class="login" value-of-setting="admin_login"></variable>
+    				<variable name="pwd" class="password" value-of-setting="admin_password"></variable>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+    		<group class="authn">
+    			<name>Administrator credentials</name>
+    			<name xml:lang="fr-FR">Informations d’identification</name>
+    			<setting type="string" id="admin_login" class="login" installation-only="true" uniq="global">
+    				<name>Administrator login</name>
+    				<name xml:lang="fr-FR">Identifier d’administrateur </name>
+    			</setting>
+    			<setting type="string" id="admin_password" class="password" track-old-value="true">
+    				<name>Administrator password</name>
+    				<name xml:lang="fr-FR">Mot de passe d’administrateur</name>
+    			</setting>
+    		</group><group class="vcard">
+    			<name>Administrator representation info</name>
+    			<name xml:lang="fr-FR">Informations de présentation  d’administrateur</name>
+    			<group class="email">
+    				<name>Email info</name>
+    				<name xml:lang="fr-FR">Informations d'email</name>
+    				<setting type="email" id="admin_email" class="value" installation-only="true">
+    					<name>Administrator email</name>
+    					<name xml:lang="fr-FR">Email d'administrateur</name>
+    				</setting>
+    			</group>
+    			<group class="fn n">
+    				<name>Personal info</name>
+    				<name xml:lang="fr-FR">Informations personelles</name>
+    				<setting id="admin_display_name" class="display-name" type="string">
+						<name>Administrator display name</name>
+						<name xml:lang="fr-FR">Pseudonyme d'administrateur</name>
+    									</setting>
+					<setting id="admin_first_name" class="given-name" type="string">
+						<name>Administrator first name</name>
+						<name xml:lang="fr-FR">Prénom d'administrateur</name>
+					</setting>
+					<setting id="admin_last_name" class="family-name" type="string">
+						<name>Administrator last name</name>
+						<name xml:lang="fr-FR">Nom de la famille d'administrateur</name>
+					</setting>    				
+    			</group>
+</group>
+    		<setting type="string" id="organization_name" max-length="50" default-value="">
+    			<name>Company name</name>
+    			<name xml:lang="fr-FR">Nom de la société</name>
+    		</setting><group class="web">
+    			<name>Preferences</name>
+    			<name xml:lang="fr-FR">Préférences</name>
+    			<setting type="enum" id="admin_language" class="locale" default-value="en-US">
+				<name>Administrator language</name>
+				<name xml:lang="fr-FR">Langue d'administrateur</name>
+				<choice id="en-US">
+					<name>English</name>
+				</choice><choice id="fr-FR">
+					<name>French</name>
+				</choice><choice id="de-DE" >
+					<name>German</name>
+				</choice>
+				<choice id="it-IT" >
+					<name>Italian</name>
+				</choice>
+				<choice id="es-ES">
+					<name>Spanish</name>
+				</choice><choice id="pl-PL">
+                  <name>Polish</name>
+                </choice><choice id="ru-RU" >
+					<name>Russian</name>
+				</choice>
+    			</setting>
+    		</group>
+    		<setting type="integer" id="site_id" default-value="0" protected="true" installation-only="true" optional="true">
+    			<name>Site ID</name>
+    			<name xml:lang="fr-FR">N° du portail</name>
+    		</setting><setting type="string" id="pack_id" default-value="0" visibility="hidden">
+    			<name>Pack</name>
+    			<name xml:lang="fr-FR">Pack</name>
+    			<description>Software pack</description>
+    			<description xml:lang="fr-FR">Pack de logiciel</description>
+    		</setting>
+    		<setting type="string" id="disk_space" default-value="0" visibility="hidden">
+    			<name>Disk Space</name>
+    			<name xml:lang="fr-FR">L'espace disque</name>
+    			<description>Disk space limit</description>
+    			<description xml:lang="fr-FR">L'espace disque dans un serveur</description>
+    		</setting>
+    	</settings>
+    	<resources>
+    		<resource class="item" id="res_pack_id" limiting-setting="pack_id">
+    			<name>Pack</name>
+    			<name xml:lang="fr-FR">Pack</name>
+    			<description>Software pack</description>
+    			<description xml:lang="fr-FR">Pack de logiciel</description>
+    		</resource>
+    		<resource class="item" id="res_disk_space" limiting-setting="disk_space">
+    			<name>Disk Space</name>
+    			<name xml:lang="fr-FR">L'espace disque</name>
+    			<description>Server disk space limit </description>
+    			<description xml:lang="fr-FR">Limite de l'espace disque dans un serveur</description>
+    		</resource>
+    	</resources>
+    	<requirements
+    		xmlns:aspnet="http://apstandard.com/ns/1/aspnet" xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:extension>soap</php:extension>
+    		<php:extension>openssl</php:extension>
+    		<php:version min="5.0"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<status-control />
+    			<structured-output />
+    		</configuration-script>
+    		<resource-script name="report-resources.php">
+    			<script-language>php</script-language>
+    		</resource-script>
+    	</provision>
+    	<service id="account" class="account">
+   	<presentation>
+    		<name>ClicAndTag Pro user account</name>
+    		<name xml:lang="fr-FR">ClicAndTag Pro compte de l'utilisateur</name>
+    		<summary>ClicAndTag Pro account for the company user</summary>
+    		<summary xml:lang="fr-FR">ClicAndTag Pro compte l'utilisateur de la société </summary>
+    		<entry-points>
+    			<entry method="POST" dst="{site_url}/DesktopModules/MultiRegister/Login.aspx">
+    				<label>User Account</label>
+    				<label xml:lang="fr-FR">Compte de l'utilisateur</label>
+    				<variable name="site_url" value-of-setting="site_url"></variable>
+    				<variable name="log" class="login" value-of-setting="user_login"></variable>
+    				<variable name="pwd" class="password" value-of-setting="user_password"></variable>
+    			</entry>
+    		</entry-points>
+    	</presentation>
+    	<settings>
+    		<group class="authn">
+    			<name>User credentials</name>
+    			<name xml:lang="fr-FR">Informations d’identification</name>
+    			<setting type="string" id="user_login" class="login" installation-only="true" uniq="global">
+    				<name>User login</name>
+    				<name xml:lang="fr-FR">Identifier de l'utilisateur</name>
+    			</setting>
+    			<setting type="string" id="user_password" class="password" track-old-value="true">
+    				<name>User password</name>
+    				<name xml:lang="fr-FR">Mot de passe de l'utilisateur</name>
+    			</setting>
+    			<setting type="integer" id="user_id" protected="true" default-value="0" optional="true" installation-only="true">
+    				<name>User ID</name>
+    				<name xml:lang="fr-FR">N° de l'utilisateur</name>
+    			</setting>
+    		</group><group class="vcard">
+    			<name>User representation info</name>
+    			<name xml:lang="fr-FR">Informations de présentation  de l'utilisateur</name>
+    			<group class="email">
+    				<name>Email info</name>
+    				<name xml:lang="fr-FR">Informations d'email</name>
+    				<setting type="email" id="user_email" class="value" installation-only="true">
+    					<name>User email</name>
+    					<name xml:lang="fr-FR">Email de l'utilisateur</name>
+    				</setting>
+    			</group>
+    			<group class="fn n">
+    				<name>Personal info</name>
+    				<name xml:lang="fr-FR">Informations personelles</name>
+    				<setting id="user_display_name" class="display-name" type="string">
+						<name>User display name</name>
+						<name xml:lang="fr-FR">Pseudonyme de l'utilisateur</name>
+    				</setting>
+					<setting id="user_first_name" class="given-name" type="string">
+						<name>User first name</name>
+						<name xml:lang="fr-FR">Prénom de l'utilisateur</name>
+					</setting>
+					<setting id="user_last_name" class="family-name" type="string">
+						<name>User last name</name>
+						<name xml:lang="fr-FR">Nom de la famille de l'utilisateur</name>
+					</setting>    				
+    			</group>
+</group>
+    		<setting type="string" id="organization_name" protected="true" value-of-setting="organization_name">
+    			<name>Company name</name>
+    			<name xml:lang="fr-FR">Nom de la société</name>
+    		</setting><group class="web">
+    			<name>Preferences</name>
+    			<name xml:lang="fr-FR">Préférences</name>
+    			<setting type="enum" id="user_language" class="locale" default-value="en-US">
+				<name>User language</name>
+				<name xml:lang="fr-FR">Langue d'utilisateur</name>
+				<choice id="en-US">
+					<name>English</name>
+				</choice><choice id="fr-FR">
+					<name>French</name>
+				</choice><choice id="de-DE" >
+					<name>German</name>
+				</choice>
+				<choice id="it-IT" >
+					<name>Italian</name>
+				</choice>
+				<choice id="es-ES">
+					<name>Spanish</name>
+				</choice><choice id="pl-PL">
+                  <name>Polish</name>
+                </choice><choice id="ru-RU" >
+					<name>Russian</name>
+				</choice>
+    			</setting>
+    		</group>
+    		<setting type="integer" id="site_id" value-of-setting="site_id" visibility="hidden" protected="true">
+    			<name>Site ID</name>
+    			<name xml:lang="fr-FR">N° du portail</name>
+    		</setting>
+    		 <setting type="string" id="admin_login" class="login" value-of-setting="admin_login" visibility="hidden">
+    				<name>Administrator login</name>
+    				<name xml:lang="fr-FR">Identifier d’administrateur </name>
+    			</setting>
+    			<setting type="string" id="admin_password" class="password" value-of-setting="admin_password" visibility="hidden">
+    				<name>Administrator password</name>
+    				<name xml:lang="fr-FR">Mot de passe d’administrateur</name>
+    			</setting>
+    	</settings>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:version min="5.0"/>
+    	</requirements>
+    	<provision>
+    			<configuration-script name="configure-user.php">
+    				<script-language>php</script-language>
+    				<status-control />
+    				<structured-output />
+    			</configuration-script>
+    		</provision>
+    	</service>
+    </service>
+</application>

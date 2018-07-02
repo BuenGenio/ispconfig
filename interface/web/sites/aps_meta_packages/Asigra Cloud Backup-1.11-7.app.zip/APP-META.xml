@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<application xmlns="http://apstandard.com/ns/1"
+	     version="1.2" packaged="2011-09-26T00:00:00+00:00">
+
+  <id>http://www.asigra.com/</id>
+  <name>Asigra Cloud Backup</name>
+  <version>1.11</version>
+  <release>7</release>
+
+	<homepage>http://www.asigra.com/</homepage>
+
+	<vendor>
+	    <name>Asigra</name>
+	    <homepage>http://www.asigra.com</homepage>
+	    <icon path="images/logo.png"/>
+	</vendor>
+
+	<packager>
+	    <name>ActiveCloud</name>
+	    <homepage>http://www.activecloud.com</homepage>
+	    <icon path="images/logo.png"/>
+	</packager>
+
+  <presentation>
+    <summary>Asigra Cloud Backup</summary>
+    <description>
+      Asigra Cloud BackupTM is designed to offer backup efficiencies
+      unavailable with traditional backup architecture by allowing you
+      to capture less, ingest less, and store less data - reducing
+      the amount of backup assets you buy, manage and maintain.
+    </description>
+
+	    <icon path="images/logo.png"/>
+
+	    <screenshot path="images/asigra-site.png">
+		<description>Asigra Web Site</description>
+	    </screenshot>
+    <changelog>
+      <version version="1.11" release="7">
+	<entry>Auto-login by entry point is removed</entry>
+      </version>
+      <version version="1.11" release="6">
+	<entry>APP-META.xml: Return entry-point</entry>
+      </version>
+        <version version="1.11" release="5">
+          <entry>APP-META.xml: add Global Setting - provider_id</entry>
+          <entry>Application generate pseudo random backup id,
+            from provider id and subscription id.</entry>
+        </version>
+        <version version="1.11" release="4">
+          <entry>APP-META.xml: Remove entry-point</entry>
+        </version>
+	        <version version="1.11" release="3">
+		    <entry>Add metod: log_exception (class NocApi)</entry>
+		</version>
+	        <version version="1.11" release="2">
+		    <entry>Add License</entry>
+		    <entry>Add Screenshot</entry>
+		</version>
+	        <version version="1.11" release="1">
+		    <entry>Fixed diskquota</entry>
+		</version>
+		<version version="1.10" release="1">
+		    <entry>Added resource script</entry>
+		</version>
+                <version version="1.9" release="1">
+		    <entry>Added subscription</entry>
+		</version>
+		<version version="1.8" release="1">
+		    <entry>Remove working as disable</entry>
+		</version>
+                <version version="1.7" release="1">
+		    <entry>Fix AccountNum = subscription</entry>
+		</version>
+                <version version="1.5" release="1">
+		    <entry>AccountNum = subscription</entry>
+		</version>
+                <version version="1.4" release="1">
+		    <entry>Fix entry point</entry>
+		</version>
+                <version version="1.3" release="1">
+		    <entry>Added creating instance</entry>
+		</version>
+                <version version="1.2" release="1">
+		    <entry>Fixed entry point</entry>
+		</version>
+  	        <version version="1.1" release="1">
+		    <entry>Fixed username data</entry>
+		</version>
+		<version version="1.0" release="1">
+		    <entry>Test release</entry>
+		</version>
+	    </changelog>
+
+	    <categories>
+		<category>Infrastructure/Backup</category>
+	    </categories>
+
+	    <languages>
+		<language>en</language>
+	    </languages>
+	</presentation>
+
+	<global-settings>
+    <setting id="provider_id" class="title" type="integer">
+      <name>Provider ID</name>
+      <description>
+        Please enter random number. 
+      </description>
+    </setting>
+
+    <setting id="noc_api_url" class="title" type="string">
+		  <name>DS-NOC api URL</name>
+		  <description>
+        DS-NOC api URL. Needed for creating and remove account
+		  </description>
+    </setting>
+
+            <setting id="noc_admin_login" class="title" type="string">
+                <name>DS-NOC api admin account login</name>
+            </setting>
+
+            <setting id="noc_admin_password" class="title" type="password">
+                <name>DS-NOC api admin password</name>
+	    </setting>
+
+	    <setting id="noc_system_id" class="title" type="string">
+                <name>The DS-System ID in the Web Portal to setup new accounts</name>
+	    </setting>
+
+	    <setting id="default_location" class="title" type="string">
+                <name>Default location name for new accounts</name>
+	    </setting>
+
+	    <group class="branding">
+		<setting id="noc_site" class="access_point" type="string" default-value="" regex="^https?://.*$">
+		    <name>DS-NOC public site URL (with /noc in URL)</name>
+			<description>
+			    This is URL address of DS-NOC public site address (with /noc in address).
+			</description>
+			<error-message>
+			    Please make sure the text you entered starts with either http:// or https://.
+			</error-message>
+		</setting>
+	    </group>
+	</global-settings>
+
+	<patch match="/application/version = '1.0' and /application/release &gt; '1'"/>
+	<upgrade match="/application/version = '1.0' and /application/release &gt; '1'" />
+
+	<service id="account" class="service">
+	    <license must-accept="true">
+		<text>
+		    <name>Asigra License</name>
+		    <url>http://www.asigra.com/</url>
+		</text>
+	    </license>
+
+	    <presentation>
+		<name>Asigra backup account</name>
+		<summary>Asigra backup account</summary>
+
+		<infolinks>
+		    <link class="support" href="http://asigra.com/training-support/technical-support">Support</link>
+		</infolinks>
+		<entry-points>
+		    <!--entry class="control-panel" dst="{noc_site}/login.do" method="POST">
+			<label>DS-NOC web control-panel</label>
+			<variable name="noc_site" value-of-setting="noc_site" />
+			<variable name="username" class="login" value-of-setting="noc_username" />
+			<variable name="password" class="password" value-of-setting="noc_password" />
+		    </entry -->
+      <entry dst="{noc_site}" method="GET">
+        <label>DS-NOC web control-panel</label>
+			  <variable name="noc_site" value-of-setting="noc_site" />
+      </entry>
+		</entry-points>
+	    </presentation>
+
+	    <settings>
+		<group class="authn">
+		    <name>Authentication data</name>
+		    <setting id="noc_username" class="login" type="string" installation-only="true" uniq="global" min-length="3">
+			<name>Account login</name>
+		    </setting>
+		    <setting id="noc_password" class="password" type="password" track-old-value="true" min-length="8">
+			<name>Account password</name>
+		    </setting>
+		</group>
+    <group class="web">
+      <setting id="subscription" class="subscription_id" visibility="hidden" protected="true" type="integer">
+        <name>Subscription ID</name>
+      </setting>
+		</group>
+		<group class="limits">
+		    <name>Account limits</name>
+		    <setting id="diskquota" type="integer" visibility="hidden" default-value="0" min="-1">
+			<name>Disk quota (in MB)</name>
+		    </setting>
+		    <setting id="userlimit" type="integer" visibility="hidden" default-value="0" min="0">
+			<name>Users</name>
+			<description>
+			    Limit of users
+			</description>
+		    </setting>
+		</group>
+
+	        <group class="vcard">
+		    <group class="fn n">
+		        <setting id="first_name" class="given-name" type="string" max-length="30">
+			    <name>First Name</name>
+		        </setting>
+   		        <setting id="last_name" class="family-name" type="string" max-length="30">
+			    <name>Last Name</name>
+		        </setting>
+		    </group>
+		    <group class="email">
+		        <setting id="user_email" class="value" type="email">
+			    <name>Email</name>
+			</setting>
+		    </group>
+		    <setting id="title" class="title" type="string">
+			<name>Title</name>
+		    </setting>
+		    <setting id="department" class="organization-unit" type="string">
+			<name>Department</name>
+		    </setting>
+		    <group class="tel">
+			<name>work</name>
+			<setting id="phone_work" class="value" type="string">
+			    <name>Work Phone Number</name>
+			</setting>
+		    </group>
+		    <group class="tel">
+			<name>cell</name>
+			<setting id="phone_mobile" class="value" type="string">
+			    <name>Mobile Phone Number</name>
+			</setting>
+		    </group>
+		    <group class="tel">
+			<name>fax</name>
+			<setting id="phone_fax" class="value" type="string">
+			    <name>Fax Number</name>
+			</setting>
+		    </group>
+		    <group class="tel">
+			<name>home</name>
+			<setting id="phone_home" class="value" type="string">
+			    <name>Home Phone Number</name>
+			</setting>
+		    </group>
+		    <setting id="address_street" class="street-address" type="string">
+			<name>Street</name>
+		    </setting>
+		    <setting id="address_city" class="locality" type="string">
+			<name>City</name>
+		    </setting>
+		    <setting id="address_state" class="region" type="string">
+			<name>Region</name>
+		    </setting>
+		    <setting id="address_country" class="country-name" type="string">
+			<name>Country</name>
+		    </setting>
+		    <setting id="address_postalcode" class="postal-code" type="string">
+			<name>Postal Code</name>
+		    </setting>
+		    <setting id="description" class="note" type="string">
+			<name>Description</name>
+		    </setting>
+		</group>
+	    </settings>
+	    <resources>
+		<resource id="diskusage" class="mb" limiting-setting="diskquota">
+		    <name>Disk space</name>
+		</resource>
+		<resource id="users" class="item" limiting-setting="userlimit">
+		    <name>Users</name>
+		</resource>
+	    </resources>
+
+	    <requirements xmlns:php="http://apstandard.com/ns/1/php">
+		<php:version min="5.1.3" />
+		<php:extension>xml</php:extension>
+		<php:extension>soap</php:extension>
+	    </requirements>
+
+	    <provision>
+		<configuration-script name="main.php">
+		    <script-language>php</script-language>
+	    <!--    <structured-output/>    -->
+		    <status-control/>
+		</configuration-script>
+		<resource-script name="resources.php">
+		    <script-language>php</script-language>
+		</resource-script>
+	    </provision>
+
+	</service>
+
+<!--
+    vi:tabstop=2:softtabstop=2:shiftwidth=2:expandtab
+-->
+
+</application>
+

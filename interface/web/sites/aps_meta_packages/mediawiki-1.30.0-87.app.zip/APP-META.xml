@@ -1,0 +1,313 @@
+<application packaged="2018-01-18T05:33:42" version="1.2" xmlns="http://apstandard.com/ns/1">
+	<id>mediawiki</id>
+	<name>mediawiki</name>
+	<version>1.30.0</version>
+	<release>87</release>
+	<homepage>http://www.mediawiki.org/wiki/MediaWiki</homepage>
+	<vendor>
+		<name>www.mediawiki.org</name>
+		<homepage>https://www.mediawiki.org</homepage>
+		<icon path="images/icon.png"/>
+	</vendor>
+	<packager>
+		<name>Plesk</name>
+		<homepage>http://plesk.com</homepage>
+		<icon path="images/packager.png"/>
+		<uri>uuid:3f2c57a0-6894-772e-123a-2fe71e10b8b1</uri>
+	</packager>
+	<presentation>
+		<summary>Open source knowledgebase and content management system</summary>
+		<description>MediaWiki is a Web-based wiki software application deployed by companies as an internal knowledge management solution, and as a content management system. MediaWiki is written in PHP, and can use either the MySQL or PostgreSQL relational database management system. MediaWiki supports more than 70 languages; it is scalable and customizable.</description>
+		<icon path="images/icon.png"/>
+		<screenshot path="images/main_screenshot.jpg">
+			<description>This screen shows a typical view of an article from the knowledgebase.</description>
+		</screenshot>
+		<changelog>
+			<version release="87" version="1.30.0">
+				<entry>Changelog: https://www.mediawiki.org/wiki/Release_notes/1.30#MediaWiki_1.30.0</entry>
+			</version>
+			<version release="1" version="1.29.1">
+				<entry>Changelog: https://www.mediawiki.org/wiki/Release_notes/1.29#MediaWiki_1.29.1</entry>
+			</version>
+			<version release="1" version="1.28.0">
+				<entry>Changelog: https://www.mediawiki.org/wiki/Release_notes/1.28#MediaWiki_1.28.0</entry>
+			</version>
+			<version release="1" version="1.27.1">
+				<entry>Changelog: https://www.mediawiki.org/wiki/Release_notes/1.27#MediaWiki_1.27.1</entry>
+			</version>
+			<version release="1" version="1.23.14">
+				<entry>This is a maintenance release of the MediaWiki 1.23 branch. Changelog: https://www.mediawiki.org/wiki/Release_notes/1.23#MediaWiki_1.23.14</entry>
+			</version>
+			<version release="1" version="1.23.13">
+				<entry>This is a maintenance release of the MediaWiki 1.23 branch. Changelog: https://www.mediawiki.org/wiki/Release_notes/1.23#MediaWiki_1.23.13</entry>
+			</version>
+			<version release="1" version="1.23.12">
+				<entry>This is a security release of the MediaWiki 1.23 branch. Changelog: https://www.mediawiki.org/wiki/Release_notes/1.23#MediaWiki_1.23.12</entry>
+			</version>
+			<version release="2" version="1.23.11">
+				<entry>Package updated to avoid crashing if PHP7 is selected</entry>
+			</version>
+			<version release="1" version="1.23.11">
+				<entry>This release fixes five security issues in core, in addition to other bug fixes. Changelog: https://www.mediawiki.org/wiki/Release_notes/1.23#MediaWiki_1.23.11</entry>
+			</version>
+			<version release="1" version="1.23.10">
+				<entry>This is a security and maintenance release of the MediaWiki 1.23 branch. Changelog: https://www.mediawiki.org/wiki/Release_notes/1.23#MediaWiki_1.23.10</entry>
+			</version>
+			<version release="1" version="1.23.9">
+				<entry>This is a security release of the MediaWiki 1.23 branch. Changelog: https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-March/000175.html</entry>
+			</version>
+			<version release="1" version="1.23.5">
+				<entry>This is a security release of the MediaWiki 1.23 branch. 
+						(bug 70672) SECURITY: OutputPage: Remove separation of css and js module allowance.
+				</entry>
+			</version>
+			<version release="38" version="1.23.4">
+				<entry>This is a security and maintenance release of the MediaWiki 1.23 branch.</entry>
+			</version>
+			<version release="1" version="1.23.3">
+				<entry>This is a maintenance release of the MediaWiki 1.23 branch.</entry>
+			</version>		
+			<version release="1" version="1.23.2">
+				<entry>This is a security and maintenance release of the MediaWiki 1.23 branch.</entry>
+			</version>
+			<version release="1" version="1.23.1">
+				<entry>This version is a security and maintenance release.</entry>
+			</version>
+			<version release="1" version="1.23.0">
+				<entry>This version contains new features and bug fixes.</entry>
+			</version>
+			<version release="1" version="1.22.6">
+				<entry>Security release. Escape sortKey in pageInfo.</entry>
+			</version>
+			<version release="1" version="1.22.5">
+				<entry>This is a maintenance release of the MediaWiki 1.22 branch.</entry>
+				<entry>Changes since 1.22.3
+    			Use the correct branch of the extensions git repositories.</entry>
+			</version>
+			<version release="1" version="1.22.4">
+				<entry>This is a maintenance release of the MediaWiki 1.22 branch.</entry>
+				<entry>Changes since 1.22.3
+    			Use the correct branch of the extensions git repositories.</entry>
+			</version>
+			<version release="1" version="1.22.3">
+				<entry>This is a security and bugfix release of the MediaWiki 1.22 branch.</entry>
+				<entry>Changes since 1.22.2
+					    (bug 60771) SECURITY: Disallow uploading SVG files using non-whitelisted namespaces. Also disallow iframe elements. User will get an error including the namespace name if they use a non- whitelisted namespace.
+					    (bug 61346) SECURITY: Make token comparison use constant time. It seems like our token comparison would be vulnerable to timing attacks. This will take constant time.
+					    (bug 61362) SECURITY: API: Don't find links in the middle of api.php links.
+					    (bug 53710) Add sequence support for upsert in DatabaseOracle in the same way as in selectInsert
+					    (bug 60231, bug 58719) Various fixes to job running code in Wiki.php: Make it async on Windows. Fixed possible "invalid filename" errors on Windows. Redirect output to dev/null to avoid hanging PHP.
+					    (bug 60083) Correct sequence name for fresh Postgres installation. Spotted by gebhkla
+					    (bug 60531) Avoid variable naming conflicts in DatabasePostgres::selectSQLText. Spotted by gebhkla
+					    (bug 60094) Fix rebuildall.php fatal error with PostgreSQL.
+					    (bug 43817) Add error handling if descriptionmsg isn't defined for extension.
+					    (bug 60543) Special:PrefixIndex omits stripprefix=1 for "Next page" link.
+				</entry>
+			</version>
+			<version release="28" version="1.22.2">
+				<entry>New 1.22.2 version</entry>
+			</version>
+			<version release="1" version="1.22.1">
+				<entry>This is a security and maintenance release of the MediaWiki 1.22 branch.</entry>
+			</version>
+			<version release="22" version="1.22.0">
+				<entry>Bug changing Url path fixed</entry>
+			</version>
+			<version release="2" version="1.22.0">
+				<entry>Url path to default logo modified</entry>
+			</version>
+			<version release="1" version="1.22.0">
+				<entry>Mediawiki 1.22.0. Release notes:http://www.mediawiki.org/wiki/MediaWiki_1.22</entry>
+			</version>
+			<version release="2" version="1.21.3">
+				<entry>Solve cache problem after upgrade in root folder installations</entry>
+			</version>
+			<version release="1" version="1.21.3">
+				<entry>MediaWiki 1.21.3</entry>
+			</version>
+			<version release="3" version="1.21.2">
+				<entry>tmp folder added</entry>
+			</version>
+			<version release="2" version="1.21.2">
+				<entry>Cache issue solved</entry>
+			</version>
+			<version release="1" version="1.21.2">
+				<entry>MediaWiki 1.21.2</entry>
+			</version>
+			<version release="1" version="1.21.1">
+				<entry>MediaWiki 1.21.1</entry>
+			</version>
+			<version release="1" version="1.21.0">
+				<entry>MediaWiki 1.21.0</entry>
+			</version>
+			<version release="2" version="1.20.4">
+				<entry>MediaWiki 1.20.4</entry>
+			</version>
+			<version release="4" version="1.20.3">
+				<entry>MediaWiki 1.20.3
+				This is a security and maintenance release of the MediaWiki 1.20 branch.
+				Changes since 1.20.2
+				New preference type - 'api'. Preferences of this type are not shown on Special:Preferences, but are still available via the action=options API.(Unbreaks MLEB.) 
+				(bug 44010) Context is passed to UserGetLanguageObject.
+				The recursion guard on RequestContext::getLanguage() was weakened.
+				(bug 40585) Don't drop 'step="any"' in HTML input fields.
+				(bug 44024) Fixed problems in ObjectCache when using XCache.
+				(bug 44010) FauxRequest leaked cookie data from primary request.
+				(bug 44135/bug 42441) Pass '2' instead of 'true' to CURLOPT_SSL_VERIFYHOST
+				(bug 43518) API action=unblock should return the user name, not the full user object
+				(Bug 45355) Prevent read of arbitrary files through mwdoc-filter.php</entry>
+			</version>
+			<version release="4" version="1.20.2">
+				<entry>wgServer bug solved</entry>
+			</version>
+			<version release="1" version="1.20.2">
+				<entry>MediaWiki 1.20.2</entry>
+			</version>
+			<version release="1" version="1.20.0">
+				<entry>MediaWiki 1.20.0</entry>
+			</version>
+			<version release="5" version="1.19.2">
+				<entry>Upgrade path fixed;</entry>
+				<entry>Default values for logo url and wiki name are added;</entry>
+				<entry>EDIT_TOKEN_SUFFIX in includes User.php module is changed, due to page edit error on Windows;</entry>
+			</version>
+			<version release="4" version="1.19.2">
+				<entry>MediaWiki 1.19. Security patch 1.19.2</entry>
+			</version>
+			<version release="3" version="1.19.2">
+				<entry>MediaWiki 1.19.2
+				This is a security release of the MediaWiki 1.19 branch
+				[edit]Changes since 1.19.1
+				(bug 39700) File: link to non-existing file can inject html
+				(bug 39823) Hidden block text leaking to admins
+				(bug 39184) LDAP password leakage
+				(bug 39180) Disallow framing of api results
+				(bug 37587) Enforce language codes to be html safe
+				(bug 39824) Check global blocks on account creation</entry>
+			</version>
+			<version release="6" version="1.15.2">
+				<entry>PHP memory limit increased</entry>
+			</version>
+			<version release="5" version="1.15.2">
+				<entry>Entry point defined</entry>
+			</version>
+			<version release="4" version="1.15.2">
+				<entry>Release notes http://lists.wikimedia.org/pipermail/mediawiki-announce/2010-March/000088.html</entry>
+			</version>
+			<version release="3" version="1.12.0">
+				<entry>Collaboration/Portals category removed</entry>
+			</version>
+			<version release="2" version="1.12.0">
+				<entry>Initial package version</entry>
+			</version>			
+		</changelog>
+		<categories>
+			<category>Collaboration/Portal</category>
+		</categories>
+		<languages>
+			<language>en</language>
+		</languages>
+	</presentation>
+	<global-settings/>
+	<upgrade match="/application/version &gt;= '1.8.2' and /application/release &gt;= '1'"/>
+	<service id="instance">
+		<license must-accept="true">
+			<free/>
+			<text>
+				<name>GPLv2</name>
+				<url>http://www.gnu.org/copyleft/gpl.html</url>
+			</text>
+		</license>
+		<presentation>
+			<name>MediaWiki</name>
+			<summary>MediaWiki is a free software open source wiki package</summary>
+			<infolinks>
+				<link class="support" href="http://www.mediawiki.org/wiki/MediaWiki">MediaWiki support</link>
+			</infolinks>
+			<entry-points>
+				<entry dst="/">
+					<label>Wiki</label>
+				</entry>
+				
+				
+					
+					
+					
+				
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="authn">
+				<name>Administrator's preferences</name>
+				<setting class="login" default-value="admin" id="admin_name" max-length="32" min-length="1" regex="^[a-zA-Z][0-9a-zA-Z_\-]*" type="string">
+					<name>Administrator's login</name>
+					<error-message>Incorrect Administrator's login. First letter should be a letter following by letters and numbers.</error-message>
+				</setting>
+				<setting class="password" id="admin_password" min-length="1" type="password">
+					<name>Password</name>
+				</setting>
+			</group>
+			<group class="vcard">
+				<name>Main configuration</name>
+				<group class="email">
+    				<setting class="value" id="admin_email" type="email">
+					<name>Administrator's email</name>
+				</setting>
+				</group>
+			</group>
+			<group class="web">
+				<name>Language preferences</name>
+				<setting class="locale" default-value="en-US" id="locale" installation-only="true" type="enum">
+					<name>Interface language</name>
+					<choice id="en-US">
+						<name>English</name>
+					</choice>
+					<choice id="fr-FR">
+						<name>French</name>
+					</choice>
+					<choice id="de-DE">
+						<name>German</name>
+					</choice>
+				</setting>
+			</group>
+		</settings>
+		<requirements>
+			<php:version min="5.5.9" xmlns:php="http://apstandard.com/ns/1/php"/>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mysqli</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">pcre</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">ctype</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">iconv</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">json</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">mbstring</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">xml</php:extension>
+			<php:extension xmlns:php="http://apstandard.com/ns/1/php">dom</php:extension>
+                        <php:extension xmlns:php="http://apstandard.com/ns/1/php">fileinfo</php:extension>
+			<php:memory-limit xmlns:php="http://apstandard.com/ns/1/php">52428800</php:memory-limit>
+			<php:safe-mode xmlns:php="http://apstandard.com/ns/1/php">false</php:safe-mode>
+			<db:db xmlns:db="http://apstandard.com/ns/1/db">
+				<db:id>main</db:id>
+				<db:default-name>mediawiki</db:default-name>
+				<db:can-use-tables-prefix>true</db:can-use-tables-prefix>
+				<db:server-type>mysql</db:server-type>
+				<db:server-min-version>5.5.8</db:server-min-version>
+			</db:db>
+		</requirements>
+		<provision>
+			<url-mapping>
+				<default-prefix>mediawiki</default-prefix>
+				<installed-size>164908704</installed-size>
+				<mapping path="htdocs" url="/">
+					<php:handler xmlns:php="http://apstandard.com/ns/1/php">
+						<php:extension>php</php:extension>
+					</php:handler>
+					<mapping url="tmp">
+						<php:permissions writable="true" xmlns:php="http://apstandard.com/ns/1/php"/>
+					</mapping>
+				</mapping>
+			</url-mapping>
+			<configuration-script name="configure">
+				<script-language>php</script-language>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

@@ -1,0 +1,129 @@
+<application xmlns="http://apstandard.com/ns/1" version="1.2">
+	<id>http://apsstandard.org/app/eLama/eLama.Easy</id>
+	<name>eLama.Easy</name>
+	<version>0.0.1.3</version>
+	<release>1</release>
+	<homepage>http://easy.elama.ru/</homepage>
+	
+	<!-- application and package vendors -->
+	<vendor>
+		<name>eLama</name>
+		<homepage>http://eLama.ru</homepage>
+		<icon path="images/elama_logo64.png"/>
+	</vendor>
+	
+	<packager>
+		<name>eLama</name>
+		<homepage>http://eLama.ru</homepage>
+		<icon path="images/elama_logo64.png"/>
+		<uri>uuid:08a66fb2-a59d-11e2-9e96-0800200c9a66</uri>
+	</packager>
+	
+	<!-- application description -->	
+	<presentation>
+		<summary>eLama.Easy – позволяет просто, быстро и эффективно запускать рекламные кампании в Интернете.</summary>
+		<description>eLama.Easy позволяет рекламодателю с нулевыми знаниями, запустить эффективную рекламную кампанию всего за 10-20 минут. eLama.Easy автоматически подбирает ключевые слова исходя из интересов целевой аудитории, создает объявления, автоматически управляет и контролирует бюджет рекламодателя. Автоматически запущенная кампания позволит привлечь целевую аудиторию, сравнимую по стоимости и объему с результатами кампаний, созданных вручную опытными рекламодателями.</description>
+		<icon path="images/elama_logo64.png" />
+		<screenshot path="images/screen_1.png">
+			<description>Настройка параметров кампании</description>
+		</screenshot>
+		<screenshot path="images/screen_2.png">
+			<description>Выбор пакета, гарантирующего получение определенного количества целевых посетителей за фиксированную стоимость</description>
+		</screenshot>
+		<screenshot path="images/screen_3.png">
+			<description>Выбор интересов целевой аудитории, предложенных системой</description>
+		</screenshot>
+		<screenshot path="images/screen_4.png">
+			<description>Личный кабинет с активными рекламными кампаниями</description>
+		</screenshot>
+		<changelog>
+			<version version="0.0.1.3" release="1">
+				<entry>Начальная версия</entry>
+			</version>
+		</changelog>
+		<categories>
+			<category>Front office/On-line Marketing</category>
+		</categories>
+		<languages>
+			<language>ru</language>
+		</languages>
+	</presentation>
+	<global-settings>
+		<setting id="ServerLocation" type="host-name" visibility="hidden" default-value="easy.dev.elama.ru">
+			<name>Адрес сервера</name>
+		</setting>
+		<setting id="SecretKey" visibility="hidden" type="string" default-value="WCW41FxQ8nT1">
+			<name>Секретный ключ</name>
+		</setting>
+		<setting id="LoginPrefix" visibility="hidden" type="string" default-value="">
+			<name>Префикс логинов</name>
+		</setting>
+	</global-settings>
+	<service id="eLama" class="service">
+		<license must-accept="true">
+			<commercial/>
+			<text>
+				<name>Лицензионное соглашение elama</name>
+				<file>licenses/license_ru.txt</file>
+			</text>
+		</license>
+		<presentation>
+			<name>eLama.Easy</name>
+			<summary>eLama.Easy – позволяет просто, быстро и эффективно запускать рекламные кампании в Интернете.</summary>
+			<icon path="images/elama_logo64.png"/>
+			<infolinks>
+				<link class="official" href="http://easy.elama.ru/">
+					Официальный сайт
+				</link>
+				<link class="support" href="http://elama.ru/faq/landing.php">
+					Техническая поддержка
+				</link>
+				<link class="deployment-guide" href="file:///licenses/deployment_guide.txt">
+					Инструкция по настройке пакета
+				</link>
+			</infolinks>
+
+			<entry-points>
+				<entry dst="http://{ServerLocation}/user/login/ApsPackage/?auto_token={auto_token}&amp;login={login}" method="GET">
+					<label>Вход с систему</label>
+					<variable name="auto_token" value-of-setting="auto_token"/>
+					<variable name="login" value-of-setting="Login"/>
+					<variable name="ServerLocation" value-of-setting="ServerLocation"/>
+				</entry>
+			</entry-points>
+		</presentation>
+		<settings>
+			<group class="instance">
+				<setting id="auto_token" type="string" installation-only="true" visibility='hidden' default-value="a">
+					<name>Ключ входа</name>
+				</setting>
+				<setting id="email" type="email" installation-only="true" visibility='hidden'  class="email">
+					<name>email</name>
+					<name xml:lang='ru'>email пользователя</name>
+				</setting>
+				<setting id="subscriptionId" type="string" visibility='hidden' installation-only="true" class="subscription_id">
+					<name>Subscription id</name>
+					<name xml:lang="ru">ID подписки</name>
+				</setting>
+				<group class="authn">
+					<setting id="Login"  type="string" installation-only="true" visibility='hidden' default-value="l">
+						<name>Логин</name>
+					</setting>
+					<setting id="Token"  type="string" installation-only="true" protected="true" visibility='hidden' uniq="global" generate="uuid">
+						<name>Токен</name>
+					</setting>
+				</group>
+			</group>
+		</settings>
+		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+			<php:version min="5.0" />
+			<php:extension>curl</php:extension>
+		</requirements>
+		<provision>
+			<configuration-script name="configure.php">
+				<script-language>php</script-language>
+				<structured-output/>
+			</configuration-script>
+		</provision>
+	</service>
+</application>

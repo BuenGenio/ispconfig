@@ -1,0 +1,320 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2013-07-31T12:12:06">
+    <id>CDRIVE</id>
+    <name>C DRIVE</name>
+    <version>1.0</version>
+    <release>1</release>
+    <homepage>http://www.chrsolutions.com/</homepage>
+    <vendor>
+    	<name>CHR Solutions</name>
+    	<homepage>https://storage.cloud.chrsolutions.com</homepage>
+    	<icon path="images/logo.png" />
+    </vendor>
+    <packager>
+    	<name>Glowtouch Technologies</name>
+    	<homepage>http://www.glowtouch.com</homepage>
+    	<icon path="images/parrallels-GT6.png" />
+    	<uri>uuid:e581bb5d-a29e-426b-9fd7-345b8864827e</uri>
+    </packager>
+    <presentation>
+    	<summary>C:DRIVE helps IT provide users with a familiar file sharing and collaboration experience without compromising security or compliance.</summary>
+    	<description>Safe, secure online storage for all your business-critical files—be it financial records, project documents, client data, etc. C:Drive gives you anytime, anywhere access for any file type of any size. C:Drive also includes commenting and version control.
+
+C:Drive helps IT provide users with a familiar file sharing and collaboration experience without compromising security or compliance.</description>
+    	<icon path="images/logo.png" />
+    	<screenshot path="images/image001.png">
+    		<description>C:DRIVE logo</description>
+    	</screenshot>
+    	<screenshot path="images/image002.png">
+    		<description>Customer login page</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.0">
+    			<entry>Initial package release</entry>
+    		</version>
+    		<version release="2" version="1.0">
+    			<entry>Fixed storgae size according to mezeo console.</entry>
+    		</version>
+    		<version release="3" version="1.0">
+    			<entry>Re testing the package</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Front office/Productivity</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+
+
+    	<group class="authn">
+    		<name>C:DRIVE API Details</name>
+    		<setting type="string" id="mezeo_url" default-value="" min-length="1">
+    			<name>C:DRIVE Url *</name>
+    			<error-message>C:DRIVE Url is required field.</error-message>
+    		</setting>
+    		 <setting type="string" id="mezeo_root_domain_name" min-length="1" default-value="">
+    			<name>C:DRIVE Root Domain Name*</name>
+    			<error-message>C:DRIVE root doman name is required field.</error-message>
+    		</setting>
+    		<setting type="string" id="mezeo_sub_domain_name" default-value="" min-length="1">
+    			<name>C:DRIVE Sub Domain Name *</name>
+    			<error-message>C:DRIVE sub domain name is required field.</error-message>
+    		</setting>
+    		<setting type="string" id="mezeo_username" default-value="" min-length="1">
+    			<name>C:DRIVE Username *</name>
+    			<error-message>C:DRIVE Username is required field.</error-message>
+    		</setting>
+    		<setting type="password" id="mezeo_password" default-value="" min-length="1">
+    			<name>C:DRIVE Password *</name>
+    			<error-message>C:DRIVE Password is required field.</error-message>
+    		</setting>
+    		<setting type="string" id="login_url" min-length="1" default-value="">
+    			<name>Login URL*</name>
+    			<error-message>Login URL is required field.</error-message>
+    		</setting>
+
+
+    	</group>
+    	<group class="authn">
+    		<name>Active Directory Details</name>
+    		<setting type="string" id="ad_path" default-value="" min-length="1">
+    			<name>AD Path *</name>
+    			<description>OU=Users,OU=MEZEO,DC=hosting,DC=lan</description>
+    			<error-message>Active Directory path is required field.</error-message>
+    		</setting>
+    		<setting type="string" id="ad_username" default-value="" min-length="1">
+    			<name>AD Username *</name>
+    			<error-message>Active Directory Username is required field.</error-message>
+    		</setting>
+    		<setting type="password" id="ad_password" default-value="" min-length="1">
+    			<name>AD Password *</name>
+    			<error-message>Active Directory Password is required field.</error-message>
+    		</setting>
+    		<setting type="string" id="ad_domain_ip" default-value="" min-length="1">
+    			<name>AD Domain IP *</name>
+    			<description>IP address of the Active Directory</description>
+    			<error-message>Active Directory Domain IP is required field.</error-message>
+    		</setting>
+    		<setting type="string" id="ad_domain_name" min-length="1" default-value="">
+    			<name>AD Domain Name</name>
+    			<error-message>Active Directory Domain Name is required field.</error-message>
+    		</setting>
+    		<setting type="string" id="ad_full_path" default-value="" min-length="1">
+    			<name>AD Full Path</name>
+    			<description>CN=mezeo_adadmin,CN=services,OU=MEZEO,DC=hosting,DC=lan</description>
+    			<error-message>Active Directory Full Path is required field.</error-message>
+    		</setting>
+    	</group>
+    	<group class="email">
+    		<name>Email Template</name>
+    		<setting type="email" id="mail_from" default-value="donotreply@mezeo.com">
+    			<name>Email From *</name>
+    		</setting>
+    	</group>
+    </global-settings>
+    <upgrade match="/application/release&gt;'1'" />
+    <service id="domain_creation" class="service" singular="true">
+    	    	<license must-accept="true">
+    	    		<commercial />
+    	    		<text>
+    	    			<name>License</name>
+    	    			<url>https://storage.cloud.chrsolutions.com/branding/eula.html</url>
+    	    		</text>
+    	    	</license>
+    	    	<presentation>
+    		<name>Domain Creation</name>
+    		<summary>C:DRIVE Configuration Service</summary>
+    		<infolinks>
+    			<link href="http://connect.chrsolutions.com/SaveTheDay-Online" class="support">CHR Service Center for Support: 713-351-5160</link>
+    			<link href="file:///htdocs/docs/CHR_APS_Solution_Provider_Deployment_Guide.doc" class="deployment-guide">CHR APS Solution Provider Deployment Guide</link>
+    			<link href="file:///htdocs/docs/CHR_APS_Solution_Subscriber_Guide.doc" class="user-guide">CHR APS Solution Subscriber Guide</link>
+    			<link href="file:///htdocs/docs/Release_notes_v_1.0.doc" class="support">Release_notes</link>
+    		</infolinks>
+    	    	</presentation>
+    	<settings>
+    	<group class="org">
+    			<name>Domain Creation</name>
+    		<setting type="string" id="domain_name" class="organization-name" default-value="" installation-only="true">
+    			<name>Domain Name *</name>
+    		</setting>
+    		<setting type="string" id="storage_name" class="subscription_id" default-value="" installation-only="true">
+    			<name>Storage Name *</name>
+    		</setting>
+    			<setting type="string" id="container_disk_quota" optional="true" protected="true" visibility="hidden">
+    				<name>Container Disk Quota</name>
+    			</setting>
+    		<setting type="string" id="domain_domain_uri" default-value="" optional="true" protected="true" visibility="hidden">
+    				<name>Domain URI</name>
+    			</setting>
+    			<setting type="string" id="domain_object_id" default-value="" optional="true" protected="true" visibility="hidden">
+    				<name>Object Id</name>
+    			</setting>
+    			<setting type="string" id="domain_parent_uri" default-value="" optional="true" protected="true" visibility="hidden">
+    				<name>Parent URI</name>
+    			</setting>
+    			<setting type="string" id="domain_parent_id" default-value="" optional="true" protected="true" visibility="hidden">
+    				<name>Parent ID</name>
+    			</setting>
+    			<setting type="string" id="storage_domain_uri" default-value="" optional="true" protected="true" visibility="hidden">
+    				<name>Storage Domain URI</name>
+    			</setting>
+    			<setting type="string" id="storage_object_id" default-value="" optional="true" protected="true" visibility="hidden">
+    				<name>Storage Object Id</name>
+    			</setting>
+    			<setting type="string" id="storage_parent_uri" default-value="" optional="true" protected="true" visibility="hidden">
+    				<name>Storage Parent URI</name>
+    			</setting>
+    			<setting type="string" id="storage_parent_id" default-value="" optional="true" protected="true" visibility="hidden">
+    				<name> Storage Parent ID</name>
+    			</setting>
+    			
+    	</group>
+    	<group class="presentation">
+    					<name>Others</name>
+
+    					<setting type="string" id="container_size"
+    						protected="true" default-value="" visibility="hidden">
+    						<name>Container Size</name>
+    					</setting>
+    					<setting type="string" id="no_of_users"
+    						protected="true" visibility="hidden" default-value="">
+    						<name>Maximum Users</name>
+    					</setting>
+    					<setting type="string" id="subscription_id"
+    						class="subscription_id" protected="true" visibility="hidden">
+    						<name>Subscription Id</name>
+    					</setting>
+    					<setting type="string"
+    						id="usage_directory_path" protected="true" optional="true" visibility="hidden">
+    						<name>Usage Directory Path</name>
+    					</setting>
+    	</group>
+    	</settings>
+    	<resources>
+    				<resource class="kb" id="resource_for_container_size" limiting-setting="container_size">
+    					<name>resource_for_container_size</name>
+    				</resource>
+    				<resource class="item" id="resource_for_no_of_users" limiting-setting="no_of_users">
+    					<name>resource_for_no_of_users</name>
+    				</resource>
+    	</resources>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:extension>curl</php:extension>
+    		<php:extension>php_ldap</php:extension>
+    		<php:version min="4.2"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    	</provision>
+ 
+
+    		<service id="user_creation">
+
+    			<presentation>
+    				<name>User Creation</name>
+    				<summary>Create User Account Information</summary>
+    			</presentation>
+    			
+    			<settings>
+    				<setting type="string" id="error" visibility="hidden" default-value="">
+    				</setting>
+    				<setting type="string" id="subscription_id1"
+    					value-of-setting="subscription_id" protected="true" visibility="hidden">
+    					<name>Subscription Id</name>
+    				</setting>
+    				<setting type="string" id="usage_directory_path1"
+    					value-of-setting="usage_directory_path" visibility="hidden" protected="true">
+    					<name>Usage Directory Path</name>
+    				</setting>
+    				<setting type="string" id="containerSize" value-of-setting="container_disk_quota" protected="true" installation-only="true" optional="true" visibility="hidden">
+    					<name>Container Size</name>
+    				</setting>
+    				<group class="vcard">
+    				<name>User Creation</name>
+    				
+    				<setting type="string" id="firstname" default-value="" installation-only="true" min-length="1">
+    					<name>First Name *</name>
+    					<error-message>Firstname is required field</error-message>
+    				</setting>
+    				<setting type="string" id="lastname" default-value="" installation-only="true" min-length="1">
+    					<name>Last Name *</name>
+    					<error-message>Lastname is required field.</error-message>
+    				</setting>
+    				<setting type="email" id="email" installation-only="true" default-value="">
+    					<name>Username *</name>
+    					<description>Username should be email address.</description>
+    					<error-message>E-mail is required field and add valid email</error-message>
+    				</setting>
+    				<setting type="string" id="fullname" default-value="" installation-only="true" min-length="1">
+    					<name>Full Name *</name>
+    					<error-message>Fullname is required field.</error-message>
+    				</setting>
+    				<setting type="password" id="password" min-length="1" default-value="">
+    				<name>Password *</name>
+    				<error-message>Password is required field.</error-message>
+    				</setting>
+    				
+    				<setting type="string" id="username" default-value="" installation-only="true" protected="true" visibility="hidden">
+    					<name>Generated Username *</name>
+    				</setting><setting type="string" id="member_enabled" default-value="true" installation-only="true" visibility="hidden">
+    					<name>Member Enabled *</name>
+    				</setting>
+    				<setting type="string" id="member_privileges" visibility="hidden" default-value='["cross_domain"]' installation-only="true">
+    					<name>Member Priviliges</name>
+    				</setting>
+    				<setting type="string" id="member_type" default-value="user" visibility="hidden" installation-only="true">
+    					<name>Member Type</name>
+    				</setting>
+    				<setting type="string" id="main_service_domain_name"
+    					protected="true"
+    					value-of-setting="domain_name" visibility="hidden">
+    					<name>Main Service Domain Name</name>
+    				</setting>
+    				<setting type="string"
+    					id="main_service_container_name" protected="true" value-of-setting="storage_name" visibility="hidden">
+    					<name>Main Service Container Name</name>
+    				</setting>
+    				<setting type="string" id="user_domain_uri" default-value="" optional="true" protected="true" visibility="hidden">
+    				<name>User Domain URI</name>
+    			</setting>
+    			<setting type="string" id="user_object_id" default-value="" installation-only="true" protected="true" visibility="hidden">
+    				<name>User Object Id</name>
+    			</setting>
+    			<setting type="string" id="user_parent_uri" default-value="" optional="true" protected="true" visibility="hidden">
+    				<name>User Parent URI</name>
+    			</setting>
+    			<setting type="string" id="user_parent_id" default-value="" optional="true" protected="true" visibility="hidden">
+    				<name>User Parent ID</name>
+    			</setting>
+    			<setting type="string" id="no_of_users1"
+    				protected="true" value-of-setting="no_of_users" visibility="hidden">
+    				<name>Maximum Users for Plan</name>
+    			</setting>
+
+
+    				</group>
+
+    			</settings>
+    			
+
+
+    			<provision>
+    				<configuration-script name="user_configure.php">
+    					<script-language>php</script-language>
+    					<structured-output />
+    				</configuration-script>
+    				<verify-script name="user_verification.php">
+    					<script-language>php</script-language>
+    					<structured-output />
+    				</verify-script>
+    			</provision>
+    		</service>
+    	</service>
+ 
+
+</application>

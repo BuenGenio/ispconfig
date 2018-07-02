@@ -1,0 +1,445 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-10-24T20:36:18">
+    <id>http://www.gamasec.com/Gamascan.aspx</id>
+    <name>GamaScan</name>
+    <version>1.0</version>
+    <release>6</release>
+    <homepage>https://www.gamasec.com/</homepage>
+    <vendor>
+    	<name>GamaSec</name>
+    	<homepage>https://www.gamasec.com/</homepage>
+    	<icon path="images/GamaSecLogo.png" />
+    </vendor>
+    <packager>
+    	<name>Cloud Base Integration ltd</name>
+    	<homepage>http://www.comlinegroup.co.il/</homepage>
+    	<icon path="images/cloudbase.png" />
+    	<uri>uuid:0b6cd094-8801-4d2d-ad2b-0a2d77b54c0c</uri>
+    </packager>
+    <presentation>
+    	<summary>Gamasec’s web application vulnerability scanning is delivered via SaaS (software-as-a-service) designed to identify security weaknesses in web applications, produces a detailed security report with recommendations for optimally matched solutions.</summary>
+    	<description>GamaSec’s scanneridentifies security weaknesses in web applications. GamaScan tests the security of your web applications and detects Cross Site Scripting, SQL Injection and other web application vulnerabilities. It also ranks threat priority, produces highly graphical, intuitive HTML reports, and indicates site security posture by vulnerabilities and threat exposure.GamaSec's web application security is suitable for organizations of any size operating on the internet.</description>
+    	<icon path="images/GamaSecLogo.png" />
+    	<screenshot path="images/Screenshot.png">
+    		<description>Gamasec’s web application vulnerability scanning is a remote online web vulnerability-assessment service. delivered via SaaS (software-as-a-service) and is designed to identify security weaknesses in web applications and produces a detailed security report with recommendations for optimally matched solutions. </description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.0">
+    			<entry>Packaged in APS 1.2</entry>
+    		</version>
+    		<version release="2" version="1.0">
+    			<entry>Added activate functionality to number of scans to support renewal.</entry>
+    		</version>
+    		<version release="3" version="1.0">
+    			<entry>Removed entrypoints from top service</entry>
+    		</version>
+    		<version release="4" version="1.0">
+    			<entry>Fixed top service instablety upon deletion.</entry>
+    		</version>
+    		<version release="6" version="1.0">
+    			<entry>Documentation and summary update</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Infrastructure/Security</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<group>
+    		<name>GamaScan Administrator Preferences</name>
+    		<setting type="host-name" id="apiurl" default-value="">
+    			<name>GamaScan API Base URL</name>
+    		</setting>
+    		<setting type="integer" id="port" default-value="9999">
+    			<name>Port Number</name>
+    		</setting>
+    		<group class="authn">
+    			<setting type="string" id="UserName"
+    				class="login" default-value="" max-length="32" min-length="1">
+    				<name>GamaScan Partner username</name>
+    			</setting>
+    			<setting type="password" id="Password"
+    				class="password" min-length="6">
+    				<name>GamaScan Partner password</name>
+    			</setting></group>
+    	</group>
+    </global-settings>
+    <service id="gamascan">
+    	<presentation>
+    		<name>GamaScan Application</name>
+    		<summary>Gamasec’s web application vulnerability Gamasec’s web application vulnerability scanning is a remote online web vulnerability-assessment service. delivered via SaaS (software-as-a-service) and is designed to identify security weaknesses in web applications and produces a detailed security report with recommendations for optimally matched solutions.</summary>
+    		<infolinks>
+    			<link href="https://www.gamasec.com/" class="official">GamaScan Offical Site</link>
+    			<link href="http://www.gamasec.com/ContactSupport.aspx" class="support">GamaScan Support</link>
+    			<link href="http://www.gamasec.com/pdf/PControlPanel.pdf" class="howto">GamaScan Info</link>
+    		</infolinks>
+    	</presentation>
+    	<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    		<php:version min="5.0"/>
+    	</requirements>
+    	<provision>
+    		<configuration-script name="configure-provider.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    	</provision>
+    	<service id="account">
+    		<license must-accept="true">
+    			<commercial />
+    			<text>
+    				<name>GamaScan Terms And Agreement</name>
+    				<url>http://www.gamasec.com/TermsOfUse.aspx</url>
+    			</text>
+    		</license>
+    		<presentation>
+    			<name>GamaScan User Account</name>
+    			<summary>GamaScan User Account</summary>
+    			<infolinks>
+    				<link href="https://www.gamasec.com/"
+    					class="official">GamaScan Offical Site
+</link>
+    				<link
+    					href="http://www.gamasec.com/ContactSupport.aspx"
+    					class="support">GamaScan Support
+</link>
+    				<link
+    					href="http://www.gamasec.com/pdf/PControlPanel.pdf"
+    					class="howto">GamaScan Info
+</link>
+    			</infolinks>
+    			<entry-points>
+    				<entry
+    					dst="https://www.gamasec.com/gsf/PartnerLogin.aspx"
+    					class="login" method="POST">
+    					<label>GamaScan Control Panel</label>
+    					<icon path="images/LogIn.png" />
+    					<variable name="UserName" class="login"
+    						value-of-setting="SubUserEmailName">
+    					</variable>
+    					<variable name="password" class="password"
+    						value-of-setting="SubPassword">
+    					</variable>
+    				</entry>
+    				<entry
+    					dst="https://www.gamasec.com/gsf/partner/QuickScan.aspx"
+    					method="POST" class="control-panel">
+    					<label>Quick Scan</label>
+    					<description>Domain quick scan</description>
+    					<icon path="images/QuickScan.png" />
+    					<variable name="UserName" class="login"
+    						value-of-setting="SubUserEmailName">
+    					</variable>
+    					<variable name="password" class="password"
+    						value-of-setting="SubPassword">
+    					</variable>
+    				</entry>
+    				<entry
+    					dst="https://www.gamasec.com/gsf/partner/ScannedTargets.aspx"
+    					class="control-panel" method="POST">
+    					<label>View Reports</label>
+    					<description>View scan reports</description>
+    					<icon path="images/ViewReports.png" />
+    					<variable name="UserName" class="login"
+    						value-of-setting="SubUserEmailName">
+    					</variable>
+    					<variable name="password" class="password"
+    						value-of-setting="SubPassword">
+    					</variable>
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+    			<group class="authn">
+    				<name>User Login</name>
+    				<group class="vcard">
+    					<group class="email">
+    						<setting type="email" id="SubUserEmailName"
+    							class="value" default-value="email@mail.com"
+    							installation-only="true" uniq="global"
+    							uuid="114ea6bd-4d51-4ef0-904c-9ede8e4312e6">
+    							<name>Email</name>
+    							<description>Serves as a username for GamaScan service</description>
+    							<error-message>The username you entered exists in GamaScan system please enter a different one.</error-message>
+    						</setting>
+    					</group>
+    				</group>
+    				<setting type="password" id="SubPassword"
+    					class="password" min-length="7" max-length="20">
+    					<name>Password</name>
+    					<description>Password must consist of at least one letter and one number. It's has to be between 7 to 20 characters in length.</description>
+    					<error-message>Password must consist of at least one letter and one number. It's has to be between 7 to 20 characters in length.</error-message>
+    				</setting>
+    			</group>
+    			<group class="vcard">
+    				<name>User Details</name>
+    				<group>
+    					<name>fn n</name>
+    					<setting type="string" id="SubUserFirstName"
+    						class="given-name">
+    						<name>First name</name>
+    					</setting>
+    					<setting type="string" id="SubUserLastName"
+    						class="family-name">
+    						<name>Last name</name>
+    					</setting>
+    				</group>
+    				<group class="org">
+    					<setting type="string" id="SubUserCompanyName"
+    						class="organization-name">
+    						<name>Company</name>
+    					</setting>
+    				</group>
+    				<group class="tel">
+    					<setting type="string" id="SubUserPhoneNumber"
+    						class="work">
+    						<name>Phone Number</name>
+    						<description>Work phone number</description>
+    					</setting>
+    					<setting type="string" id="SubUserMobileNumber"
+    						class="cell">
+    						<name>Mobile number</name>
+    					</setting>
+    				</group>
+    			</group>
+    			<group class="authn">
+    				<name>Encoded Login Details</name>
+    				<setting type="string" id="SubUserEmailEnc"
+    					visibility="hidden" default-value="" protected="true">
+    					<name>Encoded subuser email</name>
+    				</setting>
+    				<setting type="string" id="SubPasswordEnc"
+    					visibility="hidden" default-value="" protected="true">
+    					<name>Encoded subuser password</name>
+    				</setting>
+    			</group>
+    		</settings>
+    		<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    			<php:version min="5.0" />
+    		</requirements>
+    		<provision>
+    			<configuration-script name="configure-user.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</configuration-script>
+    			<verify-script name="validate-user.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</verify-script>
+    		</provision>
+    		<service id="domain">
+    			<presentation>
+    				<name>Domain</name>
+    				<summary>Domain for scanning</summary>
+    				<entry-points>
+    					<entry
+    						dst="https://www.gamasec.com/gsf/PartnerLogin.aspx"
+    						class="login" method="POST">
+    						<label>GamaScan Control Panel</label>
+    						<icon path="images/LogIn.png" />
+    						<variable name="UserName" class="login"
+    							value-of-setting="SubUserEmailName">
+    						</variable>
+    						<variable name="password" class="password"
+    							value-of-setting="SubPassword">
+    						</variable>
+    					</entry>
+    					<entry
+    						dst="https://www.gamasec.com/gsf/partner/QuickScan.aspx"
+    						method="POST" class="control-panel">
+    						<label>Quick Scan</label>
+    						<description>Domain quick scan</description>
+    						<icon path="images/QuickScan.png" />
+    						<variable name="UserName" class="login"
+    							value-of-setting="SubUserEmailName">
+    						</variable>
+    						<variable name="password" class="password"
+    							value-of-setting="SubPassword">
+    						</variable>
+    					</entry>
+    					<entry
+    						dst="https://www.gamasec.com/gsf/partner/ScannedTargets.aspx"
+    						class="control-panel" method="POST">
+    						<label>View Reports</label>
+    						<description>View scan reports</description>
+    						<icon path="images/ViewReports.png" />
+    						<variable name="UserName" class="login"
+    							value-of-setting="SubUserEmailName">
+    						</variable>
+    						<variable name="password" class="password"
+    							value-of-setting="SubPassword">
+    						</variable>
+    					</entry>
+    				</entry-points>
+    			</presentation>
+    			<settings>
+    				<group class="authn">
+    					<name>Domain details</name>
+    					<setting type="domain-name" id="TargetUrl"
+    						default-value="" installation-only="true">
+    						<name>Domain name</name>
+    					</setting>
+    					<setting type="string" id="Protocol"
+    						default-value="HTTP">
+    						<name>Communications protocol</name>
+    					</setting>
+    					<setting type="integer" id="Port"
+    						default-value="80">
+    						<name>Port</name>
+    					</setting>
+    				</group>
+    				<group class="authn">
+    					<name>User login details</name>
+    					<setting type="string" id="SubUserEmailName"
+    						visibility="hidden" protected="true"
+    						value-of-setting="SubUserEmailName">
+    						<name>End User Email</name>
+    					</setting>
+    					<setting type="string" id="SubPassword" visibility="hidden" protected="true" value-of-setting="SubPassword">
+    						<name>User Password</name>
+    					</setting>
+    					<setting type="string" id="SubUserEmailEnc"
+    						visibility="hidden" protected="true"
+    						value-of-setting="SubUserEmailEnc">
+    						<name>Encoded user email</name>
+    					</setting>
+    					<setting type="string" id="SubPasswordEnc"
+    						protected="true" visibility="hidden"
+    						value-of-setting="SubPasswordEnc">
+    						<name>Encoded user password</name>
+    					</setting>
+    				</group>
+    			</settings>
+    			<requirements
+    				xmlns:php="http://apstandard.com/ns/1/php">
+    				<php:version min="5.0" />
+    			</requirements>
+    			<provision>
+    				<configuration-script name="configure-domain.php">
+    					<script-language>php</script-language>
+    					<structured-output />
+    				</configuration-script>
+    				<verify-script name="validate-domain.php">
+    					<script-language>php</script-language>
+    					<structured-output />
+    				</verify-script>
+    			</provision>
+    			<service id="scans">
+    				<presentation>
+    					<name>Number Of Scans</name>
+    					<summary>Number of scans for a specific domain</summary>
+    					<entry-points>
+    						<entry
+    							dst="https://www.gamasec.com/gsf/PartnerLogin.aspx"
+    							class="login" method="POST">
+    							<label>GamaScan Control Panel</label>
+    							<icon path="images/LogIn.png" />
+    							<variable name="UserName" class="login"
+    								value-of-setting="SubUserEmailName">
+    							</variable>
+    							<variable name="password"
+    								class="password" value-of-setting="SubPassword">
+    							</variable>
+    						</entry>
+    						<entry
+    							dst="https://www.gamasec.com/gsf/partner/QuickScan.aspx"
+    							method="POST" class="control-panel">
+    							<label>Quick Scan</label>
+    							<description>Domain quick scan</description>
+    							<icon path="images/QuickScan.png" />
+    							<variable name="UserName" class="login"
+    								value-of-setting="SubUserEmailName">
+    							</variable>
+    							<variable name="password"
+    								class="password" value-of-setting="SubPassword">
+    							</variable>
+    						</entry>
+    						<entry
+    							dst="https://www.gamasec.com/gsf/partner/ScannedTargets.aspx"
+    							class="control-panel" method="POST">
+    							<label>View Reports</label>
+    							<description>View scan reports</description>
+    							<icon path="images/ViewReports.png" />
+    							<variable name="UserName" class="login"
+    								value-of-setting="SubUserEmailName">
+    							</variable>
+    							<variable name="password"
+    								class="password" value-of-setting="SubPassword">
+    							</variable>
+    						</entry>
+    					</entry-points>
+    				</presentation>
+    				<settings>
+    					<group class="authn">
+    						<name>Authentication</name>
+    						<setting type="string" id="TargetUrl"
+    							value-of-setting="TargetUrl" visibility="hidden"
+    							protected="true">
+    							<name>Domain Url</name>
+    						</setting>
+    					</group>
+    					<group>
+    						<name>Number Of Scans</name>
+    						<setting type="enum" id="TotalScan"
+    							installation-only="true" visibility="hidden"
+    							default-value="4">
+    							<name>Number of scans</name>
+    							<description>Number of scans assigned to a specific domain</description>
+    							<choice id="1">
+    								<name>1 Scan</name>
+    							</choice>
+    							<choice id="4">
+    								<name>4 Scans</name>
+    							</choice>
+    							<choice id="6">
+    								<name>6 Scans</name>
+    							</choice>
+    							<choice id="12">
+    								<name>12 Scans</name>
+    							</choice>
+    							<choice id="24">
+    								<name>24 Scans</name>
+    							</choice>
+    							<choice id="36">
+    								<name>36 Scans</name>
+    							</choice>
+    						</setting>
+    					</group>
+    					<group class="authn">
+    						<name>Login details</name>
+    						<setting type="string"
+    							id="SubUserEmailName" visibility="hidden" protected="true" value-of-setting="SubUserEmailName">
+    							<name>User email </name>
+    						</setting>
+    						<setting type="string" id="SubPassword" visibility="hidden" protected="true" value-of-setting="SubPassword">
+    							<name>User password</name>
+    						</setting>
+    						<setting type="string" id="SubUserEmailEnc"
+    							visibility="hidden" protected="true"
+    							value-of-setting="SubUserEmailEnc">
+    							<name>Encoded user email</name>
+    						</setting>
+    						<setting type="string" id="SubPasswordEnc"
+    							protected="true" visibility="hidden"
+    							value-of-setting="SubPasswordEnc">
+    							<name>Encoded user password</name>
+    						</setting>
+    					</group>
+    				</settings>
+    				<requirements
+    					xmlns:php="http://apstandard.com/ns/1/php">
+    					<php:version min="5.0" />
+    				</requirements>
+    				<provision>
+    					<configuration-script
+    						name="configure-scans.php">
+    						<script-language>php</script-language>
+    						<structured-output />
+    					</configuration-script>
+    				</provision>
+    			</service>
+    		</service>
+    	</service></service>
+
+</application>

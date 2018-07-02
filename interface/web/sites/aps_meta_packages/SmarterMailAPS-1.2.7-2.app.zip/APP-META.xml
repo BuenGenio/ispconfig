@@ -1,0 +1,381 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2" packaged="2012-02-09T13:24:40">
+    <id>smartermailaps.9.0.4405</id>
+    <name>SmarterMailAPS</name>
+    <version>1.2.7</version>
+    <release>2</release>
+    <homepage>http://smartertools.com/smartermail/mail-server-software.aspx</homepage>
+    <vendor>
+    	<name>SmarterTools, Inc.</name>
+    	<homepage>http://www.smartertools.com/</homepage>
+    	<icon path="images/companyicon.png" />
+    </vendor>
+    <packager>
+    	<name>SmarterTools, Inc.</name>
+    	<homepage>http://www.smartertools.com/</homepage>
+    	<icon path="images/companyicon.png" />
+    </packager>
+    <presentation>
+    	<summary>SmarterMailAPS</summary>
+    	<description>SmarterMailAPS is an APS integration package that is associated with SmaterTools' SmarterMail application. SmarterMailAPS is used to make the process of adding domains and mailboxes an automated process using APS integration. It uses SmarterMail's standard web services to help users create, edit, and delete both domains and users alike.</description>
+    	<icon path="images/icon.png" />
+    	<screenshot path="images/screenshot.png">
+    		<description>SmarterMail Panel</description>
+    	</screenshot>
+    	<changelog>
+    		<version release="1" version="1.0">
+    			<entry>Initial Entry</entry>
+    		</version>
+    		<version release="1" version="1.0.9">
+    			<entry>Entry</entry>
+    		</version>
+    		<version release="8" version="1.1.1">
+    			<entry>Entry</entry>
+    		</version>
+    		<version release="3" version="1.1.4">
+    			<entry>Removed WSDL caching when running SOAP requests
+Hide System Administrator Credentials for all child services</entry>
+    		</version>
+    		<version release="4" version="1.1.4">
+    		<entry>Entry</entry>
+    		</version><version release="5" version="1.1.4">
+    			<entry>Entry</entry>
+    		</version><version release="6" version="1.1.4">
+    			<entry>Entry</entry>
+    		</version>
+    		<version release="3" version="1.2.0">
+    			<entry>Entry</entry>
+    		</version>
+    		<version release="9" version="1.2.1">
+    			<entry>1.2.1-9 Release Note</entry>
+    		</version>
+    		<version release="1" version="1.2.2">
+    			<entry>1.2.2-1 Release Note</entry>
+    		</version>
+    		<version release="2" version="1.2.2">
+    			<entry>1.2.2-2 Release Note</entry>
+    		</version>
+    		<version release="3" version="1.2.2">
+    			<entry>1.2.2-3 Release Note</entry>
+    		</version>
+    		<version release="4" version="1.2.2">
+    			<entry>1.2.2-3 Release Note</entry>
+    		</version>
+    		<version release="5" version="1.2.2">
+    			<entry>1.2.2-3 Release Note</entry>
+    		</version>
+    		<version release="2" version="1.2.7">
+    			<entry>1.2.7-2 Release</entry>
+    		</version>
+    	</changelog>
+    	<categories>
+    		<category>Collaboration/Email</category>
+    	</categories>
+    	<languages>
+    		<language>en</language>
+    	</languages>
+    </presentation>
+    <global-settings>
+    	<group>
+    		<name>System Administration Settings</name>
+    		<setting type="string" id="smartermailHost" default-value="">
+    			<name>SmarterMail Host</name>
+    			<description>DNS name or IP Address of SmarterMail Host</description>
+    		</setting><setting type="string" id="serverIPAddress" default-value="">
+    			<name>Server IP Address</name>
+    		</setting><setting type="string" id="sysAuthLogin" class="login" default-value="">
+    			<name>Primary System Administrator Login</name>
+    			<description>Primary System Administrator Login</description>
+    		</setting>
+    		<setting type="password" id="sysAuthPassword" class="password" default-value="">
+    			<name>Primary System Administrator Password</name>
+    			<description>Primary System Administrator Password</description>
+    		</setting>
+    	</group>
+    	<group>
+    		<name>MX Record</name>
+    		<setting type="string" id="mx1" class="title" default-value="" min-length="1">
+    			<name>Primary MX</name>
+    			<description>Smarter Mail MX server hostname</description>
+    		</setting>
+    	</group>
+    </global-settings>
+    <patch match="/application/version &gt;= '0.0.1'" />
+    <service id="instance" class="service" singular="true">
+    	<license must-accept="true">
+    		<free />
+    		<text>
+    			<name>GPL License</name>
+    			<file>htdocs/LICENSE</file>
+    		</text>
+    	</license>
+    	<presentation>
+    		<name>SmarterMail Integration Service</name>
+    		<summary>APS Integration Service for SmarterMail</summary>
+    		<infolinks>
+    			<link href="http://www.smartertools.com/" class="official">SmarterTools</link>
+    			<link href="http://portal.smartertools.com/KB/search.aspx" class="support">Support Link</link>
+    		</infolinks>
+    	</presentation>
+    	<settings>
+    		<group>
+    			<name>SERVICE_CONFIG</name>
+    			<setting type="boolean" id="scfg_uninstalling" visibility="hidden" default-value="false"></setting>
+    		</group>
+    		<setting type="list" id="domains" element-type="string" visibility="hidden" protected="true" class="domain-name" track-old-value="true">
+    			<name>List of Domains</name>
+    			<description>The domain names to prevision.</description>
+    		</setting>
+    	</settings>
+    	<requirements xmlns:apache="http://apstandard.com/ns/1/apache" xmlns:php="http://apstandard.com/ns/1/php" xmlns:dns="http://apstandard.com/ns/1/dns">
+    		<php:extension>soap</php:extension>
+    		<php:allow-url-fopen>true</php:allow-url-fopen>
+    		<php:version min="5.0"/>
+    	</requirements>
+    	<provision xmlns:php="http://apstandard.com/ns/1/php">
+    		<configuration-script name="configure.php">
+    			<script-language>php</script-language>
+    			<structured-output />
+    		</configuration-script>
+    	</provision>
+    	<service id="domainservices" class="account">
+    		<presentation>
+    			<name>SmarterMail Domain Service</name>
+    			<summary>Creation of SmarterMail Domains</summary>
+    			<entry-points>
+    				<entry dst="http://help.smartertools.com/SmarterMail/v9/Default.aspx" class="frontpage">
+    					<label>SmarterMail Documentation</label>
+    					<description>Online Help Documentation</description>
+    					
+    				</entry>
+    			</entry-points>
+    		</presentation>
+    		<settings>
+    			<setting type="list" id="domains" visibility="hidden" value-of-setting="domains" element-type="string"></setting>
+    			<group>
+    				<name>Domain Configuration Settings</name>
+    				<setting type="string" id="domainName" installation-only="true" uniq="service" default-value="" class="domain-name">
+    					<name>Domain Name</name>
+    				</setting>
+    				<setting type="string" id="pathSetting" default-value="C:\SmarterMail\Domains\" installation-only="true">
+    					<name>Folder Path</name>
+    				</setting>
+    			</group><group class="auth">
+    				<name>Domain Administrator Settings</name>
+    				<setting type="string" id="hiddenLogin" class="login" visibility="hidden">
+    					<name>Username</name>
+    				</setting>
+    				<setting type="string" id="dadminLogin" default-value="admin" installation-only="true" min-length="1" class="email-on-application-domain">
+    					<name>Primary Domain Administrator Username</name>
+    				</setting>
+    				<setting type="password" id="dadminPassword" track-old-value="true" class="password" default-value="" min-length="1">
+    					<name>Primary Domain Administrator Password</name>
+    				</setting>
+</group>
+    			<group class="vcard">
+    				<group class="fn n">
+    					<setting type="string" id="dadminFName" class="given-name" optional="true">
+    						<name>Primary Domain Administrator's First Name</name>
+    					</setting><setting type="string" id="dadminLName"
+    						class="family-name" optional="true">
+    						<name>Primary Domain Administrator's Last Name</name>
+    					</setting>
+    				</group>
+    			</group>
+    		</settings>
+    		<requirements xmlns:php="http://apstandard.com/ns/1/php" xmlns:mail="http://apstandard.com/ns/1/mail" xmlns:iis="http://apstandard.com/ns/1/iis">
+    			<php:extension>soap</php:extension>
+    			<php:allow-url-fopen>true</php:allow-url-fopen>
+    			<php:version min="5.0"/>
+    		</requirements>
+    		<provision>
+    			<configuration-script name="configure-domain.php">
+    				<script-language>php</script-language>
+    				<status-control />
+    				<structured-output />
+    			</configuration-script>
+    			<verify-script name="verify-domain.php">
+    				<script-language>php</script-language>
+    				<structured-output />
+    			</verify-script>
+    		</provision>
+    		<service id="mailboxservices" class="managed-by-account">
+    			<presentation>
+    				<name>Account</name>
+    				<summary>Creation of Mail Accounts</summary>
+    			</presentation>
+    			<settings>
+    				<group>
+    					<name>New Mailbox Configuration Settings</name>
+    					<setting type="string" id="newUserLogin" installation-only="true" uniq="service" default-value="">
+    						<name>Username</name>
+    					</setting>
+    					<setting type="string"
+    						id="newUserPassword" min-length="1" default-value="">
+    						<name>Password</name>
+    					</setting>
+    					<setting type="boolean" id="isDomainAdmin" default-value="false" installation-only="true">
+    						<name>Domain Administrator</name>
+    					</setting>
+    					<setting type="string" id="maxMailboxSize" min-length="1" default-value="100">
+    						<name>Max Mailbox Size (MB)</name>
+    					</setting>
+    				</group>
+    				<group class="vcard">
+    					<group class="fn n">
+    						<setting type="string" id="newUserFName" optional="true" default-value="" class="given-name">
+    							<name>First Name</name>
+    						</setting>
+    					<setting type="string" id="newUserLName" optional="true" default-value="" class="family-name">
+    							<name>Last Name</name>
+    						</setting></group>
+    				</group><group>
+    					<name>MAILBOX_CONFIG</name>
+    					<setting type="string" id="mcfg_domainName" value-of-setting="domainName" visibility="hidden"></setting>
+    				</group>
+    			</settings>
+    			<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    				<php:extension>soap</php:extension>
+    				<php:allow-url-fopen>true</php:allow-url-fopen>
+    				<php:version min="5.0"/>
+    			</requirements>
+    			<provision>
+    				<configuration-script name="configure-account.php">
+    					<script-language>php</script-language>
+    					<status-control />
+    					<structured-output />
+    				</configuration-script>
+    			</provision>
+    			<service id="forwardingservices" singular="true" class="managed-by-account">
+    				<presentation>
+    					<name>Forwarding Account</name>
+    					<summary>Configures Forwarding Addresses for Accounts</summary>
+    				</presentation>
+    				<settings>
+    					<group>
+    						<name>New Forwarding Address Configuration Settings</name>
+    						<setting type="string"
+    							id="forwardingAddress" default-value="forwardtouser@example.com" track-old-value="true">
+    							<name>Forwarding Address</name>
+    						</setting>
+    						<setting type="boolean"
+    							id="deleteMessages" track-old-value="true" default-value="false">
+    							<name>Enable deletion of messages on forward</name>
+    						</setting>
+    					</group>
+    					<group>
+    						<name>FORWARDING_CONFIG</name>
+    					<setting type="string" id="fcfg_accountAddress" visibility="hidden" value-of-setting="newUserLogin"></setting><setting type="string" id="fcfg_domainName" visibility="hidden" value-of-setting="domainName"></setting></group>
+    				</settings>
+    				<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    					<php:allow-url-fopen>true</php:allow-url-fopen>
+    					<php:extension>soap</php:extension>
+    					<php:version min="5.0"/>
+    				</requirements>
+    				<provision>
+    					<configuration-script name="configure-forwarding.php">
+    						<script-language>php</script-language>
+    						<structured-output />
+    					</configuration-script>
+    				</provision>
+    			</service>
+    		<service id="autoresponderservices" singular="true" class="managed-by-account">
+    				<presentation>
+    					<name>Auto-Responder</name>
+    					<summary>Configures Auro-Responder for Accounts</summary>
+    				</presentation>
+    				<settings>
+    					<group>
+    						<name>New Forwarding Address Configuration Settings</name>
+    						<setting type="boolean" id="enableResponder" default-value="false" track-old-value="true">
+    							<name>Enable Auto-Responder</name>
+    						</setting>
+    						<setting type="string" id="responderSubject" track-old-value="true" default-value="">
+    							<name>Subject</name>
+    						</setting>
+    					<setting type="string" id="responderBody" track-old-value="true" default-value=''>
+    							<name>Message</name>
+    						</setting></group>
+    					<group>
+    						<name>FORWARDING_CONFIG</name>
+    					<setting type="string" id="fcfg_accountAddress" visibility="hidden" value-of-setting="newUserLogin"></setting><setting type="string" id="fcfg_domainName" visibility="hidden" value-of-setting="domainName"></setting></group>
+    				</settings>
+    				<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    					<php:allow-url-fopen>true</php:allow-url-fopen>
+    					<php:extension>soap</php:extension>
+    					<php:version min="5.0" />
+    				</requirements>
+    				<provision>
+    					<configuration-script name="configure-autoresponder.php">
+    						<script-language>php</script-language>
+    						<structured-output />
+    					</configuration-script>
+    				</provision>
+    			</service></service>
+    		<service id="maillistservices" class="managed-by-account">
+    			<presentation>
+    				<name>Mailing List</name>
+    				<summary>Creation of Mailing Lists</summary>
+    			</presentation>
+    			<settings>
+    				<group>
+    					<name>New Mail List Configuration</name>
+    					<setting type="string" id="newMailListName"
+    						uniq="service" installation-only="true" default-value="Mail List Name">
+    						<name>Mailing List Name</name>
+    					</setting>
+    					<setting type="email" id="listModerator" default-value="" value-of-setting="dadminLogin">
+    						<name>Moderator</name>
+    					</setting>
+    					<setting type="string" id="listDescription" default-value="Mail List Description">
+    						<name>Description</name>
+    					</setting>
+    				</group>
+    				<group>
+    					<name>MAILLIST_CONFIG</name>
+    					<setting type="string" id="mlcfg_domainName" visibility="hidden" value-of-setting="domainName"></setting>
+    				</group>
+    			</settings>
+    			<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    				<php:allow-url-fopen>true</php:allow-url-fopen>
+    				<php:extension>soap</php:extension>
+    				<php:version min="5.0"/>
+    			</requirements>
+    			<provision>
+    				<configuration-script name="configure-maillist.php">
+    					<script-language>php</script-language>
+    					<status-control />
+    					<structured-output />
+    				</configuration-script>
+    			</provision>
+    			<service id="subscribingservices" class="managed-by-account">
+    				<presentation>
+    					<name>Subscriber</name>
+    					<summary>Creation of Mailing List Subscribtions</summary>
+    				</presentation>
+    				<settings>
+    					<group>
+    						<name>New Subscriber Configuration</name>
+    						<setting type="email" id="subscriber" default-value="user@example.com">
+    							<name>Subscriber</name>
+    						</setting>
+    					</group>
+    					<group>
+    						<name>SUBSCRIBER_CONFIG</name>
+    					<setting type="string" id="subcfg_maillist" visibility="hidden" value-of-setting="newMailListName"></setting><setting type="string" id="subcfg_domainName" visibility="hidden" value-of-setting="domainName"></setting></group>
+    				</settings>
+    				<requirements xmlns:php="http://apstandard.com/ns/1/php">
+    					<php:extension>soap</php:extension>
+    					<php:allow-url-fopen>true</php:allow-url-fopen>
+    					<php:version min="5.0"/>
+    				</requirements>
+    				<provision>
+    					<configuration-script name="configure-subscribers.php">
+    						<script-language>php</script-language>
+    						<structured-output />
+    					</configuration-script>
+    				</provision>
+    			</service>
+    		</service>
+    	</service>
+    </service>
+</application>
